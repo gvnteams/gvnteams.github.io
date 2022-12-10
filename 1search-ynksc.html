@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/tiny-slider.css">
+    <link rel="stylesheet" href="css/baguetteBox.min.css">
+    <link rel="stylesheet" href="css/rangeslider.css">
+    <link rel="stylesheet" href="css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="availabilityStatus" checked>
+              <label class="form-check-label" for="availabilityStatus">Availability status</label>
+            </div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="sendMeNotifications" checked>
+              <label class="form-check-label" for="sendMeNotifications">Send me notifications</label>
+            </div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="rtlSwitch">
+              <label class="form-check-label" for="rtlSwitch">RTL mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+			            <!-- Page Title -->
+          <div class="page-heading">
+            <h3 class="mb-0">YANKESİCİLİK</h3>
+          </div>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-content-wrapper py-3">
+      <div class="blog-wrapper direction-rtl">
+        <div class="container">
+          <div class="row g-1">
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+  
+<style>
+.fast-search {
+  margin-top: 12px;
+  padding: 10px;
+  color: DodgerBlue;
+  background: linear-gradient(to bottom left, AliceBlue 30%, DodgerBlue);
+}
+.fast-search.fast-search-opposite {
+  background: linear-gradient(to bottom right, AliceBlue 30%, DodgerBlue);
+}
+
+.fast-search-title {
+  font-size: 24px;
+  text-shadow: 0 2px 0 White;
+  margin: 0 0 10px;
+}
+
+.fast-search-title2 {
+  font-size: 18px;
+  text-shadow: 0 2px 0 White;
+  margin: 0 0 10px;
+}
+
+.fast-search-input {
+  margin-bottom: 20px;
+  border-radius: 0;
+}
+
+.fast-search-opposite .fast-search-input {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+.fast-search-list {
+  margin-bottom: 0;
+}
+
+.fast-search-list-item {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.fast-search-list-item:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.fast-search-list-item:last-child {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <div class="container">
+  <div class="row">
+    <div class="col-md-5 col-md-offset-2">
+      <div class="fast-search fast-search-opposite">
+        <input class="form-control fast-search-input" id="search_input" placeholder="Search">
+        <ul class="list-group fast-search-list" id="search_list">
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/004.jpg"  style="max-width:100%;height: auto">Aydan Özbay</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/005.jpg"  style="max-width:100%;height: auto">Ayşe Alanfer</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/006.jpg"  style="max-width:100%;height: auto">Erdal Arısal</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/007.jpg"  style="max-width:100%;height: auto">Aslı Arslanalp</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/008.jpg"  style="max-width:100%;height: auto">İsmet Cengiz</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/011.jpg"  style="max-width:100%;height: auto">Emir Atmaca</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/012.jpg"  style="max-width:100%;height: auto">İlyas Aslan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/013.jpg"  style="max-width:100%;height: auto">İlker Yeşilipek</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/014.jpg"  style="max-width:100%;height: auto">Kezban Titizler</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/015.jpg"  style="max-width:100%;height: auto">Gül Titizler</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/016.jpg"  style="max-width:100%;height: auto">Ekrem Aka</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/017.jpg"  style="max-width:100%;height: auto">Salih Karkuş</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/018.jpg"  style="max-width:100%;height: auto">Tural Ortak</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/019.jpg"  style="max-width:100%;height: auto">Tuğba Seymaner</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/020.jpg"  style="max-width:100%;height: auto">Hamiyet Seymaner</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/021.jpg"  style="max-width:100%;height: auto">Damla Gürbüzer</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/022.jpg"  style="max-width:100%;height: auto">Ayşe Şentürk</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/023.jpg"  style="max-width:100%;height: auto">Nuray Tomak</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/024.jpg"  style="max-width:100%;height: auto">Nur Tamkoşar</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/001.jpg"  style="max-width:100%;height: auto">Yusuf Keleş</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/025.jpg"  style="max-width:100%;height: auto">İrem Özer</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/185.jpg"  style="max-width:100%;height: auto">Hira Çırıkoğlu</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/027.jpg"  style="max-width:100%;height: auto">Yunus Keleş</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/028.jpg"  style="max-width:100%;height: auto">Lamia Özmut</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/029.jpg"  style="max-width:100%;height: auto">Emir Ali Tanrıkulu</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/030.jpg"  style="max-width:100%;height: auto">Hamza Titizler</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/031.jpg"  style="max-width:100%;height: auto">Fatma Sultan Çedik</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/032.jpg"  style="max-width:100%;height: auto">Serpil Özmut</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/033.jpg"  style="max-width:100%;height: auto">Neriman Titizler</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/034.jpg"  style="max-width:100%;height: auto">Aygün Özcan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/035.jpg"  style="max-width:100%;height: auto">Pınar Bozan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/036.jpg"  style="max-width:100%;height: auto">Ayhan Yakışır</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/037.jpg"  style="max-width:100%;height: auto">Halil İbrahim Koç</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/038.jpg"  style="max-width:100%;height: auto">Onurhan Süner</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/039.jpg"  style="max-width:100%;height: auto">Salih Akmeşe</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/040.jpg"  style="max-width:100%;height: auto">Emrullah Okatar</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/041.jpg"  style="max-width:100%;height: auto">Bahar Kurt</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/186.jpg"  style="max-width:100%;height: auto">Hülya Koç</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/043.jpg"  style="max-width:100%;height: auto">Doğukan Karasöğüt</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/002.jpg"  style="max-width:100%;height: auto">Yaren Çakan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/003.jpg"  style="max-width:100%;height: auto">Gülümser Tayakner</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/044.jpg"  style="max-width:100%;height: auto">Müjde Şenyüz</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/045.jpg"  style="max-width:100%;height: auto">Nigar Garipler</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/046.jpg"  style="max-width:100%;height: auto">Zeki Kahriman</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/047.jpg"  style="max-width:100%;height: auto">Ahmet Saz</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/048.jpg"  style="max-width:100%;height: auto">Ercan Kökel</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/049.jpg"  style="max-width:100%;height: auto">Halil Göl</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/050.jpg"  style="max-width:100%;height: auto">Samet Küçük</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/051.jpg"  style="max-width:100%;height: auto">Dilber Mete</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/052.jpg"  style="max-width:100%;height: auto">Hasret Kaçar</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/053.jpg"  style="max-width:100%;height: auto">Emine Çelik</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/054.jpg"  style="max-width:100%;height: auto">Berkan Keleş</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/055.jpg"  style="max-width:100%;height: auto">Nuray Adıkal</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/056.jpg"  style="max-width:100%;height: auto">Selen Taku</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/057.jpg"  style="max-width:100%;height: auto">Canan Mazlum</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/058.jpg"  style="max-width:100%;height: auto">Asya Başsimitçi</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/059.jpg"  style="max-width:100%;height: auto">Yeşim Yuvgun</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/060.jpg"  style="max-width:100%;height: auto">Yeşim Yeşiltoprak</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/061.jpg"  style="max-width:100%;height: auto">Sultan Kalaycı</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/062.jpg"  style="max-width:100%;height: auto">Bülent Yakışır</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/063.jpg"  style="max-width:100%;height: auto">Nuriye Yeşiller</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/064.jpg"  style="max-width:100%;height: auto">Dilara Yılmaz</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/065.jpg"  style="max-width:100%;height: auto">Aleyna Özkıran</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/066.jpg"  style="max-width:100%;height: auto">Özgür İmert</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/067.jpg"  style="max-width:100%;height: auto">Tuğçe Çağlar</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/068.jpg"  style="max-width:100%;height: auto">Ece Çağlar</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/069.jpg"  style="max-width:100%;height: auto">Gülpembe Kurt</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/070.jpg"  style="max-width:100%;height: auto">Yağmur Kurt</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/071.jpg"  style="max-width:100%;height: auto">Emine Zeyrek</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/105.jpg"  style="max-width:100%;height: auto">Birgül Tanrısevergil</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/073.jpg"  style="max-width:100%;height: auto">Naz Küçükboyacı</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/079.jpg"  style="max-width:100%;height: auto">Aycan Tanrısevergil</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/072.jpg"  style="max-width:100%;height: auto">Maviş Irmak</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/074.jpg"  style="max-width:100%;height: auto">Anıl Özdemir</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/075.jpg"  style="max-width:100%;height: auto">Demet Gürbüzer</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/076.jpg"  style="max-width:100%;height: auto">Tuncay Büyük</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/186.jpg"  style="max-width:100%;height: auto">Filiz Atar</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/078.jpg"  style="max-width:100%;height: auto">Selin Meydancı</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/080.jpg"  style="max-width:100%;height: auto">Asya Tanrısevergil</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/081.jpg"  style="max-width:100%;height: auto">Hasret Tanrısevergil</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/082.jpg"  style="max-width:100%;height: auto">Münevver Canbaz</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/083.jpg"  style="max-width:100%;height: auto">Kardelen Başsimitçi</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/084.jpg"  style="max-width:100%;height: auto">Songül Kanık</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/085.jpg"  style="max-width:100%;height: auto">Birsen Ateşgüneş</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/086.jpg"  style="max-width:100%;height: auto">Kazım Koyum</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/087.jpg"  style="max-width:100%;height: auto">Ramazan Özdemir</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/088.jpg"  style="max-width:100%;height: auto">Safiye Lama</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/089.jpg"  style="max-width:100%;height: auto">Barış Karademir</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/090.jpg"  style="max-width:100%;height: auto">Haydar Mayalı</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/091.jpg"  style="max-width:100%;height: auto">İbrahim Yanar</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/092.jpg"  style="max-width:100%;height: auto">Gaye Yıldız</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/093.jpg"  style="max-width:100%;height: auto">Diyadin Çoban</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/094.jpg"  style="max-width:100%;height: auto">İrem Dimen</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/095.jpg"  style="max-width:100%;height: auto">Naciye Bakırhan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/096.jpg"  style="max-width:100%;height: auto">Ebru Dedeler</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/097.jpg"  style="max-width:100%;height: auto">Zübeyd Tutuş</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/098.jpg"  style="max-width:100%;height: auto">Okan Atabinen</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/099.jpg"  style="max-width:100%;height: auto">Cemile Ay</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/233.jpg"  style="max-width:100%;height: auto">Ayşe Polat</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/101.jpg"  style="max-width:100%;height: auto">Ömer Yavuz</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/102.jpg"  style="max-width:100%;height: auto">Ramazan Aydoğdu</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/103.jpg"  style="max-width:100%;height: auto">Hüsnü Yıldırım</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/104.jpg"  style="max-width:100%;height: auto">Emre Atabinen</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/106.jpg"  style="max-width:100%;height: auto">Şirin Elgörmüş</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/107.jpg"  style="max-width:100%;height: auto">Celal Altay</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/108.jpg"  style="max-width:100%;height: auto">Can Yasavur</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/109.jpg"  style="max-width:100%;height: auto">Hediye Tanirel</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/110.jpg"  style="max-width:100%;height: auto">Elif Şahin</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/111.jpg"  style="max-width:100%;height: auto">Nazar Bakırhan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/112.jpg"  style="max-width:100%;height: auto">Kutlay Fak</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/114.jpg"  style="max-width:100%;height: auto">Cem Ersun</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/115.jpg"  style="max-width:100%;height: auto">Azize Eser</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/116.jpg"  style="max-width:100%;height: auto">Serap Bakıryapan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/117.jpg"  style="max-width:100%;height: auto">Gül Yeleğen</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/118.jpg"  style="max-width:100%;height: auto">ILGIMA SAIFUDINOVA</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/120.jpg"  style="max-width:100%;height: auto">Tayfun Arslan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/121.jpg"  style="max-width:100%;height: auto">Yaren Dimen</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/122.jpg"  style="max-width:100%;height: auto">Birol Kızıltoprak</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/123.jpg"  style="max-width:100%;height: auto">Aygün Karasöğüt</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/124.jpg"  style="max-width:100%;height: auto">NAREK AVAGYAN</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/125.jpg"  style="max-width:100%;height: auto">Melek Zeyrek</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/128.jpg"  style="max-width:100%;height: auto">Emine Türkmen</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/129.jpg"  style="max-width:100%;height: auto">Huri Uludağ</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/233.jpg"  style="max-width:100%;height: auto">Çağla Seymaner</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/131.jpg"  style="max-width:100%;height: auto">Büşra Tutkun</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/132.jpg"  style="max-width:100%;height: auto">Emine Uysal</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/133.jpg"  style="max-width:100%;height: auto">Yonca Tanrısevergil</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/134.jpg"  style="max-width:100%;height: auto">Cemile Zeyrek</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/137.jpg"  style="max-width:100%;height: auto">Songül Lama</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/138.jpg"  style="max-width:100%;height: auto">Nejla Şefik</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/139.jpg"  style="max-width:100%;height: auto">Cansu Bakır</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/140.jpg"  style="max-width:100%;height: auto">Hnaife Koç</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/141.jpg"  style="max-width:100%;height: auto">Hasret Tan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/142.jpg"  style="max-width:100%;height: auto">Senem Özmut</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/144.jpg"  style="max-width:100%;height: auto">Cemile Lama</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/145.jpg"  style="max-width:100%;height: auto">Ayşe Lama</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/146.jpg"  style="max-width:100%;height: auto">Hanife Lama</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/147.jpg"  style="max-width:100%;height: auto">Hatice Aslan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/148.jpg"  style="max-width:100%;height: auto">Serap Güler</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/149.jpg"  style="max-width:100%;height: auto">Arzu Bakır</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/150.jpg"  style="max-width:100%;height: auto">Safiye Laçin</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/151.jpg"  style="max-width:100%;height: auto">Tuğçe Uzdilli</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/152.jpg"  style="max-width:100%;height: auto">Zümrüt Kanık</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/153.jpg"  style="max-width:100%;height: auto">Gamze Balıkçı</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/155.jpg"  style="max-width:100%;height: auto">Berivan Kurt</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/156.jpg"  style="max-width:100%;height: auto">Hanife Vayki</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/164.jpg"  style="max-width:100%;height: auto">Dilber Atmaca</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/165.jpg"  style="max-width:100%;height: auto">Nuray Daldır</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/168.jpg"  style="max-width:100%;height: auto">Semra Ateşgüneş</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/170.jpg"  style="max-width:100%;height: auto">Sebahat Baysal</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/171.jpg"  style="max-width:100%;height: auto">Hatice Özer</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/172.jpg"  style="max-width:100%;height: auto">Feriha Sultan Çelikdağ</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/173.jpg"  style="max-width:100%;height: auto">Aysel Babaçörs</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/174.jpg"  style="max-width:100%;height: auto">Derya Arama</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/176.jpg"  style="max-width:100%;height: auto">Ceylan Vayki</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/177.jpg"  style="max-width:100%;height: auto">Dilara Atalan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/178.jpg"  style="max-width:100%;height: auto">Dilara Ecelioğlu</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/179.jpg"  style="max-width:100%;height: auto">Zilan Özmut</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/180.jpg"  style="max-width:100%;height: auto">Hazal Özcan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/182.jpg"  style="max-width:100%;height: auto">İpek Laçin</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/183.jpg"  style="max-width:100%;height: auto">Neşe Durmazer</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/184.jpg"  style="max-width:100%;height: auto">Tuana Tamkoşar</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/185.jpg"  style="max-width:100%;height: auto">Ecrin Adıkal</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/186.jpg"  style="max-width:100%;height: auto">Çağla Yıldız</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/187.jpg"  style="max-width:100%;height: auto">Narin Sıla Hamal</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/188.jpg"  style="max-width:100%;height: auto">Perihan Yalçın</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/189.jpg"  style="max-width:100%;height: auto">Naz Nekiz</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/190.jpg"  style="max-width:100%;height: auto">Nergis İbro Özüyanık</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/191.jpg"  style="max-width:100%;height: auto">Serap Demirel</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/192.jpg"  style="max-width:100%;height: auto">Gülşen Atmaca</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/193.jpg"  style="max-width:100%;height: auto">Hanzade Küleş</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/194.jpg"  style="max-width:100%;height: auto">Ebru Yakışıklı</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/195.jpg"  style="max-width:100%;height: auto">Melek Lama</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/196.jpg"  style="max-width:100%;height: auto">Nehir Karasöğüt</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/197.jpg"  style="max-width:100%;height: auto">Neslişah Özmut</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/199.jpg"  style="max-width:100%;height: auto">Tülay Seymaner</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/201.jpg"  style="max-width:100%;height: auto">Naciye Ateşgüneş</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/202.jpg"  style="max-width:100%;height: auto">Haydar Kemendi</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/203.jpg"  style="max-width:100%;height: auto">Şerife Baysal</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/204.jpg"  style="max-width:100%;height: auto">Gül Gezek</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/205.jpg"  style="max-width:100%;height: auto">Sevim Güldür</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/206.jpg"  style="max-width:100%;height: auto">Semra Kaleli</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/207.jpg"  style="max-width:100%;height: auto">Gönül Durmazer</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/208.jpg"  style="max-width:100%;height: auto">Fatma Güleş</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/209.jpg"  style="max-width:100%;height: auto">Sıla Demir</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/210.jpg"  style="max-width:100%;height: auto">Güllü Yaş</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/211.jpg"  style="max-width:100%;height: auto">Sultan Yeşiltoprak</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/213.jpg"  style="max-width:100%;height: auto">Baldan Tanrısevergil</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/215.jpg"  style="max-width:100%;height: auto">Sıla Elgörmüş</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/216.jpg"  style="max-width:100%;height: auto">Nafiye Eser</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/217.jpg"  style="max-width:100%;height: auto">Arzu Çırıkoğlu</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/218.jpg"  style="max-width:100%;height: auto">Çilem Tamkoşar</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/219.jpg"  style="max-width:100%;height: auto">Serap Papiş</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/223.jpg"  style="max-width:100%;height: auto">Aysel Arslan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/224.jpg"  style="max-width:100%;height: auto">Gülüstan Şenli</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/225.jpg"  style="max-width:100%;height: auto">Ayfer Durmazer</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/227.jpg"  style="max-width:100%;height: auto">Güzelsu Bakıryapan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/228.jpg"  style="max-width:100%;height: auto">Asya Elgörmüş</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/229.jpg"  style="max-width:100%;height: auto">Nurşah Çalıkoparan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/230.jpg"  style="max-width:100%;height: auto">Gül Solak</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/231.jpg"  style="max-width:100%;height: auto">Narin Kurt</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/233.jpg"  style="max-width:100%;height: auto">Aysun Batun</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/234.jpg"  style="max-width:100%;height: auto">Zeynep Özmut</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/235.jpg"  style="max-width:100%;height: auto">Mukaddes Gül</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/236.jpg"  style="max-width:100%;height: auto">Beril Koçak</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/237.jpg"  style="max-width:100%;height: auto">Sultan Baysal</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/240.jpg"  style="max-width:100%;height: auto">Rabia Durmazer</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/241.jpg"  style="max-width:100%;height: auto">Alfer Demirkıran</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/242.jpg"  style="max-width:100%;height: auto">Medine Balım</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/243.jpg"  style="max-width:100%;height: auto">Zehra Çatalbaş</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/244.jpg"  style="max-width:100%;height: auto">Fidan Atabinen</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/245.jpg"  style="max-width:100%;height: auto">Kader Resne</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/246.jpg"  style="max-width:100%;height: auto">Ebru Erbudak</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/247.jpg"  style="max-width:100%;height: auto">Kader Durgaç</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/249.jpg"  style="max-width:100%;height: auto">Canan Çelikdağ</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/250.jpg"  style="max-width:100%;height: auto">Esengül Titizler</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/251.jpg"  style="max-width:100%;height: auto">Aycan Uzdilli</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/252.jpg"  style="max-width:100%;height: auto">Asya Çam</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/253.jpg"  style="max-width:100%;height: auto">Suzan Sebebci</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/256.jpg"  style="max-width:100%;height: auto">Nur Sultan Pehlivan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/258.jpg"  style="max-width:100%;height: auto">Mustafa Öncü</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/259.jpg"  style="max-width:100%;height: auto">Yaşar Alpay</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/260.jpg"  style="max-width:100%;height: auto">Uğur Tatar</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/261.jpg"  style="max-width:100%;height: auto">Gündoğan Oğuzatak</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/262.jpg"  style="max-width:100%;height: auto">Kutbeddin Gürkan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/263.jpg"  style="max-width:100%;height: auto">Görkem Gürgür</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/264.jpg"  style="max-width:100%;height: auto">Müzekkir Yıldız</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/265.jpg"  style="max-width:100%;height: auto">Osman Tezer</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/266.jpg"  style="max-width:100%;height: auto">Batuhan Yalvaç</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/267.jpg"  style="max-width:100%;height: auto">Yunus Emre Yetiş</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/268.jpg"  style="max-width:100%;height: auto">Gökhan Güneş</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/269.jpg"  style="max-width:100%;height: auto">Savaş Tekin</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/270.jpg"  style="max-width:100%;height: auto">Mehmet Güneş</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/271.jpg"  style="max-width:100%;height: auto">Cevat Kemendi</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/272.jpg"  style="max-width:100%;height: auto">Erdal Çelik</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/273.jpg"  style="max-width:100%;height: auto">Serkan Parlak</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/274.jpg"  style="max-width:100%;height: auto">Suat Gözübüyük</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/275.jpg"  style="max-width:100%;height: auto">Yalçın Demirel</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/276.jpg"  style="max-width:100%;height: auto">Erdi Özer</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/277.jpg"  style="max-width:100%;height: auto">Azat İlgir</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/278.jpg"  style="max-width:100%;height: auto">Azizcan Polat</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/279.jpg"  style="max-width:100%;height: auto">Serkan Kantarçeken</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/280.jpg"  style="max-width:100%;height: auto">Muhammet Özmut</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/281.jpg"  style="max-width:100%;height: auto">Evrim Babaoğlu</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/282.jpg"  style="max-width:100%;height: auto">Türkan Özmut</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ynksc/283.jpg"  style="max-width:100%;height: auto">Yağmur Özmut</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+      <script id="rendered-js" >
+/**
+ * fastLiveFilter jQuery plugin 1.0.3
+ * 
+ * Copyright (c) 2011, Anthony Bush
+ * License: <https://www.opensource.org/licenses/bsd-license.php>
+ * Project Website: http://anthonybush.com/projects/jquery_fast_live_filter/
+ **/
+
+jQuery.fn.fastLiveFilter = function (list, options) {
+  // Options: input, list, timeout, callback
+  options = options || {};
+  list = jQuery(list);
+  var input = this;
+  var lastFilter = '';
+  var timeout = options.timeout || 0;
+  var callback = options.callback || function () {};
+  var pType = options.type || "filter";
+
+  var keyTimeout;
+
+  // NOTE: because we cache lis & len here, users would need to re-init the plugin
+  // if they modify the list in the DOM later.  This doesn't give us that much speed
+  // boost, so perhaps it's not worth putting it here.
+  var lis = list.children();
+  var len = lis.length;
+  var oldDisplay = len > 0 ? lis[0].style.display : "block";
+  callback(len); // do a one-time callback on initialization to make sure everything's in sync
+
+  if (pType === "search") {
+    for (var i = 0; i < len; i++) {if (window.CP.shouldStopExecution(0)) break;
+      lis[i].style.display = "none";
+    }window.CP.exitedLoop(0);
+  }
+
+  input.change(function () {
+    // var startTime = new Date().getTime();
+    var filter = input.val().toLowerCase();
+
+    var li, innerText;
+    var numShown = 0;
+    for (var i = 0; i < len; i++) {if (window.CP.shouldStopExecution(1)) break;
+      li = lis[i];
+      innerText = !options.selector ?
+      li.textContent || li.innerText || "" :
+      $(li).find(options.selector).text();
+
+      if (pType !== "search" || filter.trim().length > 0) {
+        if (innerText.toLowerCase().indexOf(filter) >= 0) {
+          if (li.style.display == "none") {
+            li.style.display = oldDisplay;
+          }
+          numShown++;
+        } else {
+          if (li.style.display != "none") {
+            li.style.display = "none";
+          }
+        }
+      } else {
+        li.style.display = "none";
+      }
+    }window.CP.exitedLoop(1);
+    callback(numShown);
+    // var endTime = new Date().getTime();
+    // console.log('Search for ' + filter + ' took: ' + (endTime - startTime) + ' (' + numShown + ' results)');
+    return false;
+  }).keydown(function () {
+    clearTimeout(keyTimeout);
+    keyTimeout = setTimeout(function () {
+      if (input.val() === lastFilter) return;
+      lastFilter = input.val();
+      input.change();
+    }, timeout);
+  });
+  return this; // maintain jQuery chainability
+};
+
+$('#filter_input').fastLiveFilter('#filter_list');
+$('#search_input').fastLiveFilter('#search_list', { type: "search" });
+//# sourceURL=pen.js
+    </script>
+
+</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/slideToggle.min.js"></script>
+    <script src="js/internet-status.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/baguetteBox.min.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/rangeslider.min.js"></script>
+    <script src="js/vanilla-dataTables.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/magic-grid.min.js"></script>
+    <script src="js/dark-rtl.js"></script>
+    <script src="js/active.js"></script>
+    <!-- PWA -->
+    <script src="js/pwa.js"></script>
+  </body>
+</html>

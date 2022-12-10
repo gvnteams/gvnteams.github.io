@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/tiny-slider.css">
+    <link rel="stylesheet" href="css/baguetteBox.min.css">
+    <link rel="stylesheet" href="css/rangeslider.css">
+    <link rel="stylesheet" href="css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="availabilityStatus" checked>
+              <label class="form-check-label" for="availabilityStatus">Availability status</label>
+            </div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="sendMeNotifications" checked>
+              <label class="form-check-label" for="sendMeNotifications">Send me notifications</label>
+            </div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="rtlSwitch">
+              <label class="form-check-label" for="rtlSwitch">RTL mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="knn.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">Kanun ve Mevzuatlar</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-content-wrapper py-3" id="elementsSearchList">
+      <div class="container">
+        <div class="card">
+          <div class="card-body p-3">
+            <div class="form-group mb-0">
+              <input class="form-control" id="elementsSearchInput" type="text" onkeyup="elementsSearch()" placeholder="Search element...">
+            </div>
+          </div>
+        </div>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-search"></i>
+            <div class="heading-text">
+              <h6 class="mb-1">Ceza Hukuku ve Ceza Davaları</h6><span></span>
+            </div>
+          </div>
+        </div>
+<!-- Page Item --><a class="affan-element-item"  href="israrli-takip-sucunun-cezasi-tck-123a.html"> Israrlı Takip Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kamu-davasi-nedir-nasil-acilir.html"> Kamu Davası Nedir? <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="hakaret-sucu-sayilmayan-kelimeler-ve-sozler.html"> Hakaret Sayılan/Sayılmayan Kelime ve Sözler <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="magdur-suctan-zarar-goren-malen-sorumlu-ve-kamu-davasina-katilma-nedir.html"> Mağdur, Suçtan Zarar Gören, Malen Sorumlu Nedir? <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="terorizmin-finansmani-sucu-ve-fon-saglama.html"> Terörizmin Finansmanı Suçu (Fon Sağlama) <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="teshis-ve-yuzlestirme-islemi-nasil-yapilir.html"> Teşhis ve Yüzleştirme İşlemi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="hirsizlik-zimmet-gasp-sucu-malin-degerinin-azligi-nedeniyle-ceza-indirimi.html"> Malın Değerinin Azlığı İndirimi<i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="bilisim-suclari-mahkemesi.html"> Bilişim Suçları Mahkemesi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="vergi-suclari-mahkemesi-nedir.html"> Vergi Suçları Mahkemesi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="suc-vasfina-yonelik-istinaf-veya-temyiz.html"> Suç Vasfına Yönelik Temyiz veya İstinaf <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="esrar-icin-izinsiz-kenevir-ekme-veya-kisisel-ihtiyac-icin-kenevir-ekme-sucu-cezasi.html"> İzinsiz Kenevir Ekme Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="cezayi-aleyhe-degistirme-yasagi.html"> Cezayı Aleyhe Değiştirme/Bozma Yasağı <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="temyiz-nedeni-temyiz-dilekcesinde-temyiz-sebebi-gosterilmemesi.html"> Temyiz Dilekçesinde Temyiz Sebeplerinin Bulunmaması <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kacak-sanik-yargilanmasi-ve-guvence-belgesi.html"> Kaçakların Yargılanması ve Güvence Belgesi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="guvence-belgesi-verilmesi-ve-gaip-sanik-yargilanmasi.html"> Gaiplerin Yargılanması ve Güvence Belgesi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="karsiliksiz-cek-keside-etme-duzenleme-sucu-cezasi.html"> Çekte 'Karşılıksız' İşlemi Yapılmasına Sebebiyet Verme <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kasten-oldurmeye-tesebbus-sucu-cezasi.html"> Kasten Öldürmeye Teşebbüs ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kasten-veya-taksirle-orman-yanginina-neden-olma-sucu-cezasi.html"> Orman Yangınına Neden Olma Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="seri-muhakeme-ve-basit-yargilama-usulu.html"> Seri Muhakeme ve Basit Yargılama Usulü <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="uyusturucu-madde-ticareti-sucuna-yardim-etme-cezasi.html"> Uyuşturucu Madde Ticaretine Yardım Etme Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ataturke-hakaret-sucu-ve-ataturkun-heykel-bustune-zarar-verme-sucu.html"> Atatürk'e Hakaret Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="internetten-ve-sosyal-medya-uzerinden-hakaret-sucu-cezasi.html"> İnternetten veya Sosyal Medya Üzerinden Hakaret Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="guvenlik-tedbiri-karari-nedir.html"> Güvenlik Tedbirleri <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="gecici-nedenler-alkol-veya-uyusturucu-madde-etkisinde-olma-uyusturucu-bagimliligi.html">Alkol veya Uyuşturucu Madde Etkisinde Olma <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="sagir-ve-dilsizlik-cezai-ehliyeti.html"> Sağır ve Dilsizlerin Ceza Sorumluluğu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="davanin-durmasi-karari-nedir.html"> Davanın Durması Kararı <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="davanin-dusmesi-karari-nedir.html"> Davanın Düşmesi Kararı <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="davanin-reddi-karari-nedir.html"> Ceza Hukukunda Davanın Reddi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="hakkin-kullanilmasi-tck-26.html"> Hakkın Kullanılması <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ilgilinin-veya-magdurun-rizasi-nedir-tck-26.html"> İlgilinin (Mağdurun) Rızası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="iddianamenin-degerlendirilmesi-sonrasi-acilis.html"> İddianamenin Değerlendirilmesi Sonrası Açılış <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ceza-mahkumiyeti-karari-veya-hukmu-nedir.html"> Mahkumiyet Kararı (Hükmü) <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ceza-verilmesine-yer-olmadigi-karari.html"> Ceza Verilmesine Yer Olmadığı Kararı <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="sahsi-cezasizlik-ve-cezada-indirim-sebepleri.html"> Şahsi Cezasızlık Sebepleri <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="defter-kayit-ve-belgeleri-gizleme-veya-ibraz-etmeme-sucu-cezasi.html"> Defter, Kayıt ve Belgeleri Gizleme (İbraz Etmeme) Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="sahte-belge-veya-muhteviyati-itibariyle-yaniltici-belge-duzenleme-ve-kullanma.html"> Sahte veya Muhteviyatı İtibariyle Yanıltıcı Belge Düzenleme/Kullanma <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="haksiz-tahrik-hukumleri.html"> Haksız Tahrik Hükümleri <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="hapis-cezasi-ve-agirlastirilmis-muebbet-hapis-cezasi-nedir.html"> Hapis Cezası Nedir? | Müebbet ve Ağırlaştırılmış Müebbet Hapis Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="temel-cezanin-belirlenmesi-ve-alt-sinirdan-uzaklasma.html"> Cezanın Belirlenmesi ve Alt Sınırdan Uzaklaşma <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="seri-muhakeme-usulunun-izahi.html"> Seri Muhakeme Usulünün İzahı <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="uyusturucu-ticareti-sucunun-arac-otomobil-icerisinde-islenmesi.html"> Uyuşturucu Ticareti Suçunun TCK 188/4-b Kapsamında Araç İçerisinde İşlenmesi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="gozlem-altina-alma-nedir.html"> Gözlem Altına Alma <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="takdiri-indirim-nedenleri-tck-62.html"> Takdiri İndirim (İyi Hal İndirimi) <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yasaklanan-bilgilerin-casusluk-maksadiyla-temini-sucu.html"> Yasaklanan Bilgilerin Casusluk Maksadıyla Temini Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yasaklanan-bilgileri-veya-askeri-casusluk-maksadiyla-aciklama.html"> Yasaklanan Bilgileri Siyasal veya Askerî Casusluk Maksadıyla Açıklama <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yasaklanan-bilgileri-temin-sucu-tck-334.html"> Yasaklanan Bilgileri Temin Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yasaklanan-bilgileri-aciklama-sucu-tck-336.html"> Yasaklanan Bilgileri Açıklama Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yabanci-devlet-temsilcilerine-karsi-suc-tck-342.html"> Yabancı Devlet Temsilcilerine Karşı Suç <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yabanci-devlet-bayragina-karsi-hakaret-sucu-tck-341.html"> Yabancı Devlet Bayrağına Karşı Hakaret Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yabanci-devlet-baskanina-karsi-suc-tck-340.html"> Yabancı Devlet Başkanına Karşı Suç <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="taksir-sonucu-casusluk-fiillerinin-islenmesi-sucu-tck-338.html"> Taksir Sonucu Casusluk Fiillerinin İşlenmesi Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="devlet-sirlarindan-yararlanma-devlet-hizmetlerinde-sadakatsizlik-tck-333.html"> Devlet Sırlarından Yararlanma, Devlet Hizmetlerinde Sadakatsizlik Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="devlet-guvenligi-ile-ilgili-belgeleri-elinde-bulundurma-sucu-tck-339.html"> Devlet Güvenliği ile İlgili Belgeleri Elinde Bulundurma <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yabanci-hizmetine-asker-yazma-yazilma-sucu.html"> Yabancı Hizmetine Asker Yazma, Yazılma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="uluslararasi-casusluk-sucu-tck-331.html"> Uluslararası Casusluk Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="siyasal-veya-askeri-casusluk-sucu-tck-328.html"> Siyasal veya Askeri Casusluk Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="seferberlikle-ilgili-gorevin-ihmali-sucu-tck-324.html"> Seferberlikle İlgili Görevin İhmali Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="savasta-yalan-haber-yayma-sucu-tck-323.html"> Savaşta Yalan Haber Yayma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="savas-zamaninda-yukumluluklere-aykirilik-sucu.html"> Savaş Zamanında Yükümlülüklere Aykırılık Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="savas-zamaninda-emirlere-uymama-sucu-tck-321.html"> Savaş Zamanında Emirlere Uymama Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="gizli-kalmasi-gereken-bilgileri-aciklama-sucu.html"> Gizli Kalması Gereken Bilgileri Açıklama Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="dusmandan-unvan-ve-benzeri-payeler-kabulu-sucu-tck-325.html"> Düşmandan Unvan ve Benzeri Payeler Kabulü Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="devletin-guvenligine-ve-siyasal-yararlarina-iliskin-bilgileri-aciklama-sucu.html"> Devletin Güvenliğine ve Siyasal Yararlarına İlişkin Bilgileri Açıklama <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="devletin-guvenligine-iliskin-bilgileri-temin-etme-sucu.html"> Devletin Güvenliğine İlişkin Bilgileri Temin Etme Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="devletin-guvenligine-iliskin-belgeleri-yok-etme-tahrip-etme-veya-sahtecilik.html"> Devletin Güvenliğine İlişkin Belgeleri Yok Etme, Tahrip Etme veya Sahtecilik <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="askerleri-itaatsizlige-tesvik-sucu.html"> Askerleri İtaatsizliğe Teşvik Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="askeri-yasak-bolgelere-girme-sucu-tck-332.html"> Askeri Yasak Bölgelere Girme Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yabanci-devlet-aleyhine-asker-toplama-sucu-tck-306.html"> Yabancı Devlet Aleyhine Asker Toplama Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="turkiye-cumhuriyeti-hukumetine-karsi-silahli-isyan-sucu.html"> Türkiye Cumhuriyeti Hükümetine Karşı Silahlı İsyan Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="temel-milli-yararlara-karsi-faaliyette-bulunmak-icin-yarar-saglama-sucu-tck-305.html"> Temel Millî Yararlara Karşı Faaliyette Bulunmak İçin Yarar Sağlama Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="suc-icin-anlasma-sucu-tck-316.html"> Suç İçin Anlaşma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="halki-askerlikten-sogutma-sucu-tck-318.html"> Halkı Askerlikten Soğutma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="dusmanla-isbirligi-yapma-sucu-tck-303.html"> Düşmanla İşbirliği Yapma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="dusman-devlete-maddi-ve-mali-yardim-sucu-tck-308.html"> Düşman Devlete Maddi ve Mali Yardım Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="devlete-karsi-savasa-tahrik-sucu-tck-304.html"> Devlete Karşı Savaşa Tahrik Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="cumhurbaskanina-suikast-ve-fiili-saldiri-sucu-tck-310.html"> Cumhurbaşkanına Suikast ve Fiilî Saldırı Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="askeri-tesisleri-tahrip-ve-dusman-askeri-hareketleri-yararina-anlasma-sucu-tck-307.html"> Askerî Tesisleri Tahrip ve Düşman Askerî Hareketleri Yararına Anlaşma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="askeri-komutanliklarin-gaspi-sucu-tck-317.html"> Askerî Komutanlıkların Gasbı Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yargi-gorevi-yapani-bilirkisiyi-tanigi-etkilemeye-tesebbus-sucu.html"> Yargı Görevi Yapanı, Bilirkişiyi veya Tanığı Etkilemeye Teşebbüs Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yalan-yere-yemin-sucu-cezasi.html"> Yalan Yere Yemin Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kamu-gorevine-ait-arac-ve-gerecleri-sucta-kullanma-sucu.html"> Kamu Görevine Ait Araç ve Gereçleri Suçta Kullanma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="gercege-aykiri-bilirkisilik-ve-tercumanlik-sucu.html"> Gerçeğe Aykırı Bilirkişilik veya Tercümanlık Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="zor-kullanma-yetkisine-iliskin-sinirin-asilmasi-sucu.html"> Zor Kullanma Yetkisine İlişkin Sınırın Aşılması Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ulasim-araclarinin-kacirilmasi-veya-alikonulmasi-sucu.html"> Ulaşım Araçlarının Kaçırılması veya Alıkonulması Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kita-sahanliginda-veya-munhasir-ekonomik-bolgedeki-sabit-platformlarin-isgali-sucu.html"> Kıta Sahanlığında veya Münhasır Ekonomik Bölgedeki Sabit Platformların İşgali Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="radyasyon-yayma-sucu-cezasi.html"> Radyasyon Yayma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="atom-enerjisi-ile-patlamaya-sebebiyet-verme-sucu.html"> Atom Enerjisi ile Patlamaya Sebebiyet Verme Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="nefret-ve-ayirimcilik-sucu-cezasi.html"> Nefret ve Ayırımcılık Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="dilekce-hakkinin-kullanilmasinin-engellenmesi-sucu.html"> Dilekçe Hakkının Kullanılmasının Engellenmesi Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="turk-milletini-tc-devletini-devletin-kurum-ve-organlarini-asagilama-tck-301.html"> Türk Milletini, TC Devletini, Devletin Kurum ve Organlarını Aşağılama <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="hak-kullanimini-ve-beslenmeyi-engelleme-aclik-grevi-ve-olum-orucuna-tesvik-sucu.html"> Hak Kullanımını ve Beslenmeyi Engelleme Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="devletin-egemenlik-alametlerini-bayrak-asagilama-sucu.html"> Devletin Egemenlik Alametlerini Aşağılama Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="muhafizin-gorevini-kotuye-kullanmasi-sucu.html"> Muhafızın Görevini Kötüye Kullanması Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="infaz-kurumuna-cezaevine-veya-tutukevine-yasak-esya-sokmak-sucu.html"> İnfaz Kurumuna (Cezaevine) veya Tutukevine Yasak Eşya Sokma <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="hukumlu-veya-tutuklularin-ayaklanmasi-sucu.html"> Hükümlü veya Tutukluların Ayaklanması Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="baskasi-yerine-cezaevine-ceza-infaz-kurumuna-veya-tutukevine-girme-sucu.html"> Başkası Yerine Ceza İnfaz Kurumuna veya Tutukevine Girme Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="resmen-teslim-olunan-hacizli-rehinli-mala-elkonulmasi-ve-bozulmasi-sucu.html"> Resmen Teslim Olunan Mala Elkonulması ve Bozulması Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="muhafaza-yedieminlik-gorevini-kotuye-kullanma-sucu.html"> Muhafaza (Yedieminlik) Görevini Kötüye Kullanma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="adil-yargilamayi-etkilemeye-tesebbus-sucu-cezasi.html"> Adil Yargılamayı Etkilemeye Teşebbüs Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ses-veya-goruntulerin-kayda-alinmasi-sucu.html"> Ses veya Görüntülerin Kayda Alınması Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="isaret-ve-engel-koymama-sucu.html"> İşaret ve Engel Koymama Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="insaat-veya-yikimla-ilgili-emniyet-kurallarina-uymama-sucu.html"> İnşaat veya Yıkımla İlgili Emniyet Kurallarına Uymama Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="hayvanin-kopegin-tehlike-yaratabilecek-sekilde-serbest-birakilmasi-sucu.html"> Hayvanın Tehlike Yaratabilecek Şekilde Serbest Bırakılması <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="genital-muayene-sucu-cezasi.html"> Genital Muayene Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ozel-isaret-ve-kiyafetleri-usulsuz-kullanma-sucu-cezasi.html"> Özel İşaret ve Kıyafetleri Usulsüz Kullanma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kisilerin-mallari-uzerinde-usulsuz-tasarruf-sucu.html"> Kişilerin Malları Üzerinde Usulsüz Tasarruf Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kamu-gorevinin-memuriyetin-usulsuz-ustlenilmesi-sucu-cezasi.html"> Kamu Görevinin Usulsüz Olarak Üstlenilmesi Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="akil-hastasi-uzerindeki-bakim-ve-gozetim-yukumlulugunun-ihlali-sucu.html"> Akıl Hastası Üzerindeki Bakım ve Gözetim Yükümlülüğünün İhlali Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="zehirli-madde-uretme-bulundurma-tasima-satma-imali-ve-ticareti-sucu.html"> Zehirli Madde İmal ve Ticareti Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="usulsuz-olu-gomulmesi-sucu.html"> Usulsüz Ölü Gömülmesi Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="saglık-için-tehlikeli-madde-temini-sucu.html"> Sağlık İçin Tehlikeli Madde Temini Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kamu-gorevlisinin-memurun-ticareti-sucu-cezasi.html"> Kamu Görevlisinin Ticareti Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kamu-gorevinin-terki-ve-yapilmamasi-sucu.html"> Kamu Görevinin Terki veya Yapılmaması Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="bulasici-hastaliklara-ililskin-tedbirlere-aykiri-davranma-sucu.html"> Bulaşıcı Hastalıklara İlişkin Tedbirlere Aykırı Davranma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yiyecek-icecek-ve-sulara-zehirli-madde-katma-sucu.html"> Yiyecek, İçecek ve Suları Bozma veya Zehirli Madde Katma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="mal-ve-hizmet-satimindan-kacinma-sucu-cezasi.html"> Mal veya Hizmet Satımından Kaçınma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kamuya-gerekli-seylerin-yokluguna-neden-olma-sucu.html"> Kamuya Gerekli Şeylerin Yokluğuna Neden Olma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="gurultuye-neden-olma-veya-gurultu-kirliligi-sucu.html"> Gürültüye Neden Olma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="fiyatlari-etkileme-sucu-cezasi.html"> Fiyatları Etkileme Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="gorev-sirasinda-din-hizmetlerini-kotuye-kullanma-sucu-cezasi.html"> Görev Sırasında Din Hizmetlerini Kötüye Kullanma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="dilencilik-yaptirma-sucu-cezasi.html"> Dilencilik Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="cocugun-soybagini-degistirme-ve-gizleme-sucu.html"> Çocuğun Soybağını Değiştirme Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="birden-cok-evlilik-hileli-evlenme-dinsel-toren-sucu.html"> Birden Çok Evlilik ve Hileli Evlenme Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="suc-islemeye-tahrik-etme-sucunun-cezasi.html"> Suç İşlemeye Tahrik Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="halki-kanunlara-uymamaya-tahrik-sucu.html"> Kanunlara Uymamaya Tahrik Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="halk-arasinda-korku-ve-panik-yaratmak-amaciyla-tehdit-sucu.html"> Halk Arasında Korku ve Panik Yaratmak Amacıyla Tehdit Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tutuklu-hukumlu-veya-suc-delillerinin-bildirmeme-ihbar-etmeme-sucu-cezasi.html"> Tutuklu, Hükümlü ve Suç Delillerini Bildirmeme <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tesadufen-elde-edilen-deliller-cmk.html"> Tesadüfen Elde Edilen Deliller <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="halki-kin-ve-dusmanliga-tahrik-ve-dini-degerleri-asagilama-sucu.html"> Halkı Kin ve Düşmanlığa Tahrik veya Aşağılama Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yasadisi-bahis-oynatma-sucu-cezasi.html"> Yasadışı Bahis Oynatma Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="cinsel-suclarda-magdur-sikayetci-beyaninin-delil-degeri.html"> Cinsel Suçlarda İspat ve Mağdur Beyanının Delil Değeri <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tebligname-ne-demek.html"> Tebliğname Nedir? Tebliğnameye İtiraz ve Ek Tebliğname <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="bilirkisilik-nedir-bilirkisi-raporuna-itiraz-cmk.html"> Bilirkişilik Nedir? Bilirkişi Raporu ve İtiraz <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="hakimin-cekinmesi-ve-reddi-hakim-sebepleri.html"> Hakimin Reddi ve Çekinmesi Sebepleri, Süresi, Usulü <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="teknik-takip-ve-fiziki-takip-nedir.html"> Teknik Takip ve Fiziki Takip <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="iletisimin-tespiti-dinlenmesi-kaydedilmesi-ve-telefonun-dinlenmesi.html"> İletişimin Tespiti, Dinlenmesi ve Kaydedilmesi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="teknik-takip-ortam-dinlemesi-teknik-araclarla-izleme.html"> Teknik Araçlarla İzleme (Teknik Takip) <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="gizli-sorusturmaci-nedir.html"> Gizli Soruşturmacı Görevlendirilmesi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="zorla-getirme-karari-veya-emri-nedir.html"> Zorla Getirme Kararı veya Emri <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="sucu-ve-sucluyu-ovme-sucunun-cezasi.html"> Suçu ve Suçluyu Övme <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="hukumlu-tutuklu-gozaltina-alinanin-kacmasina-imkan-saglama-yardim-etme.html"> Kaçmaya İmkan Sağlama Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="hukumlunun-veya-tutuklunun-kacmasi-firar-etmesi-sucu-cezasi.html"> Hükümlü veya Tutuklunun Kaçması (Firar) Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="gozaltina-alma-karari-ve-gozalti-suresine-itiraz.html"> Gözaltına Alma, Gözaltı Süresi ve İtiraz <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ifade-verme-veya-alma-ve-sorgu-nedir.html"> Ceza Hukukunda İfade Verme ve Sorgu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="uyarlama-yargilamasi-nasil-yapilir.html"> Uyarlama (Mahkumiyet Hükmünde Değişiklik) Yargılaması <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ust-aramasi-nedir-nasil-yapilir.html"> Üst Araması Nedir? Nasıl Yapılır? <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="sucu-ikrar-etme-nedir-cmk.html"> Ceza Muhakemesinde İkrar <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="muhbir-tanik-veya-ihbarci-tanik-nedir.html"> Muhbir Tanık (İhbarcı X Tanık) ve Dinlenmesi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kontrollu-teslimat-karari-nedir.html"> Kontrollü Teslimat Kararı ve Uygulaması <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="internetten-sosyal-medyadan-ozel-hayatin-gizliligini-ihlal-ifsa-sucu.html"> İnternetten veya Sosyal Medyadan Özel Hayatın Gizliliğini İhlal Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="internetten-sosyal-medya-uzerinden-tehdit-sucu-cezasi.html"> İnternetten veya Sosyal Medya Üzerinden Tehdit Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="internetten-sosyal-medya-uzerinden-santaj-sucu-cezasi.html"> İnternetten veya Sosyal Medya Üzerinden Şantaj Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="internetten-sosyal-medya-uzerinden-cinsel-taciz-sucu-cezasi.html"> İnternetten veya Sosyal Medya Üzerinden Cinsel Taciz Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="hayvan-oldurme-iskence-kotu-muamele-sucu-cezasi.html"> Hayvan Öldürme, Hayvana Kötü Muamele ve İşkence Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="haksiz-mal-edinme-sucu-cezasi.html"> Haksız Mal Edinme Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="cocugun-sikayet-hakki-ve-diger-haklarinin-kullanilmasi.html"> Çocuklarda Şikayet Hakkı ve Diğer Hakların Kullanılması <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ceza-mahkemesinde-savunma-hakki-nedir.html"> Savunma Hakkı <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="basit-yargilama-usulu.html"> Ceza Muhakemesinde Basit Yargılama Usulü <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="seri-yargilama-usulu.html"> Ceza Muhakemesinde Seri Muhakeme Usulü <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="arama-karari-onleme-aramasi-ve-adli-aramanin-delil-degeri.html"> Adli Arama/Önleme Araması ve Deliller <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="haksiz-rekabet-sucu-cezasi.html"> Haksız Rekabet Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="orgute-silah-saglama-sucu.html"> Örgüte Silah Sağlama Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tehlikeli-madde-bulundurma-el-degistirme-nakletme-molotof-kokteyli-imal-etme-atma-sucu.html"> Tehlikeli Maddelerin İzinsiz Bulundurulması veya El Değiştirmesi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="taksirle-genel-guvenligin-tehlikeye-sokulmasi-sucu-cezasi-nedir.html"> Genel Güvenliğin Taksirle Tehlikeye Sokulması <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="genel-guvenligin-tehlikeye-sokulmasi-sucu-cezasi.html"> Genel Güvenliği Kasten Tehlikeye Sokma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="haksiz-arama-sucu-cezasi-nedir.html"> Haksız Arama Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="cebir-sucu-cezasi-nedir.html"> Cebir Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="intihara-yonlendirme-sucu-intihara-azmettirme-tesvik-etme-ve-yardim-etme-cezasi.html"> İntihara Yönlendirme Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yabancinin-yurtdisinda-isledigi-suc-nedeniyle-turkiyede-yargilanmasi.html"> Yabancıların Yurtdışında İşlediği Suçların Türkiye'de Yargılanması <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="suclularin-iadesi-suclunun-geri-verilmesi-sartlari.html"> Suçluların İadesi (Geri Verilmesi) Şartları <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="vatandasin-yurtdisinda-yabanci-ulkede-suc-islemesi-ve-yargilanmasi-tck.html"> Türkiye Vatandaşının Yurtdışında Suç İşlemesi ve Yargılanması <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="baskasina-ait-kimlik-bilgilerinin-kullanilmasi-sucu.html"> Başkasına Ait Kimlik veya Kimlik Bilgilerinin Kullanılması Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="sorusturma-isleminin-gizliligini-ihlal-sucu-cezasi-nedir-tck.html"> Gizliliğin İhlali Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="bilincli-taksir-ve-olasi-kast-farki-nedir-tck-21-ve-tck-22.html"> Olası Kast/Doğrudan Kast & Basit Taksir/Bilinçli Taksir <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="hata-yanilma-ve-kacinilmaz-hata-tck-30.html"> Ceza Hukukunda Hata (Yanılma) Halleri <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="iddia-ve-savunma-dokunulmazligi-kapsaminda-avukatin-hakaret-sucu-cezasi.html"> Hakaret Suçunda İddia ve Savunma Dokunulmazlığı <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="sulh-ceza-hakimligi-mahkemesi-gorevine-giren-isler-ve-kararina-itiraz.html"> Sulh Ceza Hakimliği (Mahkemesi) ve Görevi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="elkoyma-karari-nedir-cmk.html"> Ceza Muhakemesinde Elkoyma Kararı ve Uygulaması <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="cumhurbaskanina-hakaret-sucu-cezasi-nedir.html"> Cumhurbaşkanına Hakaret Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="propaganda-sucu-cezasi-nedir.html"> Örgüt Propagandası Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="belli-haklari-kullanmaktan-yoksun-birakilma-veya-yasaklanma-TCK-53.html"> Belli Hakları Kullanmaktan Yoksun Bırakılma <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yagma-sucu-malin-degerinin-azligi-yargitay-karari.html"> Yağma (Gasp) Suçu Malın Değerinin Azlığı <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yagma-sucu-gasp-sucu.html"> Yağma (Gasp) Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="genel-af-ve-ozel-af-nedir-sonuclari-nelerdir.html"> Ceza Hukukunda Genel Af ve Özel Af <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="suctan-kaynaklanan-malvarligi-degerlerinin-gelirlerinin-veya-kara-paranin-aklanmasi-sucu-cezasi.html"> Suçtan Kaynaklanan Malvarlığı Değerlerini Aklama Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="mahsup-nedir-baska-suctan-tutuklulugun-gozalti-suresi-ve-cezanin-mahsubu-sartlari.html"> Ceza Hukukunda Mahsup <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="sikayete-bagli-suclar-nelerdir-tck.html"> Takibi Şikayete Bağlı Suçlar <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="delillerin-tartisilmasi-ve-durusmada-sunulmasi-usulu.html"> Ceza Hukukunda Delillerin Sunulması ve Tartışılması <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="internetten-icerik-kaldirma-ve-erisimin-engellenmesi-haber-video-fotograf-silme.html"> İnternetten İçeriğin Çıkarılması ve Erişimin Engellenmesi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="internetten-unutulma-hakki-ve-icerigin-haberin-kaldirilmasi.html"> İnternette Unutulma Hakkı <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="iddianame-nedir-iddianamenin-iadesi-sebepleri-nelerdir-cmk.html"> İddianame Nedir? İddianamenin İadesi Sebepleri Nelerdir? <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="bilisim-sistemini-engelleme-bozma-erisilmez-kilma-verileri-yok-etme-veya-degistirme-sucunun-cezasi.html"> Bilişim Sistemini Bozma, Verileri Yok Etme veya Değiştirme Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="bilisim-sistemine-girme-sucu-cezasi-nedir.html"> Bilişim Sistemine Girme Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="sanigin-sorgusundan-once-itirazlar.html"> Sanığın Sorgusundan Önce Yapılacak İtirazlar <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="iddianamenin-okunması-ve-sanigin-kimliginin-tespiti-nasıl-yapilir.html"> Sanığın Kimliğinin Tespiti ve İddianamenin Okunması <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="hukuka-aykiri-delil-nedir.html"> Ceza Muhakemesinde Hukuka Aykırı Deliller <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="internet-ve-bilisim-sistemleri-yoluyla-kumar-oynamak-icin-yer-ve-imkan-saglama-sucu-cezasi.html"> Kumar Oynanması için Yer ve İmkan Sağlama Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="bozulmus-veya-degistirilmis-gida-veya-ilac-ticareti-sucu-cezasi-nedir.html"> Bozulmuş veya Değiştirilmiş Gıda veya İlaçların Ticareti Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="iskence-sucu-cezasi-nedir.html"> İşkence Suçu, Şartları ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="organ-veya-doku-ticareti-satma-satinalma-sucu-cezasi-nedir.html"> Organ veya Doku Ticareti Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="insan-uzerinde-deney-yapma-sucu-cezasi-nedir.html"> İnsan Üzerinde Deney Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yardim-ve-bildirim-yukumlulugunun-yerine-getirilmemesi-ihmali-sucu-cezasi.html"> Yardım veya Bildirim Yükümlülüğünün Yerine Getirilmemesi Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="terk-sucu-cezasi-nedir.html"> Terk Suçu, Şartları ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="cevrenin-kasten-veya-taksirle-kirletilmesi-sucu-cezasi-nedir.html"> Çevrenin Kasten veya Taksirle Kirletilmesi Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="akil-hastaligi-veya-zayifliginin-cezai-ehliyete-etkisi-nedir.html"> Akıl Hastalığı veya Zayıflığının Ceza Ehliyetine Etkisi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="haberlesmenin-engellenmesi-sucu-cezasi-nedir.html"> Haberleşmenin Engellenmesi Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="gizli-durusma-ve-durusmada-kapalilik-aciklik-gizlilik-karari-nasil-uygulanir.html"> Duruşmada Kapalılık (Gizli Duruşma) ve Açıklık Kararı <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="durusmada-video-ses-veya-fotograf-cekme-suc-ve-yasak-midir.html"> Duruşmada Ses, Fotoğraf veya Video Kaydı Alma Yasağı <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="durusma-nasil-baslar-durusmada-hazir-bulunma-hakki-ve-zorunlulugu.html"> Duruşmanın Başlaması ve Duruşmada Hazır Bulunacak Kişiler <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kisirlastirma-sucu-cezasi-nedir.html"> Kısırlaştırma Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="cocuk-dusurtme-veya-kurtaj-sucu-cezasi-nedir.html"> Çocuk Düşürtme (Yasadışı Kürtaj) veya Düşürme Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ticari-sir-bankacilik-sirri-musteri-sirrinin-aciklanmasi-sucu-cezasi-nedir.html"> Ticari Sır, Bankacılık Sırrı veya Müşteri Sırrının Açıklanması Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="sirket-veya-kooperatifler-hakkinda-yanlis-bilgi-verme-sucu-cezasi.html"> Şirket veya Kooperatifler Hakkında Yanlış Bilgi Verme Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="bilgi-vermeme-sucu-cezasi-nedir.html"> Suç Eşyasını Bilgi Vermeme Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="karsiliksiz-yararlanma-sucu-ve-kacak-elektrik-su-dogalgaz-otomat-kullanma-cezasi.html"> Karşılıksız Yararlanma Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="cocugun-kacirilmasi-ve-alikonulmasi-sucu-cezasi-nedir.html"> Çocuğun Kaçırılması ve Alıkonulması Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="aile-hukukundan-kaynaklanan-yukumlulugun-ihlali-sucu-cezasi.html"> Aile Hukukundan Kaynaklanan Yükümlülüğün İhlali Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kaybolmus-veya-hata-sonucu-ele-gecmis-esya-uzerinde-tasarruf-sucu-cezasi.html"> Kaybolmuş veya Hata Sonucu Ele Geçmiş Eşya Üzerinde Tasarruf Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kisinin-hatirasina-hakaret-sucu-cezasi-nedir.html"> Kişinin Hatırasına Hakaret Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="hakki-olmayan-yere-tecavuz-sucu-cezasi-nedir.html"> Hakkı Olmayan Yere Tecavüz Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ibadethanelere-ve-mezarliklara-zarar-verme-sucunun-cezasi-nedir.html"> İbadethanelere ve Mezarlıklara Zarar Verme Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="durusma-nedir-ceza-hukukunda-durusma-ilkeleri.html"> Ceza Muhakemesinde Duruşmaya Hakim İlkeler <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="durusma-hazirligi-islemleri-nelerdir.html"> Ceza Muhakemesinde Duruşma Hazırlığı <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="siyasi-haklarinin-kullanilmasinin-engellenmesi-sucu-cezasi.html"> Siyasi Hakların Kullanılmasının Engellenmesi Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="sendikal-haklarin-kullanilmasinin-engellenmesi-sucunun-cezasi.html"> Sendikal Hakların Kullanılmasının Engellenmesi Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kamu-hizmetlerinden-yararlanma-hakkinin-engellenmesi-sucu-cezasi.html"> Kamu Hizmetlerinden Yararlanma Hakkının Engellenmesi Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="inanc-dusunce-ve-kanaat-hurriyetinin-engellenmesi-sucu-cezasi-nedir.html"> İnanç, Düşünce ve Kanaat Hürriyetinin Kullanılmasını Engelleme Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="egitim-ve-ogretim-engellenmesi-sucu-cezasi.html"> Eğitim ve Öğretim Hakkının Engellenmesi Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="is-ve-calisma-hurriyetinin-ihlali-sucu-cezasi-nedir.html"> İş ve Çalışma Hürriyetinin İhlali Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="memurlar-ve-kamu-gorevlisi-hakkinda-sorusturma-izni-verilmesi-nedir.html"> Kamu Görevlilerinin Yargılanması ve Soruşturma İzni <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="sahtecilik-sucu-igfal-kabiliyeti-aldatma-yetenegi-nedir.html"> Sahtecilik Suçlarında İğfal Kabiliyeti (Aldatma Yeteneği) <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="resmi-belgenin-duzenlenmesinde-memura-yalan-beyanda-bulunma-sucu-cezasi.html"> Resmi Belgenin Düzenlenmesinde Yalan Beyan Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ek-savunma-hakki-nedir-cmk.html"> Ceza Hukukunda Ek Savunma <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="gizli-ses-kaydi-video-goruntu-fotograf-kayitlari-mahkemede-delil-olur-mu.html"> Gizli Alınan Ses, Görüntü ve Video Kayıtlarının Delil Değeri <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="nufuz-ticareti-sucunun-cezasi-nedir.html"> Nüfuz Ticareti Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ceza-istinaf-basvuru-suresi-sartlari-istinaf-durusmasi.html"> Ceza İstinaf Kanun Yolu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kosullu-saliverilmenin-geri-alinmasi-karari-ve-sartli-tahliye-nedir.html"> Şartlı Tahliye ve Koşullu Salıverilmenin Geri Alınması <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kotu-muamele-sucu-cezasi-nedir-tck.html"> Kötü Muamele Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="eziyet-sucu-cezasi-nedir.html"> Eziyet Suçu, Şartları ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="insan-ticareti-sucu-cezasi-nedir.html"> İnsan Ticareti Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="gocmen-kacakciligi-sucu-cezasi-nedir-tck.html"> Göçmen Kaçakçılığı Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="hileli-iflas-sucu-ve-taksirli-iflas-sucu-cezasi-nedir-tck.html"> Hileli veya Taksirli İflas Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="aciga-atilan-imzanin-kotuye-kullanılması-sucu-cezasi-tck.html"> Açığa Atılan İmzanın Kötüye Kullanılması Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="bedelsiz-senedi-kullanma-sucu-cezasi-nedir.html"> Bedelsiz Senedi Kullanma Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="mustehcenlik-sucu-cezasi-nedir-tck.html"> Müstehcenlik Suçu, Şartları ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="suc-orgutu-kurma-orgut-yoneticiligi-orgut-uyeligi-sucu-cezasi-tck.html"> Örgüt Kurma, Yönetme, Örgüt Üyeliği ve Yardım Etme Suçları <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="silah-kacakciligi-ve-ticareti-sucu-mermi-satma-sucu-cezasi.html"> Silah Ticareti ve Kaçakçılığı Suçu Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ruhsatsiz-silah-mermi-bicak-bulundurma-tasima-satin-alma-sucu-6136-sayili-kanuna-muhalefet-sucu-cezasi.html"> Ruhsatsız Silah, Bıçak, Mermi Bulundurma veya Taşıma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="bicak-kacakciligi-sucu-bicak-ticareti-satisi-sucu-cezasi.html"> Bıçak Kaçakçılığı ve Ticareti (Satma) Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="hayasizca-hareketler-sucu-teshircilik-ve-arabada-alenen-cinsel-iliskinin-cezasi-tck.html"> Hayasızca Hareketler Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="fuhus-sucu-cezasi-nedir-fuhusa-tesvik-etme-yer-temin-etme-fuhsa-aracilik-etme-tck.html"> Fuhuş Suçu, Şartları ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="cocugun-cezai-ehliyeti-ve-yas-kucuklugu-ceza-indirimi-nedir.html"> Çocukların Ceza Sorumluluğu ve Yargılanması <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ozel-belgeyi-bozma-yok-etme-veya-gizleme-cezasi-nedir.html"> Özel Belgeyi Yok Etme, Bozma veya Gizleme Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tefecilik-sucu-cezasi-nedir-tck.html"> Tefecilik Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="resmi-belgeyi-yok-etmek-bozmak-veya-gizlemek-sucu-cezasi-nedir.html"> Resmi Belgeyi Yok Etme, Bozma veya Gizleme Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="haberlesmenin-gizliligini-ihla-sucu-cezasi.html"> Haberleşmenin Gizliliğini İhlal Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kanun-yararina-bozma-nedir-cmk.html"> Ceza Hukukunda Kanun Yararına Bozma <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="resit-olmayan-cocukla-cinsel-iliski-sucu-cezasi-nedir.html"> Reşit Olmayanla Cinsel İlişki Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="hukmun-aciklanmasinin-geri-birakilmasi.html"> Hükmün Açıklanmasının Geri Bırakılması <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="cocugun-cinsel-istismari-sucu-cezasi-nedir-tck.html"> Cinsel İstismar Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="cinsel-saldiri-sucu-sarkintilik-ve-tecavüz-sucu-cezasi.html"> Cinsel Saldırı Suçları ve Cezaları <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="neticesi-sebebiyle-agirlasmis-suclar-nedir-tck.html"> Neticesi Sebebiyle Ağırlaşmış Suçlar ve Cezaları <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="edimin-ifasına-fesat-karistirma-sucu-cezasi-tck.html"> Edimin İfasına Fesat Karıştırma Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="suca-istirak-nedir-suca-yardim-etme-ve-azmettirme-cezasi-tck.html"> Suça İştirak, Azmettirme, Yardım Etme ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="sucu-bildirmeme-sucu-cezasi-nedir-tck.html"> Suçu Bildirmeme Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="muhurde-sahtecilik-sucu-cezasi-nedir-tck.html"> Mühürde Sahtecilik Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kiymetli-damgada-sahtecilik-sucu-tck-199.html"> Kıymetli Damgada Sahtecilik Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kacakcilik-sucu-ve-gumruk-kacakciligi-suclari-cezasi.html"> Kaçakçılık Suçları ve Cezaları <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="akaryakit-ve-petrol-kacakciliği-sucu-cezasi-nedir.html"> Akaryakıt ve Petrol Kaçakçılığı Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kacak-sigara-alkol-tutun-icki-kacakciligi-sucu-cezasi.html"> Sigara veya Alkol Kaçakçılığı Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="suc-delillerini-yok-etme-gizleme-degistirme-delil-karartma-sucu.html"> Suç Delillerini Yok Etme, Gizleme veya Değiştirme Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="2911-sayılı-toplanti-ve-gosteri-yuruyusu-yasasina-muhalefet-sucu.html"> Toplantı ve Gösteri Yürüyüşü Hakkı ve 2911 Sayılı Kanuna Muhalefet <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="zincirleme-suc-nedir-tck-43.html"> Zincirleme Suç Hükümleri <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="suca-tesebbus-ve-gonullu-vazgecme-nedir-tck.html"> Suça Teşebbüs ve Gönüllü Vazgeçme <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="uzlastirma-nedir-cmk-ceza-uzlasma.html"> Uzlaştırma Yasası ve Uzlaşma Şartları <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="banka-veya-kredi-kartinin-kotuye-kullanilmasi-sucu-cezasi-tck.html"> Banka veya Kredi Kartlarının Kötüye Kullanılması Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="onodeme-nedir-on-odemeye-tabi-suclar-tck.html"> Ceza Hukukunda Önödeme <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tekerrur-nedir.html"> Suçta Tekerrür ve Mükerrirlere Özgü İnfaz <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="santaj-sucu-cezasi-ve-tehdit-sucu-nedir.html"> Şantaj Suçu, Şartları ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="mesru-mudafaa-mesru-savunma-nedir.html"> Meşru Müdafaa (Savunma) ve Zorunluluk Hali <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kisiyi-hurriyetinden-yoksun-kilma-sucu-cezasi.html"> Kişiyi Hürriyetinden Yoksun Kılma Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kasten-adam-yaralama-sucu-cezasi.html"> Kasten Yaralama Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kasten-adam-oldurme-sucu-cezasi.html"> Kasten Öldürme Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="iftira-sucu-nedir.html"> İftira Suçu, Şartları ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="hizmet-nedeniyle-guveni-kotuye-kullanma-sucu-cezasi.html"> Güveni Kötüye Kullanma Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="hirsizlik-sucunun-cezasi.html"> Hırsızlık Suçu, Şartları ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="hapis-cezasinin-ertelenmesi.html"> Hapis Cezasının Ertelenmesi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="haksiz-tahrik-indirimi-nedir.html"> Haksız Tahrik Ceza İndirimi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="bilisim-suclari-nelerdir.html"> Bilişim Suçları ve Cezaları <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="suc-uydurma-sucu-cezasi-tck-271.html"> Suç Uydurma Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="suc-ustlenme-ve-sucluyu-kayirma-sucu-cezasi-tck.html"> Suç Üstlenme ve Suçluyu Kayırma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="parada-sahtecilik-sucu-cezasi-tck-197.html"> Parada Sahtecilik Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ihaleye-fesat-karistirma-sucu-cezasi.html"> İhaleye Fesat Karıştırma Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="uyusturucu-madde-kullanilmasini-kolaylastirma-sucu-cezasi.html"> Uyuşturucu Kullanılmasını Kolaylaştırma ve Özendirme Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="resmi-evrakta-belgede-sahtecilik-cezasi.html"> Resmi Evrakta (Belgede) Sahtecilik Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ozel-belgede-evrakta-sahtecilik-cezasi.html"> Özel Belgede (Evrakta) Sahtecilik Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yalanci-sahitlik-yapmanin-cezasi-nedir.html"> Yalan Tanıklık (Şahitlik) Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="vergi-kacakciligi-sucu-sahte-fatura-belge-kullanma-cezasi.html"> Vergi Kaçakçılığı ve Sahte Fatura Kullanma/Düzenleme <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="suc-esyasinin-satin-alinmasi-satilmasi-kabul-edilmesi-sucu-cezasi.html"> Suç Eşyasını Satma, Satın Alma veya Kabul Etme Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="uyusturucu-madde-ticareti-sucu-cezasi.html"> Uyuşturucu Madde Ticareti Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kullanmak-icin-uyusturucu-madde-bulundurma-sucunun-cezasi.html"> Uyuşturucu Kullanma & Bulundurma Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="trafik-guvenligini-tehlikeye-sokma-sucu-cezasi-nedir.html"> Trafik Güvenliğini Tehlikeye Sokma Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="gorevi-yaptirmamak-icin-direnme-sucu-cezasi.html"> Görevi Yaptırmamak İçin Direnme Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yargilamanin-yenilenmesi-yeniden-yargilanma-nedir-cmk.html"> Ceza Hukukunda Yargılamanın Yenilenmesi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kovusturmaya-yer-olmadigina-dair-takipsizlik-karari-kyok-nedir.html"> Kovuşturmaya Yer Olmadığına Dair Karar (KYOK-Takipsizlik) <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="adli-kontrol-karari-nedir.html"> Adli Kontrol Kararı ve Uygulaması <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="mahkeme-kararina-itiraz-cmk.html"> Ceza Hukukunda İtiraz Kanun Yolu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="musadere-nedir.html"> Ceza Hukukunda Müsadere <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yuz-kizartici-suclar-nelerdir.html"> Yüz Kızartıcı Suçlar ve Cezaları <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="konut-dokunulmazligini-ihlal-sucu-cezasi.html"> Konut Dokunulmazlığını İhlal Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tehdit-sucu-sartlari-cezasi.html"> Tehdit Suçu, Şartları ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ozel-hayatin-gizliligini-ihlal-sucu.html"> Özel Hayatın Gizliliğini İhlal Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="nitelikli-dolandiricilik-sucu-cezasi.html"> Dolandırıcılık Suçu, Şartları ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="mala-zarar-verme-sucunun-cezasi.html"> Mala Zarar Verme Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="gorevi-kotuye-kullanma-sucu.html"> Görevi Kötüye Kullanma Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="zimmet-sucu-nedir.html"> Zimmet Suçu, Şartları ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kisisel-verileri-yok-etmeme-sucu-cezasi-nedir.html"> Kişisel Verileri Yok Etmeme Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kisiler-arasindaki-konusmalarin-dinlenmesi-kayda-alinmasi-sucu-cezasi.html"> Konuşmaların Dinlenmesi veya Kayda Alınması Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="irtikap-sucu-cezasi-nedir.html"> İrtikap Suçu, Şartları ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kisisel-verilerin-ele-gecirilmesi-yayilmasi-baskasina-verilmesi-sucu.html"> Kişisel Verileri Ele Geçirme, Başkasına Verme veya Yayma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="rusvet-sucu-cezasi-nedir.html"> Rüşvet Suçu, Şartları ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kisisel-verilerin-kaydedilmesi-sucu-cezasi.html"> Kişisel Verilerin Kaydedilmesi Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tutuklama-karari.html"> Tutuklama Nedenleri ve Tutuklamaya İtiraz <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="imar-kirliligine-neden-olma-sucu-cezasi-nedir.html"> İmar Kirliğine Neden Olma Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="hakaret-sucu.html"> Hakaret Suçu, Şartları ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="musteki-mudahil-sikayetci-katilan-ne-demek.html"> Şikayet Hakkı ve Şikayetten Vazgeçme <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="icra-ceza-mahkemesi-gorevi-nedir.html"> İcra Ceza Mahkemesi ve Görevleri <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="taksirle-adam-oldurme-olume-neden-olma-sucu.html"> Taksirle İnsan Öldürme Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="fikri-ve-sinai-haklar-mahkemesi-gorevine-giren-suclar.html"> Fikri ve Sınai Haklar Ceza Mahkemesi ve Görevi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="agir-ceza-mahkemesinin-gorevine-giren-suclar-ve-davalar.html"> Ağır Ceza Mahkemesi ve Görevi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="cocuk-agir-ceza-mahkemesinin-gorevi-nedir.html"> Çocuk Mahkemesi ve Çocuk Ağır Ceza Mahkemesi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="asliye-ceza-mahkemesinin-gorevine-giren-suclar.html"> Asliye Ceza Mahkemesi ve Görevi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kamu-davasinin-acilmasinin-ertelenmesi-nedir-cmk.html"> Kamu Davasının Açılmasının Ertelenmesi Şartları <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="dava-zamanasimi-ceza-zamanasimi-nedir.html"> Dava ve Ceza Zamanaşımı Şartları <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="acik-cezaevine-gecis-sartlari.html"> Yeni Açık Cezaevine Geçiş (Ayrılma) Şartları <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="capraz-sorgu-dogrudan-soru-sorma-nasil-yapilir.html"> Çapraz Sorgu ve Doğrudan Soru Sorma <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="telefonla-cinsel-taciz-sucu-cezasi.html"> Cinsel Taciz Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kisilerin-huzur-ve-sukununu-bozma-sucu-cezasi.html"> Kişilerin Huzur ve Sükununu Bozma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="denetimli-serbestlik-nedir.html"> Denetimli Serbestlik Şartları, Süresi ve İnfazı <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="taksirle-adam-yaralama-sucu-cezasi.html"> Taksirle Yaralama Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="muhur-bozma-ve-fekki-sucu-cezasi.html"> Mühür Bozma (Fekki) Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="darbeye-tesebbus-sucu-tck.html"> Darbeye Teşebbüs Suçu ve Cezası <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yargitay-temyiz-basvurusu.html"> Ceza Hukukunda Temyiz <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tanik.html"> Ceza Muhakemesinde Tanıklık ve Gizli Tanık <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ceza-infazin-ertelenmesi.html"> Ceza İnfazının Ertelenmesi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="uluslararasi-ceza-mahkemesi-savciliginin-sorusturma-yetkisi.html"> Uluslararası Ceza Mahkemesi Savcılığı <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="arama-karari-hukuka-aykiri-delil-temyiz-dilekcesi.html"> Ceza Temyiz Dilekçesi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="idari-para-cezasi.html"> İdari Para Cezası ve Uygulama <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="etkin-pismanlik-ceza-indirimi.html"> Bazı Suçlarda Etkin Pişmanlık ve Ceza İndirimi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="adli-para-cezasi-nereye-odenir.html"> Adli Para Cezası Nereye Ödenir? <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="istinaf-nedir-cmk.html"> Ceza İstinaf Kanun Yolu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="memnu-haklarin-iadesi-karari-yetkili-mahkeme.html"> Memnu Hakların İadesi Şartları <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ceza-avukatinin-islevi.html"> Ceza Avukatının İşlevi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="avukat-ve-ab-avukatlik-meslek-kurallari.html"> Avukat ve AB Avukatlık Meslek Kuralları <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="avukat-ve-avukatlik-meslegi.html"> Avukat ve Uluslararası Alanda Avukatlık <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="segbis-itiraz-durusmada-hazir-bulunma-hakki.html"> SEGBİSE İtiraz ve Duruşma <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="istanbul-agir-ceza-avukati.html"> Ceza Avukatının İşlevi Nedir? <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="haksiz-tahrik.html"> Kasten Adam Öldürme Haksız Tahrik Yargıtay Kararı <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="para-cezasi.html"> Para Cezası Nedir? <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="maddi-gercek-nedir.html"> Ceza Muhakemesinde Maddi Gerçek Nedir? <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kiyas-nedir-kiyas-yasagi.html"> Ceza Hukukunda Kıyas, Kıyas Yasağı ve Yorum <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ozel-hayatin-gizliligini-ihlal-sucu-yargitay-kararlari.html"> Özel Hayatın Gizliliğini İhlal Suçu Yargıtay Kararları <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="denetimli-serbestlikten-yararlanma-dilekcesi-ornegi.html"> Denetimli Serbestlikten Yararlanma Dilekçesi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="temyiz-dilekcesi-ornegi.html"> Temyiz Dilekçesi Örneği <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="spor-alanlarinda-veya-cevresinde-hakaret-iceren-tezahurat-ve-halki-asagilama-suclari.html"> Hakaret İçeren Tezahürat ve Halkı Aşağılama Suçları <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="devletin-guvenligine-karsi-suclar-tck-302.-madde.html"> Devletin Birliğini ve Ülke Bütünlüğünü Bozma Suçu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="uluslararasi-suclarda-hukuka-uygunluk-nedenleri.html"> Hukuka Uygunluk Nedenleri <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="yakalama.html"> Yakalama, Yakalamaya İtiraz ve Yakalananın Hakları <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tutuklama-kararina-itiraz-dilekcesi-ornegi.html"> Tutuklama Kararına İtiraz Dilekçesi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="soykirim-sucu.html"> Soykırım Suçu (Uluslararası Hukuk ve TCK) <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="suc-ve-cezanin-sahsiligi.html"> Suç ve Cezanın Şahsiliği İlkesi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="kanunilik-ilkesi-sucta-ve-cezada.html"> Suçta ve Cezada Kanunilik İlkesi <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="savas-suclari.html"> Uluslararası Ceza Hukukunda Savaş Suçları <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="insanliga-karsi-suclar.html"> İnsanlığa Karşı Suçlar (Uluslararası Hukuk ve TCK) <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="adli-para-cezasi.html"> Adli Para Cezası ve Uygulama <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="ic-guvenlik-paketi.html"> İç Güvenlik Kanunu <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="adli-sicil-kaydinin-silinmesi-dilekce-ornegi1.html"> Adli Sicil Kaydının Silinmesi Dilekçe Örneği <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="derhal-beraat-karari-cmk-223.html"> Beraat Kararı ve Derhal Beraat <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="nitelikli-dolandiricilik-sucu-temyiz-dilekcesi.html"> Temyiz Dilekçesi Örneği (Nitelikli Dolandırıcılık Suçu) <i class="bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="davasiz-yargilama-olmaz-ilkesi-cmk-225-cmk-226.html"> Davasız Yargılama Olmaz (Yargılamanın Sınırlılığı) İlkesi <i class="bi bi-chevron-right"></i></a>
+		
+        <script>
+          function elementsSearch() {
+              var input = document.getElementById('elementsSearchInput');
+              var filter = input.value.toUpperCase();
+              var list = document.getElementById("elementsSearchList");
+              var listItem = list.getElementsByClassName('affan-element-item');
+          
+              for (i = 0; i < listItem.length; i++) {
+                  var a = listItem[i];
+                  var textValue = a.textContent || a.innerText;
+                  if (textValue.toUpperCase().indexOf(filter) > -1) {
+                      listItem[i].style.display = "";
+                  } else {
+                      listItem[i].style.display = "none";
+                  }
+              }
+          }
+          
+        </script>
+      </div>
+    </div>
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/slideToggle.min.js"></script>
+    <script src="js/internet-status.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/baguetteBox.min.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/rangeslider.min.js"></script>
+    <script src="js/vanilla-dataTables.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/magic-grid.min.js"></script>
+    <script src="js/dark-rtl.js"></script>
+    <script src="js/active.js"></script>
+    <!-- PWA -->
+    <script src="js/pwa.js"></script>
+  </body>
+</html>
