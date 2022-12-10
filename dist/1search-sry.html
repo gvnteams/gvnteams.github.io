@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/tiny-slider.css">
+    <link rel="stylesheet" href="css/baguetteBox.min.css">
+    <link rel="stylesheet" href="css/rangeslider.css">
+    <link rel="stylesheet" href="css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="availabilityStatus" checked>
+              <label class="form-check-label" for="availabilityStatus">Availability status</label>
+            </div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="sendMeNotifications" checked>
+              <label class="form-check-label" for="sendMeNotifications">Send me notifications</label>
+            </div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="rtlSwitch">
+              <label class="form-check-label" for="rtlSwitch">RTL mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+			            <!-- Page Title -->
+          <div class="page-heading">
+            <h3 class="mb-0">Yankesicilik/Suriyeli Gruplar</h3>
+          </div>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-content-wrapper py-3">
+      <div class="blog-wrapper direction-rtl">
+        <div class="container">
+          <div class="row g-1">
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+  
+<style>
+.fast-search {
+  margin-top: 12px;
+  padding: 10px;
+  color: DodgerBlue;
+  background: linear-gradient(to bottom left, AliceBlue 30%, DodgerBlue);
+}
+.fast-search.fast-search-opposite {
+  background: linear-gradient(to bottom right, AliceBlue 30%, DodgerBlue);
+}
+
+.fast-search-title {
+  font-size: 24px;
+  text-shadow: 0 2px 0 White;
+  margin: 0 0 10px;
+}
+
+.fast-search-title2 {
+  font-size: 18px;
+  text-shadow: 0 2px 0 White;
+  margin: 0 0 10px;
+}
+
+.fast-search-input {
+  margin-bottom: 20px;
+  border-radius: 0;
+}
+
+.fast-search-opposite .fast-search-input {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+.fast-search-list {
+  margin-bottom: 0;
+}
+
+.fast-search-list-item {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.fast-search-list-item:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.fast-search-list-item:last-child {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <div class="container">
+  <div class="row">
+    <div class="col-md-5 col-md-offset-2">
+      <div class="fast-search fast-search-opposite">
+        <input class="form-control fast-search-input" id="search_input" placeholder="Search">
+        <ul class="list-group fast-search-list" id="search_list">
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/1.jpg"  style="max-width:100%;height: auto">Taha KONAK 54187688322</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/2.jpg"  style="max-width:100%;height: auto">Harun OK 34078318026</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/3.jpg"  style="max-width:100%;height: auto">Beytullah GÜNEY 26906652174</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/4.jpg"  style="max-width:100%;height: auto">Emrecan YILDIRIM 25238516406</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/5.jpg"  style="max-width:100%;height: auto">Yiğitcan ŞAHİNOĞLU 50134840904</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/11.jpg"  style="max-width:100%;height: auto">Servet İPEK 25684625396</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/12.jpg"  style="max-width:100%;height: auto">Süleyman KARADABAN 40645127076</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/13.jpg"  style="max-width:100%;height: auto">Ertuğrul DUBLACI 26642140522</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/14.jpg"  style="max-width:100%;height: auto">Kadir YÜKSEKOVA 50038881058</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/15.jpg"  style="max-width:100%;height: auto">Mehmet ATEŞ 21847753232</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/16.jpg"  style="max-width:100%;height: auto">Yılmaz SEZER - 61030095688</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/17.jpg"  style="max-width:100%;height: auto">Mustafa KARAKOÇ - 35833264206</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/18.jpg"  style="max-width:100%;height: auto">Caner ÇELİK 18403346830</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/19.jpg"  style="max-width:100%;height: auto">Hamit İRŞİ 54376149436</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/20.jpg"  style="max-width:100%;height: auto">Muhammet BAYNAL 15607692220</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/21.jpg"  style="max-width:100%;height: auto">Enes GÜNEY 336349669714</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/22.jpg"  style="max-width:100%;height: auto">Veysel AYDINALP 49222849134</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/23.jpg"  style="max-width:100%;height: auto">Mahmut İNANÇ 60571206096</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/24.jpg"  style="max-width:100%;height: auto">Fırat BARAN 11942056086</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/25.jpg"  style="max-width:100%;height: auto">Şervan TOPDEMİR 10355113706</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/26.jpg"  style="max-width:100%;height: auto">Furkan ÇEVİK 20278802526</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/27.jpg"  style="max-width:100%;height: auto">Erhan ARSLAN 10112136948</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/28.jpg"  style="max-width:100%;height: auto">Veysel UÇAR 10965070086</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/29.jpg"  style="max-width:100%;height: auto">Abdulkadir ARSLAN 37744214912</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/30.jpg"  style="max-width:100%;height: auto">Yusuf AYGÜN 24860348454</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/31.jpg"  style="max-width:100%;height: auto">Baran Can AKTAŞ 18118331152</a></li>			
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/32.jpg"  style="max-width:100%;height: auto">Diyar YILMAZ 11535590410</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/33.jpg"  style="max-width:100%;height: auto">Batuhan RİŞVAN 27349627460</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/34.jpg"  style="max-width:100%;height: auto">Şeyhmus KIZILCA 27790552670</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/35.jpg"  style="max-width:100%;height: auto">Recep KIZILCA 39805152126</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/36.jpg"  style="max-width:100%;height: auto">Tuncay GYNICIK 70213185030</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/37.jpg"  style="max-width:100%;height: auto">Serhat AKKUŞ 10981568604</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/38.jpg"  style="max-width:100%;height: auto">Serhat KARAHAN 17572349536</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/39.jpg"  style="max-width:100%;height: auto">Mehmet Şirin KAN 17029896798</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/40.jpg"  style="max-width:100%;height: auto">Berkan CENGİZ 32548394198</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/41.jpg"  style="max-width:100%;height: auto">Ramazan BEKER 35291279132</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/42.jpg"  style="max-width:100%;height: auto">Şahin ÖZ 58615099902</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/43.jpg"  style="max-width:100%;height: auto">Özgür GENCER 52291598810</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/44.jpg"  style="max-width:100%;height: auto">Arif ERSOY 23830817822</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/45.jpg"  style="max-width:100%;height: auto">Mehmet ATİLLA 31009840724</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/46.jpg"  style="max-width:100%;height: auto">Ferhat SARIKAYA 38194771932</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/47.jpg"  style="max-width:100%;height: auto">Atakan DURAN 28865355608</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/48.jpg"  style="max-width:100%;height: auto">Rutbettin KARADABAN 11549099738</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/49.jpg"  style="max-width:100%;height: auto">Okan ACUN 12436376956</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/50.jpg"  style="max-width:100%;height: auto">Burak KARAKAŞ 56524245632</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/51.jpg"  style="max-width:100%;height: auto">Mücahit TUTUMLU 13813766544</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/52.jpg"  style="max-width:100%;height: auto">İdris ÖZARTIK 10763856614</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/53.jpg"  style="max-width:100%;height: auto">Ahmet YALÇIN 55876382576</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/54.jpg"  style="max-width:100%;height: auto">Hakan FELEKOĞLU 25840685682</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/55.jpg"  style="max-width:100%;height: auto">Ali YILDIZ 21931190332</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/56.jpg"  style="max-width:100%;height: auto">Olcay ATMAN 11161534990</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/57.jpg"  style="max-width:100%;height: auto">Emre GARİP</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/58.jpg"  style="max-width:100%;height: auto">Bektaş GARİP</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/59.jpg"  style="max-width:100%;height: auto">Mehmet Eray ÖZ</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/60.jpg"  style="max-width:100%;height: auto">Hasan YAVUZ 21718978924</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/61.jpg"  style="max-width:100%;height: auto">Eyüp TOPCAN</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/62.jpg"  style="max-width:100%;height: auto">Rıdvan KARAKUŞ</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/63.jpg"  style="max-width:100%;height: auto">Harun ACAR 15556715780</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/64.jpg"  style="max-width:100%;height: auto">Şahan YILDIZ 31498847228</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/65.jpg"  style="max-width:100%;height: auto">Saim ALTIN 32108365200</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/66.jpg"  style="max-width:100%;height: auto">Onur KARATAŞ 48409935158</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/67.jpg"  style="max-width:100%;height: auto">Ufuk UZUN 45685845218</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/68.jpg"  style="max-width:100%;height: auto">Semih GÜLDEN 12308464200</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/69.jpg"  style="max-width:100%;height: auto">Hasan SAĞIR 31504831296</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/70.jpg"  style="max-width:100%;height: auto">DAVIT IOSEBIDZE - 1993/Gürcistan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/71.jpg"  style="max-width:100%;height: auto">Nadir KAZIKÇI</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/72.jpg"  style="max-width:100%;height: auto">Özgür ÇELEN</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/73.jpg"  style="max-width:100%;height: auto">Roni KAYA 11190119700</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/74.jpg"  style="max-width:100%;height: auto">Burhanettin ORCAN 10883798448</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/75.jpg"  style="max-width:100%;height: auto">Orhan GÜNEŞ</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/76.jpg"  style="max-width:100%;height: auto">Reha GÜLCÜ</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/77.jpg"  style="max-width:100%;height: auto">Ömer KARTAL 10385139066</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/78.jpg"  style="max-width:100%;height: auto">Ahmet YALÇIN 12620060838</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/79.jpg"  style="max-width:100%;height: auto">Yunus Emre POLAT 1993/Kadıköy</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/80.jpg"  style="max-width:100%;height: auto">Abdurrezzak GÜNDOĞAN 16327935444</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/81.jpg"  style="max-width:100%;height: auto">Murat DİNÇER 25316148000</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/82.jpg"  style="max-width:100%;height: auto">Korkut Oğuzhan KAVALCI</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/82.jpg"  style="max-width:100%;height: auto">Bilal AY</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/83.jpg"  style="max-width:100%;height: auto">Mahmut KAÇAR</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/84.jpg"  style="max-width:100%;height: auto">Hamit SEVGİ</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/85.jpg"  style="max-width:100%;height: auto">Abdullah GÜNEŞ 28606575470</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/86.jpg"  style="max-width:100%;height: auto">Mahmut AKTAR</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/87.jpg"  style="max-width:100%;height: auto">Barış DİLCİ</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/88.jpg"  style="max-width:100%;height: auto">Poyraz CEYLAN</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/89.jpg"  style="max-width:100%;height: auto">Emrah SEVEN 11953548860</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/90.jpg"  style="max-width:100%;height: auto">Mustafa ÖZDEMİR 20623272936</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/91.jpg"  style="max-width:100%;height: auto">Ali DURGUN 17084126762</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/92.jpg"  style="max-width:100%;height: auto">Mehmet Ali NAS 42425082872</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/93.jpg"  style="max-width:100%;height: auto">Selam KÖSE 06.02.1997/Bulanık</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/94.jpg"  style="max-width:100%;height: auto">Muhammet BALCI 12527141722</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/95.jpg"  style="max-width:100%;height: auto">Yusuf PINAR 23674433530</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/96.jpg"  style="max-width:100%;height: auto">Anıl ÇOLAK</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/97.jpg"  style="max-width:100%;height: auto">İbrahim TÜRKOĞLU 15076718162</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/98.jpg"  style="max-width:100%;height: auto">Mehmet Can ABAN</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/99.jpg"  style="max-width:100%;height: auto">Orhan NEMRUTLU 20540229082</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/100.jpg"  style="max-width:100%;height: auto">Fehmi NEMRUTLU 20555228582</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/101.jpg"  style="max-width:100%;height: auto">İskender DALKOPARAN</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/102.jpg"  style="max-width:100%;height: auto">Doğuş EZEL 34024597970</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/103.jpg"  style="max-width:100%;height: auto">Cebrail BÜTE 71281176340</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/104.jpg"  style="max-width:100%;height: auto">Şevket EZEL 47500148436</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/105.jpg"  style="max-width:100%;height: auto">İsrafil AĞBAŞ 13370143192</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/106.jpg"  style="max-width:100%;height: auto">Şaban YILDIRIM 25688112104</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/107.jpg"  style="max-width:100%;height: auto">Yavuz YETİM 24305363400</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/108.jpg"  style="max-width:100%;height: auto">Kerem GÜL 17555310928</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/109.jpg"  style="max-width:100%;height: auto">Emrah CİHAN 29311845384</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/110.jpg"  style="max-width:100%;height: auto">Sedat CİHAN 14572333144</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/111.jpg"  style="max-width:100%;height: auto">Fatih TOPARLAK 10207864176</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/112.jpg"  style="max-width:100%;height: auto">Bekir Furkan CANER 41887606572</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/113.jpg"  style="max-width:100%;height: auto">Yüksel AKSOY 55654489848</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/114.jpg"  style="max-width:100%;height: auto">Emir Furkan SAYIM 24257404558</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/115.jpg"  style="max-width:100%;height: auto">Fatih KURUNER</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/116.jpg"  style="max-width:100%;height: auto">Hüseyin ÇEVİK</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/117.jpg"  style="max-width:100%;height: auto">Murat GÜNDÜZ 31439140500</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/118.jpg"  style="max-width:100%;height: auto">Murat ACİ 41995509642</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/119.jpg"  style="max-width:100%;height: auto">Kadir FERHANOĞLU 11196127020</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/120.jpg"  style="max-width:100%;height: auto">Metin BİRDAL 18398347362</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/121.jpg"  style="max-width:100%;height: auto">Selçuk DAL 60244549048</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/122.jpg"  style="max-width:100%;height: auto">Süleyman BAYDEMİR 33964330326</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/123.jpg"  style="max-width:100%;height: auto">Hasan EKİCİ 22438723382</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/124.jpg"  style="max-width:100%;height: auto">Berzan CANTOS 15653210294</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/125.jpg"  style="max-width:100%;height: auto">Umut NASELİÇ 22171759846</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/125.jpg"  style="max-width:100%;height: auto">Eyüp BAYÇELEBİ 32209476430</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/126.jpg"  style="max-width:100%;height: auto">Yaşar ARGUN 17615318710</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/127.jpg"  style="max-width:100%;height: auto">Hüseyin DENİZ 35671714802</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/128.jpg"  style="max-width:100%;height: auto">Şahin YILMAZ 15442970170</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/129.jpg"  style="max-width:100%;height: auto">Yusuf ARI 33419098726</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/130.jpg"  style="max-width:100%;height: auto">Ahmet YALÇIN 12620060838</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/131.jpg"  style="max-width:100%;height: auto">Mehmet DÖNGEL 13738710684</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/132.jpg"  style="max-width:100%;height: auto">İbrahim AKTAŞ 34438075712</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/133.jpg"  style="max-width:100%;height: auto">Mehmet ASLAN 22519730346</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/134.jpg"  style="max-width:100%;height: auto">Şeyhmus YAVUZ 32542396014</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/135.jpg"  style="max-width:100%;height: auto">Süleyman CAN 132198889618</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/136.jpg"  style="max-width:100%;height: auto">Mehmet ÇELİK 40495114288</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/137.jpg"  style="max-width:100%;height: auto">Hacı SAYIN 42040061962</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/138.jpg"  style="max-width:100%;height: auto">Murat ALTUN 38341208908</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/139.jpg"  style="max-width:100%;height: auto">Hakan DAL 10754644764</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/140.jpg"  style="max-width:100%;height: auto">Aykut DAL 10520652528</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/141.jpg"  style="max-width:100%;height: auto">Sertan SAVCI 22135458662</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/142.jpg"  style="max-width:100%;height: auto">Eren BÜYÜKASLAN</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/143.jpg"  style="max-width:100%;height: auto">Şafak SOLGUN 23414101590</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/144.jpg"  style="max-width:100%;height: auto">Mehmet KAYA 39307153034</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/145.jpg"  style="max-width:100%;height: auto">Serkan FİDAN 11147116226</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/146.jpg"  style="max-width:100%;height: auto">Serhat ÖZTÜRK 10298217202</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/147.jpg"  style="max-width:100%;height: auto">Oğuzhan TOSUN 28573295630</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/148.jpg"  style="max-width:100%;height: auto">Dildar ÇAPAR 54706392174</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/149.jpg"  style="max-width:100%;height: auto">Mehmet SAYMAZ 21685758888</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/150.jpg"  style="max-width:100%;height: auto">Mertcan SAYÇİN 18448965218</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/151.jpg"  style="max-width:100%;height: auto">Enes GERGER 10524070144</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/152.jpg"  style="max-width:100%;height: auto">Mustafa GÜL 36838331016</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/153.jpg"  style="max-width:100%;height: auto">Hasan YAVUZ 21718978924</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/154.jpg"  style="max-width:100%;height: auto">Muhammet ESER 43621223250</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/155.jpg"  style="max-width:100%;height: auto">Ali Haydar GÜNDEN 12494483702</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/156.jpg"  style="max-width:100%;height: auto">Erkan KACEMER 60802241520</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/157.jpg"  style="max-width:100%;height: auto">Erdal POLAT 15041628120</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/158.jpg"  style="max-width:100%;height: auto">Ömer ÖZDEMİR 18896274320</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/159.jpg"  style="max-width:100%;height: auto">İbrahim BAĞCIER 44101017390</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/160.jpg"  style="max-width:100%;height: auto">Özcan KARABAYIR 60877214016</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/161.jpg"  style="max-width:100%;height: auto">Mehmet BASAL 12272054148</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/162.jpg"  style="max-width:100%;height: auto">Servet TÜKENMEZ 13958019376</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/163.jpg"  style="max-width:100%;height: auto">İlhan BAZEN 13750746654</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/164.jpg"  style="max-width:100%;height: auto">Faruk TARAKÇI 39667171280</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/165.jpg"  style="max-width:100%;height: auto">Burhan KURT 20795810530</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/166.jpg"  style="max-width:100%;height: auto">Vedat BAŞARAN 39428179654</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/167.jpg"  style="max-width:100%;height: auto">Esat ÇİÇEK 26798331942</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/168.jpg"  style="max-width:100%;height: auto">Mehmet ŞEN 24448975508</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/169.jpg"  style="max-width:100%;height: auto">Salih İLHAN 13592669708</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/170.jpg"  style="max-width:100%;height: auto">Kadir KARAHAN 42142714994</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/171.jpg"  style="max-width:100%;height: auto">Fırat KARATEKE 12353185402</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/172.jpg"  style="max-width:100%;height: auto">Samet UÇAR 33205599208</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/173.jpg"  style="max-width:100%;height: auto">Ebubekir YÜREK 42145930996</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/174.jpg"  style="max-width:100%;height: auto">Murat CAN 27937851406</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/175.jpg"  style="max-width:100%;height: auto">Barış KİPEL 22571620500</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/176.jpg"  style="max-width:100%;height: auto">Emrah ÜNAL 16708673828</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/177.jpg"  style="max-width:100%;height: auto">Mehmet TOSUN 13903928050</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/178.jpg"  style="max-width:100%;height: auto">Efrahim GÜNEŞ 23452681450</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/179.jpg"  style="max-width:100%;height: auto">İbrahim ÇULCU 11324246722</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/180.jpg"  style="max-width:100%;height: auto">Mehmet Selim ARTAR</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/181.jpg"  style="max-width:100%;height: auto">Yusuf GÜLBAY</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/182.jpg"  style="max-width:100%;height: auto">Birkan BAGATUN</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/183.jpg"  style="max-width:100%;height: auto">Mikail GÜMÜŞ 24166418912</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/184.jpg"  style="max-width:100%;height: auto">Tolga TOPRAK 46214018196</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/185.jpg"  style="max-width:100%;height: auto">Ali TOĞA 20144861220</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/186.jpg"  style="max-width:100%;height: auto">Mahmut Fırat KAYMAZ 21025117986</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/187.jpg"  style="max-width:100%;height: auto">Rezzan CEYLAN 10574857276</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/188.jpg"  style="max-width:100%;height: auto">Yasin KARADAĞ 43660946110</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/189.jpg"  style="max-width:100%;height: auto">Bayram KÜÇÜKER 15605873836</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/190.jpg"  style="max-width:100%;height: auto">Halil İbrahim KÜÇÜKER 15608873772</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/191.jpg"  style="max-width:100%;height: auto">İbrahim YILMAZ 59941297444</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/192.jpg"  style="max-width:100%;height: auto">Enes GÜNAY 36349669714</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/193.jpg"  style="max-width:100%;height: auto">Ahmet SOYSUZLAR</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/194.jpg"  style="max-width:100%;height: auto">Yunus Emre GÜRSOY - Cevdet/Züleyha 1993/Üsküdar</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/195.jpg"  style="max-width:100%;height: auto">Baran KAYA 39793127618</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/196.jpg"  style="max-width:100%;height: auto">Emre ALTAN 37207219416</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/197.jpg"  style="max-width:100%;height: auto">Zafer GENÇ 21638683434</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/198.jpg"  style="max-width:100%;height: auto">Vedat Şahin AKYILDIZ 38509618976</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/199.jpg"  style="max-width:100%;height: auto">Mustafa Ulaş ŞAHİN 28327952154</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/200.jpg"  style="max-width:100%;height: auto">Önder YILDIZHAN 31552421968</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/201.jpg"  style="max-width:100%;height: auto">Ayhan YİBER 49813675586</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/202.jpg"  style="max-width:100%;height: auto">Yağmur ÇOBAN</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/202.jpg"  style="max-width:100%;height: auto">Agit GÜLTEKİN</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/203.jpg"  style="max-width:100%;height: auto">KAMRAN ISMAYILOV 1993/Azerbaycan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/204.jpg"  style="max-width:100%;height: auto">Bedirhan GÜNDEN 16664751950</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/205.jpg"  style="max-width:100%;height: auto">Erhan KATADAĞ 10429882644</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/206.jpg"  style="max-width:100%;height: auto">Hüseyin ŞİMŞEK 41461975322</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/207.jpg"  style="max-width:100%;height: auto">Sergen DEMİRLİ 63238256656</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/208.jpg"  style="max-width:100%;height: auto">Ömer Can GEZER 29033094640</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/209.jpg"  style="max-width:100%;height: auto">Özgür YILMAZ 48814075760</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/210.jpg"  style="max-width:100%;height: auto">Doğan ŞİMŞEK 11513424696</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/211.jpg"  style="max-width:100%;height: auto">Erhan AŞKIN 30040219414</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/212.jpg"  style="max-width:100%;height: auto">Erol GÜL 59632015562</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/213.jpg"  style="max-width:100%;height: auto">Zafer GÜNER</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/214.jpg"  style="max-width:100%;height: auto">Yunus AKGÜN</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/215.jpg"  style="max-width:100%;height: auto">Kamil KILIÇ</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/216.jpg"  style="max-width:100%;height: auto">Abdulgafur ÇETİNKAYA 11657093192</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/217.jpg"  style="max-width:100%;height: auto">Metin KUŞ</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/218.jpg"  style="max-width:100%;height: auto">Hakan BİRGİN 38440181942</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/219.jpg"  style="max-width:100%;height: auto">Erdem GÖZCÜ 43177925806</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/220.jpg"  style="max-width:100%;height: auto">Murman KVESELAVA - Gürsictan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/221.jpg"  style="max-width:100%;height: auto">Haydar ATEŞLİ 67294300476</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/222.jpg"  style="max-width:100%;height: auto">Emirhan GÜNDEN 19196909622</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/223.jpg"  style="max-width:100%;height: auto">Samet KURT 11646163806</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/224.jpg"  style="max-width:100%;height: auto">Süleyman TUNÇ</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/225.jpg"  style="max-width:100%;height: auto">Serkan YILMAZ 50500215176</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/226.jpg"  style="max-width:100%;height: auto">Kemal ÖZTÜRK 36536124910</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/227.jpg"  style="max-width:100%;height: auto">Mustafa İKİZOĞLU 39918427684</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/228.jpg"  style="max-width:100%;height: auto">Azmi ERDOĞAN 41728486370</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/229.jpg"  style="max-width:100%;height: auto">KAKHABER MGEBRISHVILI 1985/Gürcistan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/230.jpg"  style="max-width:100%;height: auto">Ünal APAYDIN 21994122684</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/231.jpg"  style="max-width:100%;height: auto">Yılmaz - Serkan DALKOPARAN 34 HC 3726</a></li>			
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/232.jpg"  style="max-width:100%;height: auto">Yılmaz DALKOPARAN 21632147994</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/233.jpg"  style="max-width:100%;height: auto">Serkan DALKOPARAN 21674147484</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/234.jpg"  style="max-width:100%;height: auto">Kadir Can SARIMEHMET 10277529340</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/235.jpg"  style="max-width:100%;height: auto">SHALVA MGEBRISHVILI 1979/Gürcistan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/236.jpg"  style="max-width:100%;height: auto">Ömür ÖZLEME 43144730624</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/237.jpg"  style="max-width:100%;height: auto">Hakan KARAGÖL 18545756900</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/239.jpg"  style="max-width:100%;height: auto">Muhammet KAZANCI 10172347612</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/240.jpg"  style="max-width:100%;height: auto">Tuncay KANAT 11078573440</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/241.jpg"  style="max-width:100%;height: auto">Gördeniz ŞEN 30028463310</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/242.jpg"  style="max-width:100%;height: auto">Hasan ÇOBANLI 11940024360</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/243.jpg"  style="max-width:100%;height: auto">Murat YALNIZ 10379902584</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/244.jpg"  style="max-width:100%;height: auto">Emre YALNIZ 10343903722</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/245.jpg"  style="max-width:100%;height: auto">Erdoğan İGAN 20203275562</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/246.jpg"  style="max-width:100%;height: auto">Mert PALA 55795036796</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/248.jpg"  style="max-width:100%;height: auto">Barış HAN 35467293290</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/249.jpg"  style="max-width:100%;height: auto">Serkan KAYA 67867157322</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/250.jpg"  style="max-width:100%;height: auto">Ali Sait ÇAYIRCI 10490228488</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/251.jpg"  style="max-width:100%;height: auto">Hamit SEVGİ 46111254116</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/252.jpg"  style="max-width:100%;height: auto">Samet GİTMEZ 21803277628</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/253.jpg"  style="max-width:100%;height: auto">Güven HAPAKAZ 10235986970</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/254.jpg"  style="max-width:100%;height: auto">TCHANTURIA BEKA 1988/Gürcistan</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/255.jpg"  style="max-width:100%;height: auto">Erdal POLAT 15041628120</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/256.jpg"  style="max-width:100%;height: auto">Yusuf ÇAĞLAR</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/257.jpg"  style="max-width:100%;height: auto">Ağabey ÇAĞLAR</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/258.jpg"  style="max-width:100%;height: auto">Sinan IŞIK 44746424522</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/259.jpg"  style="max-width:100%;height: auto">Onur AKÇELİK 73690052406</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/260.jpg"  style="max-width:100%;height: auto">Caner AKÇELİK 25133711890</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/261.jpg"  style="max-width:100%;height: auto">Efe Naci KURTULUŞ 32701956676</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/262.jpg"  style="max-width:100%;height: auto">Zelkif BAY 17683069156</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/263.jpg"  style="max-width:100%;height: auto">Selim ERES</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/264.jpg"  style="max-width:100%;height: auto">Murat KAYA 33712844990</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/265.jpg"  style="max-width:100%;height: auto">Ramazan ERGÜN 39286306940</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/266.jpg"  style="max-width:100%;height: auto">Feyyaz TİRYAKİ 30256200008</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/267.jpg"  style="max-width:100%;height: auto">Mehmet SEZER 11897395698</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/268.jpg"  style="max-width:100%;height: auto">İbrahim YILDIRIM 21055261642</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/269.jpg"  style="max-width:100%;height: auto">Veysi KAYRA 11528794142</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/270.jpg"  style="max-width:100%;height: auto">Yunus ERDEM 45220695148</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/271.jpg"  style="max-width:100%;height: auto">Osman ERDEM 11710568964</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/272.jpg"  style="max-width:100%;height: auto">Emrah KARATAŞ 99637215260</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/273.jpg"  style="max-width:100%;height: auto">Murat GÜNER 31235073194</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/274.jpg"  style="max-width:100%;height: auto">Cihan EROL 57160262830</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/275.jpg"  style="max-width:100%;height: auto">Musa GELEŞ 21559939474</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/276.jpg"  style="max-width:100%;height: auto">Muhammet ESER 43621223250</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/277.jpg"  style="max-width:100%;height: auto">Selim PEKER 12587497340</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/278.jpg"  style="max-width:100%;height: auto">Burhanettin ORGAN 10483798448</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/279.jpg"  style="max-width:100%;height: auto">Serhat GÖZCÜ 13631879884</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/280.jpg"  style="max-width:100%;height: auto">Ahmet BİLİK 35536521460</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/281.jpg"  style="max-width:100%;height: auto">Serhat ARITÜRK 41767941908</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/282.jpg"  style="max-width:100%;height: auto">Remzi ÇİÇEK 39998000952</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/283.jpg"  style="max-width:100%;height: auto">Halil ARITÜRK 43406920636</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/284.jpg"  style="max-width:100%;height: auto">Muhammet OSKAN 26341593070</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/285.jpg"  style="max-width:100%;height: auto">Serhat YÖNTEN 18616860994</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/286.jpg"  style="max-width:100%;height: auto">Şenol ERSAN 10151547408</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/287.jpg"  style="max-width:100%;height: auto">Şahin ARIĞ 17699904588</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/288.jpg"  style="max-width:100%;height: auto">Gökhan ÇAKIR 33407287330</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/289.jpg"  style="max-width:100%;height: auto">Uğur POLAT 12098565668</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/290.jpg"  style="max-width:100%;height: auto">Şeyhmus DİNÇ 16355379920</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/291.jpg"  style="max-width:100%;height: auto">Cihat GÜLBAY 20272544736</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/292.jpg"  style="max-width:100%;height: auto">Deniz SEÇER 13343174130</li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/293.jpg"  style="max-width:100%;height: auto">Hivan DAVULCU 14962986432</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/294.jpg"  style="max-width:100%;height: auto">Berzan CANTOS 15653210294</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/295.jpg"  style="max-width:100%;height: auto">Bilal MADEN 11677686978</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/296.jpg"  style="max-width:100%;height: auto">Taha Burak GİRİŞEGEN</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/297.jpg"  style="max-width:100%;height: auto">Enes GÜNEY</a></li>
+			<li class="list-group-item fast-search-list-item"><img src="https://freemobil.github.io/gvnteam/img/ev1/298.jpg"  style="max-width:100%;height: auto">İbrahim Mert GÜÇLÜ 37652184826</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+      <script id="rendered-js" >
+/**
+ * fastLiveFilter jQuery plugin 1.0.3
+ * 
+ * Copyright (c) 2011, Anthony Bush
+ * License: <https://www.opensource.org/licenses/bsd-license.php>
+ * Project Website: http://anthonybush.com/projects/jquery_fast_live_filter/
+ **/
+
+jQuery.fn.fastLiveFilter = function (list, options) {
+  // Options: input, list, timeout, callback
+  options = options || {};
+  list = jQuery(list);
+  var input = this;
+  var lastFilter = '';
+  var timeout = options.timeout || 0;
+  var callback = options.callback || function () {};
+  var pType = options.type || "filter";
+
+  var keyTimeout;
+
+  // NOTE: because we cache lis & len here, users would need to re-init the plugin
+  // if they modify the list in the DOM later.  This doesn't give us that much speed
+  // boost, so perhaps it's not worth putting it here.
+  var lis = list.children();
+  var len = lis.length;
+  var oldDisplay = len > 0 ? lis[0].style.display : "block";
+  callback(len); // do a one-time callback on initialization to make sure everything's in sync
+
+  if (pType === "search") {
+    for (var i = 0; i < len; i++) {if (window.CP.shouldStopExecution(0)) break;
+      lis[i].style.display = "none";
+    }window.CP.exitedLoop(0);
+  }
+
+  input.change(function () {
+    // var startTime = new Date().getTime();
+    var filter = input.val().toLowerCase();
+
+    var li, innerText;
+    var numShown = 0;
+    for (var i = 0; i < len; i++) {if (window.CP.shouldStopExecution(1)) break;
+      li = lis[i];
+      innerText = !options.selector ?
+      li.textContent || li.innerText || "" :
+      $(li).find(options.selector).text();
+
+      if (pType !== "search" || filter.trim().length > 0) {
+        if (innerText.toLowerCase().indexOf(filter) >= 0) {
+          if (li.style.display == "none") {
+            li.style.display = oldDisplay;
+          }
+          numShown++;
+        } else {
+          if (li.style.display != "none") {
+            li.style.display = "none";
+          }
+        }
+      } else {
+        li.style.display = "none";
+      }
+    }window.CP.exitedLoop(1);
+    callback(numShown);
+    // var endTime = new Date().getTime();
+    // console.log('Search for ' + filter + ' took: ' + (endTime - startTime) + ' (' + numShown + ' results)');
+    return false;
+  }).keydown(function () {
+    clearTimeout(keyTimeout);
+    keyTimeout = setTimeout(function () {
+      if (input.val() === lastFilter) return;
+      lastFilter = input.val();
+      input.change();
+    }, timeout);
+  });
+  return this; // maintain jQuery chainability
+};
+
+$('#filter_input').fastLiveFilter('#filter_list');
+$('#search_input').fastLiveFilter('#search_list', { type: "search" });
+//# sourceURL=pen.js
+    </script>
+
+</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/slideToggle.min.js"></script>
+    <script src="js/internet-status.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/baguetteBox.min.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/rangeslider.min.js"></script>
+    <script src="js/vanilla-dataTables.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/magic-grid.min.js"></script>
+    <script src="js/dark-rtl.js"></script>
+    <script src="js/active.js"></script>
+    <!-- PWA -->
+    <script src="js/pwa.js"></script>
+  </body>
+</html>

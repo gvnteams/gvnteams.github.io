@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/tiny-slider.css">
+    <link rel="stylesheet" href="css/baguetteBox.min.css">
+    <link rel="stylesheet" href="css/rangeslider.css">
+    <link rel="stylesheet" href="css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="knn.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+        <div class="element-heading mt-1">
+        </div>
+      </div>
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+
+
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<amp-img src="gozaltina-alma-polis-1280x720.png" alt="5237 sayılı Türk Ceza Kanunu (TCK)" width="1280" height="720" layout="responsive">
+</amp-img>
+
+<h2 id="5237-sayılı-türk-ceza-kanunu-tck">POLİS VAZİFE VE SALȂHİYET KANUNU</h2>
+
+<p>Kanun Numarası		: 2559 </p>
+<p>Kabul Tarihi		: 04/07/1934 </p>
+
+
+
+<p><a href="#Madde-1" id="Madde-1" class="maddeler">Madde-1</a></p>
+
+<p>Polis, asayişi amme, şahıs, tasarruf emniyetini ve mesken masuniyetini korur. Halkın ırz, can ve malını muhafaza ve ammenin istirahatini temin eder.</p>
+
+<p>Yardım isteyenlerle yardıma muhtaç olan çocuk, alil ve acizlere muavenet eder. Kanun, Cumhurbaşkanlığı kararnameleri ve ilgili mevzuatın kendisine verdiği vazifeleri yapar.</p>
+
+<p><a href="#Madde-2" id="Madde-2" class="maddeler">Madde-2</a></p>Polisin genel emniyetle ilgili görevleri iki kısımdır.</p>
+
+<p>A) Kanunlara, Cumhurbaşkanlığı kararnamelerine, yönetmeliklere, Hükümet emirlerine ve kamu düzenine uygun olmayan hareketlerin işlenmesinden önce bu kanun hükümleri dairesinde önünü almak,<sup></sup></p>
+
+<p>B) İşlenmiş olan bir suç hakkında Ceza Muhakemeleri Usulü Kanunu ile diğer kanunlarda yazılı görevleri yapmak,</p>
+
+<p>Kamu düzeni ve kamu güvenliğinin sağlanmasından sorumlu olan polis; amirinden aldığı emri, kanun, Cumhurbaşkanlığı kararnamesi ve yönetmelik hükümlerine aykırı görürse, yerine getirmez ve bu aykırılığı emri verene bildirir. Ancak, amir emrinde ısrar eder ve bu emrini yazılı olarak yenilerse, emir yerine getirilir. Bu halde, emri yerine getiren sorumlu olmaz. Konusu suç teşkil eden emir hiçbir suretle yerine getirilmez. Yerine getirenler sorumluluktan kurtulamaz.<sup></sup></p>
+
+<p>Aşağıda yazılı hallerde:</p>
+
+<p><strong>I</strong> – Can, ırz veya mal emniyetini korumak için,</p>
+
+<p><strong>II </strong>– Devletin şahsiyetine karşı işlenen cürümlerin faillerini yakalamak veya delillerini tespit etmek için,</p>
+
+<p><strong>III</strong> – Devlet kuvvetleri aleyhine, yalnız veya toplu olarak taarruz veya mukavemette bulunanları yakalamak veya bunların taarruz veya mukavemetlerini def etmek için,</p>
+
+<p><strong>IV</strong> – Hükümete karşı, şiddet kullanan veya gösteren veya mukavemet edenlerin yakalanması, taarruz veya mukavemet edenlerin def edilmesi için,</p>
+
+<p><strong>V </strong>– Zabıtaca muhafaza altına alınan şahıslara, bina veya tesislere, meskûn veya gayrimeskûn yerlere vakı olacak münferit veya toplu tecavüzleri def etmek için,</p>
+
+<p><strong>VI</strong> – Ağır cezalı bir suçun sanığı olarak yakalandıktan sonra zabıta kuvvetlerinin elinden kaçmakta olan şahısların yakalanması için,</p>
+
+<p><strong>VII</strong> – İşlenmekte olan bir suçun işlenmesine veya devamına mani olmak için,</p>
+
+<p><strong>VIII</strong> – Ceza Muhakemeleri Usulü Kanunu ile diğer kanunlarda, zabıta tarafından suç delillerinin tespiti veya suç faillerinin yakalanması maksadıyla yapılacak aramalar için,</p>
+
+<p><strong>IX</strong> – Kanunsuz toplantı veya kanunsuz yürüyüşleri dağıtmak veya suçlularını yakalamak için,</p>
+
+<p><strong>X</strong> – Yangın, su baskını, yer sarsıntısı gibi afetlerde olay yerinde görevlilerce alınması gereken tedbirler için,</p>
+
+<p><strong>XI</strong> – Umuma açık yerlerde yapılan her türlü toplantı veya yürüyüşlerde veya törenlerde bozulan düzeni sağlamak için,</p>
+
+<p><strong>XII</strong> – Herhangi bir sebeple tıkanmış olan yolların trafiğe açılması için,</p>
+
+<p><strong>XIII</strong> – Yukardaki maddeler dışında diğer kanunlarda istisnai olarak zabıtanın sözlü emirle yapmaya mecbur tutulduğu haller için,</p>
+
+<p>Yetkili amir tarafından verilecek sözlü emirler derhal yerine getirilir. Bu emirlerin yazılı olarak verilmesi istenilemez. Bu hallerde emrin yerine getirilmesinden doğabilecek sorumluluk emri verene aittir. <sup>(2)</sup></p>
+
+<p><a href="#Madde 3 – (Mülga: 2/6/2007-5681/6 md.)" id="Madde 3 – (Mülga: 2/6/2007-5681/6 md.)" class="maddeler">Madde 3 – (Mülga: 2/6/2007-5681/6 md.)</p>
+
+<p><a href="#Madde-4" id="Madde-4" class="maddeler">Madde-4</a></p>Polis hiç bir suretle vazifesinden başka bir işte kullanılamaz.</p>
+
+<p><em>Durdurma ve kimlik sorma</em></p>
+<p><a href="#Madde 4/A-(Ek: 2/6/2007-5681/1 md.)" id="Madde 4/A-(Ek: 2/6/2007-5681/1 md.)" class="maddeler">Madde 4/A-(Ek: 2/6/2007-5681/1 md.)</p>
+
+
+
+<p>Polis, kişileri ve araçları;</p>
+
+<p><strong>a)</strong> Bir suç veya kabahatin işlenmesini önlemek,</p>
+
+<p><strong>b)</strong> Suç işlendikten sonra kaçan faillerin yakalanmasını sağlamak, işlenen suç veya kabahatlerin faillerinin kimliklerini tespit etmek,</p>
+
+<p><strong>c)</strong> Hakkında yakalama emri ya da zorla getirme kararı verilmiş olan kişileri tespit etmek,</p>
+
+<p><strong>ç)</strong> Kişilerin hayatı, vücut bütünlüğü veya malvarlığı bakımından ya da topluma yönelik mevcut veya muhtemel bir tehlikeyi önlemek,</p>
+
+<p>Amacıyla durdurabilir.</p>
+
+<p>Durdurma yetkisinin kullanılabilmesi için polisin tecrübesine ve içinde bulunulan durumdan edindiği izlenime dayanan makul bir sebebin bulunması gerekir. Süreklilik arz edecek, fiilî durum ve keyfilik oluşturacak şekilde durdurma işlemi yapılamaz.</p>
+
+<p>Polis, durdurduğu kişiye durdurma sebebini bildirir ve durdurma sebebine ilişkin sorular sorabilir; kimliğini veya bulundurulması gerekli diğer belgelerin ibraz edilmesini isteyebilir.</p>
+
+<p>Durdurma süresi, durdurma sebebine esas teşkil eden işlemin gerçekleştirilmesi için zorunlu olan süreden fazla olamaz.</p>
+
+<p>Durdurma sebebinin ortadan kalkması halinde kişilerin ve araçların ayrılmalarına izin verilir.</p>
+
+<p>Polis, durdurduğu kişi üzerinde veya aracında silah veya tehlike oluşturan diğer bir eşyanın bulunduğu hususunda yeterli şüphenin varlığı halinde, kendisine veya başkalarına zarar verilmesini önlemek amacına yönelik gerekli tedbirleri alabilir. Bu amaçla kişinin üzerindeki elbisenin çıkarılması veya aracın, dışarıdan bakıldığında içerisi görünmeyen bölümlerinin açılması istenemez. <strong>(Ek cümleler: 27/3/2015-6638/1 md.) </strong>Ancak, el ile dıştan kontrol hariç, <strong>(İptal ibare:Anayasa Mahkemesinin 4/5/2017 tarihli ve E.: 2015/41, K.: 2017/98 sayılı Kararı ile)<sup> </sup></strong>(…) Kolluk amirinin kararı yirmi dört saat içinde görevli hâkimin onayına sunulur. Bu fıkra kapsamında yapılan araç aramalarına ilişkin olarak kişiye, arama gerekçesini de içeren bir belge verilir.</p>
+
+<p>Bu Kanun ve diğer kanunların verdiği görevlerin yerine getirilmesi sırasında, polis tarafından gerekli işlemler için durdurulan kişiler ve araçlarla ilgili hükümler saklıdır.</p>
+
+<p>Polis, görevini yerine getirirken, kendisinin polis olduğunu belirleyen belgeyi gösterdikten sonra, kişilere kimliğini sorabilir. Bu kişilere kimliğini ispatlamaları hususunda gerekli kolaylık gösterilir.</p>
+
+<p>Belgesinin bulunmaması, açıklamada bulunmaktan kaçınması veya gerçeğe aykırı beyanda bulunması dolayısıyla ya da sair surette kimliği belirlenemeyen kişi tutularak durumdan derhal Cumhuriyet savcısı haberdar edilir. Bu kişi, kimliği açık bir şekilde anlaşılıncaya kadar gözaltına alınır ve gerekirse tutuklanır. Gözaltına ve tutuklamaya karar verme yetkisi ve usûlü bakımından 5271 sayılı Ceza Muhakemesi Kanunu hükümleri uygulanır.</p>
+
+<p>Kimliğinin tespiti amacıyla tutulan kişiye, kimliği tespit edildikten sonra ve talepte bulunması halinde, bu amaçla tutulduğuna ve tutulma süresine dair bir belge verilir. Kişinin kimliğinin belirlenmesi durumunda, bu nedenle gözaltına alınma veya tutuklanma haline derhal son verilir.</p>
+
+<p>Nüfusa kayıtlı olmadığı için kimliği tespit edilemeyen kişilerin nüfusa kayıtlarının temini için gerekli işlemler yapıldıktan sonra, 5 inci maddeye göre fotoğraf ve parmak izi tespit edilerek kayda alınır.</p>
+
+<p>Kimliği tespit edilemeyen kişinin yabancı olduğunun anlaşılması halinde, 5682 sayılı Pasaport Kanunu ve 5683 sayılı Yabancıların Türkiye’de İkamet ve Seyahatleri Hakkında Kanun hükümlerine göre işlem yapılır.</p>
+
+<p><em>Parmak izi ve fotoğrafların kayda alınması</em></p>
+
+<p><a href="#Madde-5" id="Madde-5" class="maddeler">Madde-5</a></p>
+
+<p>Polis;</p>
+
+<p><strong>a)</strong> Gönüllü,</p>
+
+<p><strong>b)</strong> Her çeşit silah ruhsatı, sürücü belgesi, pasaport veya pasaport yerine geçen belge almak için başvuruda bulunan,</p>
+
+<p><strong>c)</strong> Başta polis olmak üzere, genel veya özel kolluk görevlisi ya da özel güvenlik görevlisi olarak istihdam edilen,</p>
+
+<p><strong>ç)</strong> Türk vatandaşlığına başvuruda bulunan,</p>
+
+<p><strong>d)</strong> Sığınma talebinde bulunan veya gerekli görülmesi halinde, ülkeye giriş yapan sair yabancı,</p>
+
+<p><strong>e)</strong> Gözaltına alınan,</p>
+
+<p>Kişilerin parmak izini alır.</p>
+
+<p>Birinci fıkraya göre alınan parmak izi, ait olduğu kişinin kimlik bilgileri ile birlikte, ne zaman ve kim tarafından alındığı belirtilmek suretiyle, bu amaca özgü sisteme kaydedilerek saklanır. Ancak, parmak izinin hangi sebeple alındığı sisteme kaydedilmez.</p>
+
+<p>Olay yerinden elde edilen ve kime ait olduğu henüz tespit edilemeyen parmak izleri, kime ait olduğu tespit edilinceye kadar, ilgili soruşturma dosya numarası ile birlikte sisteme kaydedilir.</p>
+
+<p>5271 sayılı Ceza Muhakemesi Kanununun 81 inci maddesi ile 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanunun 21 inci maddesi hükümlerine göre alınan parmak izleri de bu sisteme kaydedilir.</p>
+
+<p>(a) bendi hariç birinci fıkra ile dördüncü fıkra kapsamına giren kişilerin ayrıca fotoğrafları alınarak, ikinci fıkrada belirlenen esaslara uygun olarak parmak izi ile birlikte sisteme kaydedilir.</p>
+
+<p>Bu sistemde yer alan bilgiler, kimlik tespiti, suçun önlenmesi veya yürütülmekte olan soruşturma ve kovuşturma kapsamında maddî gerçeğin ortaya çıkarılması amacıyla mahkeme, hâkim, Cumhuriyet savcısı ve kolluk tarafından kullanılabilir.</p>
+
+<p>Kolluk birimleri, kimlik tespiti yapmak ya da olay yerinden alınan parmak izini karşılaştırmak amacıyla doğrudan bu sistemle bağlantı kurabilir.</p>
+
+<p>Sistemde kayıtlı bilgilerin hangi kamu görevlisi tarafından ve ne amaçla kullanıldığının denetlenebilmesine imkân tanıyan bir güvenlik sistemi kurulur.</p>
+
+<p>Sistemde yer alan kayıtlar gizlidir; altıncı ve yedinci fıkralarda belirlenen amaçlar dışında kullanılamaz.</p>
+
+<p>Sisteme kayıtlı olan parmak izi ve fotoğraflar, kişinin ölümünden itibaren on yıl ve her halde kayıt tarihinden itibaren seksen yıl geçtikten sonra sistemden silinir.</p>
+
+<p>Parmak izi ile fotoğrafların sistemde kaydedilmesi ve saklanması ile bu kayıtlardan yararlanmaya ilişkin diğer esas ve usûller, İçişleri Bakanlığı tarafından Adalet Bakanlığının görüşü alınarak çıkarılacak yönetmelikle düzenlenir.</p>
+
+<p><a href="#Madde-6" id="Madde-6" class="maddeler">Madde-6</a></p>
+
+<p>Umuma açık istirahat ve eğlence yerlerinden;</p>
+
+<p><strong>a)</strong> Faaliyetten geçici olarak men edildiği halde süresinden önce açılan,</p>
+
+<p><strong>b)</strong> Açık ve kapalı bulunacağı saatlere uymayan,</p>
+
+<p><strong>c)</strong> Bu Kanunun 12 nci maddesinde belirtilen yasaklara uymadığı tespit edilen,</p>
+
+<p><strong>d)</strong> Mevzuat hükümlerine aykırı olarak işletilen,</p>
+
+<p>İş yerlerinin işletmecilerine beşyüzmilyon Türk Lirası ile birmilyar Türk Lirası arasında idarî para cezası verilir.</p>
+
+<p>Bu maddede öngörülen idarî para cezaları, belediye sınırları içinde belediye encümeni, belediye sınırları dışında il daimi encümeni tarafından verilir. Verilen idarî para cezalarına dair kararlar ilgililere 7201 sayılı Tebligat Kanunu hükümlerine göre tebliğ edilir. Bu cezalara karşı tebliğ tarihinden itibaren en geç yedi gün içinde yetkili idare mahkemesine itiraz edilebilir. İtiraz, idarece verilen cezanın yerine getirilmesini durdurmaz. İtiraz üzerine verilen karar kesindir. İtiraz, zaruret görülmeyen hallerde evrak üzerinde inceleme yapılarak en kısa sürede sonuçlandırılır. İdarî para cezaları 6183 sayılı Âmme Alacaklarının Tahsil Usulü Hakkında Kanun hükümlerine göre tahsil olunur.</p>
+
+<p>Bu maddede belirtilen aynı fiillerin bir yıl içinde tekrarı halinde, en son uygulanan para cezası bir kat artırılarak uygulanır.</p>
+
+<p><a href="#Madde-7" id="Madde-7" class="maddeler">Madde-7</a></p>
+
+<p>Kişilerin tek tek veya toplu olarak eğlenmesi, dinlenmesi veya konaklaması için açılan otel, motel, pansiyon, kamping ve benzeri konaklama yerleri; gazino, pavyon, meyhane, bar, birahane, içkili lokanta, taverna ve benzeri içkili yerler; sinema, kahvehane ve kıraathane; kumar ve kazanç kastı olmamak şartıyla adı ne olursa olsun bilgi ve maharet artırıcı veya zeka geliştirici nitelikteki elektronik oyun alet ve makinelerinin, video ve televizyon oyunlarının içerisinde bulunduğu elektronik oyun yerleri; internet kafeler ve benzeri yerler umuma açık istirahat ve eğlence yeri sayılır.</p>
+
+<p>Sabit veya seyyar olarak kullanılan kara, deniz, hava ve her çeşit taşıma araçlarında, birinci fıkrada belirtilen faaliyetlerin icrası durumunda, bu yerler de umuma açık istirahat ve eğlence yeri sayılır.</p>
+
+<p>Umuma açık istirahat ve eğlence yerlerinin ruhsatı bağlı olduğu kolluk kuvvetinin görüşü alındıktan sonra belediye ve mücavir alan sınırları içinde belediyeler; bu alanların dışında il özel idareleri tarafından verilir. Kolluk kuvveti görüşünü yedi gün içinde verir. Ruhsat talepleri bir ay içinde sonuçlandırılır. İzin alınmadan açılan umuma açık istirahat ve eğlence yerleri kapatılır.</p>
+
+<p>Bu iş yerlerinin faaliyet göstereceği alanları belirlemeye veya mevcut umuma açık istirahat ve eğlence yerlerinin bu amaç için ayrılan yerlerde toplanmasına, belediye ve mücavir alan sınırları içinde belediyeler; bu alanlar dışında il özel idareleri yetkilidir.</p>
+
+<p>Umuma açık istirahat ve eğlence yerlerinin bulunacağı alanların tespiti ve bu yerlerin ruhsatlandırılmasında uygulanacak usul ve esaslar İçişleri Bakanlığı tarafından çıkarılacak bir yönetmelikle düzenlenir.</p>
+
+<p>Bu iş yerleri için düzenlenen iş yeri açma ve çalışma ruhsatlarının bir örneği yetkili kolluk kuvvetine gönderilir. Bu iş yerleri genel güvenlik ve asayiş yönünden genel kolluk tarafından denetlenir.</p>
+
+<p>Bu yerlerin ruhsatlandırılmasında 14.6.1989 tarihli ve 3572 sayılı İş Yeri Açma ve Çalışma Ruhsatlarına Dair Kanun Hükmünde Kararnamenin Değiştirilerek Kabulüne Dair Kanunun 5 inci ve 6 ncı maddelerinin hükümleri uygulanmaz.</p>
+
+<p><a href="#Madde-8" id="Madde-8" class="maddeler">Madde-8</a></p>
+
+<p>Polisçe kat’i delil elde edilmesi halinde;</p>
+
+<p><strong>A)</strong> Kumar oynanan umumî ve umuma açık yerler ile her çeşit özel ve resmi kurum ve kuruluşlara ait lokaller,</p>
+
+<p><strong>B)</strong> Mevzuata aykırı bir şekilde uyuşturucu madde imal edilen, satılan, kullanılan, bulundurulan yerler,</p>
+
+<p><strong>C)</strong> Mevzuata aykırı faaliyet gösteren genelevler, birleşme yerleri ve fuhuş yapılan evler ve yerler,</p>
+
+<p><strong>D)</strong> Devletin ülkesi ve milletiyle bölünmez bütünlüğüne, Anayasal düzenine, genel güvenliğe ve genel ahlâka zararı dokunacak oyun oynatılan, temsil verilen, film veya video bant gösterilen yerler ile internet üzerinden yapılan yayınlara izin verilen yerler,</p>
+
+<p><strong>E)</strong> Derneklere, sendikalara, loca ve kulüplere, kamu kurumu niteliğindeki meslek kuruluşları ile benzeri kurum ve kuruluşlara ait ve yalnız üyelerinin yararlanması için açılan lokallerden, birden fazla denetim sonunda ve yazılı ihtara rağmen, iç yönetmeliğine aykırı faaliyet göstererek umuma açık yer durumuna geldiği tespit edilenler,</p>
+
+<p><strong>F)</strong> Her türlü denize elverişli araçlarla günübirlik tur düzenleyen veya her türlü mal ve hizmet satanlardan, müşteriye faaliyetlerini duyururken veya müşteri kabul ederken çevreyi veya müşteriyi rahatsız edecek yöntemler kullananlar,</p>
+
+<p>Mahallin en büyük mülkî amiri tarafından otuz günü geçmemek üzere geçici süreyle faaliyetten men edilir.</p>
+
+<p>Bu maddede yazılı fiiller sebebiyle bir yıl içinde üç defa faaliyetten men edilen işyerlerinde, bu fiiller tekrar işlendiği takdirde, işyeri açma ve çalışma ruhsatları, mahallin en büyük mülkî amirinin bildirimi üzerine, belediye veya il özel idaresi tarafından beş iş günü içinde iptal edilir.</p>
+
+<p><em>Önleme araması</em></p>
+
+<p><a href="#Madde-9" id="Madde-9" class="maddeler">Madde-9</a></p>
+
+<p>Polis, tehlikenin veya suç işlenmesinin önlenmesi amacıyla usulüne göre verilmiş sulh ceza hâkiminin kararı veya bu sebeplere bağlı olarak gecikmesinde sakınca bulunan hâllerde mülkî âmirin vereceği yazılı emirle; kişilerin üstlerini, araçlarını, özel kâğıtlarını ve eşyasını arar; alınması gereken tedbirleri alır, suç delillerini koruma altına alarak 5271 sayılı Ceza Muhakemesi Kanunu hükümlerine göre gerekli işlemleri yapar.</p>
+
+<p>Arama talep yazısında, arama için makul sebeplerin oluştuğunun gerekçeleriyle birlikte gösterilmesi gerekir.</p>
+
+<p>Arama kararında veya emrinde;</p>
+
+<p><strong>a)</strong> Aramanın sebebi,</p>
+
+<p><strong>b)</strong> Aramanın konusu ve kapsamı,</p>
+
+<p><strong>c)</strong> Aramanın yapılacağı yer,</p>
+
+<p><strong>ç)</strong> Aramanın yapılacağı zaman ve geçerli olacağı süre,</p>
+
+<p>belirtilir.</p>
+
+<p>Önleme araması aşağıdaki yerlerde yapılabilir:</p>
+
+<p><strong>a)</strong> 2911 sayılı Toplantı ve Gösteri Yürüyüşleri Kanunu kapsamına giren toplantı ve gösteri yürüyüşlerinin yapıldığı yerde veya yakın çevresinde.</p>
+
+<p><strong>b)</strong> Özel hukuk tüzel kişileri ile kamu kurumu niteliğindeki meslek kuruluşları veya sendikaların genel kurul toplantılarının yapıldığı yerin yakın çevresinde.</p>
+
+<p><strong>c)</strong> Halkın topluca bulunduğu veya toplanabileceği yerlerde.</p>
+
+<p><strong>ç)</strong> Eğitim ve öğretim özgürlüğünün sağlanması için her derecede eğitim ve öğretim kurumlarının idarecilerinin talebiyle ve 20 nci maddenin ikinci fıkrasının (A) bendindeki koşula uygun olarak girilecek yükseköğretim kurumlarının içinde, bunların yakın çevreleri ile giriş ve çıkışlarında.</p>
+
+<p><strong>d)</strong> Umumî veya umuma açık yerlerde.</p>
+
+<p><strong>e)</strong> Her türlü toplu taşıma araçlarında, seyreden taşıtlarda.</p>
+
+<p>Konutta, yerleşim yerinde ve kamuya açık olmayan işyerlerinde ve eklentilerinde önleme araması yapılamaz.</p>
+
+<p>Spor karşılaşması, miting, konser, festival, toplantı ve gösteri yürüyüşünün düzenlendiği veya aniden toplulukların oluştuğu hallerde gecikmesinde sakınca bulunan hal var sayılır.</p>
+
+<p>Polis, tehlikenin önlenmesi veya bertaraf edilmesi amacıyla güvenliğini sağladığı bina ve tesislere gelenlerin; herhangi bir emir veya karar olmasına bakılmaksızın, üstünü, aracını ve eşyasını teknik cihazlarla, gerektiğinde el ile kontrol etmeye ve aramaya yetkilidir. Bu yerlere girmek isteyenler kimliklerini sorulmaksızın ibraz etmek zorundadırlar. Milletlerarası anlaşmalar hükümleri saklıdır.</p>
+
+<p>Önleme aramasının sonucu, arama kararı veya emri veren merci veya makama bir tutanakla bildirilir.</p>
+
+<p><a href="#Madde-10" id="Madde-10" class="maddeler">Madde-10</a></p>Taşınması memnu olan kama, hançer ve saldırmanın yapılması ve satılması da yasaktır.</p>
+
+<p>Eski eserlerden olupta kıymetli olanların satışı bu hükümden müstesnadır.</p>
+
+<p><a href="#Madde-11" id="Madde-11" class="maddeler">Madde-11</a></p>
+
+<p>Polis;</p>
+
+<p><strong>A)</strong> Genel ahlak ve edep kurallarına aykırı olarak; utanç verici ve toplum düzeni bakımından tasvip edilmeyen tavır ve davranışta bulunanlar ile bu nitelikte söz, şarkı, müzik veya benzeri gösteri yapanları,</p>
+
+<p><strong>B)</strong> Çocuklar, kız ve kadınlar ile genç erkeklere sözle veya herhangi bir şekilde sarkıntılık edenleri, kötü alışkanlıklara ve hertürlü ahlaksızlığa yönelten ve teşvik edenleri,</p>
+
+<p><strong>C)</strong> Genel ahlâk ve edebe aykırı mahiyette her türlü sesli ve görüntülü eserleri, kaydedildiği materyale bakılmaksızın üreten ve satanları,</p>
+
+<p>Herhangi bir müracaat veya şikâyet olmasa bile engeller, davranışlarının devamını durdurarak yasaklar, sanıklar hakkında tanzim olunacak evrakı derhal şikâyete bağlı suçlar hakkındaki evrakı da şikâyet ve müracaat vukubulduğu takdirde adliyeye tevdi eder.</p>
+
+<p><a href="#Madde-12" id="Madde-12" class="maddeler">Madde-12</a></p>
+
+<p>Kanunî istisnalar saklı kalmak üzere, eğlence, oyun, içki ve benzeri amaçlı umuma açık ve açılması izne bağlı yerlerde onsekiz yaşından küçükler çalıştırılamaz.</p>
+
+<p>Polis bar, pavyon, gazino, meyhane gibi içkili yerler ile kıraathane ve oyun oynatılan benzeri yerlere yanlarında veli ve vasileri olsa bile onsekiz yaşını doldurmamış küçüklerin girmesini meneder.</p>
+
+<p>Bu madde hükümlerine aykırı hareket edenler hakkında 17 nci, işyerleri hakkında da 6 ncı madde hükümlerine göre işlem yapılır.<sup></sup></p>
+
+<p><a href="#Madde-13" id="Madde-13" class="maddeler">Madde-13</a></p>
+
+<p>Polis,</p>
+
+<p><strong>A)</strong> Suçüstü hâlinde veya gecikmesinde sakınca bulunan diğer hâllerde suç işlendiğine veya suça teşebbüs edildiğine dair haklarında kuvvetli iz, eser, emare veya delil bulunan şüphelileri,</p>
+
+<p><strong>B)</strong> Haklarında yetkili mercilerce verilen yakalama veya tutuklama kararı bulunanları,</p>
+
+<p><strong>C)</strong> Halkın rahatını bozacak veya rezalet çıkaracak derecede sarhoş olanları veya sarhoşluk hâlinde başkalarına saldıranları, yapılan uyarılara rağmen bu hareketlerine devam edenler ile başkalarına saldırmaya yeltenenleri ve kavga edenleri,</p>
+
+<p><strong>D)</strong> Usulüne aykırı şekilde ülkeye giren ya da haklarında sınır dışı etme veya geri verme kararı alınanları,</p>
+
+<p><strong>E)</strong> Polisin kanunlara uygun olarak aldığı tedbirlere karşı gelenleri, direnenleri ve görev yapmasını engelleyenleri,</p>
+
+<p><strong>F)</strong> Bir kurumda tedavi, eğitim ve ıslahı için kanunlarla ve bu Kanunun uygulanmasını gösteren Cumhurbaşkanınca çıkarılan yönetmelikte belirtilen esaslara uygun olarak alınan tedbirlerin yerine getirilmesi amacıyla, toplum için tehlike teşkil eden akıl hastası, uyuşturucu madde veya alkol bağımlısı serseri veya hastalık bulaştırabilecek kişileri, </p>
+
+<p><strong>G)</strong> Haklarında gözetim altında ıslahına veya yetkili merci önüne çıkarılmasına karar verilen küçükleri,</p>
+
+<p><strong>H) </strong>Başkalarının can güvenliğini tehlikeye düşürenleri,</p>
+
+<p>Eylemin veya durumun niteliğine göre; koruma altına alır, uzaklaştırır ya da yakalar ve gerekli kanuni işlemleri yapar. Yakalanması belirli bir usule bağlanmış kişilerle ilgili kanun hükümleri saklıdır.<sup></sup></p>
+
+<p>Yakalanan kişilerin kaçması veya saldırıda bulunmasının önlenmesi bakımından kişinin sağlığına zarar vermeyecek şekilde her türlü tedbir alınabilir.</p>
+
+<p>Yakalanan kişilere, yakalama sebebi herhalde yazılı ve bunun mümkün olmaması hâlinde sözlü olarak derhal; toplu suçlarda ise en geç bu kişiler hâkim huzuruna çıkarılıncaya kadar bildirilir.</p>
+
+<p>Kişinin yakalandığı, istediği kanunî yakınlarına derhal bildirilir.</p>
+
+<p>Yakalananlardan,</p>
+
+<p><strong>A)</strong> Uyuşturucu madde kullanmış olanlar ile sarhoş olanların,</p>
+
+<p><strong>B)</strong> Zor kullanılarak yakalananların,</p>
+
+<p><strong>C)</strong> Haklarında suç soruşturması yapılacak olan şüpheli ve sanıkların,</p>
+
+<p>Yakalanma anındaki sağlık durumları tabip raporuyla tespit edilir.</p>
+
+<p>Yakalanan kişilerden suç işlediği şüphesi altında olanlar adlî mercilere sevk edilir. Haklarında ıslah veya tedavi tedbiri alınması gerekenler, ilgili kurum yetkilileri tarafından teslim alınır. Yakalama sebebi ortadan kalkanlar derhal serbest bırakılır.</p>
+
+<p><em>Kayıp çocukların araştırılması</em></p>
+
+<p><a href="#Madde-13/A" id="Madde-13/A" class="maddeler">Madde-13/A</a></p>
+
+<p>Kaybolan çocukların bulunması amacıyla, polis, sulh ceza hâkiminin veya gecikmesinde sakınca bulunan hallerde mülki idare amirinin yazılı veya sonradan yazılı hale getirilmek üzere sözlü emri ile kayıp çocuğa ait veya başkasına ait olmakla birlikte kayıp çocuk tarafından kullanılan her türlü banka hesap hareketlerini talep edebilir, telekomünikasyon yoluyla iletişimini denetleyebilir ve sinyal bilgilerini değerlendirebilir. Tedbir kararı, en çok bir ay için verilebilir; ancak bu süre, bir defaya mahsus olmak üzere bir ay daha uzatılabilir.</p>
+
+<p>Mülki idare amirinin kararı, derhal mahkemenin onayına sunulur. Mahkeme kararını en geç yirmidört saat içinde verir.</p>
+
+<p><a href="#Madde-14" id="Madde-14" class="maddeler">Madde-14</a></p>Şehir ve kasabalarda gerek mesken içinde ve gerek dışında saat 24 ten sonra her ne suretle olursa olsun civar halkının rahat ve huzurunu bozacak surette gürültü yapanlar polisçe menolunur. Bu yasağı dinlemiyenler hakkında Ceza Kanununun 546 ncı maddesine göre takibat yapılır.</p>
+
+<p>Zabıtadan izin alınarak yapılacak düğün ve müsamere ve balolar bu kayıttan müstesnadır.</p>
+
+<p><a href="#Madde-15" id="Madde-15" class="maddeler">Madde-15</a></p>Polis; yaptığı tahkikat esnasında ifadelerine müracaat lazımgelen kimseleri çağırır ve kendilerine lüzumu olan şeyleri sorar.</p>
+
+<p>Polis; müşteki, mağdur veya tanık ifadelerini, talepleri hâlinde ikamet ettikleri yerlerde veya işyerlerinde de alabilir. Bu fıkranın kapsamı ile uygulanmasına ilişkin usul ve esaslar İçişleri Bakanlığınca belirlenir.</p>
+
+<p><em>Zor ve silah kullanma</em></p>
+
+<p><a href="#Madde-16" id="Madde-16" class="maddeler">Madde-16</a></p>
+
+<p>Polis, görevini yaparken direnişle karşılaşması halinde, bu direnişi kırmak amacıyla ve kıracak ölçüde zor kullanmaya yetkilidir.</p>
+
+<p>Zor kullanma yetkisi kapsamında, direnmenin mahiyetine ve derecesine göre ve direnenleri etkisiz hale getirecek şekilde kademeli olarak artan nispette bedenî kuvvet, maddî güç ve kanunî şartları gerçekleştiğinde silah kullanılabilir.</p>
+
+<p>İkinci fıkrada yer alan;</p>
+
+<p><strong>a) </strong>Bedenî kuvvet; polisin direnen kişilere karşı veya eşya üzerinde doğrudan doğruya kullandığı bedenî gücü,</p>
+
+<p><strong>b)</strong> Maddî güç; polisin direnen kişilere karşı veya eşya üzerinde bedenî kuvvetin dışında kullandığı kelepçe, cop, basınçlı ve/veya boyalı su, göz yaşartıcı gazlar veya tozlar, fizikî engeller, polis köpekleri ve atları ile sair hizmet araçlarını, </p>
+
+<p>ifade eder.</p>
+
+<p>Zor kullanmadan önce, ilgililere direnmeye devam etmeleri halinde doğrudan doğruya zor kullanılacağı ihtarı yapılır. Ancak, direnmenin mahiyeti ve derecesi göz önünde bulundurularak, ihtar yapılmadan da zor kullanılabilir.</p>
+
+<p>Polis, zor kullanma yetkisi kapsamında direnmeyi etkisiz kılmak amacıyla kullanacağı araç ve gereç ile kullanacağı zorun derecesini kendisi takdir ve tayin eder. Ancak, toplu kuvvet olarak müdahale edilen durumlarda, zor kullanmanın derecesi ile kullanılacak araç ve gereçler müdahale eden kuvvetin amiri tarafından tayin ve tespit edilir.</p>
+
+<p>Polis, kendisine veya başkasına yönelik bir saldırı karşısında, zor kullanmaya ilişkin koşullara bağlı kalmaksızın, 5237 sayılı Türk Ceza Kanununun meşru savunmaya ilişkin hükümleri çerçevesinde savunmada bulunur.</p>
+
+<p>Polis;</p>
+
+<p><strong>a)</strong> Meşru savunma hakkının kullanılması kapsamında,</p>
+
+<p><strong>b)</strong> Bedenî kuvvet ve maddî güç kullanarak etkisiz hale getiremediği direniş karşısında, bu direnişi kırmak amacıyla ve kıracak ölçüde,</p>
+
+<p><strong>c) </strong>Hakkında tutuklama, gözaltına alma, zorla getirme kararı veya yakalama emri verilmiş olan kişilerin ya da suçüstü halinde şüphelinin yakalanmasını sağlamak amacıyla ve sağlayacak ölçüde,</p>
+
+<p><strong>d)</strong> Kendisine veya başkalarına, işyerlerine, konutlara, kamu binalarına, okullara, yurtlara, ibadethanelere, araçlara ve kişilerin tek tek veya toplu halde bulunduğu açık veya kapalı alanlara molotof, patlayıcı, yanıcı, yakıcı, boğucu, yaralayıcı ve benzeri silahlarla saldıran veya saldırıya teşebbüs edenlere karşı, saldırıyı etkisiz kılmak amacıyla ve etkisiz kılacak ölçüde,</p>
+
+<p>silah kullanmaya yetkilidir.</p>
+
+<p>Polis, yedinci fıkranın (c) bendi kapsamında silah kullanmadan önce kişiye duyabileceği şekilde "dur" çağrısında bulunur. Kişinin bu çağrıya uymayarak kaçmaya devam etmesi halinde, önce uyarı amacıyla silahla ateş edilebilir. Buna rağmen kaçmakta ısrar etmesi dolayısıyla ele geçirilmesinin mümkün olmaması halinde ise kişinin yakalanmasını sağlamak amacıyla ve sağlayacak ölçüde silahla ateş edilebilir.</p>
+
+<p>Polis, direnişi kırmak ya da yakalamak amacıyla zor veya silah kullanma yetkisini kullanırken, kendisine karşı silahla saldırıya teşebbüs edilmesi halinde, silahla saldırıya teşebbüs eden kişiye karşı saldırı tehlikesini etkisiz kılacak ölçüde duraksamadan silahla ateş edebilir</p>
+
+<p><a href="#Madde-17" id="Madde-17" class="maddeler">Madde-17</a></p>
+
+<p>Polisin:</p>
+
+<p><strong>A)</strong> Kanun ve usul dairesinde verdiği emre itaatsizlik ve ittihaz eylediği tedbirlere riayetsizlik edenler; </p>
+
+<p><strong>B)</strong> Vazife yaparken polise mukavemette bulunan veya vazifesinden alıkoymak maksadıyla polise zorla karşı koyan ve yakalanmadıkları takdirde hareketlerinde devam etmeleri melhuz bulunan şahıslar; </p>
+
+<p>Karakola götürülüp haklarında tanzim olunacak evrakla beraber adliyeye verilirler.</p>
+<p><a href="#Madde 18 – (Mülga: 20/2/1948 - 5188/1 md.)" id="Madde 18 – (Mülga: 20/2/1948 - 5188/1 md.)" class="maddeler">Madde 18 – (Mülga: 20/2/1948 - 5188/1 md.)</a></p>
+
+
+<p><a href="#Madde-19" id="Madde-19" class="maddeler">Madde-19</a></p>
+
+<p>Polis; sokak, meydan ve umuma mahsus yerlerde intizamı temin ve Seyrüsefer Talimatnamesindeki vasıflara uygun olmayan nakil vasıtalarını işletmekten ve bu vasıtaları sarhoş olarak veya seyrüseferin intizam ve selametini bozacak surette idare edenleri çalışmaktan meneder.</p>
+
+<p><a href="#Madde-20" id="Madde-20" class="maddeler">Madde-20</a></p>
+
+<p>Zabıta, imdat istenmesi veya yangın, su baskını ve boğulma gibi büyük tehlikelerin haber verilmesi veya görülmesi halleri ile ağır cezalı bir suçun işlenmesine veya yapılmakta devam olunmasına mani olmak için konutlara, iş yerlerine ve eklentilerine girebilir.</p>
+
+<p>Zabıta aşağıda yazılı hallerde üniversite, bağımsız fakülte veya üniversiteye bağlı kurumların binalarına veya bunların eklerine girebilir.</p>
+
+<p><strong>A)</strong> Üniversite binaları veya ekleri içinde, kurumun imkânlarıyla önlenmesi mümkün görülmeyen olayların çıkması ihtimali karşısında rektör, acele hallerde de dekan veya bağlı kuruluş yetkililerinin zabıtadan yardım talep etmeleri halinde,</p>
+
+<p><strong>B)</strong> Herhangi bir davet veya izne bağlı olmaksızın suç ve suçluların kovuşturulması için her zaman,</p>
+
+<p>Fıkranın (A) bendinde gösterilen hallerde talep derhal yerine getirilir,</p>
+
+<p>İlgili kurumlar kovuşturma dolayısıyla zabıta kuvvetlerine gereken her türlü yardım ve kolaylığı göstermekle yükümlüdürler.</p>
+
+<p><a href="#Madde-21" id="Madde-21" class="maddeler">Madde-21</a></p>Bir neşir vasıtası için abone yazmak veya bunlar için yazı, resim, ilan gibi bir madde kabul etmek maksadıyla Matbuat Kanununa göre alınmış vesikası olmaksızın idare evlerinin dışında dolaşanlar veya dolaştırılanlar şantajdan veya böyle bir harekette dolandırıcılıktan maznun olarak takibat altında bulunanlar; polisçe bu yolda çalışmaktan menedilir.</p>
+
+<p><a href="#Madde-22" id="Madde-22" class="maddeler">Madde-22</a></p>Bu kanunda yazılı vazife ve salahiyetlerin yapılması ve kullanılması için en büyük mülkiye amirlerinin vereceği emirleri, Dâhiliye Vekili re ‘sen verebilir.</p>
+
+<p><a href="#Madde-23" id="Madde-23" class="maddeler">Madde-23</a></p>Umumi ve hususi kanunlarla polise verilen ve bu kanunda yazılı bulunmayan vazife ve salahiyetlerin hükümleri bakidir.</p>
+
+<p><a href="#Madde-24" id="Madde-24" class="maddeler">Madde-24</a></p>Mahsus zabıta teşkilatı olan işlerde bu teşkilata mensup memur bulunmadığı yerlerde polis, bunlara ait inzibati muameleleri yapmağa salahiyetlidir.</p>
+
+<p><a href="#Madde-25" id="Madde-25" class="maddeler">Madde-25</a></p>
+
+<p>Polis teşkilatı bulunmayan yerlerde il, ilçe ve bucak jandarma komutanları ile jandarma karakol komutanları bu kanunda yazılı vazifeleri yapar ve yetkileri kullanırlar.</p>
+
+<p><a href="#Madde-26" id="Madde-26" class="maddeler">Madde-26</a></p>Bu kanunun tatbik suretini gösterir bir yönetmelik Cumhurbaşkanınca çıkarılır.<sup></sup></p>
+
+<p><a href="#Ek Madde 1" id="Ek Madde 1" class="maddeler">Ek Madde 1</a></p>
+
+<p>Umumî veya umuma açık yerler ile umuma açık yer niteliğindeki ulaşım araçlarında, gerçek kişi veya topluluklar, mahallin en büyük mülkî amirine, en az kırk sekiz saat önceden yazılı bildirimde bulunmak suretiyle, oyun ve temsil verebilir veya çeşitli şekillerde gösteri düzenleyebilir.</p>
+
+<p>Bunlardan, Devletin ülkesi ve milleti ile bölünmez bütünlüğüne, Anayasal düzene veya genel ahlâka aykırı olduğu tespit edilenler hakkında mahallin en büyük mülkî amiri tarafından derhal Cumhuriyet savcılığına suç duyurusunda bulunulur.</p>
+
+<p>Birinci fıkra uyarınca yapılacak bildirimde oyun veya temsile katılan yönetici ve diğer kişilerin kimlik, ikametgâh ve tâbiiyetleri belirtilir.</p>
+
+<p><a href="#Ek Madde 2" id="Ek Madde 2" class="maddeler">Ek Madde 2</a></p>
+
+<p><strong>(Birinci fıkra mülga : 18/11/1992 - 3842/31 md.)</strong></p>
+
+<p>Gözaltına alınanların yeme, içme ihtiyaçlarına ve nakillerine ait masraflar Emniyet Genel Müdürlüğü bütçesine konulacak ödenekle karşılanır.</p>
+
+<p><a href="#Ek Madde 3" id="Ek Madde 3" class="maddeler">Ek Madde 3</a></p>
+
+<p>Polis, aşağıdaki hallerde gerekli görülen kişilerden;</p>
+
+<p><strong>A)</strong> Devletin bütünlüğü, genel güvenliği ve Anayasa düzeni ile kaçakçılık ve uyuşturucu maddelerle ilgili olarak yaptığı suç soruşturmaları sırasında ifadesine başvurulacak olanlara,</p>
+
+<p><strong>B)</strong> Vatandaşlık durumu ile bu Kanunun 17 nci maddesinde belirtilen kimlik tespiti yapılıncaya kadar,</p>
+
+<p>Tespit edilmiş olan ikametgâh veya iş adreslerinden ayrılmamalarını yazılı olarak isteyebilir.</p>
+
+<p>Bunların, bulunabilecekleri yeni adreslerini bildirmeleri şartıyla o yerden ayrılmalarına mahallin en büyük mülki amirinin yazılı emriyle izin verilir.</p>
+
+<p><a href="#Ek Madde 4" id="Ek Madde 4" class="maddeler">Ek Madde 4</a></p>
+
+<p>Polis, görevli bulunduğu mülki sınırlar içinde, hizmet branşı, yeri ve zamanına bakılmaksızın, bir suçla karşılaştığında suça el koymak, önlemek, sanık ve suç delillerini tespit, muhafaza ve yetkili zabıtaya teslim etmekle görevli ve yetkilidir.</p>
+
+<p>Bu madde hükmü gereğince bir suça müdahale eden polise karşı işlenen suçlar görevli memura karşı işlenmiş suç; müdahalede bulunan polisin işlediği suçlar ise görevli memurun işlediği suç sayılır.</p>
+
+<p><a href="#Ek Madde 5" id="Ek Madde 5" class="maddeler">Ek Madde 5</a></p>
+
+<p>Genel güvenlik, kaçakçılık ve uyuşturucu maddelerle ilgili önemli olayları takip etmek, gerekiyorsa müdahale ederek soruşturmasını yapmak üzere;</p>
+
+<p>A) İçişleri Bakanlığınca doğrudan veya ilgili valinin talebi üzerine merkez personelinden ekipler (timler) görevlendirilebilir.</p>
+
+<p>B) Yukarıdaki bent hükmüne uygun olarak bir ilde soruşturması yapılan olayın aydınlatılması, delillerin toplanması, sanıkların yakalanması, başka illerde de araştırma ve soruşturma yapılmasını gerektiriyorsa iller arasında ilgili valiliklerce ekipler görevlendirilebilir.</p>
+
+<p>Bu ekiplerin polis yetkilerini kullanması, polis bölgesi sınırları ile kayıtlı değildir. Bu ekipler görev yaptıkları mahallin en büyük mülki amirine bilgi vermek zorundadırlar. Görevin ifası sırasında mahallin en büyük mülki amirine karşı da sorumludurlar.</p>
+
+<p>Genel ve özel kolluk makam ve memurları bu personele gereken her türlü yardımı yapmaya mecburdur.</p>
+
+<p><em>Adlî görev ve yetkiler</em></p>
+
+<p><a href="#Ek Madde 6" id="Ek Madde 6" class="maddeler">Ek Madde 6</a></p>
+
+<p>Polis, bu maddede yazılı görevlerinin yanında, Ceza Muhakemesi Kanunu ve diğer mevzuatta yazılı soruşturma işlemlerine ilişkin görevleri de yerine getirir.</p>
+
+<p>Polis, bir suça ilişkin olarak kendisine yapılan sözlü ihbar ve şikâyetleri ve görevi sırasında öğrendiği suça ilişkin bilgileri yazılı hale getirir.</p>
+
+<p>Edinilen bilgi veya alınan ihbar veya şikâyet üzerine veya kendiliğinden bir suçla karşılaşan polis, olay yerinde kişilerin ve toplumun sağlığına, vücut bütünlüğüne veya malvarlığına zarar gelmemesi ve suçun delillerinin kaybolmaması ya da bozulmaması için derhal gerekli tedbirleri alır.</p>
+
+<p>Bir suç işlendiği veya işlenmekte olduğu bilgisini edinen polis, olay yerinin korunması, delillerin tespiti, kaybolmaması ya da bozulmaması için acele tedbirleri aldıktan sonra el koyduğu olayları, yakalanan kişiler ile uygulanan tedbirleri derhal Cumhuriyet savcısına bildirir ve Cumhuriyet savcısının emri doğrultusunda işin aydınlatılması için gerekli soruşturma işlemlerini yapar.</p>
+
+<p>Yapılacak araştırma sonunda edinilen bilginin bir kabahate ilişkin olduğu hallerde, konu araştırılarak gerekli yasal işlem yapılır veya yapılması sağlanır.</p>
+
+<p>Olay yerinde görevine ait işlemlere başlayan polis, bunların yapılmasına engel olan veya yetkisi içinde aldığı tedbirlere aykırı davranan kişileri, işlemler sonuçlanıncaya kadar ve gerektiğinde zor kullanarak bundan men eder.</p>
+
+<p>Polis, suçun delillerini tespit etmek amacıyla, Cumhuriyet savcısının emriyle olay yerinde gerekli inceleme ve teknik araştırmaları yapar, delilleri tespit eder, muhafaza altına alır ve incelenmek üzere ilgili yerlere gönderir.</p>
+
+<p>Olay yeri dışında kalan ve o suça ilişkin delil elde edilebileceği yönünde kuvvetli şüphe sebebi bulunan konut, işyeri ve kamuya açık olmayan kapalı alanlarda yapılacak işlemler için Ceza Muhakemesi Kanununun arama ve elkoymaya ilişkin hükümleri uygulanır.</p>
+
+<p>Polis, olaydaki failin, gözaltına alınan şüpheli ile aynı kişi olup olmadığının belirlenmesi bakımından zorunlu olması halinde, Cumhuriyet savcısının talimatıyla teşhis yaptırabilir.</p>
+
+<p>Tanıklıktan çekinebilecek olanlar, teşhiste bulunmaya zorlanamaz.</p>
+
+<p>İşleme başlanmadan önce, teşhiste bulunacak kişinin faili tarif eden beyanları tutanağa bağlanır.</p>
+
+<p>Teşhis işlemine tâbi tutulan kişilerin birden fazla ve aynı cinsten olması, aralarında yaş, boy, ağırlık, giyinme gibi görünüşe ilişkin hususlarda benzerlik bulunması gerekir. Teşhis için gerekli olması halinde, şüphelinin görünüşü ile ilgili gerekli değişiklikler yapılabilir. Teşhis işlemine tâbi tutulan kişilerin her birinde, teşhis sırasında bir numara bulundurulur.</p>
+
+<p>Teşhiste bulunan kişi ile teşhis işlemine tâbi tutulan kişilerin birbirini görmemesi gerekir.</p>
+
+<p>Teşhis işlemi en az iki kez tekrarlanır ve teşhiste bulunması istenen kişiye, şüphelinin teşhis edilecek kişiler arasında yer almıyor olabileceği hatırlatılır.</p>
+
+<p>Teşhis işlemine tâbi tutulan kişilerin, bu işlem sırasında birlikte fotoğrafları çekilerek veya görüntüleri kayda alınarak, soruşturma dosyasına konur.</p>
+
+<p>Şüphelinin fotoğrafı üzerinden de teşhis yaptırılabilir. Ancak tek bir fotoğraf veya aynı kişinin farklı fotoğrafları üzerinden teşhis yaptırılamaz. Değişik kişilerin fotoğraflarının aynı büyüklük ve özellikte olmaları gerekir.</p>
+
+<p>Teşhis işlemi tutanağa bağlanır.</p>
+
+<p><a href="#Ek Madde 7" id="Ek Madde 7" class="maddeler">Ek Madde 7</a></p>
+
+<p>Polis, Devletin ülkesi ve milletiyle bölünmez bütünlüğüne, Anayasa düzenine ve genel güvenliğine dair önleyici ve koruyucu tedbirleri almak, emniyet ve asayişi sağlamak üzere, ülke seviyesinde ve sanal ortamda istihbarat faaliyetlerinde bulunur, bu amaçla bilgi toplar, değerlendirir, yetkili mercilere veya kullanma alanına ulaştırır. Devletin diğer istihbarat kuruluşlarıyla işbirliği yapar.</p>
+
+<p>Birinci fıkrada belirtilen görevlerin yerine getirilmesine yönelik olarak, 4.12.2004 tarihli ve 5271 sayılı Ceza Muhakemesi Kanununun, casusluk suçları hariç, 250 nci maddesinin birinci fıkrasının (a), (b) ve (c) bentlerinde yazılı suçlar ile bilişim suçlarının işlenmesinin önlenmesi amacıyla hâkim kararı veya gecikmesinde sakınca bulunan hallerde Emniyet Genel Müdürünün, Emniyet Genel Müdürlüğü İstihbarat Dairesi Başkanının veya bilişim suçlarıyla sınırlı olmak üzere bilişim suçları ile ilgili daire başkanının yazılı emriyle, telekomünikasyon yoluyla yapılan iletişim veya internet bağlantı adresleriyle internet kaynakları arasındaki veri trafiği ile iletilen veriler tespit edilebilir, dinlenebilir, sinyal bilgileri değerlendirilebilir, kayda alınabilir. Gecikmesinde sakınca bulunan hallerde verilen yazılı emir, yirmidört saat içinde yetkili ve görevli hâkimin onayına sunulur. Hâkim, kararını en geç kırk sekiz saat içinde verir. Sürenin dolması veya hâkim tarafından aksine karar verilmesi halinde tedbir derhal kaldırılır. Bu halde dinlemenin içeriğine ilişkin kayıtlar en geç on gün içinde yok edilir; durum bir tutanakla tespit olunur ve bu tutanak denetimde ibraz edilmek üzere muhafaza edilir.</p>
+
+<p><strong>(Ek fıkra: 3/7/2005 – 5397/1 md.; Değişik fıkra: 27/3/2015-6638/5 md.) </strong>Yetkili ve görevli hâkim, Ankara ağır ceza mahkemesi üyesidir.</p>
+
+<p><strong>(Ek fıkra: 3/7/2005 – 5397/1 md.)</strong> Kararda ve yazılı emirde, hakkında tedbir uygulanacak kişinin kimliği, iletişim aracının türü, kullandığı telefon numaraları, ilgili internet bağlantı adresi veya bağlantıyı tesbite imkân veren kodundan belirlenebilenler ile tedbirin türü, kapsamı ve süresi ile tedbire başvurulmasını gerektiren nedenler belirtilir. Kararlar, en fazla üç ay için verilebilir; bu süre aynı usûlle üçer ayı geçmeyecek şekilde en fazla üç defa uzatılabilir. Ancak, terör örgütünün faaliyeti çerçevesinde devam eden tehlikelere ilişkin olarak gerekli görülmesi halinde, hâkim üç aydan fazla olmamak üzere sürenin müteaddit defalar uzatılmasına karar verebilir. <sup>(3)</sup></p>
+
+<p>Uygulanan tedbirin sona ermesi halinde, dinlemenin içeriğine ilişkin kayıtlar en geç on gün içinde yok edilir. Durum bir tutanakla tesbit olunur ve bu tutanak denetimde ibraz edilmek üzere muhafaza edilir.</p>
+
+<p>İstihbarat faaliyetlerinde, bu maddede belirtilen suçların önlenmesi amacıyla ve hâkim kararı alınmak koşuluyla, teknik araçlarla izleme yapılabilir. Ayrıca, kamu kurum ve kuruluşları ile kamu hizmeti veren kuruluşların ihtiyaç duyulan bilgi ve belgelerinden yararlanabilmek için gerekçesini de göstermek suretiyle yazılı talepte bulunulabilir. Bu kurum ve kuruluşların kanuni sebeplerle veya ticari sır gerekçesiyle bu bilgi ve belgeleri vermemeleri halinde ancak hâkim kararı ile bu bilgi ve belgelerden yararlanılabilir.</p>
+
+<p>Bu madde hükümlerine göre yürütülen faaliyetler çerçevesinde elde edilen kayıtlar, birinci fıkrada belirtilen amaçlar dışında kullanılamaz. Elde edilen bilgi ve kayıtların saklanmasında ve korunmasında gizlilik ilkesi geçerlidir. Bu fıkra hükümlerine aykırı hareket edenler hakkında, görev sırasında veya görevden dolayı işlenmiş olsa bile Cumhuriyet savcılarınca doğrudan soruşturma yapılır.</p>
+
+<p>Hâkim kararları ve yazılı emirler, Emniyet Genel Müdürlüğü İstihbarat Dairesi Başkanlığı görevlileri ile bilişim suçlarıyla sınırlı olmak üzere bilişim suçlarıyla ilgili daire başkanlığı görevlilerince yerine getirilir. İşlemin başladığı ve bitirildiği tarih ve saat ile işlemi yapanın kimliği bir tutanakla saptanır.</p>
+
+<p>Bu maddede yer alan faaliyetlerin denetimi; sıralı kurum amirleri, mülki idare amirleri, Emniyet Genel Müdürlüğü ve ilgili bakanlığın teftiş elemanları tarafından yılda en az bir defa yapılır. Bu faaliyetler Başbakanlık Teftiş Kurulu tarafından da denetlenebilir. Bu kapsamda yapılan denetimlerin sonuçları bir rapor hâlinde Türkiye Büyük Millet Meclisi Güvenlik ve İstihbarat Komisyonuna sunulur.</p>
+
+<p>Bu maddede belirtilen telekomünikasyon yoluyla yapılan iletişime ilişkin işlemler ile 5271 sayılı Kanunun 135 inci maddesi kapsamında yapılacak dinlemeler, Bilgi Teknolojileri ve İletişim Kurumu bünyesinde tek bir merkezden yürütülür.</p>
+
+<p>Bu maddede belirlenen usul ve esaslara aykırı dinlemeler hukuken geçerli sayılmaz ve bu şekilde dinleme yapanlar hakkında 26.9.2004 tarihli ve 5237 sayılı Türk Ceza Kanunu hükümlerine göre işlem yapılır.</p>
+
+<p>Bu maddenin uygulanmasına ilişkin esas ve usûller Cumhurbaşkanınca çıkarılan yönetmelikle düzenlenir.</p>
+
+<p><a href="#Ek Madde 8" id="Ek Madde 8" class="maddeler">Ek Madde 8</a></p>
+
+<p><a href="#Ek Madde 9" id="Ek Madde 9" class="maddeler">Ek Madde 9</a></p>
+
+<p>Bu Kanun ve diğer kanun hükümlerine göre gerekli hallerde;</p>
+
+<p><strong>A)</strong> Önleyici, caydırıcı, düzenleyici ve koruyucu kolluk hizmetlerine dair görevlerin ifası sırasında silah kullanmak zorunda kalan polis hakkında, cezai sorumluluğun tespiti bakımından Memurin Muhakematı Hakkında Kanuna göre işlem yapılır.</p>
+
+<p><strong>B)</strong> Adliyeye ilişkin vazife ve işlerle ilgili bir hizmeti yerine getirirken silah kullanmak zorunda kalan polis hakkında, hazırlık soruşturması bizzat Cumhuriyet savcıları veya yardımcıları tarafından yapılır.</p>
+
+<p>Sanık polis, hakkında dava açıldığı takdirde duruşmadan vareste tutulabilir. Olayın mahiyetine ve kusurun derecesine göre, İçişleri Bakanlığınca durumu uygun görülen polisin vekalet verdiği avukatın ücreti, Emniyet Genel Müdürlüğü bütçesine konulacak ödenekten karşılanır. Avukat tutma ve ücret ödeme usul ve esasları yönetmelikte gösterilir.</p>
+
+<p>1481 sayılı Asayişe Müessir Bazı Fiillerin Önlenmesi Hakkında Kanuna göre, sanık ve hükümlülerden ilan edilmek suretiyle arananların bulundukları yerleri bildiren ve yakalanmalarına yardımcı olanlara para ödülü verilebilir. Verilecek ödülün miktarı ile bu fıkranın uygulanmasına dair diğer hususlar İçişleri Bakanlığınca çıkarılacak yönetmelikte gösterilir. Para ödülüne ait giderler Emniyet Genel Müdürlüğü bütçesine konulacak ödenekten karşılanır. Ödül verilen kişilerin kimlikleri, rızaları olmadıkça hiçbir şekilde açıklanamaz.</p>
+
+<p><a href="#Ek Madde 10" id="Ek Madde 10" class="maddeler">Ek Madde 10</a></p>
+
+<p>Görevli personelden görevin icrası sırasında veya görevin icrasından dolayı bir uzvunu veya duyusunu tamamen veya kısmen kaybedenlerin, rehabilitasyonu ile bu kayıplardan doğan ihtiyaçlarını karşılayacak her türlü cihaz ve sistemleri, Emniyet Genel Müdürlüğü tarafından aynen temin edilir veya bedelleri, Emniyet Genel Müdürlüğü bütçesinden ödenir.</p>
+
+<p><a href="#Madde 27" id="Madde 27" class="maddeler">Madde 27</a></p>Bu kanun neşri tarihinden muteberdir.</p>
+
+<p><a href="#Madde 28" id="Madde 28" class="maddeler">Madde 28</a></p>Bu kanunun hükümlerini yürütmeğe İcra Vekilleri Heyeti memurdur.</p>
+
+<p><strong>4/7/1934 TARİHLİ VE 2559 SAYILI KANUNA İŞLENEMEYEN</strong></p>
+
+<p><strong>HÜKÜMLER</strong></p>
+
+<p>1- 24/11/2004 tarihli ve 5259 sayılı Kanunun Geçici Maddesi:</p>
+
+<p><strong>Geçici Madde 1-</strong> Bu Kanunun yürürlüğe girdiği tarihten önce mülkî amirliklerce verilen izinle faaliyette bulunan umuma açık istirahat ve eğlence yerlerine ait işlem dosyaları, bu Kanunun yürürlüğe girdiği tarihten itibaren en geç üç ay içerisinde ilgili belediye veya il özel idaresine devredilir.</p>
+
+<p>2- 3/7/2005 tarihli ve 5397 sayılı Kanunun Geçici Maddesi:</p>
+
+<p><a href="#Geçici Madde 1" id="Geçici Madde 1" class="maddeler">Geçici Madde 1</a></p>2559 sayılı Kanunun ek 7 nci maddesinde düzenlenen merkez, en geç altı ay içinde kurulur. Merkez kuruluncaya kadar 2559 sayılı Kanunun ek 7 nci maddesi, 2803 sayılı Kanunun ek 5 inci maddesi ve 2937 sayılı Kanunun 6 ncı maddesi hükümleri uyarınca verilen iletişimin dinlenmesi, tespiti, sinyal bilgilerinin değerlendirilmesi ve kayda alınmasına dair karar veya yazılı emirler, telekomünikasyon hizmeti veren kurum ve kuruluşlar tarafından derhal yerine getirilir; ilgili istihbarat kurumlarının mevcut sistemlerinin kullanılmasına devam olunur.</p>
+
+<p>3- 1/2/2006 tarihli ve 5453 sayılı Kanunun hükmü:</p>
+
+<p><a href="#Geçici Madde 2" id="Geçici Madde 2" class="maddeler">Geçici Madde 2</a></p>2559 sayılı Kanunun ek 7 nci maddesinde düzenlenen merkez, en geç altı ay içinde kurulur. Merkez kuruluncaya kadar 2559 sayılı Kanunun ek 7 nci maddesi, 2803 sayılı Kanunun ek 5 inci maddesi ve 2937 sayılı Kanunun 6 ncı maddesi hükümleri uyarınca verilen iletişimin dinlenmesi, tespiti, sinyal bilgilerinin değerlendirilmesi ve kayda alınmasına dair karar veya yazılı emirler, telekomünikasyon hizmeti veren kurum ve kuruluşlar tarafından derhal yerine getirilir; ilgili istihbarat kurumlarının mevcut sistemlerinin kullanılmasına devam olunur.</p>
+
+<hr>
+			</div></div></main>
+		</div>
+
+  <footer>
+    <section>
+      <div class="contact-info">
+
+        <div class="adres">
+
+        <div class="telefon-wrapper">
+
+
+        </div>
+      </div>
+    </section>
+
+</div>
+
+		<amp-analytics type="googleanalytics" id="analytics1">
+  <script type="application/json">
+  {
+    "vars": {
+    "account": "UA-58342443-1"
+    },
+    "triggers": {
+    "trackPageview": {
+      "on": "visible",
+      "request": "pageview"
+    }
+    }
+  }
+  </script>
+</amp-analytics>
+
+	</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/slideToggle.min.js"></script>
+    <script src="js/internet-status.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/baguetteBox.min.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/rangeslider.min.js"></script>
+    <script src="js/vanilla-dataTables.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/magic-grid.min.js"></script>
+    <script src="js/dark-rtl.js"></script>
+    <script src="js/active.js"></script>
+    <!-- PWA -->
+    <script src="js/pwa.js"></script>
+  </body>
+</html>
