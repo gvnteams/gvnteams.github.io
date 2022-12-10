@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/tiny-slider.css">
+    <link rel="stylesheet" href="css/baguetteBox.min.css">
+    <link rel="stylesheet" href="css/rangeslider.css">
+    <link rel="stylesheet" href="css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="availabilityStatus" checked>
+              <label class="form-check-label" for="availabilityStatus">Availability status</label>
+            </div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="sendMeNotifications" checked>
+              <label class="form-check-label" for="sendMeNotifications">Send me notifications</label>
+            </div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="rtlSwitch">
+              <label class="form-check-label" for="rtlSwitch">RTL mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="brzml.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h6 class="mb-0">İEM - Telefon Rehberi</h6>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-content-wrapper py-3" id="elementsSearchList">
+      <div class="container">
+        <div class="card">
+          <div class="card-body p-3">
+            <div class="form-group mb-0">
+              <input class="form-control" id="elementsSearchInput" type="text" onkeyup="elementsSearch()" placeholder="Search element...">
+            </div>
+          </div>
+        </div>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0216 382 50 10"><a href="tel:0216 351 84 24"><h6 class="mb-1">Adalar İlçe Emniyet Müdürlüğü</h6></a>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item --><a class="affan-element-item" href="tel:0216 351 84 24">Heybeliada Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item --><a class="affan-element-item" href="tel:0 216 381 13 08">Burgazada Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item --><a class="affan-element-item" href="tel:0 216 381 40 40">Kınalı Ada Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item --><a class="affan-element-item" href="tel:0 216 382 50 10">Büyükada Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item --><a class="affan-element-item" href="tel:0212 682 50 10">Adalar Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item --><a class="affan-element-item" href="tel:0216 382 19 57">Adalar Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 682 08 01"><h6 class="mb-1">Arnavutköy İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 681 05 33">Yavuz Selim Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 771 28 96">Hadımköy Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0507 748 61 55">Arnavutköy Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 681 05 34">Arnavutköy Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0216 580 87 03"><h6 class="mb-1">Ataşehir İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 324 17 90">Örnek Şehit Hayrettin Yıldırım Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 576 61 22">İçerenköy Şehit Halil Çayır Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 415 64 93">Yeniçamlıca Şehit Salih Sevgican Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 688 54 59">Ataşehir Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 580 87 04">Ataşehir Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 423 01 23"><h6 class="mb-1">Avcılar İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 591 39 93">Avcılar Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 690 69 40">Firuzköy Şehit Ilgız Aykutlu Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 801 72 31">Tahtakale Şehit Abdülbakir Sirma Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 812 57 33">Yeşilkent Şehit Adem Başar Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 593 13 22">Avcılar Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 509 23 51">Avcılar Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 882 02 03"><h6 class="mb-1">Büyükçekmece İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 863 64 08">Büyükçekmece Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 879 10 21">Kumburgaz Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 883 49 49">Büyükçekmece Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 883 29 70">Büyükçekmece Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 442 19 22"><h6 class="mb-1">Bahçelievler İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 641 01 32">Bahçelievler Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 641 29 88">Kocasinan Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 451 61 32">Yenibosna 75.Yıl Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 442 19 22">Bahçelievler Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 242 19 23">Bahçelievler Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 570 41 41"><h6 class="mb-1">Bakırköy İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 559 89 29">Ataköy Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 572 11 81">Kartaltepe Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 571 61 84">Osmaniye Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 663 42 05">Şenlikköy Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 663 25 25">Yeşilköy Şehit Şakir Tosun Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 571 60 26">Bakırköy Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 663 57 00">Bakırköy Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 544 08 88"><h6 class="mb-1">Bayrampaşa İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 576 15 14">Bayrampaşa Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 618 60 82">Yıldırım Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 658 24 50">Otogar Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 544 20 12">Bayrampaşa Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 488 57 99">Bayrampaşa Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 604 40 00"><h6 class="mb-1">Bağcılar İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 431 70 58">Şehit Cemal Şenel Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 651 84 00">Güneşli Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 604 40 21">Bağcılar Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 515 45 45">100. Yıl Kemalpaşa Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 429 30 05">Bağcılar Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 429 06 78">Bağcılar Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0212 488 57 99"><h6 class="mb-1">Başakşehir İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 487 95 78">Başakşehir Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 687 22 34">Güvercintepe Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 669 26 21">Bahçeşehir Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 397 79 19">Kayaşepir Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 488 57 99">Başakşehir Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:212 687 22 35">Başakşehir Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 216 331 02 72"><h6 class="mb-1">Beykoz İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 320 20 35">Anadolu Kavağı Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0506 688 87 20">Kavacık Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0506 688 87 10">Paşabahçe Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0507 076 17 14">Polonezköy Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0507 076 17 13">Riva Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 479 07 24">Çavuşbaşı Şehit Üzeyir Kocatürk Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 413 51 51">Beykoz Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 413 51 51">Beykoz Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0212 879 10 21"><h6 class="mb-1">Beylikdüzü İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 872 87 00">Beylikdüzü Şehit Orhan Şahin Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 880 66 00">Gürpınar Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 872 74 00">Beylikdüzü Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 872 70 90">Beylikdüzü Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 297 28 28"><h6 class="mb-1">Beyoğlu İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 251 99 42">Taksim Şehit Haşim Usta Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 292 57 58">Karaköy Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 250 41 01">Kasımpaşa Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 250 40 21">Haliç Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 238 09 99">Beyoğlu Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 251 99 42">Beyoğlu Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 327 52 80"><h6 class="mb-1">Beşiktaş İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 327 52 77">Beşiktaş Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 263 17 67">Etiler Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 263 60 07">Arnavutköy Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 264 18 00">Levent Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 263 61 24">Beşiktaş Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 263 61 22">Beşiktaş Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 429 44 12"><h6 class="mb-1">Esenler İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 568 33 69">Esenler Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 628 16 17">Atışalanı Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 429 44 12">Esenler Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 429 44 11">Esenler Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0212 620 71 00"><h6 class="mb-1">Esenyurt İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 689 92 00">Kıraç Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 672 68 85">Esenkent Gazi Turgut Aslan Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 620 38 54">Esenyurt Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 892 94 52">Yunus Emre Şehit Kenan Kumaş Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 620 38 54">Mevlana Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 843 27 66">Osmangazi Şehit Ersoy Karacaoğlan Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 672 66 66">Esenyurt Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 689 92 92">Esenyurt Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 501 08 74"><h6 class="mb-1">Eyüp İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 497 27 68">Eyüpsultan Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 626 81 82">Alibeyköy Şehit Atıf Ödül Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 360 30 75">Göktürk Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 877 37 55">Akşemsettin Şehit Hacı Ahmet Bahceci Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 360 08 03">Eyüp Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 501 68 85">Eyüp Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 477 67 04"><h6 class="mb-1">Gaziosmanpaşa İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 537 97 99">Şehit Tevfik Arslan Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 581 47 47">Şehit Anıl Kaan Aybek Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 537 95 97">Karadeniz Şehit Gökhan Topçu Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 578 00 07">Gaziosmanpaşa Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 537 95 04">Gaziosmanpaşa Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 526 81 00"><h6 class="mb-1">Fatih İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 631 65 21">Şehit Tevfik Fikret Erciyas Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 632 25 90">Aksaray Şehit Vedat Ulusoy Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 534 80 53">Şehremini Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 519 08 00">Beyazıt Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 518 22 93">Kumkapı Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 522 26 70">Sirkeci Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 588 60 45">Kocamustafapaşa Şehit Sinan Acar Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 585 28 08">Fatih Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 530 81 66">Fatih Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 554 38 58"><h6 class="mb-1">Güngören İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 557 61 78">Güngören Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 637 37 27">Merter Ş.O.K. Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 481 04 00">Güngören Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 481 77 57">Güngören Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 425 08 66"><h6 class="mb-1">Küçükçekmece İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 624 54 43">Küçükçekmece Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 498 23 83">Sefaköy Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 624 06 46">Kanarya Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 696 41 81">Halkalı Şehit Ahmet Zehir Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 693 83 17">İkitelli Şehit Zeki Kaya Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 495 23 82">Küçükçekmece Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 624 73 00">Küçükçekmece Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 216 411 30 72"><h6 class="mb-1">Kadıköy İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 545 99 66">Acıbadem Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 361 31 38">Bostancı Şehit Semih Balaban Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 355 16 26">Göztepe Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 402 14 15">Hasanpaşa Şehit Kamil Yıldırım Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 336 43 39">İskele Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 405 13 90">Kadıköy Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0505 458 34 27">Kadıköy Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 216 353 53 30"><h6 class="mb-1">Kartal İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 353 40 84">Şehit selahattin Aslantepe Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 377 17 94">Yakacık Şehit Aydın Barış Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 353 17 70">Topselvi Şehit Ali Kaya Erdem Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 303 33 33">Anadolu Sarayı Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 353 75 86">Kartal Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 452 03 84">Kartal Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 295 28 28"><h6 class="mb-1">Kağıthane İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 234 50 50">Çağlayan Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 294 32 36">Sadabad Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 283 70 00">Sanayi Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 264 02 52">Çeliktepe Şehit Bestami Şeker Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 283 03 03">Gültepe Şehit Mehmet Pat Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 264 02 52">Kağıthane Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 283 70 01">Kağıthane Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 216 458 52 00"><h6 class="mb-1">Maltepe İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 417 22 45">Küçükyalı Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 459 70 70">Cumhuriyet Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 376 58 77">Esenkent Şehit Saffet Okumuş Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 459 82 82">Maltepe Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 427 19 99">Maltepe Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 216 354 63 63"><h6 class="mb-1">Pendik İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 354 88 22">Pendik Şehit Adil Gözalıcı Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 493 35 92">Esenyalı Şehit Fehim Çakır Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 396 81 27">Çamçeşme Şehit Yüksel Taşpınar Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 598 10 36">Pendik Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 598 08 52">Pendik Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0216 561 92 80"><h6 class="mb-1">Sancaktepe İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 430 81 55">Samandıra Şehit Rıza Yıldız Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 784 33 70">Şehit Mustafa Gusul Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 561 92 80">Sarıgazi Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 621 45 49">Sancaktepe Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 561 92 80">Sancaktepe Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 323 36 36"><h6 class="mb-1">Sarıyer İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 277 57 71">İstinye Şehit Muhsin Bodur Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 262 00 19">Tarabya Şehit Kemal Aykut Genç Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 323 43 76">Fatih Sultan Mehmet Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 218 06 27">Şehit Şeker Aktaş Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 277 56 79">Emirgan Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 289 31 32">Maslak Şehit Mürüvvet Akpınar Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 703 69 00">Zekeriyaköy Şehit Münür Alkan Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 242 81 62">Çayırbaşı Şehit Emrah Taşdemir Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 287 88 94">Sarıyer Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 286 19 46">Sarıyer Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 727 36 00"><h6 class="mb-1">Silivri İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 727 22 02">Silivri Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 731 82 01">Selimpaşa Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 727 36 00">Silivri Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 727 36 00">Silivri Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 216 398 86 72"><h6 class="mb-1">Sultanbeyli İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 592 10 67">Ahmet Yesevi Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 419 32 62">Sultanbeyli Fatih Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 398 67 73">Sultanbeyli Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 398 86 73">Sultanbeyli Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 476 76 14"><h6 class="mb-1">Sultangazi İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 606 07 07">Esentepe Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 703 08 62">Şehit Mustafa Tercan Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 536 49 14">Şehit Bülent Özkan Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 595 50 91">Habipler Şehit Ayhan Ölçer Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 594 55 40">Sultangazi Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 476 21 44">Sultangazi Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 216 395 79 98"><h6 class="mb-1">Tuzla İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 395 11 55">Tuzla Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 423 45 13">Şifa Şehit Fadıl Şişman Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 394 57 40">Orhanlı Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 447 14 17">Tuzla Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 447 14 17">Tuzla Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 547 97 61"><h6 class="mb-1">Zeytinburnu İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 582 08 36">Şehit Bülent Üstün Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 481 92 95">Merkezefendi Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 547 97 61">Zeytinburnu Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 547 97 61">Zeytinburnu Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 789 10 50"><h6 class="mb-1">Çatalca İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 789 15 11">Çatalca Şehit Fatih Nair Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 789 10 50">Çatalca Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 789 10 50">Çatalca Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0216 642 71 21"><h6 class="mb-1">Çekmeköy İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 639 05 99">Şehit Vefa Karakurdu Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 484 80 78">Alemdağ Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 639 05 98">Çekmeköy Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 639 05 99">Çekmeköy Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 216 412 18 14"><h6 class="mb-1">Ümraniye İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 335 18 59">Şehit Numan Şeref Datlı Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 533 73 53">Çakmak Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 466 76 56">Dudullu Şehit İsmail Akkoyun Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 412 18 14">Esenkent Şehit Mücahit Ünlü Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 212 18 14">Kazım Karabekir Şehit Tuncay Tarım Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 466 76 56">Ümraniye Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 466 76 56">Ümraniye Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 216 201 20 35"><h6 class="mb-1">Üsküdar İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 553 11 28">Doğancılar Şehit Tuncer Mustafaoğlu Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 216 321 72 06">Çengelköy Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 545 21 45">Bulgurlu Şehit Altuğ Verdi Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 495 55 51">Üsküdar Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 495 57 00">Üsküdar Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 216 711 51 26"><h6 class="mb-1">Şile İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 711 41 86">Şile Polis Merkezi<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 711 21 24">Şile Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0216 711 37 70">Şile Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-telephone-outbound"></i>
+            <div class="heading-text">
+              <a href="tel:0 212 214 43 00"><h6 class="mb-1">Şişli İlçe Emniyet Müdürlüğü</h6>
+            </div>
+          </div>
+        </div>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 236 17 89">Harbiye Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 248 33 27">Şişli Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 240 64 01">Feriköy Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 272 80 68">Kuştepe Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0 212 224 10 98">Adalet Sarayı Polis Merkezi Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 225 22 24">Şişli Çocuk Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <!-- Page Item  --><a class="affan-element-item" href="tel:0212 915 16 22">Şişli Asayiş Büro Amirliği<i class="bi bi-telephone-outbound-fill"></i></a>
+        <script>
+          function elementsSearch() {
+              var input = document.getElementById('elementsSearchInput');
+              var filter = input.value.toUpperCase();
+              var list = document.getElementById("elementsSearchList");
+              var listItem = list.getElementsByClassName('affan-element-item');
+          
+              for (i = 0; i < listItem.length; i++) {
+                  var a = listItem[i];
+                  var textValue = a.textContent || a.innerText;
+                  if (textValue.toUpperCase().indexOf(filter) > -1) {
+                      listItem[i].style.display = "";
+                  } else {
+                      listItem[i].style.display = "none";
+                  }
+              }
+          }
+          
+        </script>
+      </div>
+    </div>
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/slideToggle.min.js"></script>
+    <script src="js/internet-status.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/baguetteBox.min.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/rangeslider.min.js"></script>
+    <script src="js/vanilla-dataTables.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/magic-grid.min.js"></script>
+    <script src="js/dark-rtl.js"></script>
+    <script src="js/active.js"></script>
+    <!-- PWA -->
+    <script src="js/pwa.js"></script>
+  </body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>CodePen - Phone Book</title>
+  
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'>
+  
+<style>
+.center-align{
+  display: inline-block;
+  color: mediumseagreen;
+}
+.container svg{
+  display: inline-block;
+  width:70px;
+  height:70px;
+}
+.name{
+  position: relative;
+  z-index:999;
+}
+.collection-item span{
+  top:0px;
+  left:0;
+  display:block;
+  position:absolute;
+  color: #039be5;
+  font-weight: bold;
+  z-index:-1;
+  opacity:0;
+  visibility:hidden;
+  transition:all .5s ease-out;
+}
+.collection-item:hover span {
+  left:100px;
+  opacity:1;
+  visibility:visible;
+}
+.me{
+  background:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1922380/profile/profile-512.jpg?1529736334")no-repeat center / contain;
+  width:40px;
+  height:40px;
+  bottom:16px;
+  right:16px;
+  display:block;
+  position:fixed;
+  border-radius:50%;
+  z-index:999;
+  animation:me 2s linear infinite alternate;
+}
+.me:hover span{
+  right:50px;
+  opacity:1;
+  visibility:visible;
+}
+.me span{
+  width:150px;
+  top:10px;
+  right:0;
+  display:block;
+  position:absolute;
+  color: deeppink;
+  font-size:16px;
+  font-family: cursive;
+  z-index:-1;
+  opacity:0;
+  visibility:hidden;
+  transition:all .5s ease;
+}
+@keyframes me{
+  0%{transform:translateY(-4px)}
+  100%{transform:translateY(4px)}
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <div class="container">
+  <div class="center">
+    <svg viewBox="0 0 24 14">
+    <path fill="tomato" d="M12,6A3,3 0 0,0 9,9A3,3 0 0,0 12,12A3,3 0 0,0 15,9A3,3 0 0,0 12,6M6,8.17A2.5,2.5 0 0,0 3.5,10.67A2.5,2.5 0 0,0 6,13.17C6.88,13.17 7.65,12.71 8.09,12.03C7.42,11.18 7,10.15 7,9C7,8.8 7,8.6 7.04,8.4C6.72,8.25 6.37,8.17 6,8.17M18,8.17C17.63,8.17 17.28,8.25 16.96,8.4C17,8.6 17,8.8 17,9C17,10.15 16.58,11.18 15.91,12.03C16.35,12.71 17.12,13.17 18,13.17A2.5,2.5 0 0,0 20.5,10.67A2.5,2.5 0 0,0 18,8.17M12,14C10,14 6,15 6,17V19H18V17C18,15 14,14 12,14M4.67,14.97C3,15.26 1,16.04 1,17.33V19H4V17C4,16.22 4.29,15.53 4.67,14.97M19.33,14.97C19.71,15.53 20,16.22 20,17V19H23V17.33C23,16.04 21,15.26 19.33,14.97Z" />
+    </svg>
+    <h1 class="center-align">Phone Book</h1>
+  </div>
+  <input type="text" placeholder="Search name..." id="filterInput">
+  <ul id="names" class="collection with-header">
+
+    <li class="collection-header"><h5>A</h5></li>
+    <li class="collection-item">
+      <a href="#" class="name">Anh Dương
+        <span>0969419346</span>
+      </a>
+    </li>
+<li class="collection-item"><a href="#" class="name">Tuấn gà<span>0337146194</span></a> </li>
+<li class="collection-item"><a href="#" class="name">Tuấn gà<span>0337146194</span></a> </li>
+<li class="collection-item"><a href="#" class="name">Tuấn gà<span>0337146194</span></a> </li>
+<li class="collection-item"><a href="#" class="name">Tuấn gà<span>0337146194</span></a> </li>
+    
+  </ul>
+</div>
+
+
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'></script>
+      <script id="rendered-js" >
+var filterInput = document.getElementById('filterInput');
+
+filterInput.addEventListener('keyup', filterNames);
+
+function filterNames() {
+  var filterValue = document.getElementById('filterInput').value.toUpperCase();
+
+  var ul = document.getElementById('names');
+  var li = ul.querySelectorAll('li.collection-item');
+  for (var i = 0; i < li.length; i++) {if (window.CP.shouldStopExecution(0)) break;
+    var a = li[i].getElementsByTagName('a')[0];
+    // console.log(a.innerHTML)
+    if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+      li[i].style.display = '';
+    } else
+    {
+      li[i].style.display = 'none';
+    }
+  }window.CP.exitedLoop(0);
+}
+//# sourceURL=pen.js
+    </script>
+
+  
+
+</body>
+
+</html>
