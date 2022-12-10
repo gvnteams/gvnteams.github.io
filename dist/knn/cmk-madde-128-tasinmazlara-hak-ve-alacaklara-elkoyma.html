@@ -1,0 +1,1485 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tiny-slider.css">
+    <link rel="stylesheet" href="../css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="../css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="tck-search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+               <div class="page-content-wrapper py-0">
+        </div>
+      </div>
+
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<h2 id="taşınmazlara-hak-ve-alacaklara-elkoyma">Taşınmazlara, Hak ve Alacaklara Elkoyma</h2>
+
+<h2 id="cmk-madde-128">CMK Madde 128</h2>
+
+<p>(1) Soruşturma veya kovuşturma konusu suçun işlendiğine ve bu suçlardan elde edildiğine dair somut delillere dayanan kuvvetli şüphe sebebi bulunan hallerde, şüpheli veya sanığa ait;</p>
+
+<p>a) Taşınmazlara,</p>
+
+<p>b) Kara, deniz veya hava ulaşım araçlarına,</p>
+
+<p>c) Banka veya diğer malî kurumlardaki her türlü hesaba,</p>
+
+<p>d) Gerçek veya tüzel kişiler nezdindeki her türlü hak ve alacaklara,</p>
+
+<p>e) Kıymetli evraka,</p>
+
+<p>f) Ortağı bulunduğu şirketteki ortaklık paylarına,</p>
+
+<p>g) Kiralık kasa mevcutlarına,</p>
+
+<p>h) Diğer malvarlığı değerlerine, Elkonulabilir. Somut olarak belirlenen Bu taşınmaz, hak, alacak ve diğer malvarlığı değerlerinin şüpheli veya sanıktan başka bir kişinin zilyetliğinde bulunması halinde dahi, elkoyma işlemi yapılabilir. (Ek cümle: 21/2/2014 – 6526/10 md.) Bu madde kapsamında elkoyma kararı alınabilmesi için ilgisine göre Bankacılık Düzenleme ve Denetleme Kurumu, Sermaye Piyasası Kurulu, Mali Suçları Araştırma Kurulu, Hazine Müsteşarlığı ve Kamu Gözetimi, Muhasebe ve Denetim Standartları Kurumundan, suçtan elde edilen değere ilişkin rapor alınır. Bu rapor en geç üç ay içinde hazırlanır. Özel sebepler zorunlu kıldığında bu süre talep üzerine iki ay daha uzatılabilir.(1)</p>
+
+<p>(2) Birinci fıkra hükmü;</p>
+
+<p>a) Türk Ceza Kanununda tanımlanan;</p>
+
+<ol>
+  <li>
+    <p>Soykırım ve insanlığa karşı suçlar (madde 76, 77, 78),</p>
+  </li>
+  <li>
+    <p>Göçmen kaçakçılığı ve insan ticareti (madde 79, 80) ile organ veya doku ticareti (madde 91),</p>
+  </li>
+  <li>
+    <p>Hırsızlık (madde 141, 142),</p>
+  </li>
+  <li>
+    <p>Yağma (madde 148, 149),</p>
+  </li>
+  <li>
+    <p>Güveni kötüye kullanma (madde 155),</p>
+  </li>
+  <li>
+    <p>Dolandırıcılık (madde 157, 158),</p>
+  </li>
+  <li>
+    <p>Hileli iflas (madde 161),</p>
+  </li>
+  <li>
+    <p>Uyuşturucu veya uyarıcı madde imal ve ticareti (madde 188),</p>
+  </li>
+  <li>
+    <p>Parada sahtecilik (madde 197),</p>
+  </li>
+  <li>
+    <p>(Mülga: 21/2/2014 – 6526/10 md.; Yeniden düzenleme: 24/11/2016 6763/25 md.) Suç işlemek amacıyla örgüt kurma (madde 220, fıkra üç),</p>
+  </li>
+  <li>
+    <p>İhaleye fesat karıştırma (madde 235),</p>
+  </li>
+  <li>
+    <p>Edimin ifasına fesat karıştırma (madde 236),</p>
+  </li>
+  <li>
+    <p>(Ek: 24/11/2016-6763/25 md.) Tefecilik (madde 241), (2)</p>
+  </li>
+  <li>
+    <p>Zimmet (madde 247),</p>
+  </li>
+  <li>
+    <p>İrtikap (madde 250)</p>
+  </li>
+  <li>
+    <p>Rüşvet (madde 252),</p>
+  </li>
+  <li>
+    <p>Devletin Güvenliğine Karşı Suçlar (madde 302, 303, 304, 305, 306, 307, 308),</p>
+  </li>
+  <li>
+    <p>(Değişik: 2/12/2014-6572/41 md.) Anayasal Düzene ve Bu Düzenin İşleyişine Karşı Suçlar (madde 309, 311, 312, 313, 314, 315, 316),</p>
+  </li>
+  <li>
+    <p>Devlet Sırlarına Karşı Suçlar ve Casusluk (madde 328, 329, 330, 331, 333, 334, 335, 336, 337) suçları.</p>
+  </li>
+</ol>
+
+<p>b) Ateşli Silahlar ve Bıçaklar ile Diğer Aletler Hakkında Kanunda tanımlanan silah kaçakçılığı (madde 12) suçları,</p>
+
+<p>c) Bankalar Kanununun 22 nci maddesinin (3) ve (4) numaralı fıkralarında tanımlanan zimmet suçu,</p>
+
+<p>d) Kaçakçılıkla Mücadele Kanununda tanımlanan ve hapis cezasını gerektiren suçlar,</p>
+
+<p>e) Kültür ve Tabiat Varlıklarını Koruma Kanununun 68 ve 74 üncü maddelerinde tanımlanan suçlar, Hakkında uygulanır.</p>
+
+<p>(3) Taşınmaza elkonulması kararı, tapu kütüğüne şerh verilmek suretiyle icra edilir.</p>
+
+<p>(4) Kara, deniz ve hava ulaşım araçları hakkında verilen elkoyma kararı, bu araçların kayıtlı bulunduğu sicile şerh verilmek suretiyle icra olunur.</p>
+
+<p>(5) Banka veya diğer malî kurumlardaki her türlü hesaba elkonulması kararı, teknik iletişim araçlarıyla ilgili banka veya malî kuruma derhâl bildirilerek icra olunur. Söz konusu karar, ilgili banka veya malî kuruma ayrıca tebliğ edilir. Elkoyma kararı alındıktan sonra, hesaplar üzerinde yapılan bu kararı etkisiz kılmaya yönelik işlemler geçersizdir.</p>
+
+<p>(6) Şirketteki ortaklık paylarına elkoyma kararı, ilgili şirket yönetimine ve şirketin kayıtlı bulunduğu ticaret sicili müdürlüğüne teknik iletişim araçlarıyla derhâl bildirilerek icra olunur. Söz konusu karar, ilgili şirkete ve ticaret sicili müdürlüğüne ayrıca tebliğ edilir.</p>
+
+<p>(7) Hak ve alacaklara elkoyma kararı, ilgili gerçek veya tüzel kişiye teknik iletişim araçlarıyla derhâl bildirilerek icra olunur. Söz konusu karar, ilgili gerçek veya tüzel kişiye ayrıca tebliğ edilir.</p>
+
+<p>(8) Bu madde hükmüne göre alınan elkoyma kararının gereklerine aykırı hareket edilmesi halinde, Türk Ceza Kanununun “Muhafaza görevini kötüye kullanma” başlıklı 289 uncu maddesi hükümleri uygulanır.</p>
+
+<p>(9) (Değişik: 24/11/2016-6763/25 md.) Bu madde hükümlerine göre elkoymaya ve onuncu fıkra uyarınca kayyım atanmasına ancak hâkim karar verebilir.</p>
+
+<p>(10) (Ek: 15/8/2016-KHK-674/13 md.; Aynen kabul: 10/11/2016-6758/13 md.) Bu madde uyarınca elkonulan taşınmaz, hak ve alacakların idaresi gerektiğinde bu malvarlığı değerlerinin yönetimi amacıyla kayyım atanabilir. Bu durumda 133 üncü madde hükümleri kıyasen uygulanır.</p>
+
+<hr>
+
+<ul>
+  <li><a href="../5271-sayili-ceza-muhakemesi-kanunu-cmk.html"><strong>5271 sayılı CMK (Ceza Muhakemesi Kanunu) Tam Metin</strong></a></li>
+</ul>
+
+<hr>
+
+<amp-img src="../tokmak-yargitay-kararlari-1280x720.png" alt="CMK Madde 128  Taşınmazlara, Hak ve Alacaklara Elkoyma" width="1280" height="720" layout="responsive">
+            </amp-img>
+<h2 id="cmk-madde-128-gerekçesi">CMK Madde 128 Gerekçesi</h2>
+
+<p>[1] Soruşturma veya kovuşturma konusu suçun işlendiğine ve bu suçlardan elde edildiğine dair kuvvetli şüphe sebebi bulunan hallerde, şüpheli veya sanığa ait;</p>
+
+<p>a) Taşınmazlara,</p>
+
+<p>b) Kara, deniz veya hava ulaşım araçlarına,</p>
+
+<p>c) Banka veya diğer malî kurumlardaki her türlü hesaba,</p>
+
+<p>d) Gerçek veya tüzel kişiler nezdindeki her türlü hak ve alacaklara,</p>
+
+<p>e) Kıymetli evraka,</p>
+
+<p>f) Ortağı bulunduğu şirketteki ortaklık paylarına,</p>
+
+<p>g) Kiralık kasa mevcutlarına,</p>
+
+<p>h) Diğer malvarlığı değerlerine, Elkonulabilir. Bu taşınmaz, hak, alacak ve diğer malvarlığı değerlerinin şüpheli veya sanıktan başka bir kişinin zilyetliğinde bulunması halinde dahi, elkoyma işlemi yapılabilir.</p>
+
+<p>[2] Birinci fıkra hükmü;</p>
+
+<p>a) Türk Ceza Kanununda tanımlanan;</p>
+
+<ol>
+  <li>
+    <p>Soykırım ve insanlığa karşı suçlar (madde 76, 77, 78),</p>
+  </li>
+  <li>
+    <p>Göçmen kaçakçılığı ve insan ticareti (madde 79, 80),</p>
+  </li>
+  <li>
+    <p>Hırsızlık (madde 141, 142),</p>
+  </li>
+  <li>
+    <p>Yağma (madde 148, 149),</p>
+  </li>
+  <li>
+    <p>Güveni kötüye kullanma (madde 155),</p>
+  </li>
+  <li>
+    <p>Dolandırıcılık (madde 157, 158),</p>
+  </li>
+  <li>
+    <p>Hileli iflas (madde 161),</p>
+  </li>
+  <li>
+    <p>Uyuşturucu veya uyarıcı madde imal ve ticareti (madde 188),</p>
+  </li>
+  <li>
+    <p>Parada sahtecilik (madde 197),</p>
+  </li>
+  <li>
+    <p>Suç işlemek amacıyla örgüt kurma (madde 220),</p>
+  </li>
+  <li>
+    <p>İhaleye fesat karıştırma (madde 235),</p>
+  </li>
+  <li>
+    <p>Edimin ifasına fesat karıştırma (madde 236),</p>
+  </li>
+  <li>
+    <p>Zimmet (madde 247),</p>
+  </li>
+  <li>
+    <p>İrtikap (madde 250)</p>
+  </li>
+  <li>
+    <p>Rüşvet (madde 252),</p>
+  </li>
+  <li>
+    <p>Devletin Güvenliğine Karşı Suçlar (madde 302, 303, 304, 305, 306, 307, 308),</p>
+  </li>
+  <li>
+    <p>Silahlı örgüt (madde 314) veya bu örgütlere silah sağlama (madde 315) suçları,</p>
+  </li>
+  <li>
+    <p>Devlet Sırlarına Karşı Suçlar ve Casusluk (madde 328, 329, 330, 331, 333, 334, 335, 336, 337) suçları.</p>
+  </li>
+</ol>
+
+<p>b) Ateşli Silahlar ve Bıçaklar ile Diğer Aletler Hakkında Kanunda tanımlanan silah kaçakçılığı (madde 12) suçları,</p>
+
+<p>c) Bankalar Kanununun 22 nci maddesinin [3] ve [4] numaralı fıkralarında tanımlanan zimmet suçu,</p>
+
+<p>d) Kaçakçılıkla Mücadele Kanununda tanımlanan ve hapis cezasını gerektiren suçlar,</p>
+
+<p>e) Kültür ve Tabiat Varlıklarını Koruma Kanununun 68 ve 74 üncü maddelerinde tanımlanan suçlar, Hakkında uygulanır.</p>
+
+<p>[3] Taşınmaza elkonulması kararı, tapu kütüğüne şerh verilmek suretiyle icra edilir.</p>
+
+<p>[4] Kara, deniz ve hava ulaşım araçları hakkında verilen elkoyma kararı, bu araçların kayıtlı bulunduğu sicile şerh verilmek suretiyle icra olunur.</p>
+
+<p>[5] Banka veya diğer malî kurumlardaki her türlü hesaba elkonulması kararı, teknik iletişim araçlarıyla ilgili banka veya malî kuruma derhâl bildirilerek icra olunur. Söz konusu karar, ilgili banka veya malî kuruma ayrıca tebliğ edilir. Elkoyma kararı alındıktan sonra, hesaplar üzerinde yapılan bu kararı etkisiz kılmaya yönelik işlemler geçersizdir.</p>
+
+<p>[6] Şirketteki ortaklık paylarına elkoyma kararı, ilgili şirket yönetimine ve şirketin kayıtlı bulunduğu ticaret sicili müdürlüğüne teknik iletişim araçlarıyla derhâl bildirilerek icra olunur. Söz konusu karar, ilgili şirkete ve ticaret sicili müdürlüğüne ayrıca tebliğ edilir.</p>
+
+<p>[7] Hak ve alacaklara elkoyma kararı, ilgili gerçek veya tüzel kişiye teknik iletişim araçlarıyla derhâl bildirilerek icra olunur. Söz konusu karar, ilgili gerçek veya tüzel kişiye ayrıca tebliğ edilir.</p>
+
+<p>[8] Bu madde hükmüne göre alınan elkoyma kararının gereklerine aykırı hareket edilmesi halinde, Türk Ceza Kanununun “Muhafaza görevini kötüye kullanma” başlıklı 289 uncu maddesi hükümleri uygulanır.</p>
+
+<p>[9] Bu madde hükmüne göre elkoymaya ancak hâkim karar verebilir.</p>
+
+<hr>
+
+<h2 id="cmk-128-taşınmazlara-hak-ve-alacaklara-elkoyma--emsal-yargıtay-kararları">CMK 128 (Taşınmazlara, Hak ve Alacaklara Elkoyma)  Emsal Yargıtay Kararları</h2>
+
+<hr>
+
+<p><strong>YARGITAY 16. CEZA DAİRESİ
+Esas : 2015/8119 Karar : 2017/3704</strong> Tarih : 13.04.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 128. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Taşınmazlara, Hak ve Alacaklara Elkoyma</strong></p>
+  </li>
+</ul>
+
+<p>Hüküm: 1-)Sanıklar …, …, … hakkında TCK’nın 37/1 madde atfıyla TCK’nın 282/1, 62, 52/2, 53, 5549 sayılı Kanunun 17 ve CMK’nın 128-a maddeleri gereğince mahkumiyet,</p>
+
+<p>2-)Sanık … hakkında; TCK’nın 282/1, 62, 52/2, 53, 5549 sayılı Kanunun 17 ve CMK’nın 12-a maddeleri gereğince mahkumiyet 3-)Sanıklar …, …, …, … ve … haklarında beraat</p>
+
+<p>Dosya incelenerek gereği düşünüldü:</p>
+
+<p>1-) Sanıklara atılı suçun niteliği itibariyle suçtan doğrudan doğruya zarar görmeyen ve bu nedenle de davaya katılma hakkı bulunmayan İstanbul Muhakemat Müdürlüğü ve …nin davaya katılmasına ilişkin verilen karar hukuki</p>
+
+<p>değerden yoksun olup hükmü temyiz yetkisi vermeyeceğinden, katılan … ve …vekillerinin temyiz isteminin 1412 sayılı CMUK’nın 317. maddesi gereğince REDDİNE,</p>
+
+<p>2-) Sanık … ile sanık … hakkında kurulan mahkumiyet hükmüne yönelik yapılan temyiz incelemesinde;</p>
+
+<p>Anayasa Mahkemesinin 24.11.2015 tarih ve 29542 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren 08.10.2015 tarih, 2014/140 E. 2015/85 K. sayılı iptal kararının sanıklar … ve … hakkında TCK’nın 53. maddesinin uygulanması yönünden infaz aşamasında gözetilmesi mümkün görülmüştür.</p>
+
+<p>Yapılan yargılamaya, toplanıp karar yerinde gösterilen delillere, mahkemenin kovuşturma sonuçlarına uygun olarak oluşan kanaat ve takdirine, incelenen dosya kapsamına göre sanık … müdafii ile sanık … müdafiinin yerinde görülmeyen temyiz itirazlarının reddiyle hükmün ONANMASINA,</p>
+
+<p>3-)Sanıklar … ile sanık … hakkında kurulan mahkumiyet hükmüne yönelik temyiz incelemesine gelince;</p>
+
+<p>Sanıklar … ve …‘nun atılı suçtan kaynaklanan malvarlığı değerlerini aklama suçunu işlediklerine dair mahkumiyetlerine yeterli, her türlü kuşkudan uzak, kesin ve inandırıcı delil bulunmadığı gözetilmeden, beraatleri yerine yazılı şekilde mahkumiyetlerine hükmolunması,</p>
+
+<p>Kanuna aykırı, sanık … müdafii ile sanık …‘nun temyiz itirazları bu itibarla yerinde görülmüş olduğundan hükmün bu sebepten dolayı BOZULMASINA, 13.04.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY CEZA GENEL KURULU</strong>
+<strong>Esas : 2013/11-148 Karar : 2014/87</strong> Tarih : 25.02.2014</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 128. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Taşınmazlara, Hak ve Alacaklara Elkoyma</strong></p>
+  </li>
+</ul>
+
+<p>İlk derece mahkemesi sıfatıyla yargılama yapan Yargıtay 11. Ceza Dairesince 16.11.2012 gün ve 3-2 sayı ile; sanık N.. T..’ın resmi belgede sahtecilik ve görevi kötüye kullanma, sanıklar A.. Y.. ve M.. T..’ün görevi kötüye kullanmak suçlarından 5271 sayılı CMK’nun 223/2-c maddesi uyarınca beraatlerine karar verilmiş, Daire Üyesi A. T. D. “sanık N.`nin sahtecilik suçunu oluşturduğu iddia edilen eylemle ilgili olarak görevi kötüye kullanma suçundan mahkûmiyetine karar verilmesi gerektiği” görüşüyle karşı oy kullanmıştır.</p>
+
+<p>Hükümlerin katılanlar vekili tarafından temyiz edilmesi üzerine Yargıtay Cumhuriyet Başsavcılığının 06.02.2013 gün ve 71138 sayılı “onama” istemli tebliğnamesiyle Yargıtay Birinci Başkanlığına gönderilen dosya, Ceza Genel Kurulunca değerlendirilmiş ve açıklanan gerekçelerle karara bağlanmıştır.</p>
+
+<p>Sanıkların beraatine karar verilen olayda temyiz incelemesi yapan Ceza Genel Kurulunca çözümlenmesi gereken uyuşmazlıklar; sanık N.. T.. hakkında resmi belgede sahtecilik ile tüm sanıklar hakkında görevi kötüye kullanma suçlarının sübutuna ilişkindir.</p>
+
+<p>İncelenen dosya kapsamından;</p>
+
+<p>Ankara Cumhuriyet Başsavcılığının görev ve işbölümü dağıtım yazısına göre; sanıklar N.. T.. ve A.. Y..’in basın suçları bürosu, sanık M.. T..`ün ise kaçakçılık ve mali suçlar bürosu evraklarına bakmak ve tüm sanıkların adlarına kayıtlı bulunan hazırlık evrakını takip edip sonuçlandırmak ile görevlendirildikleri,</p>
+
+<p>Ankara Cumhuriyet Başsavcılığının 2008/2111 sayılı dosyasında aralarında Z.. K.., A.. A.., İ. K. M. Ç.ve E. K.nın da bulunduğu yirmi şüpheli hakkında suç işlemek amacıyla örgüt kurmak, suç işlemek amacıyla kurulmuş örgüte üye olmak, nitelikli dolandırıcılık ve sahtecilik suçlarından Cumhuriyet savcısı sanık N.. T.. tarafından yürütülen soruşturmada 21.05.2009 tarihinde diğer sanıkların da görevlendirildikleri,</p>
+
+<p>Soruşturmada 5271 sayılı CMK’nun 153/2. maddesi gereğince kısıtlılık kararı alındığı, görevli bulunan Cumhuriyet savcısı N.. T.. tarafından 01.06.2009 tarihinde Ankara Nöbetçi Sulh Ceza Mahkemesinden soruşturma dosyasının 19 şüphelisi hakkında; “doğrudan ortak ya da sahip oldukları taşınmazlara, kara, deniz ve hava ulaşım araçlarına, ortağı bulundukları şirketteki ortaklık paylarına ve bu kişilerin ortağı oldukları şirketlerin sahip oldukları yukarıdaki varlık ve değerlere” 5271 sayılı CMK`nun 128. maddesi gereğince el konulmasının talep edildiği,</p>
+
+<p>Ankara 3. Sulh Ceza Mahkemesince 01.06.2009 gün ve 563 D.iş sayı ile; talebe konu 19 kişiden Firdevsi Ermiş, İ. K. M. Ç., Z.. K.., M. G.., A. C., Ü.Y.S. ve Ş..hakkında CMK`nun 128/2, a-6. maddesi uyarınca; “a-) Doğrudan ortak ya da sahip oldukları taşınmazlara, kara, deniz veya hava ulaşım araçlarına, ortağı bulundukları şirketlerdeki ortaklık paylarına el konulmasına,</p>
+
+<p>b) Cumhuriyet Başsavcılığının (2) nolu maddedeki bu kişilerin ortağı oldukları şirketlere sahip oldukları yukarıda sayılı varlık ve değerlerine el konulmasına karar verilmesi talebinin, taşınmazlara, kara, deniz ve hava ulaşım araçlarına, ortağı bulundukları şirketlerdeki ortaklık paylarına el koyma kararı verildiğinden, kanunda belirtilmeyen şekilde talepte bulunulduğundan talebin reddine,</p>
+
+<p>c-) M. S. B.ı`nın açık kimliği ve TC kimlik numarası olmadığından isme benzer başkalarının mağdur olmaması için talebin reddine” karar verildiği,</p>
+
+<p>Bu karara karşı şüpheli müdafileri tarafından yapılan itirazların Ankara 7, 8, 12, 13 ve 16. Asliye Ceza Mahkemeleri tarafından reddedildiği,</p>
+
+<p>Ankara 3. Sulh Ceza Mahkemesinin itiraz üzerine kesinleşen 01.06.2009 gün ve 563 D.iş sayılı bu kararına ilişkin dosyada iki örnek bulunduğu,sahtecilik suçuna konu olan örnekte kararın (b) ve (c) bentlerinin gözükmediği, Cumhuriyet savcısı N.. T.. tarafından fotokopi ile çoğaltılan sözkonusu kararın (b) ve (c) bentleri kapatılarak bu kısımlara ilişkin bölüm boş gözükecek şekilde, 02.06.2009 günlü müzekkereyle Tapu Kadastro Genel Müdürlüğü 2. Bölge Müdürlüğüne gönderildiği, kararda yazılı şahıslara ait taşınmazlara tedbir konulmasının talep edildiği,</p>
+
+<p>Aynı gün şüpheli 18 kişinin ortağı oldukları şirketlerdeki paylarına el konulması hususunda İstanbul ve Ankara Ticaret Sicil Memurluğuna da müzekkereler yazıldığı, kararın şüphelilerin ortağı olduğu şirketlere de tebliğ edildiği,</p>
+
+<p>İstanbul Ticaret Sicil Memurluğunun 08.06.2009 günlü yazısı ile Ankara Cumhuriyet Başsavcılığı müzekkeresinde yazılı 18 kişinin ortak, kurucu ya da yönetim kurulu üyesi oldukları şirketlerin adlarının bildirildiği ve ek olarak anonim şirketlerde kuruculardan sonraki hissedarların tescile tâbi olmadığının belirtildiği,</p>
+
+<p>Şüpheliler A.. A.. ve Z.. K.. müdafilerinin el koyma kararının kaldırılmasına yönelik 17.06.2009 tarihli dilekçedeki taleplerinin, görevli Cumhuriyet savcıları tarafından 19.06.2009 günlü yazı reddedildiği, söz konusu dilekçede şahısların malvarlıklarına konulan tedbirlerin kaldırılmasının talep edilmiş olduğu,</p>
+
+<p>22.06.2009 tarihinde şüpheli Mustafa Çelik müdafiininde aynı talepte bulunduğu ve 23.06.2009 günü üç sanık tarafından istemin yerinde görülmediği,</p>
+
+<p>Soruşturma dosyasında şüpheli konumunda bulunan H.K. ve İ. K. arasında 25.06.2009 günü yapılan telefon görüşmesinden; şirket tüzel kişiliğine ait bir taşınmazın satışı için yapılan başvuru sırasında, Ticaret Sicil Memurluğu tarafından şirket ortaklarının payında tedbir olduğundan bahisle tüzel kişinin sahip olduğu taşınmazla ilgili tasarruf yetki belgesinin verilmediğinin tespit edildiği,</p>
+
+<p>Katılan Set Programcılık ve Teknik Hizmetleri San. ve Tic. A.Ş’nin 2.350.000 Lira sermayesinin 2.330.000 Lirasının Z.. K.., M.Ç. İ.K.’a ait olup, adı geçenlerin Ankara Cumhuriyet Başsavcılığının 2008/2111 esas sayılı dosyasında şüpheli konumunda bulundukları, kalan 20.000 Lira sermayenin Z.. K..’ın oğulları olan Ö. Z.K. ile M. H. K. ait olduğu, şirketin toplam 470.000 hissesinden 466.000 hissesinin şüphelilere ait olup bunun toplam hissenin % 99,14`üne karşılık geldiği,</p>
+
+<p>Katılan Mepa Medya San. ve Tic. A.Ş’nin 500.000 Lira sermayesinin 498.750 Lirasının Z.. K.., M. Ç. ve İ. K. ait olup adı geçenlerin Ankara Cumhuriyet Başsavcılığının 2008/2111 esas sayılı dosyasında şüpheli konumunda bulundukları, sermayenin kalan 1.250 Lirasının Z.. K..’ın oğlu Ö.Z. K.’a ait olduğu, şirketin toplam 500.000 hissesinin bulunduğu, bunun 498.750 hissesinin şüphelilere ait olup, toplam hissenin % 99,75`ini oluşturduğu,</p>
+
+<p>Katılan Y.. Dünya İletişim San. ve Tic. A.Ş nin % 80, H. Görsel San. ve Tic. A.Ş’nin % 79,77, Yurt İletişim ve Haber Ajansı San. Ve Tic. A.Ş.’nin % 98,57hissesinin şüphelilere ait olduğu,</p>
+
+<p>Tapu Kadastro Genel Müdürlüğü 2. Bölge Müdürlüğünce 03.06.2009 günü sanık Cumhuriyet savcısı N.. T..`a faksla gönderilen yazıda; şüphelilerden yedisi adına 25 tapu sicil müdürlüğünde çeşitli taşınmaz kayıtlarının olduğu tespit edilerek ilgili tapu sicil müdürlüklerine gereğinin yapılması için yazı yazıldığının belirtildiği, devamla, “ayrıca sistemimizde ad, soyad, baba adı, ünvan esasına göre sorgulama yapıldığından şahısların / şirketlerin diğer kimlik bilgilerinin doğru olup olmadığı tespit edilememiştir. Ad-soyad-baba adları, ünvanları aynı/benzer olan farklı şahıslar ve şirketler bulunabileceğinden ve şahısların şirketlerin ayrıntılı nüfus bilgisi vs. taşınmazın bulunduğu ilgili tapu sicil müdürlüklerinde mevcut olduğundan, iş bu müdürlükler tarafından kimlik bilgileri işlendikten sonra işlem yapılabilecektir… yazınızda sözü edilen şahıslar/ şirketler mal beyanında bulundular ise veya adlarına kayıtlı başkaca gayrımenkul bilgisi kurumunuzda mevcutsa mahalle parsel ada numaralarının bildirilmesi halinde tekrar araştırma yapılarak tarafınıza bilgi verilecektir” şeklinde açıklama yazıldığı,</p>
+
+<p>Cumhuriyet savcısı N.. T.. tarafından 04.09.2009 tarihinde Tapu Kadastro Genel Müdürlüğü 20. Bölge Müdürlüğüne 18 şüphelinin açık kimlik bilgileri ile 21 limited ve anonim şirketin adının bildirildiği, ekinde karar gönderilmediği,</p>
+
+<p>Bir kısım şüpheliler müdafii avukat Ş. Y.. Cumhuriyet Savcılığına hitaben yazdığı 05.03.2010 tarihli dilekçede; “563 D.iş sayılı karar ile yalnızca gerçek kişilerin malvarlığına el konulmuş, ancak tedbir kararının infazı sırasındaki bir eksiklik ve yanlış anlamadan dolayı şüphelilerin ortağı olduğu şirket tüzel kişilerinin malvarlığına da tedbir konulduğu … anlaşılmaktadır. Mağduriyetlere son verilebilmesi için tedbir kararının yanlış uygulamalarına son verilmesi, tapu sicil müdürlüklerindeki tereddütlerin giderilmesi için gereğinin yapılması” talebinde bulunduğu, dilekçenin altında 06.03.2010 tarihli yazısı ile Cumhuriyet savcısıN.. T.. tarafından; “Av. E.. Ş.. ile yapılan telefon görüşmesinde işlemlerde tereddütlü bulunan dairenin hangi işlemde hangi yönde tereddütlü olduğunun belirtilmesi halinde bir karar verilebileceği, bu dilekçedeki genel ifadelere göre bir karar verilemeyeceği” açıklamasının yazıldığı,</p>
+
+<p>Soruşturma dosyasının 2010 yılında olağan müfettiş denetiminde incelendiği, Ş.Y.. 05.03.2010 tarihli dilekçesi ve dilekçe üzerinde yer alan Cumhuriyet savcısı N.. T..`ın yazısının müfettiş tarafından görülerek denetiminin yapıldığı, ancak herhangi bir tavsiye ve tenkide konu edilmediği,</p>
+
+<p>Avukat Ş.Y.18.03.2010 tarihli dilekçesi ile; kararın (b) ve (c) bendi kapatılarak ilgili yerlere gönderilmesi nedeniyle tüzel kişilerin malvarlığına hatalı şekilde tedbir uygulandığı, yanlış uygulamaların önüne geçilebilmesi için 563 D.iş sayılı kararın tamamının eksiksiz şekilde ilgili yerlere gönderilmesi ve tedbir kararının şirkete ait malvarlığını kapsamadığı hususunun açıklığa kavuşturulabilmesini talep ettiği,</p>
+
+<p>Görevli Cumhuriyet savcıları olan üç sanığın imzaladığı 22.03.2010 günlü mütalaa yazısında; “Kararın şirket malvarlığına yönelik tedbiri de kapsadığı, (a) bendinde şirketteki paya tedbir konulmuş olduğundan ayrıca şirketlerin malvarlığına tedbir konulmasına gerek görülmediği, kişilerin taşınmazlarına el konulmuş olması halinde kişinin sahip olduğu taşınmazın elden çıkarılmasının önlenmesi sağlanırken, aynı kişinin ortaklık yoluyla sahip olduğu şirketin taşınmazının elden çıkarılmasının beklenemeyeceği, dolayısıyla şirketin sahip olduğu taşınmaza tedbir konulmasında karara aykırı bir yön bulunmadığı, uygulamanın karara uygun olduğu”nun belirtildiği,</p>
+
+<p>Ankara 3. Sulh Ceza Mahkemesinin 01.06.2009 gün ve 563 D.iş sayılı kararında hakkındaki tedbir talebi TC kimlik numarası olmadığından bahisle reddedilenMehmet Sıddık Balıkçı ile ilgili olarak yenilenen talep üzerine, 01.04.2010 tarihinde Ankara 10. Sulh Ceza Mahkemesince 434 D.iş sayı ile; “Doğrudan ortak ya da sahip olduğu taşınmazlara, kara, deniz, hava ulaşım araçlarına, ortağı bulunduğu şirketlerdeki ortaklık payına ve ortağı olduğu şirketlerin sahip olduğu yukarıdaki sayılı varlık ve değerlere CMK`nun 128/2, a-6. maddesi uyarınca elkonulmasına” karar verildiği, şüpheli müdafinin itirazının da merciince reddedildiği,</p>
+
+<p>Sanık Cumhuriyet savcısı N.. T.. tarafından, Zirve İletişim San. ve Tic. A.Ş. Adına kayıtlı 877 parseldeki tapuya tedbir konulmasına ilişkin Yenimahalle 2. Bölge Tapu Sicil Müdürlüğüne 30.04.2010 günü yazı yazıldığı ve yazının ekinde 563 D.iş sayılı kararın tam metninin gönderildiği,</p>
+
+<p>Konya Tapu Sicil Müdürlüğünce 07.05.2010 tarihinde Set Programcılık Tanıtım ve Teknik Hizmetler San. ve Tic. A.Ş. adına kayıtlı olan 19852 ada 5 parsel, Akyurt Tapu Sicil Müdürlüğünce 07.05.2010 tarihinde Set Programcılık Tanıtım ve Teknik Hizmetler San. ve Tic. A.Ş. adına kayıtlı olan 957 parsel, Yenimahalle Tapu Sicil Müdürlüğünce 17.05.2010 tarihinde Zirve İletişim San ve Tic. Ltd. Şti adına kayıtlı olan 62593, 62596, 62599 ve 62607 parsel, Keşan Tapu Sicil Müdürlüğünce 17.05.2010 tarihinde Set Programcılık Tanıtım ve Teknik Hizmetler Tic. A.Ş. adına kayıtlı olan 1185, 1206, 1217 ve 1220 parsel numaralı taşınmazlar üzerine ihtiyati tedbir tesisi işleminin yapıldığını belirtir yazıların Ankara Cumhuriyet Başsavcılığına gönderildiği, söz konusu 1185 parsel numaralı taşınmaz üzerine konulan tedbirin açıklaması olarak; “ortaklık payına el koyma kararı verildiğinden, tedbir konulmuştur” şeklinde yazı yazıldığı,</p>
+
+<p>Bir kısım şüpheliler müdafii avukat Hakan Yıldız tarafından 29.09.2010 tarihinde, şirketlerin mağdur olması nedeniyle şirket taşınmazları üzerindeki el koyma kararının ve el koyma kararından sonra elde edilen taşınmazlar üzerindeki tedbir kararının kaldırılması talebinde bulunulduğu,</p>
+
+<p>Avukat H. Y. hitaben yazılan ve üç Cumhuriyet savcısının da imzaladığı yazıda, Ankara 3. Sulh Ceza Mahkemesince verilen 563 D.iş sayılı kararına, bu karara yapılan itirazları değerlendiren üst mahkemelerin kararlarına ve taşınmazların edinme tarihlerine göre talebin yerinde görülmediğinin belirtildiği,</p>
+
+<p>Manyas Tapu Sicil Müdürlüğüne yazılan 28.10.2010 tarihli müzekkere ile, Set Programcılık San. ve Tic. A.Ş. ne ait olan 1171 parsel sayılı taşınmazlara tedbir konulmasının istendiği ve ekinde Ankara 3. Sulh Ceza Mahkemesinin 563 D.iş sayılı kararının tamamının gönderildiği,</p>
+
+<p>Esenyurt Tapu Sicil Müdürlüğüne yazılan 01.11.2010 tarihli müzekkere ile, M. A.Ş. ve B. Holding A.Ş. ne ait olan 2998-1 parsel sayılı taşınmaza tedbir konulmasının istendiği ve ekinde Ankara 3. Sulh Ceza Mahkemesinin 563 D.iş sayılı kararının tamamının gönderildiği,</p>
+
+<p>Esenyurt Tapu Sicil Müdürlüğünce 08.11.2010 tarihinde M. Medya A.Ş. adına kayıtlı olan 2998-1 parsel numaralı taşınmaz, Manyas Tapu Sicil Müdürlüğünce 08.11.2010 tarihinde Set Programcılık Tanıtım ve Teknik Hizmetler San. ve Tic. A.Ş. adına kayıtlı olan 1171 parsel numaralı taşınmaz ve üzerindeki dubleks daireler üzerine ihtiyati tedbir tesisi işleminin yapıldığını belirtir yazıların Ankara Cumhuriyet Başsavcılığına gönderildiği,</p>
+
+<p>Y.Dünya İletişim San. ve Tic. A.Ş.’ne ait olan ve İstanbul Pendik`te bulunan 1008 parsel numaralı taşınmaz üzerine 17.09.2009 günü, 4013/1 parsel numaralı taşınmaz üzerine 30.09.2009 tarihinde tedbir konulduğu ve ilgili bölümlere “Ankara Cumhuriyet Başsavcılığının Basın Suçları soruşturma Bürosunun 04.09.2009 günlü müzekkeresi” şeklinde açıklama yazıldığı,</p>
+
+<p>Y. İletişim San. ve Tic. AŞ.’ne ait olan ve İstanbul Sarıyer`de bulunan 1519 parsel numaralı taşınmaz üzerine 15.09.2009 günü tedbir konulduğu ve ilgili bölümde “Ankara Cumhuriyet Başsavcılığının Basın Suçları soruşturma Bürosunun 04.09.2009 günlü müzekkeresi ve el koyma kararına istinaden” şeklinde açıklama yapıldığı,</p>
+
+<p>Y. İletişim San. ve Tic. A.Ş.<code class="language-plaintext highlighter-rouge">ne ait olan ve İstanbul Sarıyer</code>de bulunan 1518 parsel numaralı taşınmaz üzerine 17.09.2009 da tedbir konulduğu ve ilgili bölümde; “Ankara Cumhuriyet Başsavcılığının Basın Suçları soruşturma Bürosunun 04.09.2009 günlü müzekkeresi ve el koyma kararına istinaden” açıklamasına yer verildiği,</p>
+
+<p>Set Programcılık San. ve Tic. A.Ş.<code class="language-plaintext highlighter-rouge">ne ait olan ve Edirne Keşan</code>da bulunan 1185 parsel numaralı taşınmaz üzerine 17.05.2010 günü tedbir konulduğu ve ilgili bölüme “Ankara 3. Sulh Ceza Mahkemesinin 01.06.2009 gün ve 563 D.iş sayılı mahkeme müzekkeresi sayılı yazıları ile ortaklık payına el konulma kararı verildiğinden tedbir konulmuştur” açıklamasının yazıldığı,</p>
+
+<p>29.07.2011 tarihli şikâyet dilekçesi üzerine sanıklar N.. T.., A.. Y.. ve M.. T.. hakkında 19.08.2011 günü soruşturmaya başlandığı, Hâkimler ve Savcılar Yüksek Kurulu tarafından oyçokluğuyla kovuşturma izni verilmesine karar verildiği, Kurul Üyeleri A. S. E. ve Z. Ö.`ın eylemlerin suç oluşturmadığı ve kovuşturma yapılmasına gerek bulunmadığı görüşüyle karşı oy kullandıkları,</p>
+
+<p>Sanıkların Ankara Cumhuriyet Başsavcılığının 2008/2111 esas sayılı soruşturma dosyasındaki görevlerine son verildiği, yeni görevlendirilen Cumhuriyet savcılarının 26.08.2011 tarihinde soruşturma dosyasını devralmasından sonra, Ankara 3. Sulh Ceza Mahkemesinin 01.06.2009 gün ve 563 D.iş sayılı ve Ankara 10. Sulh Ceza Mahkemesinin 01.04.2010 gün ve 434 D.iş sayılı el koyma kararları ile ilgili olarak 23.09.2011 günü nöbetçi Sulh Ceza Mahkemesinden; “Şüphelilerin miras yoluyla ya da şans oyunları ile elde ettikleri ya da Deniz Feneri Derneğinin kurulduğu 1999 tarihinden önce iktisap edilmiş taşınmazlar üzerindeki tedbirin kaldırılmasına ve diğer mallar yönüyle tedbirin devamına karar verilmesi” talebinde bulunulduğu, Ankara 2. Sulh Ceza Mahkemesinin 26.09.2011 gün ve 811 D.iş sayılı kararı ile el koyma kararındaki tedbirin kaldırılmasına ilişkin talebin reddine karar verildiği, itiraz üzerine Ankara 20. Asliye Ceza Mahkemesince 29.09.2011 gün ve 316 D.iş sayılı karar ile; “İtirazın kabulüne, şüphelilerin miras yoluyla ya da şans oyunları ile elde ettikleri ya da D.F. Derneğinin kurulduğu 1999 tarihinden önce iktisap edilmiş taşınmazlar üzerindeki tedbirin kaldırılmasına, 434 D.iş sayılı karardaki .. ortağı olduğu şirketlerin sahip olduğu` cümlesinin iptaline, şüphelilerin el konulan mallarının hangilerinin derneğin kuruluşundan önce edinilen mallar olduğunun Cumhuriyet savcıları tarafından incelenerek belirlenmesine” karar verildiği,</p>
+
+<p>Bir kısım şüpheliler müdafii Avukat E.. Ş..`in Ankara 3. Sulh Ceza Mahkemesine hitaben yazdığı 26.03.2010 günlü dilekçesinde, mahkemenin 563 D.iş sayılı kararın hatalı uygulandığı, infaz için gönderilirken (b) ve (c) bentlerinin kapatıldığı, tedbir kararında şirket malvarlığına el konulması talebinin reddedildiği belirtilerek daha önce eksik gönderilen kararın tam metninin Tapu ve Kadastro Genel Müdürlüğüne, Ticaret Sicil Müdürlüğüne ve Emniyet Genel Müdürlüğüne gönderilmesini ve tedbir kararının şirkete ait malvarlığını kapsamadığı hususunun ilgili kurum ve kuruluşlara tebliğ edilmesini talep ettiği, ancak söz konusu dilekçenin sanıklarla ilgili disiplin soruşturması sırasındaki diğer dilekçe ve evraklara eklenmesine karşın ilgili mahkemesine verilmediği, bir kısım şüpheliler müdafii Avukat .. da ilgili dilekçeyi mahkemesine vermediklerini ifade ettiği,</p>
+
+<p>Ankara Cumhuriyet Başsavcılığının 2008/2111 esas sayılı soruşturma dosyasında 10.04.2012 gün ve 2111-124-1 sayılı iddianameyle şüpheliler hakkında hizmet sebebiyle güveni kötüye kullanmak ve sahtecilik suçlarından kamu davası açıldığı,</p>
+
+<p>Anlaşılmaktadır.</p>
+
+<p>Sanıklar aşamalarda; 5271 sayılı CMK`nun 153/2. maddesi uyarınca kısıtlılık kararı alınan ve çok sayıda şüpheli hakkında yürütülen soruşturma dosyasında, şüphelilerin malvarlıkları ile ilgili olarak verilen elkoyma kararının şirket malvarlığını da dolaylı olarak kapsadığını, % 90 aşan hakim hissedar konumunda olan şüphelilerin, kendi malvarlıkları üzerinde tasarrufta bulunamazken, neredeyse tamamına yakın hisseye sahip oldukları şirketlere ait malvarlıkları elden çıkarabilmesinin düşünülemeyeceğini, kaldı ki henüz şirket taşınmazları üzerine tedbir konmadan şüphelilerin hisselerindeki tedbir nedeniyle taşınmazlar üzerinde de tedbir uygulamasının yapıldığını ve ticaret sicil memuru tarafından tasarruf yetki belgesinin verilmediğini, gizlilik kararı olan dosyada mahkeme kararının yalnızca infaz edilebilecek olan (a) bendinin gönderildiğini, sonrasında da kararın tamamı gönderildiği halde tapu sicil müdürlükleri tarafından tedbir uygulamasına aynı şekilde devam edildiğini, onaysız fotokopi şeklindeki kararın yanlış anlaşılmayı önlemek amacıyla bir bölümünün kapatılmasının sahtecilik suçunu oluşturmayacağını, bazı bölümlerin eksik olduğunun ilk bakışta anlaşılabilmesine göre aldatıcılık yeteneğinin de olmadığını, tedbirin kaldırılmasına yönelik talep üzerine yazılan ret kararının hukuki mütalaadan ibaret olup yargı yetkisi kapsamında kaldığını, kanun yollarına açık olup suç teşkil etmeyeceğini, olağan denetim sırasında adalet müfettişi tarafından da görülüp eleştiriye dahi konu olmadığını savunmuşlardır.</p>
+
+<p>Temyize konu hükümlerin sırasıyla değerlendirilmesinde yarar bulunmaktadır.</p>
+
+<p>1- Sanık N.. T.. hakkında resmi belgede sahtecilik suçundan kurulan beraat hükmünün incelenmesi:</p>
+
+<p>5237 sayılı TCK’nun “Resmi belgede sahtecilik” başlıklı 204. maddesi;</p>
+
+<p>“(1) Bir resmî belgeyi sahte olarak düzenleyen, gerçek bir resmî belgeyi başkalarını aldatacak şekilde değiştiren veya sahte resmî belgeyi kullanan kişi, iki yıldan beş yıla kadar hapis cezası ile cezalandırılır.</p>
+
+<p>(2) Görevi gereği düzenlemeye yetkili olduğu resmi bir belgeyi sahte olarak düzenleyen, gerçek bir belgeyi başkalarını aldatacak şekilde değiştiren, gerçeğe aykırı olarak belge düzenleyen veya sahte resmi belgeyi kullanan kamu görevlisi üç yıldan sekiz yıla kadar hapis cezası ile cezalandırılır.</p>
+
+<p>(3) Resmi belgenin, kanun hükmü gereği sahteliği sabit oluncaya kadar geçerli olan belge niteliğinde olması halinde, verilecek ceza yarısı oranında artırılır” şeklinde düzenlenmiştir.</p>
+
+<p>Buna göre, resmi belgede sahtecilik suçu seçimlik hareketli bir suç olup, resmi belgenin sahte olarak düzenlenmesi, gerçek bir resmi belgenin başkalarını aldatacak şekilde değiştirilmesi, resmi belgenin gerçeğe aykırı olarak düzenlenmesi veya sahte resmi belgenin kullanılması durumunda suç oluşacaktır.</p>
+
+<p>Maddenin ikinci fıkrasında, resmi belgede sahtecilik suçunun kamu görevlisi tarafından işlenmesi hali tanımlanmış ve daha ağır bir yaptırıma bağlanmıştır. Bu suçun oluşabilmesi için suçun kamu görevlisi tarafından işlenmesinin yanı sıra, suçun konusunu oluşturan belgenin kamu görevlisinin görevi gereği düzenlemeye yetkili olduğu bir belge olması gerekir. Kamu görevlisinin gerçeğe aykırı olarak bir olayı kendi huzurunda gerçekleşmiş gibi veya bir beyanı kendi huzurunda yapılmış gibi göstererek belge düzenlemesi halinde, bu fıkra hükmünde tanımlanan suç oluşmaktadır.</p>
+
+<p>Maddenin üçüncü fıkrasında ise, suçun konusunu oluşturan resmi belgenin, kanunun hükmü gereği sahteliği sabit oluncaya kadar geçerli olan bir belge niteliğinde olması halinde cezanın yarı oranında artırılması hükme bağlanmıştır.</p>
+
+<p>Sahtecilik suçlarının hukuki konusu kamu güveni olup, belgelerin gerçeğe aykırı olarak düzenlenmesi, gerçek bir belgeye eklemeler yapılması, tamamen veya kısmen değiştirilmesi eylemlerinin kamu güvenini sarstığı kabul edilerek suç olarak düzenlenmiş ve yaptırıma bağlanmıştır.</p>
+
+<p>Resmî belgenin gerçeği taklit edilerek (sahte olarak düzenlenerek) işlenen suçun sahtecilik olarak nitelendirilebilmesi için, düzenlenen belgenin gerçek bir belge olduğu konusunda kişiyi aldatıcı nitelikte olması gerekir. Aldatıcılık özelliği suçun temel unsuru olup, özel bir incelemeye tabi tutulmadıkça gerçek olmadığı anlaşılamayan belge, sahte belge olarak kabul edilmelidir. Sahteciliğin kişileri aldatacak nitelikte (nesnel) olup olmadığının ve beş duyuyla ilk bakışta anlaşılabilir olup olmadığının şüpheye yer vermeyecek şekilde belirlenmesi gerekir.</p>
+
+<p>Mahkemece olayın çıkış, oluş ve akışı, düzenlenen belgelerle yapılan işlemler göz önüne alınarak, sahteciliğin kolaylıkla anlaşılıp anlaşılamayacağı bizzat saptanmalı ve sonucuna göre belgelerde aldatma yeteneği olup olmadığı takdir ve tespit edilmelidir.</p>
+
+<p>İnceleme konusu olayda, Cumhuriyet savcısı N.. T.. hakkında 02.06.2009 günlü eylemi nedeniyle resmi belgede sahtecilik suçundan kamu davası açılmıştır. Ankara 3. Sulh Ceza Mahkemesinin 01.06.2009 gün ve 563 D.iş sayılı kararına ilişkin bir sahtelik söz konusu olmayıp, kararın aslı üzerine bir değiştirme, tahrifat, silinti ya da başka bir sahtecilik fiilinin bulunmadığı görülmektedir. Sanığın eylemi onaysız fotokopi halindeki karar metni üzerinde, gönderileceği ilgili makam tarafından infaz edilecek bölümü açık kalmak üzere, infaza konu olmayan ve karar örneğinin gönderildiği makamı ilgilendirmeyen (b) ve (c) bentlerini kapatma ve bu haldeki fotokopi belgeyi Tapu Sicil Müdürlüğüne gönderilen müzekkereye eklemekten ibarettir.</p>
+
+<p>Haklarında soruşturma yürütülen 18 kişi adına kayıtlı taşınmazlar, ulaşım araçları ve ortağı bulundukları şirketlerdeki ortaklık payları üzerine tedbir konulmasının teminine yönelik olarak ve kararın bu tedbirin konulmasına ilişkin infaz edilecek (a) bendinin gönderilmesi şeklinde gerçekleşen olayda, soruşturma dosyasında CMK`nun 153/2. maddesi uyarınca kısıtlılık kararı verildiği de düşünüldüğünde, öncelikle onaysız fotokopi belge üzerinde gerçekleştirilen eylem sahtecilik suçunu oluşturmayacaktır. Kaldı ki, onaysız fotokopi niteliğindeki kararın yalnızca (a) bendi gözükmekte olup, (a) bendinin son cümlesindeki “el konulmasına” ibaresinden sonra uzun bir boşluk olduğu ve “evrakın Cumhuriyet Başsavcılığına iadesine” cümlesi ile arasında (b) ve devam eden bentlerin olması gerektiği ve bu bölümlerinin kapatıldığı çok açık belli ve ilk bakışta anlaşılabilir olduğundan, aldatma yeteneği de bulunmayıp sahtecilik suçu bu yönüyle de oluşmayacaktır.</p>
+
+<p>Şu halde, sanığın resmi evrakta sahtecilik suçunu oluşturmayacağı belirlenen fiilinin “görevi kötüye kullanma” suçunu oluşturup oluşturmadığı üzerinde de durulmalıdır.</p>
+
+<p>5237 sayılı Türk Ceza Kanununun ikinci kitabının “Millete ve devlete karşı suçlar ve son hükümler”e yer veren dördüncü kısmının “Kamu idaresinin güvenilirliğine ve işleyişine karşı suçlar” başlıklı birinci bölümünde “Görevi kötüye kullanma” suçu 257. maddesinde;</p>
+
+<p>“(1) Kanunda ayrıca suç olarak tanımlanan hâller dışında, görevinin gereklerine aykırı hareket etmek suretiyle, kişilerin mağduriyetine veya kamunun zararına neden olan ya da kişilere haksız bir kazanç sağlayan kamu görevlisi, bir yıldan üç yıla kadar hapis cezası ile cezalandırılır.</p>
+
+<p>(2) Kanunda ayrıca suç olarak tanımlanan hâller dışında, görevinin gereklerini yapmakta ihmal veya gecikme göstererek, kişilerin mağduriyetine veya kamunun zararına neden olan ya da kişilere haksız bir kazanç sağlayan kamu görevlisi, altı aydan iki yıla kadar hapis cezası ile cezalandırılır.</p>
+
+<p>(3) İrtikâp suçunu oluşturmadığı takdirde, görevinin gereklerine uygun davranması için veya bu nedenle kişilerden kendisine veya bir başkasına çıkar sağlayan kamu görevlisi, birinci fıkra hükmüne göre cezalandırılır” şeklinde düzenlenmişken, 19.12.2010 tarihinde yürürlüğe giren 6086 sayılı Kanunun birinci maddesi ile birinci ve ikinci fıkralarında yer alan “kazanç” ibareleri “menfaat”, birinci fıkrasında yer alan “bir yıldan üç yıla kadar” ibaresi “altı aydan iki yıla kadar”, ikinci fıkrasında yer alan “altı aydan iki yıla kadar” ibaresi “üç aydan bir yıla kadar” ve üçüncü fıkrasında yer alan “birinci fıkra hükmüne göre” ibaresi “bir yıldan üç yıla kadar hapis ve beşbin güne kadar adli para cezası ile” biçiminde değiştirilmek suretiyle,</p>
+
+<p>“(1) Kanunda ayrıca suç olarak tanımlanan hâller dışında, görevinin gereklerine aykırı hareket etmek suretiyle, kişilerin mağduriyetine veya kamunun zararına neden olan ya da kişilere haksız bir menfaat sağlayan kamu görevlisi, altı aydan iki yıla kadar hapis cezası ile cezalandırılır.</p>
+
+<p>(2) Kanunda ayrıca suç olarak tanımlanan hâller dışında, görevinin gereklerini yapmakta ihmal veya gecikme göstererek, kişilerin mağduriyetine veya kamunun zararına neden olan ya da kişilere haksız bir menfaat sağlayan kamu görevlisi, üç aydan bir yıla kadar hapis cezası ile cezalandırılır.</p>
+
+<p>(3) İrtikâp suçunu oluşturmadığı takdirde, görevinin gereklerine uygun davranması için veya bu nedenle kişilerden kendisine veya bir başkasına çıkar sağlayan kamu görevlisi, bir yıldan üç yıla kadar hapis ve beşbin güne kadar adli para cezası ile cezalandırılır” şekline dönüştürülmüş, 05.07.2012 tarihinde yürürlüğe giren 6352 sayılı Kanunun 105. maddesi ile de üçüncü fıkra yürürlükten kaldırılmıştır.</p>
+
+<p>Uyuşmazlıkla ilgili olan 5237 sayılı TCK’nun 257. maddesinin 1. fıkrasında düzenlenen icrai davranışlarla görevi kötüye kullanma suçu, kamu görevlisinin görevinin gereklerine aykırı hareket etmesi ve bu aykırı davranış nedeniyle, kişilerin mağduriyeti veya kamunun zararına neden olunması ya da kişilere haksız kazanç, suç tarihinden sonra 6086 sayılı Kanunla yapılan değişiklik sonrası ise haksız menfaat sağlanması ile oluşmaktadır.</p>
+
+<p>Buna göre ilk şart, kamu görevlisi olan failin yaptığı işle ilgili olarak kanun veya diğer idari düzenlemelerden doğan bir görevinin olması ve bu görevi dolayısıyla yetkili bulunmasıdır. Suçun oluşabilmesi için, norma aykırı davranış yetmemekte; bu davranış nedeniyle, kişilerin mağduriyetine veya kamunun zararına neden olunması ya da kişilere haksız bir menfaat sağlanması gerekmektedir.</p>
+
+<p>5237 sayılı TCK`nun 257. maddesinin gerekçesinde, suçun oluşmasına ilişkin genel şartlar; “Kamu görevinin gereklerine aykırı olan her fiili cezai yaptırım altına almak, suç ve ceza siyasetinin esaslarıyla bağdaşmamaktadır. Bu nedenle, görevin gereklerine aykırı davranışın belli koşulları taşıması hâlinde, görevi kötüye kullanma suçunu oluşturabileceği kabul edilmiştir. Buna göre, kamu görevinin gereklerine aykırı davranışın, kişilerin mağduriyetiyle sonuçlanmış olması veya kamunun ekonomik bakımdan zararına neden olması ya da kişilere haksız bir kazanç sağlamış olması hâlinde, görevi kötüye kullanma suçu oluşabilecektir” şeklinde vurgulanmış, öğretide de; TCK’nun 257. maddesindeki suçun oluşmasının, kamu görevlisinin görevinin gereklerine aykırı hareket etmesi sonucunda kişilerin mağdur olması veya kamunun zarar görmesi ya da kişilere haksız bir menfaat sağlanması şartlarına bağlı olduğu, bu sonuçları doğurmayan norma aykırı davranışların, suç kapsamında değerlendirilemeyeceği açıklanmıştır. (M. . A. - .A.C. Y. Ceza Hukuku Özel Hükümler, Turhan Kitapevi, 11.Bası, Ankara, 2011, s.913 vd.; Mahmut Koca - İlhan Üzülmez, Türk Ceza Hukuku Özel Hükümler, Adalet Yayınevi, Ankara, 2013, s.769; Veli Özer Özbek - Mehmet Nihat Kanbur - Koray Doğan - Pınar Bacaksız - İlker Tepe, Türk Ceza Hukuku Özel Hükümler, Seçkin Yayınevi, 2. Bası, Ankara, 2011, s.974)</p>
+
+<p>Norma aykırı davranışın maddede belirtilen sonuçları doğurup doğurmadığının saptanabilmesi için öncelikle “mağduriyet, kamunun zarara uğraması ve haksız menfaat” kavramların açıklanması ve somut olaylarda bunların gerçekleşip gerçekleşmediklerinin belirlenmesi gerekmektedir.</p>
+
+<p>Mağduriyet kavramının, sadece ekonomik bakımdan uğranılan zararla sınırlı olmayıp, bireysel hakların ihlali sonucunu doğuran her türlü davranışı ifade ettiği kabul edilmelidir. Bu husus madde gerekçesinde; “Görevin gereklerine aykırı davranışın, kişinin mağduriyetine neden olunması gerekir. Bu mağduriyet, sadece ekonomik bakımdan uğranılan zararı ifade etmez. Mağduriyet kavramı, zarar kavramından daha geniş bir anlama sahiptir” şeklinde açıkça vurgulanmış, öğretide de; mağduriyetin sadece ekonomik bakımdan ortaya çıkan zararı ifade etmeyeceği, mağduriyet kavramının ekonomik zarar kavramından daha geniş bir anlama sahip olduğu, bireyin, sosyal, siyasi, medeni her türlü haklarının ihlali sonucunu doğuran hareketlerin ve herhangi bir çıkarının zedelenmesine neden olmanın da bu kapsamda değerlendirilmesi gerektiğine işaret edilmiştir. (M. E. A. - A. G. - A.C. Y., Ceza Hukuku Özel Hükümler, Turhan Kitapevi, 11.Bası, Ankara, 2011, s.911 vd.; Mahmut Koca - İlhan Üzülmez, Türk Ceza Hukuku Özel Hükümler, Adalet Yayınevi, Ankara, 2013, s.772; Veli Özer Özbek - Mehmet Nihat Kanbur - Koray Doğan - Pınar Bacaksız - İlker Tepe, Türk Ceza Hukuku Özel Hükümler, Seçkin Yayınevi, 2. Bası, Ankara, 2011, s.974)</p>
+
+<p>Kişilere haksız kazanç sağlanmasını da içine alan kişilere haksız menfaat sağlanması da, bir başkasına hukuka aykırı olarak maddi ya da manevi yarar sağlanması olarak ifade edilebilecektir.</p>
+
+<p>Kamunun zarara uğraması hususuna gelince; madde gerekçesinde “ekonomik bir zarar olduğu” vurgulanan anılan kavramla ilgili olarak kanuni düzenleme içeren 5018 sayılı Kamu Malî Yönetimi veKontrol Kanununun 71. maddesinde mevzuata aykırı karar, işlem, eylem veya ihmal sonucunda kamu kaynağında artışa engel veya eksilmeye neden olunması şeklinde tanımlanan kamu zararı, her somut olayda hakim tarafından, iş, mal veya hizmetin rayiç bedelinden daha yüksek bir fiyatla alınıp alınmadığı veya aynı şekilde yaptırılıp yaptırılmadığı, somut olayın kendine özgü özellikleri de dikkate alınarak belirlenmelidir. Bu belirleme; uğranılan kamu zararının miktarının kesin bir biçimde saptanması anlamında olmayıp, miktarı saptanamasa dahi, işin veya hizmetin niteliği nazara alınarak, rayiç bedelden daha yüksek bir bedelle alım veya yapımın gerçekleştirildiğinin anlaşılması halinde de kamu zararının varlığı kabul edilmelidir. Ancak bu belirleme yapılırken, norma aykırı her davranışın, kamuya duyulan güveni sarstığı, dolayısıyla, kamu zararına yol açtığı veya zarara uğrama ihtimalini ortaya çıkardığı şeklindeki bir düşünceyle de hareket edilmemelidir.</p>
+
+<p>Öte yandan, 5271 sayılı CMK`nun “Taşınmazlara, hak ve alacaklara el koyma” başlıklı 128. maddesi; “(1) Soruşturma veya kovuşturma konusu suçun işlendiğine ve bu suçlardan elde edildiğine dair kuvvetli şüphe sebebi bulunan hallerde, şüpheli veya sanığa ait; 
+a) Taşınmazlara,
+b) Kara, deniz veya hava ulaşım araçlarına, 
+c) Banka veya diğer malî kurumlardaki her türlü hesaba,
+e) Kıymetli evraka, 
+f) Ortağı bulunduğu şirketteki ortaklık paylarına, 
+g) Kiralık kasa mevcutlarına, 
+h) Diğer malvarlığı değerlerine,
+Elkonulabilir. Bu taşınmaz, hak, alacak ve diğer malvarlığı değerlerinin şüpheli veya sanıktan başka bir kişinin zilyetliğinde bulunması halinde dahi, elkoyma işlemi yapılabilir.
+(2) Birinci fıkra hükmü; 
+a) Türk Ceza Kanununda tanımlanan;</p>
+<ol>
+  <li>Soykırım ve insanlığa karşı suçlar (Madde 76, 77, 78),</li>
+  <li>Göçmen kaçakçılığı ve insan ticareti (Madde 79, 80),</li>
+  <li>Hırsızlık (Madde 141, 142),</li>
+  <li>Yağma (Madde 148, 149),</li>
+  <li>Güveni kötüye kullanma (Madde 155),</li>
+  <li>Dolandırıcılık (Madde 157, 158),</li>
+  <li>Hileli iflas (Madde 161),</li>
+  <li>Uyuşturucu veya uyarıcı Madde imal ve ticareti (Madde 188),</li>
+  <li>Parada sahtecilik (Madde 197),</li>
+  <li>Suç işlemek amacıyla örgüt kurma (Madde 220),</li>
+  <li>İhaleye fesat karıştırma (Madde 235),</li>
+  <li>Edimin ifasına fesat karıştırma (Madde 236),</li>
+  <li>Zimmet (Madde 247),</li>
+  <li>İrtikap (Madde 250)</li>
+  <li>Rüşvet (Madde 252),</li>
+  <li>Devletin Güvenliğine Karşı Suçlar (Madde 302, 303, 304, 305, 306, 307, 308),</li>
+  <li>Silahlı örgüt (Madde 314) veya bu örgütlere silah sağlama (Madde 315) suçları,</li>
+  <li>Devlet Sırlarına Karşı Suçlar ve Casusluk (Madde 328, 329, 330, 331, 333, 334, 335, 336, 337) suçları. 
+b) Ateşli Silahlar ve Bıçaklar ile Diğer Aletler Hakkında Kanunda tanımlanan silah kaçakçılığı (Madde 12) suçları,
+c) Bankalar Kanununun 22 nci maddesinin (3) ve (4) numaralı fıkralarında tanımlanan zimmet suçu,
+d) Kaçakçılıkla Mücadele Kanununda tanımlanan ve hapis cezasını gerektiren suçlar,
+e) Kültür ve Tabiat Varlıklarını Koruma Kanununun 68 ve 74 üncü Maddelerinde tanımlanan suçlar,
+Hakkında uygulanır. 
+(3) Taşınmaza elkonulması kararı, tapu kütüğüne şerh verilmek suretiyle icra edilir. 
+(4) Kara, deniz ve hava ulaşım araçları hakkında verilen elkoyma kararı, bu araçların kayıtlı bulunduğu sicile şerh verilmek suretiyle icra olunur. 
+(5) Banka veya diğer malî kurumlardaki her türlü hesaba elkonulması kararı, teknik iletişim araçlarıyla ilgili banka veya malî kuruma derhâl bildirilerek icra olunur. Söz konusu karar, ilgili banka veya malî kuruma ayrıca tebliğ edilir. Elkoyma kararı alındıktan sonra, hesaplar üzerinde yapılan bu kararı etkisiz kılmaya yönelik işlemler geçersizdir. 
+6) Şirketteki ortaklık paylarına elkoyma kararı, ilgili şirket yönetimine ve şirketin kayıtlı bulunduğu ticaret sicili müdürlüğüne teknik iletişim araçlarıyla derhâl bildirilerek icra olunur. Söz konusu karar, ilgili şirkete ve ticaret sicili müdürlüğüne ayrıca tebliğ edilir. 
+(7) Hak ve alacaklara elkoyma kararı, ilgili gerçek veya tüzel kişiye teknik iletişim araçlarıyla derhâl bildirilerek icra olunur. Söz konusu karar, ilgili gerçek veya tüzel kişiye ayrıca tebliğ edilir. 
+(8) Bu madde hükmüne göre alınan elkoyma kararının gereklerine aykırı hareket edilmesi halinde, Türk Ceza Kanununun Muhafaza görevini kötüye kullanma başlıklı 289 uncu maddesi hükümleri uygulanır. 
+(9) Bu madde hükmüne göre elkoymaya ancak hâkim karar verebilir” şeklinde, suçtan elde edildiğine dair kuvvetli şüphe bulunan hallerde, şüpheli veya sanığa ait malvarlığı değerlerine elkonulmasına ilişkin düzenlemeye yer verilmiştir. 
+Soruşturma ve kovuşturma konusu suçun işlendiği ve elkonulması düşünülen taşınmaz, hak ve alacakların soruşturma ve kovuşturma konusu suçun işlenmesi suretiyle elde edildiği hususlarında kuvvetli şüphe nedenlerinin bulunması halinde maddenin birinci fıkrasında sekiz bent halinde sayılan taşınmaz, hak, alacak ve diğer malvarlığı değerlerine elkonulmasına karar verilebilecektir. Burada taşınmaz, hak, alacak ve diğer malvarlığı değerleri şüpheli veya sanıktan başka kişilerin zilyetliğinde bulunması halinde dahi, elkoyma kararına konu olabilecektir. 
+Diğer taraftan, 2644 sayılı Tapu Kanunu’nun 2. maddesi; “Hükmi şahısların tapu işlerinde merkez ve şubelerinin bulundukları yerin en büyük mülkiye amirinden, nizamnamelerine göre gayrimenkul tasarrufuna izinli olduklarına ve tescil işini yapacak mümessilin salahiyetine dair alınacak belgenin verilmesi mecburidir. Ticaret şirketleri bu belgeyi ticaret sicili memurlarından alırlar” biçiminde,
+Ticaret Sicil Tüzüğü’nün 105. maddesi ise; “Ticaret sicil memurları 2644 sayılı Tapu Kanununun 2. maddesi hükmünce ticaret şirketlerinin gayrimenkule tasarruf edebileceklerini gösteren vesikayı vermek için şirketlerin esas mukavelelerinde bildirilen işletme konusuna ait hükümlerle beraber TTK’ nın 137. maddesi hükmünü göz önünde tutmakla mükelleftirler. Sırf esas mukavelede şirketin gayrimenkule sahip olabileceğinin yazılmamış olmasına dayanılarak vesikanın verilmesi isteği reddedilemez” şeklinde düzenlenerek, tüzel kişilere ait gayrimenkullerle ilgili olarak bir tasarrufta bulunabilmek için ticaret şirketlerinin kanuni temsilcilerinin ticaret sicil memurundan gayrımenkul tasarrufuna yetkili olduğuna dair belge alma zorunluluğu hüküm altına alınmıştır.</li>
+</ol>
+
+<p>Bu açıklamalar ışığında uyuşmazlık konusu değerlendirildiğinde;
+Cumhuriyet savcısı olarak görev yapan sanık N.. T..’ın genel uygulamalardan farklı olarak, müzekkereye eklediği fotokopi haldeki mahkeme kararının bir bölümünü kapatmak suretiyle ilgili makama göndererek görevinin gereklerine aykırı hareket ettiği görülmektedir. Ancak, TCK`nun 257. maddesi uyarınca kamu görevlisinin eyleminin görevi kötüye kullanma suçunu oluşturduğundan söz edilebilmesi için görevinin gereklerine aykırı davranış yetmemekte, bu davranışının kişilerin mağduriyetine veya kamunun zararına neden olması ya da kişilere haksız bir menfaat sağlanması sonuçlarını doğurması gerekmektedir. Sanığın eylemi neticesinde bir kamu zararının doğmadığı ve kişilere haksız bir menfaat sağlanmadığı hususunda bir tereddüt bulunmadığından, kişilerin mağduriyetine neden olunup olunmadığı değerlendirilmelidir. 
+Ankara 3. Sulh Ceza Mahkemesinin 563 D.iş sayılı kararı ile doğrudan ortak ya da sahip oldukları taşınmazlara, kara, deniz, veya hava ulaşım araçlarına, ortağı bulundukları şirketlerdeki ortaklık paylarına el konulan 18 şüpheliden bir kısmının kurucu ortak ve hakim hissedar oldukları katılan şirketlere ait taşınmazlar üzerine de tedbir konulduğu anlaşılan olayda kişilerin mağduriyetine neden olunduğu ileri sürülebilirse de; Tapu Sicil Müdürlüklerince sermaye şirketlerinin hakim hissedar ya da kurucu ortaklarının payları üzerine tedbir konulması durumunda şirket tüzel kişiliğine ait taşınmazlara da tedbir konulması şeklindeki uygulamanın sürdürüldüğü, aynı şekilde Ticaret Sicil Memurlukları tarafından benzer durumlarda hakim hissedar payı üzerinde tedbir konulmuş olması halinde şirkete ait taşınmazlarla ilgili tasarruf yetki belgesinin verilmemesi yönündeki uygulamanın tercih edildiği görülmektedir.</p>
+
+<p>İnceleme konusu olayda da, Keşan Tapu Sicil Müdürlüğünce Set Programcılık Tanıtım ve Teknik Hizmetler Tic. A.Ş. adına kayıtlı olan 1185 parsel numaralı taşınmazlar üzerine konulan ihtiyati tedbirin açıklaması olarak; “ortaklık payına el koyma kararı verildiğinden, tedbir konulmuştur” şeklinde yazı yazıldığı, ayrıca adı geçen şirketin bir diğer taşınmazının satışı için Tapu Kanununun 2. maddesi uyarınca yapılan başvuru sırasında henüz şirket taşınmazı üzerine tedbir konulmadığı halde Ticaret Sicil Memurluğu tarafından hissedar payında tedbir olduğundan bahisle tüzel kişinin sahip olduğu taşınmazla ilgili tasarruf yetki belgesinin verilmediği görülmektedir.</p>
+
+<p>Öte yandan, sanık Cumhuriyet savcısı kararın bir bölümünü kapatmak suretiyle Tapu Kadastro Genel Müdürlüğü 2. Bölge Müdürlüğüne gönderirken mahkeme kararına uygun olacak şekilde şahıslar adına kayıtlı taşınmazlar üzerine konulan tedbirin icrasından bahsetmiş, bu müzekkereyi alan anılan müdürlük tarafından faksla gönderilen yazıda 25 ayrı tapu sicil müdürlüğünde bir kısım taşınmazların tespit edildiği ve tedbir konulması için gerekli yazıların yazıldığı belirtildikten sonra, şahısların ayrıntılı kimlik bilgilerine ek olarak şirket ünvan ve adres bilgileri de istenmiş olup, sanık Cumhuriyet savcısı tarafından Tapu Kadastro Genel Müdürlüğünün uygulamasının bu yönde olduğu düşünülerek şüphelilerin ortağı olduğu şirketlerle ilgili bilgiler bu yazı üzerine gönderilmiştir. Kaldı ki, sanık Cumhuriyet savcısı tarafından bu bilgiler gönderilmeden önce de bir kısım şirket taşınmazları için ihtiyaten tedbir uygulamasına başlanmış, aynı soruşturmada şüpheli konumunda bulunan Mehmet Sıddık Balıkçı ile ilgili olarak pay sahibi olduğu şirket malvarlığı üzerine de tedbir konulmasına karar verilmiş ve bu karar ilk aşamada itiraz üzerine kesinleşmiştir. Buna göre, soruşturma şüphelilerinin bir kısmının katılan şirketlerin tamamına yakınında hisse sahibi olarak hakim ortak konumunda bulunmaları, kurucu ortak olmaları, soruşturmanın niteliği, kapsamı ve 5271 sayılı CMK`nun 128. maddesi hükmü göz önünde bulundurulduğunda, görevin gereklerine aykırı hareket etmek suretiyle kişilerin mağduriyetine neden olma şartının da somut olayda gerçekleşmediği kabul edilmelidir.</p>
+
+<p>Bu itibarla, sanık Cumhuriyet savcısı N.. T..`ın eyleminin resmi evrakta sahtecilik ve görevi kötüye kullanma suçunu oluşturmadığı anlaşıldığından, hakkında kurulan beraat hükmünün onanmasına karar verilmelidir.</p>
+
+<p>2- Görevi kötüye kullanma suçuna ilişkin olarak yukarıda yer verilen açıklamalar da değerlendirilmek suretiyle tüm sanıklar hakkında 22.03.2010 günlü eylem nedeniyle görevi kötüye kullanma suçundan kurulan beraat hükümlerinin incelenmesine gelince;
+Ceza muhakemesi, yetkili mercilerce suç şüphesinin öğrenilmesi ile başlayıp yargılama sonucunda sanık hakkında bir hüküm verilip, bunun kesinleşmesine kadar geçen süreci ifade etmekte, hatta hükmün kesinleşmesinden sonraki bir kısım işlemleri de kapsamaktadır. Ceza muhakemesi hukuku ise, yargılama organlarının bir suçun işlenip işlenmediği konusunda ortaya çıkan ceza uyuşmazlığını çözerken izleyecekleri yöntemi gösteren normlar bütünü şeklinde tarif edilebilecektir.</p>
+
+<p>Muhakemenin ilk aşaması olan soruşturma evresinde, Cumhuriyet savcısı ihbar, istihbari bilgi, şikâyet veya başka bir suretle bir suçun işlendiği izlenimini veren bir hali öğrenir öğrenmez, kamu davasını açmaya yer olup olmadığına karar vermek üzere hemen işin gerçeğini araştırmaya başlayan, delil toplayan ve muhafaza altına alan, soruşturma evresinin sonunda elde edilen delillere göre kamu davasının açılması talebiyle iddianame düzenleyen ya da kamu davası açılması için yeterli şüphe oluşturacak delil elde edilmemesi veya kovuşturma yapılması imkânının bulunmaması halinde kovuşturmaya yer olmadığına karar veren veya şartlarının oluşması halinde kamu davasının açılmasının ertelenmesine karar veren, bunun yanında kovuşturma aşamasında ve hükmün kesinleşmesinden sonraki infaz aşamasında da görevleri bulunan muhakeme süjesidir.
+Suçun öğrenilmesiyle başlayan soruşturma evresinde delillerin elde edilmesi, bunların kaybolmasının önlenmesi ve kovuşturmaya kadar koruma altına alınması gerekmekte olup, bu hususlar CMK`nun 160. maddesi uyarınca Cumhuriyet savcısının yargı yetkisinin kullanılma alanına ilişkin görev ve sorumluluklarıdır.</p>
+
+<p>Diğer taraftan, Türkiye Cumhuriyeti Anayasasının “Mahkemelerin Bağımsızlığı” başlığı altından düzenlenen 138. maddesi; “Hakimler, görevlerinde bağımsızdırlar; Anayasaya, kanuna ve hukuka uygun olarak vicdanı kanaatlerine göre hüküm verirler.
+Hiçbir organ, makam, merci veya kişi, yargı yetkisinin kullanılmasında mahkemelere ve hakimlere emir ve talimat veremez; genelge gönderemez; tavsiye ve telkinde bulunamaz.</p>
+
+<p>Görülmekte olan bir dava hakkında Yasama Meclisinde yargı yetkisinin kullanılması ile ilgili soru sorulamaz, görüşme yapılamaz veya herhangi bir beyanda bulunulamaz.</p>
+
+<p>Yasama ve yürütme organları ile idare, mahkeme kararlarına uymak zorundadır; bu organlar ve idare, mahkeme kararlarını hiçbir suretle değiştiremez ve bunların yerine getirilmesini geciktiremez” hükmünü içermektedir.</p>
+
+<p>Bu açıklamalar ışığında uyuşmazlık konusu değerlendirildiğinde;
+Soruşturma dosyasında şüpheliler müdafiinin, 5271 sayılı CMK’nun 128. maddesi uyarınca verilen tedbir kararlarının kaldırılması ve uygulamanın düzeltilmesi yönündeki taleplerini 22.03.2010 tarihli yazılı mütalaa ile reddetmelerinin görevi kötüye kullanmak suçunu oluşturduğu iddiasıyla sanıklar hakkında kamu davası açılmış ise de, yargı görevini yürüten Cumhuriyet savcısı olan sanıkların soruşturma dosyasının taraflarından birinin tedbir kararının uygulanmasının yerinde olmadığından bahisle kaldırılmasına ilişkin talebi üzerine, “uygulamanın yerinde olduğuna ilişkin” görüşlerini hukuki mütalaalarında yazmaları eyleminin Anayasanın 138. maddesi uyarınca yargı yetkisi ve takdirinin kullanılması kapsamında kaldığı ve yargısal nitelikte olan yapılan talebe karşı hukuksal görüşlerini yazmaları uygulamasına karşı kanun yollarına başvuru imkanının bulunduğu ve bu nedenle sanıkların eylemlerinin “görevin gereklerine aykırı hareket etme” olarak değerlendirilemeyeceği anlaşıldığından TCK`nun 257/1 maddesinde düzenlenen görevi kötüye kullanma suçunu oluşturmadığı kabul edilmelidir.</p>
+
+<p>Bu itibarla, görevi kötüye kullanma suçunun kanuni unsurları oluşmadığından, sanıkların beraatine ilişkin Özel Daire kararı isabetli olup, katılanlar vekillerinin temyiz itirazlarının reddi ile beraat hükümlerin onanmasına karar verilmelidir.</p>
+
+<p>SONUÇ : 
+Açıklanan nedenlerle; 
+1- Yargıtay 11. Ceza Dairesinin 16.11.2012 gün ve 3-2 sayılı; 
+Sanık N.. T.. hakkında resmi belgede sahtecilik ve görevi kötüye kullanma, sanıklar A.. Y.. ve M.. T.. hakkında görevi kötüye kullanmak suçlarından kurulan beraat hükümleri usul ve kanuna uygun bulunduğundan ONANMASINA,
+2- Dosyanın, bu Daireye gönderilmek üzere Yargıtay Cumhuriyet Başsavcılığına TEVDİİNE,  yapılan müzakerede tebliğnamedeki talebe uygun olarak oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 12. HUKUK DAİRESİ 
+Esas : 2013/10601 Karar : 2013/20076</strong> Tarih : 30.05.2013</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 128. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Taşınmazlara, Hak ve Alacaklara Elkoyma</strong></p>
+  </li>
+</ul>
+
+<p>Yukarıda tarih ve numarası yazılı mahkeme kararının müddeti içinde temyizen tetkiki alacaklı tarafından istenmesi üzerine bu işle ilgili dosya mahallinden daireye gönderilmiş olup, dava dosyası için Tetkik Hakimi tarafından düzenlenen rapor dinlendikten ve dosya içerisindeki tüm belgeler okunup incelendikten sonra işin gereği görüşülüp düşünüldü:</p>
+
+<p>İİK.nun 167/2.maddesi gereğince alacaklı, takip talepnamesine icra takibine dayanak yaptığı kambiyo senedinin aslını ve borçlu adedi kadar onaylı örneğini eklemeye mecburdur.</p>
+
+<p>Somut olayda, …Sulh Ceza Mahkemesinin 17.09.2012 tarih ve 2012/607 Değişik iş sayılı kararıyla CMK.nun 128/1-e son maddesi gereğince çeke ceza takibatına esas olmak üzere el konulduğu anlaşılmaktadır.Anılan yasal engel nedeniyle alacaklının çek fotokopisini icra dairesine sunmak suretiyle takip yapması mümkündür. Yerleşik Yargıtay uygulaması bu yöndedir.(Gönen, Eriş; İcra ve İflas Kanunu, 2005 Baskı, sayfa:795)</p>
+
+<p>İİK.nun 168.maddesinde öngörülen incelemenin yapılabilmesi ve ayrıca borçlunun çek asılarının görülebilmesi için dayanak belgenin saklı tutulduğu makamdan icra müdürlüğünce resmen istenilmesi, gerekli incelemenin yapılması ve sonrasında bu yere geri verilmesi mümkündür.</p>
+
+<p>Bu durumda mahkemece, şikayetin reddine karar verilmesi gerekirken yazılı şekilde hüküm verilmesi isabetsizdir.</p>
+
+<p>Alacaklının temyiz itirazlarının kabulü ile mahkeme kararının yukarıda yazılı nedenlerle  (BOZULMASINA), ilamın tebliğinden itibaren 10 gün içinde karar düzeltme yolu açık olmak üzere,  oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 12. CEZA DAİRESİ
+Esas: 2014/5489 Karar: 2015/1658</strong> Tarih: 02.02.2015</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 128. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Taşınmazlara, Hak ve Alacaklara Elkoyma</strong></p>
+  </li>
+</ul>
+
+<p>KARAR : Davacı vekilinin, 25.11.2013 tarihinde usulüne uygun olarak tebliğ edilen hükme yönelik temyiz itirazlarını bir haftalık kanuni temyiz süresi içerisinde 26.11.2013 tarihinde bildirerek hükmü temyiz etmiş olduğunun anlaşılması karşısında, tebliğnamedeki ( 1 ) nolu görüşe iştirak edilmemiş ‘‘05/01/2010’’ olan dava tarihinin gerekçeli karar başlığına ‘‘28/10/2008’’ olarak yazılmış olması, mahallinde düzeltilmesi mümkün yazım yanlışlığı kabul edilmiştir.</p>
+
+<p>Yapılan incelemeye, toplanıp karar yerinde gösterilen delillere, incelenen dosya kapsamına göre, davacı vekilinin tüm, davalı vekilinin sair temyiz itirazlarının reddine,</p>
+
+<p>Ancak;</p>
+
+<p>5721 sayılı CMK’nın 141. maddesinin 1. fıkras 1. fıkrasının ( j ) bendinde koşulları oluşmadığı halde malvarlığı değerlerine el konulan kimselerin tazminat isteyebilecekleri düzenlenmiş olup, davacı vekili davacıya ait araca 25.10.2008 ile 16.01.2009 tarihleri arasında haksız olarak el konulduğu gerekçesiyle tazminat talebinde bulunmuştur. İncelenen dosya kapsamına göre; kolluk tarafından 25.10.2008 tarihinde kontrol amacıyla durdurulan ve H. U.’ın sürücülüğünü yapmış olduğu davacıya ait 16 … … plakalı araçta yabancı uyruklu şahısların tespit edilmesi üzerine, aracın suçta kullanıldığı şüphesiyle muhafaza altına alındığı, el koymayı öngören 5271 sayılı CMK’nın 128/2-d maddesi ile aynı maddenin 1/ ( a-b-c-d-e-f-g-h ), son fıkrasında da; taşınmaz, hak, alacak ve diğer malvarlığı değerlerinin, şüpheli veya sanıktan başka bir kişinin zilyetliğinde bulunması halinde dahi, elkoyma işlemi yapılabileceğinin belirtildiği ve tazminat talebinin dayanağı olan Erciş Asliye Ceza Mahkemesinin 13.02.2009 tarih, 2008/630 esas, 2009/73 karar sayılı ceza dava dosyasında göçmen kaçakçılığı suçundan yargılanan aracın sürücüsü H. U.’ın mahkumiyetine hükmedildiği suçta kullanılan 16 … … plakalı aracın ise maliki veya yasal temsilcisinin izni ile kullanıldığına dair delil bulunmadığı gerekçesi ile iadesine karar verildiğinin anlaşılması karşısında, araç maliki olan ( malen sorumlu ) davacı ile mahkumiyetine karar verilen sanık arasında genel hükümlere göre açılacak tazminat davasına konu edilmesi gereken alacağa ilişkin olarak açılan tazminat davasının, davaya konu aracın suçta kullanıldığı ve 5271 sayılı Ceza Muhakemesi Kanunu’nun 141. maddesinde belirtilen tazminat isteme koşullarının oluşmadığı gerekçesi ile reddine karar verilmesi gerekirken, yazılı şekilde davanın kısmen kabulüne karar verilmesi,</p>
+
+<p>SONUÇ : İsabetsiz olup, davalı vekilinin temyiz itirazları bu nedenle yerinde görüldüğünden hükmün 5320 sayılı Kanunun 8/1. maddesi gereğince halen uygulanmakta olan 1412 sayılı 321. maddesi gereğince isteme uygun olarak BOZULMASINA, 02.02.2015 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 7. CEZA DAİRESİ
+Esas: 2013/23612 Karar: 2014/8826</strong> Tarih: 03.04.2014</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 128. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Taşınmazlara, Hak ve Alacaklara Elkoyma</strong></p>
+  </li>
+</ul>
+
+<p>Kaçak sigara naklinde kullanıldığı ve zulalı olduğu belirtilerek talep edilen Konya Cumhuriyet Başsavcılığının 07.04.2013 tarihli 2013/16292 soruşturma sayılı yazısı ile 42 … … plakalı Fiat Doblo Marka araca yönelik 5271 sayılı Ceza Muhakemesi Kanunu’nun 127.maddesi gereğince el konulmasının onaylanmasına dair Kocaeli 4.Sulh Ceza Mahkemesinin 05.04.2013 tarihli 2013/495 değişik iş sayılı kararını müteakip, kovuşturma aşamasında araç sahibi vekili tarafından araca yönelik el konulma kararının kaldırılması isteminin reddine ilişkin Konya 1.Asliye Ceza Mahkemesinin 10.07.2013 tarihli ve 2013/411 esas sayılı kararına yapılan itirazın reddine dair Konya 1.Ağır Ceza Mahkemesinin 23.07.2013 tarihli ve 2013/666 değişik iş sayılı kararı aleyhine Yüksek Adalet Bakanlığından verilen 02.12.2013 gün ve 72788 sayılı kanun yararına bozma istemini içeren dava dosyası Yargıtay Cumhuriyet Başsavcılığının 17.12.2013 gün ve KYB. 2013-387997 sayılı ihbarnamesi ile daireye verilmekle okundu.</p>
+
+<p>Mezkur ihbarnamede;</p>
+
+<p>Dosya kapsamına göre karar tarihinde yürürlükte bulunan Kanun hükümleri çerçevesinde yapılan incelemede;</p>
+
+<p>1- ) 5271 sayılı Ceza Muhakemesi Kanunu’nun 128/1-b maddesinde, soruşturma veya kovuşturma konusu suçun işlendiğine ve bu suçlardan elde edildiğine dair kuvvetli şüphe sebebi bulunan hallerde, şüpheli veya sanığa ait olan ulaşım aracına el konulabileceğinin belirtildiği ve aidiyet kavramı ise mülkiyet ile ilgili olduğu halde, Konya 1.Asliye Ceza Mahkemesinin 2013/411 esas sayılı dosyasından yürütülen yargılamanın kovuşturma aşamasında hakkında aracına el konulma kararı verilen araç sahibinin sanık olmadığı gözetilmeden, araca el konulmasına yönelik kararın kaldırılması isteminin reddine ilişkin karara yapılan itirazın kabulü yerine yasal gerekçe gösterilmeksizin reddine karar verilmesinde,</p>
+
+<p>2- ) Soruşturma aşamasında, Cumhuriyet Başsavcılığının araca ilişkin el koyma talep tarihi 07.04.2013 olduğu halde, Konya 4.Sulh Ceza Mahkemesinin anılan el konulmasının onaylanması karar tarihinin, kararda 05.04.2013 olarak gösterilmesinde,</p>
+
+<p>3- ) Kabule göre, 5607 sayılı Kaçakçılıkla Mücadele Kanunu’nun 10/1.maddesinde, bu Kanunda tanımlanan suçların işlenmesinde kullanılan taşıtlara, Ceza Muhakemesi Kanununun 128 inci maddesinin dördüncü fıkrası hükmüne göre el konulur, hükmünün düzenlendiği, 5271 sayılı Ceza Muhakemesi Kanunu’nun 128/4.maddesindeki kara, deniz ve hava ulaşım araçları hakkında verilen el koyma kararı, bu araçların kayıtlı bulunduğu sicile şerh verilmek suretiyle icra olunur, hükmü karşısında araca el koyma kararının icrasının aracın kayıtlı bulunduğu sicile şerh verilme suretiyle olduğu belirtildiği halde aracın talep edene teslim edilmemesinde ve araçla ilgili araçla ilgili el koyma kararı sonrası taleple ilgili olarak aynı Kanun’un 131/5.maddesindeki, el konulan eşya, soruşturma evresinde Cumhuriyet Başsavcılığı, kovuşturma evresinde mahkeme tarafından, bakım ve gözetimiyle ilgili tedbirleri almak ve istendiğinde derhal iade edilmek koşuluyla, muhafaza edilmek üzere, şüpheliye, sanığa veya diğer bir kişiye teslim edilebilir. Bu bırakma, teminat gösterilmesi koşuluna da bağlanabilir, hükmüne aykırı olarak aracın sahibine teslim edilmeme gerekçesinin kararda gösterilmemesinde isabet görülmemiş ve 5271 sayılı Ceza Muhakemesi Kanununun 309. maddesi uyarınca anılan kararın bozulması lüzumu kanun yararına bozmaya atfen ihbar olunmuş bulunmakla gereği görüşülüp düşünüldü:</p>
+
+<p>KARAR VE SONUÇ : El koyma kararına yapılan itiraz üzerine mercii tarafından verilen kararın içeriği ve niteliği itibariyle bu karara karşı kanun yararına bozma yoluna gidilemeyeceğinden isteminin REDDİNE, 03.04.2014 gününde oyçokluğuyla karar verildi.</p>
+
+<p>KARŞI OY : Kaçak sigara naklinde kullanıldığı iddiasıyla, R. A. adına tescilli 42 … … plaka sayılı araca 07.04.2013 tarihinde el konulmuş ve bu elkoyma işlemi Konya 4. Sulh Ceza Mahkemesince onanmıştır. El koymanın onanması kararı 05.04.2013 tarihi olarak yazılmıştır. Olayın kovuşturma evresinde, el konulan aracın tescil maliki avukatı aracılığıyla 03.06.2013 tarihli dilekçeyle, kendisi hakkında dava açılmadığını, olaya karışmadığını, mal sahibi 3.kişi durumunda olduğunu beyan ederek el koyma kararının kaldırılmasını ve maliki olduğu aracın kendisine teslim edilmesini talep etmiştir. Bu talep yargılama mahkemesi olan Konya 1.Asliye Ceza Mahkemesince evrak üzerinde yapılan inceleme sonucu 10.07.2013 tarihli ve 2013/411 E. Sayılı kararla reddedilmiştir. Bu red kararına karşı araç sahibi vekili tarafından adı geçen mahkemeye itirazda bulunulmuştu, itirazı yerinde görmeyen Konya 1. Asliye Ceza Mahkemesi incelenmek üzere dosyayı itiraz mercii olan Konya 1.Ağır Ceza Mahkemesine göndermiştir. İtiraz mercii tarafından da 23.07.2013 gün ve 2013/666 değişik iş sayılı kararla itirazın reddine karar verilmiştir. Bu karara karşı Adalet Bakanlığının talebi üzerine Yargıtay Başsavcılığı tarafından 17.12.2013 günlü ve 2013/387997 sayılı ihbarname ile kanun yararına bozma yasa yoluna başvurulmuştur. Mezkur ihbarnamede;</p>
+
+<p>” …</p>
+
+<p>1-5271 sayılı Ceza Muhakemesi Kanunu’nun 128/1-b. maddesinde, soruşturma veya kovuşturma konusu suçun işlendiğine ve bu suçlardan elde edildiğine dair kuvvetli şüphe sebebi bulunan hallerde, şüpheli veya sanığa ait olan ulaşım aracına el konulabileceğinin belirtildiği ve aidiyet kavramı ise mülkiyet ile ilgili olduğu halde, Konya 1.Asliye Ceza Mahkemesinin 2013/411 esas sayılı dosyasından yürütülen yargılamanın kovuşturma aşamasında hakkında aracına el konulma kararı verilen araç sahibinin sanık olmadığı gözetilmeden, araca el konulmasına yönelik kararın kaldırılması isteminin reddine ilişkin karara yapılan itirazın kabulü yerine yasal gerekçe gösterilmeksizin reddine karar verilmesinde,</p>
+
+<p>2-Soruşturma aşamasında, Cumhuriyet Başsavcılığının araca ilişkin el koyma talep tarihi 07.04.2013 olduğu halde, Konya 4. Sulh Ceza Mahkemesinin anılan el konulmasının onaylanması karar tarihinin, kararda 05.04.2013 olarak gösterilmesinde,</p>
+
+<p>3-Kabule göre, 5607 sayılı Kaçakçılıkla Mücadele Kanunu’nun 10/1. maddesinde, bu Kanunda tanımlanan suçların işlenmesinde kullanılan taşıtlara, Ceza Muhakemesi Kanununun 128 inci maddesinin dördüncü fıkrası hükmüne göre elkonulur, hükmünün düzenlendiği, 5271 sayılı Ceza Muhakemesi Kanunu’nun 128/4. maddesindeki kara, deniz ve hava ulaşım araçları hakkında verilen elkoyma kararı, bu araçların kayıtlı bulunduğu sicile şerh verilmek suretiyle icra olunur, hükmü karşısında araca el koyma kararının icrasının aracın kayıtlı bulunduğu sicile şerh verilme suretiyle olduğu belirtildiği halde aracın talep edene teslim edilmemesinde ve araçla ilgili el koyma kararı sonrası taleple ilgili olarak aynı Kanun’un 131/5.maddesindeki, el konulan eşya, soruşturma evresinde Cumhuriyet Başsavcılığı, kovuşturma evresinde mahkeme tarafından, bakım ve gözetimiyle ilgili tedbirleri almak ve istendiğinde derhal iade edilmek koşuluyla. Muhafaza edilmek üzere, şüpheliye, sanığa veya diğer bir kişiye teslim edilebilir. Bu bırakma teminat gösterilmesi koşuluna da bağlanabilir, hükmüne aykırı olarak aracın sahibine teslim edilmeme gerekçesinin kararda gösterilmemesinde, isabet bulunmadığı” gerekçeleriyle Konya 1.Ağır Ceza Mahkemesinin yukarıda gün ve sayısı belirtilen kararının 309.maddesi uyarınca kanun yararına bozulması talebinde bulunulmuştur.</p>
+
+<p>Kanun yararına bozma talebini inceleyen Dairemiz Heyetinin sayın çoğunluğu tarafından 03.04.2013 günlü kararla “el koyma kararına yapılan itiraz üzerine mercii tarafından verilen kararın içeriği ve niteliği itibariyle bu karara karşı kanun yararına bozma yoluna gidilemeyeceğinden istemin reddine” karar verilmiştir. Sayın Çoğunluğun bu kararının aşağıda açıklayacağım nedenlerle isabetli olmadığı görüşündeyim.</p>
+
+<p>I-Sayın Çoğunluğun talebin reddi kararı gerekçesi usul ve yasaya uygun değildir. Açık değildir. Gerekçe olarak gösterilen “Mercii kararının içeriği ve niteliği” ifadesinden neyin kasdedildiği açık ve net olarak belli değildir. Dolayısıyla da red kararı gerekçesizdir. Bu nedenle Anayasanın 141 ve AİHS.nin 6.maddesine aykırıdır. Kararının bu nedenle bozularak dosyanın Daireye iadesi gerektiği görüşündeyim.</p>
+
+<p>II-Muhalif olduğumuz red kararı, konuyla ilgili hukuki düzenlemelere, öğretiye, Yargıtay kararlarına AİHS.ne, AİHM içtihatlarına ve Anayasaya da uygun değildir. Bu uygunsuzluk halleri ayrı başlıklar altında aşağıda açıklanmaya çalışılacaktır.</p>
+
+<p>1-Hukuki düzenlemeler bakımından:</p>
+
+<p>Hakkında kanun yararına bozma yasa yoluna başvurulan Konya 1.Ağır Ceza Mahkemesinin yukarıda gün ve sayısı belirtilen kararına konu işlem, suç soruşturması nedeniyle “el koyma” işlemidir. “El koyma” işlemi hukuki niteliği itibariyle müsadereden farklıdır. Müsadere bir güvenlik tedbiri ve sürekli olup ve 5271 sayılı genel hükümler kısmında düzenlendiği halde “el koyma” 5271 sayılı koruma tedbirleri olarak kabul edilen tedbirler arasında yer almaktadır ve geçicidir. ( Centel/Zafer- Ceza Muhakemesi Hukuku-Beta 6.Baskı s.806-807, Prof.Dr. Bahri Öztürk/Kazancı/Güleç-Ceza Muhakemesi Hukukunda Koruma Tedbirleri 2013-Seçkin Kitabevi s.140-141 )</p>
+
+<p>El koyma kararı sırasında yürürlükte bulunan konumuza ilişkin hükümleri şöyledir;</p>
+
+<p>“Madde 127 - ( 1 ) ( Değişik fıkra: 25/05/2005-5353 S.K./16.mad ) Hakim kararı üzerine veya gecikmesinde sakınca bulunan hallerde Cumhuriyet savcısının, Cumhuriyet savcısına ulaşılamadığı hallerde ise kolluk amirinin yazılı emri ile kolluk görevlileri, el koyma işlemini gerçekleştirebilir.</p>
+
+<p>( 2 ) Kolluk görevlisinin açık kimliği, el koyma işlemine ilişkin tutanağa geçirilir.</p>
+
+<p>…</p>
+
+<p>( 3 ) ( Değişik fıkra: 25/05/2005-5353 S.K./16.mad ) Hakim kararı olmaksızın yapılan el koyma işlemi, yirmidört saat içinde görevli hakimin onayına sunulur. Hakim, kararını el koymadan</p>
+
+<p>itibaren kırksekiz saat içinde açıklar; aksi halde el koyma kendiliğinden kalkar.</p>
+
+<p>…</p>
+
+<p>( 5 ) El koyma işlemi, suçtan zarar gören mağdura gecikmeksizin bildirilir.</p>
+
+<p>…</p>
+
+<p>Madde 128 - ( 1 ) Soruşturma veya kovuşturma konusu suçun işlendiğine ve bu suçlardan elde edildiğine dair kuvvetli şüphe sebebi bulunan hallerde, şüpheli veya sanığa ait;</p>
+
+<p>b ) Kara, deniz veya hava ulaşım araçlarına,</p>
+
+<p>…</p>
+
+<p>El konulabilir. Bu taşınmaz, hak, alacak ve diğer malvarlığı değerlerinin şüpheli veya sanıktan başka bir kişinin zilyetliğinde bulunması halinde dahi, el koyma işlemi yapılabilir.</p>
+
+<p>( 2 ) Birinci fıkra hükmü;</p>
+
+<p>…</p>
+
+<p>d ) Kaçakçılıkla Mücadele Kanununda tanımlanan ve hapis cezasını gerektiren suçlar,</p>
+
+<p>…</p>
+
+<p>Hakkında uygulanır.</p>
+
+<p>…</p>
+
+<p>( 4 ) Kara, deniz ve hava ulaşım araçları hakkında verilen el koyma kararı, bu araçların kayıtlı bulunduğu sicile şerh verilmek suretiyle icra olunur.</p>
+
+<p>…</p>
+
+<p>( 9 )Bu Madde hükmüne göre elkoymaya ancak hakim karar verebilir.</p>
+
+<p>Madde 131- ( 1 ) Şüpheliye, sanığa veya üçüncü kişilere ait el konulmuş eşyanın, soruşturma ve kovuşturma bakımından muhafazasına gerek kalmaması veya müsadereye tabi tutulmayacağının anlaşılması halinde, re’sen veya istem üzerine geri verilmesine Cumhuriyet savcısı, hakim veya mahkeme tarafından karar verilir. İstemin reddi kararlarına itiraz edilebilir.</p>
+
+<p>( 2 ) 128 inci Madde hükümlerine göre el konulan eşya veya diğer malvarlığı değerleri, suçtan zarar gören mağdura ait olması ve bunlara delil olarak artık ihtiyaç bulunmaması halinde, sahibine iade edilir.”</p>
+
+<p>Kaçakçılık suçlarının işlenmesinde kullanılan nakil araçlarına da 5607 sayılı Kaçakçılıkla Mücadele Kanunun 10.maddesi hükmünün göndermesiyle 128.maddesinin dördüncü fıkrasına göre el konulacaktır. Sözü edilen hüküm şöyledir;</p>
+
+<p>“Madde 10 - ( 1 ) Bu Kanunda tanımlanan suçların işlenmesinde kullanılan taşıtlara, Ceza Muhakemesi Kanununun 128 inci maddesinin dördüncü fıkrası hükmüne göre elkonulur.</p>
+
+<p>( 2 ) 13 üncü maddenin birinci fıkrasının ( a ) bendi kapsamına girmesi, Türkiye’de sicile kayıtlı olmaması ya da soruşturma ve kovuşturma devam ederken, kaçakçılık suçunun işlenmesinde tekrar kullanılması halinde, el konulan araç alıkonulur. Sahibinin aracın değeri kadar teminatı alıkoyma tarihinden itibaren otuz gün içinde gümrük idaresine teslim etmesi halinde, araç sahibine iade edilir …”</p>
+
+<p>Yukarıdaki hükümlerinden de anlaşılacağı gibi el koymaya hakim karar verir. Gecikmesinde sakınca bulunan hallerde Cumhuriyet savcısının, Cumhuriyet savcısına ulaşılamadığı hallerde ise kolluk amirinin yazılı emri ile kolluk görevlileri, el koyma işlemini yapmaya yetkilidir. ( CMK. 127/1 ). Hakim kararı olmaksızın yapılan el koyma işlemi, yirmidört saat içinde görevli hakimin onayına sunulur.</p>
+
+<p>Hakim, kararını el koymadan itibaren kırksekiz saat içinde açıklar; aksi halde el koyma kendiliğinden hükümsüz kalacaktır. ( CMK. 127/3 ). Soruşturma veya kovuşturma konusu suçun işlendiğine ve bu suçlardan elde edildiğine dair kuvvetli suç şüphesi bulunan hallerde şüpheli veya sanığa ait kara, deniz veya hava ulaşım araçlarına da el konulabilir. ( 128/1-b ). Kara, deniz ve hava ulaşım araçları hakkında verilen el koyma kararı, bu araçların kayıtlı bulunduğu sicile şerh verilmek suretiyle icra olunur. ( CMK. 128/4 ). 128. maddesi kapsamında el koymaya ancak hakim karar verir. ( 128/9 ). 5607 sayılı Kaçakçılıkla Mücadele Kanunu kapsamında işlenen suçlarda kullanılan nakil araçlarına da 128/4.maddesi hükmüne göre el konulur. ( KMK. 10/1 ) Şüpheliye, sanığa veya üçüncü kişilere ait el konulmuş eşyanın, soruşturma ve kovuşturma bakımından muhafazasına gerek kalmaması veya müsadereye tabi tutulmayacağının anlaşılması halinde, re’sen veya istem üzerine geri verilmesine Cumhuriyet savcısı, hakim veya mahkeme tarafından karar verilir. İstemin reddi kararlarına itiraz edilebilir. ( CMK.131/1 )</p>
+
+<p>131/1.maddesine göre yapılan itirazın, aynı Kanunun 267 ila 271. maddelerinde düzenlenen itiraza ilişkin hükümlere göre incelenip karara bağlanacağı konusunda bir kuşku bulunmamaktadır. Buna göre; Kaçak eşya naklinde kullanılan aracına el konulan kişi, el koymanın kaldırılmasını ve aracın kendisine iadesini yetkili merciden talep edebilir. ( CMK. 131 ) Bu talebi reddedilen kişi ret kararını öğrendiği günden itibaren yedi gün içersinde talebi reddeden merciie itirazda bulunabilecektir. ( CMK.268/1 ) Kararına itiraz edilen hakim veya mahkeme, itirazı yerinde görürse kararını düzeltecek, yerinde görmezse en çok üç günde itirazı incelemeye yetkili merciie gönderecektir. ( CMK.268/2 ) Asliye ceza mahkemesi hakimi tarafından verilen kararlara yapılacak itirazların incelenmesi, yargı çevresinde bulundukları ağır ceza mahkemesine aittir. ( 268/3-c ) İtiraz mercii bu itirazı kanunda aksine bir hüküm bulunmadığından duruşma yapmaksızın evrak üzerinden verecektir. ( 271 ) .Bu karar, sonuç doğurucu ve kesin niteliktedir. ( CMK.271/4 ). Bu karara karşı kanun yararına bozma yasa yoluna gidilip gidilemeyeceği hususu karşı görüşümüzün esasını oluşturmaktadır. Hangi kararların kanun yararına bozma yasa yoluna taabi olduğu 309.maddesinin 1.fıkrasında düzenlenmiştir. Anılan hüküm şöyledir;</p>
+
+<p>“Madde 309 - ( 1 ) Hakim veya mahkeme tarafından verilen ve istinaf veya temyiz incelemesinden geçmeksizin kesinleşen karar veya hükümde hukuka aykırılık bulunduğunu öğrenen Adalet Bakanlığı, o karar veya hükmün Yargıtay’ca bozulması istemini, yasal nedenlerini belirterek Yargıtay Cumhuriyet Başsavcılığına yazılı olarak bildirir.”</p>
+
+<p>Hükümden de anlaşılacağı gibi hakim veya mahkemeler tarafından verilen kararlar veya hükümler eğer istinaf veya temyiz incelemesinden geçmeden kesinleşmişse, hukuka aykırılık bulunduğu takdirde bu kararlara karşı olağanüstü yasa yoluna ( olağanüstü temyize ) başvurulabilecektir. Hukuka aykırılığın başka bir yasa yolu ile giderilmesi mümkün olduğu takdirde böyle bir karara karşı kanun yararına bozma yasa yoluna gidilemeyeceği konusunda bir kuşku bulunmamaktadır. Örneğin yargılama sonucunda verilen esas kararla birlikte temyiz incelemesi yapılabilecek olan ara kararlarına karşı temyiz yasa yolundan önce kanun yararına bozma yasa yoluna gidilemeyecektir. Yine koruma tedbirleri arasında yer alan tutukluluk kararına karşı da kanun yararına bozma yasa yoluna gidilemez. Zira her duruşmada mahkemece tutukluluğun devam edip etmeyeceği konusunda karar verilmesi yasal bir zorunluluktur. Soruşturma ve kovuşturma evrelerinin her aşamasında tutuklu salıverilmesini talep edebilmektedir. Bu talebin reddi ise itiraza tabidir. ( ) Bu durum esas karara kadar tekrarlanabilmektedir. Esas karar temyiz edildiğinde tutukluluk hali de temyiz mahkemesince incelenebilmektedir.</p>
+
+<p>Buna karşılık el koyma kararının kaldırılmasının reddi kararına karşı yapılan itirazın reddedilmesi halinde bu karar kesin olup itirazda bulunan kişi bakımından, yeniden talep etmeyi gerekli kılacak bir delil ortaya çıkmadığı sürece tekrar el koymanın kaldırılmasının talep edilmesi yasal olarak mümkün değildir. Zira tutukluluk tedbirinde olduğu gibi eşyasına el konulan kişi soruşturma veya kovuşturma evresinin her aşamasında el konulan eşyasının iadesini talep etme hakkı bulunduğuna ilişkin yasal bir düzenleme bulunmamaktadır. Bu durumda yargılama süresince elkoyma kararının kaldırıp kaldırılmayacağı ancak yargılama hakiminin takdirine kalmış olmaktadır. Yargılama hakiminin bu yetkisi yasa yolu olarak kabul edilemez. Bu halde, eşyasına elkonulan şahıs yargılama sürecinin sonucunu beklemek zorunda kalacaktır. Yargılama sonucunda el konulan eşyanın ya iadesine veya müsaderesine karar verilecektir. Müsaderesine karar verildiği takdirde güvenlik tedbir olan el koyma kararı koruma tedbiri olan müsadere kararına dönüşmüş olacaktır. Bu nedenle ortada el koyma kararı kalmadığından bu hususun esas kararla birlikte ancak elkoymayı koruma tedbirine dönüştüren müsadere kararı temyizen incelenebilecektir. Bir başka ifade ile el koyma kararı ve buna yapılan itiraz üzerine verilen karar esas hükümle birlikte incelenebilecek ara kararlarından değildir. Öte yandan “Hakimin el koyma kararını ileride bir gün kaldırarak haksızlığı giderme ihtimali olabilir. Bu nedenle kanun yararına bozmaya gelinemez” şeklindeki bir kabul de doğru olmayacaktır. Taşınmaz, hak, alacak ve diğer malvarlığı değerlerine suç soruşturması nedeniyle haksız olarak el konulan kişi veya kurumlar bakımından ileride telafisi güç hatta imkansız olacak şekilde ağır sonuçlara yol açabilecektir. Örneğin, kapsamlı bir suç soruşturması veya kovuşturması nedeniyle şüpheli-sanık veya 3.kişilerin, özel hukuk tüzel kişilerinin taşınmaz, hak, alacak ve diğer malvarlığı değerlerine haksız olarak elkoyma kararı verilmiş olabilir. Böyle bir durumda el koyma kararına yapılan itirazın, kesin mahiyette olan ret verilen karara karşı kanun yararına bozma yasa yoluna gidilmesinin kabul edilmemesi halinde yıllarca sürecek yargılama sonucuna kadar bu özel ya da tüzel kişiler telafisi mümkün olmayacak şekilde ( iflas ile sonuçlanabilecek kadar ) ağır bir zarara uğrayabilirler. Yine aynı şekilde suçta kullanıldığı düşüncesiyle kara, deniz ( gemi gibi ) ve hava ulaşım araçlarından birine haksız olarak el koyma kararı verilen bir olayda yargılama sonucunda mahkemece hükmün açıklanmasının geri bırakılmasına karar verilebilir. Açıklanması geri bırakılan hükümle birlikte el konulan aracın sahibine iadesine karar verilse dahi beş yıllık deneme süresince bu iade gerçekleşmeyecek ve süre sonu beklenecektir. Bu durumda da el koyma kararı, telafisi mümkün olmayan sonuçlara yol açacaktır. Bu nedenledir ki el koyma koruma tedbiri kararının verilmesi, bu kararın denetlenmesi, uygulanma süresi büyük önem arzetmektedir. Nitekim Yasa Koyucu bu bağlamda, 21.02.2014 kabul tarihli 6526 sayılı Kanunun 10.maddesiyle 128.maddesinde değişiklik yapmıştır. Maddenin 1.fıkrasında yapılan değişiklikle taşınmaz, hak, alacak ve diğer malvarlığı değerlerine el konulması için önceki düzenlemede yeterli görülen “kuvvetli şüphenin” “somut delillere” dayanması öngörülmüştür. Bu koşulun gerçekleşmesi halinde el konulacak taşınmaz, hak, alacak ve diğer malvarlığı değerlerinin de “somut olarak belirlenmesi” hükmü getirilmiştir. Maddenin 9.fıkrasında da değişiklik yapılmıştır. Buna göre el koymaya ağır ceza mahkemesince oybirliğiyle karar verilecektir. İtiraz üzerine bu tedbire karar verilebilmesi için de oybirliği aranacaktır. Bu değişiklikler, Yasa Koyucunun taşınmaz, hak, alacak ve diğer malvarlığı değerlerine el koyma işlemine, bu konuda karar verilmesine ve bu kararın denetlenmesine verdiği önemi göstermektedir. Oybirliği koşulunun aranması da bunun göstergesidir. Kişi özgürlüğünü kısıtlayan tutukluluk tedbirine veya mahkumiyete karar verilirken dahi oybirliği aranmamaktadır. ( Prof.Dr. Erdener Yurtcan-6526 sayılı Yasayla Ceza Muhakemesi Kanununda Yapılan Değişiklikler- Exprese Basımevi-2014 s.49-51 )</p>
+
+<p>Gerek doğrudan, gerekse itiraz üzerine oybirliğiyle verilen ve niteliği itibariyle çok önemli olan el koyma kararları hakkında yapılan itirazın, mercii tarafından kesin olarak verilen red kararına karşı kanun yararına bozma yasayoluna gelinemeyeceğine ilişkin sayın çoğunluğun kararı yasanın ve Yasa Koyucunun amacına ve hukuka uygun değildir.</p>
+
+<p>2- Öğreti bakımından;</p>
+
+<p>Öğretide kanun yararına bozma yasa yoluna gidilebilecek kararlar ve kanun yararına bozmanın amacı konusunda görüş birliği bulunmaktadır. Buna göre istinaf ve temyiz incelemesinden geçmeksizin kesinleşen hakimlik ve mahkeme kararlarına karşı bu yola başvurulabilecektir.</p>
+
+<p>Öğretiye göre bu olağanüstü kanun yoluna başvurulmasının amacı, kanun hükümlerinin yeknesak ve eşit bir şekilde uygulanmasını, varsa kesinleşen kararlardaki hukuka aykırılıkların giderilmesini, bu giderilmeden sanığın da faydalanmasını sağlamaktır. Yargıtay Ceza Genel Kurulu da istikrar bulmuş uygulamalarında kanun yararına bozma yasa yolunun amacını öğretiye uygun yorumlamaktadır. ( Y.C.G.K. 16.06.2009 gün ve 2009-58/166 sayılı, 19.02.2008 gün ve 2008-19-31 sayılı kararları )</p>
+
+<p>Bazı yazarlar kanun yararına bozma yasa yoluna gidilebilecek kararları iki gurupta toplamaktadırlar. Bu görüşe göre birinci gurupta kesinleşmiş son kararlara karşı, ikinci gurupta ise kesinleşmiş ara kararlarına karşı kanun yararına bozma yasa yoluna gidilebilecektir. ( Öztürk/Tezcan/Erdem ve diğerleri-Nazari ve Uygulamalı Ceza Muhakemesi Hukuku Seçkin Yayımevi 5. baskı s.739-Özbek/Kanbur/Doğan/Bacaksız/Tepe-Ceza Muhakemesi Hukuku Seçkin yayımevi 5.baskı s.818 ) İkinci gurupta sözü edilen ara kararları kapsamında, son kararlarla birlikte temyizi mümkün olmayan ara kararları yer aldığı gibi eğer son karar temyiz edilmeden kesinleşmiş ise temyizle birlikte incelenebilecek olan ancak temyiz edilmediği için kesinleşen ara kararları da yer almaktadır.</p>
+
+<p>Koruma tedbirleri kapsamında olan el koyma kararının ve bu karara karşı yapılan itiraz üzerine mercii tarafından verilen ve kesin nitelikte olan kararın son hükümle birlikte temyizen incelenecebilecek ara kararlarından olmadığını yukarıda açıklamış idik. Yaptığımız inceleme ve araştırmalardan öğretide bu kararlara karşı kanun yararına bozma yasa yoluna gidilemeyeceğine ilişkin bir görüşe rastlanılmamıştır. Buna karşılık Dr. Ahmet Gökçen’e ait Ceza Muhakemesinde Basit Elkoyma ve Postada Elkoyma isimli ( Dokuz Eylül Üniversitesi Hukuk Fakültesi Sermaye İşletmesi Yayınları No:90 -1994 basımı ) eserin 207 sahifesinde elkoyma kararlarına karşı yazılı emir yoluna gidilebileceği açıça ifade edilmektedir. Yine öğretide koruma tedbirleri arasında yer alan arama tedbiri kararına karşı da kanun yararına gidilebileceği ifade edilmektedir. ( Makale -Yrd.Doç.Dr. Recep Gülşen-Yeni Ceza Muhakemesi Kanunun’da Arama-Hukuki Perspektifle” Dergisi “HPD”- sayı:3 sh.93 )</p>
+
+<p>Görüldüğü gibi Sayın Çoğunluğun el koyma işlemi konusunda verilen kararlara karşı kanun yararına bozma yasa yoluna gelinemeyeceği yolundaki kararı, öğretideki görüşlerle de bağdaşmamaktadır.</p>
+
+<p>3-Yargıtay kararları bakımından;</p>
+
+<p>El koyma kararını vermeye yetkili mahkemenin tespiti konusunda itiraz merciinin kararına karşı yapılan kanun yararına bozma talebi üzerine 6.Ceza Dairesiyle Yargıtay Başsavcılığı arasında oluşan uyuşmazlığı Yargıtay Ceza Genel Kurulu esastan inceleyerek karara bağlamıştır. Sözü edilen kanun yararına bozma talebi konusu kararlar ve Yargıtay’ca verilen kararlar kısaca şöyledir:</p>
+
+<p>Cumhuriyet Savcısı tarafından suç şüphesi altında bulunan bir çocuk hakkında yapılan soruşturma sırasında muhafaza altına alınan eşyaya 127/1 maddesi uyarınca Kadıköy Çocuk Mahkemesinden elkoyma kararı verilmesi talep edilmiştir. Mahkeme talep konusunda karar verme yetkisinin sulh ceza hakimine ait olduğu gerekçesiyle bu talebi reddetmiştir. Cumhuriyet Savcısı bu red kararına karşı itiraz yasa yoluna başvurmuştur. İtiraz mercii olan Kadıköy 1.Ağır Ceza Mahkemesi ise 14.03.2006 gün ve 2006/370 müteferrik sayılı karar ile itirazı reddetmiştir. Bu karara karşı Adalet Bakanlığının istemi üzerine Yargıtay Başsavcılığı tarafından 04.05.2006 gün ve 19264 sayılı yazıyla kanun yararına bozma yasa yoluna müracaat edilmiştir. Kanun yararına bozma talebinde itiraz merciinin itirazı kabul etmesi gerekirken reddetmesinin isabetsiz olduğu nedeni ileri sürülmüştür. Bu talep 6.Ceza Dairesi tarafından esastan incelemiş ve 04.06.2007 günlü, 2006/12756 E. 2007/6931 K. Sayılı kararla kabul edilerek itiraz merciinin kararının bozulmasına karar verilmiştir. Dairenin bu bozma kararına karşı Yargıtay Başsavcılığı tarafından Ceza Genel Kuruluna itiraz edilmiştir. İtiraz gerekçesi olarak itiraz merciinin kararının yerinde olduğu ileri sürülmüştür. Yargıtay Ceza Genel Kurulu ise 16.10.2007 gün ve 191/207 sayılı kararla değişik gerekçeyle itirazı kabul ederek Daire kararının kaldırılmasına ve dosyanın Daireye gönderilmesine karar vermiştir. Ceza Genel Kurulunun oybirliğiyle verdiği bu kararı dosyadaki evrakların onaysız fotokopi olduğu, bu eksikliğin tamamlatılarak bir karar verilmesi gerektiği gerekçesine dayanmaktadır. Dosyanın gönderildiği 6.Ceza Dairesince Ceza Genel Kurulu kararında belirtilen eksiklik giderildikten sonra bu kez 19.03.2012 gün ve 2008/6822 E. 2012/5610 K.sayılı kararla itiraz merciinin kararı yerinde olduğu gerekçesiyle yasa yararına bozma talebinin reddine karar verilmiştir.</p>
+
+<p>Görülmektedir ki, her ne kadar kanun yararına bozma talebi nedeni el koyma kararını vermeye yetkili mahkemenin belirlenmesine ilişkin ise de bu sorun el koyma işleminden kaynaklanmaktadır. El koyma kararı verilmesi talebine ilişkin itiraz merciinin ret kararı ile el koyma kararının kaldırılması talebinin reddine ilişkin karara karşı yapılan itirazın reddi kararı aynı niteliktedir ve kesin kararlardır. Her iki durumda da bu kararlar esas kararla birlikte temyizen incelenecek ara kararlarından değildir. Sorunun halli için yasa yararına bozma yolundan başka bir yasa yolu da bulunmamaktadır. Nitekim Ceza Genel Kurulu ve 6. Ceza Dairesi yasa yararına bozma talebini inceleyerek oybirliğiyle karara bağlamışlardır.</p>
+
+<p>Öte yandan temyiz incelemelerinde, yargılama mahkemelerinin el koyma kararı verilen taşınmaz, hak, alacak ve diğer malvarlığı değerleri hakkında son kararla birlikte olumlu veya olumsuz bir karar vermedikleri görülmektedir. Mahkemece eksik bırakılan bu husus temyiz incelemesine konu yapılmamakta, karar bu nedenle bozulmamaktadır. Yargıtay kararında eksik bırakılan bu konuda mahallinde her zaman bir karar verilmesinin mümkün olduğu hatırlatılmakla yetinilmektedir. ( 7.C.D. 04.06.2013 gün ve 8550/12218, 18.04.2013 gün ve 2012/19298 E. 2013/9519 K. Sayılı kararlar )Yargıtayın bu uygulaması doğrudur. Zira karar verilmeyen bir konuda temyiz denetiminin yapılması mümkün değildir. Bu nedenledir ki, el koyma konusunda verilen ve kesin nitelikte olan kararlardaki hukuka aykırılıkların, haksızlıkların bir an önce giderilmesi ve uygulamada birliğin sağlaması için yasa yararına bozma yoluna gidilmesi zorunluluğu vardır.</p>
+
+<p>Tarafımızdan yapılan araştırma ve incelemelerde, el koyma kararı konusunda itiraz merciinin verdiği karara karşı yasa yararına bozma yoluna gelinemeyeceğine ilişkin bir Yargıtay kararına rastlanılmamıştır.</p>
+
+<p>Yukarıda belirtilen emsal kararlar da gözetildiğinde Sayın çoğunluğun kararı Yargıtay içtihatlarına da aykırıdır.</p>
+
+<p>4-AİHS, 4-AİHS, AİHM ve Anayasa bakımından;</p>
+
+<p>Anayasamızın “Temel Haklar ve Ödevler” başlıklı ikinci kısmının “Kişi Hakları ve Ödevleri” başlıklı 2.bölümünün “Mülkiyet hakları” kenar başlıklı 35.maddesine göre herkes mülkiyet ve miras hakkına sahiptir. Bu haklar ancak kamu yararı amacıyla kanunla sınırlanabilmektedir.</p>
+
+<p>AİHS.nin Ek 1.Protoklünün “Mülkiyetin korunması” başlıklı 1.maddesinin 1.fıkras 1.fıkrasına göre her gerçek ve tüzel kişinin mal ve mülk dokunulmazlığına saygı gösterilmesini isteme hakkı vardır. Yine bu maddeye göre Bir kimse, ancak kamu yararı sebebiyle ve yasada öngörülen koşullara ve uluslararası hukukun genel ilkelerine uygun olarak mal ve mülkünden yoksun bırakılabilir. Maddenin 2.fıkrasında ise Devletlerin kamu yararına uygun olarak mülkiyetin kullanılmasını düzenleme yetkisinin bulunduğu belirtilmektedir.</p>
+
+<p>Bu düzenlemelerden anlaşılacağı gibi gerek Anayasamızda ve gerekse AİHS.inde mülkiyet hakkı güvence altına alınmıştır. Bu hakkın sınırlanması ise ancak kamu yararına kanunla mümkün olabilmektedir. Nitekim 5271 sayılı 127 ila 132.maddelerinde düzenlenen el koyma tedbiriyle mülkiyet hakkına kanunla sınırlama getirilmiştir.</p>
+
+<p>AİHM’e göre el koyma işlemi geçicidir. Bu işlemde, mülkiyetten yoksun bırakılma bulunmamaktadır. Mülkiyet hakkının kullanılmasına engel olmaktadır. 1 nolu Ek Protokolün 1.maddesinin 2.fıkras 2.fıkrası kapsamındadır. ( Dr.H. Burak Gemalmaz-Avrupa İnsan Hakları Sözleşmesinde Mülkiyet Hakkı- Beta Basım Yayım-2009 İstanbul s.496-497- AİHM- HANDYSİDE-İNGİLTERE, ALİ ESEN-TÜRKİYE, AGOSİ-İNGİLTERE kararları ) AİHM, suç soruşturmasında elkoyma işlemi yoluyla mülkiyet hakkının kullanılmasını Devletlerin uygun gördüğü şekilde kontrol etme yetkilerinin bulunduğunu ifade etmekle birlikte haksız gecikmelerin 1.Ek Protokolün 1.maddesini ihlal ettiğini kabul etmektedir. ( Stefhan TRECHSEL-Ceza Yargılamasında İnsan Hakları “Human Rights in Criminal Proccedings” s.561- AİHM- RAİMONDO-İTALYA, VENDİTTELİ-İTALYA kararları ) Yine AİHM’e göre el koyma ve müsadere konularındaki yargılama süreçlerinin makul süreyi aştığına ilişkin başvuruları AİHS’nin 6/1 maddesi kapsamına girdiğini kabul ederek esastan incelemektedir. ( RAİMONDO-İTALYA kararı ) Anayasamızda 2010 yılında yapılan değişiklik gereğince aynı konular önce bireysel başvuru yoluyla Anayasa Mahkemesince incelenecektir.</p>
+
+<p>Görülmektedir ki, el koyma işlemi nedeniyle verilen kesin nitelikteki kararların Anayasanın 35., AİHM.nin 6/1. ve 1.nolu Ek Protokolün 1.maddesini ihlal ettiğine ilişkin başvurular hakkında kabul edilebilirlik kararı verilecek, esastan incelendikten sonra haklı bulunarak ihlal tespit edildiği takdirde Türkiye Cumhuriyeti Devleti mahkum edilecektir. Sıkça tekrar etme ihtimali yüksek olan bu ihlal tespitleri nedeniyle Ülkemizin yargı sisteminin iç ve dış kamuoyunda güven ve itibarı zedelenecektir. Oysa yasa yararına bozma yasa yoluna gelinebileceği kabul edildiği takdirde, Anayasa ve AİHS ile teminat altına alınan bu hakların hem ihlali hem de bu konularda bireysel başvuru yoluna gidilmesi önlenmiş olacaktır. Böylece de adli yargıya güven artacaktır.</p>
+
+<p>III-Yasa yararına bozulması talep edilen karara konu suçta kullanılan araca, 128.maddesinin dördüncü fıkrasına aykırı olarak el konulmuştur. Anılan hüküm gereğince aracın kayıtlı bulunduğu sicile şerh konularak iade edilmesi gerekirken araç alıkonulmuştur. Gerek el koyma kararının kaldırılmasının talep edildiği ve gerekse bu talebin reddine ilişkin karara karşı yapılan itirazın reddedildiği sırada araç halen sanığa ya da malen sorumluya iade edilmemiştir. Bu durum kanuna açık aykırılık oluşturmaktadır. Bu yönüyle yasa yararına bozma talebi yerindedir.</p>
+
+<p>Yukarıda açıkladığım nedenlerle yasa yararına bozma yoluna gelinmesinin kabul edilmesi, esasın incelenmesi ve kanun yararına bozma nedenleri yerinde olduğundan itiraz merciinin kararının bozulması gerektiği görüşünde olduğumdan Sayın Çoğunluğun red kararına katılmıyorum.</p>
+
+<hr>
+
+<p><strong>YARGITAY 12. CEZA DAİRESİ
+Esas: 2013/27484 Karar: 2014/6481</strong> Tarih: 17.03.2014</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 128. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Taşınmazlara, Hak ve Alacaklara Elkoyma</strong></p>
+  </li>
+</ul>
+
+<p>Davacının tazminat talebinin reddine ilişkin hüküm, davacı vekili tarafından temyiz edilmekle, dosya incelenerek gereği düşünüldü:</p>
+
+<p>5721 sayılı CMK’nın 141. maddesinin5721 sayılı CMK’nın 141. maddesinin 1. fıkrasının (j) bendinde koşulları oluşmadığı halde malvarlığı değerlerine el konulan kimselerin tazminat isteyebilecekleri düzenlenmiş olup, davacı vekili davacıya ait araca 28.04.2008 - 30.04.2009 tarihleri arasında haksız olarak el konulduğu nedeniyle tazminat talebinde bulunmuştur.</p>
+
+<p>İncelenen dosya kapsamına göre; davacıya ait 65 AN 691 plakalı araca 5607 sayılı Kanununa Muhalefet suçundan yapılan soruşturma sırasında el konulduğu, el koymayı öngören 5271 sayılı CMK’nın 128/2-d maddesi ve aynı maddenin 1/(a-b-c-d-e-f-g-h), son fıkrasında da; taşınmaz, hak, alacak ve diğer malvarlığı değerlerinin şüpheli veya sanıktan başka bir kişinin zilyetliğinde bulunması halinde dahi, elkoyma işlemi yapılabileceğinin hüküm altına alındığı, tazminat talebinin dayanağı olan ceza dava dosyasında davacıya ait aracın kaçakçılık suçundan yargılanan 3. kişiler tarafından suça konu kaçak şekerlerin nakliyesinde kullanıldığı, atılı suça ilişkin olarak Gürpınar Asliye Ceza Mahkemesinin 30/04/2009 tarih, 2008/493 esas, 2009/233 karar sayılı dava dosyasında sanık olan C. Y. ve C. A. hakkında yapılan yargılama sonucu, sanık C. Y.’ın yabancı menşeli şekerleri piyasaya ticari amaçla satışa arz etmek eyleminden mahkumiyetine, davacıya ait dava konusu aracı şoför olarak kullanan sanık C. A.’ın beraatine hükmedildiğinin anlaşılması karşısında, araç maliki olan (malen sorumlu) davacı ile mahkumiyetine karar verilen sanık arasında genel hükümlere göre açılacak tazminat davasına konu edilmesi gereken alacağa ilişkin olarak açılan tazminat davasının, mahkemece, davaya konu aracın suçta kullanıldığı ve 5271 sayılı Ceza Muhakemesi Kanunu’nun 141. maddesinde belirtilen tazminat isteme koşullarının oluşmadığı gerekçesi ile reddine karar verilmesinde usul ve kanuna aykırı yön bulunmadığından, davacı vekilinin temyiz itirazlarının reddiyle, hükmün isteme uygun olarak ONANMASINA, 17.03.2014 tarihinde oybirliği ile, karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 12. CEZA DAİRESİ
+Esas: 2013/10973 Karar: 2013/17109</strong> Tarih: 24.06.2013</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 128. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Taşınmazlara, Hak ve Alacaklara Elkoyma</strong></p>
+  </li>
+</ul>
+
+<p>Davacının tazminat talebinin kısmen kabulüne ilişkin hüküm, davalı ve davacı vekilleri tarafından temyiz edilmekle, dosya incelenerek gereği düşünüldü:</p>
+
+<p>KARAR : 5721 sayılı CMK’nın 141. maddesinin 1. fıkras 1. fıkrasının ( j ) bendinde malvarlığı değerlerine koşulları oluşmadığı halde el konulan kimselerin tazminat isteyebilecekleri düzenlenmekte olup, davacıya ait araca Petrol Kaçakçılığı, Hizmet Nedeniyle Güveni Kötüye Kullanma ve Suç Uydurma suçlarından yapılan soruşturma kapsamında Petrol Kaçakçılığında kullanıldığı iddiasıyla araç sürücüsü M. İ. hakkında yapılan soruşturma sırasında el konulduğu, 5271 sayılı CMK’nın 128/2. maddesi uyarınca taşınmaz, hak, alacak ve diğer malvarlığı değerlerinin başka kişilerin zilyetliğinde bulunması halinde de elkoyma tedbiri uygulanabileceği yönündeki düzenleme ve Viranşehir Asliye Ceza Mahkemesinin 24.02.2009 tarih 2008/142 esas, 2009/48 sayılı kararıyla davanın sanığı ve aracın sürücüsü olan M. İ. hakkında Petrol Kaçakçılığı suçundan hükmün açıklanmasının geri bırakılmasına karar verildiği ve araç iyiniyetli üçüncü kişiye ait olduğundan müsaderesine karar verilmediği dikkate alındığında, sanık ile araç maliki olan davacı arasında genel hükümlere göre açılacak tazminat davasına konu edilmesi ve açılan maddi tazminat davasının reddi gerekirken yazılı gerekçelerle kabulü ile davacı lehine tazminata hükmedilmesi,</p>
+
+<p>SONUÇ : Kanuna aykırı olup, davalı ve davacı vekillerinin temyiz itirazları bu nedenle yerinde görüldüğünden hükmün 5320 sayılı Kanunun 8/1. maddesi gereğince halen uygulanmakta olan 1412 sayılı 321. maddesi gereğince isteme aykırı olarak BOZULMASINA, 24.06.2013 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY CEZA GENEL KURULU
+Esas: 2013/11-148 Karar: 2014/87</strong> Tarih: 25.02.2014</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 128. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Taşınmazlara, Hak ve Alacaklara Elkoyma</strong></p>
+  </li>
+</ul>
+
+<p>İlk derece mahkemesi sıfatıyla yargılama yapan Yargıtay 11. Ceza Dairesince 16.11.2012 gün ve 3-2 sayı ile; sanık N. T.’ın resmi belgede sahtecilik ve görevi kötüye kullanma, sanıklar A. Y. ve M. T.’ün görevi kötüye kullanmak suçlarından 5271 sayılı CMK’nun 223/2-c maddesi uyarınca beraatlerine karar verilmiş, Daire Üyesi A. D. “sanık N.’nin sahtecilik suçunu oluşturduğu iddia edilen eylemle ilgili olarak görevi kötüye kullanma suçundan mahkûmiyetine karar verilmesi gerektiği” görüşüyle karşı oy kullanmıştır.</p>
+
+<p>Hükümlerin katılanlar vekili tarafından temyiz edilmesi üzerine Yargıtay Cumhuriyet Başsavcılığının 06.02.2013 gün ve 71138 sayılı “onama” istemli tebliğnamesiyle Yargıtay Birinci Başkanlığına gönderilen dosya, Ceza Genel Kurulunca değerlendirilmiş ve açıklanan gerekçelerle karara bağlanmıştır.</p>
+
+<p>KARAR : Sanıkların beraatine karar verilen olayda temyiz incelemesi yapan Ceza Genel Kurulunca çözümlenmesi gereken uyuşmazlıklar; sanık N. T. hakkında resmi belgede sahtecilik ile tüm sanıklar hakkında görevi kötüye kullanma suçlarının sübutuna ilişkindir.</p>
+
+<p>İncelenen dosya kapsamından;</p>
+
+<p>Ankara Cumhuriyet Başsavcılığının görev ve işbölümü dağıtım yazısına göre; sanıklar N. T. ve A. Y.’in basın suçları bürosu, sanık M. T.’ün ise kaçakçılık ve mali suçlar bürosu evraklarına bakmak ve tüm sanıkların adlarına kayıtlı bulunan hazırlık evrakını takip edip sonuçlandırmak ile görevlendirildikleri,</p>
+
+<p>Ankara Cumhuriyet Başsavcılığının 2008/2111 sayılı dosyasında aralarında Z. K., A. A., İ. K. M. Ç.ve E. K.nın da bulunduğu yirmi şüpheli hakkında suç işlemek amacıyla örgüt kurmak, suç işlemek amacıyla kurulmuş örgüte üye olmak, nitelikli dolandırıcılık ve sahtecilik suçlarından Cumhuriyet savcısı sanık N. T. tarafından yürütülen soruşturmada 21.05.2009 tarihinde diğer sanıkların da görevlendirildikleri,</p>
+
+<p>Soruşturmada 5271 sayılı CMK’nun 153/2. maddesi gereğince kısıtlılık kararı alındığı, görevli bulunan Cumhuriyet savcısı N. T. tarafından 01.06.2009 tarihinde Ankara Nöbetçi Sulh Ceza Mahkemesinden soruşturma dosyasının 19 şüphelisi hakkında; “doğrudan ortak ya da sahip oldukları taşınmazlara, kara, deniz ve hava ulaşım araçlarına, ortağı bulundukları şirketteki ortaklık paylarına ve bu kişilerin ortağı oldukları şirketlerin sahip oldukları yukarıdaki varlık ve değerlere” 5271 sayılı CMK’nun 128. maddesi gereğince el konulmasının talep edildiği,</p>
+
+<p>Ankara 3. Sulh Ceza Mahkemesince 01.06.2009 gün ve 563 D.iş sayı ile; talebe konu 19 kişiden F. E., İ. K. M. Ç., Z. K., M. G., A. C., Ü.Y.S. ve Ş.hakkında 128/2, a-6. maddesi uyarınca; “a- ) Doğrudan ortak ya da sahip oldukları taşınmazlara, kara, deniz veya hava ulaşım araçlarına, ortağı bulundukları şirketlerdeki ortaklık paylarına el konulmasına,</p>
+
+<p>b ) Cumhuriyet Başsavcılığının ( 2 ) nolu maddedeki bu kişilerin ortağı oldukları şirketlere sahip oldukları yukarıda sayılı varlık ve değerlerine el konulmasına karar verilmesi talebinin, taşınmazlara, kara, deniz ve hava ulaşım araçlarına, ortağı bulundukları şirketlerdeki ortaklık paylarına el koyma kararı verildiğinden, kanunda belirtilmeyen şekilde talepte bulunulduğundan talebin reddine,</p>
+
+<p>c- ) M. S. B.’nın açık kimliği ve TC kimlik numarası olmadığından isme benzer başkalarının mağdur olmaması için talebin reddine” karar verildiği,</p>
+
+<p>Bu karara karşı şüpheli müdafileri tarafından yapılan itirazların Ankara 7,, 8,, 12,, 13 ve 16. Asliye Ceza Mahkemeleri tarafından reddedildiği,</p>
+
+<p>Ankara 3. Sulh Ceza Mahkemesinin itiraz üzerine kesinleşen 01.06.2009 gün ve 563 D.iş sayılı bu kararına ilişkin dosyada iki örnek bulunduğu, sahtecilik suçuna konu olan örnekte kararın ( b ) ve ( c ) bentlerinin gözükmediği, Cumhuriyet savcısı N. T. tarafından fotokopi ile çoğaltılan sözkonusu kararın ( b ) ve ( c ) bentleri kapatılarak bu kısımlara ilişkin bölüm boş gözükecek şekilde, 02.06.2009 günlü müzekkereyle Tapu Kadastro Genel Müdürlüğü 2. Bölge Müdürlüğüne gönderildiği, kararda yazılı şahıslara ait taşınmazlara tedbir konulmasının talep edildiği,</p>
+
+<p>Aynı gün şüpheli 18 kişinin ortağı oldukları şirketlerdeki paylarına el konulması hususunda İstanbul ve Ankara Ticaret Sicil Memurluğuna da müzekkereler yazıldığı, kararın şüphelilerin ortağı olduğu şirketlere de tebliğ edildiği,</p>
+
+<p>İstanbul Ticaret Sicil Memurluğunun 08.06.2009 günlü yazısı ile Ankara Cumhuriyet Başsavcılığı müzekkeresinde yazılı 18 kişinin ortak, kurucu ya da yönetim kurulu üyesi oldukları şirketlerin adlarının bildirildiği ve ek olarak anonim şirketlerde kuruculardan sonraki hissedarların tescile tâbi olmadığının belirtildiği,</p>
+
+<p>Şüpheliler A. A. ve Z. K. müdafilerinin el koyma kararının kaldırılmasına yönelik 17.06.2009 tarihli dilekçedeki taleplerinin, görevli Cumhuriyet savcıları tarafından 19.06.2009 günlü yazı reddedildiği, söz konusu dilekçede şahısların malvarlıklarına konulan tedbirlerin kaldırılmasının talep edilmiş olduğu,</p>
+
+<p>22.06.2009 tarihinde şüpheli M. Ç. müdafiininde aynı talepte bulunduğu ve 23.06.2009 günü üç sanık tarafından istemin yerinde görülmediği,</p>
+
+<p>Soruşturma dosyasında şüpheli konumunda bulunan H.K. ve İ. K. arasında 25.06.2009 günü yapılan telefon görüşmesinden; şirket tüzel kişiliğine ait bir taşınmazın satışı için yapılan başvuru sırasında, Ticaret Sicil Memurluğu tarafından şirket ortaklarının payında tedbir olduğundan bahisle tüzel kişinin sahip olduğu taşınmazla ilgili tasarruf yetki belgesinin verilmediğinin tespit edildiği,</p>
+
+<p>Katılan S… Programcılık ve Teknik Hizmetleri San. ve Tic. A.Ş’nin 2.350.000 Lira sermayesinin 2.330.000 Lirasının Z. K., M.Ç. İ.K.’a ait olup, adı geçenlerin Ankara Cumhuriyet Başsavcılığının 2008/2111 esas sayılı dosyasında şüpheli konumunda bulundukları, kalan 20.000 Lira sermayenin Z. K.’ın oğulları olan Ö. Z. K. ile M. H. K. ait olduğu, şirketin toplam 470.000 hissesinden 466.000 hissesinin şüphelilere ait olup bunun toplam hissenin % 99,14’üne karşılık geldiği,</p>
+
+<p>Katılan M… Medya San. ve Tic. A.Ş’nin 500.000 Lira sermayesinin 498.750 Lirasının Z. K., M. Ç. ve İ. K. ait olup adı geçenlerin Ankara Cumhuriyet Başsavcılığının 2008/2111 esas sayılı dosyasında şüpheli konumunda bulundukları, sermayenin kalan 1.250 Lirasının Z. K.’ın oğlu Ö.Z. K.’a ait olduğu, şirketin toplam 500.000 hissesinin bulunduğu, bunun 498.750 hissesinin şüphelilere ait olup, toplam hissenin % 99,75’ini oluşturduğu,</p>
+
+<p>Katılan Y… Dünya İletişim San. ve Tic. A.Ş nin % 80, H… Görsel San. ve Tic. A.Ş’nin % 79,77, Y… İletişim ve Haber Ajansı San. Ve Tic. A.Ş.’nin % 98,57 hissesinin şüphelilere ait olduğu,</p>
+
+<p>Tapu Kadastro Genel Müdürlüğü 2. Bölge Müdürlüğünce 03.06.2009 günü sanık Cumhuriyet savcısı N. T.’a faksla gönderilen yazıda; şüphelilerden yedisi adına 25 tapu sicil müdürlüğünde çeşitli taşınmaz kayıtlarının olduğu tespit edilerek ilgili tapu sicil müdürlüklerine gereğinin yapılması için yazı yazıldığının belirtildiği, devamla, “ayrıca sistemimizde ad, soyad, baba adı, ünvan esasına göre sorgulama yapıldığından şahısların / şirketlerin diğer kimlik bilgilerinin doğru olup olmadığı tespit edilememiştir. Ad-soyad-baba adları, ünvanları aynı/benzer olan farklı şahıslar ve şirketler bulunabileceğinden ve şahısların şirketlerin ayrıntılı nüfus bilgisi vs. taşınmazın bulunduğu ilgili tapu sicil müdürlüklerinde mevcut olduğundan, iş bu müdürlükler tarafından kimlik bilgileri işlendikten sonra işlem yapılabilecektir… yazınızda sözü edilen şahıslar/ şirketler mal beyanında bulundular ise veya adlarına kayıtlı başkaca gayrımenkul bilgisi kurumunuzda mevcutsa mahalle parsel ada numaralarının bildirilmesi halinde tekrar araştırma yapılarak tarafınıza bilgi verilecektir” şeklinde açıklama yazıldığı,</p>
+
+<p>Cumhuriyet savcısı N. T. tarafından 04.09.2009 tarihinde Tapu Kadastro Genel Müdürlüğü 20. Bölge Müdürlüğüne 18 şüphelinin açık kimlik bilgileri ile 21 limited ve anonim şirketin adının bildirildiği, ekinde karar gönderilmediği,</p>
+
+<p>Bir kısım şüpheliler müdafii avukat Ş. Y. Cumhuriyet Savcılığına hitaben yazdığı 05.03.2010 tarihli dilekçede; “563 D.iş sayılı karar ile yalnızca gerçek kişilerin malvarlığına el konulmuş, ancak tedbir kararının infazı sırasındaki bir eksiklik ve yanlış anlamadan dolayı şüphelilerin ortağı olduğu şirket tüzel kişilerinin malvarlığına da tedbir konulduğu … anlaşılmaktadır. Mağduriyetlere son verilebilmesi için tedbir kararının yanlış uygulamalarına son verilmesi, tapu sicil müdürlüklerindeki tereddütlerin giderilmesi için gereğinin yapılması” talebinde bulunduğu, dilekçenin altında 06.03.2010 tarihli yazısı ile Cumhuriyet savcısı N. T. tarafından; “Av. E. Ş. ile yapılan telefon görüşmesinde işlemlerde tereddütlü bulunan dairenin hangi işlemde hangi yönde tereddütlü olduğunun belirtilmesi halinde bir karar verilebileceği, bu dilekçedeki genel ifadelere göre bir karar verilemeyeceği” açıklamasının yazıldığı,</p>
+
+<p>Soruşturma dosyasının 2010 yılında olağan müfettiş denetiminde incelendiği, Ş.Y. 05.03.2010 tarihli dilekçesi ve dilekçe üzerinde yer alan Cumhuriyet savcısı N. T.’ın yazısının müfettiş tarafından görülerek denetiminin yapıldığı, ancak herhangi bir tavsiye ve tenkide konu edilmediği,</p>
+
+<p>Avukat Ş.Y.18.03.2010 tarihli dilekçesi ile; kararın ( b ) ve ( c ) bendi kapatılarak ilgili yerlere gönderilmesi nedeniyle tüzel kişilerin malvarlığına hatalı şekilde tedbir uygulandığı, yanlış uygulamaların önüne geçilebilmesi için 563 D.iş sayılı kararın tamamının eksiksiz şekilde ilgili yerlere gönderilmesi ve tedbir kararının şirkete ait malvarlığını kapsamadığı hususunun açıklığa kavuşturulabilmesini talep ettiği,</p>
+
+<p>Görevli Cumhuriyet savcıları olan üç sanığın imzaladığı 22.03.2010 günlü mütalaa yazısında; “Kararın şirket malvarlığına yönelik tedbiri de kapsadığı, ( a ) bendinde şirketteki paya tedbir konulmuş olduğundan ayrıca şirketlerin malvarlığına tedbir konulmasına gerek görülmediği, kişilerin taşınmazlarına el konulmuş olması halinde kişinin sahip olduğu taşınmazın elden çıkarılmasının önlenmesi sağlanırken, aynı kişinin ortaklık yoluyla sahip olduğu şirketin taşınmazının elden çıkarılmasının beklenemeyeceği, dolayısıyla şirketin sahip olduğu taşınmaza tedbir konulmasında karara aykırı bir yön bulunmadığı, uygulamanın karara uygun olduğu”nun belirtildiği,</p>
+
+<p>Ankara 3. Sulh Ceza Mahkemesinin 01.06.2009 gün ve 563 D.iş sayılı kararında hakkındaki tedbir talebi TC kimlik numarası olmadığından bahisle reddedilen M. S. B. ile ilgili olarak yenilenen talep üzerine, 01.04.2010 tarihinde Ankara 10. Sulh Ceza Mahkemesince 434 D.iş sayı ile; “Doğrudan ortak ya da sahip olduğu taşınmazlara, kara, deniz, hava ulaşım araçlarına, ortağı bulunduğu şirketlerdeki ortaklık payına ve ortağı olduğu şirketlerin sahip olduğu yukarıdaki sayılı varlık ve değerlere 128/2, a-6. maddesi uyarınca elkonulmasına” karar verildiği, şüpheli müdafinin itirazının da merciince reddedildiği,</p>
+
+<p>Sanık Cumhuriyet savcısı N. T. tarafından, Z… İletişim San. ve Tic. A.Ş. Adına kayıtlı 877 parseldeki tapuya tedbir konulmasına ilişkin Yenimahalle 2. Bölge Tapu Sicil Müdürlüğüne 30.04.2010 günü yazı yazıldığı ve yazının ekinde 563 D.iş sayılı kararın tam metninin gönderildiği,</p>
+
+<p>Konya Tapu Sicil Müdürlüğünce 07.05.2010 tarihinde S… Programcılık Tanıtım ve Teknik Hizmetler San. ve Tic. A.Ş. adına kayıtlı olan 19852 ada 5 parsel, Akyurt Tapu Sicil Müdürlüğünce 07.05.2010 tarihinde S… Programcılık Tanıtım ve Teknik Hizmetler San. ve Tic. A.Ş. adına kayıtlı olan 957 parsel, Yenimahalle Tapu Sicil Müdürlüğünce 17.05.2010 tarihinde Z… İletişim San ve Tic. Ltd. Şti adına kayıtlı olan 62593,, 62596,, 62599 ve 62607 parsel, Keşan Tapu Sicil Müdürlüğünce 17.05.2010 tarihinde S… Programcılık Tanıtım ve Teknik Hizmetler Tic. A.Ş. adına kayıtlı olan 1185,, 1206,, 1217 ve 1220 parsel numaralı taşınmazlar üzerine ihtiyati tedbir tesisi işleminin yapıldığını belirtir yazıların Ankara Cumhuriyet Başsavcılığına gönderildiği, söz konusu 1185 parsel numaralı taşınmaz üzerine konulan tedbirin açıklaması olarak; “ortaklık payına el koyma kararı verildiğinden, tedbir konulmuştur” şeklinde yazı yazıldığı,</p>
+
+<p>Bir kısım şüpheliler müdafii avukat H. Y. tarafından 29.09.2010 tarihinde, şirketlerin mağdur olması nedeniyle şirket taşınmazları üzerindeki el koyma kararının ve el koyma kararından sonra elde edilen taşınmazlar üzerindeki tedbir kararının kaldırılması talebinde bulunulduğu,</p>
+
+<p>Avukat H. Y. hitaben yazılan ve üç Cumhuriyet savcısının da imzaladığı yazıda, Ankara 3. Sulh Ceza Mahkemesince verilen 563 D.iş sayılı kararına, bu karara yapılan itirazları değerlendiren üst mahkemelerin kararlarına ve taşınmazların edinme tarihlerine göre talebin yerinde görülmediğinin belirtildiği,</p>
+
+<p>Manyas Tapu Sicil Müdürlüğüne yazılan 28.10.2010 tarihli müzekkere ile, S… Programcılık San. ve Tic. A.Ş. ne ait olan 1171 parsel sayılı taşınmazlara tedbir konulmasının istendiği ve ekinde Ankara 3. Sulh Ceza Mahkemesinin 563 D.iş sayılı kararının tamamının gönderildiği,</p>
+
+<p>Esenyurt Tapu Sicil Müdürlüğüne yazılan 01.11.2010 tarihli müzekkere ile, M. A.Ş. ve B… Holding A.Ş. ne ait olan 2998-1 parsel sayılı taşınmaza tedbir konulmasının istendiği ve ekinde Ankara 3. Sulh Ceza Mahkemesinin 563 D.iş sayılı kararının tamamının gönderildiği,</p>
+
+<p>Esenyurt Tapu Sicil Müdürlüğünce 08.11.2010 tarihinde M… Medya A.Ş. adına kayıtlı olan 2998-1 parsel numaralı taşınmaz, Manyas Tapu Sicil Müdürlüğünce 08.11.2010 tarihinde S… Programcılık Tanıtım ve Teknik Hizmetler San. ve Tic. A.Ş. adına kayıtlı olan 1171 parsel numaralı taşınmaz ve üzerindeki dubleks daireler üzerine ihtiyati tedbir tesisi işleminin yapıldığını belirtir yazıların Ankara Cumhuriyet Başsavcılığına gönderildiği,</p>
+
+<p>Y… Dünya İletişim San. ve Tic. A.Ş.’ne ait olan ve İstanbul Pendik’te bulunan 1008 parsel numaralı taşınmaz üzerine 17.09.2009 günü, 4013/1 parsel numaralı taşınmaz üzerine 30.09.2009 tarihinde tedbir konulduğu ve ilgili bölümlere “Ankara Cumhuriyet Başsavcılığının Basın Suçları soruşturma Bürosunun 04.09.2009 günlü müzekkeresi” şeklinde açıklama yazıldığı,</p>
+
+<p>Y… İletişim San. ve Tic. AŞ.’ne ait olan ve İstanbul Sarıyer’de bulunan 1519 parsel numaralı taşınmaz üzerine 15.09.2009 günü tedbir konulduğu ve ilgili bölümde “Ankara Cumhuriyet Başsavcılığının Basın Suçları soruşturma Bürosunun 04.09.2009 günlü müzekkeresi ve el koyma kararına istinaden” şeklinde açıklama yapıldığı,</p>
+
+<p>Y… İletişim San. ve Tic. A.Ş.’ne ait olan ve İstanbul Sarıyer’de bulunan 1518 parsel numaralı taşınmaz üzerine 17.09.2009 da tedbir konulduğu ve ilgili bölümde; “Ankara Cumhuriyet Başsavcılığının Basın Suçları soruşturma Bürosunun 04.09.2009 günlü müzekkeresi ve el koyma kararına istinaden” açıklamasına yer verildiği,</p>
+
+<p>S… Programcılık San. ve Tic. A.Ş.’ne ait olan ve Edirne Keşan’da bulunan 1185 parsel numaralı taşınmaz üzerine 17.05.2010 günü tedbir konulduğu ve ilgili bölüme “Ankara 3. Sulh Ceza Mahkemesinin 01.06.2009 gün ve 563 D.iş sayılı mahkeme müzekkeresi sayılı yazıları ile ortaklık payına el konulma kararı verildiğinden tedbir konulmuştur” açıklamasının yazıldığı,</p>
+
+<p>29.07.2011 tarihli şikâyet dilekçesi üzerine sanıklar N. T., A. Y. ve M. T. hakkında 19.08.2011 günü soruşturmaya başlandığı, Hâkimler ve Savcılar Yüksek Kurulu tarafından oyçokluğuyla kovuşturma izni verilmesine karar verildiği, Kurul Üyeleri A. S. E. ve Z. Ö.’ın eylemlerin suç oluşturmadığı ve kovuşturma yapılmasına gerek bulunmadığı görüşüyle karşı oy kullandıkları,</p>
+
+<p>Sanıkların Ankara Cumhuriyet Başsavcılığının 2008/2111 esas sayılı soruşturma dosyasındaki görevlerine son verildiği, yeni görevlendirilen Cumhuriyet savcılarının 26.08.2011 tarihinde soruşturma dosyasını devralmasından sonra, Ankara 3. Sulh Ceza Mahkemesinin 01.06.2009 gün ve 563 D.iş sayılı ve Ankara 10. Sulh Ceza Mahkemesinin 01.04.2010 gün ve 434 D.iş sayılı el koyma kararları ile ilgili olarak 23.09.2011 günü nöbetçi Sulh Ceza Mahkemesinden; “Şüphelilerin miras yoluyla ya da şans oyunları ile elde ettikleri ya da Deniz Feneri Derneğinin kurulduğu 1999 tarihinden önce iktisap edilmiş taşınmazlar üzerindeki tedbirin kaldırılmasına ve diğer mallar yönüyle tedbirin devamına karar verilmesi” talebinde bulunulduğu, Ankara 2. Sulh Ceza Mahkemesinin 26.09.2011 gün ve 811 D.iş sayılı kararı ile el koyma kararındaki tedbirin kaldırılmasına ilişkin talebin reddine karar verildiği, itiraz üzerine Ankara 20. Asliye Ceza Mahkemesince 29.09.2011 gün ve 316 D.iş sayılı karar ile; “İtirazın kabulüne, şüphelilerin miras yoluyla ya da şans oyunları ile elde ettikleri ya da D.F. Derneğinin kurulduğu 1999 tarihinden önce iktisap edilmiş taşınmazlar üzerindeki tedbirin kaldırılmasına, 434 D.iş sayılı karardaki ‘… ortağı olduğu şirketlerin sahip olduğu’ cümlesinin iptaline, şüphelilerin el konulan mallarının hangilerinin derneğin kuruluşundan önce edinilen mallar olduğunun Cumhuriyet savcıları tarafından incelenerek belirlenmesine” karar verildiği,</p>
+
+<p>Bir kısım şüpheliler müdafii Avukat E. Ş.’in Ankara 3. Sulh Ceza Mahkemesine hitaben yazdığı 26.03.2010 günlü dilekçesinde, mahkemenin 563 D.iş sayılı kararın hatalı uygulandığı, infaz için gönderilirken ( b ) ve ( c ) bentlerinin kapatıldığı, tedbir kararında şirket malvarlığına el konulması talebinin reddedildiği belirtilerek daha önce eksik gönderilen kararın tam metninin Tapu ve Kadastro Genel Müdürlüğüne, Ticaret Sicil Müdürlüğüne ve Emniyet Genel Müdürlüğüne gönderilmesini ve tedbir kararının şirkete ait malvarlığını kapsamadığı hususunun ilgili kurum ve kuruluşlara tebliğ edilmesini talep ettiği, ancak söz konusu dilekçenin sanıklarla ilgili disiplin soruşturması sırasındaki diğer dilekçe ve evraklara eklenmesine karşın ilgili mahkemesine verilmediği, bir kısım şüpheliler müdafii Avukat . da ilgili dilekçeyi mahkemesine vermediklerini ifade ettiği,</p>
+
+<p>Ankara Cumhuriyet Başsavcılığının 2008/2111 esas sayılı soruşturma dosyasında 10.04.2012 gün ve 2111-124-1 sayılı iddianameyle şüpheliler hakkında hizmet sebebiyle güveni kötüye kullanmak ve sahtecilik suçlarından kamu davası açıldığı,</p>
+
+<p>Anlaşılmaktadır.</p>
+
+<p>Sanıklar aşamalarda; 5271 sayılı CMK’nun 153/2. maddesi uyarınca kısıtlılık kararı alınan ve çok sayıda şüpheli hakkında yürütülen soruşturma dosyasında, şüphelilerin malvarlıkları ile ilgili olarak verilen elkoyma kararının şirket malvarlığını da dolaylı olarak kapsadığını, % 90 aşan hakim hissedar konumunda olan şüphelilerin, kendi malvarlıkları üzerinde tasarrufta bulunamazken, neredeyse tamamına yakın hisseye sahip oldukları şirketlere ait malvarlıkları elden çıkarabilmesinin düşünülemeyeceğini, kaldı ki henüz şirket taşınmazları üzerine tedbir konmadan şüphelilerin hisselerindeki tedbir nedeniyle taşınmazlar üzerinde de tedbir uygulamasının yapıldığını ve ticaret sicil memuru tarafından tasarruf yetki belgesinin verilmediğini, gizlilik kararı olan dosyada mahkeme kararının yalnızca infaz edilebilecek olan ( a ) bendinin gönderildiğini, sonrasında da kararın tamamı gönderildiği halde tapu sicil müdürlükleri tarafından tedbir uygulamasına aynı şekilde devam edildiğini, onaysız fotokopi şeklindeki kararın yanlış anlaşılmayı önlemek amacıyla bir bölümünün kapatılmasının sahtecilik suçunu oluşturmayacağını, bazı bölümlerin eksik olduğunun ilk bakışta anlaşılabilmesine göre aldatıcılık yeteneğinin de olmadığını, tedbirin kaldırılmasına yönelik talep üzerine yazılan ret kararının hukuki mütalaadan ibaret olup yargı yetkisi kapsamında kaldığını, kanun yollarına açık olup suç teşkil etmeyeceğini, olağan denetim sırasında adalet müfettişi tarafından da görülüp eleştiriye dahi konu olmadığını savunmuşlardır.</p>
+
+<p>Temyize konu hükümlerin sırasıyla değerlendirilmesinde yarar bulunmaktadır.</p>
+
+<p>1- Sanık N. T. hakkında resmi belgede sahtecilik suçundan kurulan beraat hükmünün incelenmesi:</p>
+
+<p>5237 sayılı TCK’nun “Resmi belgede sahtecilik” başlıklı 204. maddesi;</p>
+
+<p>” ( 1 ) Bir resmî belgeyi sahte olarak düzenleyen, gerçek bir resmî belgeyi başkalarını aldatacak şekilde değiştiren veya sahte resmî belgeyi kullanan kişi, iki yıldan beş yıla kadar hapis cezası ile cezalandırılır.</p>
+
+<p>( 2 ) Görevi gereği düzenlemeye yetkili olduğu resmi bir belgeyi sahte olarak düzenleyen, gerçek bir belgeyi başkalarını aldatacak şekilde değiştiren, gerçeğe aykırı olarak belge düzenleyen veya sahte resmi belgeyi kullanan kamu görevlisi üç yıldan sekiz yıla kadar hapis cezası ile cezalandırılır.</p>
+
+<p>( 3 ) Resmi belgenin, kanun hükmü gereği sahteliği sabit oluncaya kadar geçerli olan belge niteliğinde olması halinde, verilecek ceza yarısı oranında artırılır” şeklinde düzenlenmiştir.</p>
+
+<p>Buna göre, resmi belgede sahtecilik suçu seçimlik hareketli bir suç olup, resmi belgenin sahte olarak düzenlenmesi, gerçek bir resmi belgenin başkalarını aldatacak şekilde değiştirilmesi, resmi belgenin gerçeğe aykırı olarak düzenlenmesi veya sahte resmi belgenin kullanılması durumunda suç oluşacaktır.</p>
+
+<p>Maddenin ikinci fıkrasında, resmi belgede sahtecilik suçunun kamu görevlisi tarafından işlenmesi hali tanımlanmış ve daha ağır bir yaptırıma bağlanmıştır. Bu suçun oluşabilmesi için suçun kamu görevlisi tarafından işlenmesinin yanı sıra, suçun konusunu oluşturan belgenin kamu görevlisinin görevi gereği düzenlemeye yetkili olduğu bir belge olması gerekir. Kamu görevlisinin gerçeğe aykırı olarak bir olayı kendi huzurunda gerçekleşmiş gibi veya bir beyanı kendi huzurunda yapılmış gibi göstererek belge düzenlemesi halinde, bu fıkra hükmünde tanımlanan suç oluşmaktadır.</p>
+
+<p>Maddenin üçüncü fıkrasında ise, suçun konusunu oluşturan resmi belgenin, kanunun hükmü gereği sahteliği sabit oluncaya kadar geçerli olan bir belge niteliğinde olması halinde cezanın yarı oranında artırılması hükme bağlanmıştır.</p>
+
+<p>Sahtecilik suçlarının hukuki konusu kamu güveni olup, belgelerin gerçeğe aykırı olarak düzenlenmesi, gerçek bir belgeye eklemeler yapılması, tamamen veya kısmen değiştirilmesi eylemlerinin kamu güvenini sarstığı kabul edilerek suç olarak düzenlenmiş ve yaptırıma bağlanmıştır.</p>
+
+<p>Resmî belgenin gerçeği taklit edilerek ( sahte olarak düzenlenerek ) işlenen suçun sahtecilik olarak nitelendirilebilmesi için, düzenlenen belgenin gerçek bir belge olduğu konusunda kişiyi aldatıcı nitelikte olması gerekir. Aldatıcılık özelliği suçun temel unsuru olup, özel bir incelemeye tabi tutulmadıkça gerçek olmadığı anlaşılamayan belge, sahte belge olarak kabul edilmelidir. Sahteciliğin kişileri aldatacak nitelikte ( nesnel ) olup olmadığının ve beş duyuyla ilk bakışta anlaşılabilir olup olmadığının şüpheye yer vermeyecek şekilde belirlenmesi gerekir.</p>
+
+<p>Mahkemece olayın çıkış, oluş ve akışı, düzenlenen belgelerle yapılan işlemler göz önüne alınarak, sahteciliğin kolaylıkla anlaşılıp anlaşılamayacağı bizzat saptanmalı ve sonucuna göre belgelerde aldatma yeteneği olup olmadığı takdir ve tespit edilmelidir.</p>
+
+<p>İnceleme konusu olayda, Cumhuriyet savcısı N. T. hakkında 02.06.2009 günlü eylemi nedeniyle resmi belgede sahtecilik suçundan kamu davası açılmıştır. Ankara 3. Sulh Ceza Mahkemesinin 01.06.2009 gün ve 563 D.iş sayılı kararına ilişkin bir sahtelik söz konusu olmayıp, kararın aslı üzerine bir değiştirme, tahrifat, silinti ya da başka bir sahtecilik fiilinin bulunmadığı görülmektedir. Sanığın eylemi onaysız fotokopi halindeki karar metni üzerinde, gönderileceği ilgili makam tarafından infaz edilecek bölümü açık kalmak üzere, infaza konu olmayan ve karar örneğinin gönderildiği makamı ilgilendirmeyen ( b ) ve ( c ) bentlerini kapatma ve bu haldeki fotokopi belgeyi Tapu Sicil Müdürlüğüne gönderilen müzekkereye eklemekten ibarettir.</p>
+
+<p>Haklarında soruşturma yürütülen 18 kişi adına kayıtlı taşınmazlar, ulaşım araçları ve ortağı bulundukları şirketlerdeki ortaklık payları üzerine tedbir konulmasının teminine yönelik olarak ve kararın bu tedbirin konulmasına ilişkin infaz edilecek ( a ) bendinin gönderilmesi şeklinde gerçekleşen olayda, soruşturma dosyasında 153/2. maddesi uyarınca kısıtlılık kararı verildiği de düşünüldüğünde, öncelikle onaysız fotokopi belge üzerinde gerçekleştirilen eylem sahtecilik suçunu oluşturmayacaktır. Kaldı ki, onaysız fotokopi niteliğindeki kararın yalnızca ( a ) bendi gözükmekte olup, ( a ) bendinin son cümlesindeki “el konulmasına” ibaresinden sonra uzun bir boşluk olduğu ve “evrakın Cumhuriyet Başsavcılığına iadesine” cümlesi ile arasında ( b ) ve devam eden bentlerin olması gerektiği ve bu bölümlerinin kapatıldığı çok açık belli ve ilk bakışta anlaşılabilir olduğundan, aldatma yeteneği de bulunmayıp sahtecilik suçu bu yönüyle de oluşmayacaktır.</p>
+
+<p>Şu halde, sanığın resmi evrakta sahtecilik suçunu oluşturmayacağı belirlenen fiilinin “görevi kötüye kullanma” suçunu oluşturup oluşturmadığı üzerinde de durulmalıdır.</p>
+
+<p>5237 sayılı Türk Ceza Kanununun ikinci kitabının “Millete ve devlete karşı suçlar ve son hükümler”e yer veren dördüncü kısmının “Kamu idaresinin güvenilirliğine ve işleyişine karşı suçlar” başlıklı birinci bölümünde “Görevi kötüye kullanma” suçu 257. maddesinde;</p>
+
+<p>” ( 1 ) Kanunda ayrıca suç olarak tanımlanan hâller dışında, görevinin gereklerine aykırı hareket etmek suretiyle, kişilerin mağduriyetine veya kamunun zararına neden olan ya da kişilere haksız bir kazanç sağlayan kamu görevlisi, bir yıldan üç yıla kadar hapis cezası ile cezalandırılır.</p>
+
+<p>( 2 ) Kanunda ayrıca suç olarak tanımlanan hâller dışında, görevinin gereklerini yapmakta ihmal veya gecikme göstererek, kişilerin mağduriyetine veya kamunun zararına neden olan ya da kişilere haksız bir kazanç sağlayan kamu görevlisi, altı aydan iki yıla kadar hapis cezası ile cezalandırılır.</p>
+
+<p>( 3 ) İrtikâp suçunu oluşturmadığı takdirde, görevinin gereklerine uygun davranması için veya bu nedenle kişilerden kendisine veya bir başkasına çıkar sağlayan kamu görevlisi, birinci fıkra hükmüne göre cezalandırılır” şeklinde düzenlenmişken, 19.12.2010 tarihinde yürürlüğe giren 6086 sayılı Kanunun birinci maddesi ile birinci ve ikinci fıkralarında yer alan “kazanç” ibareleri “menfaat”, birinci fıkrasında yer alan “bir yıldan üç yıla kadar” ibaresi “altı aydan iki yıla kadar”, ikinci fıkrasında yer alan “altı aydan iki yıla kadar” ibaresi “üç aydan bir yıla kadar” ve üçüncü fıkrasında yer alan “birinci fıkra hükmüne göre” ibaresi “bir yıldan üç yıla kadar hapis ve beşbin güne kadar adli para cezası ile” biçiminde değiştirilmek suretiyle,</p>
+
+<p>” ( 1 ) Kanunda ayrıca suç olarak tanımlanan hâller dışında, görevinin gereklerine aykırı hareket etmek suretiyle, kişilerin mağduriyetine veya kamunun zararına neden olan ya da kişilere haksız bir menfaat sağlayan kamu görevlisi, altı aydan iki yıla kadar hapis cezası ile cezalandırılır.</p>
+
+<p>( 2 ) Kanunda ayrıca suç olarak tanımlanan hâller dışında, görevinin gereklerini yapmakta ihmal veya gecikme göstererek, kişilerin mağduriyetine veya kamunun zararına neden olan ya da kişilere haksız bir menfaat sağlayan kamu görevlisi, üç aydan bir yıla kadar hapis cezası ile cezalandırılır.</p>
+
+<p>3 ) İrtikâp suçunu oluşturmadığı takdirde, görevinin gereklerine uygun davranması için veya bu nedenle kişilerden kendisine veya bir başkasına çıkar sağlayan kamu görevlisi, bir yıldan üç yıla kadar hapis ve beşbin güne kadar adli para cezası ile cezalandırılır” şekline dönüştürülmüş, 05.07.2012 tarihinde yürürlüğe giren 6352 sayılı Kanunun 105. maddesi ile de üçüncü fıkra yürürlükten kaldırılmıştır.</p>
+
+<p>Uyuşmazlıkla ilgili olan 5237 sayılı TCK’nun 257. maddesinin 1. fıkras 1. fıkrasında düzenlenen icrai davranışlarla görevi kötüye kullanma suçu, kamu görevlisinin görevinin gereklerine aykırı hareket etmesi ve bu aykırı davranış nedeniyle, kişilerin mağduriyeti veya kamunun zararına neden olunması ya da kişilere haksız kazanç, suç tarihinden sonra 6086 sayılı Kanunla yapılan değişiklik sonrası ise haksız menfaat sağlanması ile oluşmaktadır.</p>
+
+<p>Buna göre ilk şart, kamu görevlisi olan failin yaptığı işle ilgili olarak kanun veya diğer idari düzenlemelerden doğan bir görevinin olması ve bu görevi dolayısıyla yetkili bulunmasıdır. Suçun oluşabilmesi için, norma aykırı davranış yetmemekte; bu davranış nedeniyle, kişilerin mağduriyetine veya kamunun zararına neden olunması ya da kişilere haksız bir menfaat sağlanması gerekmektedir.</p>
+
+<p>5237 sayılı TCK’nun 257. maddesinin gerekçesinde, suçun oluşmasına ilişkin genel şartlar; “Kamu görevinin gereklerine aykırı olan her fiili cezai yaptırım altına almak, suç ve ceza siyasetinin esaslarıyla bağdaşmamaktadır. Bu nedenle, görevin gereklerine aykırı davranışın belli koşulları taşıması hâlinde, görevi kötüye kullanma suçunu oluşturabileceği kabul edilmiştir. Buna göre, kamu görevinin gereklerine aykırı davranışın, kişilerin mağduriyetiyle sonuçlanmış olması veya kamunun ekonomik bakımdan zararına neden olması ya da kişilere haksız bir kazanç sağlamış olması hâlinde, görevi kötüye kullanma suçu oluşabilecektir” şeklinde vurgulanmış, öğretide de; 257. maddesindeki suçun oluşmasının, kamu görevlisinin görevinin gereklerine aykırı hareket etmesi sonucunda kişilerin mağdur olması veya kamunun zarar görmesi ya da kişilere haksız bir menfaat sağlanması şartlarına bağlı olduğu, bu sonuçları doğurmayan norma aykırı davranışların, suç kapsamında değerlendirilemeyeceği açıklanmıştır. ( M. A. - A.C. Y. Ceza Hukuku Özel Hükümler, Turhan Kitapevi, 11.Bası, Ankara, 2011, s.913 vd.; Mahmut Koca - İlhan Üzülmez, Türk Ceza Hukuku Özel Hükümler, Adalet Yayınevi, Ankara, 2013, s.769; Veli Özer Özbek - Mehmet Nihat Kanbur - Koray Doğan - Pınar Bacaksız - İlker Tepe, Türk Ceza Hukuku Özel Hükümler, Seçkin Yayınevi, 2. Bası, Ankara, 2011, s.974 )</p>
+
+<p>Norma aykırı davranışın maddede belirtilen sonuçları doğurup doğurmadığının saptanabilmesi için öncelikle “mağduriyet, kamunun zarara uğraması ve haksız menfaat” kavramların açıklanması ve somut olaylarda bunların gerçekleşip gerçekleşmediklerinin belirlenmesi gerekmektedir.</p>
+
+<p>Mağduriyet kavramının, sadece ekonomik bakımdan uğranılan zararla sınırlı olmayıp, bireysel hakların ihlali sonucunu doğuran her türlü davranışı ifade ettiği kabul edilmelidir. Bu husus madde gerekçesinde; “Görevin gereklerine aykırı davranışın, kişinin mağduriyetine neden olunması gerekir. Bu mağduriyet, sadece ekonomik bakımdan uğranılan zararı ifade etmez. Mağduriyet kavramı, zarar kavramından daha geniş bir anlama sahiptir” şeklinde açıkça vurgulanmış, öğretide de; mağduriyetin sadece ekonomik bakımdan ortaya çıkan zararı ifade etmeyeceği, mağduriyet kavramının ekonomik zarar kavramından daha geniş bir anlama sahip olduğu, bireyin, sosyal, siyasi, medeni her türlü haklarının ihlali sonucunu doğuran hareketlerin ve herhangi bir çıkarının zedelenmesine neden olmanın da bu kapsamda değerlendirilmesi gerektiğine işaret edilmiştir. ( M. E. A. - A. G. - A.C. Y., Ceza Hukuku Özel Hükümler, Turhan Kitapevi, 11.Bası, Ankara, 2011, s.911 vd.; Mahmut Koca - İlhan Üzülmez, Türk Ceza Hukuku Özel Hükümler, Adalet Yayınevi, Ankara, 2013, s.772; Veli Özer Özbek - Mehmet Nihat Kanbur - Koray Doğan - Pınar Bacaksız - İlker Tepe, Türk Ceza Hukuku Özel Hükümler, Seçkin Yayınevi, 2. Bası, Ankara, 2011, s.974 )</p>
+
+<p>Kişilere haksız kazanç sağlanmasını da içine alan kişilere haksız menfaat sağlanması da, bir başkasına hukuka aykırı olarak maddi ya da manevi yarar sağlanması olarak ifade edilebilecektir.</p>
+
+<p>Kamunun zarara uğraması hususuna gelince; madde gerekçesinde “ekonomik bir zarar olduğu” vurgulanan anılan kavramla ilgili olarak kanuni düzenleme içeren 5018 sayılı Kamu Malî Yönetimi ve Kontrol Kanununun 71. maddesinde mevzuata aykırı karar, işlem, eylem veya ihmal sonucunda kamu kaynağında artışa engel veya eksilmeye neden olunması şeklinde tanımlanan kamu zararı, her somut olayda hakim tarafından, iş, mal veya hizmetin rayiç bedelinden daha yüksek bir fiyatla alınıp alınmadığı veya aynı şekilde yaptırılıp yaptırılmadığı, somut olayın kendine özgü özellikleri de dikkate alınarak belirlenmelidir. Bu belirleme; uğranılan kamu zararının miktarının kesin bir biçimde saptanması anlamında olmayıp, miktarı saptanamasa dahi, işin veya hizmetin niteliği nazara alınarak, rayiç bedelden daha yüksek bir bedelle alım veya yapımın gerçekleştirildiğinin anlaşılması halinde de kamu zararının varlığı kabul edilmelidir. Ancak bu belirleme yapılırken, norma aykırı her davranışın, kamuya duyulan güveni sarstığı, dolayısıyla, kamu zararına yol açtığı veya zarara uğrama ihtimalini ortaya çıkardığı şeklindeki bir düşünceyle de hareket edilmemelidir.</p>
+
+<p>Öte yandan, 5271 sayılı CMK’nun “Taşınmazlara, hak ve alacaklara el koyma” başlıklı 128. maddesi; “ ( 1 ) Soruşturma veya kovuşturma konusu suçun işlendiğine ve bu suçlardan elde edildiğine dair kuvvetli şüphe sebebi bulunan hallerde, şüpheli veya sanığa ait;</p>
+
+<p>) Taşınmazlara,</p>
+
+<p>b ) Kara, deniz veya hava ulaşım araçlarına,</p>
+
+<p>c ) Banka veya diğer malî kurumlardaki her türlü hesaba,</p>
+
+<p>e ) Kıymetli evraka,</p>
+
+<p>f ) Ortağı bulunduğu şirketteki ortaklık paylarına,</p>
+
+<p>g ) Kiralık kasa mevcutlarına,</p>
+
+<p>h ) Diğer malvarlığı değerlerine,</p>
+
+<p>Elkonulabilir. Bu taşınmaz, hak, alacak ve diğer malvarlığı değerlerinin şüpheli veya sanıktan başka bir kişinin zilyetliğinde bulunması halinde dahi, elkoyma işlemi yapılabilir.</p>
+
+<p>( 2 ) Birinci fıkra hükmü;</p>
+
+<p>a ) Türk Ceza Kanununda tanımlanan;</p>
+
+<ol>
+  <li>
+    <p>Soykırım ve insanlığa karşı suçlar ( Madde 76,, 77, 78 ),</p>
+  </li>
+  <li>
+    <p>Göçmen kaçakçılığı ve insan ticareti ( Madde 79, 80 ),</p>
+  </li>
+  <li>
+    <p>Hırsızlık ( Madde 141, 142 ),</p>
+  </li>
+  <li>
+    <p>Yağma ( Madde 148, 149 ),</p>
+  </li>
+  <li>
+    <p>Güveni kötüye kullanma ( Madde 155 ),</p>
+  </li>
+  <li>
+    <p>Dolandırıcılık ( Madde 157, 158 ),</p>
+  </li>
+  <li>
+    <p>Hileli iflas ( Madde 161 ),</p>
+  </li>
+  <li>
+    <p>Uyuşturucu veya uyarıcı Madde imal ve ticareti ( Madde 188 ),</p>
+  </li>
+  <li>
+    <p>Parada sahtecilik ( Madde 197 ),</p>
+  </li>
+  <li>
+    <p>Suç işlemek amacıyla örgüt kurma ( Madde 220 ),</p>
+  </li>
+  <li>
+    <p>İhaleye fesat karıştırma ( Madde 235 ),</p>
+  </li>
+  <li>
+    <p>Edimin ifasına fesat karıştırma ( Madde 236 ),</p>
+  </li>
+  <li>
+    <p>Zimmet ( Madde 247 ),</p>
+  </li>
+  <li>
+    <p>İrtikap ( Madde 250 )</p>
+  </li>
+  <li>
+    <p>Rüşvet ( Madde 252 ),</p>
+  </li>
+  <li>
+    <p>Devletin Güvenliğine Karşı Suçlar ( Madde 302,, 303,, 304,, 305,, 306,, 307, 308 ),</p>
+  </li>
+  <li>
+    <p>Silahlı örgüt ( Madde 314 ) veya bu örgütlere silah sağlama ( Madde 315 ) suçları,</p>
+  </li>
+  <li>
+    <p>Devlet Sırlarına Karşı Suçlar ve Casusluk ( Madde 328,, 329,, 330,, 331,, 333,, 334,, 335,, 336, 337 ) suçları.</p>
+  </li>
+</ol>
+
+<p>b ) Ateşli Silahlar ve Bıçaklar ile Diğer Aletler Hakkında Kanunda tanımlanan silah kaçakçılığı ( Madde 12 ) suçları,</p>
+
+<p>c ) Bankalar Kanununun 22 nci maddesinin ( 3 ) ve ( 4 ) numaralı fıkralarında tanımlanan zimmet suçu,</p>
+
+<p>d ) Kaçakçılıkla Mücadele Kanununda tanımlanan ve hapis cezasını gerektiren suçlar,</p>
+
+<p>e ) Kültür ve Tabiat Varlıklarını Koruma Kanununun 68, 74 üncü Maddelerinde tanımlanan suçlar,</p>
+
+<p>Hakkında uygulanır.</p>
+
+<p>( 3 ) Taşınmaza elkonulması kararı, tapu kütüğüne şerh verilmek suretiyle icra edilir.</p>
+
+<p>( 4 ) Kara, deniz ve hava ulaşım araçları hakkında verilen elkoyma kararı, bu araçların kayıtlı bulunduğu sicile şerh verilmek suretiyle icra olunur.</p>
+
+<p>( 5 ) Banka veya diğer malî kurumlardaki her türlü hesaba elkonulması kararı, teknik iletişim araçlarıyla ilgili banka veya malî kuruma derhâl bildirilerek icra olunur. Söz konusu karar, ilgili banka veya malî kuruma ayrıca tebliğ edilir. Elkoyma kararı alındıktan sonra, hesaplar üzerinde yapılan bu kararı etkisiz kılmaya yönelik işlemler geçersizdir.</p>
+
+<p>6 ) Şirketteki ortaklık paylarına elkoyma kararı, ilgili şirket yönetimine ve şirketin kayıtlı bulunduğu ticaret sicili müdürlüğüne teknik iletişim araçlarıyla derhâl bildirilerek icra olunur. Söz konusu karar, ilgili şirkete ve ticaret sicili müdürlüğüne ayrıca tebliğ edilir.</p>
+
+<p>( 7 ) Hak ve alacaklara elkoyma kararı, ilgili gerçek veya tüzel kişiye teknik iletişim araçlarıyla derhâl bildirilerek icra olunur. Söz konusu karar, ilgili gerçek veya tüzel kişiye ayrıca tebliğ edilir.</p>
+
+<p>( 8 ) Bu madde hükmüne göre alınan elkoyma kararının gereklerine aykırı hareket edilmesi halinde, Türk Ceza Kanununun ‘Muhafaza görevini kötüye kullanma’ başlıklı 289 uncu maddesi hükümleri uygulanır.</p>
+
+<p>( 9 ) Bu madde hükmüne göre elkoymaya ancak hâkim karar verebilir” şeklinde, suçtan elde edildiğine dair kuvvetli şüphe bulunan hallerde, şüpheli veya sanığa ait malvarlığı değerlerine elkonulmasına ilişkin düzenlemeye yer verilmiştir.</p>
+
+<p>Soruşturma ve kovuşturma konusu suçun işlendiği ve elkonulması düşünülen taşınmaz, hak ve alacakların soruşturma ve kovuşturma konusu suçun işlenmesi suretiyle elde edildiği hususlarında kuvvetli şüphe nedenlerinin bulunması halinde maddenin birinci fıkrasında sekiz bent halinde sayılan taşınmaz, hak, alacak ve diğer malvarlığı değerlerine elkonulmasına karar verilebilecektir. Burada taşınmaz, hak, alacak ve diğer malvarlığı değerleri şüpheli veya sanıktan başka kişilerin zilyetliğinde bulunması halinde dahi, elkoyma kararına konu olabilecektir.</p>
+
+<p>Diğer taraftan, 2644 sayılı Tapu Kanunu’nun 2. maddesi; “Hükmi şahısların tapu işlerinde merkez ve şubelerinin bulundukları yerin en büyük mülkiye amirinden, nizamnamelerine göre gayrimenkul tasarrufuna izinli olduklarına ve tescil işini yapacak mümessilin salahiyetine dair alınacak belgenin verilmesi mecburidir. Ticaret şirketleri bu belgeyi ticaret sicili memurlarından alırlar” biçiminde,</p>
+
+<p>Ticaret Sicil Tüzüğü’nün 105. maddesi ise; “Ticaret sicil memurları 2644 sayılı Tapu Kanununun 2. maddesi hükmünce ticaret şirketlerinin gayrimenkule tasarruf edebileceklerini gösteren vesikayı vermek için şirketlerin esas mukavelelerinde bildirilen işletme konusuna ait hükümlerle beraber nın 137. maddesi hükmünü göz önünde tutmakla mükelleftirler. Sırf esas mukavelede şirketin gayrimenkule sahip olabileceğinin yazılmamış olmasına dayanılarak vesikanın verilmesi isteği reddedilemez” şeklinde düzenlenerek, tüzel kişilere ait gayrimenkullerle ilgili olarak bir tasarrufta bulunabilmek için ticaret şirketlerinin kanuni temsilcilerinin ticaret sicil memurundan gayrımenkul tasarrufuna yetkili olduğuna dair belge alma zorunluluğu hüküm altına alınmıştır.</p>
+
+<p>Bu açıklamalar ışığında uyuşmazlık konusu değerlendirildiğinde;</p>
+
+<p>Cumhuriyet savcısı olarak görev yapan sanık N. T.’ın genel uygulamalardan farklı olarak, müzekkereye eklediği fotokopi haldeki mahkeme kararının bir bölümünü kapatmak suretiyle ilgili makama göndererek görevinin gereklerine aykırı hareket ettiği görülmektedir. Ancak, 257. maddesi uyarınca kamu görevlisinin eyleminin görevi kötüye kullanma suçunu oluşturduğundan söz edilebilmesi için görevinin gereklerine aykırı davranış yetmemekte, bu davranışının kişilerin mağduriyetine veya kamunun zararına neden olması ya da kişilere haksız bir menfaat sağlanması sonuçlarını doğurması gerekmektedir. Sanığın eylemi neticesinde bir kamu zararının doğmadığı ve kişilere haksız bir menfaat sağlanmadığı hususunda bir tereddüt bulunmadığından, kişilerin mağduriyetine neden olunup olunmadığı değerlendirilmelidir.</p>
+
+<p>Ankara 3. Sulh Ceza Mahkemesinin 563 D.iş sayılı kararı ile doğrudan ortak ya da sahip oldukları taşınmazlara, kara, deniz, veya hava ulaşım araçlarına, ortağı bulundukları şirketlerdeki ortaklık paylarına el konulan 18 şüpheliden bir kısmının kurucu ortak ve hakim hissedar oldukları katılan şirketlere ait taşınmazlar üzerine de tedbir konulduğu anlaşılan olayda kişilerin mağduriyetine neden olunduğu ileri sürülebilirse de; Tapu Sicil Müdürlüklerince sermaye şirketlerinin hakim hissedar ya da kurucu ortaklarının payları üzerine tedbir konulması durumunda şirket tüzel kişiliğine ait taşınmazlara da tedbir konulması şeklindeki uygulamanın sürdürüldüğü, aynı şekilde Ticaret Sicil Memurlukları tarafından benzer durumlarda hakim hissedar payı üzerinde tedbir konulmuş olması halinde şirkete ait taşınmazlarla ilgili tasarruf yetki belgesinin verilmemesi yönündeki uygulamanın tercih edildiği görülmektedir.</p>
+
+<p>İnceleme konusu olayda da, Keşan Tapu Sicil Müdürlüğünce S… Programcılık Tanıtım ve Teknik Hizmetler Tic. A.Ş. adına kayıtlı olan 1185 parsel numaralı taşınmazlar üzerine konulan ihtiyati tedbirin açıklaması olarak; “ortaklık payına el koyma kararı verildiğinden, tedbir konulmuştur” şeklinde yazı yazıldığı, ayrıca adı geçen şirketin bir diğer taşınmazının satışı için Tapu Kanununun 2. maddesi uyarınca yapılan başvuru sırasında henüz şirket taşınmazı üzerine tedbir konulmadığı halde Ticaret Sicil Memurluğu tarafından hissedar payında tedbir olduğundan bahisle tüzel kişinin sahip olduğu taşınmazla ilgili tasarruf yetki belgesinin verilmediği görülmektedir.</p>
+
+<p>Öte yandan, sanık Cumhuriyet savcısı kararın bir bölümünü kapatmak suretiyle Tapu Kadastro Genel Müdürlüğü 2. Bölge Müdürlüğüne gönderirken mahkeme kararına uygun olacak şekilde şahıslar adına kayıtlı taşınmazlar üzerine konulan tedbirin icrasından bahsetmiş, bu müzekkereyi alan anılan müdürlük tarafından faksla gönderilen yazıda 25 ayrı tapu sicil müdürlüğünde bir kısım taşınmazların tespit edildiği ve tedbir konulması için gerekli yazıların yazıldığı belirtildikten sonra, şahısların ayrıntılı kimlik bilgilerine ek olarak şirket ünvan ve adres bilgileri de istenmiş olup, sanık Cumhuriyet savcısı tarafından Tapu Kadastro Genel Müdürlüğünün uygulamasının bu yönde olduğu düşünülerek şüphelilerin ortağı olduğu şirketlerle ilgili bilgiler bu yazı üzerine gönderilmiştir. Kaldı ki, sanık Cumhuriyet savcısı tarafından bu bilgiler gönderilmeden önce de bir kısım şirket taşınmazları için ihtiyaten tedbir uygulamasına başlanmış, aynı soruşturmada şüpheli konumunda bulunan M. S. B. ile ilgili olarak pay sahibi olduğu şirket malvarlığı üzerine de tedbir konulmasına karar verilmiş ve bu karar ilk aşamada itiraz üzerine kesinleşmiştir. Buna göre, soruşturma şüphelilerinin bir kısmının katılan şirketlerin tamamına yakınında hisse sahibi olarak hakim ortak konumunda bulunmaları, kurucu ortak olmaları, soruşturmanın niteliği, kapsamı ve 5271 sayılı CMK’nun 128. maddesi hükmü göz önünde bulundurulduğunda, görevin gereklerine aykırı hareket etmek suretiyle kişilerin mağduriyetine neden olma şartının da somut olayda gerçekleşmediği kabul edilmelidir.</p>
+
+<p>Bu itibarla, sanık Cumhuriyet savcısı N. T.’ın eyleminin resmi evrakta sahtecilik ve görevi kötüye kullanma suçunu oluşturmadığı anlaşıldığından, hakkında kurulan beraat hükmünün onanmasına karar verilmelidir.</p>
+
+<p>2- Görevi kötüye kullanma suçuna ilişkin olarak yukarıda yer verilen açıklamalar da değerlendirilmek suretiyle tüm sanıklar hakkında 22.03.2010 günlü eylem nedeniyle görevi kötüye kullanma suçundan kurulan beraat hükümlerinin incelenmesine gelince;</p>
+
+<p>Ceza muhakemesi, yetkili mercilerce suç şüphesinin öğrenilmesi ile başlayıp yargılama sonucunda sanık hakkında bir hüküm verilip, bunun kesinleşmesine kadar geçen süreci ifade etmekte, hatta hükmün kesinleşmesinden sonraki bir kısım işlemleri de kapsamaktadır. Ceza muhakemesi hukuku ise, yargılama organlarının bir suçun işlenip işlenmediği konusunda ortaya çıkan ceza uyuşmazlığını çözerken izleyecekleri yöntemi gösteren normlar bütünü şeklinde tarif edilebilecektir.</p>
+
+<p>Muhakemenin ilk aşaması olan soruşturma evresinde, Cumhuriyet savcısı ihbar, istihbari bilgi, şikâyet veya başka bir suretle bir suçun işlendiği izlenimini veren bir hali öğrenir öğrenmez, kamu davasını açmaya yer olup olmadığına karar vermek üzere hemen işin gerçeğini araştırmaya başlayan, delil toplayan ve muhafaza altına alan, soruşturma evresinin sonunda elde edilen delillere göre kamu davasının açılması talebiyle iddianame düzenleyen ya da kamu davası açılması için yeterli şüphe oluşturacak delil elde edilmemesi veya kovuşturma yapılması imkânının bulunmaması halinde kovuşturmaya yer olmadığına karar veren veya şartlarının oluşması halinde kamu davasının açılmasının ertelenmesine karar veren, bunun yanında kovuşturma aşamasında ve hükmün kesinleşmesinden sonraki infaz aşamasında da görevleri bulunan muhakeme süjesidir.</p>
+
+<p>Suçun öğrenilmesiyle başlayan soruşturma evresinde delillerin elde edilmesi, bunların kaybolmasının önlenmesi ve kovuşturmaya kadar koruma altına alınması gerekmekte olup, bu hususlar 160. maddesi uyarınca Cumhuriyet savcısının yargı yetkisinin kullanılma alanına ilişkin görev ve sorumluluklarıdır.</p>
+
+<p>Diğer taraftan, Türkiye Cumhuriyeti Anayasasının “Mahkemelerin Bağımsızlığı” başlığı altından düzenlenen 138. maddesi; “Hakimler, görevlerinde bağımsızdırlar; Anayasaya, kanuna ve hukuka uygun olarak vicdanı kanaatlerine göre hüküm verirler.</p>
+
+<p>Hiçbir organ, makam, merci veya kişi, yargı yetkisinin kullanılmasında mahkemelere ve hakimlere emir ve talimat veremez; genelge gönderemez; tavsiye ve telkinde bulunamaz.</p>
+
+<p>Görülmekte olan bir dava hakkında Yasama Meclisinde yargı yetkisinin kullanılması ile ilgili soru sorulamaz, görüşme yapılamaz veya herhangi bir beyanda bulunulamaz.</p>
+
+<p>Yasama ve yürütme organları ile idare, mahkeme kararlarına uymak zorundadır; bu organlar ve idare, mahkeme kararlarını hiçbir suretle değiştiremez ve bunların yerine getirilmesini geciktiremez” hükmünü içermektedir.</p>
+
+<p>Bu açıklamalar ışığında uyuşmazlık konusu değerlendirildiğinde;</p>
+
+<p>Soruşturma dosyasında şüpheliler müdafiinin, 5271 sayılı CMK’nun 128. maddesi uyarınca verilen tedbir kararlarının kaldırılması ve uygulamanın düzeltilmesi yönündeki taleplerini 22.03.2010 tarihli yazılı mütalaa ile reddetmelerinin görevi kötüye kullanmak suçunu oluşturduğu iddiasıyla sanıklar hakkında kamu davası açılmış ise de, yargı görevini yürüten Cumhuriyet savcısı olan sanıkların soruşturma dosyasının taraflarından birinin tedbir kararının uygulanmasının yerinde olmadığından bahisle kaldırılmasına ilişkin talebi üzerine, “uygulamanın yerinde olduğuna ilişkin” görüşlerini hukuki mütalaalarında yazmaları eyleminin Anayasanın 138. maddesi uyarınca yargı yetkisi ve takdirinin kullanılması kapsamında kaldığı ve yargısal nitelikte olan yapılan talebe karşı hukuksal görüşlerini yazmaları uygulamasına karşı kanun yollarına başvuru imkanının bulunduğu ve bu nedenle sanıkların eylemlerinin “görevin gereklerine aykırı hareket etme” olarak değerlendirilemeyeceği anlaşıldığından 257/1 maddesinde düzenlenen görevi kötüye kullanma suçunu oluşturmadığı kabul edilmelidir.</p>
+
+<p>Bu itibarla, görevi kötüye kullanma suçunun kanuni unsurları oluşmadığından, sanıkların beraatine ilişkin Özel Daire kararı isabetli olup, katılanlar vekillerinin temyiz itirazlarının reddi ile beraat hükümlerin onanmasına karar verilmelidir.</p>
+
+<p>SONUÇ : Açıklanan nedenlerle;</p>
+
+<p>1- ) Yargıtay 11. Ceza Dairesinin 16.11.2012 gün ve 3-2 sayılı;</p>
+
+<p>Sanık N. T. hakkında resmi belgede sahtecilik ve görevi kötüye kullanma, sanıklar A. Y. ve M. T. hakkında görevi kötüye kullanmak suçlarından kurulan beraat hükümleri usul ve kanuna uygun bulunduğundan ONANMASINA,</p>
+
+<p>2- ) Dosyanın, bu Daireye gönderilmek üzere Yargıtay Cumhuriyet Başsavcılığına TEVDİİNE, 25.02.2014 günü yapılan müzakerede tebliğnamedeki talebe uygun olarak oybirliğiyle karar verildi.</p>
+
+<hr>
+
+</div></div></main>
+</div>
+
+<footer>
+<section>
+<div class="contact-info">
+
+<div class="adres">
+
+<div class="telefon-wrapper">
+
+
+</div>
+</div>
+</section>
+
+</div>
+
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+"vars": {
+"account": "UA-58342443-1"
+},
+"triggers": {
+"trackPageview": {
+"on": "visible",
+"request": "pageview"
+}
+}
+}
+</script>
+</amp-analytics>
+
+</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="../../index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="../../dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="../../ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="../../knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="../../search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/slideToggle.min.js"></script>
+    <script src="../js/internet-status.js"></script>
+    <script src="../js/tiny-slider.js"></script>
+    <script src="../js/baguetteBox.min.js"></script>
+    <script src="../js/countdown.js"></script>
+    <script src="../js/rangeslider.min.js"></script>
+    <script src="../js/vanilla-dataTables.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/magic-grid.min.js"></script>
+    <script src="../js/dark-rtl.js"></script>
+    <script src="../js/active.js"></script>
+    <!-- PWA -->
+    <script src="../js/pwa.js"></script>
+  </body>
+</html>

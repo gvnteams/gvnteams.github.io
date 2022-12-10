@@ -1,0 +1,1264 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tiny-slider.css">
+    <link rel="stylesheet" href="../css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="../css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="tck-search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+               <div class="page-content-wrapper py-0">
+        </div>
+      </div>
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<h2 id="katılma-usulü">Katılma Usulü</h2>
+
+<h2 id="cmk-madde-238">CMK Madde 238</h2>
+
+<p>(1) Katılma, kamu davasının açılmasından sonra mahkemeye dilekçe verilmesi veya katılma istemini içeren sözlü başvurunun duruşma tutanağına geçirilmesi suretiyle olur.</p>
+
+<p>(2) Duruşma sırasında şikâyeti belirten ifade üzerine, suçtan zarar görenden davaya katılmak isteyip istemediği sorulur.</p>
+
+<p>(3) Cumhuriyet savcısının, sanık ve varsa müdafiinin dinlenmesinden sonra davaya katılma isteminin uygun olup olmadığına karar verilir.</p>
+
+<p>(4) (Mülga: 18/6/2014 - 6545/103 md.)</p>
+
+<hr>
+
+<ul>
+  <li><a href="../5271-sayili-ceza-muhakemesi-kanunu-cmk.html"><strong>5271 sayılı CMK (Ceza Muhakemesi Kanunu) Tam Metin</strong></a></li>
+</ul>
+
+<hr>
+
+<amp-img src="../tokmak-yargitay-kararlari-1280x720.png" alt="CMK Madde 238  Katılma Usulü" width="1280" height="720" layout="responsive">
+            </amp-img>
+<h2 id="cmk-madde-238-gerekçesi">CMK Madde 238 Gerekçesi</h2>
+
+<p>Madde, katılma yöntemini belirtmektedir; katılma bir dilekçe vermek veya duruşmada sözlü katılma başvurusunun tutanağa geçirilmesi suretiyle yapılacaktır. Sanığa hakları hatırlatıldığına göre, burada mağdura da hakları söylenecek, duruşma sırasında suçtan zarar görene katılma hakkı hatırlatılacaktır. Katılma istemi üzerine karar, Cumhuriyet savcısı, sanık ve varsa avukatının bu hususta dinlenmelerinden sonra verilecek ve tabiî olarak istemin Kanuna uygun bulunup bulunmadığını içerecektir. Bu kararlara itiraz olanağı yoktur. Ancak esas hükümle birlikte istinaf veya temyiz yollarına gidilebilecektir.</p>
+
+<p>Sulh ceza mahkemelerinde görülen davalarda Cumhuriyet savcısının görüşü alınmayacaktır.</p>
+
+<hr>
+
+<h2 id="cmk-238-katılma-usulü--emsal-yargıtay-kararları">CMK 238 (Katılma Usulü)  Emsal Yargıtay Kararları</h2>
+
+<hr>
+
+<p><strong>YARGITAY 2. CEZA DAİRESİ 
+Esas : 2018/2701 Karar : 2018/6204</strong> Tarih : 15.05.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 238. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Katılma Usulü</strong></p>
+  </li>
+</ul>
+
+<p>Dosya incelenerek gereği düşünüldü;</p>
+
+<p>1-Sanık hakkında kurulan beraat hükmüne yönelik katılan vekilinin temyiz isteminin incelenmesinde;</p>
+
+<p>Ceza Muhakemesi Kanunu Gereğince Müdafi Ve Vekillerin Görevlendirilmeleri İle Yapılacak Ödemelerin Usul Ve Esaslarına İlişkin Yönetmeliğin 7. maddesinin 1. fıkrasının (a) bendi gereğince soruşturma aşamasında yaşı küçük mağdura CMK’nun 234/2 maddesi gereğince vekil olarak görevlendirilen Av. …‘in görevinin iddianamenin kabul kararı verilmesi ile birlikte sona ereceği, kovuşturma aşamasında ise mağdurun 18 yaşını ikmal ettiği ve yöntemine uygun biçimde davetiye tebliğ olunmak suretiyle duruşmadan haberdar edilmesine karşın, 5271 sayılı CMK’nın 238. maddesi uyarınca davaya katılma isteminde bulunmadığının anlaşılması karşısında soruşturma aşamasında görevlendirilen vekilin sanık hakkındaki hükmü temyize hakkı bulunmadığından temyiz talebinin 1412 sayılı CMUK’nın 317. maddesi gereğince REDDİNE,</p>
+
+<p>2-Sanık hakkında kurulan beraat hükmüne yönelik o yer Cumhuriyet savcısı temyiz isteminin incelenmesine gelince;</p>
+
+<p>Şikayetçinin soruşturma aşamasında, sanığın görüşme yapmak için bir süreliğine aldığı cep telefonunu sanıktan görüp istemesine rağmen iade edilmediğini belirtmesi, sanığın kovuşturma aşamasında ise telefonu şikayetçiye vermek istediğini fakat bulamadığını, akabinde telefonun kırıldığını ve bunun üzerine telefonun değeri olduğunu söylediği 60 TL tutarında parayı şikayetçiye verdiğini savunması karşısında, şikayetçi ….’ın ifadesinin alınarak sonucuna göre sanığın hukuki durumunun tayini gerekirken sanığın savunmasına itibar edilerek eksik kovuşturma ve inceleme ile yazılı şekilde beraat kararı verilmesi,</p>
+
+<p>Bozmayı gerektirmiş, o yer Cumhuriyet savcısının temyiz itirazları bu itibarla yerinde görülmüş olduğundan hükmün bu nedenden dolayı istem gibi BOZULMASINA, 15.05.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 4. CEZA DAİRESİ 
+Esas : 2017/292 Karar : 2017/25710</strong> Tarih : 23.11.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 238. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Katılma Usulü</strong></p>
+  </li>
+</ul>
+
+<p>Yerel Mahkemece verilen hükümler temyiz edilmekle, başvurunun süresi ve kararın niteliği ile suç tarihine göre, suçtan zarar görme ihtimali bulunan mağdur …‘ün şikayetçi olduğunu belirtmesine karşın, CMK’nın 238/2. maddesi gereğince kamu davasına katılmak isteyip istemediği sorulup bu hususta bir karar verilmemiş ise de, temyiz dilekçesinin içeriğine göre, CMK’nın 237/2. maddesinin verdiği yetkiye dayanarak mağdurun katılan ve vekilinin de katılan vekili olarak kabulüne karar verilmesi suretiyle dosya görüşüldü:</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>02/12/2016 tarihli Resmi Gazete’de yayımlanarak aynı tarihte yürürlüğe giren 6763 sayılı Kanunun 34. maddesiyle değişik 5271 sayılı CMK’nın 253. maddesi ve maddeye eklenen fıkraya göre uzlaşma hükümleri yeniden düzenlenmiş ve sanığa isnat edilen TCK’nın 106/1. maddesi kapsamındaki tehdit suçunun uzlaştırma kapsamında bulunduğu, kişilerin huzur ve sükununu bozma suçu yönünden ise, uzlaşma önerisinin yapıldığı tarihte 5271 sayılı CMK’nın 253/3. maddesinde engel bulunduğu ancak yeni düzenleme karşısında bu suç yönünden de uzlaşma önerisinde bulunulması gerektiği, anlaşılmış olmakla, 5237 sayılı Türk Ceza Kanunu’nun 2 ve 7. maddeleri de gözetilerek, uzlaştırma işlemi uygulanarak sonucuna göre sanığın hukuki durumunun bu kapsamda tekrar değerlendirilip belirlenmesinde zorunluluk bulunması,</p>
+
+<p>Bozmayı gerektirmiş, sanık … ve katılan … vekilinin temyiz itirazları bu nedenle yerinde görülmüş olduğundan, diğer yönleri incelenmeksizin HÜKÜMLERİN 5320 sayılı Kanunun 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca BOZULMASINA, yargılamanın bozma öncesi aşamadan başlayarak sürdürülüp sonuçlandırılmak üzere dosyanın esas/hüküm mahkemesine gönderilmesine, 23/11/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 18. CEZA DAİRESİ 
+Esas : 2017/4268 Karar : 2017/9972</strong> Tarih : 2.10.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 238. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Katılma Usulü</strong></p>
+  </li>
+</ul>
+
+<p>Yerel Mahkemece verilen hüküm temyiz edilmekle, başvurunun ve kararın niteliği ile suç tarihine göre, şikayetçi olduğunu ve davaya katılmak istediğini bildiren müşteki …‘nin katılma talebi hakkında karar verilmemesi suretiyle CMK’nın 238/3. maddesine aykırı davranıldığından, CMK`nın 237/2. maddesi gereğince suçtan zarar gören müştekinin katılan, müşteki vekilinin katılan vekili sıfatıyla davaya kabullerine karar verilerek, dosya görüşüldü:</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar belgeler ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>I - Genel İlkeler:</p>
+
+<p>Türkiye Cumhuriyeti Anayasasının 56/1. maddesine göre herkes, sağlıklı ve dengeli bir çevrede yaşama hakkına sahiptir. Aynı maddenin ikinci fıkrasında getirilen düzenleme ile de çevreyi geliştirmek, çevre sağlığını korumak ve çevre kirlenmesini önlemek gerek Devlete gerekse vatandaşlara ödev olarak yüklenmiştir. Anayasada yer alan bu ilkeler 2872 sayılı Çevre Kanunu`nun 3/a maddesinde de benzer biçimde düzenlenmiştir. Buna göre; gerçek ya da tüzel kişi olarak herkes, çevrenin korunması ve kirliliğin önlenmesi ile görevli olup, alınacak tedbirlere ve belirlenen esaslara uymakla yükümlüdür. Bu bağlamda, “kamu sağlığını ve çevreyi koruma” prensibi Türk Ceza Kanunu’nun birinci maddesinde Kanun’un amaçlarından birisi olarak öngörülmüş, ayrıca “sağlıklı bir çevrede yaşama hakkı” başta bu Kanunun 181 ilâ 184. maddeleri olmak üzere, 2872 sayılı Çevre Kanunu’nda ve diğer bir kısım mevzuatta koruma altına alınmış, çevreyi kirletme eylemi farklı suç ve kabahat türleri ile yaptırıma bağlanmıştır.</p>
+
+<p>Türk Ceza Kanununun 181. maddesinin birinci fıkrasında suç olarak düzenlenen atık veya artıklarla çevrenin kasten kirletilmesi fiili, kanunlarda belirtilen teknik usullere aykırı olarak, çevreye zarar verecek şekilde atık veya artıkların alıcı ortamlar olan toprak, su ve havaya kasten verilmesidir. Buna göre suç, atık veya artıkların teknik usullere aykırı olarak bir defa alıcı ortama verilmesiyle oluşacaktır.</p>
+
+<p>Fıkrada sözü edilen “ilgili kanunlarla belirlenen teknik usullere aykırılık” hali; 2872 sayılı Çevre Kanunu, 2690 sayılı Türkiye Atom Enerjisi Kurumu Kanunu, 5977 sayılı Biyogüvenlik Kanunu, 3213 sayılı Maden Kanunu gibi kanunların, kapsadıkları alanlarla ilgili olarak “çevreyi kirletmeme” ilkesi gereğince çerçeve olarak benimsedikleri düzenlemelere dayanılarak oluşturulan yönetmeliklerde açıklanan ve somut olayın özelliklerine göre değerlendirilecek olan, arıtma, depolama, imha etme, taşıma, koruma, alıcı ortama verme, uzaklaştırma gibi hususlar bakımından öngörülen yükümlülüklere aykırı davranmayı ifade etmektedir.</p>
+
+<p>“Çevreyi kirletmeme” prensibi ise genel olarak 2872 sayılı Çevre Kanunu’nun “Kirletme Yasağı” kenar başlıklı 8. maddesinde düzenlenmiştir. Buna göre;</p>
+
+<p>“Her türlü atık ve artığı çevreye zarar verecek şekilde, ilgili yönetmeliklerde belirlenen standartlara ve yöntemlere aykırı olarak doğrudan ve dolaylı biçimde alıcı ortama vermek, depolamak, taşımak, uzaklaştırmak ve benzeri faaliyetlerde bulunmak yasaktır.</p>
+
+<p>Kirlenme ihtimalinin bulunduğu durumlarda ilgililer kirlenmeyi önlemekle, kirlenmenin meydana geldiği hallerde ise kirleten, kirlenmeyi durdurmak, kirlenmenin etkilerini gidermek veya azaltmak için gerekli tedbirleri almakla yükümlüdür.”</p>
+
+<p>Yine aynı Kanunun “Tanımlar” kenar başlıklı 2. maddesine göre atık, herhangi bir faaliyet sonucunda oluşan, çevreye atılan veya bırakılan her türlü madde, alıcı ortam ise hava, su, toprak ortamları ve bu ortamlarla ilişkili ekosistemlerdir. Mevzuatımızda tanımı bulunmayan “artık” ise; öğretideki düşüncelerden de yararlanılarak, bir maddenin tüketimi, kullanımı ya da harcanmasından sonra artan, geriye kalan kısım olarak tanımlanabilir.</p>
+
+<p>Türk Ceza Kanununun “çevreyi kasten kirletme” suçunu düzenleyen 181/1, “taksirle kirletme” suçunu düzenleyen 182/1 ve 2872 sayılı Çevre Kanunu’nun 8. maddelerinde suçun unsuru olarak kabul edilen “çevreye zarar verecek şekilde” kavramı ise, “gerçekleşen somut bir zararı” değil, “zarar vermeye elverişliliği, zarar ihtimalini” anlatmaktadır. Madde gerekçesinde de açıklandığı üzere atık veya artığın; kasten su, hava ve toprak şeklinde gruplandırılan alıcı ortama ya da bu ortamlarla ilişkili ekosistemlerden birine verilmesi ile suç oluşacaktır. Çevrenin kasten kirletilmesi, kanunda tehlike suçu olarak düzenlenmiştir. Zararın gerçekleşmesi, bu suçta unsur olmadığı gibi cezalandırma şartı da değildir.</p>
+
+<p>Öte yandan atık veya artıkların toprakta, suda veya havada kalıcı özellik göstermesi hali TCK`nın 181. maddesinin 3. fıkrasında, bunların insan veya hayvanlar açısından tedavisi zor hastalıkların ortaya çıkmasına, üreme yeteneğinin körelmesine, hayvanların veya bitkilerin doğal özelliklerini değiştirmeye neden olabilecek etkilerinin olması ise aynı maddenin 4. fıkrasında cezanın artırılmasını gerektiren nitelikli haller olarak düzenlenmiştir.</p>
+
+<p>II – Yargılamaya Konu Olayda Uygulanacak Mevzuat ve Düzenleyici İşlemler:</p>
+
+<p>2872 sayılı Kanunun ek 1/a maddesi “Toprağın korunmasına ve kirliliğinin önlenmesine, giderilmesine ilişkin usûl ve esaslar ilgili kuruluşların görüşleri alınarak Bakanlıkça çıkarılacak yönetmelikle belirlenir” hükmünü içermektedir. Aynı Kanun’un 20. maddesinin (j) bendine göre Kanunda ve yönetmelikte öngörülen yasaklara veya standartlara aykırı olarak veya gerekli önlemleri almadan atıkları toprağa vermek yaptırım gerektiren bir eylem olarak tanımlanmıştır.</p>
+
+<p>Alıcı ortam olan toprağın kirlenmesinin önlenmesi, kirliliğin giderilmesi, arıtma çamurlarının ve kompostun toprakta kullanımında gerekli tedbirlerin alınması esaslarını sürdürülebilir kalkınma hedefleriyle uyumlu bir şekilde ortaya koymak amacıyla önce 2872 sayılı Çevre Kanunu’nun 8. maddesine istinaden 31.05.2005 tarihli Toprak Kirliliğinin Kontrolü Yönetmeliği hazırlanarak yürürlüğe konulmuştur. 08.06.2010 tarihinde ise aynı amaçlar için bu kez 2872 sayılı Çevre Kanunu’nun ek 1/a maddesine dayanılarak Toprak Kirliliğinin Kontrolü ve Noktasal Kaynaklı Kirlenmiş Sahalara Dair Yönetmelik kabul edilerek uygulamaya konulmuş ve 2005 tarihli Yönetmelik yürürlükten kaldırılmıştır.</p>
+
+<p>2005 tarihli Yönetmeliğin 7/a, 2010 tarihli Yönetmeliğin ise 6/b maddesiyle, genel ilke olarak her türlü atık ve artığın, Çevre Kanunu ve ilgili mevzuatta belirlenen standart ve yöntemlere aykırı olarak ve toprağa zarar verecek şekilde, doğrudan veya dolaylı biçimde toprağa verilmesi, depolanması gibi faaliyetlerde bulunmak yasaklanmıştır.</p>
+
+<p>Her iki Yönetmelik de, “Tanımlar” kenar başlıklı 4. maddelerinde atık tanımı yapmak suretiyle, toprağı kirleten ya da kirletme ihtimali bulunan atıkların neler olduğunu belirlemiştir. Ancak hemen belirtmek gerekir ki, bu iki Yönetmeliğin, atıkların çeşitlendirilmesi ve sınıflandırılmasına ilişkin düzenlemelerinde farklılıklar bulunmaktadır.</p>
+
+<p>Bu bağlamda;</p>
+
+<p>A) 2005 tarihli Yönetmelik, Su Kirliliği Kontrolü Yönetmeliğinin 3., Katı Atıkların Kontrolü Yönetmeliğinin 3., Tıbbi Atıkların Kontrolü Yönetmeliğinin 4., Tehlikeli Atıkların Kontrolü Yönetmeliğinin 4. maddelerinde atık olarak tanımlanmış unsurları toprak kirliliğine neden olacak atıklar olarak kabul etmiştir.</p>
+
+<p>B) 2010 tarihli Yönetmelik ise “Tanımlar” kenar başlıklı 4. maddenin;</p>
+
+<p>a) 4/(b) bendindeki düzenleme ile 05.07.2008 tarihli Atık Yönetimi Genel Esaslarına İlişkin Yönetmeliğin EK-1’inde yer alan sınıflardaki maddeleri, 
+b) 4/(n) bendindeki düzenleme ile kendi ekindeki Ek-1 listesinde yer verilen maddeleri, 
+c) 4/(z/ğğ) bendindeki düzenleme ile Atık Yönetimi Genel Esaslarına İlişkin Yönetmeliğin Ek IV listesinde (A) ve (M) ile işaretlenmiş atıklarla, Ek-III/B’de yer alan eşik konsantrasyonu üzerinde değere sahip olan atıkları,
+d) 4/(z/hh) bendindeki düzenleme ile Tehlikeli Maddelerin ve Müstahzarların Sınıflandırılması, Ambalajlanması ve Etiketlenmesi Hakkında Yönetmeliğin 4. maddesinin birinci fıkrasının (II) bendinde tanımlanan tehlikeli maddeler ve müstahzarlar ile Su Kirliliği Kontrolü Yönetmeliğinin 3. maddesinde yer alan tehlikeli maddeler tanımına giren tüm maddeleri,</p>
+
+<p>Toprağı kirleten ya da kirletme ihtimali olan atık olarak kabul etmiş, (u) bendindeki düzenleme ile de kendi eklerinden olan Ek-2 Tablo 2’de yer alan faaliyetleri potansiyel kirletici faaliyetler olarak belirlemiştir.</p>
+
+<p>2005 tarihli Yönetmeliğin 4. maddesinde stabilize arıtma çamurunun; “Fermente edilebilirliğini ve kullanımından kaynaklanan sağlık tehlikelerini önemli ölçüde azaltmak üzere, biyolojik, kimyasal ya da ısıl işlemden, uzun süreli depolama ya da diğer uygun işlemlerden geçirilmiş arıtma çamurları” olduğu ifade edilmiş, 10 ilâ 13. maddelerinde bunların toprakta kullanım koşulları belirlenmiştir. Yine 4. maddedeki tanımlamaya göre “ham çamur”; “evsel ya da kentsel atıksuları işleyen arıtma tesislerinden ve evsel ve kentsel atıksulara benzeyen bileşimdeki atıksuları arıtan diğer arıtma tesislerinden gelen arıtma çamurları, fosseptik tanklarından ve evsel ya da kentsel atıksuları arıtmak için kullanılan diğer tesislerden gelen arıtma çamurları ve bunların dışındaki diğer arıtma tesislerinden gelen arıtma çamurları” olup, bunların toprakta kullanımı da 12. maddedeki düzenleme ile yasaklanmıştır.</p>
+
+<p>Doğrudan toprağın korunmasına ve kirliliğinin önlenmesine hizmet eden bu yönetmeliklerin yanısıra, “atıkların oluşumundan bertarafına kadar çevre ve insan sağlığına zarar vermeden yönetimlerinin sağlanmasına yönelik esasları” belirleyen 2008 tarihli Atık Yönetimi Genel Esaslarına İlişkin Yönetmelik ile “Her türlü atık ve artığın çevreye zarar verecek şekilde doğrudan ve dolaylı biçimde alıcı ortama verilmesi, depolanması, taşınması vb faaliyetleri düzenleyen” 1991 tarihli Katı Atıkların Kontrolü Yönetmeliğinin de toprak kirliliğine ilişkin yasaklamalarına değinmek gerekir.</p>
+
+<p>05.07.2008 tarihinden itibaren yürürlükte olan Atık Yönetimi Genel Esaslarına İlişkin Yönetmeliğin 4/a ve 6. maddelerine göre, Yönetmeliğin EK-I listesinde yer alan sınıflandırılmış atıkların, toprağa, denizlere, göllere, akarsulara ve benzeri alıcı ortamlara dökülmesi, dolgu yapılması yasaktır. Anılan Yönetmeliğin EK-I listesinde yer alan sınıflandırılmış atıklar, 08.06.2010 tarihinde yürürlüğe giren Toprak Kirliliğinin Kontrolü ve Noktasal Kaynaklı Kirlenmiş Sahalara Dair Yönetmeliğin 4/b maddesinde de toprağı kirleten/kirletme ihtimali bulunan atık olarak benimsenmiştir. Dolayısıyla 05.07.2008 tarihinden itibaren Atık Yönetimi Genel Esaslarına İlişkin Yönetmeliğin EK-I listesinde yer verilen atıklar, toprağı kirleten/kirletme ihtimali bulunan atıklar olarak kabul edilmelidir.</p>
+
+<p>Öte yandan, 1991 tarihli Katı Atıkların Kontrolü Yönetmeliğinin 18. maddesi, “evsel ve evsel nitelikli endüstriyel atıksuların, fiziksel, kimyasal ve biyolojik işlemleri sonucunda ortaya çıkan, suyu alınmış, kurutulmuş çamuru” ifade eden ve katı atık sınıfında kabul edilen “arıtma çamurunun”, denizlere, göllere ve benzeri alıcı ortamlara, caddelere, ormanlara ve çevrenin olumsuz yönde etkilenmesine sebep olacak yerlere dökülmesini yasaklamıştır.</p>
+
+<p>Görüleceği üzere; toprak kirliliğine ilişkin 2005 ve 2010 tarihli yönetmeliklerin her ikisi de, Çevre Kanunu ve ilgili mevzuatta belirlenen standartlara ve yöntemlere aykırı olarak toprağı kirleten ya da kirletme ihtimali bulunan her türlü atık ve artığın doğrudan toprağa verilmesini yasaklamakla birlikte, toprağı kirleten ya da kirletme ihtimali bulunan atıkların çeşitlendirilmesi ve sınıflandırılması hususunda farklı düzenlemelere yer vermiştir.</p>
+
+<p>Bu durumda, alıcı ortamlardan toprağa verilmesi suç oluşturacak olan atığın, 1991 tarihli Katı Atıkların Kontrolü Yönetmeliği kapsamında bulunması, bu kapsamda değilse;</p>
+
+<p>A) 2005 tarihli Toprak Kirliliğinin Kontrolü Yönetmeliği’nin yürürlüğe girme tarihi olan 31.05.2005 ile Atık Yönetimi Genel Esaslarına İlişkin Yönetmeliğin yürürlüğe girme tarihi olan 05.07.2008 tarihleri arasında gerçekleşen eylemler bakımından, 2005 tarihli Toprak Kirliliğinin Kontrolü Yönetmeliğinin 4. maddesinde diğer Yönetmeliklere atıf suretiyle belirlenen atıklardan olması,</p>
+
+<p>B) Atık Yönetimi Genel Esaslarına İlişkin Yönetmeliğin 05.07.2008 tarihinde yürürlüğe girmesi, 2010 tarihli Toprak Kirliliğinin Kontrolü ve Noktasal Kaynaklı Kirlenmiş Sahalara Dair Yönetmeliğin anılan yönetmeliğe yollama yapmış olması ve 08.06.2010 tarihinde yürürlüğe girmesi dikkate alındığında, 05.07.2008 ile 08.06.2010 tarihleri arasında işlenen eylemler yönünden Atık Yönetimi Genel Esaslarına İlişkin Yönetmeliğin Ek-1 listesinde belirtilen atık türlerinden olması,</p>
+
+<p>C) 2010 tarihli Toprak Kirliliğinin Kontrolü ve Noktasal Kaynaklı Kirlenmiş Sahalara Dair Yönetmeliğin 08.06.2010 tarihinde yürürlüğe girmesi, toprağı kirleten, kirletme ihtimali bulunan atıklara ilişkin önceki yönetmelikten farklı nitelikte atık gruplarını oluşturması nedeniyle de 08.06.2010 tarihinden sonra işlenen suçlar bakımından, 4/b maddesinde bahsedilen kirletici unsurlara ilaveten, atığın;</p>
+
+<p>-(n) bendi ile kendi ekindeki Ek-1’de tablo halinde gösterilen jenerik kirletici sınır değerlerini aşması, 
+-z/ğğ bendinde belirtilen nitelikte tehlikeli atık veya z/hh bendinde tanımlanan tehlikeli madde sınıfına ilişkin koşulları taşıması, 
+Gerekmektedir.</p>
+
+<p>Farklı tarihlerde farklı atık listeleri benimsenmiş olması karşısında, zaman bakımından uygulama ilkesinin zorunlu sonucu olarak suç tarihinde yürürlükte bulunan yönetmelikte toprağı kirlettiği yahut kirletme ihtimali taşıdığı kabul edilen atığa, sonradan yürürlüğe giren yönetmelikte de yer verilmiş olmalıdır.</p>
+
+<p>III - Yargılamaya Konu Olay</p>
+
+<p>… A.Ş.’ye ait Salina Tuz Fabrikası’nın atık tuzlarının gerektiği gibi muhafaza edilmeyerek toprağa tahliye edilmesi sonucunda mağdur …‘nin maliki, mağdur …‘nin de zilyedi olduğu Cihanbeyli İlçesi Yeşilöz Mahallesi 527 ada 3 parsel sayılı buğday ekili tarlanın zarar gördüğü, sanığın Cihanbeyli ilçe merkezinde faaliyet gösteren … İnşaat San.Tic.A.Ş. ye bağlı Salina Tuz Fabrikası’nın yöneticisi olduğu, Cihanbeyli Asliye Hukuk Mahkemesi’nin 2012/18 D.İş. Sayılı dosyasında şikayete konu taşınmaz başında 23.03.2012 tarihinde keşif icra edildiği, taşınmazdan alınan toprak numunelerinin incelenmesi neticesinde kadastro teknikeri bilirkişi tarafından “Davaya konu 525 ada 3 nolu parselin zarar gören kısmı 15.423,00 m² yüzölçümlü olduğu tespit edilmiş… şeklinde rapor tanzim edildiği, ziraat mühendisi bilirkişi tarafından ``….hasarlı bölge tuzluluk içeriği çok aşırı tuzlu olup, buğday tohumunun çimlenmesini olumsuz yönde etkilediğinden bitki çıkışı gözlemlenmemiştir….hasarlı bölgedeki tuz içeriğinin 19.1 kat fazla olduğunun bu ve bundan sonraki yıllarda hasarlı tarlanın verim için uygun sulama ve uygun drenaj kanalları açılmak suretiyle tarıma elverişli hale getirilebilir.” şeklinde rapor tanzim edildiği, şirketin yöneticisi olarak ifade veren sanığın vermiş olduğu ifadesinde özetle; yöneticisi bulunduğu tuz fabrikasının kış sebebiyle biriken suyunu fabrikanın yanında bulunan havuzlarda muhafaza ettiklerini, muhafaza edilen suyun bir kısmının havuzlarda meydana gelen aksaklık nedeniyle tahliye olduğunu ve fabrikanın etrafında bulunan müşteki …`ye ait tarlaya aktığını, meydana gelen bu kazada herhangi bir kastlarının ve kusurlarının olmadığını beyan ederek suçlamayı kabul etmediği; sanığın yöneticisi bulunduğu fabrikanın atık sularının tahliyesi için gerekli özeni göstermeyerek havuzda biriken bitkilerin doğal özelliklerini değiştirmeye neden olabilecek niteliklere sahip olan atık suyun toprağa taksirle verilmesine neden olduğu, bu şekilde çevrenin taksirle kirletilmesi suçunu işlediği iddiasıyla dava açıldığı görülmektedir.</p>
+
+<p>Yerel Mahkemece keşif işlemi icra edilmiş, bilirkişi raporu temin edilmiştir.</p>
+
+<p>Ancak temin edilen bilirkişi raporundaki, alıcı ortam olan toprağa bırakılan bahse konu atığın, hiçbir mevzuatla ilişkilendirilmeden, nitelikleri ve kirletici özellikleri açıklanmadan, Yargıtay denetimine imkan tanımayan görüşler beraat kararı vermeye yeterli görülmemiştir.</p>
+
+<p>Bu suretle, yargılamaya konu atıkların içeriği ve niteliği, çevre kirliliği oluşturup oluşturmayacağının tespiti açısından, üniversitelerin ziraat fakültesi toprak bilimi ve bitki besleme, çevre ve kimya mühendisliği bölümlerinde çalışan öğretim üyesi bilirkişilerden oluşacak heyete dosya tevdii edilerek, suç tarihi itibariyle yürürlükte olan yukarıda (II) nolu kısımda açıklanan yönetmelikler ve ekleri ile birebir ilişki kurmak suretiyle ve Yargıtay denetimine imkân sağlayacak nitelikte bilirkişi raporu alınması gerekir. Daha sonra rapor içeriğine göre sanığın, yüklenen eylemden kast ya da taksir şeklindeki kusurluluk türlerinden hangisinden sorumlu olduğu tartışılarak sonucuna göre hukuki durumunun belirlenmesi gerekir.</p>
+
+<p>Ayrıca, suça konu eylemin çevre kirliliği meydana getirmeyeceği tespit edildiği takdirde; katılanların zarar uğradığına yönelik deliller göz önüne alınmak suretiyle olay kapsamında sanığın kast ve taksir açısından kusurluluk durumu tartışılarak TCK’nın 151/1. maddesinin oluşup oluşmadığının da değerlendirilmesi gerekir.</p>
+
+<p>IV – Sonuç ve Karar</p>
+
+<p>Açıklanan gerekçelerle katılan … ile … vekilinin temyiz nedenleri yerinde görüldüğünden, tebliğnameye aykırı olarak ( HÜKMÜN BOZULMASINA ), oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 17. CEZA DAİRESİ 
+Esas : 2016/1019 Karar : 2017/8190</strong> Tarih : 19.06.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 238. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Katılma Usulü</strong></p>
+  </li>
+</ul>
+
+<p>Yerel mahkemece verilen hüküm temyiz edilmekle, başvurunun süresi ve kararın niteliği ile suç tarihine göre dosya görüşüldü:</p>
+
+<p>5271 sayılı CMK’nın 242/1 ve 260/1. maddelerinde, katılan sıfatını almış olanlar ile katılma isteği karara bağlanmamış, reddedilmiş veya katılan sıfatını alabilecek surette suçtan zarar görmüş bulunanların temyiz yoluna başvurabileceği düzenlenmiş ise de; aynı Kanun’un 233/1. maddesine göre duruşmaya çağrı kağıdı ile çağrılan şikayetçinin CMK’nın 234/1-b maddesine göre kovuşturma evresinde kamu davasına katılma hakkının bulunduğu, kovuşturma evresinin iddianamenin kabulüyle başlayıp, hükmün kesinleşmesine kadar geçen evreyi ifade etmiş olmasına rağmen, CMK’nın 237/1. maddesine göre kovuşturma evresinin her aşamasında ancak hüküm verilinceye kadar kamu davasına katılmanın mümkün olduğu, kanun yolu muhakemesinde davaya katılma isteğinde bulunulamayacağı, ancak, ilk derece mahkemesinde ileri sürülüp reddolunan veya karara bağlanmayan katılma isteklerinin, kanun yolu başvurusunda inceleneceği ve karara bağlanacağı, açıklanan yasal düzenlemeler göz önüne alınarak somut olay incelendiğinde, kovuşturma evresinde yöntemine uygun biçimde davetiye tebliğ olunmak suretiyle duruşmadan haberdar edilen müşteki kurum vekilinin, oturumlara katılmadığı gibi katılma talebini havi dilekçe ve belgede sunmadığı anlaşılmakla; 5271 sayılı CMK’nın 238. maddesi uyarınca davaya katılma isteminde bulunmadığı ve bu nedenle katılan sıfatını almayan müşteki kurumun hükmü temyiz etme yetkisi bulunmadığından, müşteki kurum vekilinin temyiz isteğinin 1412 sayılı CMUK’nun 317. maddesi gereğince tebliğnameye aykırı olarak REDDİNE, 19/06/2017 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 12. CEZA DAİRESİ
+Esas : 2016/1050 Karar : 2017/5224</strong> Tarih : 15.06.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 238. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Katılma Usulü</strong></p>
+  </li>
+</ul>
+
+<p>Taksirle yaralama suçundan sanığın mahkumiyetine ilişkin hüküm, sanık tarafından temyiz edilmekle dosya incelenerek gereği düşünüldü:</p>
+
+<p>Gerekçeli karar başlığında, “16.06.2013” olan suç tarihinin, “17.06.2013” olarak yazılmış olması, yine CMK’nın 237-238. maddelerindeki katılma hakkının hatırlatılmaması sebebiyle, haklarında usulüne uygun şekilde katılma kararı verilmemiş olan mağdur … ve müşteki …‘nun “müşteki” yerine “katılan” olarak gösterilmesi, mahallinde düzeltilmesi mümkün bir yazım yanlışlığı olarak görülmüştür.</p>
+
+<p>Yapılan yargılamaya toplanıp karar yerinde gösterilen delillere mahkemenin kovuşturma sonuçlarına uygun olarak oluşan kanaat ve takdirine incelenen dosya kapsamına göre, sanığın kusur tespitine, tayin edilen cezanın miktarına, hükmün açıklanmasının geri bırakılması hükümlerinin uygulanmamasına ilişkin temyiz itirazlarının reddine; ancak;</p>
+
+<p>1-Sanık hakkında hükmolunan adli para cezasının taksitlendirilmesi akabinde taksitlerden birinin zamanında ödenmemesi halinde geri kalan kısmının tamamının tahsil edileceği ve ödenmeyen adli para cezasının hapse çevrileceği ihtarı yapılması gerekirken, infazı kısıtlar biçimde ‘‘taksitlerden birinin zamanında ödenmemesi halinde geri kalan kısmın tamamının tahsil edilmesine ve ödenmeyen adli para cezasının hapse çevrilmesine,’’ karar verilmesi,</p>
+
+<p>2- Sanık hakkında hükmedilen adli para cezasının taksitlendirilmesine karar verilirken uygulanan kanun maddesinin gösterilmemesi suretiyle CMK’nın 232/6. maddesine aykırı davranılması,</p>
+
+<p>Kanuna aykırı olup, sanığın temyiz itirazları bu itibarla yerinde görüldüğünden hükmün bu sebeplerden dolayı 5320 sayılı Kanunun 8. maddesi uyarınca halen uygulanmakta olan 1412 sayılı CMUK’un 321. maddesi gereğince BOZULMASINA; ancak, yeniden yargılamayı gerektirmeyen bu hususta, aynı Kanunun 322. maddesi gereğince karar verilmesi mümkün bulunduğundan, aynı maddenin verdiği yetkiye istinaden; hükmün dördüncü bendinin ikinci paragrafındaki “tahsil edilmesine” ibaresinin, “tahsil edileceğinin”, yine “hapse çevrilmesine” ibaresinin “hapse çevrileceğinin sanığa ihtarına” olarak değiştirilmesi, aynı paragrafın başına da, “TCK’nın 52/4. maddesi gereğince” ibaresinin eklenmesi suretiyle, sair yönleri usul ve kanuna uygun bulunan hükmün DÜZELTİLEREK ONANMASINA, 15/06/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 7. CEZA DAİRESİ
+Esas : 2015/7063 Karar : 2017/5038</strong> Tarih : 13.06.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 238. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Katılma Usulü</strong></p>
+  </li>
+</ul>
+
+<p>Yerel mahkemece verilen hüküm temyiz edilmekle; başvurunun nitelik, ceza türü, süresi ve suç tarihine göre dosya okunduktan sonra Türk Milleti adına gereği görüşülüp düşünüldü;</p>
+
+<p>I-Gümrük İdaresi vekilinin temyiz istemi yönünden yapılan incelemede;</p>
+
+<p>Duruşmadan haberdar olduğu halde, usulüne uygun olarak düzenlenmiş dilekçe ile veya duruşmada sözlü beyanda bulunarak 5271 sayılı CMK.nun 237. ve 238. maddelerine göre katılan sıfatını almayan ve suç tarihi ve ele geçen eşyanın niteliği itibariyle suçtan doğrudan zarar görmeyen gümrük idaresi vekilinin temyiz isteğinin 5320 sayılı Yasanın 8/1. maddesi gereğince yürürlükte bulunan 1412 sayılı CMUK.nun 317. maddesi uyarınca REDDİNE,</p>
+
+<p>II- TAPDK vekilinin temyiz istemi yönünden yapılan incelemede;</p>
+
+<p>Sanığın tekerrüre esas ve engel sabıkası bulunduğu halde sanık hakkında hapis cezasının ertelenmesine hükmedilmesi aleyhe temyiz olmadığından bozma nedeni yapılmamıştır.</p>
+
+<p>Sanık hakkında hükmolunan hapis cezasının “geçmişteki hali dikkate alındığında cezasının ertelenmesi halinde ileride suç işlemekten kaçınacağı yolunda mahkemeye olumlu kanaat geldiğinden” bahisle ertelenmesine karar verildiği halde, hükmün açıklanmasının geri bırakılması müessesesinin uygulanmamasına ilişkin karar verilmesi sırasında ise sanığın ileride suç işlemekten kaçınacağı yolunda olumlu kanaat oluşmamasının esas alınması suretiyle hükümde çelişki yaratılarak hükmün açıklanmasının geri bırakılmasına yer olmadığına karar verilmiş ise de, sanığın hükmün açıklanmasının geri bırakılması kararı verilmesine objektif koşullar bakımından engel sabıkası bulunduğundan bu husus bozma nedeni yapılmamıştır.</p>
+
+<p>1- Gün adli para cezası, paraya çevrilirken yasa maddesi gösterilmediği gibi, temel gün adli para cezası tayin edilip, artırım ve indirim nedenleri uygulandıktan sonra gün adli para cezasının paraya çevrilmesi gerektiği kuralının gözetilmemesi,</p>
+
+<p>2- 24.11.2015 günlü 29542 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren Anayasa Mahkemesi’nin 08.10.2015 tarih ve 2014/140 esas, 2015/85 sayılı iptal kararı ile 5237 sayılı TCK.nun 53. maddesinin bazı bölümlerinin iptal edilmesi nedeniyle, anılan maddenin yeniden değerlendirilmesinde zorunluluk bulunması,</p>
+
+<p>TCK.nun 53. maddesinin 3. fıkrası uyarınca, mahkum olduğu kısa süreli olmayan hapis cezası ertelenen sanık hakkında anılan maddenin l. fıkrasının (c) bendinde yazılı hak yoksunluğunun, sanığın sadece kendi altsoyu üzerindeki velayet, vesayet veya kayyımlık yetkileri açısından uygulanmasına yer olmadığına, altsoyu dışında kalanlarla ilgili bu hak ve yetkilerden ise cezanın infazı tamamlanıncaya kadar yoksun bırakılmasına karar verilmesi gerektiği gözetilmeden yazılı şekilde hüküm tesisi,</p>
+
+<p>3- Sanık hakkında hem hapis hem de adli para cezasına hükmedilmesi karşısında, TCK.nun 58. maddesinin uygulanmasında adli para cezalarında mükerrirlere özgü infaz rejimi uygulanmasına yasal olanak bulunmadığı halde hiç bir ayrım yapılmaksızın sanığın cezasının mükerrirlere özgü infaz rejimine göre çektirilmesine karar verilmesi,</p>
+
+<p>4- Suçtan doğrudan zarar görmeyen ve katılma hakkı bulunmayan Gümrük İdaresinin lehine vekalet ücretine hükmolunması,</p>
+
+<p>5-Sanığın yakalama işlemi sırasında gözaltında geçirdiği 1 günlük sürenin hükmolunan cezasından mahsup edilmemesi,</p>
+
+<p>Yasaya aykırı, sanığın temyiz itirazları bu itibarla yerinde görüldüğünden ve bu hususlar yeniden yargılamayı gerektirmediğinden, 5320 sayılı Yasanın 8/1. maddesi gereğince yürürlükte bulunan 1412 sayılı CMUK.nun 322. maddesi uyarınca,</p>
+
+<p>1- Temel ceza tayinine ilişkin hükmün 1. fıkrasında yer alan “2 Yıl hapis ve 5 gün üzerinden günlüğü 20,00.TL’den 100,00.TL adli para cezası ile cezalandırılmasına’’ ibaresinin çıkartılması, yerine gelmek üzere ‘‘2 Yıl hapis ve 5 gün adli para cezası ile cezalandırılmasına’’ ibaresinin eklenmesi, yine TCK.nun 62/2. maddesinin uygulanmasına ilişkin hükmün 2. fıkrasında yer alan “1 Yıl 8 Ay hapis ve” ibaresinden sonra gelmek üzere ‘‘TCK.nun 52/2. maddesi uyarınca” ibaresinin eklenmesi,</p>
+
+<p>2- Hükümden TCK.nun 53. maddesinin uygulanmasına ilişkin bölümün çıkarılması, yerine “24/11/2015 tarih ve 29542 sayılı Resmi Gazete’de yayımlanan Anayasa Mahkemesinin 08/10/2015 tarih ve 2014/140 E. , 2015/85 K. sayılı kararındaki iptal edilen hususlar gözetilerek, 5237 sayılı TCK.nun 53/1-2-3. madde ve fıkralarının tatbikine,” ifadesinin eklenmesi,</p>
+
+<p>3- Sanık hakkında tekerrür hükümlerinin uygulanmasına ilişkin fıkradaki “cezasının” ibaresinin hükümden çıkartılarak yerine “hapis cezasının” ifadesinin hükme eklenmesi,</p>
+
+<p>4- Hükümden Gümrük İdaresi lehine vekalet ücretine hükmedilen kısmın çıkartılması,</p>
+
+<p>5- “Sanığın gözaltında geçirdiği 1 günlük sürenin 5237 sayılı TCK.nun 63. maddesi uyarınca cezasından mahsubuna” dair ibarenin hüküm fıkrasına eklenmesi ve sair kısımların aynen bırakılması suretiyle DÜZELTİLEREK ONANMASINA, 13/06/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 5. CEZA DAİRESİ 
+Esas : 2014/8737 Karar : 2017/2571</strong> Tarih : 12.06.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 238. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Katılma Usulü</strong></p>
+  </li>
+</ul>
+
+<p>Mahalli mahkemece verilen hüküm temyiz edilmekle dosya incelendi;</p>
+
+<p>Yargıtay bozma ilamı ve duruşma günü tebliğ edildikten sonra müşteki … adına vekili tarafından 22/01/2013 tarihli dilekçe ile davaya katılma talebinde bulunulmasına rağmen bu talebi hakkında olumlu veya olumsuz bir karar verilmemesi CMK’nın 238/3. maddesine aykırı görülmüş ise de; bu hususun temyiz dilekçesinde ileri sürülmesi de dikkate alınarak, CMK’nın 237/2. maddesine göre, suçtan zarar gören durumunda bulunan PTT Genel Müdürlüğünün katılan, usulüne uygun vekaletname gereğince Av. …`ın katılan vekili olarak kabulüne karar verildikten sonra gereği düşünüldü:</p>
+
+<p>Bozmaya uyularak gereği yerine getirilmek delilleri takdir ve gerekçeleri gösterilmek suretiyle kurulan hüküm usul ve kanuna uygun olduğundan yerinde görülmeyen sanık müdafii ve katılan vekilinin sair temyiz itirazlarının reddine,</p>
+
+<p>Ancak;</p>
+
+<p>Mahkum olduğu kısa süreli hapis cezası ertelenen sanık hakkında TCK`nın 53/4. maddesi gözetilmeksizin aynı maddenin 1. fıkrası uyarınca hak yoksunluklarına hükmedilmesi,</p>
+
+<p>Suçu 5237 sayılı Yasanın 53/1-a maddesindeki hak ve yetkiyi kötüye kullanmak suretiyle işleyen sanık hakkında 53/5. maddesi uyarınca “cezanın infazından sonra işlemek üzere hükmolunan cezanın yarısından bir katına kadar bu hak ve yetkinin kullanılmasının yasaklanmasına” karar verilmesi gerektiğinin gözetilmemesi,</p>
+
+<p>Kanuna aykırı, sanık müdafii ve katılan vekilinin temyiz itirazları bu itibarla yerinde görüldüğünden, 5320 sayılı Kanunun 8/1. maddesi de gözetilerek CMUK’nın 321. maddesi uyarınca hükmün BOZULMASINA, ancak bu husus yeniden duruşma yapılmaksızın CMUK’nın 322. maddesine göre düzeltilmesi mümkün bulunduğundan, hüküm fıkrasında yer alan 5237 sayılı TCK’nın 53/1. maddesi gereğince hükmedilen hak yoksunluğuna ilişkin bölümünün çıkarılarak yerine, TCK<code class="language-plaintext highlighter-rouge">nın 53/1-a maddesindeki hak ve yetkiyi kötüye kullanmak suretiyle atılı suçu işleyen sanık hakkında aynı Yasanın 53/5. madde ve fıkrası gereğince cezanın infazından sonra işlemek üzere hükmolunan cezanın yarısı olan 38 gün süreyle bu hak ve yetkinin kullanılmasının yasaklanmasına</code>` ibaresinin eklenmesi suretiyle sair yönleri usul ve kanuna uygun olan hükmün DÜZELTİLEREK ONANMASINA, 12/06/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 18. CEZA DAİRESİ 
+Esas : 2016/13670 Karar : 2017/7190</strong> Tarih : 6.06.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 238. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Katılma Usulü</strong></p>
+  </li>
+</ul>
+
+<p>Yerel Mahkemece verilen hükümler temyiz edilmekle, başvurunun süresi, kararın niteliği ile suç tarihine göre ve sanık … müdafiinin duruşmalı inceleme isteminin 1412 sayılı CMUK’nın 318. maddesi uyarınca REDDİNE, müşteki Belediye İş Sendikası vekili vekilinin kovuşturma esnasında sanıklardan şikayetçi olduklarını bildirmesine rağmen, CMK’nın 238/2. maddesi uyarınca katılma hususunda bir karar verilmemiş ise de, temyiz dilekçesinin içeriği ve anılan Kanunun 237/2. maddesi gereğince, Belediye İş Sendikasının kamu davasına katılan, vekilinin de katılan, vekili sıfatıyla kabulüne karar verilerek, dosya görüşüldü:</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar belgeler ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>1-Sanıklar …, …,…, …, …, …,…,…,… hakkında kurulan hükümlerde,</p>
+
+<p>TCK’nın 28/1. maddesinde, “Karşı koyamayacağı veya kurtulamayacağı cebir ve şiddet veya muhakkak ve ağır bir korkutma veya tehdit sonucu suç işleyen kimseye ceza verilmez. Bu gibi hâllerde cebir ve şiddet, korkutma ve tehdidi kullanan kişi suçun faili sayılır. “ seklinde düzenlemeye yer verilmiştir.</p>
+
+<p>Sanıkların katılanlara karşı tehdit yoluyla başka bir sendikaya üye olmaya zorlamak suretiyle sendikal hakların engellenmesi suçunu işledikleri iddia edilen olayda, sanıkların karşı koyamayacağı cebir, şiddet veya muhakkak ve ağır korkutma veya tehdit durumlarının somut olayda nasıl gerçekleştiği, kanıtlara dayalı olarak açıklanıp, tartışılmadan yetersiz gerekçeyle ceza verilmesine yer olmadığına karar verilmesi,</p>
+
+<p>2-UYAP sisteminden alınan güncel nüfus kaydına göre sanık …‘ın 10/04/2016 tarihinde öldüğünün anlaşılması karşısında, ölümün doğruluğunun kesin biçimde saptanarak, sanık hakkında açılan kamu davasının TCK’nın 64 ve CMK’nın 223/8 maddeleri gereğince düşmesine karar verilip verilmeyeceğinin değerlendirilmesi zorunluluğu,</p>
+
+<p>Bozmayı gerektirmiş, sanık … müdafii ve katılanlar vekilinin temyiz nedenleri yerinde görüldüğünden, tebliğnameye aykırı olarak HÜKÜMLERİN BOZULMASINA, yargılamanın bozma öncesi aşamadan başlayarak sürdürülüp sonuçlandırılmak üzere dosyanın esas/hüküm mahkemesine gönderilmesine, 30/05/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 16. CEZA DAİRESİ 
+Esas : 2016/4261 Karar : 2017/4206</strong> Tarih : 25.05.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 238. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Katılma Usulü</strong></p>
+  </li>
+</ul>
+
+<p>Dosya incelenerek gereği düşünüldü:</p>
+
+<p>Yapılan yargılamaya, toplanıp karar yerinde gösterilen delillere, mahkemenin kovuşturma sonuçlarına uygun olarak oluşan kanaat ve takdirine, incelenen dosya kapsamına göre sanığın yerinde görülmeyen diğer temyiz itirazlarının reddine, ancak;</p>
+
+<p>1-Katılan sıfatını alabilecek surette suçtan zarar görmüş olup davaya katılma ve hükmü temyize hakkı bulunan şikayetçi vekiline duruşma gün ve saatini bildirir davetiye tebliğine rağmen, 5271 sayılı CMK’nın 238. maddesine göre, usulüne uygun şekilde başvurarak katılma talebinde bulunmadığından davaya katılmasına kararı verilmediği halde; katılan sıfatını haiz olmayan şikayetçi için lehine Avukatlık Asgari Ücret Tarifesinin 13/1. maddesi uyarınca vekalet ücreti olarak dilekçe yazım ücretine hükmolunması,</p>
+
+<p>2-Gerekçeli karar başlığında, 5271 sayılı CMK’nın 238. maddesine göre, usulüne uygun şekilde başvurarak katılan sıfatını almayan şikayetçinin “katılan” olarak yazılması,</p>
+
+<p>Bozmayı gerektirmiş, sanığın temyiz itirazları bu itibarla yerinde görülmüş olduğundan hükmün 5320 sayılı Kanunun 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca BOZULMASINA, ancak yeniden yargılama yapılması gerektirmeyen bu hususun aynı Kanunun 322. maddesi uyarınca düzeltilmesi mümkün bulunduğundan, hükmün dokuzuncu fıkrasındaki, katılan lehine vekalet ücreti hükmolunmasına ilişkin bölümün bütünüyle çıkarılması ve gerekçeli karar başlığından “katılan” ibaresinin çıkarılarak yerine “şikayetçi” ibaresinin yazılması suretiyle diğer yönleri usul ve kanuna uygun bulunan hükmün DÜZELTİLEREK ONANMASINA, 25.05.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 18. CEZA DAİRESİ
+Esas : 2015/36337 Karar : 2017/6636</strong> Tarih : 29.05.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 238. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Katılma Usulü</strong></p>
+  </li>
+</ul>
+
+<p>Yerel Mahkemece verilen hüküm temyiz edilmekle, başvurunun süresi, kararın niteliği ile suç tarihine göre ve müşteki … vekilinin kovuşturma esnasında 26/06/2012 tarihli dilekçe ile sanıktan şikâyetçi olduklarını ve davaya katılmak istediklerini bildirmesine rağmen, CMK’nın 238/2. maddesi uyarınca katılma hususunda bir karar verilmemiş ise de, temyiz dilekçesinin içeriği ve anılan Kanunun 237/2. maddesi gereğince, müşteki idarenin kamu davasına katılan, vekilinin de katılan vekili sıfatıyla kabulüne karar verilerek dosya görüşüldü:</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar belgeler, gerekçe içeriğine göre ve katılan vekilinin temyiz isteminin vekalet ücretine yönelik olduğu kabul edilerek yapılan incelemede, başkaca nedenler yerinde görülmemiştir.</p>
+
+<p>Ancak;</p>
+
+<p>Kendisini vekille temsil ettiren katılan lehine, CMK’nın 325/1 ve karar tarihinde yürürlükte bulunan Avukatlık Asgari Ücret tarifesinin 13/1 maddeleri uyarınca vekalet ücretine hükmedilmesi gerektiğinin gözetilmemesi,</p>
+
+<p>Kanuna aykırı ve katılan … vekilinin temyiz iddiaları bu nedenle yerinde ise de, bu aykırılık, yeniden duruşma yapılmasına gerek olmaksızın düzeltilebilir nitelikte olduğundan, temyiz edilen kararın açıklanan noktası tebliğnameye uygun olarak, hüküm fıkrasına, “katılan kendisini vekille temsil ettirdiğinden karar tarihinde yürürlükte bulunan 2014 yılı Avukatlık Asgari Ücret Tarifesinin 13/1. maddesi uyarınca 1500 TL vekalet ücretinin sanıktan alınarak katılana verilmesi” cümlesi eklenmek suretiyle HÜKMÜN DÜZELTİLEREK ONANMASINA, 29/05/2017 tarihinde oy birliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 1. CEZA DAİRESİ
+Esas : 2017/115 Karar : 2017/1481</strong> Tarih : 8.05.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 238. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Katılma Usulü</strong></p>
+  </li>
+</ul>
+
+<p>TÜRK MİLLETİ ADINA</p>
+
+<p>1-) Sanık … hakkında, mağdur …‘i kasten öldürmeye teşebbüs suçundan 11.02.2016 tarihli ek iddianame ile açılan davada, iddianame okunup, sanığın üzerine atılı bulunan suç anlatılıp, yasal hakları hatırlatılarak savunmasının alınması gerektiği gözetilmeksizin, savunması alınmaksızın hüküm kurulması suretiyle CMK’nun 147 ve 191. maddelerine muhalefet edilmesi,</p>
+
+<p>2-) Sanık … hakkında, mağdur …‘i kasten öldürmeye teşebbüs suçundan 11.02.2016 tarihli ek iddianame ile dava açıldığı, mağdur …‘in 25.04.2016 tarihli oturumda sanıktan şikayetçi olduğunu bildirdiği halde, davaya</p>
+
+<p>katılması konusunda olumlu ya da olumsuz bir karar verilmeyerek CMK’nun 238. maddesine aykırı davranılması,</p>
+
+<p>3-) Kabule göre; 5237 sayılı TCK’nun hazırlanmasında esas alınan suç teorisine göre, suçun maddi unsurları arasında yer alan suçun konusu, kanunda tanımlanan tipik hareketin üzerinde icra edildiği kişi ya da şey olarak açıklanmaktadır.</p>
+
+<p>Hedefte sapma; yapılan hareketin, gerçekleştirilmek istenen suç konusu üzerinde değil de failin yetersizliği veya yeteneğini gereği gibi kullanamaması ya da sair bir sebepten ötürü meydana gelen sapma sonucunda başka bir konu üzerinde gerçekleşmesidir. Hedefte sapma halinde bir hata söz konusu değildir. Zira, hedefte sapmada sapan failin iradesi değil hareketidir. Bu halde hareket adeta saparak yön değiştirmekte ve neticesini istenilen konu üzerinde değil de başka bir konu ya da istenilen konu yanında istenilmeyen başka konu veya konular üzerinde gerçekleştirmektedir. Hatada ise failin bilgisizliği ya da yanlış bilgisi söz konusu olup, failin düşündüğü ile gerçek arasında zıtlık bulunmaktadır. Bu itibarla, hedefte sapma ile hatanın özel bir hali olan şahısta hata farklı hususlardır. Şahısta hatada fail mağdurun şahsında hataya düşmektedir. Örneğin, failin A’yı öldürmek isterken, A olduğunu zannederek B’yi öldürmesi gibi. Oysa hedefte sapmada fail, eylemini gerçekleştirmek istediği kişiyi karıştırmamakta, ancak hareketinin sonucunda meydana gelen sapma nedeniyle kastettiği kişi dışında bir başka kişi veya kastetdiği kişiyle birlikte başka bir kişiyi de öldürmekte ya da yaralamaktadır.</p>
+
+<p>765 sayılı TCK’nda hedefte sapma, şahısta hata hali ile birlikte 52. maddesinde; “Bir kimse bir hata veya sair bir arıza yüzünden cürmü kast ettiği şahıstan başka bir şahsın zararına işlemiş olursa cürümden zarar gören kimsenin sıfatından neşet eden ve cezayı şiddetlendiren esbap faile tahmil olunmaz. Belki cürüm kast olunan şahsa karşı işlenmiş gibi telâkki olunarak, fail cürmün tazammun edebileceği esbabı muhaffefeden istifade eder” şeklinde düzenlenmiştir.</p>
+
+<p>5237 sayılı TCK’nda ise hedefte sapma haline ilişkin özel bir hüküm bulunmadığından hedefte sapma halinde failin sorumluluğunun, meydana gelen netice bakımından failin kusurunun ne olduğu ile suçların içtimaı kuralları çerçevesinde çözümlenmesi gerekmektedir. Nitekim, hata konusunun düzenlendiği 30. maddenin gerekçesinde, “Hedefte sapma hali ile ilgili olarak bu madde kapsamında düzenleme yapılmasına gerek görülmemiştir. Çünkü hedefte sapma halinde bir hata söz konusu değildir. Bu durumda suçların içtimai hükümleri kapsamında değerlendirilmesi gereken bir sorun söz konusudur. Nitekim uygulamada da hedefte sapma, suçların içtimaı ve özellikle fikri içtima kapsamında ele alınmaktadır” denilmiştir.</p>
+
+<p>5237 sayılı TCK’nun hazırlanmasında “kaç fiil varsa o kadar suç, kaç suç varsa …/… o kadar ceza vardır” ilkesi esas alınmış, dolayısıyla da gerçek içtima kuralı benimsenmiştir.</p>
+
+<p>765 sayılı TCK’nda, aynı nev’iden fikri içtima ile farklı nev’iden fikri içtima tek madde halinde 79. maddede düzenlenmiş iken, 5237 sayılı TCK’nda bu iki hal birbirinden ayrılarak, aynı nev’iden fikri içtima, zincirleme suçun düzenlendiği 43. maddenin 2. fıkrasında, farklı nev’iden fikri içtima ise kanunun 44. maddesinde düzenlenmiştir.</p>
+
+<p>5237 sayılı TCK’nun “Zincirleme Suç” başlıklı 43. maddesinin 2. fıkrasında; “Aynı suçun birden fazla kişiye karşı tek bir fiille işlenmesi durumunda da, birinci fıkra hükmü uygulanır” denilmek suretiyle zincirleme suçtan farklı bir müessese olan aynı nev’iden fikri içtima düzenlenmiş, tek fiil (hareket) ile aynı suçun birden fazla kişiye karşı işlenmesi durumunda, hareketin sayısı nedeniyle, fail hakkında bir cezaya hükmolunacağı, ancak bu cezanın TCK’nun 43/1. maddesine göre artırılacağı öngörülmüştür.</p>
+
+<p>TCK’nun 43. maddesinin 3. fıkrasında ise; “Kasten öldürme, kasten yaralama, işkence ve yağma suçlarında bu madde hükümleri uygulanmaz” hükmüne yer verilmek suretiyle, bu suçlarda zincirleme suç hükümleri ile aynı nev’iden fikri içtima kuralının uygulanmayacağı, dolayısıyla sayılan bu suçlarda, failin mağdur sayısınca ayrı ayrı cezalandırılacağı kabul edilmiştir.</p>
+
+<p>Bu açıklamalara göre, aynı nev’iden fikri içtimanın şartlarını, hareket ya da fiilin hukuki anlamda tek olması, tek fiille birden fazla aynı suçun işlenmiş olması, suç mağdurlarının farklı olması, işlenen suçun 5237 sayılı TCK’nun 43. maddesinin 3. fıkrasında belirtilen suçlardan olmaması, suç tipinde özel olarak aynı nev’iden fikri içtima hükmüne yer verilmemesi şeklinde belirlemek mümkündür.</p>
+
+<p>Farklı neviden fikri içtima ise 5237 sayılı Kanunun 44. maddesinde; “(1) İşlediği bir fiil ile birden fazla farklı suçun oluşmasına sebebiyet veren kişi, bunlardan en ağır cezayı gerektiren suçtan dolayı cezalandırılır” şeklinde düzenlenmiş olup, bu hükmün uygulanabilmesi için işlenen bir fiille birden fazla farklı suçun oluşması gerekmektedir.</p>
+
+<p>Kanun koyucu, işlediği bir fiille birden fazla farklı suçu işleyen failin, fiilinin tek olması nedeniyle en ağır ceza ile cezalandırılmasını yeterli görmüş, bu şekilde “non bis in idem” kuralı gereğince bir fiilden dolayı kişinin birden fazla cezalandırılmasının da önüne geçilmesini amaçlamış, “erime sistemi”ni benimsemek suretiyle, bu suçlardan en ağır cezayı gerektiren suçtan dolayı ceza verilmesi ile yetinilmesini tercih etmiştir.</p>
+
+<p>Farklı neviden fikri içtima kuralları da şartlarının bulunması halinde kural olarak her suç için uygulanabilir ise de, kanun koyucunun açıkça istisna öngördüğü hallerde …/…</p>
+
+<p>bu kuralın uygulanması imkanı bulunmamaktadır. Nitekim, 5237 sayılı TCK’nun 212. maddesinde, sahte resmi veya özel belgenin bir başka suçun işlenmesi sırasında kullanılması halinde, hem sahtecilik hem de ilgili suçtan dolayı ayrı ayrı cezaya hükmolunacağı belirtilerek, açıkça fikri içtima hükümlerinin uygulanması engellenmiştir.</p>
+
+<p>Bu anlatıma göre de, farklı neviden fikri içtimaın şartları da, hareket ya da fiilin hukuki anlamda tek olması, tek fiille birden fazla farklı suçun işlenmiş olması, işlenen suçlarla ilgili kanunda açıkça fikri içtima hükümlerinin uygulanmasının engellenmemiş olması şeklinde belirlenebilecektir.</p>
+
+<p>Görüldüğü gibi; 5237 sayılı TCK’nun gerek 43. maddesinin 2. fıkrasında düzenlenen aynı neviden fikri içtima, gerekse 44. maddesinde hüküm altına alınan farklı neviden fikri içtimada hukuki anlamda tek bir fiille birden fazla suçun işlenmesi sözkonusudur. Bununla birlikte aynı neviden fikri içtimada suçlar aynı iken, farklı neviden fikri içtimada suçların farklı olması hususu iki düzenleme arasındaki ayrımı ortaya koymaktadır.</p>
+
+<p>Bu bağlamda, “aynı suç” ile “farklı suç” kavramlarının ve 5237 sayılı TCK’nun 44. maddesinde yer alan “bir fiil” ibaresi ve aynı Kanunun 43. maddesinin ikinci fıkrasında belirtilen “tek bir fiil” ifadesi ile kast edilen hususun ne olduğunun da açıklığa kavuşturulması gerekmektedir.</p>
+
+<p>5237 sayılı TCK’nun 44. maddesinin gerekçesinde; “Bir suçun temel ve nitelikli şekilleri dışındaki suçlar, fikri içtima uygulamasında farklı suç olarak kabul edilmelidir” şeklinde açıklamaya yer verildiğinden, buna göre, anılan maddede yer alan “farklı suç”tan kastedilen, bir suçun temel ve nitelikli şekilleri dışında kalan ve Türk Ceza Kanununda ya da özel ceza kanunlarında yer alan, yani ceza hukuku mevzuatındaki diğer suç hükümleridir. Bunun yanında, bir suçun basit hali ile nitelikli hali ya da unsurları aynı olan suçlar aynı suç sayılacağı gibi, bir suçun teşebbüs halinde kalması ile tamamlanması veya olası kastla işlenmesi ile doğrudan kastla işlenmesi hallerinde de aynı suç söz konusu olacaktır.</p>
+
+<p>TCK’nun 43. maddesinin üçüncü fıkrasında aynı nev’iden fikri içtimanın uygulanamayacağı suçlar arasında “kasten öldürme” sayılmışken, 44. maddede düzenlenen farklı nev’iden fikri içtima ile ilgili olarak kasten öldürme suçları yönünden böyle bir istisnaya yer verilmemiştir. Dolayısıyla, TCK’nun 43/3. maddesinde sayılan suçlar tek fiille birden çok kişiye karşı işlendiği takdirde gerçek içtima kuralı uygulanacak, her bir suçtan dolayı fail ayrı ayrı cezalandırılacaktır. Fakat sözkonusu istisnaya Kanunun 44. maddesinde yer verilmediğinden, aynı fiille 43. maddenin 3. fıkrasında sayılan suçlarla birlikte bir başka suçun işlenmesi halinde, farklı neviden fikri içtima hükümleri gereğince en ağır suçtan ceza verilecektir. Diğer bir deyişle, …/…</p>
+
+<p>hukuki anlamda tek bir fiille bir kişinin kasten öldürülmesi yanında, başka bir suçun da işlendiği durumlarda, öncelikle ikinci suçun nitelendirilmesi yapılacak, ikinci suçun kasten öldürme suçu ile aynı suç olduğunun saptanması halinde aynı neviden fikri içtima hükümleri değil, TCK’nun 43/3. maddesi göz önüne alınarak gerçek içtima kuralları uygulanacak, ikinci suçun kasten öldürme suçundan farklı bir suç olduğunun belirlenmesi halinde ise 44. maddede düzenlenen farklı nev’iden fikri içtima kuralı uyarınca sadece cezası en ağır olan suçtan ceza verilmesi ile yetinilecektir.</p>
+
+<p>Aynı suç ve farklı suç kavramları bu şekilde açıklandıktan sonra hukuki anlamda fiilin tek olması hususuna gelince;</p>
+
+<p>Doğal anlamda gerçekleştirilen her bedeni hareket ayrı bir eylemi oluşturmakta ise de, hukuki anlamda hareketin tek olması ile ifade edilmek istenen husus, doğal anlamda birden fazla hareket bulunsa dahi, bu hareketlerin, hukuki nedenlerden dolayı değerlendirmede birlik oluşturması suretiyle tek fiil olarak kabulüdür. Diğer bir anlatımla, doğal anlamda fiilin tek olduğu her halde hukuki anlamda da fiilin tek fiil olarak olduğu söylenebilirse de, doğal anlamda fiilin çok olduğu her halde hukuki anlamda da fiilin çok olduğu her zaman söylenemeyecektir. Bazen bir hareketler kümesi, hukuki açıdan tek bir fiil olarak kabul edilecektir. Bu halde suç tipinin birden fazla hareketle ihlal edilmiş olması hareketin hukuken tek olmasını etkilemeyecek, doğal hareketler hukuken tek kabul edilecektir. Fikri içtimada da, fiil ya da hareketin tekliği, doğal anlamda değil hukuki anlamda tek olmayı ifade etmektedir. Bunun sonucu olarak bir kısım suçların işlenmesi sırasında doğal olarak birden fazla hareket yapılmakta ise de, ortaya konulan bu davranışlar suçun kanuni tanımında yer alan hukuksal anlamdaki “tek bir fiili” oluşturmaktadır.</p>
+
+<p>Bu noktada; aralarında yer ve zaman bakımından sıkı bağlantı bulunmasına rağmen doğal anlamda birden fazla hareketle, doğrudan veya olası kastla kişilerin yaşam hakkı ve vücut dokunulmazlığına yönelik hukuki menfaatlerin ihlal edilmesi durumunda fiilin hukuki anlamda tek olarak kabul edilip edilemeyeceği hususu üzerinde ayrıca durulmalıdır. Doğal anlamda birden fazla hareketin hukuki anlamda tek bir fiil olarak kabul edilip edilemeyeceği işlenen suçun özelliği de gözönüne alınarak yapılacak hukuki değerlendirme sonucunda belirlenmelidir. Bu bakımdan korunan hukuki menfaatler arasında en üstte yer alan yaşam hakkı ve vücut dokunulmazlığına yönelik eylemlerde eğer fail doğal anlamda birden fazla hareketle bir ya da birkaç kişiyi öldürmek ya da yaralamak amacıyla, öldürmek ya da yaralamak istediği kişinin yanında veya yakınında bulunan başka kişilerin de ölebileceğini veya yaralanabileceğini öngörmesine rağmen bunu göze alarak hareket ediyorsa artık ortada tek bir fiil değil, mağdur sayısınca birden çok fiil bulunduğunu kabul etmek gerekir.</p>
+
+<p>Ancak bunun için failin doğrudan ya da olası kastla hareket ettiğinin belirlenmesi gereklidir.</p>
+
+<p>Bu açıklamalar ışığında uyuşmazlık konusu değerlendirildiğinde;</p>
+
+<p>Sanığın, mağdur …‘e bıçakla saldırdığı, ancak onun yerine hedefte sapma sonucu yanında bulunan kardeşi maktul …‘i olası kastla öldürdüğü kabul edilen somut olayda, mağdur …‘e bıçakla saldıran sanığın, kavgayı ayırmak amacıyla aralarına giren ve mağdurun yanında bulunan maktul …‘in ölebileceğini ya da yaralanabileceğini öngörmesine karşın, bunu göze alarak mağdura doğru birden çok bıçak savurma şeklindeki eyleminin suçla korunan hukuki menfaatler göz önünde bulundurulduğunda hukuki anlamda tek fiil sayılması mümkün olmayıp, TCK’nun 44. maddesinin uygulanma şartları oluşmadığı, maktul ve mağdura yönelik eylemleri nedeniyle ayrı ayrı değerlendirme yapılarak sanığın hukuki durumunun değerlendirilmesi ve sonucuna göre hüküm kurulması gerektiği gözetilmeksizin, sanığın mağdur …‘e yönelik kastının öldürme mi yoksa yaralama mı olarak kabul edildiği konusunda tereddüt oluşturacak biçimde “….’nın kendisine bira şişesi ile vurması üzerine bıçakla …‘yı öldürme ya da yaralama kastı ile birkaç bıçak darbesi savurduğu” şeklindeki kabulle yazılı şekilde hüküm kurulması,</p>
+
+<p>Bozmayı gerektirmiş, sanık … müdafii ile şikayetçi sanık … ve müdafiinin temyiz itirazları bu itibarla yerinde görülmekle, sanık … hakkında kurulan ve kısmen re’sen de temyize tabi bulunan hükümlerin bu nedenlerle, şikayetçi sanık … hakkında kurulan hükmün ise irtibat nedeniyle tebliğnamedeki düşüncenin aksine BOZULMASINA, 08/05/2017 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 4. CEZA DAİRESİ 
+Esas : 2016/1348 Karar : 2017/12423</strong> Tarih : 19.04.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 238. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Katılma Usulü</strong></p>
+  </li>
+</ul>
+
+<p>Yerel Mahkemece verilen hükümler temyiz edilmekle, başvurunun süresi ve kararın niteliği ile suç tarihine göre suçtan zarar görme ihtimali bulunan müşteki …‘ın şikayetçi olduğunu belirtmesine karşın, CMK’nın 238/2. maddesi gereğince kamu davasına katılmak isteyip istemediği sorulup bu hususta bir karar verilmemiş ise de, temyiz dilekçesinin içeriğine göre, CMK’nın 237/2. maddesinin verdiği yetkiye dayanarak müştekinin katılan ve vekilin katılan vekili olarak kabulüne karar verilmesi suretiyle dosya görüşüldü:</p>
+
+<p>1-Sanık … hakkında tehdit suçundan kurulan beraat hükmüne yönelik temyiz isteminin incelenmesinde,</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede:</p>
+
+<p>Eyleme ve yükletilen suça yönelik katılan … vekilinin temyiz iddiaları yerinde görülmediğinden tebliğnameye uygun olarak, TEMYİZ DAVASININ ESASTAN REDDİYLE HÜKMÜN ONANMASINA,</p>
+
+<p>2-Sanık … hakkında tehdit suçundan kurulan hükme yönelik temyize gelince;</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre sanığa verilen hapisten çevrili adli para cezasının 14.04.2011 tarihinde yürürlüğe giren 6217 Sayılı Yasanın 26.maddesi ile 5320 Sayılı Ceza Muhakemesi Kanununun Yürürlük ve Uygulama Şekli Hakkındaki Kanuna eklenen geçici 2.maddesi gereğince kesin nitelikte olmaması karşısında, genel adalet ilkesi gereğince yapılan incelemede;</p>
+
+<p>02/12/2016 tarihli Resmi Gazete’de yayımlanarak aynı tarihte yürürlüğe giren 6763 sayılı Kanunun 34. maddesiyle değişik 5271 sayılı CMK’nın 253. maddesi ve maddeye eklenen fıkraya göre uzlaşma hükümleri yeniden düzenlenmiş ve sanığa isnat edilen 106/1. maddesi kapsamındaki tehdit suçunun uzlaştırma kapsamında bulunduğu anlaşılmış olmakla, 5237 sayılı Türk Ceza Kanunu’nun 2 ve 7. maddeleri de gözetilerek, uzlaştırma işlemi uygulanarak sonucuna göre sanığın hukuki durumunun bu kapsamda tekrar değerlendirilip belirlenmesinde zorunluluk bulunması,</p>
+
+<p>Bozmayı gerektirmiş, sanık … müdafiinin temyiz itirazları bu nedenle yerinde görülmüş olduğundan, diğer yönleri incelenmeksizin HÜKMÜN 5320 sayılı Kanunun 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca BOZULMASINA, yargılamanın bozma öncesi aşamadan başlayarak sürdürülüp sonuçlandırılmak üzere dosyanın esas/hüküm mahkemesine gönderilmesine, 19/04/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 7. CEZA DAİRESİ
+Esas : 2014/34838 Karar : 2017/3091</strong> Tarih : 19.04.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 238. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Katılma Usulü</strong></p>
+  </li>
+</ul>
+
+<p>Yerel mahkemece verilen hüküm temyiz edilmekle; başvurunun nitelik, ceza türü, süresi ve suç tarihine göre dosya okunduktan sonra Türk Milleti adına gereği görüşülüp düşünüldü;</p>
+
+<p>Cumhuriyet Savcısının, sanık …‘in ve malen sorumlu …‘in temyizine göre yapılan incelemede;</p>
+
+<p>Sanıktan 1.245 karton bandrolsüz ve kaçak sigara ele geçirilen olayda; 5237 sayılı TCK’nun 61. maddesi uyarınca alt ve üst sınırlar arasında temel ceza belirlenirken suçun işleniş biçimi, suçun işlenmesinde kullanılan araçlar, suçun işlendiği zaman ve yer, suçun konusunun önem ve değeri, meydana gelen zarar veya tehlikenin ağırlığı ve failin kast veya taksire dayalı kusurunun ağırlığı unsurlarının dikkate alınması gerekmekte olup dosya kapsamına göre sanığın benzer olaylarla karşılaştırıldığında vehamet arz eden fiili, eylem ile ceza arasındaki denge gözetildiğinde teşdidi gerektirdiği halde, sanık hakkında alt sınırdan uzaklaşılmadan ceza tayini,</p>
+
+<p>Uygulamaya göre de;</p>
+
+<p>1- 24.11.2015 günlü 29542 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren Anayasa Mahkemesi’nin 08.10.2015 tarih ve 2014/140 esas, 2015/85 sayılı iptal kararı ile 5237 sayılı TCK.nın 53.maddesinin bazı bölümlerinin iptal edilmesi nedeniyle, anılan maddenin yeniden değerlendirilmesinde zorunluluk bulunması,</p>
+
+<p>TCK’nın 53.maddesinin 3.fıkrası uyarınca, mahkum olduğu kısa süreli olmayan hapis cezası ertelenen sanık hakkında anılan maddenin l.fıkrasının (c) bendinde yazılı hak yoksunluğunun, sanığın sadece kendi altsoyu üzerindeki velayet, vesayet veya kayyımlık yetkileri açısından uygulanmasına yer olmadığına, altsoyu dışında kalanlarla ilgili bu hak ve yetkilerden ise cezanın infazı tamamlanıncaya kadar yoksun bırakılmasına karar verilmesi gerektiği gözetilmeden yazılı şekilde hüküm tesisi,</p>
+
+<p>2- Dava konusu kaçak sigaraların 5607 sayılı yasanın 13/1 maddesi delaletiyle TCK’nın 54. maddesi gereğince müsaderesi gerekirken, doğrudan TCK’nın 54. maddesi uyarınca müsaderesine karar verilmesi ve dava konusu kaçak sigaraların müsaderesi ile yetinilmesi gerekirken söz konusu sigaraların imha suretiyle tasfiyesine de hükmedilmesi,</p>
+
+<p>3-Duruşmadan haberdar olduğu halde, usulüne uygun olarak düzenlenmiş dilekçe ile veya duruşmada sözlü beyanda bulunarak 5271 sayılı CMK.nun 238. maddesine göre katılan sıfatını almayan müşteki … lehine dilekçe yazım ücretine hükmedilmesi,</p>
+
+<p>4- Nakil aracının iyi niyetli üçüncü kişiye ait olduğu gözetilmeden, iadesi yerine oluşa uygun olmayan yetersiz gerekçe ile müsaderesine karar verilmesi,</p>
+
+<p>Yasaya aykırı, sanığın, o yer Cumhuriyet Savcısının ve malen sorumlunun temyiz itirazları bu itibarla yerinde görülmüş olduğundan hükmün bu sebepten dolayı 5320 sayılı Yasanın 8/1.maddesi gereğince yürürlükte bulunan 1412 sayılı CMUK.nun 321.maddesi uyarınca BOZULMASINA, 19.04.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 15. CEZA DAİRESİ
+Esas : 2014/19247 Karar : 2017/7314</strong> Tarih : 9.03.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 238. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Katılma Usulü</strong></p>
+  </li>
+</ul>
+
+<p>Katılan sıfatını alabilecek şekilde suçtan zarar görmüş bulunan müşteki hakkında, dosyada katılma kararı verilmemiş ise de; 5271 sayılı CMK’nın 260. maddesinin 1. fıkrası uyarınca hükmü temyize hakkı bulunduğu belirlenerek ve aynı kanunun 237/2 ve 238. maddeleri uyarınca kamu davasına katılmasına karar verilerek yapılan incelemede,</p>
+
+<p>Sanık …‘in …Belediye Başkanlığına ait telefonu aradığı, sanığın kendisini …. ilçesine atanan doktor Kadir olarak tanıtıp ilçeye gelirken trafik kazası yaptığını, zor durumda olduğunu söylerek kontör istediği, belediye çalışanlarının sanığı, ilçede telefonculuk yapan katılana yönlendirdiği, katılanın ise sanığa 5 adet 500’er kontör şifresi gönderdiği, bu kontörlerin üç tanesinin sanık …‘ya ait telefonlara yüklendiğinin iddia edildiği olayda,</p>
+
+<p>1- Sanık …. hakkında verilen hükme yönelik temyiz itirazlarının incelenmesinde,</p>
+
+<p>Sanığın savunmasında telefon hattını kendisinin kullandığını, zaman zaman dışarıdan kontör yüklediğini, kontörleri hatırlayamadığı kontör satıcısından yüklediğini beyan etmesi nedeniyle mahkemenin sanık hakkında mahkumiyete yeter delil bulunmadığı gerekçesine dayanan mahkemenin beraat yönünde kabulünde isabetsizlik görülmemiştir.</p>
+
+<p>Yapılan yargılamaya, toplanıp karar yerinde gösterilen delillere, mahkemenin kovuşturma sonuçlarına uygun olarak oluşan kanaat ve takdirine, incelenen dosya kapsamına göre; katılanın mahkumiyet kararı verilmesi gerektiğine dair temyiz itirazlarının reddiyle, hükmün ONANMASINA,</p>
+
+<p>2- Sanık … hakkında verilen hükme yönelik temyiz itirazlarının incelenmesinde,</p>
+
+<p>13/11/2009 tarihli iddianamede, sanığın kendisinin …İlçesine atanan Doktor olduğunu söyleyerek, aracının kaza yaptığın acilen kontöre ihtiyacı olduğunu söyleyerek menfaat temin etmek suretiyle dolandırıcılık suçunu işlediğinin iddia edilmesi karşısında; eyleminin, hükümden sonra 02/12/2016 tarih ve 29906 sayılı Resmi Gazetede yayımlanarak aynı tarihte yürürlüğe giren 6763 sayılı Kanunun 14. maddesi ile 5237 sayılı TCK’nın 158/1. maddesine eklenen (L) bendi kapsamında öngörülen nitelikli dolandırıcılık fiiline ilişkin delillerin takdiri ve değerlendirme yetki ve görevinin üst dereceli Ağır Ceza Mahkemesine ait olduğu gözetilerek görevsizlik kararı verilmesi gerektiği zorunluluğu,</p>
+
+<p>Bozmayı gerektirmiş, sanığın temyiz itirazları bu itibarla yerinde görülmüş olduğundan sair yönleri incelenmeyen hükmün bu nedenle, 5320 sayılı Kanun’un 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca BOZULMASINA, aynı Kanunun 326/son maddesi uyarınca ceza miktarı bakımından kazanılmış haklarının saklı tutulmasına, 09/03/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 15. CEZA DAİRESİ
+Esas : 2017/10290 Karar : 2017/7794</strong> Tarih : 20.03.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 238. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Katılma Usulü</strong></p>
+  </li>
+</ul>
+
+<p>Bedelsiz senedi Kullanma suçundan sanık …’in beraatine ilişkin hüküm, müşteki vekili tarafından, sanık …’in aynı suçtan mahkumiyetine ilişkin hüküm sanık tarafından; sanık … hakkında aynı suçtan verilen hükmün açıklanmasının geri bırakılması kararı ise sanık tarafından temyiz edilmekle, dosya incelenerek gereği düşünüldü;</p>
+
+<p>1-Sanık … hakkında verilen hükmün açıklanmasının geri bırakılması kararına yönelik temyiz incelemesinde;</p>
+
+<p>5271 sayılı CMK’nın 231.maddesine göre verilen ve davayı sonuçlandırıcı nitelikte olmayan “hükmün açıklanmasının geri bırakılmasına” ilişkin karara karşı aynı Kanun’un 231/12. maddesine göre itiraz yolu açık olup temyiz olanağı bulunmadığından 5271 sayılı CMK’ nın 264. maddesi uyarınca kabul edilebilir bir başvuruda kanun yolunda merciin belirlenmesinde yanılma, başvuran sanığın haklarını ortadan kaldırmayacağından temyiz dilekçesinin itiraz dilekçesi olarak kabulü ile görevli ve yetkili ilk derece mahkemesince itiraz konusunda inceleme yapılması için, dosyanın incelenmeksizin mahalline iade edilmek üzere … Cumhuriyet Başsavcılığına TEVDİİNE,</p>
+
+<p>2-Sanık … hakkında verilen beraat hükmüne yönelik temyiz incelemesinde;</p>
+
+<p>Kamu davasına katılma istemi hakkında olumlu veya olumsuz bir karar verilmeyen ve suçtan zarar gören şikayetçinin 5271 sayılı CMK’nın 237/2 ve 238. maddeleri uyarınca davaya katılmasına karar verilerek ve hükmü temyize hak ve yetkisinin bulunduğu belirlenerek yapılan incelemede;</p>
+
+<p>Katılanın, yaptığı iş karşılığında sanık …’e 50.000 TL bedelli senet vermesine ve daha sonra aralarındaki sözleşmenin feshedilmesine rağmen sanık …’in söz konusu senedi katılana iade etmeyip eşi olan diğer sanık …’ye ciro ettiği, sanık …’nin de sanık …’a ciro ederek verdiği, ödenmeyen senet bedeli ile ilgili olarak sanık …’ın katılan aleyhine icra takibine geçtiği, bu şekilde sanığın, diğer sanıklarla eylem ve fikir birliği içinde hareket etmek suretiyle bedelsiz senedi kullanma suçunu işlediğinin iddia edildiği olayda, bu sanığın, diğer sanıklarla birlikte hareket ettiğine ve sanığın, suça konu senedin bedelsiz kaldığını bildiğine dair yeterli delil bulunmadığı anlaşılmakla bu gerekçelere dayanan mahkemenin kabulünde bir isabetsizlik bulunmamıştır.</p>
+
+<p>Yapılan yargılama sonunda, yüklenen suçun sabit olmadığı gerekçe gösterilerek mahkemece kabul ve takdir kılınmış olduğundan, katılan vekilinin, beraat hükmünün kanuna aykırı olduğuna ve eylemin suç teşkil ettiğine ilişkin temyiz itirazlarının reddiyle hükmün ONANMASINA,</p>
+
+<p>3-Sanık … hakkında verilen mahkumiyet hükmüne yönelik temyiz incelemesinde;</p>
+
+<p>Sanığa yüklenen bedelsiz senedi kullanma suçu nedeniyle açılan kamu davası üzerine verilen hükümden sonra 02.12.2016 tarih ve 29906 sayılı Resmi Gazetede yayımlanarak aynı tarihte yürürlüğe giren 6763 sayılı Kanunun 34. maddesi ile 5271 sayılı CMK’nın 253. ve 254. maddelerinde yeni düzenleme yapıldığı gözetilerek yeni düzenlemeye göre uzlaştırma işlemleri yapılarak sonucuna göre sanığın hukuki durumunun takdir ve tayininde zorunluluk bulunması,</p>
+
+<p>Bozmayı gerektirmiş, sanığın temyiz itirazları bu itibarla yerinde görülmüş olduğundan hükmün bu sebepten dolayı 5320 sayılı Kanunun 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca sair hususlar incelenmeksizin hükmün BOZULMASINA, 20/03/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. CEZA DAİRESİ 
+Esas : 2016/19452 Karar : 2017/339</strong> Tarih : 16.01.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 238. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Katılma Usulü</strong></p>
+  </li>
+</ul>
+
+<p>Dosya incelenerek gereği düşünüldü;</p>
+
+<p>1-Müşteki vekilinin temyiz isteminin incelenmesinde;</p>
+
+<p>Müşteki vekilinin temyiz dilekçesinde suç karşılıksız yaralanma olarak belirtilmiş ise de; temyiz isteminin sanık hakkında 19/03/2010 suç tarihli mühür bozma suçundan kurulan beraat hükmüne ilişkin olduğunun kabulü ile yapılan incelemede;</p>
+
+<p>Kovuşturma aşamasında usulüne uygun tebligat evrakı ile duruşmadan haberdar edildiği halde, 5271 sayılı CMK’nın 237. ve 238. maddeleri uyarınca usulüne uygun olarak kamu davasına katılma isteminde bulunmayan ve katılan sıfatı olmayan müşteki kurumun sanık hakkında verilen hükmü temyize hakkı bulunmadığından, müşteki kurum vekilinin temyiz isteminin 1412 sayılı CMUK’nın 317. maddesi uyarınca istem gibi REDDİNE,</p>
+
+<p>2- Sanık müdafiinin, sanık hakkında 28/08/2010 tarihli mühür bozma suçundan kurulan mahkumiyet hükmüne ilişkin temyiz isteminin incelenmesine gelince;</p>
+
+<p>Bozma üzerine yapılan duruşmaya, toplanan delillere, gerekçeye, hakimin kanaat ve takdirine göre temyiz itirazları yerinde olmadığından reddiyle hükmün istem gibi ONANMASINA, 16/01/2017 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 15. CEZA DAİRESİ
+Esas : 2014/11913 Karar : 2017/214</strong> Tarih : 12.01.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 238. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Katılma Usulü</strong></p>
+  </li>
+</ul>
+
+<p>Güveni kötüye kullanma suçundan sanığın beraatine ilişkin hüküm, müşteki vekili tarafından temyiz edilmekle dosya incelenerek gereği düşünüldü:</p>
+
+<p>Kovuşturma evresinde duruşmadan haberdar edilmeyen katılan sıfatını alabilecek surette suçtan zarar görmüş bulunan kurumun 5271 sayılı CMK’nın 260/1. maddesine göre, sanık hakkında kurulan hükmü temyize hakkı bulunduğu belirlenip, 5271 sayılı CMK’nın 237/2 ve 238. maddeleri uyarınca davaya katılmasına karar verilerek yapılan incelemede;</p>
+
+<p>Yargıtay Ceza Genel Kurulu’nun 25.03.2014 tarih, 2013/12-74-2014/140 E-K sayılı ilamı ve istikrarlı diğer kararlarında da vurgulandığı üzere; ceza yargılamasında sanığın sorgusu yapılmadan hüküm kurulabileceğine ilişkin kuralın, fiilin suç oluşturmaması veya yeni bir yasal düzenleme ile suç olmaktan çıkarılması gibi herhangi bir araştırmayı gerektirmeyen bir durumun varlığı halinde, başka bir deyişle derhal beraat kararı verilmesi ile sınırlı olarak uygulanabileceği, somut olayda, sanığın sorgusu yapılmadan, mevcut kanıtlar tartışılarak delil takdiri suretiyle beraat kararı verilmesinin mümkün bulunmadığı gözetilmeksizin, sanık hakkında beraat hükümleri verilmesi,</p>
+
+<p>Kanuna aykırı olup, katılan vekilinin temyiz itirazları bu itibarla yerinde görülmüş olduğundan, sair yönleri incelenmeyen hükümlerin bu nedenle, 5320 sayılı Kanun’un 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca BOZULMASINA, 12.01.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 21. CEZA DAİRESİ 
+Esas : 2016/656 Karar : 2016/2701</strong> Tarih : 22.03.2016</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 238. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Katılma Usulü</strong></p>
+  </li>
+</ul>
+
+<p>Mağdurlar adına vekilinin, kamu davasına 5271 sayılı Yasanın 238. maddesi uyarınca usulüne uygun şekilde katılma isteminde bulunup bu sıfatı kazanmadığından, vaki temyiz isteminin 5320 sayılı Yasanın 8/1 maddesi gereğince uygulanması gereken 1412 sayılı CMUK.nun 317. maddesi uyarınca istem gibi REDDİNE, 22.03.2016 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY CEZA GENEL KURULU
+Esas: 2013/5-657 Karar: 2015/9</strong> Tarih: 17.02.2015</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 238. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Katılma Usulü</strong></p>
+  </li>
+</ul>
+
+<p>Tefecilik suçundan sanıklar D.. M.. ve M.. K..’nün beraatine ilişkin, Ankara 13. Asliye Ceza Mahkemesince verilen 13.10.2011 gün ve 763-286 sayılı hükmün müşteki vekili tarafından temyiz edilmesi üzerine dosyayı inceleyen Yargıtay 5. Ceza Dairesince 09.01.2013 gün ve 7482-103 sayı ile;</p>
+
+<p>“Suçtan zarar gören şikayetçi A.. B.. ve vekilinin sanıklardan şikayetçi oldukları ve cezalandırılmaları yönündeki sözlü ve yazılı beyanları karşısında 5271 sayılı CMK’nun 238/2. maddesi uyarınca davaya katılmak isteyip istemedikleri sorularak, katılmak istemeleri halinde aynı kanunun 238/3. maddesi uyarınca olumlu ya da olumsuz bir karar verilmesi gerektiğinin gözetilmemesi” isabetsizliğinden bozulmasına karar verilmiştir.</p>
+
+<p>Yargıtay C.Başsavcılığı ise 15.03.2013 gün ve 407170 sayı ile;</p>
+
+<p>“Taraflara duruşma gününü bildiren davetiye tebliği üzerine, şikayetçiler ve vekili sanıklardan şikayetçi olduklarını ve cezalandırılmalarını istemişlerdir. Ancak mahkemece şikayetçilere davaya katılmak isteyip istemedikleri sorulmadan karar verilmiştir. Tefecilik suçunun şikayetçisi olan, dolayısıyla suçtan doğrudan doğruya zarar gören şikayetçinin ve vekilinin, yargılama sırasında, katılma isteğinin mahkeme tarafından sorulmadığı ve karara bağlanmadığı, şikayetçi vekilinin ise hükmü temyiz ettiği, temyiz isteğinde sanığın cezalandırılması gerektiğinin belirtildiği anlaşılmaktadır.</p>
+
+<p>Bu durumda şikayetçilerin CMK’nun 260. maddesi uyarınca, katılma isteği karara bağlanmamış olmasına rağmen hükmü temyize hakkı bulunmaktadır. Nitekim Özel Dairece de bu husus vurgulanmaktadır.</p>
+
+<p>Ceza Muhakemesi Kanununun 237. maddesinin ikinci cümlesi, ‘Kanun yolu muhakemesinde davaya katılma isteğinde bulunulamaz. Ancak, ilk derece mahkemesinde ileri sürülüp reddolunan veya karara bağlanmayan katılma istekleri, kanun yolu başvurusunda açıkça belirtilmişse incelenip karara bağlanır’ hükmü incelendiğinde, şikayetçiler vekilinin beraat kararının hukuka uygun olmadığına, bozulması gerektiğine ilişkin temyiz isteminin mahkemenin beraat kararına yönelik esasa dair bozma talebine ilişkin temyiz dilekçesinin, usulüne uygun olarak karara bağlanmayan katılma isteği hususunda da Yüksek Yargıtay tarafından bir karar verilmesi talebini de içerdiği şeklinde anlaşılmalıdır. Fıkra hükmünü, şikayetçi vekilinin katılma isteği ile ilgili açıklayıcı bir beyanın bulunması şeklinde anlamak, yasanın lafzına sıkı sıkıya bağlı kalmak olacaktır ki, bu hususun doğru bir yaklaşım olmayacağı anlaşılmaktadır.</p>
+
+<p>Diğer yandan hükmün esasına girilmeden bozulması, Anayasanın 141/4. maddesinde yazılı ‘Davaların en az giderle ve mümkün olan süratle sonuçlandırılması, yargının görevidir’ hükmüne de uygun bir sonuç doğurmadığı açıktır.” görüşüyle itiraz kanun yoluna başvurmuştur.</p>
+
+<p>5271 sayılı CMK’nun 308. maddesi5271 sayılı CMK’nun 308. maddesi uyarınca inceleme yapan Yargıtay 5. Ceza Dairesince 12.06.2013 gün ve 4790-6460 sayı ile; itiraz nedenlerinin yerinde görülmediğinden bahisle Yargıtay Birinci Başkanlığına gönderilen dosya, Ceza Genel Kurulunca değerlendirilmiş ve açıklanan gerekçelerle karara bağlanmıştır.</p>
+
+<p>CEZA GENEL KURULU KARARI</p>
+
+<p>Özel Daire ile Yargıtay Cumhuriyet Başsavcılığı arasında oluşan ve Ceza Genel Kurulunca çözümlenmesi gereken uyuşmazlık; kovuşturma aşamasında müştekinin sanıklardan şikâyetçi olduğunu, müşteki vekilinin de sanıkların cezalandırılmasını talep ettiği somut olayda, müşteki vekilinin temyizi üzerine inceleme yapan Özel Dairece, müşteki ve vekilinden davaya katılmak isteyip istemediklerinin sorulmaması suretiyle 5271 sayılı CMK’nun 238/2. maddesine aykırı davranılması gerekçesiyle hükmün bozulmasına karar verilmesinin isabetli olup olmadığı ve bu bağlamda Özel Dairece katılma konusunda bir karar verilmesinin mümkün olup olmadığının belirlenmesine ilişkindir.</p>
+
+<p>İncelenen dosya kapsamından;</p>
+
+<p>Müştekinin 08.06.2011 tarihli oturumda sanıklardan şikâyetçi olduğunu beyan ettiği, müşteki vekilinin de 10.10.2011 tarihli dilekçesiyle sanıkların cezalandırılmasını talep ettiği, yüzüne karşı açıklanan kararı süresinde temyiz eden müşteki vekilinin temyiz dilekçesinde, sanıkların cezalandırılması talebinde bulunduğu, ancak katılma konusunda açıkça bir istemde bulunmadığı anlaşılmaktadır.</p>
+
+<p>5271 sayılı CMK’nun “Kamu davasına katılma” başlıklı 237. maddesi</p>
+
+<p>1)Mağdur, suçtan zarar gören gerçek ve tüzel kişiler ile malen sorumlu olanlar, ilk derece mahkemesindeki kovuşturma evresinin her aşamasında hüküm verilinceye kadar şikâyetçi olduklarını bildirerek kamu davasına katılabilirler.</p>
+
+<p>2)Kanun yolu muhakemesinde davaya katılma isteğinde bulunulamaz. Ancak, ilk derece mahkemesinde ileri sürülüp reddolunan veya karara bağlanmayan katılma istekleri, kanun yolu başvurusunda açıkça belirtilmişse incelenip karara bağlanır” ,</p>
+
+<p>Aynı kanunun Aynı kanunun “Katılma usulü” başlıklı 238. maddesi ise;</p>
+
+<p>1)Katılma, kamu davasının açılmasından sonra mahkemeye dilekçe verilmesi veya katılma istemini içeren sözlü başvurunun duruşma tutanağına geçirilmesi suretiyle olur.</p>
+
+<p>2)Duruşma sırasında şikâyeti belirten ifade üzerine, suçtan zarar görenden davaya katılmak isteyip istemediği sorulur.</p>
+
+<p>3)Cumhuriyet savcısının, sanık ve varsa müdafiinin dinlenmesinden sonra davaya katılma isteminin uygun olup olmadığına karar verilir.</p>
+
+<p>4)Sulh ceza mahkemesinde açılmış olan davalarda katılma hususunda Cumhuriyet savcısının görüşü alınmaz” şeklinde düzenlenmiştir.</p>
+
+<p>Yukarıda belirtilen düzenlemeler birlikte değerlendirildiğinde, ilk derece mahkemelerinde kovuşturma aşamasında hüküm verilinceye kadar, suçtan zarar gören, mağdur veya malen sorumlu olanların, mahkemesine bir dilekçe vermek veya katılma istemini içeren sözlü başvurularının tutanağa geçirilmesi suretiyle kamu davasına katılabilecekleri hüküm altına alınmıştır.</p>
+
+<p>Kanun yolu yargılamasında katılma isteminde bulunulmasının mümkün olmadığı kural olarak benimsenmiş olmakla birlikte, 5271 sayılı CMK’nun 260. maddesinde, katılma isteği reddedilmiş veya karara bağlanmamış olanların kanun yollarına başvuru hakkı bulunduğu belirtilerek, böyle bir başvuru halinde, ilk derece mahkemesinde ileri sürülüp reddolunan veya karara bağlanmayan katılma isteklerinin kanun yolu başvurusunda açıkça belirtilmesi halinde inceleme merciince incelenip karara bağlanacağı kabul edilmiştir.</p>
+
+<p>TBMM’ne sunulan tasarıda, ilk derece mahkemesince reddolunan veya karara bağlanmayan katılma isteklerinin istinaf yolu başvurusunda açıkça belirtilmek şartıyla karara bağlanacağı belirtilmiş ise de, Tasarının 249. maddesinin 2. fıkras 2. fıkrasındaki, “Bölge Adliye Mahkemesi” ve “İstinaf” ibareleri “Kanun yolu” şeklinde değiştirilerek 237. madde bütünlüğü altında kabul edilmiş bulunduğundan, kanun yolu ibaresinin temyiz incelemesini de kapsadığını kabul etmekte zorunluluk bulunmaktadır.</p>
+
+<p>CMK’nun 238. maddesindeki katılmaya ilişkin merasimin Yargıtay’ca yerine getirilmesinin imkansızlığı nedeniyle, katılma isteminin Yargıtay tarafından karara bağlanamayacağı ileri sürülebilir ise de, 238. madde, usulüne uygun bir katılma istemi üzerine ilk derece mahkemesince yapılması gereken işlemleri belirtmekte olup, 237. maddenin 2. fıkras 2. fıkrasındaki istisnai durumu kapsamamaktadır. 237/2. madde hükmünün katılma istemleri hakkında özel bir düzenleme getirdiği, usul ekonomisi amacı güttüğü ve 238. maddede öngörülen genel usule üst derece mahkemelerinde özel bir istisna oluşturduğu nazara alındığında, Yargıtay’ca katılma istemi konusunda, temyiz incelemesi aşamasında herhangi bir inceleme ve araştırma yapılmadan karar verilmesinin mümkün bulunduğu ahvalde öncelikle dairesince karar verilmeli, bu suretle AİHS’nin 6. maddesi bağlamında makul sürede yargılanma ilkesi hayata geçirilmeli, araştırma zorunluluğunun doğduğu ahvalde ise bu husus bozma nedeni yapılarak sorun çözümlenmelidir.</p>
+
+<p>Bu bilgiler ışığında somut olay değerlendirildiğinde;</p>
+
+<p>Müştekinin 08.06.2011 tarihli oturumda sanıklardan şikayetçi olduğunu beyan etmesi ve müşteki vekilinin 10.10.2011 tarihli dilekçesiyle sanıkların cezalandırılmasını talep etmesinin sanıklar hakkında açılan davaya katılma istemi niteliğinde bulunduğu gözetilmeden katılma konusunda yerel mahkeme tarafından olumlu ya da olumsuz bir karar verilmeyen somut olayda, müşteki vekilinin temyiz dilekçesinde katılma konusunda karar verilmesi yönünde açıkça bir isteğinin bulunmadığı, dolayısıyla Özel Dairece bu konuda bir karar verilmesinin mümkün olmadığı düşünülebilir ise de; müşteki ve vekilinin kovuşturma aşamasında istikrarlı bir şekilde sanıkların cezalandırılmasını talep etmesinin ve müşteki vekilinin, yerel mahkeme hükmünü temyiz etmiş olmasının, kanun yolunda da davayı takip iradesini eylemli olarak ortaya koyduğu ve bu davranışın yerel mahkemece karara bağlanmayan katılma talebinin inceleme merciince incelenip karara bağlanmasına yönelik bir istemi de kapsadığı kabul edilmelidir.</p>
+
+<p>Böyle bir kabul ile yargılamaların gereksiz yere uzamasının, dolayısıyla da davaların zamanaşımına uğramasının önüne geçilebilecektir. Aksi takdirde yerel mahkeme hükmünün, katılma konusunda olumlu ya da olumsuz bir karar verilmediği gerekçesiyle bozulması yargılamanın gereksiz yere uzaması sonucunu doğuracaktır ki, bu durum “davaların en az giderle ve mümkün olan süratle sonuçlandırılması, yargının görevidir” şeklinde düzenlenmiş olan Anayasanın 141/4. maddesi ile Avrupa İnsan Hakları Sözleşmesinin adil yargılanma hakkını düzenleyen 6. maddesine aykırılık oluşturacaktır.</p>
+
+<p>Katılma konusunda Yargıtay ilgili dairesince karar verilmesi halinde, katılan sıfatını kazanan kişinin özellikle, iddia ve delillerini bildirme haklarını kullanamayacağı, diğer taraftan katılma konusunda karar verilmeden önce Cumhuriyet savcısı, sanık ve varsa müdafii dinlenilmeden karar verilmek suretiyle 5271 sayılı CMK’nun 238/3. maddesine aykırılık oluşturulacağı ve sanık yönünden savunma hakkının sınırlandırılması sonucunu doğuracağı eleştirisi getirilebilir ise de; Ceza Genel Kurulunun 28.02.2012 gün ve 294-64 sayılı kararında, Cumhuriyet savcısı, sanık ve varsa müdafiinin görüşü sorulmadan katılma kararı verilmesinin nispi nitelikte bir hukuka aykırılık olduğu ve esasa etkili bulunmadığı sonucuna ulaşılmış olup, böyle bir durumda savunma hakkının sınırlandığından söz edilemeyecektir.</p>
+
+<p>Mahkemenin “maddi gerçeği araştırma ilkesi” ile 5271 sayılı “Mağdur ile şikayetçinin hakları” başlıklı 234. maddesinde; mağdur ile şikâyetçinin soruşturma evresinde “delillerin toplanmasını isteme”, kovuşturma evresinde ise “tutanak ve belgelerden vekili aracılığı ile örnek alma ve tanıkların davetini isteme” haklarının bulunduğunun kabul edilmiş olması karşısında da, ilgili katılan sıfatını kazanmadan dahi bu haklarını kullanabileceğinden, sonuç olarak iddia ve delillerini bildirme hakkının kullanılmaması da söz konusu olmayacaktır.</p>
+
+<p>Bu itibarla, Yargıtay Cumhuriyet Başsavcılığı itirazının kabulüne, Özel Daire bozma kararının kaldırılmasına, müştekinin katılma istemi konusunda bir karar verilmesi için dosyanın Özel Daireye gönderilmesine karar verilmelidir.</p>
+
+<p>Sonuç: Açıklanan nedenlerle;</p>
+
+<p>1- Yargıtay Cumhuriyet Başsavcılığı itirazının KABULÜNE,</p>
+
+<p>2- Yargıtay 5. Ceza Dairesinin 09.01.2013 gün ve 7482-103 sayılı bozma kararının KALDIRILMASINA,</p>
+
+<p>3- Dosyanın, müştekinin katılma istemi konusunda bir karar verilmesi için Yargıtay 5. Ceza Dairesine gönderilmek üzere Yargıtay Cumhuriyet Başsavcılığına TEVDİİNE, 17.02.2015 günü yapılan müzakerede oybirliği ile, karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY CEZA GENEL KURULU
+Esas: 2013/15-289 Karar: 2014/342</strong> Tarih: 02.07.2014</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 238. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Katılma Usulü</strong></p>
+  </li>
+</ul>
+
+<p>Hizmet nedeniyle güveni kötüye kullanma suçundan sanıkların beraatına ilişkin, Bursa 1. Asliye Ceza Mahkemesince verilen 03.03.2009 gün ve 1311-201 sayılı hükmün katılan vekili tarafından temyiz edilmesi üzerine dosyayı inceleyen Yargıtay 15. Ceza Dairesince 27.12.2012 gün ve 65747-46613 sayı ile;</p>
+
+<p>“… Şikayetçinin 01.11.2006 tarihli celsede davaya katılmak istemediğini beyan etmesine rağmen vekilinin 03.03.2009 tarihli celsede davaya katılma talebinde bulunması ve usulüne uygun katılma kararı verilmesi karşısında CMK’nın 237/1, 234/6 maddeleri gereğince temyiz hakkı bulunduğu anlaşılmakla tebliğnamedeki red görüşüne iştirak edilmemiştir” açıklamasıyla sanık C. U. hakkında kurulan hükmün onanmasına, sanık S. A. hakkında kurulan hükmün ise;</p>
+
+<p>“Güveni kötüye kullanma suçunun oluşabilmesi için; failin bir malın zilyedi olması, malın iade edilmek veya belirli bir şekilde kullanmak üzere faile rızayla tevdi ve teslim edilmesi,failin kendisine verilen malı,veriliş gayesinin dışında,zilyedi olduğu malda malikmiş gibi satması, rehnetmesi tüketmesi,değiştirmesi veya bozması ve benzeri şekillerde tasarrufta bulunması ya da devir olgusunu inkar etmesi şeklinde, kendisine veya başkasına yarar sağlaması gerekmektedir.</p>
+
+<p>Somut olayda; sanığın yanında işçi olarak çalıştığı katılanın kendisine verdiği senedi tahsil etmesine rağmen bedelini katılana vermeyerek kendisinde tuttuğu olayda hizmet nedeni ile emniyeti suistimal suçunun oluştuğu gözetilmeden mahkumiyeti yerine yazılı şekilde beraatine karar verilmesi…”,</p>
+
+<p>İsabetsizliğinden bozulmasına karar verilmiştir.</p>
+
+<p>Yargıtay Cumhuriyet Başsavcılığı ise 31.01.2013 gün ve 152960 sayı ile;</p>
+
+<p>“… Müşteki asilin, 27.02.2007 tarihli celsede alınan beyanında şikayetçi olduğunu ancak davaya katılmak istemediğini belirttiği, bilahare yargılama aşamasında müşteki vekilinin 03.03.2009 tarihli celsede davaya katılma talebinde bulunması üzerine mahkemece katılma kararı verildiği ve bu katılma kararına bağlı olarak da hükmün temyiz edildiği Yüksek Dairece de temyiz edenin sıfatının bulunduğu ve temyizin geçerli olduğu kabul edilmekle Yargıtay Cumhuriyet Başsavcılığımız ile Yüksek Yargıtay 15. Ceza Dairesi arasında bu konuda uyuşmazlık bulunduğu, katılma usulünü düzenleyen 238. maddenin 1. fıkrası başvuru şeklini, 2. fıkrası ise duruşma sırasında şikayeti belirten ifade üzerine suçtan zarar görenden davaya katılmak isteyip istemediğinin sorulması hususunu açıklamıştır. Yasa koyucu burada şikayetçi olan suçtan mağdur olan kişiye açıkca davaya katılıp katılmama husunun sorulmasını gerekli görmekle şikayet ile katılmayı birbirinden ayırmıştır. Davaya katılma talebi olmayan suçtan zarar gören kişinin pek tabi şikayetçi olması mümkün olabilmektedir, şikayetçi davaya katılmak istemediğini belirtmekle katılmanın kendisine verdiği haklardan vazgeçmekte, ancak ceza yargılamasının da devamını netice itibariyle sanığın ceza alması iradesini göstermektedir.</p>
+
+<p>Olayımızda suçtan zarar gören müştekiye yasal haklarının hatırlatıldığı şikayetçi olduğunu ancak davaya katılmak istemediğini açıkça beyan etmesi nedeniyle sanığın cezalandırılmasını ancak katılmanın kendisine tanıdığı hakları kullanmayacağını belirtmiş olmaktadır, ayrıca 243. maddesi katılanın vazgeçmesi halinde katılmanın hükümsüz kalacağını düzenlemiştir. Burada katılan vazgeçmekte, olayımızda ise katılma hakkını kullanmayacağını bu haktan vazgeçtiğini beyan etmekte olup, ayrıca vazgeçmenin vazgeçmesi olamayacağından aksi durumun her celse mahkemeleri katılma hususunda suçtan zarar görene haklarının hatırlatılması, sanığı da suçtan zarar gören ile anlaşmaya zorlama yönünde bir olumsuzluk yüklemeyi gerektirir.</p>
+
+<p>Ayrıca katılma talebi bulunmayan asil ile vekilininde bu hususta iradeleri çelişmekte olup asilin iradesinin geçerli olması hususu da değerlendirilmemiştir…”,</p>
+
+<p>Görüşüyle itiraz kanun yoluna başvurmuştur.</p>
+
+<p>5271 sayılı CMK’nun 308. maddesi uyarınca inceleme yapan Yargıtay 15. Ceza Dairesince 10.04.2013 gün ve 5722-6617 sayı ile, itiraz nedenlerinin yerinde görülmediğinden bahisle Yargıtay Birinci Başkanlığına gönderilen dosya, Ceza Genel Kurulunca değerlendirilmiş ve açıklanan gerekçelerle karara bağlanmıştır:</p>
+
+<p>KARAR : Özel Daire ile Yargıtay Cumhuriyet Başsavcılığı arasında oluşan ve Ceza Genel Kurulunca çözümlenmesi gereken uyuşmazlık; şikayeti devam eden ve duruşmada davaya katılmak istemediğini beyan eden müştekinin, kovuşturmanın devamında katılma hakkını kullanmasının mümkün olup olmadığının belirlenmesine ilişkindir.</p>
+
+<p>İncelenen dosya kapsamından;</p>
+
+<p>Müştekinin 15.08.2005 tarihinde sanıklardan şikayetçi olduğuna ilişkin Bursa Cumhuriyet Başsavcılığına şikayet dilekçesi verdiği, kollukça alınan aynı günlü ifadesinde sanıklardan şikayetçi olduğunu belirttiği,</p>
+
+<p>Sanıklar hakkında kamu davasının açılmasından sonra 01.11.2006 tarihli duruşmaya vekili olmaksızın katılan müştekinin şikayetinin devam ettiğini, ancak davaya katılmak istemediğini ifade ettiği,</p>
+
+<p>Sanık Cevdet’in sorgusunun 06.11.2006, sanık Sadık’ın ise 14.01.2009 tarihinde yapıldığı ve her iki sanığın da suçlamayı kabul etmedikleri,</p>
+
+<p>Müşteki vekili olarak 03.03.2009 günlü son celseye katılan Avukat H.U.nun, kovuşturmanın başında davaya katılmak istemediğini belirten müştekinin suçtan zarar gördüğünü ve bu celseden itibaren davaya katılmak istediğini belirttiği, bunun üzerine yerel mahkemenin müştekinin katılma istemini kabul ettiği,</p>
+
+<p>Sanık Cevdet hakkında beraat, sanık Sadık hakkında ise mahkumiyet kararı verilmesi gerektiği yönünde görüş bildiren Cumhuriyet savcısının sanık Sadık hakkında verilen beraat kararını temyiz etmediği, hükmün katılan vekilince her iki sanık aleyhine temyiz edildiği, anlaşılmaktadır.</p>
+
+<p>5271 sayılı mağdur ve şikâyetçinin haklarını düzenleyen “Mağdur ile şikâyetçinin hakları” başlıklı 234. maddesinin birinci fıkrasının ( b ) bendi;</p>
+
+<p>“Kovuşturma evresinde;</p>
+
+<p>1.Duruşmadan haberdar edilme,</p>
+
+<p>2.Kamu davasına katılma,</p>
+
+<p>3.Tutanak ve belgelerden vekili aracılığı ile örnek isteme,</p>
+
+<p>4.Tanıkların davetini isteme,</p>
+
+<p>5.Ve 5. Vekili yoksa, baro tarafından kendisine avukat atanmasını isteme,</p>
+
+<p>6.Davaya katılmış olma koşuluyla davayı sonuçlandıran kararlara karşı kanun yollarına başvurma” şeklinde olup, buna göre mağdur ile şikayetçinin kovuşturma evresinde; duruşmadan haberdar edilme, kamu davasına katılma, tutanak ve belgelerden vekili aracılığı ile örnek isteme, tanıkların davetini isteme, vekili yoksa baro tarafından kendisine avukat atanmasını isteme ve davaya katılmış olmak şartıyla davayı sonuçlandıran kararlara karşı kanun yollarına başvurma haklarının bulunduğu hüküm altına alınmış, maddenin, “Bu haklar, suçun mağdurları ile şikâyetçiye anlatılıp açıklanır ve bu husus tutanağa yazılır” şeklinde düzenlenen son fıkrasında ise, bu hakların mağdur ve şikâyetçiye anlatılıp açıklanacağı ve bu hususun tutanağa yazılacağı belirtilmiştir.</p>
+
+<p>Anılan maddenin birinci fıkrasının ( b ) bendinin açık düzenlemesinden de anlaşılacağı üzere, kamu davasına katılmanın kanun koyucu tarafından, mağdur ve şikayetçi için kovuşturma aşamasında kullanılabilecek bir hak olarak düzenlendiği görülmektedir.</p>
+
+<p>Bir hak olarak hüküm altına alınmış olan kamu davasına katılma, 5271 sayılı “Mağdur, Şikayetçi, Malen sorumlu, Katılan” başlıklı dördüncü kitabının, “Kamu Davasına Katılma” başlıklı ikinci kısmında 237 ila 243. maddeler arasında düzenlenmiştir.</p>
+
+<p>237.maddesinde; “ ( 1 ) Mağdur, suçtan zarar gören gerçek ve tüzel kişiler ile malen sorumlu olanlar, ilk derece mahkemesindeki kovuşturma evresinin her aşamasında hüküm verilinceye kadar şikâyetçi olduklarını bildirerek kamu davasına katılabilirler.</p>
+
+<p>( 2 ) Kanun yolu muhakemesinde davaya katılma isteğinde bulunulamaz. Ancak, ilk derece mahkemesinde ileri sürülüp reddolunan veya karara bağlanmayan katılma istekleri, kanun yolu başvurusunda açıkça belirtilmişse incelenip karara bağlanır.” hükmüne yer verilmiş,</p>
+
+<p>Katılma usulünü düzenleyen 238. maddesinde ise;</p>
+
+<p>” ( 1 ) Katılma, kamu davasının açılmasından sonra mahkemeye dilekçe verilmesi veya katılma istemini içeren sözlü başvurunun duruşma tutanağına geçirilmesi suretiyle olur.</p>
+
+<p>( 2 ) Duruşma sırasında şikâyeti belirten ifade üzerine, suçtan zarar görenden davaya katılmak isteyip istemediği sorulur.</p>
+
+<p>( 3 ) Cumhuriyet savcısının, sanık ve varsa müdafiinin dinlenmesinden sonra davaya katılma isteminin uygun olup olmadığına karar verilir.</p>
+
+<p>( 4 ) Sulh ceza mahkemesinde açılmış olan davalarda katılma hususunda Cumhuriyet savcısının görüşü alınmaz.” biçiminde, katılma isteminin şekli ve istem üzerine yapılacak işlemler ayrıntılı olarak düzenlenmiştir.</p>
+
+<p>Buna göre, mağdur, şikayetçi, suçtan zarar gören ve malen sorumlu olanların kovuşturma evresinin her aşamasında hüküm verilinceye kadar şikayetçi olduklarını bildirerek kamu davasına katılmaları mümkün olup, bunun için kamu davasının açılmasından sonra mahkemeye dilekçe verilmesi ya da katılma istemini içeren sözlü başvurunun duruşma tutanağına geçirilmesi yeterlidir. Kamu davasına katılma hakkını kullanmanın öncelikli şartı şikayetin devam etmesi olduğundan, şikayet hakkı bulunan kişinin şikayetten vazgeçmesi halinde davaya katılma hakkı bulunmamaktadır.</p>
+
+<p>Takibi şikayete bağlı suçlar yönüyle şikayet hakkı bulunan kişinin, dava şartı olan şikayet hakkını kullanmaması, diğer bir ifadeyle şikayetçi olmadığını belirtmesi ilgili için bağlayıcı olmakta ve derhal sonuç doğurmakta ise de, aynı durum kamu davasına katılma hakkı için söz konusu değildir.</p>
+
+<p>Zira 237. maddesinin birinci fıkrasının açık düzenlemesinden de anlaşılacağı üzere, kamu davasına katılma hakkının kovuşturma evresinin her aşamasında hüküm verilinceye kadar kullanılması mümkündür. Buna göre, katılma hakkı bulunan kişinin kovuşturmanın başlangıcında bu hakkını kullanmamış olması, şikayetinin devam ediyor olması şartıyla sonradan bu hakkını kullanmasına engel oluşturmayacaktır. Katılma hakkı bulunan ilgili davanın başlangıcında bu hakkı kullanmasına gerek olmadığını düşünürken, sonrasında davada gelinen aşama ve yaşanan gelişmeler itibariyle bu hakkını kullanmak istemesi mümkündür. Yargılamanın başlangıcında sanığın cezalandırılması düşüncesinde olan ve kamu davasını açan Cumhuriyet savcısının, yargılamanın sonunda sanığın beraatına karar verilmesi gerektiği yönünde görüş açıklaması bu duruma örnek gösterilebilir.</p>
+
+<p>Kaldı ki kovuşturmanın herhangi bir aşamasında katılma hakkını kullanmayacağını belirten kişinin, bu hakkını sonradan bir daha kullanamayacağı yönünde yasaklayıcı bir düzenlemeye de kanunda yer verilmemiş olup, bilakis anılan kanunun “ ( 1 ) Katılan, vazgeçerse veya ölürse katılma hükümsüz kalır. Mirasçılar, katılanın haklarını takip etmek üzere davaya katılabilirler” şeklinde düzenlenmiş olan “Katılmanın hükümsüz kalması” başlıklı 243. maddesinde, kişinin davaya katılma isteminde bulunup da bu hakkı elde etmesinden sonra, diğer bir ifadeyle katılan sıfatını kazanmasının akabinde katılmadan vazgeçmesi halinde artık katılmanın hükümsüz kalacağı düzenlemesine yer verilmiştir.</p>
+
+<p>Diğer taraftan, katılma hakkı bulunan ve şikayetçi olduğunu belirten kişinin kovuşturmanın başında bu hakkını kullanmayacağını ifade etmesinin, 5271 sayılı CMK’nun 238/2. maddesi gereğince, şikayetçi olduğunu belirten ilgiliye davaya katılmak isteyip istemediğini sorma yükümlülüğü bulunan mahkemeye, yargılamanın tüm aşamalarında bu yükümlülüğü yerine getirme gibi bir sorumluluğu yüklenebileceği ileri sürülebilir ise de, davaya katılmak isteyip istemediğinin ilgiliye bir defa sorulması ile mahkemenin yükümlülüğü sona erdiğinden, başlangıçta katılma hakkını kullanmak istemeyen ilgilinin, bu aşamadan sonra mahkemenin kendisine yeniden davaya katılmak isteyip istemediğini sormasını beklemeksizin bu hakkını kullanması gerekmektedir.</p>
+
+<p>Bu bilgiler ışığında uyuşmazlık konusu değerlendirildiğinde;</p>
+
+<p>Kovuşturmanın başlangıcında yapılan celsede kamu davasına katılma hakkını kullanmayan ve şikayeti devam eden müştekinin, kovuşturmanın devamında hüküm verilmeden önce davaya katılma isteminde bulunması üzerine yerel mahkemece davaya katılan olarak kabulüne karar verilmesi, Özel Dairece de katılan vekilinin temyiz başvurusunun kabulü ile hükmün esasının incelenmesinde usul ve kanuna aykırılık bulunmamaktadır.</p>
+
+<p>Bu itibarla, itirazın reddine karar verilmelidir.</p>
+
+<p>Çoğunluk görüşüne katılmayan on bir Genel Kurul Üyesi; itirazın kabulüne karar verilmesi gerektiği yönünde karşı oy kullanmışlardır.</p>
+
+<p>SONUÇ : Açıklanan nedenlerle;</p>
+
+<p>1- Yargıtay Cumhuriyet Başsavcılığı itirazının REDDİNE,</p>
+
+<p>2- Dosyanın, mahalline gönderilmek üzere Yargıtay Cumhuriyet Başsavcılığına TEVDİİNE, 17.06.2014 günü yapılan birinci müzakerede yeterli çoğunluk sağlanamadığından, 02.07.2014 günü yapılan ikinci müzakerede oyçokluğuyla karar verildi.</p>
+
+<hr>
+
+</div></div></main>
+</div>
+
+<footer>
+<section>
+<div class="contact-info">
+
+<div class="adres">
+
+<div class="telefon-wrapper">
+
+
+</div>
+</div>
+</section>
+
+</div>
+
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+"vars": {
+"account": "UA-58342443-1"
+},
+"triggers": {
+"trackPageview": {
+"on": "visible",
+"request": "pageview"
+}
+}
+}
+</script>
+</amp-analytics>
+
+</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="../../index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="../../dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="../../ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="../../knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="../../search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/slideToggle.min.js"></script>
+    <script src="../js/internet-status.js"></script>
+    <script src="../js/tiny-slider.js"></script>
+    <script src="../js/baguetteBox.min.js"></script>
+    <script src="../js/countdown.js"></script>
+    <script src="../js/rangeslider.min.js"></script>
+    <script src="../js/vanilla-dataTables.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/magic-grid.min.js"></script>
+    <script src="../js/dark-rtl.js"></script>
+    <script src="../js/active.js"></script>
+    <!-- PWA -->
+    <script src="../js/pwa.js"></script>
+  </body>
+</html>

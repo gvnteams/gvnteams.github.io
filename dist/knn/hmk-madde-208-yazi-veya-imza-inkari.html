@@ -1,0 +1,623 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tiny-slider.css">
+    <link rel="stylesheet" href="../css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="../css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="tck-search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+               <div class="page-content-wrapper py-0">
+        </div>
+      </div>
+
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<h2 id="yazı-veya-i̇mza-i̇nkârı">Yazı veya İmza İnkârı</h2>
+
+<h2 id="hmk-madde-208">HMK Madde 208</h2>
+
+<p>(1) Taraflardan biri, kendisi tarafından düzenlendiği iddia edilen bir belgedeki yazı veya imzayı inkâr etmek isterse, sahtelik iddiasında bulunmalıdır; aksi hâlde belge, aleyhine delil olarak kullanılır.</p>
+
+<p>(2) Bir belgenin sahteliği iddia edildiğinde, belgenin mahkemeye verildiği tarih yazılıp mühürlenerek, saklanması için mahkemece gerekli tedbirler alınır.</p>
+
+<p>(3) Bir belgenin sahteliğini iddia eden kimse, bunu aynı mahkemede ön sorun şeklinde ileri sürebileceği gibi, bu konuda ayrı bir dava da açabilir.</p>
+
+<p>(4) Resmî bir senetteki yazı veya imzayı inkâr eden tarafın bu iddiası, ancak ilgili evraka resmiyet kazandıran kişiyi de taraf göstererek açacağı ayrı bir davada incelenip karara bağlanabilir. Asıl davaya bakan hâkim, gerekirse bu konuda imza veya yazıyı inkâr eden tarafa, dava açması için iki haftalık kesin bir süre verir.</p>
+
+<hr>
+
+<ul>
+  <li><a href="../6100-sayili-hukuk-muhakemeleri-kanunu-(hmk).html"><strong>6100 sayılı HMK (Hukuk Muhakameleri Kanunu) Tam Metin</strong></a></li>
+</ul>
+
+<hr>
+
+<amp-img src="../tokmak-yargitay-kararlari-1280x720.png" alt="HMK Madde 208  Yazı veya İmza İnkârı" width="1280" height="720" layout="responsive">
+            </amp-img>
+
+<h2 id="hmk-madde-208-gerekçesi">HMK Madde 208 Gerekçesi</h2>
+
+<p>Madde ile 1086 sayılı Kanunun 308, 310 ve 314 üncü maddelerindeki konu ile ilgili farklı hükümler tek bir maddede düzenlenmiştir. Dağınık hükümlerin bulunması nedeniyle ortaya çıkan tereddütler kaldırılmış, sistematik bütünlüğün sağlanması amaçlanmış ve böylece sahtelik iddiasının ileri sürülme şekli netleştirilmiştir.</p>
+
+<p>Maddenin kenar başlığında “Yazı veya imza inkârı” ibaresi birlikte kullanılmıştır. Her iki husus uygulamada sahtelik iddiası olarak adlandırılan durumu ifade etmektedir.</p>
+
+<p>Birinci fıkrada, tarafların kendilerine izafe edilen bir belgedeki yazı veya imza konusunda inkârları söz konusu ise bunu sahtelik iddiası şeklinde ileri sürmeleri aranmış, aksi hâlde belgenin aleyhlerine delil olarak kullanılacağı belirtilmiştir. Belgelerin delil olarak önemi açıktır. Yargılamada delil olarak kullanılan bir belge hakkında tarafların sahtelik iddiası söz konusu değilse, kanunda öngörülen hâller dışında kural olarak doğruluğunun ayrıca araştırılmasına gerek yoktur. Bu sebeple yazı veya imza inkârında bulunan tarafın bunu açık bir sahtelik iddiası ile ileri sürmesi gereklidir.</p>
+
+<p>İkinci fıkra ile sahteliği iddia edilen belgenin, korunması için mahkemece yapılacak işlemler düzenlenmiştir. Sahtelik iddia edildiğinde, bu iddianın sağlıklı incelenebilmesi için, belgenin o anki durumunun korunması gereklidir. Bunun için, sahtelik iddiası hâlinde, belgenin mahkemeye verildiği tarih yazılıp mühürlenerek, saklanması için mahkemece uygun görülen tedbirler alınacaktır.</p>
+
+<p>Üçüncü fıkrada, sahtelik iddiasının incelenme usulü düzenlenmiştir. Sahtelik iddiası adî senetlerde ara sorun veya ayrı bir dava şeklinde, resmî senetlerde kural olarak ayrı bir dava olarak açılıp incelenecektir. Hukuk mahkemesince, belgenin sahte olmadığına kesin olarak karar verilirse, bu belge konusunda ceza mahkemesince de inceleme yapılmayacağı kabul edilerek, çelişkili kararların ve aynı hususların tekrar incelenmesinin önüne geçilmesi amaçlanmıştır. Senedin sahteliğine karar verilmesi hâlinde ise ceza hukukundaki kriterlerin ayrıca dikkate alınması gerekir.</p>
+
+<p>Dördüncü fıkrada, resmî senetlerdeki yazı veya imza inkârının nasıl ileri sürüleceği açıkça düzenlenmiştir. Resmî senetlerde sahtelik iddiası söz konusu olduğunda, bu iddianın nasıl ileri sürüleceği ve inceleneceği uygulamada tereddüt doğurabilmektedir. Bu konudaki tereddütleri tamamen ortadan kaldırmak amacıyla, resmî senetteki yazı veya imzayı inkâr eden tarafın bu iddiasını, ancak ilgili evraka resmîyet kazandıran kişiyi de taraf göstererek açacağı ayrı bir davada ileri sürmesi kabul edilmiştir. Zira, (resmî senedin düzenlenmesinden sonra, resmî senede benzetilerek sahte belge tanzimi dışında), evraka resmîyet kazandıran kişi dahil olmadan bir resmî senette sahtelik yapılması kural olarak mümkün değildir. Sahtelik iddiasının sadece karşı tarafa ya da sadece evrakı düzenleyene yöneltilmesi veya bunlara karşı farklı zamanlarda ayrı davaların açılması çelişik kararların ortaya çıkmasına sebep olabilecek, resmî senedin niteliği ile bağdaşmayan bir durumla karşı karşıya kalınabilecektir. Ayrıca, sadece karşı tarafa veya sadece evrakı düzenleyene dava açılması, bu yolun kötüye kullanılarak yargılamaların uzatılması sonucunu doğurabilecektir. Resmî senetlerin güvenilirliği de dikkate alındığında, bu konudaki iddianın, evrakı düzenleyene de yöneltilerek bir an önce aydınlatılması önem taşımaktadır. Mevcut dava içinde de böyle bir sahtelik iddiasının karara bağlanması mümkün değildir. Zira, mevcut davanın tarafları dışında, evrakı düzenleyenin de asıl uyuşmazlıkla ilgisi olmadığı hâlde taraf gösterilerek, dava içinde tarafları farklı yeni bir davanın görülmesi şeklinde bir usul, yargılama hukukumuzda mümkün değildir. Belirtilen sebeplerle, resmî senetlerdeki sahtelik iddiasının, evrakı düzenleyen ve senetten lehine sonuç çıkarana karşı açılacak ayrı bir davada görülerek, karara bağlanması düzenlenmiştir. Sahtelik iddiasını ileri süren taraf, bu şekilde ayrı bir dava açmamışsa, yargılamanın uzamaması ve bu imkânın kötüye kullanılmaması için, asıl davaya bakan hâkimin, gerekirse bu konuda yazı veya imzayı inkâr eden tarafa, dava açması için onbeş günlük (“iki hafta”olarak yasalaşmıştır) kesin bir süre vermesi de maddede ayrıca düzenlenmiştir.</p>
+
+<hr>
+
+<h2 id="hmk-208-yazı-veya-i̇mza-i̇nkârı-emsal-yargıtay-kararları">HMK 208 (Yazı veya İmza İnkârı) Emsal Yargıtay Kararları</h2>
+
+<hr>
+
+<p><strong>Hukuk Genel Kurulu         2019/128 E.  ,  2021/1131 K</strong></p>
+
+<ul>
+  <li><strong>HMK 208</strong></li>
+  <li><strong>Yazı ve imzanın sahteliğinin ileri sürülmesi</strong></li>
+</ul>
+
+<p>Hukuk Muhakemeleri Kanunu’nun (HMK) 208. maddesine göre taraflardan biri, kendisi tarafından düzenlendiği iddia edilen bir belgedeki yazı veya imzayı inkâr etmek isterse, sahtelik iddiasında bulunmalıdır; aksi hâlde mahkemeye sunulan bu belge, sahtelik iddiasında bulunmayan aleyhine delil olarak kullanılır. Yazı veya imza inkârının sonucuna ilişkin HMK’nın 209. maddesindeki hüküm uyarınca adî senetteki yazı veya imza inkâr edilirse, bu konuda bir karar verilinceye kadar o senet herhangi bir işleme esas alınamaz ve delil olarak kullanılamaz; resmî senetlerdeki yazı veya imzanın inkârı hâlinde de senetteki yazı veya imzanın sahteliği ancak mahkeme kararıyla sabit olursa, bu senet herhangi bir işleme esas alınamaz.</p>
+
+<p>Sahtelik iddiası hâlinde HMK’nın 211. maddesinde;</p>
+
+<p>“(1) Bir belgenin sahteliğinin iddia edilmesi durumunda, bu hususta karşı tarafın açıklamaları da dikkate alınarak, aşağıdaki sıra ile inceleme yapılarak öncelikle karar verilir:</p>
+
+<p>a) Hâkim, yazı veya imzayı inkâr eden tarafı isticvap ettikten sonra bir kanaat edinememişse, huzurda bu kişiye yazı yazdırıp imza attırmak suretiyle elde ettiği belge ve diğer delilleri değerlendirir. Hâkim, sahtelik konusunda başka bir incelemeye gerek duymadan karar verebilecek durumda ise gerekçesini açıkça belirtmek suretiyle, senedin sahteliği hakkında bir karar verir. İsticvap için mahkemeye davet edilen taraf, belirtilen günde hazır bulunmadığı takdirde, inkâr etmiş olduğu belgedeki yazı veya imzayı ikrar etmiş sayılır; bu husus kendisine çıkartılacak davetiyede ayrıca ihtar edilir.</p>
+
+<p>b) (a) bendi hükmüne göre yaptığı incelemeye rağmen, hâkimde sahtelik konusunda kesin bir kanaat oluşmamışsa, bilirkişi incelemesine karar verir. Bilirkişi incelemesinden önce, mevcutsa, o tarafa ait olan karşılaştırma yapmaya elverişli yazı ve imzalar, ilgili yerlerden getirtilir. Bilirkişi, bu yazı ve imzalarla, o mahkemede elde edilen yazı ve imzaları esas alarak inceleme yapar. Bilirkişi, inceleme için gerekli görürse, kendi huzurunda tarafın yeniden yazı yazması veya imza atmasını mahkemeden talep edebilir.” şeklinde sahtelik incelemesinin nasıl yapılacağı belirtilmiştir.</p>
+
+<p>Şu hâlde HMK’nın 211. maddesi uyarınca sahtecilik hususunda sıhhatli bir sonuç alınabilmesi ve kesin bir kanaat oluşması için, inkâr edilen imzanın atıldığı tarihten öncesinde veya mümkün olduğu kadar yakın tarihlerde düzenlenen belgelerde bulunan ilgili kişiye ait mukayeseye elverişli yazı ve imzalar temin edildikten sonra sahtelik iddiasına ilişkin bilirkişi incelemesi yapılması gerekir. Yargıtay’ın yerleşik içtihatlarına göre fotokopi üzerinden imza incelemesi yapılması mümkün değildir. Bu nedenle imza incelemesine esas alınan ilgili tarafın tatbike medar (uygulamaya elverişli) imzalarının bulunduğu belge asıllarının getirtilerek, incelemenin bunlar üzerinden yapılması gerekir.</p>
+
+<hr>
+
+<p><strong>YARGITAY 1. HUKUK DAİRESİ 
+Esas : 2015/11640 Karar : 2018/10402</strong> Tarih : 21.05.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 208. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yazı veya İmza İnkârı</strong></p>
+  </li>
+</ul>
+
+<p>Dava, muris muvazaası hukuksal nedenine dayalı tapu iptali ve tescil isteğine ilişkindir.</p>
+
+<p>Davacılar, asıl davada kök mirasbırakanları … ’in, 629 parsel sayılı taşınmazını, birleştirilen davada ise 2043, 2010, 2011, 1796, 1566 ve 2097 parsel sayılı taşınmazlarını mirastan mal kaçırma amaçlı ve muvazaalı olarak davalılara devrettiğini ileri sürerek, tapu kayıtlarının iptali ile miras payları oranında adlarına tescile karar verilmesini istemişlerdir.</p>
+
+<p>Davalılar, davacıların mirasbırakanları … ’nin Silivri Noterliğinin 22.05.1991 tarihli feragatnamesi ile dava konusu taşınmazlardaki miras yolu ile gelen haklarından davalı … lehine ivaz karşılığında feragat ettiğini belirterek davanın reddini savunmuşlardır.</p>
+
+<p>Mahkemece, davacıların mirasbırakanları … tarafından verilen feragatnamenin davacıları da bağlayacağı gerekçesiyle davanın reddine karar verilmiştir.</p>
+
+<p>Dosya içeriği ve toplanan delillerden, kök mirasbırakan … ‘in, asıl davaya konu 629 parsel sayılı taşınmazını 17.10.1987 tarihinde davalı oğlu … , … de 20.08.1991 tarihinde diğer davalı oğlu … satış suretiyle devrettiği, birleştirilen davaya konu 2043, 2010, 2011, 1796, 1566, 2097 parsel sayılı taşınmazlarını ise 19.10.1987 tarihinde davalı oğlu … , … de 17.03.1992 tarihinde dava dışı … , … de 19.08.1992 tarihinde davalılar … ve … (davalı … ‘ın çocuklarına) satış suretiyle devrettiği, asıl davanın 10.01.2012, birleştirilen davanın ise 25.09.2012 tarihinde açıldığı, 1911 doğumlu kök mirasbırakan … 24.10.1998 tarihinde öldüğü, geride mirasçı olarak kızı … olma torunları davacılar … olma dava dışı torunları …</p>
+
+<p>kaldıkları dava dışı mirasçılar … aynı taşınmazlara ilişkin aynı davalılar aleyhine muris muvazaası hukuksal nedenine dayalı olarak … 2. Asliye Hukuk Mahkemesinin 2009/963 Esas, … Asliye Hukuk Mahkemesinin 2001/781 Esas sayılı sayılı dava dosyaları ile açtıkları davalar bakımından yapılan yargılama sonucunda, temliklerin mirasçıdan mal kaçırma amaçlı ve muvazaalı olduğu gerekçesiyle davaların kabulüne karar verildiği, kararların deracattan geçerek kesinleştiği, bu hali ile işlemlerin muvazaalı olduğu anlaşılmaktadır.</p>
+
+<p>Diğer taraftan, davalılar, davacıların mirasbırakanı … Noterliğinin 22.05.1991 tarih 6716 yevmiye numaralı düzenleme şekilinde feragatnamesi ile çekişme konusu taşınmazlar yönünden davalı … lehine 5.000.000 TL karşılığı miras hak ve hisselerinden feragat ettiğine ilişkin belgeyi ibraz etmişlerse de, davacılar anılan belge bakımından sahtecilik iddiasında bulunmuşlardır.</p>
+
+<p>Bilindiği üzere, 6100 sayılı Hukuk Muhakemeleri Kanunu’nun yazı ve imza inkarı başlıklı 208/4. maddesinde “ Resmî bir senetteki yazı veya imzayı inkâr eden tarafın bu iddiası, ancak ilgili evraka resmiyet kazandıran kişiyi de taraf göstererek açacağı ayrı bir davada incelenip karara bağlanabilir. Asıl davaya bakan hâkim, gerekirse bu konuda imza veya yazıyı inkâr eden tarafa, dava açması için iki haftalık kesin bir süre verir” hükmü yer almaktadır.</p>
+
+<p>Somut olayda, davacılar, mirasbırakanları … imzasının bulunduğu 22.05.1991 tarihli feragatnamenin sahte olduğunu idiia ederek anılan belgeyi inkar etmişler ancak mahkemece HMK’nun 208/4. maddesi gereğince davacılara herhangi bir süre verilmeksizin sonuca gidilmiştir.</p>
+
+<p>Hal böyle olunca, davacı tarafa 22.05.1991 tarihli fragatnamenin sahte olduğu iddiası karşısında HMK’nun 208/4. maddesi gereğince dava açması için kesin süre verilmesi, sonucuna göre toplanan ve toplanacak deliller gözönüne alınarak bir karar verilmesi gerekirken, eksik inceleme ile yetinilerek yazılı şekilde davanın reddine karar verilmiş olması doğru değildir.</p>
+
+<p>Davacıların yerinde bulunan temyiz itirazlarının kabulü ile, hükmün (6100 sayılı Yasanın geçici 3.maddesi yollaması ile) 1086 sayılı HUMK’un 428.maddesi gereğince BOZULMASINA, alınan peşin harcın temyiz edene geri verilmesine, 21.05.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 9. HUKUK DAİRESİ
+Esas : 2014/18592 Karar : 2015/31755</strong> Tarih : 10.11.2015</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 208. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yazı veya İmza İnkârı</strong></p>
+  </li>
+</ul>
+
+<p>A) Davacı İsteminin Özeti:
+Davacı, iş sözleşmesinin işe iadesine karar verilmesine karşın işverence feshedildiğini ileri sürerek kıdem, ihbar, boşta geçen süre, işe başlatmama tazminatları ile boşta geçen sürenin diğer haklarının davalıdan tahsiline karar verilmesini istemiştir.</p>
+
+<p>B) Davalı Cevabının Özeti:
+Davalı, davanın reddine karar verilmesini istemiştir.</p>
+
+<p>C) Yerel Mahkeme Kararının Özeti:
+Mahkemece kısa kararda, toplanan kanıtlar ve bilirkişi raporuna dayanılarak, davalının iş sözleşmesini fesihte haksız olduğu gerekçesiyle kıdem, ihbar, boşta geçen süre, işe başlatmama tazminatları ile boşta geçen sürenin diğer haklarının kabulüne karar verilmiştir.</p>
+
+<p>Mahkemece gerekçeli kararında ise kıdem, ihbar, boşta geçen süre, işe başlatmama tazminatları ile boşta geçen sürenin diğer haklarının ve yıllık ücretli izin istemlerinin kabulüne karar verilmiştir.</p>
+
+<p>D) Temyiz:
+Kararı davalı vekili temyiz etmiştir.</p>
+
+<p>E) Gerekçe:
+Tefhim edilen kısa kararda kıdem, ihbar, boşta geçen süre, işe başlatmama tazminatları ile boşta geçen sürenin diğer haklarının kabulüne karar verildiği halde sonradan yazılan gerekçeli kararın hüküm fıkrasında davacının dava ve ıslah dilekçesinde talep etmediği yıllık ücretli izin isteminin de kabulüne karar verilmiştir. Kısa kararla gerekçeli karar arasında çelişki oluşmuştur. Salt bu aykırılık 10.04.1992 gün ve….. karar sayılı Yargıtay İçtihadı Birleştirme Kararı ile HMK.nun 208/2. maddesine göre bozma sebebidir.</p>
+
+<p>Temyiz olunan kararın, yukarıda yazılı sebepten dolayı ( BOZULMASINA ), bozma nedenine göre davalının diğer temyiz itirazlarının incelenmesine şimdilik yer olmadığına, peşin alınan temyiz harcının istek halinde ilgiliye iadesine oy birliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 11. HUKUK DAİRESİ
+Esas: 2016/1083 Karar: 2017/34</strong> Tarih: 03.01.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 208. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yazı veya İmza İnkârı</strong></p>
+  </li>
+</ul>
+
+<p>Davacı vekili, müvekkilinin davalı Red Bull Gıda Dağıtım ve Pazarlama Ticaret Limited Şirketi’nde bulunan %15 hissesini diğer davalıya hakim ortak Red Bull Gmbh’nin baskıları sonucu müvekkilinin oğlu ve aynı zamanda şirket müdürü A. F. tarafından geçersiz olan hisse devir sözleşmesi ile devredildiğini, hisse devir sözleşmesindeki imzanın müvekkiline ait olmadığını, imzanın müvekkilinin oğlu A. F.’a ait olup, bu imzanın Aykut şehir dışındayken imza atılan belgeye ilişkin olduğunu, vekaleten imza atıldığına ilişkin bir açıklama bulunmadığını, bu nedenle hisse devir sözleşmesinin geçersiz olduğunu, hisse devrine muvafakat edilmesine ilişkin 10.07.2009 tarihli ortaklar kurulu kararının altındaki imzanın da müvekkiline ait olmadığını, bu nedenle ortaklar kurulu kararının da geçersiz olduğunu, bir an için hisse devrinin geçerli olduğu kabul edilse bile davacının 21. maddesi uyarınca gabine maruz kalması nedeniyle sözleşmeyle bağlı olmadığını, çünkü devre konu hisselerin gerçek değerinin çok altında satış gösterildiğini, hakim ortağın müvekkiline ve oğluna yönelik baskı ve tehditlerde bulunduğunu, usulsüz hisse devri nedeniyle müvekkilinin uğradığı zararlardan davalıların sorumlu olduğunu ileri sürerek, hisse devir sözleşmesinin ve ortaklar kurulu kararının sahteliği nedeniyle geçersizliğinin tespitine, devir konusu payların pay defterine yeniden davacı adına tesciline karar verilmesini, bu talep kabul edilmediği takdirde bedele ilişkin hükmün gabin nedeniyle geçersizliğinin tespiti ile gerçek piyasa değerine göre aradaki fark için şimdilik 100.000 TL’nin devir tarihinden itibaren işleyecek avans faizi ile birlikte davalılardan müştereken ve müteselsilen tahsiline karar verilmesini talep ve dava etmiştir. Davacı vekili 08.07.2010 tarihli ıslah dilekçesinde, talep sonucunu 9.831.500 TL’ye çıkarmıştır.</p>
+
+<p>Davalılar vekili, tahkim itirazında bulunarak, perde arkasındaki gerçek hissedarın A. F. olduğunu, davacının oğlu A. F.’ı şirketlere katılmak, hisse almak ve satıp devretmek dahil en geniş yetkilerle vekil tayin ettiğini, dava konusu ortaklar kurulu kararını ve hisse devir sözleşmesini A. F.’ın imzaladığını, davacının Kartal 3. İcra Müdürlüğüne verdiği itiraz dilekçesinde hisse devrini açıkça benimsediğini, davacı iddialarının 2. maddesine aykırı olduğunu, müzayaka iddiasının gerçek olmadığını, gabinin objektif ve subjektif unsurlarının oluşmadığını, edimler arasında dengesizlik bulunmadığını, terditli taleplerin çelişkili olduğunu savunarak, davanın reddini istemiştir.</p>
+
+<p>Mahkemece, iddia, savunma ve tüm dosya kapsamına göre, davaya konu hisse devir sözleşmenin davacının oğlu olan vekili A. F. tarafından imzalanmış olduğu, ancak noter senedinde devreden olarak O. F.’ın yer aldığı, hisse devir senedinde imzanın vekaleten atıldığına dair bir açıklama bulunmadığı, davacı adına hisse devir sözleşmesini imzalayan A. F.’ın bu işlemi yapmaya yetkili olduğu, vekilin ya da temsilcinin imza atarken vekaleten ya da temsilci olarak hareket ettiğini yazmamasının tek başına o sözleşmeyi geçersiz hale getirmeyeceği, noterin imza tasdiki yaparken davacının kimlik tespitlerini yapmış olması ve vekilin ayrıca kimlik tespiti yapılmamış olması da tek başına geçersizlik sonucunu doğurmayacağı, noter tarafından imza tasdiki yapılmış olmakla 520. maddesinde öngörülen şekil şartının gerçekleştiği, hisse devrinin pay defterine işlenmesine dair şirket ortaklar kurulunun kararını davacı adına yine vekili olan A. F.’ın imzaladığı, bu karara O. F. adına vekilinin katılmış olmasında bir usulsüzlük bulunmadığı gibi, yukarıda açıklandığı üzere vekaleten hareket edildiğine dair açıklama yazılmaması imzayı geçersiz hale getirmeyeceği, hisse devrinin usulüne uygun olarak alınan ortaklar kurulu kararıyla şirket pay defterine işlendiği ve pay devrinin tamamlandığı, devir tarihinde gerçek hisse değerleri ile hisse devir senedinde gösterilen değerler arasında davacı aleyhinde açık bir nispetsizlik bulunmadığı, davacının ekonomik olarak zor durumda olup sözleşmeyi imzalamak zorunda kaldığına dair subjektif unsurları kanıtlayamadığı, dava konusu olayda gabinin varlığının da ispatlanamadığı gerekçesiyle, davanın reddine karar verilmiştir.</p>
+
+<p>Kararı, davacı vekili temyiz etmiştir.</p>
+
+<p>1-Dava, noterde düzenlenen limited şirket hisse devir sözleşmesi ile bu devre onay veren ortaklar kurulu kararının sahteliği sebebiyle hisse devrinin iptali istemine ilişkin olup, mahkemece hisseyi devralan ile hisseleri devredilen şirketin hasım olarak gösterildiği davada davanın reddine karar verilmiştir. Ancak, davacı vekili dava dışı noterlikçe tasdik olunan limited şirket hisse devir sözleşmesinde yer alan imzanın müvekkiline ait olmadığını ileri sürmekte ve müvekkili adına olan imzanın sahteliğini iddia etmektedir. Dairemizce daha önce verilen 2012/12282 E. - 2013/10936 K. sayılı ve 20.05.2013 tarihli ilamda da ifade olunduğu üzere hisse devrinin dayanağı olan noter sözleşmesinde yer alan imzanın inkarı nedeniyle açılan dava aynı zamanda 6100 s. 208/4 (HUMK’nın 314) maddesi anlamında açılmış bir sahtelik davasıdır. Öte yandan, 6100 s. 204 ve 1512 sayılı Noterlik Kanunu’nun 82/f. III maddeleri uyarınca noterlikçe onaylanan imza sahteliği sabit oluncaya kadar geçerlidir. Böyle bir imzanın sahteliği iddiası ise sözleşmenin diğer tarafına olduğu kadar sözleşmedeki imzayı onaylayan notere karşı da ileri sürülmüş bir iddia olup sabit görülmesi halinde noterin Noterlik Kanunu’nun 162. maddesi uyarınca hukuki sorumluluğuna da yol açabileceği gibi noterin savunması bu davanın sonucunu da etkiliyebilir. Şu halde onaylı imzanın sahteliği iddiasının bu imzayı onaylayan noterin taraf olmadığı bir davada incelenip hükme bağlanması usul hukuku ilkelerine uygun düşmemektedir. 6100 s. HMK’nın 208/4. maddesi gereğince resmi bir senetteki yazı veya imzayı inkar eden tarafın bu iddiası, ancak ilgili evraka resmiyet kazandıran kişiyi de taraf göstererek açacağı ayrı bir davada incelenip karara bağlanabilir. Bu durumda, mahkemece ilgili noter hakkında, bu davayla birleştirme istemli olarak ayrı bir dava açmak üzere davacıya mehil verilmek ve dava açıldığı takdirde bu dava ile birleştirilerek görülmek gerekirken noterin yokluğunda noter sözleşmesinin sahteliği hakkında karar verilmesi doğru olmamış bozmayı gerektirmiştir.</p>
+
+<p>2-Bozma sebep ve şekline göre davacı tarafın sair temyiz itirazlarının şimdilik incelenmesine yer olmadığına karar verilmiştir.</p>
+
+<p>SONUÇ : Yukarıda (1) no’lu bentte yer alan gerekçelerle hükmün davacı taraf yararına BOZULMASINA, (2) no’lu bentte açıklanan nedenlerle bozma sebep ve şekline göre davacı tarafın sair temyiz itirazları hakkında şimdilik incelenmesine yer olmadığına, takdir olunan 1.480,00 TL duruşma vekalet ücretinin davalılardan alınarak davacıya verilmesine, ödemiş olduğu temyiz peşin harcının iadesine, 03.01.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 1. HUKUK DAİRESİ
+Esas : 2015/9569 Karar : 2018/9031</strong> Tarih : 12.04.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 208. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yazı veya İmza İnkârı</strong></p>
+  </li>
+</ul>
+
+<p>Davacı, paydaşı olduğu 614 parsel sayılı taşınmazdaki payını müteveffa oğlu … ’ın hileli yollarla üzerine geçirdiğini, zira oğlunun ölmeden önce kardeşi … ’ı (davacının kardeşi) tapu müdürlüğüne götürerek ve onun fotoğrafını kullanarak işlem yaptırdığını, resmi senetteki imzanın ve fotoğrafın kendisine ait olmadığını, oğlunun ölümünden sonra taşınmazın gelini davalı … ’a intikal ettiğini ve kendisini evden çıkartmak istediğini, resmi belgedeki imzanın sahteliği iddia edildiğinden Tapu müdürlüğüne de davanın yöneltildiğini ileri sürerek davalıların mirasbırakanı adına kayıtlı olan ½ payın tapusunun iptali ile adına tesciline karar verilmesini istemiştir.</p>
+
+<p>Davalı … , taşınmazda mülkiyet hakkı bulunmayan tapu müdürlüğüne husumet yöneltilemeyeceğini, davacı tarafça HMK 208/4. maddesinin yanlış yorumlandığını zira bu durumun ancak bir menfi tespit davasının konusunu oluşturabileceğini, tapu iptali ve tescil davasında sahtelik iddiasının da ileri sürülemeyeceğini belirterek davanın reddini savunmuştur.</p>
+
+<p>Davalılar … , … ve … vekili; davacının çekişme konusu taşınmazı 10.11.2005 tarihinde davalıların mirasbırakanı ve davacının da oğlu olan … ’a sattığını, … ’ın 06.12.2011 tarihinde öldüğünü, bu tarihler ve dava tarihi gözetildiğinde zamanaşımı süresinin geçtiğini, davacının, diğer çocuklarına da yer sattığını, bu satışlarda yüklü para aldığını, tapuya götürülüp imza attırıldığı ve fotoğrafı kullanıldığı iddia edilen … ’ın, davacının kardeşi olup, davacıya benzemediğini, akit tablosunda davacının ve mirasbırakan … ’ın imzası olduğunu, davacının sözkonusu taşınmazı satmış olmasına rağmen taşınmazın davalı gelinine miras olarak kalmasından rahatsızlık duyduğunu ve gelinini sevmediğini belirterek davanın reddi gerektiğini bildirmiştir.</p>
+
+<p>Mahkemece, resmi senetteki imzanın davacıya ait olduğu, aldatma (hile) olgusunun da kanıtlanamadığı, işlemin geçerli olduğu gerekçesiyle esastan, davalı … yönünden sıfat yokluğundan davanın reddine karar verilmiştir.</p>
+
+<p>Karar, davacı vekili tarafından süresinde temyiz edilmiş olmakla, Tetkik Hakimi … ’un raporu okundu, düşüncesi alındı. Dosya incelendi, gereği görüşülüp, düşünüldü.</p>
+
+<p>Dosya içeriğine, toplanan delillere, hükmün dayandığı yasal ve hukuksal gerekçeye ve özellikle delillerin takdirinde bir isabetsizlik bulunmamasına göre; davacının yerinde bulunmayan temyiz itirazının reddiyle usul ve yasaya uygun olan hükmün ONANMASINA, aşağıda yazılı 35.90.TL onama harcının temyiz eden davacıdan alınmasına, 12.04.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 19. HUKUK DAİRESİ
+Esas : 2015/4784 Karar : 2015/17467</strong> Tarih : 23.12.2015</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 208. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yazı veya İmza İnkârı</strong></p>
+  </li>
+</ul>
+
+<p>Dava ipotek tesisinde kullanılan vekaletnamedeki imzanın davacıya ait olmadığı iddiasıyla açılmış menfi tespit ve ipoteğin kaldırılması istemine ilişkindir. Önceki bozma kararımızda bahsedilen… 18. Ağır Ceza Mahkemesi’nin 2010/59 esas sayılı dosyasında verilen beraat kararının Yargıtay 11. Ceza Dairesi’nin 20.01.2014 tarih 2013/20338 Esas – 2014/1000 Karar sayılı kararıyla dava zamanaşımı nedeniyle bozulmuş, kamu davasının 765 sayılı TCK’nın 102/3, 104/2 ve 5271 sayılı CMK’ nın 223/8 maddeleri uyarınca düşürülmelerine karar verildiği anlaşılmıştır. Bu haliyle ceza davası sonucunda verilen kararın hukuk hakimini bağlayıcılığı kalmamıştır. Mahkemece davacının iddialarının araştırılması için usulüne uygun bilirkişi incelemesi yapılması gerekir.</p>
+
+<p>Öte yandan sahteliğe konu olan vekaletnamenin noter tarafından tanzim edilen resmi evrak mahiyetinde olduğu gözetilerek HMK’nın 208/4. maddesi gereğince, bu evraka yönelik iddianın ona resmiyet kazandıran kişiyi de taraf göstermek suretiyle açılacak ayrı bir davada karara bağlanacağı ve bu hususta gerekirse iddia sahibine dava açması için 2 haftalık kesin süre verileceği belirtilmekle anılan madde gereği yerine getirilmeden eksik incelemeyle yazılı şekilde karar verilmesi isabetsiz olup bozmayı gerektirmiştir.</p>
+
+<p>SONUÇ:Yukarıda açıklanan nedenlerle hükmün davacı yararına BOZULMASINA, peşin harcın istek halinde iadesine, 23.12.2015 gününde oybirliğiyle karar verildi.</p>
+<hr>
+
+</div></div></main>
+</div>
+
+<footer>
+<section>
+<div class="contact-info">
+
+<div class="adres">
+
+<div class="telefon-wrapper">
+
+
+</div>
+</div>
+</section>
+
+</div>
+
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+"vars": {
+"account": "UA-58342443-1"
+},
+"triggers": {
+"trackPageview": {
+"on": "visible",
+"request": "pageview"
+}
+}
+}
+</script>
+</amp-analytics>
+
+</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="../../index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="../../dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="../../ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="../../knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="../../search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/slideToggle.min.js"></script>
+    <script src="../js/internet-status.js"></script>
+    <script src="../js/tiny-slider.js"></script>
+    <script src="../js/baguetteBox.min.js"></script>
+    <script src="../js/countdown.js"></script>
+    <script src="../js/rangeslider.min.js"></script>
+    <script src="../js/vanilla-dataTables.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/magic-grid.min.js"></script>
+    <script src="../js/dark-rtl.js"></script>
+    <script src="../js/active.js"></script>
+    <!-- PWA -->
+    <script src="../js/pwa.js"></script>
+  </body>
+</html>

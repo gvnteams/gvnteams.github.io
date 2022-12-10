@@ -1,0 +1,827 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tiny-slider.css">
+    <link rel="stylesheet" href="../css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="../css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="tck-search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+               <div class="page-content-wrapper py-0">
+        </div>
+      </div>
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<h2 id="yasal-temsilcinin-ve-eşin-başvurma-hakkı">Yasal Temsilcinin ve Eşin Başvurma Hakkı</h2>
+
+<h2 id="cmk-madde-262">CMK Madde 262</h2>
+
+<p>(1) Şüpheli veya sanığın yasal temsilcisi ve eşi, şüpheli veya sanığa açık olan kanun yollarına süresi içinde kendiliklerinden başvurabilirler. Şüphelinin veya sanığın başvurusuna ilişkin hükümler, bunlar tarafından yapılacak başvuru ve onu izleyen işlemler için de geçerlidir.</p>
+
+<hr>
+
+<ul>
+  <li><a href="../5271-sayili-ceza-muhakemesi-kanunu-cmk.html"><strong>5271 sayılı CMK (Ceza Muhakemesi Kanunu) Tam Metin</strong></a></li>
+</ul>
+
+<hr>
+
+<amp-img src="../tokmak-yargitay-kararlari-1280x720.png" alt="CMK Madde 262  Yasal Temsilcinin ve Eşin Başvurma Hakkı" width="1280" height="720" layout="responsive">
+            </amp-img>
+<h2 id="cmk-madde-262-gerekçesi">CMK Madde 262 Gerekçesi</h2>
+
+<p>Madde uyarınca yasal temsilci ve karı-koca arasında ayırım gözetilmeksizin eş, bu sıfatları devam ettiği sürece şüpheli ve sanığa açık bulunan kanun yollarına onlardan bağımsız olarak, kendiliklerinden başvurabilirler. Görülüyor ki, belirtilen kişilerin başvuru yetkileri 261 inci maddede avukatlar için tanınan yetkiden farklı olarak, koşulsuz kabul edilmiştir.</p>
+
+<p>Davaya katılanın yasal temsilcisi de bu sıfatı süresince kanun yollarına başvurabilecektir. Ancak, katılanın eşine bu hak tanınmamıştır.</p>
+
+<p>Şüpheli veya sanığın yasal temsilcisiyle eşi ve davaya katılanın yasal temsilcisinin süresinde yaptıkları başvurular hakkında, şüpheli, sanık ve katılanın başvurusuna ilişkin hükümler uygulanacaktır. Başvuruyu izleyen işlemler bakımından da aynı hükümler uygulanacaktır.</p>
+
+<hr>
+
+<h2 id="cmk-262-yasal-temsilcinin-ve-eşin-başvurma-hakkı--emsal-yargıtay-kararları">CMK 262 (Yasal Temsilcinin ve Eşin Başvurma Hakkı)  Emsal Yargıtay Kararları</h2>
+
+<hr>
+
+<p><strong>YARGITAY 2. CEZA DAİRESİ 
+Esas : 2017/5777 Karar : 2018/600</strong> Tarih : 31.01.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 262. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yasal Temsilcinin ve Eşin Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>1-Sanık müdafiinin, sanık hakkında kurulan mahkumiyet hükümlerine yönelik temyiz isteminin incelenmesinde;</p>
+
+<p>Sanığın mahkemece savunmasının talimatla alındığı 13/02/2012 tarihli duruşmada, müdafii istemediğini belirttiği gibi 5271 sayılı CMK’nın 150/2-3. maddesi gereğince de sanığa zorunlu müdafii atanmasını gerektirecek bir durum bulunmadığı ve bu itibarla müdafiinin hükmü temyize yetkisi bulunmadığından, sanık müdafiinin temyiz isteminin, 1412 sayılı CMUK’nın 317. maddesi uyarınca REDDİNE,</p>
+
+<p>2- Sanığın babası tarafından sanık hakkında verilen mahkumiyet hükümlerine yönelik temyiz itirazlarının incelenmesinde;</p>
+
+<p>Sanığın babası …ın temyiz dilekçesinde sanığın babası olarak hükümleri temyiz ettiğinin, UYAP’tan yapılan incelemede, …ın Gebze 1. Sulh Hukuk Mahkemesinin 04/07/2013 tarihli 2013/409 E., 2013/851 K. sayılı kararı ile sanığa vasi tayin edildiğinin, bu kararın 21/10/2013 tarihinde kesinleştiğinin, bu nedenle CMK’nın 262. maddesi uyarınca hükmü temyize yetkisinin bulunduğu belirlenerek yapılan incelemede;</p>
+
+<p>a-Sanık hakkında hırsızlık suçundan kurulan mahkumiyet hükmü ile ilgili olarak yapılan incelemede;</p>
+
+<p>5237 sayılı TCK’nın 53. maddesinin bazı bölümlerinin iptaline ilişkin Anayasa Mahkemesinin 24/11/2015 tarihinde yürürlüğe giren 08/10/2015 gün ve 2014/140 esas, 2015/85 sayılı kararı da nazara alınarak bu maddede öngörülen hak yoksunluklarının uygulanmasının infaz aşamasında gözetilmesi mümkün görülmüştür.</p>
+
+<p>Yapılan duruşmaya, toplanan delillere, gerekçeye, hakimin kanaat ve takdirine göre temyiz itirazları yerinde olmadığından reddiyle hükmün istem gibi ONANMASINA,</p>
+
+<p>b-Sanık hakkında konut dokunulmazlığını bozma suçundan kurulan mahkumiyet hükmü ile ilgili olarak yapılan incelemede;</p>
+
+<p>Dosya içeriğine göre diğer temyiz itirazları yerinde görülmemiştir. Ancak;</p>
+
+<p>Sanık hakkında 5237 sayılı TCK’nın 116/1. maddesinin uygulanması sonucu belirlenen 6 ay hapis cezasının, eylemin birden fazla kişi tarafından birlikte işlenmesi nedeniyle aynı Kanun’un 119/1-c. maddesi uyarınca bir kat artırım yapılması neticesinde sonuç cezanın 12 ay yerine 1 yıl hapis cezası olarak belirlenerek fazla ceza tayini,</p>
+
+<p>Bozmayı gerektirmiş, sanık vasisinin temyiz itirazları bu itibarla yerinde görülmüş olduğundan hükmün bu sebepten dolayı 1412 sayılı CMUK’nın 321. maddesi gereğince BOZULMASINA, ancak bu aykırılığın aynı Kanun’un 322. maddesine göre düzeltilmesi mümkün olduğundan, TCK’nın 116/1 maddesi uyarınca tayin olunan 6 ay hapis cezasının aynı Kanun’un 119/1-c maddesi uyarınca bir kat artırılması sonucu sanığın 12 ay hapis cezası ile cezalandırılmasına karar verilmesi suretiyle hükmün DÜZELTİLEREK ONANMASINA, 31/01/2018 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 20. CEZA DAİRESİ
+Esas : 2016/2404 Karar : 2017/2124</strong> Tarih : 3.04.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 262. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yasal Temsilcinin ve Eşin Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>1 - Sanığın kardeşi …nın temyiz talebinin incelenmesinde;</p>
+
+<p>Hükmün, 12/02/2016 tarihinde sanığın kardeşi tarafından temyiz edildiği, CMK’nın 262. maddesi gereğince sanığın kardeşinin hükmü temyiz etme hak ve yetkisinin bulunmadığı anlaşıldığından, CMUK’nın 317. maddesi uyarınca temyiz isteminin REDDİNE,</p>
+
+<p>2 - Sanık hakkında kurulan hükmün incelenmesinde;</p>
+
+<p>Yapılan duruşmaya, toplanıp karar yerinde gösterilen delillere, Mahkemenin soruşturma sonuçlarına uygun şekilde oluşan inanç ve takdirine, incelenen dosya içeriğine göre, sanık ve müdafii ile Cumhuriyet savcısının yerinde görülmeyen diğer temyiz itirazlarının reddine, ancak;</p>
+
+<p>Sanığın evinde yapılan aramada ele geçen birer adet ajanda, alüminyum folyo, koli bandı ile iki adet makastan oluşan eşyalarda, 08.09.2015 tarihli ekspertiz raporunda uyuşturucu bulaşıklarına rastlanmadığının belirtilmesi karşısında, bu eşyaların suçta kullanıldıklarına dair kuşku sınırlarını aşan yeterli delil bulunmadığı gözetilmeyerek, sanığa iadesi yerine müsaderesine karar verilmesi,</p>
+
+<p>Yasaya aykırı, sanık ve müdafii ile Cumhuriyet savcısının temyiz itirazları bu nedenle yerinde olduğundan, CMUK’nın 321. maddesi gereğince BOZULMASINA, ancak, bu aykırılıkların yeniden duruşma yapılmaksızın aynı Kanun’un 322. maddesi uyarınca düzeltilmesi mümkün bulunduğundan; hüküm fıkrasının müsadereye ilişkin kısmında “TCK’nın 54/1. maddesi gereğince müsadere edilerek karar kesinleştiğinde imha edilmesine” ibaresinin çıkartılıp yerine “suçta kullanıldıklarına dair kuşku sınırlarını aşan yeterli delil bulunmadığından, sanığa İADESİNE, ibaresinin” eklenmesi suretiyle hükmün DÜZELTİLEREK ONANMASINA, hükmolunan ceza miktarı ile tutuklu kalınan süre gözönüne alınarak sanığın salıverilme isteminin REDDİNE, 03.04.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 18. CEZA DAİRESİ 
+Esas : 2016/16347 Karar : 2017/2896</strong> Tarih : 15.03.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 262. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yasal Temsilcinin ve Eşin Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Yerel Mahkemece verilen hüküm temyiz edilmekle, başvurunun süresi, kararın niteliği, suç tarihine göre dosya görüşüldü.</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler, gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>Sanığa yükletilen göçmen kaçakçılığı eylemiyle ulaşılan çözümü haklı kılıcı zorunlu öğelerin ve bu eylemin sanık tarafından işlendiğinin Kanuna uygun olarak yürütülen duruşma sonucu saptandığı, bütün kanıtlarla aşamalarda ileri sürülen iddia ve savunmaların temyiz denetimini sağlayacak biçimde ve eksiksiz sergilendiği, özleri değiştirilmeksizin tartışıldığı, vicdani kanının kesin, tutarlı ve çelişmeyen verilere dayandırıldığı,</p>
+
+<p>Eylemin doğru olarak nitelendirildiği ve Kanunda öngörülen suç tipine uyduğu,</p>
+
+<p>Dairemizcede benimsenen Ceza Genel Kurulunun 09.02.2016 tarih ve 2014/8-71 E, 2016/42 K. sayılı kararında belirtildiği üzere; “Cezayı aleyhe değiştirememe yasağı öğreti ve uygulamada; “temyiz davası yalnızca sanık veya müdafii ya da sanık lehine Cumhuriyet savcısı veya sanığın eşi ya da yasal temsilcisi tarafından açıldığında hükümde yaptırımın türü ve ağırlığı bakımından sonucu sanığın aleyhine ağırlaştırıcı, diğer bir anlatımla aleyhe sonuç verici düzeltmelerin yapılamaması veya kurulacak yeni hükümdeki cezanın sanığın aleyhine olarak ilk hükümden daha ağır olamaması” şeklinde tanımlanmaktadır.</p>
+
+<p>Cezayı aleyhe değiştirememe yasağı, hükmün temyiz incelemesine başlarken, bakış açısını belirleyen bir usul kuralı olduğu gibi, bozmadan sonraki aşamada da ceza miktarının sınırını belirleyen bir yargılama ilkesidir. Bu ilkenin amacı; hükmün aleyhine bozulabileceğini düşünen sanığın bazı davalarda istinaf ya da temyiz kanun yoluna başvurmaktan çekinmesinin önüne geçmek ve kanun yoluna başvurma hakkını daha özgürce kullanabilmesini sağlamaktır.</p>
+
+<p>Anılan kural, 1412 sayılı Ceza Muhakemeleri Usulü Kanununun 5320 sayılı Kanunun 8. maddesi uyarınca halen yürürlükte bulunan 326. maddesinin 4. fıkrasında; “Hüküm yalnız sanık tarafından veya onun lehine Cumhuriyet savcısı veya 291. maddede gösterilen kimseler tarafından temyiz edilmişse, yeniden verilen hüküm, evvelki hükümle tayin edilmiş olan cezadan daha ağır olamaz” şeklinde kanuni düzenlemeye dönüştürülmüştür.</p>
+
+<p>Buna göre ceza hukukumuzda genel anlamda bir kazanılmış hak kavramından bahsedilemeyeceği, yalnızca 1412 sayılı CMUK’nun 326. maddesinin son fıkrası uyarınca sınırlı biçimde uygulanabilecek olan “cezayı aleyhe değiştirememe” veya “aleyhte düzeltme yasağı”nın söz konusu olduğunun kabulü gerekmektedir.</p>
+
+<p>Bu kuralla ilgili olarak 01.06.2005 tarihinde yürürlüğe giren 5271 sayılı Ceza Muhakemesi Kanununun 307/4. maddesinde ise; “Hüküm yalnız sanık tarafından veya onun lehine Cumhuriyet savcısı veya 262. maddede gösterilen kimselerce temyiz edilmişse yeniden verilen hüküm önceki hükümle belirlenmiş olan cezadan daha ağır olamaz” düzenlemesine yer verilmiştir.</p>
+
+<p>Kanundaki açık düzenlemelerden de anlaşılacağı üzere; yaptırımı ve sonuçlarını aleyhe değiştirme yasağının kapsamı yalnızca ceza miktarı ile sınırlı olacak, sanık veya onun lehine ilgililer tarafından temyiz davası açıldığında, lehe bozma üzerine yeniden kurulan hükümle belirlenen ceza ve sonuç önceki hükümle belirlenen cezadan ve sonuçtan daha ağır olamayacaktır. Gerek bozma ilamında, gerekse yerel mahkemece bozmadan sonra kurulan hükümde yaptırım ve sonuçları aleyhe değiştirme yasağına aykırılığın söz konusu olup olmadığı önceki ve sonraki hükümlerde yer alan ceza ve yaptırımların tüm yönleri ile karşılaştırılması suretiyle belirlenecektir.”</p>
+
+<p>Yukarıda yapılan açıklamalar doğrultusunda, aleyhe değiştirme yasağı münhasıran “cezalar” ile ilgili ve sınırlı olup, fiilin nitelendirilmesinde ve suç adının belirlenmesinde geçerli olmayacağından somut olayda, temel cezanın belirlenmesinde, suçun işleniş biçimi, failin kasta dayalı kusurunun yoğunluğu, olayın meydana geliş şekliyle göçmen sayısı dikkate alınarak teşdiden uygulama yapılıp, sonuç ceza belirlendikten sonra 1412 sayılı CMUK’nın 326/son maddesi dikkate alınarak, bozma öncesi verilen ilk ceza miktarını geçmeyecek biçimde cezaya hükmedilmesi gerektiği gözetilmemiş ise de, sonuca etkili olmayan bu hususun bozmayı gerektirmediği,</p>
+
+<p>Anlaşıldığından, sanık … müdafiinin ileri sürdüğü nedenler yerinde görülmediğinden tebliğnameye uygun olarak, TEMYİZ DAVASININ ESASTAN REDDİYLE HÜKMÜN ONANMASINA, 15/03/2017 tarihinde oy birliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 3. CEZA DAİRESİ
+Esas : 2016/8738 Karar : 2017/1849</strong> Tarih : 23.02.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 262. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yasal Temsilcinin ve Eşin Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Gereği görüşülüp düşünüldü;</p>
+
+<p>5271 sayılı CMK`nin 262.maddesi uyarınca sanık … hakkında verilen hükmü temyiz etme hak ve yetkisi bulunan eşinin, mahkemeye sunduğu 09/05/2014 tarihli dilekçenin temyiz başvurusu niteliğinde olduğu belirlenerek yapılan incelemede;</p>
+
+<p>1)Sanıklar … ve … hakkında kurulan hükümlerin incelenmesinde;</p>
+
+<p>Anayasa Mahkemesi’nin 24.11.2015 tarih ve 29542 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren 08.10.2015 tarih ve 2014/140 Esas-2015/85 Karar sayılı kararı ile 5237 sayılı TCK`nin 53. maddesindeki bazı hükümler iptal edilmiş ise de, bu husus infaz aşamasında dikkate alınabileceğinden bozma nedeni yapılmamıştır.</p>
+
+<p>Yapılan yargılamaya, toplanan ve karar yerinde açıklanan delillere, mahkemenin kovuşturma sonucunda oluşan inanç ve takdirine, gösterilen gerekçeye ve uygulamaya göre sanık ve sanığın eşinin temyiz itirazlarının reddiyle hükümlerin isteme uygun olarak ONANMASINA,</p>
+
+<p>2)Sanık … hakkında kurulan hükmün incelenmesinde;</p>
+
+<p>UYAP sisteminden alınan güncel nüfus kayıt örneğine göre sanığın mahkemenin hüküm tarihinden sonra, temyiz inceleme tarihinden önce 27/08/2015 tarihinde öldüğünün anlaşılması karşısında, sanık hakkında açılan kamu davası ile ilgili olarak 5237 sayılı TCK`nin 64/1 maddesinin değerlendirilmesinde zorunluluk bulunması,</p>
+
+<p>Bozmayı gerektirmiş, sanığın temyiz itirazları bu itibarla yerinde görülmüş olduğundan, hükmün bu sebeplerden 6723 sayılı kanun`un 33. maddesiyle değişik 5320 sayılı Kanunun 8/1. maddesi ile yürürlükte bulunan 1412 sayılı CMUK’un 321. maddesi gereğince BOZULMASINA, 23/02/2017 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 22. CEZA DAİRESİ 
+Esas : 2015/11169 Karar : 2016/3779</strong> Tarih : 16.03.2016</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 262. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yasal Temsilcinin ve Eşin Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Yerel Mahkemece verilen hükümler temyiz edilmekle, kararların nitelik, cezaların türleri, süreleri ve suç tarihine göre dosya görüşüldü:</p>
+
+<p>Sanığın yüzüne karşı verilen kararda, temyiz başvuru süresi belirtilmediğinden yanıltma nedeniyle hükmün tefhiminin geçerli olmadığı, 5271 sayılı CMK’nun 262. maddesinde şüpheli veya sanığın eşinin de kanun yollarına başvurabileceğinin düzenlenmesi karşısında, gerekçeli kararı 12/07/2011 tarihinde tebliğ eden sanığın eşi Cemil Kaçar`ın 18/07/2011 tarihli temyiz isteminin süresinde olduğu belirlenerek yapılan incelemede;</p>
+
+<p>I)Tehdit suçundan kurulan mahkûmiyet hükmüne yönelik temyiz isteminin incelenmesinde;</p>
+
+<p>Sanık hakkında tehdit suçundan hükmolunan doğrudan adli para cezasının miktarı bakımından, 14/04/2011 tarih ve 27905 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren 6217 sayılı Kanunun 26. maddesi ile eklenen 5329 sayılı Ceza Muhakemesi Kanunu’nun Yürürlük ve Uygulama Şekli Hakkında Kanunun geçici 2. maddesinin 1. fıkrası uyarınca üç bin liraya kadar olan mahkumiyet hükümlerinin kesin nitelikte olması ve temyiz kabiliyetinin de bulunmaması nedeniyle sanığın eşi Cemil Kaçar`ın temyiz isteğinin CMUK’nun 317. maddesi gereğince istem gibi REDDİNE,</p>
+
+<p>II)Hırsızlık suçundan kurulan mahkûmiyet hükmüne yönelik temyiz isteminin incelenmesinde;</p>
+
+<p>Yapılan duruşmaya, toplanan delillere, gerekçeye, hakimin kanaat ve takdirine göre sanığın eşi Cemil Kaçar`ın temyiz itirazları yerinde olmadığından reddiyle, usul ve yasaya uygun bulunan hükmün istem gibi ( ONANMASINA ), oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 7. CEZA DAİRESİ
+Esas: 2015/19167 Karar: 2018/268</strong> Tarih: 11.01.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 262. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yasal Temsilcinin ve Eşin Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Yerel mahkemece verilen hüküm temyiz edilmekle; başvurunun nitelik, ceza türü, süresi ve suç tarihine göre dosya okunduktan sonra Türk Milleti adına gereği görüşülüp düşünüldü;</p>
+
+<p>I-Müşteki … vekilinin temyiz talebinin incelenmesinde;</p>
+
+<p>Sanık, hakkında açılan kamu davasından ve duruşmadan haberdar edildiği halde usulüne uygun katılma talebinde bulunmayan … vekilinin temyiz inceleme isteğinin 5320 sayılı Yasanın 8/1. maddesi gereğince yürürlükte bulunan 1412 sayılı CMUK.nun 317. maddesi uyarınca REDDİNE,</p>
+
+<p>II-5271 sayılı CMK.nun 262. maddesi gereğince sanığın yasal temsilcisinin sanığa açık olan kanun yollarına süresi içinde başvurabileceği gözetilerek, sanık vasisinin öğrenme üzerine temyizi süresinde kabul edilmekle sanık vasisinin ve sanığın temyizinin incelenmesinde;</p>
+
+<p>1-Sanık hakkında 5237 sayılı TCK.nun 58. maddesi gereğince, ek savunma hakkı tanınmadan tekerrür hükümlerinin uygulanması suretiyle savunma hakkının kısıtlanması,</p>
+
+<p>2-01.03.2008 tarihinde yürürlüğe giren 5739 sayılı Yasanın 5. maddesi ile yapılan değişiklikle 5237 sayılı TCK.nun 50/6. madde ve fıkrasında yer alan “yaptırım” ibaresinin “tedbir” olarak değiştirilip, 5275 sayılı Yasanın 106. maddesinin 4., 9., 4. ve 9., yine 18.06.2014 tarihli 6545 sayılı Yasanın 81. maddesi ile 3., 8. fıkralarındaki değişiklikler ve 10. fıkrasının yürürlükten kaldırılmış olması göz önüne alındığında, hükümde infaz yetkisini kısıtlayacak şekilde, ödenmeyen adli para cezasının hapse çevrileceğinin belirtilmesi,</p>
+
+<p>3-24.11.2015 günlü 29542 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren Anayasa Mahkemesi’nin 08.10.2015 tarih ve 2014/140 esas, 2015/85 sayılı iptal kararı ile 5237 sayılı TCK.nun 53. maddesinin bazı bölümlerinin iptal edilmesi nedeniyle, anılan maddenin yeniden değerlendirilmesinde zorunluluk bulunması,</p>
+
+<p>Yasaya aykırı, sanığın ve sanık vasisinin temyiz itirazları bu itibarla yerinde görüldüğünden, hükmün 5320 sayılı Yasanın 8/1. maddesi gereğince yürürlükte bulunan 1412 sayılı CMUK.nun 321. maddesi uyarınca BOZULMASINA, 11.01.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY CEZA GENEL KURULU
+Esas : 2014/482 Karar : 2016/125</strong> Tarih : 15.03.2016</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 262. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yasal Temsilcinin ve Eşin Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Sanığın taksirle birden fazla kişinin yaralanmasına neden olma suçundan cezalandırılma- sına karar verilen ve suçun sübutu ile fiilin vasıflandırılmasında isabetsizlik, bu kabulde de dosya içeriği itibarıyla herhangi bir hukuka aykırılık bulunmayan olayda, Özel Daire ile Yargıtay Cumhuriyet Başsavcılığı arasında oluşan ve Ceza Genel Kurulunca çözümlenmesi gereken uyuşmazlık; aleyhe temyiz bulunmayan bir durumda, 5237 sayılı TCK’nun 89/4 ve 62. maddeleri uyarınca tayin olunan sonuç 10 ay hapis cezasının, Kanunun 52/2. maddesi gereğince gün sayısının bir gün karşılığı olarak takdir edilen 30 Lira ile çarpılması sonucunda “9.000 Lira” yerine hesap hatası sonucu “7.500 Lira” olarak eksik ceza tayin edilmesine ilişkin hukuka aykırılık nedeniyle, hükmün, sonuç adli para cezasının “9.000 Lira” olarak belirlenmesi suretiyle düzeltilerek onanmasına karar verilmesinin mümkün olup olmadığının tespitine ilişkindir.</p>
+
+<p>Türk Dil Kurumu Sözlüğüne göre “karar” kelimesinin anlamı bir iş veya sorun hakkında düşünülerek verilen kesin yargıdır. Aynı sözlükte, hukukta karar; herhangi bir durum için tartışılarak verilen kesin yargı, hüküm, olarak ifade edilmiştir. Yine, karar kelimesinin ifade ettiği farklı bir anlam olarak; kesin yargıyı bildiren belge belirtildikten sonra, karar; değişmeyen, düzenli durum, düzenlilik, yöntemlilik ve değişmez olma olarak da tarif edilmiştir. Bu tanımlardan yola çıkıldığında, yargısal karar; bir yargılama işlemi sonunda belli bir yönteme bağlı olarak verilmiş, kesin yargıyı ifade eden belge olarak tanımlanabilir. Bu durumda kararın en önemli özelliği olarak, “kesinlik” karşımıza çıkmaktadır. Kesinlik kelimesinin sözlük anlamı; bir bilginin, bir kanaatin şüpheye düşmeden onaylanması durumudur.</p>
+
+<p>5271 sayılı CMK`nun “Duruşmanın sona ermesi ve hüküm” başlıklı 223. maddesinin birinci fıkrası; “Duruşmanın sona erdiği açıklandıktan sonra hüküm verilir. Beraat, ceza verilmesine yer olmadığı, mahkûmiyet, güvenlik tedbirine hükmedilmesi, davanın reddi ve düşmesi kararı, hükümdür”,</p>
+
+<p>“Hükmün açıklanması ve hükmün açıklanmasının geri bırakılması” başlıklı 231. maddesinin birinci fıkrası; “Duruşma sonunda, 232 nci maddede belirtilen esaslara göre duruşma tutanağına geçirilen hüküm fıkrası okunarak gerekçesi ana çizgileriyle anlatılır.”,</p>
+
+<p>“Hükmün gerekçesi ve hüküm fıkrasının içereceği hususlar” başlıklı 232. maddesinin üçüncü fıkrası; “Hükmün gerekçesi, tümüyle tutanağa geçirilmemişse açıklanmasından itibaren en geç onbeş gün içinde dava dosyasına konulur.”,</p>
+
+<p>Aynı maddenin altıncı fıkrası ise; “Hüküm fıkrasında, 223 üncü maddeye göre verilen kararın ne olduğunun, uygulanan kanun maddelerinin, verilen ceza miktarının, kanun yollarına başvurma ve tazminat isteme olanağının bulunup bulunmadığının, başvuru olanağı varsa süresi ve merciinin tereddüde yer vermeyecek şekilde açıkça gösterilmesi gerekir.” hükümlerini içermektedir.</p>
+
+<p>Anılan bu hükümler birlikte değerlendirildiğinde, duruşmanın bittiği bildirildikten sonra 5271 sayılı CMK`nun 223. maddesinin birinci fıkrası uyarınca hüküm verilmesi zorunludur. Bu hükümde gerekçeye yer verilmese dahi, anılan kanunun 232. maddesinin altıncı fıkrası uyarınca, 223. maddeye göre verilen kararın ne olduğunun, uygulanan kanun maddelerinin, verilen ceza miktarının, kanun yollarına başvurma ve tazminat isteme imkânının bulunup bulunmadığının, başvuru imkânı varsa süresi ve merciinin tereddüde mahal bırakmayacak şekilde mutlaka belirtilmesi gerekmektedir. Uygulamada bu şekilde gerekçesi açıklanmadan hüküm verilmesine kısa karar denilmektedir. Kısa karar olarak adlandırılan bu hüküm fıkrasının tümüyle duruşma tutanağına geçirilmesi, akabinde okunarak, gerekçesinin ana hatlarıyla anlatılması gerekmekte olup kısa karar yani hüküm bu şekilde açıklandıktan sonra geçerlilik kazanacaktır.</p>
+
+<p>Gerekçeye yer verilmeden sadece kısa karar olarak adlandırılan “hüküm-sonuç” bölümünün açıklanmasından sonra, maddi olayın açıklandığı “sorun” bölümü ile delillerle sonuç arasındaki bağın, yani neden bu sonuca ulaşıldığının anlatıldığı ve hukuki nitelendirmenin yer aldığı “gerekçe” bölümünün hüküm fıkrasına da yer verilmek suretiyle, kısa kararın açıklanmasından itibaren on beş gün içinde yazılması gerekmektedir. Bu şekilde sorun, gerekçe ve hüküm-sonuç bölümünden oluşan karara ise uygulama da gerekçeli karar denilmektedir.</p>
+
+<p>Ceza Genel Kurulunun ve Özel Dairelerin yerleşmiş uygulama ve kabullerine göre, hükmün esasını kısa karar oluşturmaktadır. Tutanağa geçirilmesi ve açıklanması suretiyle hukuken geçerlilik kazanmış kısa kararın/hükmün önemine binaen mahkemelerin kısa karar oluştururken son derece dikkatli ve ciddi davranmaları gerekmektedir. Ancak hüküm kurulurken çeşitli hatalar yapılabildiği, örneğin nitelikli haller nedeniyle ceza artırılırken artırım oranlarında, bazen de sonuçlarında hatalar yapılabildiği gibi indirim nedeninin uygulanması sırasında da hesap hatası yapılarak daha az ceza tayin edildiği, hatta nitelikli hal nedeniyle cezanın artırılması yerine indirilmesi yoluna gidildiği, ilgili kanun maddesinde suç için hapis cezası ile birlikte para cezası da öngörüldüğü halde, yalnızca hapis ya da para cezasına hükmedildiği, öngörülmüş cezanın alt sınırının da altında olacak şekilde bir ceza tayin edildiği veya belirlenen tam gün sayısının, bir gün karşılığı olarak takdir edilen miktar ile çarpılması sırasında işlem hataları yapıldığı görülmektedir.</p>
+
+<p>Uygulamada hükmün kurulması sırasında yapılan hatalar, “uygulama hatası”, “hesaplama hatası”, “yazım hatası” şeklinde tasniflere tâbi tutulmaktadır. Uygulama hatası; yargılama araçlarının belirli biçimde hatalı takdir edilmelerinden kaynaklanan hukuki yanılgılardır. Hesaplama hatası, cezanın artırımı veya eksiltimi sırasında yapılan matematiksel işlem hatalarıdır. Yazım hataları ise, olağan bir dikkat ve özenin gösterilmesi halinde gerçekleşme- yecek olan isim, yaş vb. bilgilerin yanlış yazılmasıdır. Esasen hesaplama ve yazım hataları da uygulama neticesinde ortaya çıkmış hatalar olduğundan sonuç itibarıyla birer uygulama hatasıdır. Kaldı ki bazen yapılan yanlışlığın ne tür bir hata olduğu da tam belirlenememektedir.</p>
+
+<p>Mahkemenin hata yapıldığından bahisle, kısa kararda yer verilmeyen hususlara gerekçeli kararda yer vermesi veya kısa kararı sonradan değiştirmesi usul ve kanuna aykırı olacaktır. Bu konuda öğretide, “Gerekçe ile birlikte hüküm fıkrası tekrar yazılırken, duruşmada yazılıp, okunmuş olan hüküm fıkrasında, yani kısa kararda hiçbir değişiklik yapılamaz. Esas olan, duruşmada okunmuş bulunan hüküm fıkrasıdır.” (Nur Centel-Hamide Zafer, Ceza Muhakemesi Hukuku, Beta Yayınevi, İstanbul 2013, 10. Baskı, s. 714) şeklinde görüşler bulunmaktadır. Ancak yerleşmiş uygulama ve kabullere göre, uygulama ve hesap hataları dışında kalan ve sonuç ceza üzerinde değişikliğe yol açmayan maddi yazım hatalarının yöntem ve zaman sınırlamasına tabi bulunmaksızın, bizzat bu hatayı yapan merci tarafından kendiliğinden veya denetim muhakemesi sonunda verilen bir karardaki uyarı üzerine düzeltilmesi mümkündür.</p>
+
+<p>Temyize tabi kararlar temyiz edilmemesi veya temyizen onanması halinde, kesin nitelikteki kararlar ise verildikleri anda kesinleşmiş olacaktır. Kesinleşen kararda olağanüstü kanun yolları hariç artık hükmün değişme imkânı bulunmamaktadır. 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkındaki Kanunun 4. maddesinde de vurgulandığı üzere, mahkûmiyet hükümlerinin infazı için hükmün kanun gereği kesin ya da kesinleşmiş olması gerekir.</p>
+
+<p>Yargı makamlarınca verilen hükümlerin kesin ya da kesinleşmiş olması bireylerin güven içinde yaşamaları için zorunludur. Her yargılamada gerçeğe, adalet ve hakkaniyete ulaşılması çabası bulunsa da ceza muhakemesinin de bir sonu olmalıdır. Aksi halde ceza muhakemesinin amaçları arasında olan toplumsal barış ve güven sağlanamaz; sürekli bir çekişme ve belirsizlik ortamı varlığını korur. (Veli Özer Özbek, İnfaz Hukuku, Ankara 2015, Seçkin Yayıncılık, 7. baskı, s. 70)</p>
+
+<p>Kesin hükmün bağlayıcı olması nedeniyle bu kararlar değiştirilemez, yerine getirilmesi geciktirilemez. 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanunun 98. maddesinin 1. fıkrasında; “Mahkûmiyet hükmünün yorumunda veya çektirilecek cezanın hesabında duraksama olursa, cezanın kısmen veya tamamen yerine getirilip getirilemeyeceği ileri sürülür ya da sonradan yürürlüğe giren kanun, hükümlünün lehinde olursa, duraksamanın giderilmesi veya yerine getirilecek cezanın belirlenmesi için hükmü veren mahkemeden karar istenir” hükmüne yer verilmiştir. Görüleceği üzere infaz sırasında, mahkûmiyet hükmünün yorumunda veya cezanın kısmen veya tamamen yerine getirilip getirilemeyeceği konusunda ya da hükümlü lehine bir kanun yürürlüğe girmesi halinde ancak hükmü veren mahkemeden karar isteneceği belirtilmiş olup kesinleşmiş hükümdeki ceza miktarının hesap hatası yapıldığından bahisle ya da başka bir nedene dayalı olarak artırılamayacağı, değiştirilemeyeceği açıktır.</p>
+
+<p>Uyuşmazlık konusu ile bağlantılı olarak, ilk derece mahkemelerince verilen ve içerisinde hata barındıran hükümlerin temyiz incelemesine konu edilmesi halinde “aleyhe değiştirmeme zorunluluğu” ya da “aleyhe düzeltme yasağı” kavramlarına değinilerek uyuşmazlık çözüme kavuşturulmalıdır.</p>
+
+<p>Cezayı aleyhe değiştirememe yasağı öğreti ve uygulamada; “temyiz davası yalnızca sanık veya müdafii ya da sanık lehine Cumhuriyet savcısı veya sanığın eşi ya da yasal temsilcisi tarafından açıldığında hükümde yaptırımın türü ve ağırlığı bakımından sonucu sanığın aleyhine ağırlaştırıcı, diğer bir anlatımla aleyhe sonuç verici düzeltmelerin yapılamaması veya kurulacak yeni hükümdeki cezanın sanığın aleyhine olarak ilk hükümden daha ağır olamaması” şeklinde tanımlanmaktadır.</p>
+
+<p>Cezayı aleyhe değiştirememe yasağı, hükmün temyiz incelemesine başlarken, bakış açısını belirleyen bir usul kuralı olduğu gibi, bozmadan sonraki aşamada da ceza miktarının sınırını belirleyen bir yargılama ilkesidir. Bu sebeple temyiz incelemesinde öncelikle temyizin lehe veya aleyhe mi olduğu tespit edilip, inceleme buna göre yapılmalı ve sanık lehine tecelli eden bir hatanın doğuracağı hukuki neticeler aleyhte başvuru bulunmadıkça değiştirilmemelidir.</p>
+
+<p>Latince “reformatio in pejus judici appellato non licet” olarak adlandırılan, “bir hükmün aleyhe değiştirilmesi caiz değildir. Şeklinde tercüme edilen, öğreti ve uygulamada ise, “lehe kanun yolu davası üzerine hükmü aleyhe değiştirmeme, aleyhe bozmama zorunluluğu, aleyhe düzeltme yasağı, yaptırım ve sonuçlarını aleyhe kötüleştirememe ya da ağırlaştıramama kuralı, aleyhe bozma yasağı” olarak ifade edilen bu ilkenin amacı; hükmün aleyhine bozulabileceğini düşünen sanığın bazı davalarda istinaf ya da temyiz kanun yoluna başvurmaktan çekinmesinin önüne geçmek ve kanun yoluna başvurma hakkını daha özgürce kullanabilmesini sağlamaktır.</p>
+
+<p>Anılan kural, 1412 sayılı Ceza Muhakemeleri Usulü Kanununun 5320 sayılı Kanunun 8. maddesi uyarınca halen yürürlükte bulunan 326. maddesinin 4. fıkrasında; “Hüküm yalnız sanık tarafından veya onun lehine Cumhuriyet savcısı veya 291. maddede gösterilen kimseler tarafından temyiz edilmişse, yeniden verilen hüküm, evvelki hükümle tayin edilmiş olan cezadan daha ağır olamaz” şeklinde kanuni düzenlemeye dönüştürülmüştür. Buna göre ceza hukukumuzda genel anlamda bir kazanılmış hak kavramından bahsedilemeyeceği, yalnızca 1412 sayılı CMUK`nun 326. maddesinin son fıkrası uyarınca sınırlı biçimde uygulanabilecek olan “cezayı aleyhe değiştirememe” veya “aleyhte düzeltme yasağı”nın söz konusu olduğunun kabulü gerekmektedir.</p>
+
+<p>Bu kuralla ilgili olarak 01.06.2005 tarihinde yürürlüğe giren 5271 sayılı Ceza Muhakemesi Kanununun 307/4. maddesinde ise; “Hüküm yalnız sanık tarafından veya onun lehine Cumhuriyet savcısı veya 262. maddede gösterilen kimselerce temyiz edilmişse yeniden verilen hüküm önceki hükümle belirlenmiş olan cezadan daha ağır olamaz” düzenlemesine yer verilmiştir.</p>
+
+<p>Kanundaki açık düzenlemelerden de anlaşılacağı üzere; yaptırımı ve sonuçlarını aleyhe değiştirme yasağının kapsamı yalnızca ceza miktarı ile sınırlı olacak, sanık veya onun lehine ilgililer tarafından temyiz davası açıldığında, lehe bozma üzerine yeniden kurulan hükümle belirlenen ceza ve sonuç önceki hükümle belirlenen cezadan ve sonuçtan daha ağır olamayacaktır.</p>
+
+<p>Gerek bozma ilamında, gerekse yerel mahkemece bozmadan sonra kurulan hükümde yaptırım ve sonuçları aleyhe değiştirme yasağına aykırılığın söz konusu olup olmadığı önceki ve sonraki hükümlerde yer alan ceza ve yaptırımların tüm yönleri ile karşılaştırılması suretiyle belirlenecektir.</p>
+
+<p>Ceza Genel Kurulunun 20.06.2006 gün ve 124-165 sayılı kararında; istinaf ve temyiz kanun yolları bakımından pozitif hukukumuzda yer alan “cezanın aleyhe değiştirilmemesi” ilkesinin, ceza muhakemesinin mutlak ve vazgeçilemez değerleri arasında yer alan ve evrensel hukukun benimsediği bir ilke olmadığı, kanunun düzenleniş biçimi ve amacı itibarıyla, asıl ceza yargılamasında verilen kararlara karşı kesin hükme kadar masumiyet karinesinden yararlanma hakkı bulunan sanığın temyiz kanun yoluna başvurudan çekinmemesini temine yönelik bir prensip olduğu açıklanmıştır.</p>
+
+<p>Belirtildiği üzere aleyhe değiştirme yasağı münhasıran “cezalar” ile ilgili ve sınırlı olup, fiilin nitelendirilmesinde ve suç adının belirlenmesinde geçerli değildir. Cezalar 5237 sayılı TCK`nun 45. maddesinde; hapis ve adli para cezaları olarak sayıldığından, cezalar arasında sayılmayan güvenlik tedbirleri ile diğer müesseselerin bu yasak kapsamda değerlendirileme- yeceği Ceza Genel Kurulunca duraksamasız olarak kabul edilegelmiştir.</p>
+
+<p>Uyuşmazlığın isabetli bir şekilde çözüme kavuşturulması açısından hatalı oluşturulan hükmün yalnız sanık lehine temyiz edilmesi halinde aleyhe değiştirmeme zorunluluğu ya da aleyhe düzeltme yasağı kuralı çerçevesinde sonuç cezanın kanun yoluna başvuruda önemi ve Yargıtay ilgili dairesinin ne şekilde karar vereceği hususuna da değinmek gerekecektir.</p>
+
+<p>1412 sayılı CMUK’nun 5320 sayılı Kanunun 8. maddesi uyarınca halen yürürlükte bulunan 305. maddesi uyarınca, ceza mahkemelerince verilen hükümlerin temyize tâbi olmaları kural, temyiz edilememeleri ise istisnadır.</p>
+
+<p>14.04.2011 gün ve 27905 sayılı Resmi Gazetede yayımlanarak yürürlüğe giren 6217 sayılı Yargı Hizmetlerinin Hızlandırılması Amacıyla Bazı Kanunlarda Değişiklik Yapılmasına Dair Kanunun 23. maddesi ile 5271 sayılı CMK`nun 272. maddesinin 3. fıkrasının (a) bendinde; “Hapis cezasından çevrilen adlî para cezaları hariç olmak üzere, sonuç olarak belirlenen 3.000 Türk Lirası dâhil adlî para cezasına mahkûmiyet hükümlerine karşı istinaf yasa yoluna başvurulamayacağı” şeklinde yapılan değişiklik ve aynı kanunun 26. maddesi ile 5320 sayılı Ceza Muhakemesi Kanununun Yürürlük ve Uygulama Şekli Hakkındaki Kanuna eklenen; “Bölge adliye mahkemeleri faaliyete geçinceye kadar hapis cezasından çevrilenler hariç olmak üzere, sonuç olarak belirlenen üçbin Türk Lirası dâhil adlî para cezasına mahkûmiyet hükümlerine karşı temyiz yoluna başvurulamaz” şeklindeki geçici 2. madde göz önünde bulundurulduğunda, 14.04.2011 tarihinden sonra, doğrudan hükmolunan 3.000 Türk Lirası ve daha az miktardaki mahkûmiyet hükümlerinin temyizi mümkün değildir.</p>
+
+<p>Temyize getirilen bu istisnadan anlaşılacağı üzere kısa karardaki ve dolaysıyla hükümdeki sonuç cezanın kanun yollarına başvuruda belirleyici bir unsur olduğu açıktır.</p>
+
+<p>Ceza Genel Kurulunun 11.03.2014 gün ve 532-126, 12.03.2013 gün ve 1515-202 ile 21.12.2010 gün ve 230-264 sayılı kararı başta olmak üzere birçok kararında da vurgulandığı gibi, kesin nitelikteki hükümler ancak kesinlik sınırını aşar nitelikte yaptırım içermek şartıyla suç vasfına yönelik ya da suç niteliği doğru belirlenmesine rağmen yanılgılı bir uygulama ile kesinlik sınırı içinde kalan cezaların verildiği hükümlere karşı yapılan aleyhe başvuru üzerine temyiz denetimine konu olabilecektir. Yani doğru uygulama yapıldığında kesinlik sınırı içinde kalmayacak bir hükmün, hatalı uygulama (hesap hatası, uygulama hatası gibi) neticesinde-ortaya çıkan sonuç ceza itibariyle-kesinlik sınırı içindeyse aleyhe temyiz bulunmadığı durumda temyize konu olması mümkün değildir.</p>
+
+<p>1412 sayılı CMUK`nun 5320 sayılı Kanunun 8. maddesi uyarınca halen yürürlükte bulunan 320. maddesinde; “Yargıtay, temyiz dilekçesi ile layihasında irad olunan hususlar ile temyiz talebi usule ait noksanlardan dolayı olmuş ise temyiz dilekçesinde bu cihete dair beyan edilecek vakıalar hakkında tetkikler yapabileceği gibi hükme tesiri olacak derecede kanuna muhalefet edilmiş olduğunu görürse talepte mevcut olmasa dahi bu hususu tetkik eder”,</p>
+
+<p>321.maddesinde; “Yargıtay, aleyhine itiraz olunan hükmü hangi cihetten kanuna muhalif görmüşse o cihetten bozar.</p>
+
+<p>Hükmün bozulmasına sebep olan kanuna muhalefet keyfiyeti, bu hükme esas olarak tespit edilen vakıalarda olmuş ise bu muameleler dahi aynı zamanda bozulur”,</p>
+
+<p>322.maddesinde ise; “Hükme esas olarak tespit edilen vakıalara tatbikinde kanuna muhalefet edilmesinden dolayı o hüküm bozulmuş ise Yargıtay aşağıda yazılı olan hallerde kendisi davasının esasına hükmeder.</p>
+
+<p>1.Vakıanın daha ziyade aydınlanması gerekmeden beraete veya davanın düşmesine yahut aşağı - yukarı haddi olmayan sabit bir cezaya hükmolunması icabederse,</p>
+
+<p>2.Yargıtay Başsavcılığının iddiasına uygun olarak suçluya kanunda yazılı cezanın en aşağı derecesini uygulamayı uygun görürse,</p>
+
+<p>3.Mahkemece sabit görülen suçun unsurları ve vasfı ve cezası hükümde doğru gösterilmiş olduğu halde sadece kanunun madde numarası yanlış yazılmış ise,</p>
+
+<p>4.Hükümden sonra yürürlüğe giren kanun suçun cezasını azaltmış ve mahkemece suçluya ceza tayininde artırma sebebi kabul edilmemiş veya yeni bir kanun ile fiil suç sayılmamış olmaktan dolayı birinci halde daha az bir cezanın hükmü ve ikinci halde hiç ceza hükmolunmaması gerekirse,</p>
+
+<p>5.Açıkca tespit edilmiş olan suçlunun doğum ve suç tarihlerine göre ceza tayininde gerekli indirme yapılmamış veya yanlış olarak indirme yapılmış ise,</p>
+
+<p>6.Arttırma veya indirme sonu ceza müddeti veya miktarını tayinde maddi hata yapılmış ise,</p>
+
+<p>7.Hükmedilmiş olan ceza yerine Ceza Kanununun 29 uncu maddesince adli tevbih kararı verilmesi icabederse,</p>
+
+<p>8.Ceza Kanununun 29 uncu maddesindeki tertibin gözetilmemesi yüzünden eksik veya fazla ceza verilmiş ise,</p>
+
+<p>9.Harçlar Kanunu ile yargılama giderlerine ilişkin hükümlere ve Avukatlık Kanununa göre düzenlenen ücret tarifesine aykırılık yapılmışsa.</p>
+
+<p>Sair hallerde Temyiz Mahkemesi işi yeniden tetkik ve hükmolunmak üzere hükmü bozulan mahkemeye veya o derecede diğer civar bir mahkemeye gönderir.” hükümleri yer almaktadır.</p>
+
+<p>Temyiz yargılama makamı olan Yargıtay’ın görevi, kural olarak, denetimini yaptığı hükümde hukuka aykırılık bulunup bulunmamasına göre hükmü bozmak veya onamaktır. Temyiz incelemesi sırasında Yargıtay, temyiz nedeniyle ortaya çıkan uyuşmazlığı çözecek nitelikte bir karar verecektir. Temyiz edilen hükümde hukuka aykırılık bulunmaması halinde hüküm onanacak, hukuka aykırılık bulunması halinde ise CMUK’nun 321. maddesine göre hüküm bozulacak ya da bozulan hüküm yerine aynı kanunun 322. maddesine göre Yargıtay’ca davanın esasına hükmedilecektir. Buna göre; Yargıtay temyiz dilekçesinde ileri sürülüp sürülmediğine bakılmaksızın son karara etkili olan tüm kanuna aykırılıkları inceleyip, aykırılık saptaması halinde de bozma kararı verme hak ve yetkisine sahiptir. Bu konuyla ilgili olarak getirilen sınırlamalar, 1412 sayılı CMUK’nun 5320 sayılı Kanunun 8. maddesi uyarınca halen yürürlükte bulunan 326. maddesinin son fıkrasında yer alan, “Hüküm yalnız sanık tarafından veya onun lehine Cumhuriyet savcısı veya 291. maddede gösterilen kimseler tarafından temyiz edilmişse yeniden verilen hüküm, evvelki hükümle tayin edilmiş olan cezadan daha ağır olamaz” kuralı ile 05.03.1941 gün ve 50-7 sayılı İçtihadı Birleştirme Kararı uyarınca, katılanın münhasıran kendi şahsi haklarına hasrettiği temyiz istemi üzerine, sanık lehine bozma yapılamamasıdır. Bu iki istisna dışında, Yargıtay`ca incelenen ve kanuna aykırılık taşıdığı belirlenen bir hükmün, temyiz edenin sıfatı nazara alınarak, sanık lehine veya aleyhine bozulmasına bir engel bulunmamaktadır.</p>
+
+<p>Temyiz nedenini oluşturacak hukuka aykırılıklar CMUK’nun 307 ve 308. maddelerinde gösterilmiştir. CMUK`nun 307. maddesinin 1. fıkrasında, “Temyiz ancak hükmün kanuna muhalif olması sebebine müstenit olur” denildikten sonra 2. fıkrasında, “Hukuki bir kaidenin tatbik edilmemesi yahut yanlış tatbik edilmesini” kanuna muhalefet olarak belirtilmiş, 308. maddesinde ise sekiz bent halinde gösterilen hususlarda kanuna “mutlaka muhalefet” edilmiş sayılacağı kabul edilmiştir.</p>
+
+<p>Bu maddelere göre, Yargıtay temyiz nedenleriyle bağlı olmaksızın, temyiz dilekçesinde ileri sürülsün veya sürülmesin son karara etkili olan tüm hukuka aykırılıkları kendiliğinden inceleyip hükmü bozabilecektir. Yargıtay`ca yapılacak denetimde, mevcut delillerin yerel mahkemece yanlış değerlendirildiği ve bu nedenle somut olaya ilişkin hukuki nitelemenin yanlış yapıldığı sonucuna varılırsa, karar esastan bozulmakla birlikte, uygulanması gereken hukuki kurallar da gösterilmelidir. Lehe temyiz davasında ise, suç niteliğinin belirlenmesinde yanılgıya düşüldüğü belirlenirse, cezanın tür ve miktarı yönünden önceki hükümle belirlenmiş olan cezadan daha ağır olamayacağı şartı ile kanuna aykırı olan hükmün bozulmasına karar verilmeli, suç niteliği dışındaki sair hallerde ise, yol göstermek ve uygulamada birliği sağlamak amacıyla eleştiri ile yetinilerek, aleyhe temyiz olmadığı vurgulanmak suretiyle hüküm onanmalıdır.</p>
+
+<p>Buna göre eleştiri, temyiz mahkemesince aleyhe temyiz bulunmaması veya sonuca etkili olmaması nedeniyle mutlak bozma sebebi teşkil etmeyen bir hukuka aykırılığa uyarıcı, öğretici ve yol gösterici nitelikte işaret edilmesi olup, kural olarak “onama” kararlarında söz konusudur. Hükmün sanık lehine belirlenen hukuka aykırılıklar veya zorunluluklar nedeniyle bozulması durumunda sanığın aleyhine tespit edilen hukuka aykırılıklar da bozma sebebi yapılmalı ve hükmün lehe-aleyhe bozulmasına karar verilmelidir. Aksi takdirde sanığın; önceki yanılgılı uygulama nedeniyle ortaya çıkan hafif sonuç cezadan, ikinci kez mahkûmiyetin sonuçlarını da kapsayacak şekilde yararlandırılmasını sağlayacak, sanığa daha önce bir kez tanınmış olan atıfet genişletilmek suretiyle, hakkaniyete aykırı sonuçların doğmasına, adalet ve eşitlik ilkelerinin zedelenmesine yol açılmış olacaktır.</p>
+
+<p>Bu genel açıklamalardan sonra temyiz incelemesi sırasında hükümdeki uygulama, hesaplama ve maddi (yazım) hatalarının aleyhe temyiz olmaması halinde nasıl değerlendirilmesi gerektiği tartışılmalıdır.</p>
+
+<p>Hükümdeki isim, yaş vb. bilgilerin yanlış yazılmasından kaynaklanan maddi (yazım) hataları aleyhte değiştirme yasağı kapsamında olmadığından Yargıtay`ca düzeltilebileceği aşikardır.</p>
+
+<p>Kanun maddesinin yanlış yorumlanmasının söz konusu olduğu, hâkimin takdirine bağlı ve bilinçli uygulamalardaki hata ve aykırılıkların yani uygulama hatalarının aleyhte değiştirme yasağı kapsamında kalacağı, suç tarihi, sanığın ismi, yaşı vb. şekildeki yazım hatalarının ise bu yasak kapsamında değerlendirilemeyeceği konusunda da tereddüt bulunmamaktadır.</p>
+
+<p>Hesap hatalarının ise bu yasak kapsamında kalıp kalmadığı konusunun, hesap hatasının sonuç cezaya etkisi gözetilerek çözümlenmesi gerekmektedir. Çünkü 5320 sayılı Kanunun 8. maddesi uyarınca halen yürürlükte bulunan 1412 sayılı CMUK`nun 326. maddesinin son fıkrası uyarınca sınırlı biçimde uygulanabilecek olan “cezayı aleyhe bozma veya düzeltme yasağı”nın konusunu temel ceza ya da indirim-artırım sırasındaki ara ceza miktarı değil sonuç ceza oluşturmaktadır.</p>
+
+<p>Bu bağlamda, cezanın belirlenmesi aşamasında artırım ya da indirim yapılırken hesap veya yazım hatası yapılıp bir sonraki hesaplamanın yapıldığı ya da sonuç cezanın açıklandığı fıkrada bu hatadan dönülerek doğru sonuca ulaşılmış, dolaysıyla aradaki hesap ya da yazım hatası sonuca etkili olmamış ise, yapılan hesap ya da yazım hatası “cezayı aleyhe bozma veya düzeltme yasağı” kapsamında kalmayacak, aksi halde, yani yapılan hesap ya da yazım hatası, sanığın daha az ceza almasına yol açacak şekilde sonuç cezanın belirlenmesine yol açmış ve hüküm bu sonuç üzerine kurulmuş ise, hatalı da olsa açıklanan ve hükmedilen bu ceza miktarı anılan kurala konu olacaktır. Aleyhe temyiz bulunmadığı halde sonuç cezanın hesap hatası, yazım hatası denilerek düzeltilmesi veya kazanılmış hak saklı tutulmadan bozmaya konu edilmesi 5320 sayılı Kanunun 8. maddesi uyarınca halen yürürlükte bulunan 1412 sayılı CMUK`nun 326/4. maddesindeki amir kurala aykırı olacaktır.</p>
+
+<p>Nitekim Ceza Genel Kurulumuz da çeşitli kararları ile, hesap hatası yapılan hükme ilişkin lehe temyiz davasında aleyhe düzeltmeme zorunluluğuna açıklık getirmiş ve ‘temyiz incelemesinde öncelikle temyizin lehe veya aleyhe mi olduğu tespit edilerek, incelemenin buna göre yapılması gerektiği, sanık lehine tecelli edecek bir hatanın tazammun edeceği hukuki neticelerin aleyhte tevessülatta bulunmadıkça değiştirilemeyeceği’ (31.01.1949 gün ve 171-35),‘ilk hüküm sanık tarafından temyiz edilmeyerek kesinleşmiş olsaydı durum ne olacak idiyse, lehe temyizin bu durumu değiştirmemesi gerektiği’ (19.06.1967 gün ve 114-162, 13.04.1964 gün ve 154-167), ‘hesap hatası sonucunda eksik tayin edilen hapis cezasının ceza miktarı yönünden kazanılmış hak oluşturacağı’ (07.10.2008 gün ve 198-211) vurgulamış, 15.12.2015 gün ve 602-509 sayılı kararında da; TCK`nun 62. maddesi ile cezada indirim yapılırken hapis cezasının “6 yıl 8 ay” yerine “6 yıl” şeklinde belirlenmesi suretiyle sanığın sonuç olarak 6 yıl hapis cezasıyla cezalandırılmasına karar veren yerel mahkeme hükmünü, sanık müdafiinin temyizi üzerine inceleyen Özel Dairenin, cezanın 6 yıl 8 aya çıkartılması suretiyle düzeltilerek onanmasına ilişkin kararının, 1412 sayılı CMUK’nun 5320 sayılı Kanunun 8. maddesi uyarınca halen yürürlükte bulunan 326/son maddesinde tanımlanan aleyhe düzeltme yasağına aykırı olduğu kabul edilmiştir.</p>
+
+<p>Ceza Genel Kurulunun 15.12.2015 gün ve 602-509 sayılı kararında da aynı hususlara vurgu yapılmıştır.</p>
+
+<p>Bu açıklamalar ışığında somut olay değerlendirildiğinde;</p>
+
+<p>Mahkemece sanık hakkında taksirle birden fazla kişinin yaralanmasına neden olma suçundan hüküm kurulurken 5237 sayılı TCK’nun 89/4 ve 62. maddeleri uyarınca tayin olunan 10 ay hapis cezasının TCK`nun 50/1-a maddesi gereğince adli para cezasına çevrilmesine karar verildikten sonra, aynı Kanunun 52/2. maddesi gereğince gün sayısının bir gün karşılığı olarak takdir edilen 30 Lira ile çarpılması sonucunda “9.000” Lira yerine “7.500” Lira olarak eksik ceza tayin edilmiş olup, yapılan hesap hatasının sanığın daha az ceza almasına yol açacak şekilde sonuç cezanın belerlenmesine yol açtığı gözetildiğinde yerel mahkeme hükmünün yalnız sanık tarafından temyiz edilmesine karşın Özel Dairece cezanın 1412 sayılı CMUK’nun 5320 sayılı Kanunun 8. maddesi uyarınca halen yürürlükte bulunan 321. maddesi uyarınca 9.000 Liraya çıkartılması suretiyle düzeltilerek onanmasının aynı kanunun 326/son maddesinde tanımlanan aleyhe düzeltme yasağına aykırı olduğu kabul edilmelidir.</p>
+
+<p>Bu itibarla, Yargıtay Cumhuriyet Başsavcılığı itirazının kabulüne, Özel Daire düzeltilerek onama kararının kaldırılmasına, yerel mahkeme hükmünün TCK`nun 50/1-a, 52. maddeleri uyarınca 10 ay hapis cezasının adli para cezasına çevrilmesi sırasında hesap hatası, sonucu eksik adli para cezası tayin edilmesi eleştirilerek Özel Daire kararında belirtilen diğer hukuka aykırılıklar nedeniyle düzeltilerek onanmasına karar verilmelidir.</p>
+
+<p>Çoğunluk görüşüne katılmayan oniki Genel Kurul Üyesi; “itirazın reddine karar verilmesi gerektiği düşüncesiyle” karşıoy kullanmışlardır.</p>
+
+<p>SONUÇ:</p>
+
+<p>Açıklanan nedenlerle;</p>
+
+<p>1- Yargıtay Cumhuriyet Başsavcılığı itirazının ( KABULÜNE ),</p>
+
+<p>2-Yargıtay 12. Ceza Dairesinin 17.01.2014 gün ve 15669-734 sayılı düzeltilerek onama kararının ( KALDIRILMASINA ),</p>
+
+<p>Gaziantep 18. Asliye Ceza Mahkemesinin 03.05.2011 gün ve 482-125 sayılı kararının;</p>
+
+<p>3- a- Yargıtay Ceza Genel Kurulu’nun 07.07.2009 tarih 2009/9-62-191 sayılı kararında da vurgulandığı üzere, taksirli suçlar açısından temel cezanın belirlenmesinde TCK`nun 61/1. maddesinin (g) bendinde yer alan “failin güttüğü amaç ile kastı” gerekçesine dayanılamayacağının gözetilmemesi,</p>
+
+<p>b- Sanığa verilen para cezasının taksitlendirilmesi sırasında taksitlerden birinin zamanında ödenmemesi halinde geri kalan kısmın tamamının tahsil edileceği ve ödenmeyen adli para cezasının hapse çevrileceği hususuna hükümde yer verilmemek suretiyle TCK`nun 52/4. maddesine muhalefet edilmesi;</p>
+
+<p>İsabetsizliklerinden ( BOZULMASINA ), ancak yeniden yargılama gerektirmeyen bu hususlarda aynı Kanunun 322. maddesi gereğince karar verilmesi mümkün bulunduğundan, hüküm fıkrasından “failin kastı ve amacı” ibaresinin çıkartılıp yerine “taksirinin yoğunluğu” ibaresinin eklenmesi, hükmün taksitlendirme ile ilgili 4. paragrafının sonuna “taksitlerden biri zamanında ödenmediği takdirde geri kalan kısmın tamamının tahsil edileceği ve ödenmeyen adli para cezasının hapse çevrileceği hususunun sanığa ihtarına” ibaresinin eklenmesi ve “TCK.nun 50/1-a, 52. maddeleri uyarınca 10 ay hapis cezasının adli para cezasına çevrilmesi sırasında hesap hatası sonucu eksik ceza tayin edilmesi, temyiz edenin sıfatına göre bozma nedeni yapılmamıştır” eleştirisinin yapılması suretiyle, sair yönleri usul ve kanuna uygun bulunan hükmün (DÜZELTİLEREK ONANMASINA),</p>
+
+<p>4- Dosyanın, mahalline gönderilmek üzere Yargıtay Cumhuriyet Başsavcılığına ( TEVDİİNE ), oyçokluğuyla karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY CEZA GENEL KURULU 
+Esas : 2013/1-347 Karar : 2013/351</strong> Tarih : 9.07.2013</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 262. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yasal Temsilcinin ve Eşin Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>İtirazın kapsamına göre inceleme, sanık hakkında kasten öldürme suçundan kurulan hükümle sınırlı olarak yapılmıştır.</p>
+
+<p>Yargıtay Cumhuriyet Başsavcılığı ile Özel Daire arasında oluşan ve Ceza Genel Kurulunca çözümlenmesi gereken uyuşmazlık; aleyhe temyiz bulunmayan bir durumda fiilin suçun nitelikli halini oluşturduğundan bahisle eleştiri ile onama mı, yoksa cezayı aleyhe değiştirme yasağı gözetilerek bozma kararı mı verileceğinin belirlenmesine ilişkindir.</p>
+
+<p>Ayrıntılarına Ceza Genel Kurulunun 03.04.2012 gün ve 353-129 sayılı kararı başta olmak üzere birçok kararında yer verildiği gibi, aleyhe bozma yasağı; “temyiz davası yalnızca sanık veya müdafii ya da sanık lehine Cumhuriyet savcısı veya sanığın eşi ya da yasal temsilcisi tarafından açıldığında, hükümde, yaptırımın türü ve ağırlığı bakımından sonucu sanığın aleyhine ağırlaştırıcı, diğer bir deyişle, aleyhe sonuç verici düzeltmelerin yapılamaması veya kurulacak yeni hükümdeki cezanın, sanığın aleyhine olarak ilk hükümden daha ağır olamaması” şeklinde tanımlanmaktadır.</p>
+
+<p>Latince “reformatio in pejus” olarak adlandırılan, öğreti ve uygulamada ise; “lehe kanun yolu davası üzerine hükmü aleyhe değiştirmeme zorunluluğu, aleyhe düzeltme yasağı, aleyhe bozma yasağı, aleyhe bozmama zorunluluğu, yaptırımı ve sonuçlarını aleyhe kötüleştirememe yasağı, yaptırımı ve sonuçlarını ağırlaştıramama kuralı” olarak ifade edilen bu kural, 1412 sayılı Ceza Muhakemesi Usulü Kanununun, 5320 sayılı Kanunun 8. maddesi uyarınca halen yürürlükte bulunan 326. maddesinin 4. fıkrasında; “Hüküm yalnız sanık tarafından veya onun lehine Cumhuriyet savcısı veya 291. maddede gösterilen kimseler tarafından temyiz edilmişse, yeniden verilen hüküm, evvelki hükümle tayin edilmiş olan cezadan daha ağır olamaz” şeklinde kanuni düzenlemeye kavuşturulmuştur. Ceza muhakemesi hukukumuzda bu madde dışında yaptırım ve cezayı aleyhe değiştirme yasağını düzenleyen başka bir hüküm de bulunmamaktadır. Buna göre ceza hukukunda genel anlamda kazanılmış hak kavramından bahsedilemeyeceği, yalnızca 1412 sayılı CMUK`nun 326. maddesinin son fıkrası uyarınca sınırlı biçimde uygulanabilecek bir “cezayı aleyhe değiştirememe ilkesi” veya “aleyhte düzeltme yasağı”nın söz konusu olduğunun kabulü gerekmektedir.</p>
+
+<p>01.06.2005 tarihinde yürürlüğe giren 5271 sayılı Ceza Muhakemesi Kanununun 307/4. maddesinde de; “Hüküm yalnız sanık tarafından veya onun lehine Cumhuriyet savcısı veya 262. maddede gösterilen kimselerce temyiz edilmişse, yeniden verilen hüküm, önceki hükümle belirlenmiş olan cezadan daha ağır olamaz” düzenlemesine yer verilmek suretiyle, aleyhe bozmama ilkesi korunmuştur.</p>
+
+<p>Kanunun açık düzenlemesinden de anlaşılacağı üzere; yaptırım ve sonuçlarını aleyhe değiştirme yasağının kapsamı yalnızca ceza ve yaptırım miktarı ile sınırlıdır. Kanun koyucu suçun niteliği veya adı yönünden sanık yararına kazanılmış bir hak tanımamıştır. .</p>
+
+<p>Temyiz davasının yalnızca sanık veya varsa müdafii ya da sanığın yararına olarak Cumhuriyet savcısı ya da 1412 sayılı Kanunun 291. maddesinde belirtilen kişiler tarafından açılması veya hükmün kendiliğinden temyize tâbi olması halinde, Yargıtayca suç niteliğinde hataya düşüldüğü saptandığında aleyhe temyiz bulunmasa bile, cezanın tür ve miktarı yönünden kazanılmış hak saklı kalmak şartıyla hükmün bozulmasına karar verilecektir. Aksinin kabulü hukuk kuralları ile kanuni düzenlemelerin ülke genelinde farklı uygulanmasına yol açar ki, bu durum eşitlik, adalet ve hakkaniyet ilkelerine aykırılık oluşturacaktır. Zira aynı fiil nedeniyle farklı mahkemelerde yargılanan sanıklardan, suçunun hukuki niteliği doğru olarak belirlenen sanığın mahkûmiyeti ile zamanaşımı, süreli veya süresiz olarak bir kamu görevini üstlenmekten yoksun bırakılma, seçme ve seçilme hakkının kaybı gibi hak yoksunluklarının yanında, muhtemel bir genel veya özellikle de özel af karşısında değişik sonuçlarla karşılaşmasına rağmen, suç vasfı hatalı belirlenen sanığın, açıklanan sonuçlarla karşılaşmaması söz konusu olabilir ki, bu durum eşitlik ilkesi ile hak ve adalet duygusuna da uygun değildir. O halde, lehe temyiz davası üzerine suç vasfının saptanmasında hataya düşüldüğünün belirlenmesi halinde cezanın tür ve miktarı yönünden kazanılmış hak saklı tutularak hükmün bozulmasına karar verilmelidir.</p>
+
+<p>Somut olay bu açıklamalar ışığında değerlendirildiğinde;</p>
+
+<p>Kasten öldürme suçundan sanığın, TCK’nun 81/1, 31/3 ve 62/1. maddeleri uyarınca on yıl hapis cezası ile cezalandırılmasına ilişkin yerel mahkeme hükmünün, Özel Dairece; “maktulün suç tarihi itibariyle onsekiz yaşından küçük olduğu anlaşılmakla, sanığın kasten öldürme suçunun TCK`nun 82/1-e maddesinde düzenlenen suça uyduğu gözetilmeden suç niteliğinde hata yapılarak yazılı şekilde hüküm kurulması” isabetsizliğinden, yalnızca sanık müdafii tarafından temyiz edilmiş olması nedeniyle ceza miktarı yönünden kazanılmış hakkı saklı kalmak şartıyla bozulması yerindedir.</p>
+
+<p>Bu itibarla, Yargıtay Cumhuriyet Başsavcılığı itirazının reddine karar verilmelidir.</p>
+
+<p>SONUÇ:</p>
+
+<p>Açıklanan nedenlerle;</p>
+
+<p>1- Yargıtay Cumhuriyet Başsavcılığı itirazının ( REDDİNE ),</p>
+
+<p>2- Dosyanın, mahalline gönderilmek üzere Yargıtay Cumhuriyet Başsavcılığına TEVDİİNE, 09.07.2013 günü yapılan müzakerede oybirliğiyle karar verildi.</p>
+
+<hr>
+
+
+</div></div></main>
+</div>
+
+<footer>
+<section>
+<div class="contact-info">
+
+<div class="adres">
+
+<div class="telefon-wrapper">
+
+
+</div>
+</div>
+</section>
+
+</div>
+
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+"vars": {
+"account": "UA-58342443-1"
+},
+"triggers": {
+"trackPageview": {
+"on": "visible",
+"request": "pageview"
+}
+}
+}
+</script>
+</amp-analytics>
+
+</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="../../index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="../../dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="../../ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="../../knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="../../search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/slideToggle.min.js"></script>
+    <script src="../js/internet-status.js"></script>
+    <script src="../js/tiny-slider.js"></script>
+    <script src="../js/baguetteBox.min.js"></script>
+    <script src="../js/countdown.js"></script>
+    <script src="../js/rangeslider.min.js"></script>
+    <script src="../js/vanilla-dataTables.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/magic-grid.min.js"></script>
+    <script src="../js/dark-rtl.js"></script>
+    <script src="../js/active.js"></script>
+    <!-- PWA -->
+    <script src="../js/pwa.js"></script>
+  </body>
+</html>

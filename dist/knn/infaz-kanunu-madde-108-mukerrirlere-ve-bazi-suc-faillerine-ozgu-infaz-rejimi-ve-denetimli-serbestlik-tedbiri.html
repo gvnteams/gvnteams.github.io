@@ -1,0 +1,1411 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tiny-slider.css">
+    <link rel="stylesheet" href="../css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="../css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="tck-search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+               <div class="page-content-wrapper py-0">
+        </div>
+      </div>
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<h2 id="mükerrirlere-ve-bazı-suç-faillerine-özgü-i̇nfaz-rejimi-ve-denetimli-serbestlik-tedbiri">Mükerrirlere ve Bazı Suç Faillerine Özgü İnfaz Rejimi ve Denetimli Serbestlik Tedbiri</h2>
+
+<h2 id="i̇nfaz-kanunu-madde-108">İnfaz Kanunu Madde 108</h2>
+
+<p>(1) Tekerrür hâlinde işlenen suçtan dolayı mahkûm olunan;</p>
+
+<p>a) Ağırlaştırılmış müebbet hapis cezasının otuzdokuz yılının,</p>
+
+<p>b) Müebbet hapis cezasının otuzüç yılının,</p>
+
+<p>c) (Ek:14/4/2020-7242/49 md.)Birden fazla süreli hapis cezasına mahkûmiyet hâlinde en fazla otuziki yılının,</p>
+
+<p>d) Süreli hapis cezasının üçte ikisinin, İnfaz kurumunda iyi hâlli olarak çekilmesi durumunda, koşullu salıverilmeden yararlanılabilir. (Ek cümle:14/4/2020-7242/49 md.) Ancak, koşullu salıverilme oranı üçte ikiden fazla olan suçlar bakımından tabi oldukları koşullu salıverilme oranı uygulanır.</p>
+
+<p>(2) Tekerrür nedeniyle koşullu salıverme süresine eklenecek miktar, tekerrüre esas alınan cezanın en ağırından fazla olamaz.</p>
+
+<p>(3) İkinci defa tekerrür hükümlerinin uygulanması durumunda, hükümlü koşullu salıverilmez. (Ek cümle:14/4/2020-7242/49 md.) Hükümlü hakkında ikinci defa tekerrür hükümlerinin uygulanacağı hükümde belirtilir.</p>
+
+<p>(4) İnfaz hâkimi, mükerrir hakkında cezanın infazının tamamlanmasından sonra başlamak ve bir yıldan az olmamak üzere denetim süresi belirler.</p>
+
+<p>(5) Tekerrür dolayısıyla belirlenen denetim süresinde, koşullu salıverilmeye ilişkin hükümler uygulanır.</p>
+
+<p>(6) İnfaz hâkimi, mükerrir hakkında denetim süresinin uzatılmasına karar verebilir. Denetim süresi en fazla beş yıla kadar uzatılabilir.</p>
+
+<p>(7) (Ek: 18/6/2014-6545/82 md.) Cezanın infazı tamamlandıktan sonra devam eden denetim süresi içinde, bu madde hükümlerine göre kendilerine yüklenen yükümlülüklere ve yasaklara aykırı hareket eden mükerrirler, infaz hâkimi kararı ile disiplin hapsine tabi tutulur. Disiplin hapsinin süresi on beş günden az ve üç aydan fazla olamaz.</p>
+
+<p>(8) (Ek: 18/6/2014-6545/82 md.) Çocuğa karşı işlenen bir suçtan dolayı ağırlaştırılmış müebbet hapis cezasına veya müebbet hapis cezasına mahkûmiyet hâlinde birinci fıkradaki koşullu salıverilme süreleri uygulanır.</p>
+
+<p>(9) (Ek: 18/6/2014-6545/82 md.) Birinci fıkradaki koşullu salıverme süreleri, 26/9/2004 tarihli ve 5237 sayılı Türk Ceza Kanununun 102 nci maddesinin ikinci fıkrasında tanımlanan cinsel saldırı suçundan, 103 üncü maddesinde tanımlanan çocukların cinsel istismarı suçundan, 104 üncü maddesinin ikinci ve üçüncü fıkrasında tanımlanan reşit olmayanla cinsel ilişki suçundan, 188 inci maddesinde tanımlanan uyuşturucu veya uyarıcı madde imal ve ticareti suçundan dolayı hapis cezasına mahkûm olanlar hakkında da uygulanır. (Ek cümle:14/4/2020- 7242/49 md.) Ancak, süreli hapis cezaları bakımından koşullu salıverilme oranı, dörtte üç olarak uygulanır. 188 inci madde hariç olmak üzere bu suçlardan dolayı hapis cezasına mahkûm olanlar
+hakkında, cezanın infazı sırasında ve koşullu salıverildikleri takdirde denetim süresi içinde, aşağıdaki tedavi veya yükümlülüklerden bir veya birkaçına infaz hâkimi tarafından karar verilir:</p>
+
+<p>a) Tıbbi tedaviye tabi tutulmak</p>
+
+<p>b) Tedavi amaçlı programlara katılmak</p>
+
+<p>c) Suçun mağdurunun oturduğu ve çalıştığı yerleşim bölgesinde ikamet etmekten yasaklanmak</p>
+
+<p>d) Mağdurun bulunduğu yerlere yaklaşmaktan yasaklanmak</p>
+
+<p>e) Çocuklarla bir arada olmayı gerektiren bir ortamda çalışmaktan yasaklanmak</p>
+
+<p>f) Çocuklar hakkında bakım ve gözetim yükümlülüğünü gerektiren faaliyet icra etmekten yasaklanmak</p>
+
+<p>(10) (Ek:18/6/2014-6545/82 md.) Dokuzuncu fıkra hükümleri çocuklar hakkında uygulanmaz.</p>
+
+<p>(11) (Ek:18/6/2014-6545/82 md.) Bu maddenin dokuzuncu fıkrasının uygulanmasına ilişkin usul ve esaslar, Sağlık Bakanlığının görüşü alınmak suretiyle Adalet Bakanlığı tarafından hazırlanan yönetmelikle düzenlenir.</p>
+
+<hr>
+
+<ul>
+  <li><a href="../5275-sayili-ceza-ve-guvenlik-tedbirlerinin-infazi-hakkinda-kanun-1.html"><strong>5275 Sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun Tam Metin</strong></a></li>
+</ul>
+
+<hr>
+
+<amp-img src="../tokmak-yargitay-kararlari-1280x720.png" alt="İnfaz Kanunu Madde 108  Mükerrirlere ve Bazı Suç Faillerine Özgü İnfaz Rejimi ve Denetimli Serbestlik Tedbiri" width="1280" height="720" layout="responsive">
+            </amp-img>
+<h2 id="i̇nfaz-kanunu-madde-108-gerekçesi">İnfaz Kanunu Madde 108 Gerekçesi</h2>
+
+<p>Mükerrirlere özgü infaz rejimi ve denetimli serbestlik tedbirinin uygulanmasına ilişkin esas ve usuller belirtilmiştir.</p>
+
+<p>Maddeye göre, tekerrür halinde işlenen suçtan dolayı mahkûm olunan; ağırlaştırılmış müebbet hapis cezasının otuzdokuz yılının, müebbet hapis cezasının otuzüç yılının, süreli hapis cezasının ise beşte dördünün infaz kurumunda iyi halli olarak çekilmesi durumunda, şartla salıverilmeden yararlanılabileceği hükme bağlanmıştır.</p>
+
+<p>İkinci kez tekerrür hükümlerinin uygulanması halinde, hükümlünün şartla salıverilmesi mümkün olmayacaktır.</p>
+
+<p>Hakim, mükerrir suç işleyenler hakkında cezanın infazının tamamlanmasından sonra başlamak ve bir yıldan az olmamak üzere denetim süresi belirleyecektir.</p>
+
+<p>Tekerrür dolayısıyla belirlenen denetim süresi içinde, şartla salıverilmeye ilişkin 107 nci maddedeki hükümlünün davranışları, sosyal uyumu ve sorumluluk bilincindeki gelişme hakkında hükümler burada da uygulanır.</p>
+
+<p>Hakim, mükerrir hakkında denetim süresinin uzatılmasına da karar verebilir. Denetim süresi en fazla beş yıla kadar uzatılabilecektir.</p>
+
+<hr>
+
+<h2 id="i̇nfaz-kanunu-108-madde-emsal-yargıtay-kararları">İnfaz Kanunu 108. Madde Emsal Yargıtay Kararları</h2>
+
+<hr>
+
+<p><strong>YARGITAY 18. CEZA DAİRESİ
+Esas : 2016/14749 Karar : 2018/12961</strong> Tarih : 15.10.2018</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Yerel Mahkemece verilen hükümler temyiz edilmekle, başvurunun süresi ve kararın niteliği ile suç tarihine göre, sanığın yokluğunda verilen kararın, aynı zamanda bilinen en son adresi olan MERNİS adresine, öncelikle Tebligat Kanunu’nun 21/1. maddesine göre tebliği, mümkün olmaması durumunda aynı maddenin 2. fıkrası uyarınca tebliğ edilmesi gerektiği gözetilmeden, doğrudan Tebligat Kanunu’nun 21/2. maddesi gereğince yapılan tebligatın usulsüz olduğu anlaşılmakla, temyizin süresinde olduğu kabul edilip, temyiz isteminin reddi kararının kaldırılmasına karar verilerek, dosya görüşüldü.</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>Sanığa yükletilen hakaret ve görevi yaptırmamak için direnme eylemleriyle ulaşılan çözümü haklı kılıcı zorunlu öğelerinin ve bu eylemlerin sanık tarafından işlendiğinin kanuna uygun olarak yürütülen duruşma sonucu saptandığı, bütün kanıtlarla aşamalarda ileri sürülen iddia ve savunmaların temyiz denetimini sağlayacak biçimde ve eksiksiz sergilendiği, özleri değiştirilmeksizin tartışıldığı, vicdani kanının kesin, tutarlı ve çelişmeyen verilere dayandırıldığı,</p>
+
+<p>Eylemlerin doğru olarak nitelendirildiği ve Kanunda öngörülen suç tiplerine uyduğu,</p>
+
+<p>TCK’nın 58. maddesi uygulanırken, 5275 sayılı Kanunun 108/2. maddesi uyarınca en ağır cezayı içeren mahkumiyetin tekerrüre esas alınması gerektiği gözetilmeden, birden fazla ilam tekerrüre esas alınmış ise de, bu hususun infaz evresinde resen uygulanabileceği,</p>
+
+<p>Anlaşıldığından, sanık …’ın ileri sürdüğü nedenler yerinde görülmeyip, tebliğnameye uygun olarak TEMYİZ DAVASININ ESASTAN REDDİYLE HÜKÜMLERİN ONANMASINA, 15/10/2018 tarihinde oy birliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. CEZA DAİRESİ
+Esas : 2016/947 Karar : 2018/7212</strong> Tarih : 4.06.2018</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>I-Konut dokunulmazlığını bozma suçundan kurulan hükme yönelik yapılan incelemede;</p>
+
+<p>5237 sayılı TCK’nın 53. maddesinin bazı bölümlerinin iptaline ilişkin Anayasa Mahkemesi’nin 24/11/2015 tarihinde yürürlüğe giren 08/10/2015 gün ve 2014/140 esas, 2015/85 karar sayılı iptal kararı da nazara alınarak bu maddede öngörülen hak yoksunluklarının uygulanmasının infaz aşamasında gözetilmesi mümkün görülmüş, yapılan duruşmaya toplanan delillere mahkemenin soruşturma sonuçlarına uygun oluşan kanaat ve takdirine göre diğer temyiz itirazları yerinde görülmemiştir. Ancak;</p>
+
+<p>Sanığın adli sicil kaydında tekerrüre esas alınan Bakırköy 16. Asliye Ceza Mahkemesinin 15/11/2007 gün ve 973 – 422 sayılı kararına ilişkin cezaların 23/06/2010 tarihinde infaz edildiğinin ve infaz tarihlerinden itibaren üç yıl geçtiğinin anlaşılması nedeniyle TCK’nın 58/2-b. maddesi uyarınca tekerrüre esas alınamayacağı ancak, sanığın adli sicil kaydına göre; Bakırköy 3. Ağır Ceza Mahkemesinin 03/03/2008 gün ve 497 – 49 sayılı kararının tekerrüre esas olduğu nazara alınarak, Bakırköy 16. Asliye Ceza Mahkemesinin 15/11/2007 gün ve 973 – 422 sayılı kararının mükerrirliğe esas alınması,</p>
+
+<p>Bozmayı gerektirmiş, sanığın temyiz itirazları bu itibarla yerinde görülmüş olduğundan hükmün bu sebeplerden dolayı 1412 sayılı CMUK’nun 321. maddesi gereğince BOZULMASINA, ancak bu aykırılığın aynı Kanun’un 322. maddesine göre düzeltilmesi mümkün olduğundan, TCK.nun 58. maddesinin uygulanmasına ilişkin bölümün hüküm fırkasından çıkartılarak, Bakırköy 3. Ağır Ceza Mahkemesinin 03/03/2008 gün ve 497 – 49 sayılı kararına konu hırsızlık suçundan 4 yıl hapis cezasına ilişkin hükümlülüğün mükerrirliğe esas alınmasına, ancak aleyhe temyiz bulunmaması nedeniyle 1412 sayılı CMUK’nın 326/son maddesi uyarınca 5275 sayılı Kanun’un 108/2. maddesi gereğince mükerrir olan sanık hakkında koşullu salıverme süresine eklenecek miktarın, Bakırköy 16. Asliye Ceza Mahkemesinin 15/11/2007 gün ve 973 – 422 sayılı kararına konu 2 yıl 1 ay hapis cezası esas alınarak belirlenmesine karar verilmesi suretiyle hükmün DÜZELTİLEREK ONANMASINA,</p>
+
+<p>II- Hırsızlık suçundan kurulan hükme yönelik yapılan incelemede;</p>
+
+<p>Dosya içeriğine göre diğer temyiz itirazları yerinde görülmemiştir. Ancak;</p>
+
+<p>1-Dosya kapsamına göre olay sonrası ihbar üzerine kolluk görevlilerince yakalanan sanığın, tanık …‘nın ifadelerine ve 27/04/2014 tarihli tutanağa göre nerede yakalandığının, yani katılanın ikamet ve eklentisi içinde henüz olay yerinden ayrılmadan mı (ve eylemin teşebbüs aşamasında kaldığı) yoksa katılanın ikamet ve eklentisi dışında mı (yani kesintisiz takip olmaksızın mı) yakalandığı hususunun tam olarak anlaşılamaması nedeniyle tutanak tanıklarının bu konuda dinlenerek eylemin teşebbüs aşamasında kalıp kalmadığı hiç bir tereddüte yer bırakmayacak şekilde açıklığa kavuşturulduktan sonra sanığın hukuki durumunun değerlendirilmesi gerektiği gözetilmeden eksik kovuşturma ile yazılı şekilde karar verilmesi,</p>
+
+<p>2-Sanığın adli sicil kaydında tekerrüre esas alınan Bakırköy 16. Asliye Ceza Mahkemesinin 15/11/2007 gün ve 973 – 422 sayılı kararına ilişkin cezaların 23/06/2010 tarihinde infaz edildiğinin ve infaz tarihlerinden itibaren üç yıl geçtiğinin anlaşılması nedeniyle TCK’nın 58/2-b. maddesi uyarınca tekerrüre esas alınamayacağı ancak, sanığın adli sicil kaydına göre; Bakırköy 3. Ağır Ceza Mahkemesinin 03/03/2008 gün ve 497 – 49 sayılı kararının tekerrüre esas alınması gerekirken, Bakırköy 16. Asliye Ceza Mahkemesinin 15/11/2007 gün ve 973 – 422 sayılı kararının mükerrirliğe esas alınması,</p>
+
+<p>Bozmayı gerektirmiş, sanığın temyiz itirazları bu itibarla yerinde görülmüş olduğundan hükmün bu sebepten dolayı BOZULMASINA, bozma sonrası kurulacak hükümde 1412 sayılı CMUK’un 326/son maddesinin gözetilmesine, 04/06/2018 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 6. CEZA DAİRESİ 
+Esas : 2015/5788 Karar : 2018/1064</strong> Tarih : 14.02.2018</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>I- Sanık …‘nın mağdur …`a yönelik yağma suçundan kurulan hükmün incelenmesinde:</p>
+
+<p>24.11.2015 tarihli Resmi Gazete’de yayımlanarak aynı tarihte yürürlüğe giren Anayasa Mahkemesi’nin 08.10.2015 gün, 2014/140-2015/85 Esas ve Karar sayılı kararına göre TCK`nın 53. madde uygulamasının infazda gözetilmesi olanaklı görülmekle yapılan incelemede:</p>
+
+<p>Sanık hakkında tekerrüre esas alınan İzmir 24. Asliye Ceza Mahkemesinin 12/05/2009 gün 2009/239 Esas - 2009/401 Karar sayılı ilamında tekerrür uygulandığı anlaşılmakla; 5275 sayılı Kanun`un 108/3. maddesinin uygulanması bakımından sanığın ikinci kez mükerrir sayılması gerekirken bu hususun dikkate alınmaması karşı temyiz olmadığından bozma nedeni yapılmamıştır.</p>
+
+<p>Dosya ve duruşma tutanakları içeriğine, toplanıp karar yerinde incelenerek tartışılan elverişli kanıtlara, gerekçeye ve Hakimler Kurulunun takdirine göre, sanık … ve savunmanının temyiz itirazları yerinde görülmemiş olduğundan reddiyle, eleştiri dışında usul ve kanuna uygun bulunan hükmün istem gibi ONANMASINA,</p>
+
+<p>II- Sanık …‘nın mağdurlar … ve …`a yönelik yağma suçundan kurulan hükmün incelenmesinde:</p>
+
+<p>Sanığın, okuldan çıkıp sahile gitmek üzere Altınyol üst geçidinden geçen mağdurlar …, Emre ve Berat’ı durdurup mağdur …‘ın başındaki beresini, mağdur …‘nin de boynundaki atkıyı çekip aldığı, mağdurların atkı ve bereyi sanıktan istedikleri ancak sanığın vermediği, sanık ile mağdurlar birlikte yürüyerek park içerisindeki masanın yanına geldiklerinde sanığın mağdurlara üzerinizde ne varsa çıkarın, masanın üzerine koyun, yoksa hepinizi öldürürüm demesi üzerine mağdur …‘ın cep telefonu ve cüzdanını, mağdur …‘nin cep telefonunu, mağdur …‘ın ise anahtarlık ve cüzdanını masanın üzerine koydukları, 
+sanığın cüzdanları karıştırarak cep telefonları ile birlikte mağdurlara geri verdiği, 
+sanığın daha sonra mağdurlar … ve Berat’ın ceplerini karıştırıp mağdur …‘ın 4 TL’sini, mağdur …<code class="language-plaintext highlighter-rouge">nin ise sigara paketini alarak mağdurlara hemen buradan gidin, sizi burada görürsem öldürürüm</code>` dediği, sanığın yanından uzaklaşan mağdurların polise giderek olanları anlattıkları, olay yerinde mağdurların göstermeleri üzerine sanığın yakalandığı,</p>
+
+<p>Mağdur …`ın aşamalarda sanık tarafından yapılan kısmi iadeye muvafakati olduğunu belirtip,</p>
+
+<p>Mağdur …`nin ise hem olay sonrası alınan beyanında sanığın talimatı ile cep telefonunu masanın üzerine koyduktan sonra sanığın alıp sonra iade ettiğini açıklaması ve bunun diğer delillerle doğrulanmasına karşın, mahkeme aşamasında; parktaki masa üzerine herhangi bir eşya koymadığını ileri sürdüğü, mağdurun aşamalarda değişen beyanları arasındaki açık aykırılığın ise yargılama süreci içerisinde giderilmediğinin dosya kapsamından anlaşıldığı,</p>
+
+<p>Hal böyle olunca;</p>
+
+<p>1)a) Sanık …‘nın mağdur …`a karşı gerçekleştirdiği yağma eyleminde koşulları bulunmadığı halde kanuna yanlış anlam yüklenerek TCK 150/2. maddesi ile temel cezadan indirim yapılması,</p>
+
+<p>b) Sanık tarafından yapılan kısmi iadeye mağdur …‘ın onay verdiği dikkate alınarak TCK`nın 168. maddesi ile uygulanma yapılması gerektiğinin dikkate alınmaması,</p>
+
+<p>2)Mağdur …`nin aşamalarda beyanları arasındaki açık aykırılıklar giderilip kısmi iadenin varlığının tesbiti halinde, bu yönde mağdura kısmi iadeye muvafakatı edip etmediği sorularak sanığın hukuki durumunun takdiri gerektiğinin düşürülmemesi,</p>
+
+<p>Bozmayı gerektirmiş, sanık … ve savunmanının temyiz itirazları bu itibarla yerinde görülmüş olduğundan, hükmün açıklanan nedenlerle isteme aykırı olarak BOZULMASINA, 5320 sayılı Yasa’nın 8/1. maddesi yollamasıyla 1412 sayılı CMUK`nun 326/son maddesi uyarınca kazanılmış hakkın gözetilmesine, 14/02/2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 16. CEZA DAİRESİ
+Esas : 2017/2707 Karar : 2018/295</strong> Tarih : 13.02.2018</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Temyiz talebinin reddi nedenleri bulunmadığından işin esasına geçildi;</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>Yargılama sürecindeki usuli işlemlerin kanuna uygun olarak yapıldığı, hükme esas alınan tüm delillerin hukuka uygun olarak elde edildiğinin belirlendiği, aşamalarda ileri sürülen iddia ve savunmaların temyiz denetimini sağlayacak biçimde eksiksiz olarak sergilendiği, özleri değiştirmeksizin tartışıldığı, vicdani kanının kesin, tutarlı ve çelişmeyen verilere dayandırıldığı, eylemlerin doğru olarak nitelendirildiği ve kanunda öngörülen suç tipine uyduğu, yaptırımların kanuni bağlamda şahsileştirilmek suretiyle uygulandığı anlaşılmakla; sanık müdafilerinin temyiz dilekçelerinde ileri sürdükleri nedenler yerinde görülmediğinden CMK’nın 302/1. maddesi gereğince temyiz davasının esastan reddine, ancak;</p>
+
+<p>TCK’nın 314. maddesinde tanımlanan bir örgüte, faaliyetlerinde kullanmak üzere silah temin etme eylemi, silahlı örgüte yardımın özel bir şekli olup</p>
+
+<p>TCK’nın 315. maddesi gereğince özel bir yaptırıma bağlanmış olmakla, söz konusu eylemi gerçekleştiren sanıklar hakkında 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanunun 107. maddesinin dördüncü fıkrası ile 108. maddesi hükümleri uygulanma olanağı bulunmasına rağmen sadece örgüt mensupları hakkında uygulama imkanı bulunan TCK’nın 58/9. maddesinin uygulanması,</p>
+
+<p>Bozmayı gerektirmiş, hükümlerin bu nedenlerle BOZULMASINA, bu hususun yeniden yargılama yapılmaksızın CMUK’nın 322. maddesine göre düzeltilmesi mümkün bulunduğundan hükümlerden TCK’nın 58/9. maddesinin uygulanmasına ilişkin kısımların çıkarılması suretiyle sair yönleri usul ve kanuna uygun bulunan hükümlerin DÜZELTİLEREK ONANMASINA, 13.02.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<p>TEFHİM ŞERHİ:</p>
+
+<p>13.02.2018 tarihinde verilen iş bu karar, Yargıtay Cumhuriyet savcısı …’nun huzurunda, duruşmada sanık …’ın savunmasını yapmış bulunan Av. …‘in yokluğunda, 21.02.2018 tarihinde usulen ve açık olarak tefhim olundu.</p>
+
+<hr>
+
+<p><strong>YARGITAY 6. CEZA DAİRESİ 
+Esas : 2015/5662 Karar : 2018/463</strong> Tarih : 30.01.2018</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Dosya içeriğine, toplanıp karar yerinde incelenerek tartışılan hukuken geçerli ve elverişli kanıtlara, gerekçeye ve Hakimler Kurulunun takdirine göre; suçun sanıklar tarafından işlendiğini kabulde ve nitelendirmede usul ve yasaya aykırılık bulunmadığından diğer temyiz itirazları yerinde görülmemiştir.</p>
+
+<p>Ancak;</p>
+
+<p>1-Sanıklar …, … ve … hakkında kasıtlı suçlardan verilen hapis cezalarının infazı tamamlanıncaya kadar TCK’nın 53/1-a-b-c-d-e maddesinde yazılı hakları kullanmaktan yoksun bırakılmalarına; ancak, TCK’nın 53/3. maddesi uyarınca koşullu salıverildikleri takdirde, kendi altsoyları üzerinde TCK’nın 53/1-c bendinde sayılan hakları kullanmaktan yoksunluklarının sona erdirilmesine karar verilmiş ise de; 24.11.2015 tarihli Resmi Gazete’de yayımlanarak aynı tarihte yürürlüğe giren Anayasa Mahkemesi’nin 08.10.2015 gün, 2014/140-2015/85 Esas ve Karar sayılı kararı ile TCK’nın 53/1-b maddesinde yazılı, “seçme, seçilme ve diğer siyasi hakları kullanmaktan” ibaresinin iptal edilmiş olması,</p>
+
+<p>2-Sanık … hakkında tekerrüre esas alınan Çorlu 1. Sulh Ceza Mahkemesinin 25/02/2010 gün ve 2009/411 Esas, 2010/174 Karar sayılı ilamına konu 5237 sayılı TCK’nın 230/5. maddesinde düzenlenen “resmi evlenme olmaksızın dinsel törenle evlenme” fiilinin Anayasa Mahkemesi’nin 10/06/2015 tarihli Resmi</p>
+
+<p>Gazete’de yayımlanan 27/05/2015 gün ve 2014/36 esas, 2015/51 karar sayılı kararı ile iptal edilip suç olmaktan çıkartılması nedeniyle, bu ilamın tekerrüre esas alınamayacağı; ancak adli sicil kaydında yazılı olan mahkumiyetleri içinde en ağırı</p>
+
+<p>olan Çorlu 1. Sulh Ceza Mahkemesinin 13/03/2008 gün ve 2007/1419 Esas, 2008/235 Karar sayılı kararına konu 16/05/2012 tarihinde kesinleşen basit yaralama suçundan hükmedilen 5 ay hapis cezasının tekerrüre esas oluşturacağı ve bu hükümlülüğü esas alınarak 5237 sayılı TCK’nın 58/6-7. maddesinin uygulanması gerektiğinin gözetilmemesi,</p>
+
+<p>Bozmayı gerektirmiş, sanıklar …, … ve … savunmanlarının temyiz itirazları bu bakımdan yerinde görülmüş olduğundan, hükmün açıklanan nedenlerle isteme uygun olarak BOZULMASINA, bozma nedenleri yeniden yargılama yapılmasını gerektirmediğinden 5320 sayılı Yasanın 8/1. maddesi aracılığıyla CMUK’nun 322. maddesinin verdiği yetkiye dayanılarak, hükümden “TCK’nın 53. maddesinin” uygulanmasına ilişkin bölümler çıkartılarak; yerlerine “Sanıkların kasten işlemiş oldukları suç için hapis cezasıyla mahkumiyetlerinin yasal sonucu olarak, TCK’nın 53/1. maddesinin uygulanması yönünden, (a, c, d ve e) bentleri ile (b) bendinde yazılı seçme, seçilme ve diğer siyasi hakları kullanmaktan yoksun bırakılmalarına; aynı Kanunun 53/2. maddesinin uygulanması açısından, 53/1.maddesinin (a, c, d ve e) bentleri ile (b) bendinde yazılı seçme ve diğer siyasi hakları ve aynı maddenin 3. fıkrası uyarınca, (c) bendinde yazılı kendi alt soyları üzerindeki velayet, vesayet ve kayyımlık yetkilerini mahkum oldukları hapis cezasından koşullu salıverilinceye kadar kullanamamalarına” ve sanık …‘a ait hükümden “TCK’nın 58. maddesinin” uygulanmasına ilişkin bölüm çıkartılarak; yerine “5237 sayılı TCK’nın 58/6-7. maddesi gereğince, sanık … hakkında Çorlu 1. Sulh Ceza Mahkemesinin 13/03/2008 gün ve 2007/1419 Esas, 2008/235 Karar sayılı, basit yaralama suçundan verilen 5 ay hapis cezasını içeren ve 16/05/2012 tarihinde kesinleşmiş olan ilamın mükerrirliğe esas alınmasına ve sanık hakkında cezanın infazından sonra da denetimli serbestlik tedbiri uygulanmasına, ancak CMUK’nın 326/son maddesi gözetilerek, mükerrir olan sanık hakkında, 5275 sayılı Yasanın 108/2. maddesi gereğince şartla tahliye süresine eklenecek miktar yönünden ise Çorlu 1. Sulh Ceza Mahkemesinin 25/02/2010 gün ve 2009/411 Esas, 2010/174 Karar sayılı ilamına konu hapis cezasının esas alınmasına” cümlelerinin eklenmesi suretiyle, diğer yönleri usul ve Yasaya uygun bulunan hükmün DÜZELTİLEREK ONANMASINA, 30/01/2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 3. CEZA DAİRESİ
+Esas : 2017/8266 Karar : 2018/884</strong> Tarih : 24.01.2018</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Gereği görüşülüp düşünüldü:</p>
+
+<p>Anayasa Mahkemesinin 24.11.2015 tarih ve 29542 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren 08.10.2015 tarih ve 2014/140 esas-2015/85 karar sayılı kararı ile 5237 sayılı TCK’nin 53. maddesindeki bazı hükümler iptal edilmiş ise de, bu husus infaz aşamasında dikkate alınabileceğinden bozma nedeni yapılmamıştır.</p>
+
+<p>Yerinde görülmeyen diğer temyiz itirazlarının reddine, ancak;</p>
+
+<p>5275 sayılı Ceza ve Güvenlik ve Tedbirlerinin İnfazı Hakkında Kanunun 108. maddesinin 4, 5 ve 6. fıkralarına göre, denetim süresini belirleme ve gerektiğinde uzatma görevinin, hükmü veren mahkemeye değil, hükümlünün infaz aşamasındaki davranışlarını da değerlendirerek koşullu salıverme ile ilgili kararı verecek olan mahkemeye ait olduğu gözetilmeden, mahkûmiyet hükümlerinde, mükerrir olan sanık hakkında 5237 sayılı TCK’nin 58/7. maddesi gereğince mükerrirlere özgü infaz rejiminin ve cezanın infazından sonra denetimli serbestlik tedbirinin uygulanacağının belirtilmesi ile yetinilmesi gerekirken, denetimli serbestlik süresinin de belirlenmesi,</p>
+
+<p>Bozmayı gerektirmiş, sanığın temyiz itirazları bu itibarla yerinde görülmüş olduğundan hükmün bu sebepten 6723 sayılı Kanunun 33. maddesi ile değişik 5320 sayılı Kanunun 8/1 maddesi ile yürürlükte bulunan 1412 sayılı CMUK’un 321. maddesi uyarınca isteme aykırı olarak BOZULMASINA, ancak bu husus yeniden yargılamayı gerektirmediğinden 1412 sayılı CMUK’un 322. maddesi gereğince hüküm fıkrasından “1 yıl süreyle” ibaresinin çıkartılması suretiyle hükmün DÜZELTİLEREK ONANMASINA, 24/01/2018 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 4. CEZA DAİRESİ 
+Esas : 2017/4748 Karar : 2018/1022</strong> Tarih : 18.01.2018</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>5275 sayılı Kanun’un 108/2. maddesi uyarınca daha ağır cezayı içeren Elazığ 1. Asliye Ceza Mahkemesinin 2012/390 E.-2012/438 K. ilamında verilen mahkumiyet hükmünden dolayı sanık hakkında tekerrür hükümlerinin uygulanması gerektiği gözetilmemiş ise de, aleyhe temyiz olmadığından bu husus bozma nedeni yapılamamıştır.</p>
+
+<p>Ancak;</p>
+
+<p>02/12/2016 tarihli Resmi Gazete’de yayımlanarak aynı tarihte yürürlüğe giren 6763 sayılı Kanunun 34. maddesiyle değişik 5271 sayılı CMK’nın 253. maddesi ve maddeye eklenen fıkraya göre uzlaşma hükümleri yeniden düzenlenmiş ve sanığa isnat edilen TCK’nın 106/1. maddesi kapsamındaki tehdit suçunun uzlaştırma kapsamında bulunduğu anlaşılmış olmakla, 5237 sayılı Türk Ceza Kanunu’nun 2 ve 7. maddeleri de gözetilerek, uzlaştırma işlemi uygulanarak sonucuna göre sanığın hukuki durumunun bu kapsamda tekrar değerlendirilip belirlenmesinde zorunluluk bulunması,</p>
+
+<p>Bozmayı gerektirmiş, sanık … ’ün temyiz itirazları bu nedenle yerinde görülmüş olduğundan, diğer yönleri incelenmeksizin HÜKMÜN 5320 sayılı Kanunun 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca BOZULMASINA, yargılamanın bozma öncesi aşamadan başlayarak sürdürülüp sonuçlandırılmak üzere dosyanın esas/hüküm mahkemesine gönderilmesine, 18.01.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 11. CEZA DAİRESİ 
+Esas : 2017/4480 Karar : 2018/398</strong> Tarih : 17.01.2018</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Yapılan yargılamaya, toplanıp karar yerinde gösterilen delillere, mahkemenin soruşturma neticelerine uygun şekilde oluşan inanç ve takdirine, incelenen dosya içeriğine göre, yerinde görülmeyen temyiz itirazların reddine, ancak:</p>
+
+<p>Mükerrirlere özgü infaz rejimi ve denetimli serbestlik tedbirinin ne şekilde uygulanacağı, süresi ve bu konuda karar verecek merci 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun’un 108. maddesinde düzenlenmiş olup, aynı maddenin 5. fıkrası ile de tekerrür dolayısıyla belirlenen denetim süresinde şartla salıverilmeye ilişkin hükümlerin uygulanacağının hükme bağlandığı, bu sebeplerle denetimli serbestlik tedbirinin süresinin infaz aşamasında tayin ve tespitinin yapılması gerektiği gözetilmeden, infazı kısıtlar biçimde 1 yıl süre ile denetimli serbestlik tedbiri uygulanmasına hükmedilmesi,</p>
+
+<p>Yasaya aykırı, sanık ve müdafiinin temyiz itirazı bu nedenle yerinde görülmüş olduğundan, hükmün bu sebepten dolayı 5320 sayılı Yasanın 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca BOZULMASINA; ancak yeniden yargılama yapılmasını gerektirmeyen bu hususun 5320 sayılı Yasanın 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 322. maddesi uyarınca düzeltilmesi mümkün bulunduğundan, hüküm fıkrasının tekerrür uygulamasına ilişkin bölümünden “1 yıl” ibaresinin çıkartılması suretiyle, sair yönleri usul ve yasaya uygun bulunan hükmün istem gibi DÜZELTİLEREK ONANMASINA, 17.01.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 16. CEZA DAİRESİ
+Esas : 2017/3199 Karar : 2018/189</strong> Tarih : 16.01.2018</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Yapılan yargılamaya, toplanıp karar yerinde gösterilen delillere, mahkemenin kovuşturma sonuçlarına uygun olarak oluşan kanaat ve takdirine, incelenen dosya kapsamına göre sanığın yerinde görülmeyen diğer temyiz itirazlarının reddine, ancak;</p>
+
+<p>Tekerrür hükümleri uygulanırken en ağır cezayı içeren İzmir 3. Ağır Ceza Mahkemesinin 12.03.2010 kesinleşme tarihli 2008/343 Esas, 2009/483 Karar sayılı hükmü yerine daha az cezayı havi Karaburun Asliye Ceza Mahkemesinin 09.04.2014 kesinleşme tarihli 2010/85 E. - 2011/102 K. sayılı mahkumiyet hükmünün esas alınması,</p>
+
+<p>Kanuna aykırı olup, hükmün bu nedenle BOZULMASINA, bu hususun yeniden yargılama yapılmaksızın CMUK’nın 322. maddesine göre düzeltilmesi mümkün bulunduğundan, tekerrür uygulanmasına ilişkin kısım tamamen çıkarılarak yerine “sanığın mahkumiyetine ilişkin İzmir 3. Ağır Ceza Mahkemesinin 16.12.2009 tarih, 2008/343 Esas, 2009/483 Karar sayılı ilamının tekerrüre esas alınmasına, sanık hakkında mükerrirlere özgü infaz rejiminin ve cezanın infazından sonra denetimli serbestlik tedbirinin uygulanmasına, 5320 sayılı Kanunun 8. maddesi uyarınca halen yürürlükte bulunan 1412 sayılı CMUK’nın 326/son maddesi uyarınca aleyhe değiştirmeme ilkesi gözetilerek 5275 sayılı Kanunun 108/2. maddesi gereğince mükerrir olan sanık hakkında koşullu salıverme süresine eklenecek miktarın Karaburun Asliye Ceza Mahkemesinin 09.04.2014 kesinleşme tarihli, 2010/85 Esas, 2011/102 Karar sayılı ilamının esas alınarak belirlenmesine” şeklinde değiştirilmesi suretiyle diğer yönleri usul ve kanuna uygun bulunan hükmün DÜZELTİLEREK ONANMASINA, 16.01.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 11. CEZA DAİRESİ
+Esas : 2017/13773 Karar : 2018/139</strong> Tarih : 10.01.2018</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Yapılan yargılamaya, toplanıp karar yerinde gösterilen delillere, mahkemenin soruşturma neticelerine uygun şekilde oluşan inanç ve takdirine, incelenen dosya içeriğine göre yerinde görülmeyen sair temyiz itirazlarının reddine, ancak;</p>
+
+<p>1-Sanığın adının, gerekçeli kararın gerekçe bölümü ile hüküm fıkrasının diğer bölümlerinde doğru yazılmasına rağmen, hüküm fıkrasının (1)numaralı bendinde “…” olarak yanlış yazılması,</p>
+
+<p>2-Ayrıntıları Yargıtay Ceza Genel Kurulunun 18.06.2013 gün 2013/8-151/304 sayılı ilamında açıklandığı üzere, birden fazla tekerrüre esas alınabilecek hükümlülüğün bulunması halinde bunlardan en ağırının tekerrüre esas alınması gerektiği cihetle; Hacıbektaş Asliye Ceza Mahkemesi’nin 2004/29 E. 2012/18 K.sayılı ilamının, daha ağır cezayı içerdiği gözetilmeden, Nevşehir 2. Asliye Ceza Mahkemesinin 2008/46 E. 2009/77 K. sayılı ilamı nedeniyle tekerrür hükümlerinin uygulanması,</p>
+
+<p>Yasaya aykırı, sanığın temyiz itirazları bu itibarla yerinde görüldüğünden, hükmün 5320 sayılı Yasanın 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca BOZULMASINA; ancak yeniden duruşma yapılmasına gerek olmaksızın bu hususların aynı Yasa’nın 322. maddesi uyarınca düzeltilmesi mümkün bulunduğundan, hüküm fıkrasının (1)numaralı bendindeki “…” ibaresinin çıkarılarak yerine “…” ibaresinin yazılması ayrıca TCK’nın 58. maddesinin uygulanmasına ilişkin bölüm hüküm fıkrasından çıkartılarak yerine, ‘‘Sanığın, Hacıbektaş Asliye Ceza Mahkemesi’nin 2004/29 E. 2012/18 K.sayılı 6 ay 18 gün hapis cezasına ilişkin geçmiş hükümlülüğünün tekerrüre esas olduğu anlaşılmakla, TCK’nın 58/6-7. maddeleri uyarınca verilen cezanın mükerrirlere özgü infaz rejimine göre çektirilmesine ve cezanın infazından sonra denetimli serbestlik tedbirinin uygulanmasına,sanığın tekerrür uygulaması açısından kazanılmış hakkı gözetilerek 5275 sayılı Yasa’nın 108/2. maddesi uyarınca infaza eklenmesi gereken süre yönünden, Nevşehir 2. Asliye Ceza Mahkemesinin 2008/46 E. 2009/77 K. sayılı sayılı ilamı ile verilen 3 ay 10 gün hapis cezası miktarının dikkate alınmasına” ibaresi eklenmek suretiyle, sair yönleri usul ve yasaya uygun bulunan hükmün DÜZELTİLEREK ONANMASINA, 10.01.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 13. CEZA DAİRESİ
+Esas : 2016/7219 Karar : 2017/5838</strong> Tarih : 29.12.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Suç işlemek amacıyla kurulan örgüte üye olma suçundan İstanbul 14. Ağır Ceza Mahkemesinin 04.12.2009 tarihli ve 2009/76 esas, 2009/310 sayılı kararı ile 10 ay hapis cezasına hükümlü … hakkında, İzmir Cumhuriyet Başsavcılığı tarafından düzenlenen 01.07.2015 tarihli müddetnameye karşı yapılan itirazın kabulüne ve hükümlü hakkındaki infaz rejiminin 5275 sayılı Kanunun 107/2. maddesine göre belirlenmesine dair İstanbul 14. Ağır Ceza Mahkemesinin 10.07.2015 tarihli ve 2009/76 esas, 2009/310 değişik iş sayılı kararına karşı yapılan itirazın reddine ilişkin İstanbul 15. Ağır Ceza Mahkemesinin 22.07.2015 tarihli ve 2015/439 değişik iş sayılı kapsayan infaz dosyası incelendi:</p>
+
+<p>Dosya kapsamına göre, 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanunun 107/4. maddesinde yer alan hükmün “Suç işlemek için örgüt kurmak veya yönetmek ya da örgütün faaliyeti çerçevesinde işlenen suçtan dolayı mahkûmiyet halinde, ağırlaştırılmış müebbet hapis cezasına mahkûm edilmiş olanlar otuzaltı yılını, müebbet hapis cezasına mahkûm edilmiş olanlar otuz yılını, süreli hapis cezasına mahkûm edilmiş olanlar cezalarının dörtte üçünü infaz kurumunda çektikleri takdirde, koşullu salıverilmeden yararlanabilirler.” şeklindeki düzenlemesi karşısında, hükümlü hakkında suç işlemek amacıyla kurulan örgüte üye olma suçundan 5237 sayılı Kanunun 220/2. maddesi uyarınca verilen mahkûmiyet hükmünün infazının 5275 sayılı Kanunun 107/4. maddesi gereğince yapılması gerektiği gözetilmeden, itirazın kabulü yerine, yazılı şekilde reddine karar verilmesinde isabet görülmemiştir.</p>
+
+<p>5271 sayılı Ceza Muhakemesi Kanununun 309. maddesi uyarınca anılan kararın bozulması lüzumu Yüksek Adalet Bakanlığı Ceza İşleri Genel Müdürlüğünün 07.11.2016 gün ve 94660652-105-34-11016-2016-Kyb sayılı yazılı istemlerine müsteniden ihbar ve mevcut evrak tebliğ olunmuştur.</p>
+
+<p>TÜRK MİLLETİ ADINA</p>
+
+<p>I- Olay:</p>
+
+<p>Suç işlemek amacıyla kurulan örgüte üye olmak suçundan hükümlü … Fodiyatis’in eylemine uyan 5237 sayılı TCK’nın 220/2, 62 maddeleri gereğince 10 ay hapis cezası ile cezalandırılmasına ve hak yoksunluğuna dair İstanbul 14. Ağır Ceza Mahkemesince 04.12.2009 tarihinde verilen ve Yargıtay 10. Ceza Dairesinin 05.05.2014 tarih 3549-3507 sayılı ilamı ile onanarak kesinleşen cezanın, 5275 sayılı Kanunun 108/1-c maddesi gereğince infazına dair İzmir C. Başsavcılığınca düzenlenen 01.07.2015 tarihli müddetname ile ilgili olarak, hükümlü müdafiinin talebi üzerine İstanbul 14. Ağır Ceza Mahkemesinin 10.07.2015 tarih, 2009/76-310 sayılı ek kararı ile özetle; sanık hakkında kesinleşen ilamda, verilen cezanın TCK’nın 58/9 maddesi gereğince mükerrirlere özgü infaz rejimine göre çektirileceği hususunda bir tesbit bulunmadığından hükümlü lehine 1412 sayılı CMUK`nın 326/son maddesi gereğince müktesep hak oluşması nedeniyle cezanın 5275 sayılı Kanunun 108/1-c maddesi gereğince çektirilemeyeceği gerekçesiyle itirazın kabulüne karar verilmiş, Cumhuriyet savcılığının itirazı üzerine İstanbul 15. Ağır Ceza Mahkemesinin 22.07.2015 tarih 439 sayılı kararı ile vaki itiraz reddedilmiştir.</p>
+
+<p>II- Kanun yararına bozma istemine ilişkin uyuşmazlığın kapsamı:</p>
+
+<p>Dairece çözülmesi gereken uyuşmazlık; suç işlemek üzere kurulan örgüte üye olmak suçundan 5237 sayılı TCK’nın 220/2. maddesi gereğince hükümlü …‘in cezalandırılmasına dair temyiz incelemesinden geçerek kesinleşen hükümde, işbu cezanın 5237 sayılı TCK’nın 58/9. maddesi gereğince mükerrirlere özgü infaz rejimine göre çektirilmesine karar verilmediğinden, 1412 sayılı CMUK`nın 326/son maddesi bağlamında infazın 5275 sayılı Kanunun 108/1-c maddesi gereğince yapılıp yapılamayacağına ilişkindir.</p>
+
+<p>III- Hukuki Değerlendirme:</p>
+
+<p>Konuyla ilgili yasal düzenlemeler şöyledir:</p>
+
+<p>Suçta tekerrür ve özel tehlikeli suçlular
+Madde 58- (1) Önceden işlenen suçtan dolayı verilen hüküm kesinleştikten sonra yeni bir suçun işlenmesi halinde,tekerrür hükümleri uygulanır. Bunun için cezanın infaz edilmiş olması gerekmez.
+(2) Tekerrür hükümleri, önceden işlenen suçtan dolayı;
+a) Beş yıldan fazla süreyle hapis cezasına mahkûmiyet halinde, bu cezanın infaz edildiği tarihten itibaren beş yıl,
+b) Beş yıl veya daha az süreli hapis ya da adlî para cezasına mahkûmiyet halinde, bu cezanın infaz edildiği tarihten itibaren üç yıl,
+Geçtikten sonra işlenen suçlar dolayısıyla uygulanmaz.
+(3) Tekerrür halinde, sonraki suça ilişkin kanun maddesinde seçimlik olarak hapis cezası ile adlî para cezası öngörülmüşse, hapis cezasına hükmolunur.
+(4) Kasıtlı suçlarla taksirli suçlar ve sırf askerî suçlarla diğer suçlar arasında tekerrür hükümleri uygulanmaz. Kasten öldürme, kasten yaralama, yağma, dolandırıcılık, uyuşturucu veya uyarıcı madde imal ve ticareti ile parada veya kıymetli damgada sahtecilik suçları hariç olmak üzere; yabancı ülke mahkemelerinden verilen hükümler tekerrüre esas olmaz.
+(5) Fiili işlediği sırada onsekiz yaşını doldurmamış olan kişilerin işlediği suçlar dolayısıyla tekerrür hükümleri uygulanmaz.
+(6) Tekerrür halinde hükmolunan ceza, mükerrirlere özgü infaz rejimine göre çektirilir. Ayrıca, mükerrir hakkında cezanın infazından sonra denetimli serbestlik tedbiri uygulanır.
+(7) Mahkûmiyet kararında, hükümlü hakkında mükerrirlere özgü infaz rejiminin ve cezanın infazından sonra denetimli serbestlik tedbirinin uygulanacağı belirtilir.
+(8) Mükerrirlerin mahkûm olduğu cezanın infazı ile denetimli serbestlik tedbirinin uygulanması, kanunda gösterilen şekilde yapılır.
+(9) Mükerrirlere özgü infaz rejiminin ve cezanın infazından sonra denetimli serbestlik tedbirinin, itiyadi suçlu, suçu meslek edinen kişi veya örgüt mensubu suçlu hakkında da uygulanmasına hükmedilir.</p>
+
+<p>Koşullu salıverilme 
+Madde 107- (1) Koşullu salıverilmeden yararlanabilmek için mahkûmun kurumdaki infaz süresini iyi hâlli olarak geçirmesi gerekir.
+(2) Ağırlaştırılmış müebbet hapis cezasına mahkûm edilmiş olanlar otuz yılını, müebbet hapis cezasına mahkûm edilmiş olanlar yirmidört yılını, diğer süreli hapis cezalarına mahkûm edilmiş olanlar cezalarının üçte ikisini infaz kurumunda çektikleri takdirde, koşullu salıverilmeden yararlanabilirler.
+(3) Koşullu salıverilme için infaz kurumunda geçirilmesi gereken süre;
+a) Birden fazla ağırlaştırılmış müebbet hapis cezasına veya ağırlaştırılmış müebbet hapis cezası ile müebbet hapis cezasına mahkûmiyet hâlinde otuzaltı,
+b) Birden fazla müebbet hapis cezasına mahkûmiyet hâlinde otuz,
+c) Bir ağırlaştırılmış müebbet hapis cezası ile süreli hapis cezasına mahkûmiyet hâlinde en fazla otuzaltı,
+d) Bir müebbet hapis cezası ile süreli hapis cezasına mahkûmiyet hâlinde en fazla otuz,
+e) Birden fazla süreli hapis cezasına mahkûmiyet hâlinde en fazla yirmisekiz,
+Yıldır.
+(4) Suç işlemek için örgüt kurmak veya yönetmek ya da örgütün faaliyeti çerçevesinde işlenen suçtan dolayı mahkûmiyet hâlinde; ağırlaştırılmış müebbet hapis cezasına mahkûm edilmiş olanlar otuzaltı yılını, müebbet hapis cezasına mahkûm edilmiş olanlar otuz yılını, süreli hapis cezasına mahkûm edilmiş olanlar cezalarının dörtte üçünü infaz kurumunda çektikleri takdirde, koşullu salıverilmeden yararlanabilirler. Ancak, bu süreler;
+a) Birden fazla ağırlaştırılmış müebbet hapis cezasına veya ağırlaştırılmış müebbet hapis cezası ile müebbet hapis cezasına mahkûmiyet hâlinde kırk,
+b) Birden fazla müebbet hapis cezasına mahkûmiyet hâlinde otuzdört,
+c) Bir ağırlaştırılmış müebbet hapis cezası ile süreli hapis cezasına mahkûmiyet hâlinde en fazla kırk,
+d) Bir müebbet hapis cezası ile süreli hapis cezasına mahkûmiyet hâlinde en fazla otuzdört,
+e) Birden fazla süreli hapis cezasına mahkûmiyet hâlinde en fazla otuziki,
+Yıldır. (Ek cümle: 22/7/2010 - 6008/9 md.) Bu fıkra hükümleri çocuklar hakkında uygulanmaz.
+(5) Koşullu salıverilme süresinin hesaplanmasında, hükümlünün onbeş yaşını dolduruncaya kadar infaz kurumunda geçirdiği bir gün, iki gün olarak dikkate alınır. 
+(6) Koşullu salıverilen hükümlünün tâbi tutulacağı denetim süresi, yukarıdaki fıkralara göre infaz kurumunda geçirilmesi gereken sürenin yarısı kadardır. Ancak süreli hapislerde hakederek tahliye tarihini geçemez.
+(7) Hükümlü, denetim süresinde, infaz kurumunda öğrendiği meslek veya sanatı icra etmek üzere, bir kamu kurumunda veya özel olarak aynı meslek veya sanatı icra eden bir başkasının gözetimi altında, ücret karşılığında çalıştırılabilir.
+(8) Onsekiz yaşından küçük olan hükümlüler, denetim süresinde eğitimlerine, gerektiğinde barınma imkânı da bulunan bir kurumda devam ederler.
+(9) Hâkim, denetim süresinde hükümlüye rehberlik edecek bir uzman kişiyi görevlendirebilir. Bu kişi, kötü alışkanlıklar edinebileceği çevrelerden uzak kalması ve sorumluluk bilinciyle iyi bir hayat sürmesini temin hususunda hükümlüye öğütte bulunur; eğitim gördüğü kurum yetkilileri veya yanında çalıştığı kişilerle görüşerek, istişarelerde bulunur; hükümlünün davranışları, sosyal uyumu ve sorumluluk bilincindeki gelişme hakkında üçer aylık sürelerle rapor düzenleyerek hâkime verir.
+(10) Hâkim, koşullu salıverilen hükümlünün kişiliğini ve topluma uyumdaki başarısını göz önünde bulundurarak; denetim süresinin, denetimli serbestlik tedbiri uygulanmadan veya herhangi bir yükümlülük belirlemeden geçirilmesine karar verebileceği gibi, denetimli serbestlik tedbiri uygulanmasını veya belirlenen yükümlülükleri denetim süresi içinde kaldırabilir.
+(11) Bir hükümlünün koşullu salıverilmesi hakkında ceza infaz kurumu idaresi tarafından hazırlanan gerekçeli rapor, hükmü veren mahkemeye; hükümlü başka bir yerde bulunuyorsa o yerde bulunan aynı derecedeki mahkemeye verilir.
+Mahkeme, bu raporu uygun bulursa hükümlünün koşullu salıverilmesine dosya üzerinden karar verir. Mahkeme, raporu uygun bulmadığı takdirde gerekçesini kararında gösterir. Bu kararlara karşı itiraz yoluna gidilebilir.
+(12) Koşullu salıverilen hükümlünün, denetim süresinde hapis cezasını gerektiren kasıtlı bir suç işlemesi veya kendisine yüklenen yükümlülüklere, hâkimin uyarısına rağmen, uymamakta ısrar etmesi hâlinde koşullu salıverilme kararı geri alınır.
+(13) Koşullu salıverilme kararının geri alınması hâlinde hükümlünün;
+a) Sonraki suçu işlediği tarihten itibaren kalan cezasının aynen,
+b) (Değişik: 25/5/2005-5351/8 md.) Yükümlülüklerine aykırı davranması hâlinde, bu yükümlülüklere uymama tarihi ile hak ederek salıverilme tarihi arasındaki süreyi geçmemek koşuluyla takdir edilecek bir sürenin,
+Ceza infaz kurumunda çektirilmesine karar verilir. Koşullu salıverilme kararının geri alınmasından sonra aynı hükmün infazı ile ilgili bir daha koşullu salıverilme kararı verilmez.
+(14) Denetim süresi yükümlülüklere uygun ve iyi hâlli olarak geçirildiği takdirde, ceza infaz edilmiş sayılır.
+(15) Koşullu salıverilme kararının geri alınmasına;
+a) Hükümlü geri kalan süre içinde işlediği kasıtlı bir suçtan dolayı hapis cezasına mahkûm edilirse, hükmü veren ilk derece mahkemesi veya bölge adliye mahkemesi tarafından,
+b) Hükümlünün bağlı tutulduğu yükümlülükleri yerine getirmemesi hâlinde koşullu salıverilme kararına esas teşkil eden hükmü veren ilk derece mahkemesi veya bölge adliye mahkemesi veya koşullu salıverilme kararını vermiş olan mahkeme tarafından,
+Dosya üzerinden karar verilir. Bu kararlara karşı itiraz yolu açıktır.
+(16) 5237 sayılı Türk Ceza Kanununun İkinci Kitap, Dördüncü Kısım, “Devletin Güvenliğine Karşı Suçlar” başlıklı Dördüncü Bölüm, “Anayasal Düzene ve Bu Düzenin İşleyişine Karşı Suçlar” başlıklı Beşinci Bölüm, “Milli Savunmaya Karşı Suçlar” başlıklı Altıncı Bölüm altında yer alan suçlardan birinin bir örgütün faaliyeti çerçevesinde işlenmesi dolayısıyla ağırlaştırılmış müebbet hapis cezasına mahkûmiyet hâlinde, koşullu salıverilme hükümleri uygulanmaz.</p>
+
+<p>Mükerrirlere ve bazı suç faillerine özgü infaz rejimi ve denetimli serbestlik tedbiri
+Madde 108- (1) Tekerrür hâlinde işlenen suçtan dolayı mahkûm olunan;
+a) Ağırlaştırılmış müebbet hapis cezasının otuzdokuz yılının,
+b) Müebbet hapis cezasının otuzüç yılının,
+c) Süreli hapis cezasının dörtte üçünün,
+İnfaz kurumunda iyi hâlli olarak çekilmesi durumunda, koşullu salıverilmeden yararlanılabilir.
+(2) Tekerrür nedeniyle koşullu salıverme süresine eklenecek miktar, tekerrüre esas alınan cezanın en ağırından fazla olamaz.
+(3) İkinci defa tekerrür hükümlerinin uygulanması durumunda, hükümlü koşullu salıverilmez.
+(4) Hâkim, mükerrir hakkında cezanın infazının tamamlanmasından sonra başlamak ve bir yıldan az olmamak üzere denetim süresi belirler.
+(5) Tekerrür dolayısıyla belirlenen denetim süresinde, koşullu salıverilmeye ilişkin hükümler uygulanır.
+(6) Hâkim, mükerrir hakkında denetim süresinin uzatılmasına karar verebilir. Denetim süresi en fazla beş yıla kadar uzatılabilir.
+(7) (Ek: 18/6/2014-6545/82 md.) Cezanın infazı tamamlandıktan sonra devam eden denetim süresi içinde, bu madde hükümlerine göre kendilerine yüklenen yükümlülüklere ve yasaklara aykırı hareket eden mükerrirler, infaz hâkimi kararı ile disiplin hapsine tabi tutulur. Disiplin hapsinin süresi on beş günden az ve üç aydan fazla olamaz.
+(8) (Ek: 18/6/2014-6545/82 md.) Çocuğa karşı işlenen bir suçtan dolayı ağırlaştırılmış müebbet hapis cezasına veya müebbet hapis cezasına mahkûmiyet hâlinde birinci fıkradaki koşullu salıverilme süreleri uygulanır.
+(9) (Ek: 18/6/2014-6545/82 md.) Birinci fıkradaki koşullu salıverme süreleri, 26.09.2004 tarihli ve 5237 sayılı Türk Ceza Kanununun 102’ nci maddesinin ikinci fıkrasında tanımlanan cinsel saldırı suçundan, 103’üncü maddesinde tanımlanan çocukların cinsel istismarı suçundan, 104’üncü maddesinin ikinci ve üçüncü fıkrasında tanımlanan reşit olmayanla cinsel ilişki suçundan, 188’inci maddesinde tanımlanan uyuşturucu veya uyarıcı madde imal ve ticareti suçundan dolayı hapis cezasına mahkûm olanlar hakkında da uygulanır. 188’inci madde hariç olmak üzere bu suçlardan dolayı hapis cezasına mahkûm olanlar hakkında, cezanın infazı sırasında ve koşullu salıverildikleri takdirde denetim süresi içinde, aşağıdaki tedavi veya yükümlülüklerden bir veya birkaçına infaz hâkimi tarafından karar verilir:
+a) Tıbbi tedaviye tabi tutulmak
+b) Tedavi amaçlı programlara katılmak
+c) Suçun mağdurunun oturduğu ve çalıştığı yerleşim bölgesinde ikamet etmekten yasaklanmak
+d) Mağdurun bulunduğu yerlere yaklaşmaktan yasaklanmak
+e) Çocuklarla bir arada olmayı gerektiren bir ortamda çalışmaktan yasaklanmak
+f) Çocuklar hakkında bakım ve gözetim yükümlülüğünü gerektiren faaliyet icra etmekten yasaklanmak
+(10) (Ek: 18/6/2014-6545/82 md.) Dokuzuncu fıkra hükümleri çocuklar hakkında uygulanmaz.
+(11) (Ek: 18/6/2014-6545/82 md.) Bu maddenin dokuzuncu fıkrasının uygulanmasına ilişkin usul ve esaslar, Sağlık Bakanlığının görüşü alınmak suretiyle Adalet Bakanlığı tarafından hazırlanan yönetmelikle düzenlenir.
+(1421 sy.CMUK`UN)</p>
+
+<p>Davaya yeniden bakacak mahkemenin hak ve mecburiyetleri:
+Madde 326 – (Değişik: 21/5/1985 - 3206/66 md.)</p>
+
+<p>Yargıtaydan verilen bozma kararı üzerine davaya yeniden bakacak mahkeme, ilgililere bozmaya karşı diyeceklerini sorar.</p>
+
+<p>Sanık veya müdahil ve vekillerine davetiye tebliğ olunamaması veya davetiye tebliğ olunmasına rağmen duruşmaya gelmemeleri nedeniyle bozmaya karşı beyanları tespit edilmemiş olsa dahi duruşmaya devam edilerek dava gıyapta bitirilebilir. Ancak sanık hakkında verilecek ceza, bozmaya konu olan cezadan daha ağır ise herhalde dinlenilmesi gerekir.</p>
+
+<p>Yargıtaydan verilen bozma kararına mahkemelerin ısrar hakkı vardır. Israr üzerine Yargıtay Ceza Genel Kurulunca verilen kararlara uymak mecburidir.
+Hüküm yalnız sanık tarafından veya onun lehine Cumhuriyet savcısı veya 291`inci maddede gösterilen kimseler tarafından temyiz edilmişse yeniden verilen hüküm, evvelki hükümle tayin edilmiş olan cezadan daha ağır olamaz.</p>
+
+<p>(5271 sy.CMK`NIN)</p>
+
+<p>Davaya yeniden bakacak mahkemenin işlemleri
+Madde 307 – (1) Yargıtaydan verilen bozma kararı üzerine davaya yeniden bakacak bölge adliye veya ilk derece mahkemesi, ilgililere bozmaya karşı diyeceklerini sorar.
+(2) Sanık, müdafii, katılan ve vekilinin dosyada varolan adreslerine de davetiye tebliğ olunamaması veya davetiye tebliğ olunmasına rağmen duruşmaya gelmemeleri nedeniyle bozmaya karşı beyanları saptanmamış olsa da duruşmaya devam edilerek dava yokluklarında bitirilebilir. Ancak, sanık hakkında verilecek ceza, bozmaya konu olan cezadan daha ağır ise, her hâlde dinlenmesi gerekir.
+(3) Yargıtaydan verilen bozma kararına bölge adliye veya ilk derece mahkemesinin direnme hakkı vardır. (Değişik ikinci cümle: 24.11.2016-6763/36 md.) Direnme kararları, kararına direnilen daireye gönderilir. (Ek iki cümle: 24.11.2016-6763/36 md.) Daire, mümkün olan en kısa sürede direnme kararını inceler ve yerinde görürse kararını düzeltir; görmezse dosyayı Yargıtay Ceza Genel Kuruluna gönderir. Direnme üzerine Yargıtay Ceza Genel Kurulunca verilen kararlara karşı direnilemez.
+(4) Hüküm yalnız sanık tarafından veya onun lehine Cumhuriyet savcısı veya 262 nci maddede gösterilen kimselerce temyiz edilmişse, yeniden verilen hüküm, önceki hükümle belirlenmiş olan cezadan daha ağır olamaz.
+Bu düzenlemeler ışığında,suçta tekerrür ve özel tehlikeli suçlular kurumlarının hukuki nitelikleri ile usulü kazanılmış hak kavramının birlikte değerlendirilmesi gerekmektedir.</p>
+
+<p>A- Tekerrür yönünden:</p>
+
+<p>5237 sayılı TCK’nın “güvenlik tedbirleri” bölümünde düzenlenen ve aynı Kanunun, 7/3 maddesinin gerek sarahati gerekse madde gerekçesinde nitelik olarak “infaz rejimine ilişkin bir norm” olarak vasfı tayin edilen TCK’nın 58. maddesinin, hüküm fıkrasında anılan kanun maddesinin 7. bendindeki emredici düzenleme nedeniyle gösterilmesi zorunlu olup, kural olarak mahkumiyet hükmünde hiç belirtilmemesi halinde 1412 sayılı CMUK’nın 326/son maddesi gereğince aleyhe temyiz bulunmayan durumlarda usulü kazanılmış hak kapsamında kalacağı kabul edilmekte ise de; hükümde sadece TCK’nın 58. maddesinin uygulanmasına karar verilmesi ile yetinilmesi ancak tekerrüre esas alınan mahkeme ilamı ve/veya 5275 sayılı Kanunun 108/3 maddesinde yer alan ikinci defa tekerrür hükümlerinin tatbik edilmesi tesbiti yapılmamış bile olsa, zikredilen normun gerek güvenlik tedbiri (CGK’nın 12.12.2006 tarih 11-301-296 sy.ilamı), gerek infaz rejimi kuralı (CGK’nın 20.05.2014 tarih 2013/6-353, 2014/277 sy, 3. Ceza Dairesinin 25.02.2015 tarih, 4294-7344 sy. ilamları) olması gerekse 1412 sayılı CMUK’nın 326/son maddesindeki düzenlemenin koruma kapsamının “ceza tür ve miktarı” ile sınırlı bulunması (CGK’nın 11.02.2014 tarih, 70-57 sy., Dairemizin 12.01.2016 tarih, 2015/1213-2016/124 sy. kararları) karşısında, aleyhe temyiz bulunmayan hükümde verilen hapis cezasının kanuni sonucu olarak uygulanmasında zorunluluk bulunan TCK’nın 58/9. maddesinin infaz aşamasında re`sen nazara alınması mümkün olduğundan ayrıca hükümde gösterilmemesinin 1412 sayılı CMUK’nın 326/son maddesi kapsamında kazanılmış hak oluşturmayacağı gözetilmelidir.</p>
+
+<p>B- Özel tehlikeli suçlular yönünden:</p>
+
+<p>5237 sayılı TCK`nın 58/9. maddesinde, itiyadi suçlu, suçu meslek edinen kişi veya örgüt mensubu suçluların özel tehlikeli suçlu olarak kabul edildiği ve bunlar hakkında da mükerrirlere özgü infaz rejiminin ve cezanın infazından sonra denetimli serbestlik tedbirinin uygulanmasına hükmedileceği öngörülmektedir.</p>
+
+<p>Örgüt mensubu suçlu kavramı, 5237 sayılı TCK`nın 6/1-j maddesinde;”Örgüt mensubu suçlu deyiminden; bir suç örgütünü kuran, yöneten, örgüte katılan veya örgüt adına diğerleriyle birlikte veya tek başına suç işleyen kişi,” olarak tanımlanmıştır.Suç işleme eğilimleri ve kişilik özellikleri itibariyle diğer suçlulara nazaran tehlikelilik hallerinin daha yoğun olduğunu kabul eden kanun koyucu hem toplumu bu tehlikeden korumak hem de bu kişileri ıslah ve topluma yeniden kazandırmak amacıyla bunlara özel bir infaz rejimi belirlemiştir.</p>
+
+<p>Yargıtay Ceza Genel Kurulu ve Dairemizin yerleşik uygulamalarına göre, TCK’nın 58/9. maddesi bir ceza değil, cezaya bağlı olarak uygulanacak infaz rejimi olduğundan CMUK`nın 326/son maddesi kapsamında kazanılmış hak oluşturmaz.</p>
+
+<p>Diğer taraftan, örgüt mensubu suçlularla ilgili özel düzenleme olan 5275 sayılı Kanunun 107/4 maddesi de nazara alındığında özellikle süreli hapis cezalarının infazı yönünden, hükümde dayanak yasa maddesi gösterilsin ya da gösterilmesin kazanılmış haktan bahsetme imkanı bulunmamaktadır.
+Açıklanan nedenlerle yerinde olan itirazın kabulüne karar vermek gerekmiştir.</p>
+
+<p>IV- Sonuç ve Karar:</p>
+
+<p>Yargıtay Cumhuriyet Başsavcılığının 21.11.2016 tarih 2016/388953 sayılı itirazının ( KABULÜNE ), İstanbul 14. Ağır Ceza Mahkemesinin 10.07.2015 tarihli ve 2009/76 esas, 2009/310 değişik iş sayılı kararına karşı yapılan itirazın reddine ilişkin İstanbul 15. Ağır Ceza Mahkemesinin 22.07.2015 tarihli ve 2015/439 değişik iş sayılı kararlarının 5271 sayılı CMK`nın 309/4-a maddesi gereğince ( BOZULMASINA ),</p>
+
+<p>Dosyanın gerekli işlemler yapılmak üzere mahalline gönderilmesi için Yargıtay Cumhuriyet Başsavcılığını ( TEVDİİNE ), oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 19. CEZA DAİRESİ 
+Esas : 2017/3699 Karar : 2017/6623</strong> Tarih : 12.09.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Ceza Muhakemesinin amacı; sosyal düzenin korunması ile kişilerin hak ve özgürlüklerine saygı arasında bir denge kurulması suretiyle hukuken geçerli kanıtlarla hiçbir duraksamaya yer vermeden maddi gerçeğin ortaya çıkarılmasıdır.</p>
+
+<p>Ceza Muhakemesi hukukumuz delil serbestliği`` ilkesini benimsemiş, delilleri değerlendirmede de hakime tam bir serbestlik tanınmıştır. Delillerin hukuka uygun yöntemlerle toplanması zorunludur.</p>
+
+<p>Delillerin bir ya da bir kaçının hukuka aykırı yöntemlerle elde edilmesi hukuka uygun yöntemle elde edilen diğer delillerin yok sayılmasını gerektirecek midir?</p>
+
+<p>Avrupa İnsan Hakları Sözleşmesinde sunulan kanıtların kabul edilebilir olup olmadığına karar verme usulünü gösteren ve hangi kanıtların kabul edilebilir olduğunu, hangilerinin kabul edilemez olduğunu belirleyen bir kural olmadığı gibi, 
+Avrupa İnsan Hakları Mahkemesi de 
+“İç hukukta yeterli hukuki temeli bulunmadan veya hukuka aykırı vasıtalar kullanılarak elde edilmiş materyallerin yargılamada kanıt olarak kullanılması kural olarak, başvurucuya gerekli usulü güvencelerin sağlanmış olması ve materyelin baskı, zorlama ve tuzak gibi yargılamayı lekeleyebilecek nitelikli ve kaynaklı olmaması şartıyla, sözleşmenin 6. maddesinin (1) numaralı fıkrasındaki adil yargılanma standartlarına aykırılık oluşturmaz ” ( Chalkley/ Birleşik Krallık [kk] B. No: 6383/100, 26.09.2002)</p>
+
+<p>Bir delilin, diğer yan delillerle desteklenmemiş olması, mutlak suretle adil yargılanma hakkı bakımından sorun oluşturmaz. Mahkemece hükme esas alınan bir delilin çok kuvvetli olması ve güvenilirliği konusunda herhangi bir risk bulunmaması, destekleyici delillere olan ihtiyacın yoğunluğunu azaltır. Buna karşılık gücü ve güvenilirliği konusunda birtakım şüpheler bulunan bir delilin, suçun sübutu konusunda ulaşılan vicdani kanaat bakımından belirleyici olması halinde, bu durum hakkaniyete uygun yargılanma hakkı bakımından sorun oluşturabilir ” (Güllüzar Erman, B. No: 2012/542 04.11.2014) şeklinde kararlar vermiştir.</p>
+
+<p>5271 sayılı Ceza Muhakemesi Kanunu<code class="language-plaintext highlighter-rouge">nun 230. madde 1. fıkra (b) bendinde 
+mahkumiyet hükmünün gerekçesinde dosya içerisinde bulunan ve hukuka aykırı yöntemlerle elde edilen deliller ayrıca ve açıkça</code>` gösterilir denilmek suretiyle hukuka uygun yöntemlerle elde edilen diğer delillerin geçerliliğini koruyacağı benimsenmiştir.</p>
+
+<p>Temyiz davasına konu olayda her ne kadar 22/01/2011 tarihlerinde yapılan aramada CMK`nın 119/4. maddesi uyarınca o yer ihtiyar heyetinden veya komşulardan iki kişi hazır  bulundurulmamış ise de; sanığın arama işleminin içeriğine herhangi bir itirazının bulunmaması, mahkeme huzurundaki beyanı ve hükmün münhasıran arama sonucu elde edilen delile dayanmaması karşısında suçun sübutuna ilişkin yerel mahkeme kararında bir isabetsizlik görülmemiştir.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>Yükletilen suçun sanık tarafından işlendiğinin kanuna uygun olarak yürütülen duruşma sonucu saptandığı, bütün kanıtlarla aşamalarda ileri sürülen iddia ve savunmaların temyiz denetimini sağlayacak biçimde ve eksiksiz sergilendiği, özleri değiştirilmeksizin tartışıldığı, vicdani kanının kesin, tutarlı ve çelişmeyen verilere dayandırıldığı,</p>
+
+<p>Eylemin doğru olarak nitelendirildiği ve Kanun’da öngörülen suç tipine uyduğu,</p>
+
+<p>Anlaşılmış ve ileri sürülen başkaca temyiz nedenleri yerinde görülmediği gibi hükmü etkileyecek oranda hukuka aykırılığa da rastlanmamıştır.</p>
+
+<p>Ancak;</p>
+
+<p>1- TCK’nın 58. maddesi uygulanırken, 5275 sayılı Kanun’un 108/2. maddesi uyarınca en ağır cezayı içeren mahkumiyetin tekerrüre esas alınması gerektiği gözetilmeden, birden fazla hükümlülüğün TCK`nın 58. maddesi uyarınca tekerrüre esas alınması,</p>
+
+<p>2- Kasıtlı suçtan hapis cezasına mahkumiyetin kanuni sonucu olarak sanık hakkında 5237 sayılı TCK’nın 53. maddesi uyarınca hak yoksunluklarına hükmedilmiş ise de, 24/11/2015 tarih ve 29542 sayılı Resmi Gazete’de yayımlanan Anayasa Mahkemesinin 08/10/2015 tarih ve 2014/140 E., 2015/85 K. sayılı kararı ile anılan maddenin bazı hükümlerinin iptal edilmiş olması nedeniyle yeniden değerlendirme yapılması zorunluluğu ve TCK`nın 53/l-(c) maddesindeki hak yoksunluğunun sanığın kendi altsoyu üzerindeki velayet, vesayet ve kayyımlık yetkileri yönünden koşullu salıverme tarihine kadar, diğer kişilere karşı belirtilen yetkiler yönünden mahkum olunan hapis cezasının infazı tamamlanıncaya kadar geçerli olacağının gözetilmemesi,</p>
+
+<p>Bozmayı gerektirmiş ve sanığın temyiz iddiaları yerinde görüldüğünden, hükmün bu nedenle BOZULMASINA,</p>
+
+<p>5320 sayılı Kanun`un 8/1. madde ve fıkrası aracılığıyla 1412 sayılı CMUK’nın 322. maddesi uyarınca bu aykırılık, yeniden yargılama yapılmasına gerek olmaksızın düzeltilebilir nitelikte bulunduğundan, tekerrür uygulanmasına ilişkin hüküm fıkrasının çıkartılarak; 
+yerine “Pendik 2. Asliye Ceza Mahkemesinin 19/06/2008 tarih, 2007/373 Esas 2008/380 karar sayılı ilamındaki mühür bozma suçundan verilen cezanın tekerrüre esas olduğu anlaşılmakla, sanığa tayin olunan hapis cezasının TCK’nın 58. maddesi uyarınca mükerrirlere özgü infaz rejimine göre çektirilmesine, cezanın infazından sonra denetimli serbestlik tedbiri uygulanmasına” ibaresi yazılmak ve</p>
+
+<p>hükümden TCK’nın 53. maddesinin uygulanmasına ilişkin bölümün çıkartılıp, 
+yerine ``24/11/2015 tarih ve 29542 sayılı Resmi Gazete`de yayımlanan Anayasa Mahkemesinin 08/10/2015 tarih ve 2014/140 E., 2015/85 K. sayılı iptal kararı da gözetilerek, kasıtlı suçtan hapis cezasına mahkumiyetin kanuni sonucu olarak, TCK’nın 53. maddesinin uygulanmasına,” ibaresi yazılmak,</p>
+
+<p>hak yoksunluklarına ilişkin fıkradaki “TCK 53/1-c maddesinde sayılan haktan ise koşullu salıverilme tarihi gerçekleşinceye kadar sanığın yoksun bırakılmasına,” ibaresi çıkarılarak, 
+yerine “sanığın kendi alt soyu üzerindeki velayet hakkından, vesayet veya kayyımlığa ait bir hizmette bulunmaktan şartla salıverilme tarihine kadar, alt soyu dışındakiler yönünden infaz tarihine kadar yoksun bırakılmasına’’ ibaresi eklenmek biçiminde başkaca yönleri kanuna uygun bulunan hükmün tebliğnameye uygun olarak, DÜZELTİLEREK ONANMASINA karar verilmiştir.</p>
+
+<p>MADDİ HATA DÜZELTİLMESİ NEDENLERİ</p>
+
+<p>Yargıtay Cumhuriyet Başsavcılığının 22/06/2017 gün ve KD-7 - 2014/135590 sayılı yazısı ile;</p>
+
+<p>İncelenmekte olan olayda temel gün adli para cezası 5 gün olarak belirlenip, bunun üzerinden TCK.nın 62/1. maddesi gereğince 1/6 oranında indirim yapıldıktan sonra elde edilen 4 gün adli para cezası TCK.nın 61/8. maddesinde belirtilen yönteme uygun biçimde adli para cezasına dönüştürülmemiştir.</p>
+
+<p>Açıklanan nedenlerle; Yerel Mahkeme hükmünün TCK`nın 58 ve 53. maddelerindeki hukuki yanılgılar nedeniyle düzeltilerek onanmasına karar verilirken, bozma nedenine gün adli para cezasının adli para cezasına dönüştürülmemiş olması nedeni eklenmemesi biçimindeki hatanın düzeltilmesi isteminde bulunulması üzerine dosya Dairemize gönderilmekle, incelenerek gereği görüşülüp düşünüldü:</p>
+
+<p>KARAR:</p>
+
+<p>1-Yargıtay Cumhuriyet Başsavcılığının 22/06/2017 gün ve KD-7-2014/135590 sayılı maddi hatanın düzeltilmesi istemi yerinde görülmüş olduğundan 6352 sayılı Kanun ile değişik CMK`nın 308/3. maddesi gözetilerek istemin kabulüne,</p>
+
+<p>2-Dairemizin 31/05/2017 gün ve 2015/32624 Esas, 2017/5109 karar sayılı düzeltilerek onama kararının kaldırılarak yeniden yapılan incelemede;</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>Ceza Muhakemesinin amacı; sosyal düzenin korunması ile kişilerin hak ve özgürlüklerine saygı arasında bir denge kurulması suretiyle hukuken geçerli kanıtlarla hiçbir duraksamaya yer vermeden maddi gerçeğin ortaya çıkarılmasıdır.</p>
+
+<p>Ceza Muhakemesi hukukumuz delil serbestliği`` ilkesini benimsemiş, delilleri değerlendirmede de hakime tam bir serbestlik tanınmıştır. Delillerin hukuka uygun yöntemlerle toplanması zorunludur.</p>
+
+<p>Delillerin bir ya da bir kaçının hukuka aykırı yöntemlerle elde edilmesi hukuka uygun yöntemle elde edilen diğer delillerin yok sayılmasını gerektirecek midir?</p>
+
+<p>Avrupa İnsan Hakları Sözleşmesinde sunulan kanıtların kabul edilebilir olup olmadığına karar verme usulünü gösteren ve hangi kanıtların kabul edilebilir olduğunu, hangilerinin kabul edilemez olduğunu belirleyen bir kural olmadığı gibi, Avrupa İnsan Hakları Mahkemesi de “İç hukukta yeterli hukuki temeli bulunmadan veya hukuka aykırı vasıtalar kullanılarak elde edilmiş materyallerin yargılamada kanıt olarak kullanılması kural olarak, başvurucuya gerekli usulü güvencelerin sağlanmış olması ve materyelin baskı, zorlama ve tuzak gibi yargılamayı lekeleyebilecek nitelikli ve kaynaklı olmaması şartıyla, sözleşmenin 6. maddesinin (1) numaralı fıkrasındaki adil yargılanma standartlarına aykırılık oluşturmaz ” (Chalkley/ Birleşik Krallık [kk] B.No: 6383/100, 26.09.2002)</p>
+
+<p>Bir delilin, diğer yan delillerle desteklenmemiş olması, mutlak suretle adil yargılanma hakkı bakımından sorun oluşturmaz. Mahkemece hükme esas alınan bir delilin çok kuvvetli olması ve güvenilirliği konusunda herhangi bir risk bulunmaması, destekleyici delillere olan ihtiyacın yoğunluğunu azaltır. Buna karşılık gücü ve güvenilirliği konusunda birtakım şüpheler bulunan bir delilin, suçun sübutu konusunda ulaşılan vicdani kanaat bakımından belirleyici olması halinde, bu durum hakkaniyete uygun yargılanma hakkı bakımından sorun oluşturabilir” (Güllüzar Erman, B. No: 2012/542 04.11.2014) şeklinde kararlar vermiştir.</p>
+
+<p>5271 sayılı Ceza Muhakemesi Kanununun 230. madde 1. fıkra (b) bendinde mahkumiyet hükmünün gerekçesinde dosya içerisinde bulunan ve hukuka aykırı yöntemlerle elde edilen deliller ayrıca ve açıkça`` gösterilir denilmek suretiyle hukuka uygun yöntemlerle elde edilen diğer delillerin geçerliliğini koruyacağı benimsenmiştir.</p>
+
+<p>Temyiz davasına konu olayda her ne kadar 22/01/2011 tarihlerinde yapılan aramada CMK`nın 119/4. maddesi uyarınca o yer ihtiyar heyetinden veya komşulardan iki kişi hazır bulundurulmamış ise de; sanığın arama işleminin içeriğine herhangi bir itirazının bulunmaması, mahkeme huzurundaki beyanı ve hükmün münhasıran arama sonucu elde edilen delile dayanmaması karşısında suçun sübutuna ilişkin yerel mahkeme kararında bir isabetsizlik görülmemiştir.</p>
+
+<p>Yükletilen suçun sanık tarafından işlendiğinin kanuna uygun olarak yürütülen duruşma sonucu saptandığı, bütün kanıtlarla aşamalarda ileri sürülen iddia ve savunmaların temyiz denetimini sağlayacak biçimde ve eksiksiz sergilendiği, özleri değiştirilmeksizin tartışıldığı, vicdani kanının kesin, tutarlı ve çelişmeyen verilere dayandırıldığı,</p>
+
+<p>Eylemin doğru olarak nitelendirildiği ve Kanun`da öngörülen suç tipine uyduğu,</p>
+
+<p>Anlaşılmış ve ileri sürülen başkaca temyiz nedenleri yerinde görülmediği gibi hükmü etkileyecek oranda hukuka aykırılığa da rastlanmamıştır.</p>
+
+<p>Ancak,</p>
+
+<p>1- Sanık hakkında neticeten hükmedilen 4 gün adli para cezasının TCK’nın 52/2. maddesi uyarınca adli para cezasına dönüştürülmesi gerektiğinin gözetilmemesi,</p>
+
+<p>2- TCK’nın 58. maddesi uygulanırken, 5275 sayılı Kanun’un 108/2. maddesi uyarınca en ağır cezayı içeren mahkumiyetin tekerrüre esas alınması gerektiği gözetilmeden, birden fazla hükümlülüğün TCK`nın 58. maddesi uyarınca tekerrüre esas alınması,</p>
+
+<p>3- Kasıtlı suçtan hapis cezasına mahkumiyetin kanuni sonucu olarak sanık hakkında 5237 sayılı TCK’nın 53. maddesi uyarınca hak yoksunluklarına hükmedilmiş ise de, 24/11/2015 tarih ve 29542 sayılı Resmi Gazete’de yayımlanan Anayasa Mahkemesinin 08/10/2015 tarih ve 2014/140 E., 2015/85 K. sayılı kararı ile anılan maddenin bazı hükümlerinin iptal edilmiş olması nedeniyle yeniden değerlendirme yapılması zorunluluğu ve TCK`nın 53/l-(c) maddesindeki hak yoksunluğunun sanığın kendi altsoyu üzerindeki velayet, vesayet ve kayyımlık yetkileri yönünden koşullu salıverme tarihine kadar, diğer kişilere karşı belirtilen yetkiler yönünden mahkum olunan hapis cezasının infazı tamamlanıncaya kadar geçerli olacağının gözetilmemesi,</p>
+
+<p>Bozmayı gerektirmiş ve sanığın temyiz iddiaları yerinde görüldüğünden, hükmün bu nedenle BOZULMASINA, 5320 sayılı Kanun’un 8/1. madde ve fıkrası aracılığıyla 1412 sayılı CMUK’nın 322. maddesi uyarınca bu aykırılık, yeniden yargılama yapılmasına gerek olmaksızın düzeltilebilir nitelikte bulunduğundan, sanık hakkında hükmedilen 4 gün adli para cezasına ilişkin hüküm fıkrasına “TCK’nın 52/1-2 maddesi gereğince sanığın sosyo ekonomik durumu nazara alınarak sanığa verilen gün karşılığı adli para cezasının beher günü takdiren 20,00 TL’den paraya çevrilerek 80,00 TL adli para cezası ile cezalandırılmasına” ibaresinin eklenmesi; tekerrür uygulanmasına ilişkin hüküm fıkrasının çıkartılarak yerine “Pendik 2. Asliye Ceza Mahkemesinin 19/06/2008 tarih, 2007/373 Esas 2008/380 karar sayılı ilamındaki mühür bozma suçundan verilen cezanın tekerrüre esas olduğu anlaşılmakla, sanığa tayin olunan hapis cezasının TCK’nın 58. maddesi uyarınca mükerrirlere özgü infaz rejimine göre çektirilmesine, cezanın infazından sonra denetimli serbestlik tedbiri uygulanmasına” ibaresi yazılmak ve hükümden TCK’nın 53. maddesinin uygulanmasına ilişkin bölümün çıkartılıp, yerine ``24/11/2015 tarih ve 29542 sayılı Resmi Gazete`de yayımlanan Anayasa Mahkemesinin 08/10/2015 tarih ve 2014/140 E., 2015/85 K. sayılı iptal kararı da gözetilerek, kasıtlı suçtan hapis cezasına mahkumiyetin kanuni sonucu olarak, TCK’nın 53. maddesinin uygulanmasına,” ibaresi yazılmak, hak yoksunluklarına ilişkin fıkradaki “TCK 53/1-c maddesinde sayılan haktan ise koşullu salıverilme tarihi gerçekleşinceye kadar sanığın yoksun bırakılmasına,” ibaresi çıkarılarak, yerine “sanığın kendi alt soyu üzerindeki velayet hakkından, vesayet veya kayyımlığa ait bir hizmette bulunmaktan şartla salıverilme tarihine kadar, alt soyu dışındakiler yönünden infaz tarihine kadar yoksun bırakılmasına’’ ibaresi eklenmek biçiminde başkaca yönleri kanuna uygun bulunan hükmün tebliğnameye uygun olarak, DÜZELTİLEREK ONANMASINA 12/09/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 20. CEZA DAİRESİ 
+Esas : 2017/207 Karar : 2017/4188</strong> Tarih : 5.07.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Ceza Genel Kurulu’nun süreklilik kazanmış uygulamalarına göre şeklen direnme kararı verilmiş olsa dahi; bozma kararı doğrultusunda uygulama yapmak, bozmadan sonra yapılan inceleme, araştırma ve yeni kanıtlara dayanarak hüküm kurmak, bozma nedeni veya nedenlerini tartışmak, ilk kararda yer almayan daire denetiminden geçmemiş bulunan yeni ve değişik gerekçelerle hüküm kurmak, hükümde değişiklik yapmak suretiyle verilen direnme kararı özde direnme kararı olmayıp bozmaya eylemli uyma sonucu verilen yeni bir karar olduğu ve Mahkemece, Dairemizin 10/04/2016 tarih ve 2015/16516 esas, 2016/2212 karar sayılı bozma kararına karşı direnildiği belirtilmiş ise de; direnme kararında bozma nedenlerinin tartışılmış olması, ilk kararda yer almayan daire denetiminden geçmemiş bulunan yeni ve değişik gerekçelerle hüküm kurulması karşısında, karar, şeklen direnme gibi görünse de özde ilk karar niteliğinde olduğundan, direnme kararının bozmaya eylemli uyma olarak kabulü ile temyizen inceleme görevinin Dairemize ait olduğu kabul edilerek yapılan incelemede;</p>
+
+<p>a - Sanığın, evinde bulundurduğu esrarı kolluk görevlilerinin arama yapmak üzere geldikleri sırada tuvalete dökerken yakalandığı, ele geçirilen esrarı başkalarına temin ya da devir edeceğine ilişkin, sanıktan esrar satın aldığını iddia eden …’ın soyut beyanı dışında delil bulunmadığı anlaşıldığından, eyleminin kullanmak için uyuşturucu madde bulundurma suçunu oluşturduğu gözetilmeden uyuşturucu madde ticareti yapma suçundan mahkûmiyet kararı verilmesi,</p>
+
+<p>b - Kabule göre de; adli sicil kaydında birden fazla tekerrüre esas alınabilecek hükümlülüğü bulunan sanık hakkında, TCK’nın 58 ve 5275 sayılı Kanun’un 108/2. maddeleri uyarınca bunlardan en ağırının esas alınması gerektiği gözetilmeyerek, Gemlik 1. Asliye Ceza Mahkemesi’nin 2007/223 esas ve 2007/431 karar sayılı ilamı ile TCK’nın 86/1, 3 ve 87/3. maddeleri uyarınca verilen 1 yıl 8 ay hapis cezası yerine aynı ilamda yer alan 6136 sayılı Kanunu’nun 13/1. maddesi uyarınca verilen 10 ay hapis cezasının tekerrür uygulamasına esas alınması,</p>
+
+<p>Kanuna aykırı, Cumhuriyet savcısı ile sanık ve müdafiinin temyiz itirazları bu nedenlerle yerinde olduğundan, hükmün BOZULMASINA,</p>
+
+<p>05.07.2017 tarihinde üyeler … ve …’ün karşı oyu ve oyçokluğuyla karar verildi.</p>
+
+<p>KARŞI OY GEREKÇESİ:</p>
+
+<p>Dosyada mevcut tutanakları, tanık …‘ın 10.06.2013 tarihli kolluk beyanı ve aynı tarihli fotoğraflı teşhis tutanağı, ev arama tutanağı, zabıt mümzi tanık beyanları ve tüm dosya kapsamına göre sanık …‘nın üzerine atılı uyuşturucu madde ticareti suçunu işlediği sabit olmuştur. Şöyle ki;</p>
+
+<p>Elinde uyuşturucu madde bulunan ve hakkında kullanmak için uyuşturucu madde bulundurma suçundan ayrıca işlem yapılan dosyamızın tanığı … 10.06.2013 tarihli kolluk beyanında açıkça uyuşturucuyu salça lakaplı sanık …‘dan aldığını beyan etmiş ve aynı tarihli fotoğraflı teşhis tutanağı ile de sanık …‘ı teşhis etmiş, alınan arama kararı üzerine sanık …‘ın evine arama için gidildiğinde sanık elindeki poşetle tuvalete kaçarak tuvaletin suyunu da açmak suretiyle poşeti tuvalete dökmüş ve polislerin müdahalesi sonucu etrafa yayılan yaklaşık daralı 19 gr. kadar THC ihtiva eden hint keneviri bitki kırıntıları ele geçirilmiştir.</p>
+
+<p>Her ne kadar tanık … Cumhuriyet savcılığına sonradan verdiği dilekçe de ve mahkemedeki beyanında kolluktaki ifadesinin doğru olmadığını sanık …‘ı tanımadığını uyuşturucu maddeyi Bursa’da tanımadığı kişilerden aldığını, emniyette baskıdan dolayı sanıktan aldığını söylediğini belirtmişse de; … tanımadığını belirten kişinin satın aldığı kişiyi salça lakabıyla bilip teşhis etmesi mümkün değildir. Ayrıca dosyada bulunan 10.06.2013 saat 16.00’da tutulan araştırma tutanağına göre salça lakaplı kişinin sanık … olduğu da tespit edilmiştir.</p>
+
+<p>Sayın çoğunluk, sanığın uyuşturucu maddeyi başkalarına devir ve sattığına dair tanık …‘ın sonradan döndüğü soyut beyanından başka bir delil olmadığını ve eylemin kullanmak için uyuşturucu madde bulundurma suçunu oluşturduğundan kararın bozulmasına karar vermişse de; tanık …‘ın kolluktaki beyan ve teşhisi üzerine sanık …‘ın evinde yapılan aramada bir kısmını tuvalete dökerek imha ettiği, tanık … yakalanan uyuşturucu madde ile aynı nitelikte uyuşturucunun ele geçirilmiş olması karşısında tanık … kolluk beyanının soyut nitelikte kalmadığı bu beyan üzerine yapılan aramada sanığın evinde de aynı nitelikte uyuşturucu madde bulunması karşısında ve tüm dosya kapsamına göre sanık …‘ın üzerine atılı uyuşturucu madde ticareti yapma suçunu işlediği sabit olduğundan mahkeme kararının onanması gerektiği düşüncesinde olmamız sebebiyle sayın çoğunluğun bozma düşüncesine katılmıyoruz.</p>
+
+<hr>
+
+<p><strong>YARGITAY 7. CEZA DAİRESİ
+Esas : 2014/30657 Karar : 2017/5614</strong> Tarih : 4.07.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>1-Mahkemece teşdit ve temel cezanın belirlenmesindeki gerekçede, TCK.nun 61. maddesindeki kaçak eşyanın miktarı, suçun işlenişinde bir özelliğin bulunmayışı, suç konusunun önem ve değerine göre, cezaların şahsiliği ve uygulamada birliğin sağlanması bakımından, benzer olaylarla mukayese edildiğinde, daha çok miktarda kaçakçılık yapanlarla daha … miktarda kaçakçılık yapanlar arasında hakkaniyete uygun, adil bir ceza tayin edebilmek bakımından, gümrüklenmiş değeri 2.596,00 TL olan 11 adet cep telefonu kaçakçılığı yapan sanığın cezasının dosya içeriğine uygun düşmeyen gerekçeyle üst sınırdan ceza tayini,</p>
+
+<p>2- Sanık hakkında verilen gün adli para cezasının bir gün karşılığı 20,00 TL üzerinden hesaplanması sırasında uygulama maddesinin TCK.nun 52/2 yerine, 50/1. olarak gösterilmesi suretiyle CMK.nun 232/6. maddesine aykırı davranılması,</p>
+
+<p>3-24.11.2015 günlü 29542 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren Anayasa Mahkemesi’nin 08.10.2015 tarih ve 2014/140 esas, 2015/85 sayılı iptal kararı ile 5237 sayılı TCK.nun 53. maddesinin bazı bölümlerinin iptal edilmesi nedeniyle, anılan maddenin yeniden değerlendirilmesinde zorunluluk bulunması,</p>
+
+<p>5237 sayılı TCK.nun 53. maddesinin 3. fıkrası uyarınca, aynı maddenin 1.fıkrasının (c) bendinde yazılı sanığın kendi altsoyu üzerindeki velayet hakları ile vesayet veya kayyımlığa ait bir hizmette bulunmaktan koşullu salıverilmesine, altsoyu dışında kalanlarla ilgili bu hak ve yetkilerden ise cezanın infazı tamamlanıncaya kadar yoksun bırakılmasına karar verilmesi gerektiği gözetilmeden, yazılı şekilde hüküm tesisi,</p>
+
+<p>4- 01/03/2008 tarihinde yürürlüğe giren 5739 sayılı Yasanın 5. maddesi ile yapılan değişiklikle 5237 sayılı TCK.nun 50/6. madde ve fıkrasında yer alan “yaptırım” ibaresinin “tedbir” olarak değiştirilip, 5275 sayılı Yasanın 106. maddesinin 4. ve 9. yine 18/06/2014 tarihli 6545 sayılı Yasanın 81. maddesi ile 3. ve 8. fıkralarındaki değişiklikler gözönüne alındığında, ayrıca 10. fıkrasının da yürürlükten kaldırılması karşısında, infaz yetkisini kısıtlayacak şekilde adli para cezasının ödenmemesi halinde, ödenmeyen adli para cezasının hapse çevrilmesine karar verilmesi,</p>
+
+<p>5- 5275 sayılı Kanunun “Mükerrirlere Özgü İnfaz Rejimi ve Denetimli Serbestlik Tedbiri” başlıklı 108. maddesinin 2. fıkrası, “tekerrür nedeniyle koşullu salıverme süresine eklenecek miktar, tekerrüre esas alınan cezanın en ağırından fazla olamaz” hükmüne yer verilmiş olup, bu hüküm nedeniyle sanığın birden fazla tekerrüre esas alınabilecek sabıkasının bulunması halinde bunlardan en ağırının esas alınmasının gerektiği, bu bağlamda … 8. Asliye Ceza Mahkemesi’nin 2006/331 Esas ve 2007/93 Karar sayılı ilamı ile hırsızlık suçundan hükmolunan 9 … hapis cezasına ilişkin hükümlülüğün tekerrüre esas alınması gerektiği gözetilmeden yazılı şekilde hüküm tesisi,</p>
+
+<p>6- Sanık hakkında hem adli para cezası hem de hapis cezası verildiği ve adli para cezası için TCK.nun 58. maddeye göre tekerrür hükümleri uygulanamayacağı halde tekerrür hükümleri uygulanmasına karar verilirken hiç bir ayrım yapmaksızın sanığın cezasının TCK.nun 58/6. maddesi gereğince mükerrirlere özgü infaz rejimine göre çektirilmesine karar verilmesi,</p>
+
+<p>7-TCK.nun 58/7. maddesi gereğince cezanın infazından sonra denetimli serbestlik tedbirine hükmolunması gerektiğinin gözetilmemesi,</p>
+
+<p>Yasaya aykırı olup, sanığın temyiz itirazları bu itibarla yerinde görüldüğünden, hükmün 5320 sayılı Yasanın 8/1. maddesi gereğince yürürlükte bulunan 1412 sayılı CMUK.nun 321. maddesi uyarınca BOZULMASINA, 04/07/2017 günü oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 12. CEZA DAİRESİ
+Esas : 2016/8547 Karar : 2017/5706</strong> Tarih : 29.06.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Sanığın 1.34 promil alkollü olduğu tespit edilmesine rağmen, gerekçeli kararda bu oranın 0.92 olarak yazılması, mahallinde düzeltilmesi mümkün yazım hatası kabul edilmiştir.</p>
+
+<p>5275 sayılı Kanunun 108/3. maddesi hükmü uyarınca ikinci kez tekerrür hükümlerinin uygulanması durumunda hükümlünün koşullu salıvermeden yararlanamayacağı göz önüne alınarak, sanığa ait tekerrüre esas alınan Eskişehir 2. Asliye Ceza Mahkemesinin 2011/149 E- 2012/110 K sayılı ilamında TCK’nın 58. maddesinin uygulandığı anlaşılmakla, ikinci kez mükerrir olan sanık hakkında hükmedilen cezanın ikinci kez mükerrir olduğu belirtilmeksizin, mükerrirlere özgü infaz rejimine göre çektirilmesine ve cezanın infazından sonra denetimli serbestlik tedbirinin uygulanmasına karar verilmesi, aleyhe temyiz olmadığından bozma nedeni yapılmamıştır.</p>
+
+<p>Yapılan yargılamaya, toplanıp karar yerinde gösterilen delillere, mahkemenin kovuşturma sonuçlarına uygun olarak oluşan kanaat ve takdirine, incelenen dosya kapsamına göre, sanığın, sair temyiz itirazlarının reddine, ancak;</p>
+
+<p>Hükmün esasını teşkil eden kısa kararda ve gerekçeli kararın hüküm kısmında, sanık hakkında temel cezanın tayini sırasında uygulama maddesi olan 5237 Sayılı TCK’nın 179/2. maddesine yer verilmemesi suretiyle CMK’nın 232/6. maddesine aykırı hareket edilmesi,</p>
+
+<p>Kanuna aykırı olup, hükmün bu nedenle 5320 sayılı Kanunun 8. maddesi gereğince halen uygulanmakta olan 1412 sayılı CMUK’un 321. maddesi uyarınca BOZULMASINA, ancak yeniden yargılamayı gerektirmeyen bu konuda, aynı Kanunun 322. maddesi gereğince karar verilmesi mümkün bulunduğundan, aynı maddenin verdiği yetkiye istinaden hüküm fıkrasının 1. bendinde yer alan ‘‘TCK’nın 179/3. maddesi’’ ibaresinin çıkarılarak yerine ‘‘TCK’nın 179/3. maddesi delaletiyle TCK’nın 179/2. maddesi’’ ibaresinin eklenmesi suretiyle diğer yönleri usul ve kanuna uygun bulunan hükmün isteme uygun olarak DÜZELTİLEREK ONANMASINA, 29/06/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 4. CEZA DAİRESİ 
+Esas : 2014/32371 Karar : 2017/18167</strong> Tarih : 28.06.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>1-Sanığın, cezaevinden çıktıktan sonra daha önce birlikte yaşadığı…. ve ondan olan çocuklarının yerini ….’nın annesi müşteki …‘ya sorduğu, kayıp olduklarını söylemesi üzerine, “polise gidip ifade verin” dediğinde, müşteki …‘nın kendisine “şerefsiz, s…git” demesine sinirlenerek eylemleri gerçekleştirdiğinin savunması karşısında, olayın çıkış sebebi ve gelişimi üzerinde durularak, müşteki …’ya karşı tehdit, yaralama, mala zarar verme, konut dokunulmazlığını ihlal suçları bakımından TCK’nın 29, hakaret suçu bakımından ise aynı Kanunun 129.maddesinde düzenlenen tahrik hüümlerinin hakkında uygulanıp uygulanmayacağının tartışılmaması,</p>
+
+<p>2-Mükerrir sanık hakkında TCK’nın 58. maddesi uygulanırken, 5275 sayılı Kanunun 108/2. maddesi uyarınca en ağır cezayı içeren mahkumiyetin tekerrüre esas alınması gerektiği gözetilmeden, Gaziantep 6.Asliye Ceza Mahkemesinin 2007/191-2008/341 E/K sayılı ilamının bütünüyle tekerrüre esas alınması,</p>
+
+<p>3-Anayasa Mahkemesi’nin hükümden sonra 24/11/2015 gün ve 29542 sayılı Resmi Gazete’de yayımlanan 08/10/2015 gün ve 2014/140 esas, 2015/85 sayılı kararı ile TCK’nın 53. maddesinin (1) numaralı fıkrasının (b) bendine yönelik olarak vermiş olduğu iptal kararlarının uygulanması zorunluluğu,</p>
+
+<p>Bozmayı gerektirmiş ve sanık …‘nın temyiz nedenleri ile tebliğnamedeki düşünce yerinde görüldüğünden, HÜKÜMLERİN BOZULMASINA, yargılamanın bozma öncesi aşamadan başlayarak sürdürülüp sonuçlandırılmak üzere dosyanın esas/hüküm mahkemesine gönderilmesine, 28/06/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 19. CEZA DAİRESİ 
+Esas : 2015/11769 Karar : 2017/6081</strong> Tarih : 22.06.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>Yükletilen suçun sanık tarafından işlendiğinin kanuna uygun olarak yürütülen duruşma sonucu saptandığı, bütün kanıtlarla aşamalarda ileri sürülen iddia ve savunmaların temyiz denetimini sağlayacak biçimde ve eksiksiz sergilendiği, özleri değiştirilmeksizin tartışıldığı, vicdani kanının kesin, tutarlı ve çelişmeyen verilere dayandırıldığı,</p>
+
+<p>Eylemin doğru olarak nitelendirildiği ve Kanun’da öngörülen suç tipine uyduğu,</p>
+
+<p>Anlaşılmış ve ileri sürülen başkaca temyiz nedenleri yerinde görülmediği gibi hükmü etkileyecek oranda hukuka aykırılığa da rastlanmamıştır.</p>
+
+<p>Ancak;</p>
+
+<p>1- 08.02.2008 tarihinde yürürlüğe giren 5728 sayılı Kanun’un 578. maddesiyle 5846 sayılı Kanun’un 79. maddesi yürürlükten kaldırılmış olduğu gözetilmeden, suç tarihinde yürürlükte olmayan 5846 sayılı Kanun’un 79. maddesi delaletiyle suça konu eşyanın müsaderesine hükmolunması,</p>
+
+<p>2- 5275 sayılı Kanun’un 108/2. maddesi uyarınca mükerrirlere özgü infaz rejiminin ancak hapis cezalarında uygulanabileceği gözetilmeden, adli para cezasının mükerrirlere özgü infaz rejimine göre çektirilmesine karar verilmesi,</p>
+
+<p>Kanuna aykırı ve sanık müdafiinin temyiz nedenleri bu itibarla yerinde görüldüğünden, hükmün BOZULMASINA, bozma sebebi 5320 sayılı Kanun’un 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 322. maddesi uyarınca, yeniden yargılama yapılmasına gerek olmaksızın düzeltilebilir nitelikte bulunduğundan, hüküm fıkrasının müsadereye ilişkin bölümünden “5846 sayılı Kanun’un 79. maddesi delaleti ile” ibaresinin ve tekerrür hükümlerinin uygulanmasına ilişkin 7. bendinin çıkarılması suretiyle başkaca yönleri kanuna uygun bulunan hükmün tebliğnameye uygun olarak DÜZELTİLEREK ONANMASINA, 22.06.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 12. CEZA DAİRESİ 
+Esas : 2017/3280 Karar : 2017/5244</strong> Tarih : 15.06.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Aldığı alkolün etkisi altındayken emniyetli şekilde araç sevk ve idare edemeyecek halde olmasına rağmen araç kullanmak suçundan sanık …’nin, 5237 sayılı Türk Ceza Kanunu’nun 179/3 ve 49/1. maddeleri yollaması ile 179/2, 62/2-1, 50/1-a ve 52/2. maddeleri uyarınca 500,00 Türk lirası adli para cezası ile cezalandırılmasına, 5237 sayılı Kanun’un 58/1-2b-6-7-8. maddesi uyarınca cezasının mükerrirlere özgü infaz rejimine göre çektirilmesine ve cezasının infazından sonra denetimli serbestlik tedbiri uygulanmasına dair İstanbul 73. Asliye Ceza Mahkemesinin 03/11/2016 tarihli ve 2015/188 esas, 2016/463 sayılı kararını kapsayan dosya incelendi.</p>
+
+<p>Yargıtay 2. Ceza Dairesinin 22/03/2007 tarihli ve 2006/10559 esas, 2007/4396 sayılı ilâmında da belirtildiği gibi, 5237 sayılı Türk Ceza Kanunu’nun 58, 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun’un 106 ve 108. maddeleri birlikte değerlendirildiğinde, sadece özgürlüğü bağlayıcı cezaların mükerrirlere özgü infaz rejimine göre çektirilmesinin mümkün olduğu, adlî para cezalarının mükerrirlere özgü infaz rejimine göre çektirilmesine imkân sağlayan bir düzenlemeye yer verilmemesi karşısında, yazılı şekilde karar verilmesinde isabet görülmediğinden bahisle, 5271 sayılı Ceza Muhakemesi Kanunu’nun 309. maddesi uyarınca anılan kararın bozulması lüzumu Yüksek Adalet Bakanlığı Ceza İşleri Genel Müdürlüğünün 09/04/2017 gün ve 94660652-105-34-2203-2017 sayılı kanun yararına bozma talebine atfen, Yargıtay Cumhuriyet Başsavcılığı’nın 18/04/2017 gün ve 2017/23918 sayılı tebliğnamesi ile daireye ihbar ve dava evrakı tevdi kılınmakla;</p>
+
+<p>Dosya incelenerek gereği düşünüldü:</p>
+
+<p>Kanun yararına bozma talebine dayanılarak düzenlenen tebliğnamedeki bozma isteği incelenen dosya kapsamına nazaran yerinde görüldüğünden, İstanbul 73. Asliye Ceza Mahkemesinin 03/11/2016 tarihli ve 2015/188 esas, 2016/463 karar sayılı kararının 5271 sayılı Ceza Muhakemesi Kanunu’nun 309. maddesi uyarınca isteme uygun olarak BOZULMASINA, aynı Kanun’un 309/4-d maddesindeki “Hükümlünün cezasının kaldırılmasını gerektiriyorsa cezanın kaldırılmasına, daha hafif bir cezanın verilmesini gerektiriyorsa bu hafif cezaya Yargıtay ceza dairesi doğrudan hükmeder.” şeklindeki düzenleme gereği bozma nedenine göre uygulama yapılarak, hüküm fıkrasından tekerrür hükümlerinin uygulanmasına ilişkin (6), (7) ve (8). bentlerin çıkartılarak hüküm fıkrasındaki diğer hususların aynen bırakılmasına, infazın ve müteakip işlemlerin mahallinde buna göre yapılmasına, dosyanın mahalline gönderilmesi için Yargıtay Cumhuriyet Başsavcılığına TEVDİİNE, 15/06/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 4. CEZA DAİRESİ
+Esas : 2014/46488 Karar : 2017/17747</strong> Tarih : 14.06.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>A-Kamu davasına katılma talebi bulunmayan ve katılan sıfatı almayan müştekilerin temyiz hak ve yetkisi bulunmadığı,</p>
+
+<p>Anlaşıldığından, 5320 sayılı Kanunun 8/1 ve 1412 sayılı CMUK’nın 317. maddeleri uyarınca müştekiler …, … ve …‘ın tebliğnameye uygun olarak, TEMYİZ İSTEKLERİNİN REDDİNE,</p>
+
+<p>B-Sanık …‘ın temyiz istemine gelince;</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>Mükerrir olan sanık hakkında TCK’nın 58/3. maddesi gereğince hakaret suçundan hüküm kurulurken seçimlik cezalardan hapis cezasının seçilmesi gerektiğinin gözetilmemesi aleyhe temyiz bulunmadığından bozma nedeni yapılmamıştır.</p>
+
+<p>Ancak;</p>
+
+<p>1-Tekerrüre esas alınan hükümlülüğün kesin nitelikte adli para cezasından ibaret olması nedeniyle, tekerrüre esas alınamayacağı ancak adli sicil kaydında bulunan Ankara 7. Sulh Ceza Mahkemesi’nin 2007/1132 esas ve 2008/1261 karar sayılı ilamın tekerrüre esas alınması gerektiğinin gözetilmemesi,</p>
+
+<p>2- 5275 sayılı Kanunun 108/2. maddesi uyarınca mükerrirlere özgü infaz rejiminin ancak hapis cezalarında uygulanabileceği gözetilmeden, sanık hakkında hakaret suçundan hükmolunan adli para cezası nedeniyle tekerrür hükümlerinin uygulanmasına karar verilmesi,</p>
+
+<p>3-Kabule göre de;</p>
+
+<p>02/12/2016 tarihli Resmi Gazete’de yayımlanarak aynı tarihte yürürlüğe giren 6763 sayılı Kanunun 34. maddesiyle değişik 5271 sayılı CMK’nın 253. maddesi ve maddeye eklenen fıkraya göre uzlaşma hükümleri yeniden düzenlenmiş ve sanığa isnat edilen TCK’nın 106/1. maddesi kapsamındaki tehdit suçunun uzlaştırma kapsamında bulunduğu, hakaret suçu yönünden ise uzlaşma önerisinin yapıldığı tarihte CMK’nın 253/3 maddesinde engel bulunduğu gözetilerek, yeni düzenleme karşısında bu suç yönünden de uzlaşma önerisinde bulunulması gerektiği anlaşılmış olmakla, 5237 sayılı Türk Ceza Kanunu’nun 2 ve 7. maddeleri de gözetilerek, uzlaştırma işlemi uygulanarak sonucuna göre sanığın hukuki durumunun bu kapsamda tekrar değerlendirilip belirlenmesinde zorunluluk bulunması,Bozmayı gerektirmiş, sanık …‘ın temyiz itirazları bu nedenle yerinde görülmüş olduğundan, diğer yönleri incelenmeksizin HÜKÜMLERİN 5320 sayılı Kanunun 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca BOZULMASINA, yargılamanın bozma öncesi aşamadan başlayarak sürdürülüp sonuçlandırılmak üzere dosyanın esas/hüküm mahkemesine gönderilmesine, 14/06/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 1. CEZA DAİRESİ
+Esas : 2017/535 Karar : 2017/2080</strong> Tarih : 5.06.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Kasten yaralama suçundan sanık …‘ın, 5237 sayılı Türk Ceza Kanununun 58/3. maddesi delaleti ile 86/2, 86/3-e, 29 ve 62/1. maddeleri gereğince 2 ay 15 gün hapis cezası ile cezalandırılmasına, cezasının aynı Kanunun 58/6. maddesi gereğince mükerrirlere özgü infaz rejimine göre çektirilmesine ve cezasının infazından sonra denetimli serbestlik tedbiri uygulanmasına dair Kocaeli 4. Sulh Ceza Mahkemesinin 11/07/2012 tarihli ve 2012/41 esas, 2012/698 sayılı Kararının infazını müteakip, 5237 sayılı Türk Ceza Kanununun 58/6 ve 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun’un 108/4. maddeleri uyarınca mükerrir olan sanık hakkında cezanın infazından sonra başlamak üzere 1 yıl denetim uygulanmasına, denetim süresi içerisinde yükümlülük yüklenmesine yer olmadığına ilişkin Kocaeli 10. Asliye Ceza Mahkemesinin 26/05/2015 tarihli ve 2015/90 değişik iş sayılı Kararının infazı sırasında, sanığın denetime uymadığından bahisle 5275 sayılı Kanunun 108/7. maddesi gereğince 15 gün disiplin hapsi ile cezalandırılmasına dair Sakarya İnfaz Hakimliğinin 27/10/2015 tarihli ve 2015/1209 esas, 2015/1331 sayılı Kararı kararı ile ilgili olarak;</p>
+
+<p>Dosya kapsamına göre,</p>
+
+<p>1-Adı geçen sanığa gönderilen çağrı ve uyarı yazılarının mernis adresi olduğu belirtilen adrese 7201 sayılı Tebligat Kanununun 21. maddesine göre tebliğ edildiği anlaşılmış ise de, tebliğ tarihinde yürürlükte bulunan 6099 sayılı Kanun ile değişik 7201 sayılı Kanunun 10. maddesinde yer alan, ‘‘(1) Tebligat, tebliğ yapılacak şahsa bilinen en son adresinde yapılır. Şu kadar ki; kendisine tebliğ yapılacak şahsın müracaatı veya kabulü şartıyla her yerde tebligat yapılması caizdir. (2) Bilinen en son adresin tebligata elverişli olmadığının anlaşılması veya tebligat yapılamaması hâlinde, muhatabın adres kayıt sisteminde bulunan yerleşim yeri adresi, bilinen en son adresi olarak kabul edilir ve tebligat buraya yapılır.” şeklindeki düzenlemeye nazaran, somut olayda sanığın bilinen son adresinin 27/03/2015 tarihinde cezasının koşullu salıvermeye kadar olan kısmı denetimli serbestlik suretiyle infaz edilirken Kocaeli Denetimli Serbestlik Müdürlüğüne bildirdiği “Şirintepe Mah. Kocamışoğlu Sok. Yıldırımevler A Blok K:3 D:6 İzmit/Kocaeli” adresi olduğu, ancak daha sonra cezasının infazını müteakip mükerrirlikten dolayı uygulanan denetim süresinin infazı sırasında ise tüm tebligatların doğrudan sanığın mernis adresine Tebligat Kanununun 21. maddesine göre tebliğ edildiği, buna göre sanığın bildirdiği son adresine çağrı ve gerekirse uyarı yazıları tebliğ edilmeden bila infaz iade kararı verilemeyeceği gözetilmeden yazılı şekilde sanığın disiplin hapsi ile cezalandırılmasına karar verilmesinde,</p>
+
+<p>2-Kabule göre de, 5237 sayılı Kanunun 7/2-3. maddesinde yer alan “ (2) Suçun işlendiği zaman yürürlükte bulunan kanun ile sonradan yürürlüğe giren kanunların hükümleri farklı ise, failin lehine olan kanun uygulanır ve infaz olunur.(3) Hapis cezasının ertelenmesi, koşullu salıverilme ve tekerrürle ilgili olanlar hariç; infaz rejimine ilişkin hükümler, derhal uygulanır.” ve 5275 sayılı Kanunun 108/7. maddesindeki “Cezanın infazı tamamlandıktan sonra devam eden denetim süresi içinde, bu madde hükümlerine göre kendilerine yüklenen yükümlülüklere ve yasaklara aykırı hareket eden mükerrirler, infaz hakimi kararı ile disiplin hapsine tabi tutulur. Disiplin hapsinin süresi on beş günden az veya üç aydan fazla olamaz” şeklindeki hükümler dikkate alındığında, hükümlünün infazına konu suç tarihinin 09/11/2011 tarihi olup, 5275 sayılı Kanunun 108/7. maddesinin ise 28/06/2014 tarihli ve 29044 sayılı Resmi Gazetede yayımlanarak yürürlüğe giren 6545 sayılı Kanunun 82. maddesi ile anılan Kanuna eklendiği ve suç tarihinde yürürlükte bulunmadığı, bu haliyle hükümlüye disiplin hapsi verilemeyeceği gibi, belirlenen denetim süresi içerisinde yükümlülük verilmemiş ise Denetimli Serbestlik Hizmetleri Yönetmeliğinin 96. maddesinde belirtilen rehberlik çalışmalarına katılma yükümlülüğünün denetimli serbestlik müdürlüğünce uygulanması ve bu yükümlülüğe uymama halinde yükümlü hakkında aynı maddenin 5. fıkrası uyarınca işlem yapılması gerektiği; ayrıca disiplin cezasına gerek olmadığı gözetilmeden yazılı şekilde karar verilmesinde, isabet görülmediğinden bahisle 5271 sayılı Ceza Muhakemesi Kanununun 309. maddesi uyarınca anılan kararın bozulması lüzumu Yüksek Adalet Bakanlığı Ceza İşleri Genel Müdürlüğü’nün 05/01/2017 gün ve 94660652-105-54-8954-2016-Kyb sayılı yazılı istemlerine müsteniden Yargıtay Cumhuriyet Başsavcılığının tebliğnamesi ile Dairemize ihbar ve dava evrakı gönderilmekle, incelenerek gereği düşünüldü;</p>
+
+<p>TÜRK MİLLETİ ADINA</p>
+
+<p>Kanun yararına bozma talebine dayanılarak Yargıtay Cumhuriyet Başsavcılığınca düzenlenen tebliğnamedeki bozma isteği incelenen dosya kapsamına göre yerinde görüldüğünden, Sakarya İnfaz Hakimliğinin 27/10/2015 tarihli ve 2015/1209 esas, 2015/1331 sayılı Kararının 5271 sayılı CMK’nun 309. maddesi uyarınca KANUN YARARINA BOZULMASINA, diğer işlemlerin yapılabilmesi için dosyanın Mahkemesine gönderilmek üzere Yargıtay Cumhuriyet Başsavcılığına TEVDİİNE, 05/06/2017 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 18. CEZA DAİRESİ 
+Esas : 2015/24481 Karar : 2017/6913</strong> Tarih : 31.05.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Yerel Mahkemece verilen hüküm temyiz edilmekle, başvurunun süresi, kararın niteliği ile suç tarihine göre dosya görüşüldü:</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede:</p>
+
+<p>Sanığa yükletilen fuhuş eylemiyle ulaşılan çözümü haklı kılıcı zorunlu öğelerinin ve bu eylemin sanık tarafından işlendiğinin Kanuna uygun olarak yürütülen duruşma sonucu saptandığı, bütün kanıtlarla aşamalarda ileri sürülen iddia ve savunmaların temyiz denetimini sağlayacak biçimde ve eksiksiz sergilendiği, özleri değiştirilmeksizin tartışıldığı, vicdani kanının kesin, tutarlı ve çelişmeyen verilere dayandırıldığı,</p>
+
+<p>Eylemin doğru olarak nitelendirildiği ve Kanunda öngörülen suç tipine uyduğu,</p>
+
+<p>Sanığın tekerrüre esas alınan hükümlülüğüne ilişkin ceza miktarı ve sanığın 2. kez mükerrir olduğu kararda gösterilmemiş ise de, adli sicil kaydında yer alan ve tekerrüre esas olan mahkumiyetin 5275 sayılı Kanunun 108. maddesi gereğince infaz evresinde gözetilebileceği düşünüldüğünden bu hususun bozmayı gerektirmediği,</p>
+
+<p>Fuhuş suçunun mağdur sayısınca oluşacağı hususu gözetilmemiş ise de, aleyhe temyiz olmadığından bu hususlarda bozma yapılamayacağı,</p>
+
+<p>Anlaşıldığından, sanık …‘ın ileri sürdüğü nedenler yerinde görülmemiş olmakla, tebliğnameye uygun olarak, TEMYİZ DAVASININ ESASTAN REDDİYLE HÜKMÜN ONANMASINA, 31.05.2017 tarihinde oy birliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 16. CEZA DAİRESİ 
+Esas : 2017/1293 Karar : 2017/4011</strong> Tarih : 17.05.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>1-TCK’nın 179/1, 62, 53, 58/9. maddeleri uyarınca mahkumiyet,</p>
+
+<p>2-TCK’nın 314/2, 3713 sayılı Kanunun 5/1, TCK’nın 62, 53, 58/9 maddeleri uyarınca mahkumiyet,</p>
+
+<p>3-3713 sayılı Kanunun 7/2-b-4, TCK’nın 62, 53. maddeleri uyarınca mahkumiyet,</p>
+
+<p>4-3713 sayılı Kanunun 7/3, TCK’nın 62, 53. maddeleri uyarınca mahkumiyet</p>
+
+<p>Dosya incelenerek gereği düşünüldü:</p>
+
+<p>Sanık hakkında silahlı terör örgütünün propagandasını yapma ve kimliğini gizlemek amacıyla yüzünü kapatmak suçlarından düzenlenen iddianame okunup savunmasının alındığı anlaşıldığından tebliğnamedeki bu yönde bozma isteyen düşünceye iştirak edilmemiştir.</p>
+
+<p>Bozma üzerine yapılan yargılama sonunda toplanan deliller karar yerinde incelenip, sanığın suçlarının sübutu kabul, olay niteliğine ve kovuşturma sonuçlarına uygun şekilde vasfı tayin edilmiş, cezayı azaltıcı sebebin niteliği takdir kılınmış, savunmaları inandırıcı gerekçelerle reddedilmiş, incelenen dosyaya göre verilen hükümde aşağıda belirtilen hususlar dışında bir isabetsizlik görülmemiş olduğundan, sanık müdafiinin yerinde görülmeyen temyiz itirazlarının reddine, ancak;</p>
+
+<p>1-Mükerrirlere özgü infaz rejimi ve denetimli serbestlik tedbirinin uygulanma şekli ile süresi ve mercii, 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkındaki Kanunun 108. maddesinde düzenlenmiş olup aynı maddenin 5. fıkrası ile de tekerrür dolayısıyla belirlenen denetim süresinde koşullu salıverilmeye ilişkin hükümlerin uygulanacağı hükme bağlanmıştır. Bu nedenle denetimli serbestlik süresinin infaz aşamasında 5275 sayılı Kanun hükümleri uyarınca tayin ve tespiti gerektiği gözetilmeden, infazı kısıtlar biçimde “1 yıl süre ile” denetimli serbestlik tedbiri uygulanmasına karar verilmesi,</p>
+
+<p>2-TCK’nın 58/9. maddesi bir ceza değil, cezaya bağlı olarak uygulanacak infaz rejimi ile ilgili olup, kazanılmış hak oluşturmayacağı da gözetilerek; örgüt mensubu olduğu kabul edilen sanık hakkında 3713 sayılı Kanunun 7/2 ve 7/3 maddesine aykırılık suçlarından kurulan hükümlerde anılan maddenin uygulanması gerektiğinin gözetilmemesi,</p>
+
+<p>Kanuna aykırı olup sanık müdafiinin temyiz itirazları bu itibarla yerinde görülmüş olduğundan hükmün 5320 sayılı Kanunun 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca BOZULMASINA, ancak yeniden yargılama yapılması gerektirmeyen bu hususların aynı Kanunun 322. maddesi uyarınca düzeltilmesi mümkün bulunduğundan hükmün tekerrürle ilgili kısımlarından “1 yıl süreyle” ibaresinin çıkarılmasına, 3 ve 4. fıkrasına “Sanık hakkında 5237 sayılı TCK’nın 58/9 maddesi gereğince mükerrirlere özgü infaz rejiminin ve 5275 sayılı Kanunun 108/4 maddesi gereğince cezanın infazından sonra denetimli serbestlik tedbirinin uygulanmasına” ibarelerinin eklenmesi suretiyle diğer yönleri usul ve kanuna uygun bulunan hükümlerin DÜZELTİLEREK ONANMASINA, 17.05.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 3. CEZA DAİRESİ 
+Esas : 2016/13611 Karar : 2017/6316</strong> Tarih : 15.05.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>1)Sanık … hakkında kasten yaralama suçundan kurulan mahkumiyet hükmüne ilişkin temyiz itirazlarının incelenmesinde;</p>
+
+<p>Mükerrir olan sanık hakkında hüküm kurulurken tekerrüre esas alınan ilam gösterilmemiş ise de; Yargıtay Ceza Genel Kurulu’nun 12.02.2013 tarih, 2012/13-1438 esas, 2013/53 karar sayılı ilamında belirtildiği üzere, bu husus infaz aşamasında gözetilebileceğinden, mağdur …‘nin sanık … ve arkadaşlarına hakaret ettiği gerekçesi ile sanık …‘in cezasından 5237 sayılı TCK’nin 29. maddesi uyarınca (1/4) oranında indirim uygulanması gerekirken, (1/2) oranında indirim uygulanarak sanık hakkında eksik ceza tayini, aleyhe temyiz bulunmadığından ve yine Anayasa Mahkemesi’nin 24.11.2015 tarih ve 29542 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren 08.10.2015 tarih ve 2014/140 esas-2015/85 karar sayılı kararı ile 5237 sayılı TCK`nin 53. maddesindeki bazı hükümler iptal edilmiş ise de, bu husus infaz aşamasında dikkate alınabileceğinden bozma nedeni yapılmamıştır.</p>
+
+<p>Yapılan yargılamaya, toplanan ve karar yerinde açıklanan delillere, mahkemenin kovuşturma sonucunda oluşan inanç ve takdirine, gösterilen gerekçeye ve uygulamaya göre sanığın temyiz itirazlarının reddiyle hükmün istem gibi ONANMASINA,</p>
+
+<p>2)Sanık … hakkında hakaret suçundan kurulan mahkumiyet hükmüne ilişkin temyiz itirazlarının incelenmesinde;</p>
+
+<p>İkinci kez mükerrir olan sanık hakkında, 5275 sayılı Kanunun 108/3. maddesi gereğince sanığın koşullu salıverilemeyeceğinin kararda belirtilmesi gerektiği gözetilmemiş ve Anayasa Mahkemesi’nin 24.11.2015 tarih ve 29542 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren 08.10.2015 tarih ve 2014/140 esas-2015/85 karar sayılı kararı ile 5237 sayılı TCK`nin 53. maddesindeki bazı hükümler iptal edilmiş ise de, bu hususlar infaz aşamasında dikkate alınabileceğinden bozma nedeni yapılmamıştır.</p>
+
+<p>Yerinde görülmeyen diğer temyiz itirazlarının reddine, ancak;</p>
+
+<p>Mükerrir olan sanık hakkında hüküm kurulurken tekerrüre esas alınan ilam gösterilmemiş ise de; sanığın adli sicil kaydında yer alan Bakırköy 19. Asliye Ceza Mahkemesi’nin 19.04.2012 tarih, 2012/307 esas, 2012/556 karar sayılı ilamı ile hırsızlık suçundan verilen 07.05.2012 tarihinde kesinleşen 1 yıl 11 ay 10 gün hapis cezasına ilişkin mahkumiyetinin tekerrüre esas olduğu, tekerrüre esas bu hükümde ise TCK`nin 58. maddesinin uygulanması karşısında incelemeye konu dosyada, 5275 sayılı Kanunun 108/2. maddesi gereğince ikinci defa tekerrür hükümlerinin uygulanması gerektiğinin gözetilmemesi,</p>
+
+<p>Bozmayı gerektirmiş, katılanın temyiz itirazları bu itibarla yerinde görülmüş olduğundan, hükmün bu sebepten 6723 sayılı Kanunun 33. maddesiyle değişik 5320 sayılı Yasanın 8/1. maddesi ile yürürlükte bulunan 1412 sayılı CMUK’un 321. maddesi uyarınca BOZULMASINA, ancak bu husus yeniden yargılamayı gerektirmediğinden CMUK’un 322. maddesi gereğince, sanık hakkındaki hükümde TCK’nin 58. maddesinin uygulanmasına ilişkin paragrafın hükümden çıkartılması, yerine “Sanığın sabıkasına esas Bakırköy 19. Asliye Ceza Mahkemesi’nin 19.04.2012 tarih, 2012/307 esas, 2012/556 karar sayılı ilamı ile hırsızlık suçundan verilen 07.05.2012 tarihinde kesinleşen 1 yıl 11 ay 10 gün hapis cezasının tekerrüre esas teşkil ettiği anlaşıldığından sanık hakkında cezanın infazında TCK`nin 58/7. ve 5275 sayılı Kanunun 108/2. maddeleri uyarınca İKİNCİ KEZ MÜKERRİRLERE ÖZGÜ İNFAZ REJİMİNİN UYGULANMASINA, cezanın infazından sonra sanık hakkında denetimli serbestlik tedbirinin uygulanmasına” şeklindeki paragrafın eklenmesi suretiyle hükmün DÜZELTİLEREK ONANMASINA, 15.05.2017 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 18. CEZA DAİRESİ 
+Esas : 2015/33390 Karar : 2017/5636</strong> Tarih : 11.05.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre, yapılan incelemede;</p>
+
+<p>Sanığa yükletilen konut dokunulmazlığını ihlâl etme ve mala zarar verme eylemleriyle ulaşılan çözümü haklı kılıcı zorunlu öğelerinin ve bu eylemlerin sanık tarafından işlendiğinin Kanuna uygun olarak yürütülen duruşma sonucu saptandığı, bütün kanıtlarla aşamalarda ileri sürülen iddia ve savunmaların temyiz denetimini sağlayacak biçimde ve eksiksiz sergilendiği, özleri değiştirilmeksizin tartışıldığı, vicdani kanının kesin, tutarlı ve çelişmeyen verilere dayandırıldığı,</p>
+
+<p>Eylemlerin doğru olarak nitelendirildiği ve Kanunda öngörülen suç tiplerine uyduğu,</p>
+
+<p>Mükerrir sanık hakkında TCK’nın 58. maddesi uygulanırken, 5275 sayılı Kanunun 108/2. maddesi uyarınca ilamdaki en ağır cezayı içerir suça ilişkin hükümlülüğün tekerrüre esas alınması gerektiği düşünülmeden, ilamın tamamı tekerrüre esas alınmış ise de, bu husus infaz aşamasında gözetilebileceğinden bozmayı gerektirmediği,</p>
+
+<p>TCK’nın 53/1-b maddesinin, Anayasa Mahkemesinin 08/10/2015 tarih ve 2014/140 esas, 2015/85 sayılı kararı ile iptal edilmesinin, infaz evresinde resen gözetilebileceği,</p>
+
+<p>Anlaşıldığından, sanık …‘nın ileri sürdüğü nedenler yerinde görülmemiş olmakla, tebliğnameye uygun olarak, TEMYİZ DAVASININ ESASTAN REDDİYLE HÜKÜMLERİN ONANMASINA, 11/05/2017 tarihinde oy birliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 14. CEZA DAİRESİ 
+Esas : 2017/1153 Karar : 2017/2400</strong> Tarih : 3.05.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Sanık … hakkında kişiyi hürriyetinden yoksun kılma ve kasten yaralama suçlarından yapılan yargılama sonunda, atılı suçlardan mahkûmiyetine dair Erzurum 4. Asliye Ceza Mahkemesinden verilen 20.06.2013 gün ve 2013/123 Esas, 2013/281 Karar sayılı hükümlerin sanık ile müdafileri tarafından temyiz edilmesi üzerine, Dairemizin 16.03.2016 gün ve 2014/2727 Esas, 2016/2555 Karar sayılı ilamı ile düzeltilerek onama yönündeki kararına karşı, Yargıtay Cumhuriyet Başsavcılığının 02.02.2017 gün ve KD-2016/398290 sayılı itiraznamesi ile 5271 sayılı CMK`nın 308. maddesinin iki ve üçüncü fıkraları gereğince itiraz etmesi üzerine dosya Daireye gönderilmekle incelendi.</p>
+
+<p>Yargıtay Cumhuriyet Başsavcılığının itirazı yerinde görüldüğünden İTİRAZIN KABULÜNE, Dairemizin 16.03.2016 gün ve 2014/2727 Esas, 2016/255 sayılı düzeltilerek onama kararının 6352 sayılı Kanunun 99. maddesiyle 5271 sayılı CMK`nın 308. maddesine eklenen 2 ve 3. fıkraları uyarınca KALDIRILMASINA karar verildikten sonra gereği düşünüldü:</p>
+
+<p>Yapılan yargılamaya, toplanıp karar yerinde gösterilen delillere, mahkemenin soruşturma ve kovuşturma sonuçlarına uygun olarak oluşan kanaat ve takdirine, incelenen dosya içeriğine göre yerinde görülmeyen sair temyiz itirazlarının reddine,</p>
+
+<p>Ancak;</p>
+
+<p>Sanık hakkında dosyada mevcut adli sicil kaydına göre Erzurum 1. Asliye Ceza Mahkemesinin 24.06.2010 gün ve 2008/656 Esas, 2010/428 sayılı Kararı ile tayin edilen 5 ay hapis ve 80 TL adli para cezası mahkumiyetinin tekerrüre esas alınması gerekirken, Erzurum 2. Sulh Ceza Mahkemesinin 17.12.2009 gün ve 2009/1054 Esas, 2009/1293 sayılı kısa süreli hapis cezasından çevrilme 11 ay 20 gün süreyle belirli yerlere gitmekten yasaklanma şeklindeki seçenek yaptırım kararının TCK`nın 58. maddesi kapsamında tekerrüre esas alınarak yazılı şekilde uygulama yapılması,</p>
+
+<p>Kanuna aykırı, sanık ile müdafilerinin temyiz itirazları bu itibarla yerinde görüldüğünden, hükümlerin 5320 sayılı Kanunun 8/1. maddesi gözetilerek 1412 sayılı CMUK’nın 321. maddesi uyarınca BOZULMASINA, ancak bu hususun yeniden duruşma yapılmaksızın aynı Kanunun 322. maddesinin verdiği yetki uyarınca düzeltilmesi mümkün olmakla, tekerrüre esas alınması gereken Erzurum 1. Asliye Ceza Mahkemesi kararında tayin edilen 5 ay hapis ve 80 TL adli para cezasının birinci kez mükerrirlere özgü infaz rejimine göre çektirilmesine hükmedildiğinin karar içeriğinden anlaşılıp iş bu dosyada aleyhe temyiz yoluna gidilmediği de gözetildiğinde, Erzurum 1. Asliye Ceza Mahkemesi hükmünün tekerrüre esas alınması halinde sanığın 5275 sayılı CCTİK’nın 108/3. maddesine göre koşullu salıvermeden yararlanamayacak olması nedeniyle, Dairemizce de benimsenen Yargıtay Ceza Genel Kurulunun 18.06.2013 gün ve 2012/6-1441 Esas, 2013/303 Karar sayılı ilamında da belirtildiği gibi sanık hakkında tekerrür uygulaması yönünden hatalı uygulanan diğer mahkeme kararındaki sürenin nazara alınması gerektiğinden, Erzurum 2. Sulh Ceza Mahkemesinin 17.12.2009 gün ve 2009/1054 Esas, 2009/1293 Karar sayılı ilamının tekerrüre esas alınmasına ilişkin bölümlerin karardan çıkartılarak yerlerine “Sanığın Erzurum 1. Asliye Ceza Mahkemesinin 24.06.2010 gün ve 2008/656 Esas, 2010/428 sayılı Kararı ile 5 ay hapis ve 80 TL adli para cezası mahkumiyetine ilişkin hükmün tekerrüre esas olması karşısında, aynı kararda yer alan mükerrirlik durumuna ilişkin düzenleme nazara alınmaksızın anılan hüküm nedeniyle sanık hakkındaki cezanın mükerrirlere özgü infaz rejimine göre çektirilmesine, 5237 sayılı TCK’nın 58/6. maddesi uyarınca cezanın infazından sonra denetimli serbestlik tedbiri uygulanmasına ve tekerrür uygulamasıyla ilgili olarak 5275 sayılı CGTİK`nın 108/2. maddesi yönünden Erzurum 2. Sulh Ceza Mahkemesi kararında geçen 11 ay 20 günlük sürenin nazara alınmasına,” ibaresinin eklenmesi suretiyle sair yönleri usul ve kanuna uygun olan hükmün DÜZELTİLEREK ONANMASINA, 03.05.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 16. CEZA DAİRESİ
+Esas : 2015/2153 Karar : 2017/3989</strong> Tarih : 27.04.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Gerekçeli karar başlığında suç tarihinin 24.07.2009 yerine 05.08.2009 olarak yazılması mahallinde düzeltilebilir maddi hata kabul edilmiştir.</p>
+
+<p>1-Sanıklar …, … ve … hakkında silahlı terör örgütüne yardım etme suçundan kurulan hükümlerin incelenmesinde;</p>
+
+<p>Kesinleşen mahkumiyet hükümlerine yönelik olarak 6352 sayılı Kanunun 05.07.2012 tarihinde yürürlüğe girmesi üzerine yapılan uyarlama yargılaması sonucunda verilen kararlar 5275 sayılı Kanunun 98 ila 101. maddeleri uyarınca itiraz yasa yoluna tabi olduğundan, temyiz incelemesine yer olmadığına, gereği merciince yapılmak üzere dosyanın mahalline İADESİNE,</p>
+
+<p>2-Sanık … hakkında silahlı terör örgütüne yardım etme suçundan kurulan hükmün incelenmesinde;</p>
+
+<p>Sanık hakkında öncelikle temel ceza tayin edilip sonrasında TCK’nın 220/7. maddesinin 2. cümlesi uyarınca gerekli indirim uygulandıktan sonra devamında 3713 sayılı Kanunun 5. maddesi gereğince artırım yapılması gerekirken, yazılı şekilde uygulama yapılması sonuç ceza değişmediğinden bozma nedeni yapılmamıştır.</p>
+
+<p>Bozmaya uyularak yapılan yargılama sonunda toplanan deliller karar yerinde incelenip, sanığın suçunun sübutu kabul, olay niteliğine ve kovuşturma sonuçlarına uygun şekilde vasıfları tayin edilmiş, cezayı azaltıcı sebebin niteliği takdir kılınmış, savunması inandırıcı gerekçelerle reddedilmiş, incelenen dosyaya göre verilen hükümlerde aşağıdaki hususlar dışında bir isabetsizlik görülmemiş olduğundan, sanık müdafiinin yerinde görülmeyen diğer temyiz itirazlarının reddine, ancak;</p>
+
+<p>a)TCK’nın 53. maddesinde düzenlenen hak yoksunluklarının uygulanması bakımından, Anayasa Mahkemesinin 24.11.2015 tarih ve 29542 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren 08.10.2015 tarih, 2014/140 E. 2015/85 K. sayılı iptal kararının gözetilmesi lüzumu,</p>
+
+<p>b)Silahlı terör örgütüne yardım suçundan mahkumiyetine hükmolunan sanığın cezasının 3713 sayılı Kanunun 17. maddesi uyarınca 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanunun 107’nci maddesinin dördüncü fıkrası ile 108’inci maddesi hükümlerine göre infaz edileceği gözetilmeden, sadece örgüt mensubu suçlular hakkında uygulama imkanı bulunan TCK’nın 58/9. maddesinin örgüt mensubu olmayan sanık bakımından tatbikine karar verilmesi,</p>
+
+<p>Bozmayı gerektirmiş, bu itibarla hükmün 5320 sayılı Kanunun 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca BOZULMASINA, ancak yeniden yargılama yapılmasını gerektirmeyen bu hususların aynı Kanunun 322. maddesi uyarınca düzeltilmesi mümkün bulunduğundan, hükümden TCK’nın 53. maddesinin uygulanmasına ilişkin kısımın bütünüyle çıkarılarak yerine “Anayasa Mahkemesinin 24.11.2015 tarih ve 29542 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren 08.10.2015 tarih, 2014/140 E. 2015/85 sayılı iptal kararı doğrultusunda yürürlükte bulunan TCK’nın 53. maddesinin sanık hakkında uygulanmasına” ibaresinin eklenmesi ve TCK’nın 58/9. maddesinin uygulanmasına ilişkin kısımın bütünüyle çıkarılması suretiyle sair yönleri usul ve kanuna uygun bulunan hükmün DÜZELTİLEREK ONANMASINA,</p>
+
+<p>3-Sanık … hakkında silahlı terör örgütüne yardım etme suçundan kurulan hükmün incelenmesinde;</p>
+
+<p>UYAP ortamından alınıp dosya içine konulan nüfus kaydına göre sanığın hükümden sonra, temyiz aşamasında 27.05.2013 tarihinde öldüğüne ilişkin kayıt araştırılarak sonucuna göre bir karar verilmesinde zorunluluk bulunması,</p>
+
+<p>Bozmayı gerektirmiş olup, diğer yönleri incelenmeyen hükmün öncelikle bu sebepten dolayı BOZULMASINA, 27.04.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 7. CEZA DAİRESİ 
+Esas : 2014/35309 Karar : 2017/3216</strong> Tarih : 25.04.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>1)5237 sayılı TCK’nun 3/1. madde fıkrasındaki “Suç işleyen kişi hakkında işlenen fiilin ağırlığıyla orantılı ceza ve güvenlik tedbirine hükmolunur.” düzenlemesi ile aynı yasanın 61. maddesindeki “Hakim, somut olayda; suçun işleniş biçimi, suçun işlenmesinde kullanılan araçları, suçun işlendiği zaman ve yeri, suçun konusunun önem ve değerini, meydana gelen zarar veya tehlikenin ağırlığını, failin kast veya taksire dayalı kusurunun ağırlığını, failin güttüğü amaç ve saiki, göz önünde bulundurarak, işlenen suçun kanuni tanımında öngörülen cezanın alt ve üst sınırı arasında temel cezayı belirler.” düzenlemesi dikkate alınarak, ele geçen kaçak eşya miktarı ve yasada öngörülen cezanın üst sınırı gözetilerek, daha yüksek miktardaki kaçak sigarayı ticari maksatla bulunduran kişilere verilebilecek cezaya göre hakça artırım yapılması gerekirken orantılılık, adalet ve nesafet kurallarıyla bağdaşmayacak şekilde teşdit uygulaması yapılarak fazla ceza tayini,</p>
+
+<p>2)Gün adli para cezasının bir gün karşılığının belirlenmesi sırasında uygulama maddesi olan TCK’nun 52/2. Maddesinin yerine TCK’nun 50/1-…maddesinin gösterilmesi suretiyle CMK nun 232/6. maddesine aykırı davranılması,</p>
+
+<p>3)01.03.2008 tarihinde yürürlüğe giren 5739 sayılı Yasa’nın 5. maddesi ile yapılan değişiklikle 5237 sayılı TCK’nun 50/6. madde ve fıkrasında yer alan “yaptırım” ibaresinin “tedbir” olarak değiştirilip, 5275 sayılı Yasanın 106. maddesinin 4. ve 9., yine 18.06.2014 tarihli 6545 sayılı Yasanın 81. maddesi ile 3. ve 8. fıkralarındaki değişiklikler ve 10. fıkrasının yürürlükten kaldırılmış olması göz önüne alındığında, hükümde infaz yetkisini kısıtlayacak şekilde, verilen ödenmeyen adli para cezasının hapse çevrileceğinin belirtilmesi,</p>
+
+<p>4)24.11.2015 günlü 29542 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren Anayasa Mahkemesi’nin 08.10.2015 tarih ve 2014/140 esas, 2015/85 sayılı iptal kararı ile 5237 sayılı TCK.nın 53.maddesinin bazı bölümlerinin iptal edilmesi nedeniyle, anılan maddenin yeniden değerlendirilmesinde zorunluluk bulunması,</p>
+
+<p>5237 sayılı TCK.nun 53. maddesinin 3. fıkrası uyarınca, aynı maddenin 1.fıkrasının (c) bendinde yazılı sanığın kendi altsoyu üzerindeki velayet hakları ile vesayet veya kayyımlığa ait bir hizmette bulunmaktan koşullu salıverilmesine, altsoyu dışında kalanlarla ilgili bu hak ve yetkilerden ise cezanın infazı tamamlanıncaya kadar yoksun bırakılmasına karar verilmesi gerektiği gözetilmeden, yazılı şekilde hüküm tesisi,</p>
+
+<p>5)Sanık hakkında hem adli para cezası hem de hapis cezası verildiği ve adli para cezaları için TCK.nun 58. maddeye göre tekerrür hükümleri uygulanamayacağı halde tekerrür hükümleri uygulanmasına karar verilirken hiç bir ayrım yapmaksızın sanığın cezasının TCK.nun 58/6. maddesi gereğince mükerrirlere özgü infaz rejimine göre çektirilmesine karar verilmesi,</p>
+
+<p>6)5237 sayılı TCK’nun 58/7.maddesinde, mahkumiyet kararında, sanık hakkında mükerrirlere özgü infaz rejiminin ve cezanın infazından sonra denetimli serbestlik tedbirinin uygulanacağının belirtilmesi öngörülmüştür.</p>
+
+<p>5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun’un 108.maddesinin (4), (5) ve (6) fıkralarında ise “Hakim, mükerrir hakkında cezanın infazının tamamlanmasından sonra başlamak ve bir yıldan … olmamak üzere denetim süresi belirler. Tekerrür dolayısıyla belirlenen denetim süresinde, koşullu salıvermeye ilişkin hükümler uygulanır. Hakim, mükerrir hakkında denetim süresinin uzatılmasına karar verebilir. Denetim süresi en fazla beş yıla kadar uzatılabilir.” hükmüne yer verilmiştir. Denetim süresini belirleme ve gerektiğinde uzatma görevi hükmü veren mahkemeye değil, hükümlünün infaz aşamasındaki davranışlarını da değerlendirerek koşullu salıverme ile ilgili kararı verecek olan mahkemeye ait olacaktır.</p>
+
+<p>Buna göre, mahkumiyet hükmünde, mükerrir olan sanık hakkında 5237 sayılı TCK’nun 58/7.maddesi gereğince “mükerrirlere özgü infaz rejiminin ve cezanın infazından sonra denetimli serbestlik tedbirinin uygulanmasına” karar verilmesi ile yetinilmesi gerekirken, denetimli serbestlik tedbirinin süresinin de belirlenmesi,</p>
+
+<p>7)Suçta kullanılan nakil aracının müsaderesi sırasında uygulama maddesi olan TCK’nun 54/1. maddesinin gösterilmemesi suretiyle CMK’nun 232/6. maddesine aykırı davranılması,</p>
+
+<p>Yasaya aykırı, sanıklar ile malen sorumlu vekilin temyiz itirazları bu itibarla yerinde görülmüş olduğundan hükmün 5320 sayılı Yasa’nın 8/1. maddesi uyarınca yürürlükte bulunan 1412 sayılı CMUK’nun 321.maddesi uyarınca BOZULMASINA, 25.04.2017 günü oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 18. CEZA DAİRESİ 
+Esas : 2015/30168 Karar : 2017/4185</strong> Tarih : 12.04.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede:</p>
+
+<p>Sanığa yükletilen görevi yaptırmamak için direnme eylemiyle ulaşılan çözümü haklı kılıcı zorunlu öğelerinin ve bu eylemin sanık tarafından işlendiğinin Kanuna uygun olarak yürütülen duruşma sonucu saptandığı, bütün kanıtlarla aşamalarda ileri sürülen iddia ve savunmaların temyiz denetimini sağlayacak biçimde ve eksiksiz sergilendiği, özleri değiştirilmeksizin tartışıldığı, vicdani kanının kesin, tutarlı ve çelişmeyen verilere dayandırıldığı,</p>
+
+<p>Eylemin doğru olarak nitelendirildiği ve Kanunda öngörülen suç tipine uyduğu,</p>
+
+<p>Ancak;</p>
+
+<p>5275 sayılı Kanunun 108/2. maddesi uyarınca mükerrirlere özgü infaz rejiminin ancak hapis cezalarında uygulanabileceği gözetilmeden, hükmolunan adli para cezası hakkında tekerrür hükümlerinin uygulanmasına karar verilmesi,</p>
+
+<p>Kanuna aykırı ve sanık …’ın temyiz iddiaları yerinde görüldüğünden hükmün BOZULMASINA, ancak; bu aykırılık, yeniden duruşma yapılmasına gerek olmaksızın düzeltilebilir nitelikte bulunduğundan, 5320 sayılı yasanın 8/1. madde ve fıkrası aracılığıyla 1412 sayılı CMUK’nın 322. maddesi uyarınca tebliğnameye uygun olarak, “tekerrür hükümlerinin uygulanmasına ilişkin kısımların çıkarılması” biçiminde HÜKMÜN DÜZELTİLEREK ONANMASINA, 12/04/2017 tarihinde oy birliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 20. CEZA DAİRESİ 
+Esas : 2016/2481 Karar : 2017/2125</strong> Tarih : 3.04.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Yargılama sürecindeki işlemlerin yasaya uygun olarak yapıldığı, delillerin gerekçeli kararda gösterilip tartışıldığı, eylemin sanıklar tarafından gerçekleştirildiğinin saptandığı, vicdanî kanının dosya içindeki belge ve bilgilerle uyumlu olarak kesin verilere dayandırıldığı, eylemlere uyan suç tipinin doğru biçimde belirlendiği anlaşıldığından sair temyiz itirazlarının reddine, ancak;</p>
+
+<p>1 - Sanık …’tın ikametinde ele geçirilen 2313 sayılı kanun kapsamında bulunmayan cypermethrin isimli maddenin bulunduğu poşette ele geçirilen adli emanetin 2015 - 1637 sırasında kayıtlı ganyan kuponlarının bulundurulmasının suç teşkil etmediği anlaşıldığından sanık …’a iadesi yerine TCK’nın 54. maddesi uyarınca müsaderesine karar verilmesi,</p>
+
+<p>2 - TCK’nın 58 ve 5275 sayılı Kanun’un 108/2. maddelerine göre; birden fazla tekerrüre esas alınabilecek hükümlülüğün bulunması durumunda bunlardan en ağırının esas alınması ve tekerrüre esas alınanın hükümde açıkça gösterilmesi gerektiği dikkate alınmadan, sanık …’in adli sicil kaydında yer alan sabıkalarından en ağır cezayı içeren İzmir 5. Ağır Ceza Mahkemesi’nce 2001/463 esas ve 2002/306 karar sayılı kararı ile verilen 15 yıl hapis cezası yerine, 5237 sayılı TCK’nın 6545 sayılı Kanunla değişik 191. maddesinde düzenlenmesi ve koşullarının oluşması durumunda, “hükmün açıklanmasının geri bırakılması” ve “davanın düşmesi” seçeneklerine de yer verilmesi nedeniyle, 5237 sayılı TCK’nın 7/2. maddesi uyarınca tekerrüre esas alınmasına olanak bulunmayan İzmir 8. Sulh Ceza Mahkemesi’nce 2011/133 E, 2012/1277 karar sayılı ilamı ile verilen “6000 TL adli para cezası” esas alınmak suretiyle tekerrür hükümlerinin uygulanması,</p>
+
+<p>Bozmayı gerektirmiş, sanıklar ve müdafilerinin temyiz itirazları bu nedenle yerinde görülmüş olduğundan, CMUK’nın 321. maddesi gereğince hükmün BOZULMASINA; ancak bu aykırılıkların yeniden duruşma yapılmaksızın aynı Kanun’un 322. maddesi uyarınca düzeltilmesi mümkün bulunduğundan;</p>
+
+<p>1 - Müsadereye ilişkin bölümde yer alan “TCK’nın 54 maddesi gereğince müsaderesine” ibaresinin çıkartılıp yerine “sanık …’a İADESİNE” ibaresinin yazılması,</p>
+
+<p>2 - Sanık … … hakkındaki hüküm fıkrasından tekerrürle ilgili bölümün çıkarılması ve yerine “Tekerrür oluşturan İzmir 5. Ağır Ceza Mahkemesi’nin 2001/463 esas ve 2002/306 karar sayılı ilamı ile verilen 15 yıl hapis cezası nedeniyle, hükmolunan cezanın 5237 sayılı TCK’nın 58. maddesinin 6 ve 7. fıkraları uyarınca mükerrirlere özgü infaz rejimine göre çektirilmesine ve cezasının infazından sonra hakkında denetimli serbestlik tedbirinin uygulanmasına; ancak kazanılmış hakkı nedeniyle infaz sırasında tekerrüre esas alınan ceza miktarının 5275 sayılı CGTİK 108/2. maddesi uyarınca 6000 TL adli para cezası olarak nazara alınmasına” ibaresinin yazılması suretiyle, hükümlerin DÜZELTİLEREK ONANMASINA, hükmolunan ceza miktarı ile tutuklu kalınan süre göz önüne alınarak sanık …’in salıverilme isteminin REDDİNE, 03.04.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 16. CEZA DAİRESİ 
+Esas : 2016/4479 Karar : 2017/1161</strong> Tarih : 20.03.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 108. Madde</strong></li>
+</ul>
+
+<p>Sanıklar müdafiinin yerinde görülmeyen sair temyiz itirazlarının reddine, ancak;</p>
+
+<p>1-Sanık savunmaları, iletişim tespit tutanakları, tanık beyanı ve teşhisi ile tüm dosya kapsamına göre; sınır kaçakçılığı işiyle uğraşan sanıkların, PKK silahlı terör örgütünün kırsaldaki mensuplarıyla irtibat halinde bulunmak suretiyle gerçekleştirdikleri yardım faaliyetlerini sürekli ve karşılıksız şekilde yerine getirdiklerine dair dosya kapsamında delil bulunmadığı nazara alındığında, sübut bulan eylemlerinin TCK’nın 220/7. maddesi delaletiyle aynı Kanunun 314/2. maddesi uyarınca örgüte yardım etme suçunu oluşturacağı gözetilmeden, suç vasfında hataya düşülerek yazılı şekilde hüküm kurulması,</p>
+
+<p>2-Kabul ve uygulamaya göre de;</p>
+
+<p>a-Gerekçeli karar başlığında suç adının “Terörizmin finansmanı” yerine “Silahlı terör örgütüne üye olmak” şeklinde yazılması,</p>
+
+<p>b-Hüküm fıkrasında sanık …‘ın adının “…”, sanık …‘nın adının “….” ve sanık …‘ın soy adının da “…” olarak belirtilmesi,</p>
+
+<p>c-Ancak örgüt mensubu suçlu hakkında uygulanabilen ve 5237 sayılı TCK’nın 6/1-j maddesinde tanımlanıp tahdidi olarak sayılan; suç örgütü kuran, yöneten, örgüte katılan/üye olan veya örgüt adına suç işleyenlerden olmadığı için örgüt mensubu sayılmayan, hiyerarşik yapıya dahil olmamakla birlikte örgüte bilerek ve isteyerek yardım eden sanık hakkında verilen cezanın 3713 sayılı Kanunun 17/1. maddesi delaleti ile 5275 sayılı Kanunun 107/4 ve 108.maddeleri gereğince infaz edilmesi gerekmekte ise de şartları oluşmadığı halde TCK’nın 58/9. maddesinin tatbik edilmesi,</p>
+
+<p>d-Müsadere esnasında uygulanan kanun ve maddesinin gösterilmemesi suretiyle CMK’nın 232/6. maddesine muhalefet edilmesi,</p>
+
+<p>e-Suç tarihi itibarıyla yürürlükte olan 3713 sayılı Kanunun 8/1. maddesi ile sonradan yürürlüğe giren 6415 sayılı Kanunun 4/1. maddesinin uygulanması suretiyle bulunacak ceza miktarları bakımından, TCK’nın 7/2 ve 5252 sayılı Kanunun 9/3. maddeleri uyarınca, lehe kanun değerlendirmesi yapılması gerektiğinin gözetilmemesi,</p>
+
+<p>f-Anayasa Mahkemesinin 24.11.2015 tarih ve 29542 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren 08.10.2015 tarih, 2014/140 esas 2015/85 karar sayılı iptal kararı ile TCK’nın 53/1. maddesindeki bazı düzenlemelerin iptal edilmiş olması nedeniyle bu karar doğrultusunda hüküm kurulmasında zorunluluk bulunması,</p>
+
+<p>Bozmayı gerektirmiş, sanıklar müdafiinin temyiz itirazları bu itibarla yerinde görülmüş olduğundan, bu sebeplerden dolayı hükümlerin BOZULMASINA, CMUK’nın 326/son maddesi uyarınca ceza miktarı yönünden sanıkların kazanılmış haklarının korunmasına, 20.03.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+			</div></div></main>
+		</div>
+
+  <footer>
+    <section>
+      <div class="contact-info">
+
+        <div class="adres">
+
+        <div class="telefon-wrapper">
+
+
+        </div>
+      </div>
+    </section>
+
+</div>
+
+		<amp-analytics type="googleanalytics" id="analytics1">
+  <script type="application/json">
+  {
+    "vars": {
+    "account": "UA-58342443-1"
+    },
+    "triggers": {
+    "trackPageview": {
+      "on": "visible",
+      "request": "pageview"
+    }
+    }
+  }
+  </script>
+</amp-analytics>
+
+	</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="../../index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="../../dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="../../ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="../../knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="../../search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/slideToggle.min.js"></script>
+    <script src="../js/internet-status.js"></script>
+    <script src="../js/tiny-slider.js"></script>
+    <script src="../js/baguetteBox.min.js"></script>
+    <script src="../js/countdown.js"></script>
+    <script src="../js/rangeslider.min.js"></script>
+    <script src="../js/vanilla-dataTables.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/magic-grid.min.js"></script>
+    <script src="../js/dark-rtl.js"></script>
+    <script src="../js/active.js"></script>
+    <!-- PWA -->
+    <script src="../js/pwa.js"></script>
+  </body>
+</html>

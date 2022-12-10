@@ -1,0 +1,988 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tiny-slider.css">
+    <link rel="stylesheet" href="../css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="../css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="tck-search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+               <div class="page-content-wrapper py-0">
+        </div>
+      </div>
+
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<h2 id="usul-ekonomisi-i̇lkesi">Usul Ekonomisi İlkesi</h2>
+
+<h2 id="hmk-madde-30">HMK Madde 30</h2>
+
+<p>(1) Hâkim, yargılamanın makul süre içinde ve düzenli bir biçimde yürütülmesini ve gereksiz gider yapılmamasını sağlamakla yükümlüdür.</p>
+
+<hr>
+
+<ul>
+  <li><a href="../6100-sayili-hukuk-muhakemeleri-kanunu-(hmk).html"><strong>6100 sayılı HMK (Hukuk Muhakameleri Kanunu) Tam Metin</strong></a></li>
+</ul>
+
+<hr>
+
+<amp-img src="../tokmak-yargitay-kararlari-1280x720.png" alt="HMK Madde 30  Usul Ekonomisi İlkesi" width="1280" height="720" layout="responsive">
+            </amp-img>
+<h2 id="hmk-madde-30-gerekçesi">HMK Madde 30 Gerekçesi</h2>
+
+<p>Madde, Avrupa İnsan Hakları Sözleşmesinin 6 ncı maddesindeki adil yargılanma hakkı ile doğrudan ilgilidir. 1086 sayılı Kanunun 77 nci maddesinin sadeleştirilmiş şekli olan bu düzenleme ile, yargılamanın gecikmeye meydan vermeden, düzenli ve en az masrafla yapılması amaçlanmıştır. Ayrıca, yargılamanın safhaları olan “tahkikat ve muhakeme” yerine “yargılama” terimi kullanılmıştır.</p>
+
+<p>Yargılamanın uzaması hâlinde kişilerin, hukukî korunma mekanizmasının işlevini yerine getirdiğine ve hukuk düzeninin etkisine olan inancı da kaybolmaktadır. Çok geç gelen hükümlerin çoğu zaman hayatla bir ilgisi kalmamaktadır ve onların icrası çoğunlukla hakkı teslim edeceğine, bilakis madden haksızlık yaratmaktadır.</p>
+
+<p>Yargılamanın hızlandırılmasının sıkı şekilde uygulanması hayat olayının mükemmelleştirilmesini sınırlar ve böylece hükmün temellerinin mükemmelliği ve doğruluğunu olumsuz yönde etkiler. Bir usul kanunu, elverdiği ölçüde hem bir hayat olayının mükemmel bir şekilde tespitine hem de yargılamanın hızla yapılmasını sağlayacak bir dengeleyici sistem sunuyorsa, bu daha da önem kazanmaktadır.</p>
+
+<p>Bu hükmün işlevsel olabilmesi, bu Kanunun diğer hükümlerinin de uygulanmasına bağlıdır.</p>
+
+<hr>
+
+<h2 id="hmk-30-usul-ekonomisi-i̇lkesi-emsal-yargıtay-kararları">HMK 30 (Usul Ekonomisi İlkesi) Emsal Yargıtay Kararları</h2>
+
+<hr>
+
+<p><strong>YARGITAY 3. HUKUK DAİRESİ 
+Esas : 2018/3875 Karar : 2018/8051</strong> Tarih : 5.09.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 30. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Usul Ekonomisi İlkesi</strong></p>
+  </li>
+</ul>
+
+<p>Davacı, davalı dağıtım şirketinin, düzenlediği faturalar ile kendisinden hukuka aykırı olarak kayıp-kaçak bedeli adı altında fazladan ücret tahsil ettiğini ileri sürerek; fazlaya ilişkin hakkı saklı kalmak üzere, şimdilik 3.000 TL kayıp/kaçak bedelinin dava tarihinden itibaren işleyecek avans faiziyle birlikte davalıdan tahsiline karar verilmesini istemiştir.</p>
+
+<p>Mahkemece; dosya üzerinden yapılan inceleme sonucunda, 6502 sayılı Kanun’un 68/1. maddesi ile 3.000,00 TL’ye (01.01.2015’den itibaren 3.300,00 TL) kadar olan uyuşmazlıklarda… başvuru zorunlu olup, dava dilekçesinde belirtilen geçici değer 3.000,00 TL olduğundan, davacının … başvurmadan doğrudan … dava açamayacağından 6502 Sayılı Kanun’un 68/1. maddesi ve HMK’nın 30, 114/2, 115, 320/1 maddeleri gereğince dava şartı yokluğundan davanın usulden reddine karar verilmiş, hüküm davacı tarafından temyiz edilmiştir.</p>
+
+<p>1- Dosyadaki yazılara, kararın dayandığı delillerle kanuni gerektirici sebeplere ve özellikle delillerin takdirinde bir isabetsizlik görülmemesine göre; davacının sair temyiz itirazları yerinde değildir.</p>
+
+<p>Uyuşmazlık; davacının, davalı dağıtım şirketinin düzenlediği faturalar ile tahsil etmiş olduğu kayıp-kaçak bedelinin istirdatı talebiyle eldeki kısmi davayı açıp açamayacağı noktasında toplanmaktadır.</p>
+
+<p>Davacı tarafından; davalı tarafından tahsil edilen kayıp kaçak bedelinin istirdatı talep edilmiş ve dosya kapsamından da talebin bu yöne ilişkin olduğunun anlaşılmasına göre gerekçeli kararda, davacı talebinin davalı bankadan kullanılan konut kredisi için alınan masrafların iadesi talebinin yazılmış olması maddi hataya dayalı olduğu anlaşıldığından bu yön eleştirilmekle yetinilerek bozma nedeni yapılmamıştır.Diğer taraftan; kısmi dava, davacının aynı hukuki ilişkiden kaynaklanan alacağının veya hakkının tümünü değil, belirli bir kısmını talep ederek açtığı davaya denir. Bir davanın kısmi dava olarak nitelendirilebilmesi için, alacağının tümünün aynı hukuki ilişkiden doğmuş olması ve bu alacağın şimdilik bir kesiminin dava edilmesi gerekir.</p>
+
+<p>Kısmi dava, 6100 sayılı HMK 109. maddesinde tanımlanmıştır. 109/1. fıkrasına göre “Talep konusunun niteliği itibariyle bölünebilir olduğu durumlarda, sadece bir kısmı da dava yoluyla ileri sürülebilir.</p>
+
+<p>Davacı, talebinin tümü için dava açmak zorunda olmayıp, şimdilik belli bir bölümünü dava konusu yapabilir. Bu bağlamda kural olarak hiç kimse kendi lehine olan davayı açmaya zorlanamaz. (HMK. 24/2)”</p>
+
+<p>Davacının kısmi dava mı, yoksa tam dava mı açtığı talep neticesinden anlaşılır.</p>
+
+<p>Davacı alacağının yalnız bir kesimi için dava açtığını bildirmemiş ise, dava tam dava sayılır.</p>
+
+<p>Davacının davasını açıkça kısmi dava olarak nitelendirmesi zorunlu değildir. Dava dilekçesindeki açıklamalardan, davacının talebinin dava edilenden daha fazla olduğunun ve bunun yalnız bir bölümünün dava edildiğinin açıkça anlaşılması gerekli ve yeterlidir.</p>
+
+<p>Davacının kısmi dava açabilmesi için, bu davayı açmada korunmaya değer bir hukuki yararının bulunması şarttır. Hukuki yarar; dava konusuna ilişkin dava şartlarından olup, dava açıldığı anda var olmalıdır.</p>
+
+<p>Somut olayda; davacı, davalı şirketlerin kayıp-kaçak bedeli adı altında faturalara yansıttıkları bedellerin yasal olmadığını, alacağının dava dilekçesinde belirtilen bedelden daha fazla olduğu halde bu bedellerin faturalardan tam ve kesin şekilde tespit edilemediğini, davalı şirketlerden istenilecek belgeler üzerinden bilirkişi incelemesi yaptırılması halinde alacak miktarının belirleneceğini ve bunun üzerine talebin artırılacağını ileri sürerek; fazlaya ilişkin hakkı saklı kalmak kaydıyla, şimdilik 3.000.00 TL istirdadını isteyerek kısmi dava açmış olup, bu davayı açmakta hukuki yararı olduğunun kabulü gerekir. Diğer anlatım ile, davacının alacağı tam olarak davalıların sunacağı belgelerden tespit edilebileceğinden, davacının doğrudan … başvurarak kısmi dava açmakta hukuki yararı olduğu ve dava konusu talebin … görev alanında olduğu tartışmasızdır.</p>
+
+<p>Öyle ise, mahkemece; dava dilekçesi ve duruşma gününün davalıya (taraflara) usule uygun şekilde tebliğ yapılarak, taraf teşkili sağlandıktan sonra işin esasına girilerek, karar tarihinden sonra yürürlüğe girmiş bulunan 6446 sayılı …17., geçici 19. ile 20. maddelerinin, somut olaya etkisinin bulunup bulunmadığının yerel mahkemece değerlendirilmek sureti ile davacı ve davalıların delilleri toplanarak varılacak sonuca uygun bir karar verilmesi gerekirken; yazılı şekilde davanın reddine karar verilmiş olması usul ve yasaya aykırı olup, bozma nedenidir.</p>
+
+<p>2-)Bozma nedenlerine göre davacının diğer temyiz itirazlarının bu aşamada incelenmesine gerek görülmemiştir.</p>
+
+<p>SONUÇ: Yukarıda birinci bentte açıklanan nedenlerle hükmün HUMK.nun 428. maddesi gereğince davacı yararına BOZULMASINA, ikinci bentte açıklanan nedenle davacı tarafın diğer temyiz itirazlarının incelenmesine yer olmadığına, peşin alınan temyiz harcının istek halinde temyiz edene iadesine, HUMK’nun 440/I maddesi uyarınca karar düzeltme yolu açık olmak üzere, 05.09.2018 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 1. HUKUK DAİRESİ 
+Esas : 2018/1771 Karar : 2018/11010</strong> Tarih : 4.06.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 30. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Usul Ekonomisi İlkesi</strong></p>
+  </li>
+</ul>
+
+<p>Dava, tapu kaydında düzeltim isteğine ilişkindir.</p>
+
+<p>Davacılar, mirasbırakanları “… oğlu … “‘ın kayden paydaşı olduğu … ada … ve … ada … parsel sayılı taşınmazların tapu kaydında soyadının yer almadığını, gerçekte nüfus kayıtlarında murislerinin soyadının “… “ olduğunu ileri sürerek, anılan taşınmazların tapu kaydında eksik olan kimlik bilgilerinin tapu kaydına ilave edilmesini ve aynı kişi olduğunun tespitine karar verilmesini istemiştir.</p>
+
+<p>Davalı … davanın reddini savunmuştur.</p>
+
+<p>Mahkemece, düzeltme isteğinin kabulüne, tespit isteği yönünden ise tefrikine ilişkin olarak verilen karar, Dairece ‘‘… Ne var ki; hem tapu kaydında düzeltim hem de tespite ilişkin istek birbiri ile uyumlu olup davaların aynı veya birbirine benzer sebeplerden doğması ya da biri hakkında hükmün diğerini etkileyecek nitelikte bulunması durumunda aralarında usul hukuku anlamında bağlantı bulunduğunun (HMK 166) kabulü gerektiğinden, bu tür davalar ayrı açılmış olsa dahi birleştirilmesi ve birlikte görülmesi gerekirken ayrılmasına karar verilmesi doğru olmadığı gibi, usul ekonomisi (HMK m.30) ve adalete çabuk ulaşma ilkeleri gözönünde bulundurularak aynı dosyada toplanan deliller birlikte değerlendirilerek karar verilmesi gerekirken tespit isteği yönünden davanın tefrik edilmesi doğru değildir.</p>
+
+<p>Öte yandan; Nüfus Müdürlüğünce “… ve … oğlu … “ adında birden çok kişiye ait nüfus kaydının olduğu bildirildiği halde taşınmazın bulunduğu yerdeki “… oğlu … “ ile aynı isimde bulunan diğer kişilerin de ilgili olarak çağrılması, taşınmazlar hakkında mülkiyet ihtilafı çıkarmadıkları takdirde işin esası değerlendirilerek hasıl olacak sonuca göre bir karar verilmesi gerekirken yazılı biçimde hüküm kurulması da isabetsizdir.’’ gerekçesiyle bozulmuş, Mahkemece bozma ilamına uyularak yapılan soruşturma sonucunda davanın kabulüne karar verilmiştir.</p>
+
+<p>Bilindiği üzere, 6100 sayılı Hukuk Muhakemeleri Kanunu’nun 382/1. maddesinde; “Çekişmesiz yargı, hukukun, mahkemelerce, aşağıdaki üç ölçütten birine veya birkaçına göre bu yargıya giren işlere uygulanmasıdır” hükmüne yer verilmiş; bu ölçütler ise ilgililer arasında uyuşmazlık olmayan haller, ilgililerin ileri sürebileceği herhangi bir hakkın bulunmadığı haller ve hakimin re’sen harekete geçtiği haller olarak ifade edilmiştir.</p>
+
+<p>Kanunda, çekişmesiz yargı işlerinin neler olduğu önce genel çerçevesi belirlenerek, daha sonra da mümkün olduğunca sayılarak belirtilmiştir. Ancak bu sayma sınırlı olmadığından, kanun maddesinde sayılmayan fakat çekişmesiz yargı ölçütlerini taşıyan diğer işlerin de çekişmesiz yargı işi olarak kabulü gerekir. Başka bir deyişle, 382. maddede sayılmamakla beraber çekişmesiz yargının ölçütlerinden birini veya birkaçını taşıyan bir iş de çekişmesiz yargı işi olarak değerlendirilebilir.</p>
+
+<p>Tapu kayıtlarında kimlik bilgilerinin düzeltilmesi işleri de 6100 sayılı HMK’nın 382. maddesinde belirtilen çekişmesiz yargı işlerinden sayılır. Kaldı ki, 382. maddenin 2-ç/1 fıkrasında “Taşınmaz üzerinde taraf oluşturulmasına ve hak ihlaline sebebiyet vermeyecek düzeltmelerin yapılması” da çekişmesiz yargı işi sayılmıştır.</p>
+
+<p>Somut olayda mahkemece bozma ilamı sonrasında davaya dahil edilen … ve … oğlu … ’in mirasçıları 3-9-2015 tarihli oturumda, tapu maliki … ’in mirasbırakanları … olabileceğini bildirmişler, bu suretle malik bakımından mülkiyet ihtilafı oluşmuştur. Nitekim temyize gelenler mülkiyet iddialarını sürdürmüşlerdir.</p>
+
+<p>Bu durumda uyuşmazlığın, tapuda isim düzeltme ile çözülemeyeceği, davacı tarafın mülkiyet iddiasında bulunan kişiler aleyhine açacağı bir davada çözüme kavuşturulacağı kuşkusuzdur.</p>
+
+<p>Hal böyle olunca, davanın reddine karar verilmesi gerekirken yanılgılı değerlendirme ile davanın kabulüne karar verilmesi doğru değildir.</p>
+
+<p>Davalı ve dahili davalıların yerinde bulunan temyiz itirazlarının kabulü ile, hükmün (6100 sayılı Yasanın geçici 3.maddesi yollaması ile) 1086 sayılı HUMK’un 428.maddesi gereğince BOZULMASINA, alınan peşin harcın temyiz edene geri verilmesine, 04/06/2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 13. HUKUK DAİRESİ
+Esas : 2015/15133 Karar : 2017/7445</strong> Tarih : 14.06.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 30. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Usul Ekonomisi İlkesi</strong></p>
+  </li>
+</ul>
+
+<p>Davacı, davalı …’in kardeşi, davalı …’in ise …’in oğlu olduğunu, davalı …’in kendisine miras hissesinin satılması nedeni ile bakiye 5000,00 TL’yi ödemediği gibi elden borç olarak aldığı paraları da iade etmediğini, oğlu davalı …’in de kendisinden senet karşılığı aldığı borcun 400,00 TL sini ödemediğini ileri sürerek toplam 7450,00 TL alacağın davalılardan faizi ile tahsiline karar verilmesini istemiştir.</p>
+
+<p>Davalılar, davanın reddini dilemiştir.</p>
+
+<p>Mahkemece, farklı davalılara karşı farklı taleplerle aynı dava dilekçesine binaen dava açılamayacağı gerekçesi ile davanın usulden reddine karar verilmiş; hüküm, davacı tarafından temyiz edilmiştir.</p>
+
+<p>Dava, davalılarca ödenmeyen alacakların tahsili istemine ilişkindir. Davacı davalı kardeşinin ve davalı yeğenin borçlu olduğunu ileri sürmektedir. Dava dilekçesinde borcun nedenlerinin farklı gösterildiği hususunda çekişme yoktur. Mahkemece bu kapsamda ihtiyari veya zorunlu dava arkadaşı olmayan davalılar hakkında ayrı ayrı dava açılması gerektiği belirtilerek davanın usulden reddine karar verilmiştir. 6100 sayılı Hukuk Usulü Muhakemeler Kanunu’nun 30. maddesinde Usul Ekonomisi İlkesi düzenlenmiş olup, maddede Hâkim’in yargılamanın makul süre içinde ve düzenli bir biçimde yürütülmesini ve gereksiz gider yapılmamasını sağlamakla yükümlü olduğu belirtilmiştir. Mahkemece talepler davacıya açıklattırılıp daha sonra dosya tefrik edilerek yargılamaya devam edilmesi gerekirken, usul ekonomisine aykırı şekilde davanın usulden reddine karar vermek usul ve yasaya aykırı olup bozmayı gerektirir.</p>
+
+<p>SONUÇ: Yukarıda açıklanan nedenlerle kararın davacı yararına BOZULMASINA, peşin alınan harcın istek halinde iadesine, HUMK’nun 440/III-1 maddesi uyarınca karar düzeltme yolu kapalı olmak üzere, 14/06/2017 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 23. HUKUK DAİRESİ 
+Esas : 2016/2334 Karar : 2017/978</strong> Tarih : 30.03.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 30. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Usul Ekonomisi İlkesi</strong></p>
+  </li>
+</ul>
+
+<p>Asıl ve birleşen davalarda davacı TMSF vekili, 22.12.1999 tarih ve 23914 sayılı mükerrer Resmi Gazetede yayımlanan, 21.12.1999 tarih ve 99/13765 sayılı Bakanlar Kurulu kararıyla, … Bankası A.Ş.’nin, temettü hariç ortaklık hakları ile yönetim ve denetimlerinin Fona devredildiğini, adı geçen bankanın yöneticisi ve deneticisi olan davalıların, kanuna aykırı karar ve işlemleri ile bankanın zarara uğratıldığını ileri sürerek, ortaya çıkan zararın davalılardan müştereken ve müteselsilen tahsilini, aksi takdirde davalıların şahsi iflaslarını talep ve dava etmiştir.</p>
+
+<p>Asıl ve birleşen davalarda davalılar vekilleri, yapılan işlemlerin bankalar kanunu ve uygulamalarına aykırı olmadığını, bu işlemler nedeniyle bir zarar oluşmadığını, kredilerin pek çoğunun kapatıldığını savunarak, davaların reddini istemişlerdir.</p>
+
+<p>Mahkemece, iddia, savunma ve dosya kapsamına göre, 5411 sayılı Bankalar Kanun’nun 132/10. maddesinde “Fon, takip ettiği alacaklar ile ilgili olarak iskonto da dahil olmak üzere, her türlü tasarrufta bulunmaya, sulh olmaya, satmaya, geri almaya, alacağına mahsuben menkul ve gayrimenkul mallar ile her türlü hak ve alacakları belirleyeceği koşullar ile devralmaya ve alacağın yeniden itfa planına bağlanması da dahil olmak üzere borçlularla anlaşma yapmaya ve borçlularla yaptığı anlaşmalar kapsamında Fon Kurulunca belirlenecek usul ve esaslar dahilinde muhafaza tedbiri uygulayıp uygulamamaya, dava açıp açmamaya veya açılmış bulunan hukuk davalarının yapılan anlaşma süresince durdurulmasını mahkemeden istemeye yetkilidir.” hükmüne yer verildiği, davacı Fonun, … Bank A.Ş.’nin</p>
+
+<p>hakim hissedarı … Grubu ve bağlantılı gerçek ve tüzel kişiler ile alacakların tahsili ve tasfiyesi hususunda 23.03.2010 tarihinde bir protokol imzaladığı, anılan yasal düzenleme ve protokol hükümlerine dayalı olarak ihtiyati tedbir kararları devam etmek kaydıyla, davanın durdurulmasını talep ettiği, 5411 sayılı Yasa gereğince durdurma isteminin yasal koşullarının oluştuğu gerekçesiyle, davanın dudurulmasına ve davalılar hakkında ihtiyati tedbir kararlarının devamına karar verilmiştir.</p>
+
+<p>Kararı, davalılar … ve … vekillleri temyiz etmiştir.</p>
+
+<p>Dosyadaki yazılara, kararın dayandığı delillerle gerektirici sebeplere, delillerin takdirinde bir isabetsizlik bulunmamasına göre, davalılar … ve … vekillerinin temyiz itirazları yerinde görülmemiştir.</p>
+
+<p>SONUÇ: Yukarıda açıklanan nedenlerle, davalılar … ve … vekillerinin tüm temyiz itirazlarının reddiyle usul ve kanuna uygun bulunan hükmün ONANMASINA, aşağıda yazılı onama harçlarının temyiz edenlerden alınmasına, kararın tebliğinden itibaren 10 gün içerisinde karar düzeltme yolu açık olmak üzere, 30.03.2017 tarihinde oyçokluğuyla karar verildi.</p>
+
+<p>MUHALEFET ŞERHİ</p>
+
+<p>Mahkeme, usule veya esasa ilişkin bir nihai kararla davayı sona erdirir.Yargılama sonunda uyuşmazlığın esası hakkında verilen nihai kararlar, hükümdür.(HMK.m.294/1) Bu madde, bir kararın ara karar mı, nihai karar mı olduğunun tespitinde, verilen kararın davayı sona erdirip erdirmemesine göre belirleneceğini ortaya koymaktadır.Eğer mahkemenin kararı ihtilafı nihai olarak sona erdirmiyorsa; bu karar, ara kararı niteliğindedir ve bu karara rağmen dava derdest olmaya devam eder.</p>
+
+<p>Somut olayda, davalıların … Bankasını zarara uğrattıkları belirtilerek, zararın tazmini bunun mümkün olmaması halinde, iflaslarına karar verilmesi talep edilmiştir. Yargılama sırasında, davacı taraf, 5411 sayılı Kanunun 132/10 maddesine istinaden, taraflar arasında protokol yapıldığını belirtilerek, protokol süresince davanın durdurulmasına karar verilmesini talep etmiştir. Mahkeme “…protokol yürürlükte kaldığı sürece davalılar hakkındaki davanın durdurulmasına esasın bu şekilde kapatılmasına, bu dosyadan verilen tedbir kararlarının devamına” karar vermiştir.</p>
+
+<p>Öncelikle, anılan kararın HMK nın 294/1. fıkrası anlamında nihai bir karar olmadığı ara kararı niteliğinde olduğunda kuşku yoktur. Zira bu kararla, davanın konusu olan zararın tazminine veya davalıların iflasına karar verilmesine dair taleple ilgili bir hüküm içermediği ortadadır. Dolayısıyla anılan kararla, dava protokol süresince “olduğu yerde” sadece durdurulmalıdır. Kararın “tedbirlerin devamına” dair kısmı, verilen kararın ara kararı mahiyetinde olduğu kanaatimizi teyid etmektedir.</p>
+
+<p>Hal böyle olunca mahkeme kararının “…esasın bu şekilde kapatılmasına” dair kısmı “ara kararının” mahiyetine uygun düşmemiştir. Taraflar arasındaki protokolün ihlali halinde, davaya kaldığı yerden devam edilmesi gerekirken; mahkemenin “…esasın kapatılmasına” dair kararı ile, dava hakkında nihai bir karar verilmeden davanın sonlandırılması ve kararın anılan kısmının HMK nın 26, 27, 30 ve 33. maddelerine aykırılık teşkil etmesi nedeniyle resen dikkate alınması gerekir. Öte yandan davanın esası kapatıldığı için davalı tarafın “tedbirlerin kaldırılmasına” dair taleplerinin usul ekonomisine uygun bir şekilde değerlendirilip karara bağlanması imkanları da ellerinden alınmıştır.</p>
+
+<p>Bu nedenlerle, yerel mahkeme kararındaki “…esasın bu şekilde kapatılmasına” dair kısmının isabetsiz olduğu vurgulanarak “…davanın durdurulmasına” ilişkin kısmın ise ara kararı mahiyetinde olduğu ve temyizi kabil olmadığı gerekçesi ile TEMYİZ İSTEMİNİN REDDİNE karar verilmesi gerekirken Sayın çoğunluğun, doğrudan hükmün onanmasına dair kararına karşıyım.</p>
+
+<hr>
+
+<p><strong>YARGITAY 21. HUKUK DAİRESİ
+Esas : 2016/76 Karar : 2017/2574</strong> Tarih : 30.03.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 30. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Usul Ekonomisi İlkesi</strong></p>
+  </li>
+</ul>
+
+<p>Davacılar, murisinin iş kazası sonucu ölümünden doğan maddi ve manevi tazminatın ödetilmesine karar verilmesini istemiştir.</p>
+
+<p>Mahkeme ilamında belirtildiği şekilde, isteğin reddine karar vermiştir.</p>
+
+<p>Hükmün davacılar vekili tarafından temyiz edilmesi üzerine temyiz isteğinin süresinde olduğu anlaşıldıktan ve Tetkik Hakimi … tarafından düzenlenen raporla dosyadaki kağıtlar okunduktan sonra işin gereği düşünüldü ve aşağıdaki karar tesbit edildi.</p>
+
+<p>Dava, davacıların murisi …‘un 06/07/2008 tarihinde iş kazası sonucunda vefatı nedeniyle davacı eş için maddi ve manevi tazminat ile davacı çocukları için manevi tazminat istemine ilişkindir.</p>
+
+<p>Mahkemece, verilen kesin süreye rağmen davacı tarafından müzekkere masrafının yatırılmamış olması nedeniyle davalı tarafın zamanaşımı itirazının yerinde kabul edilmesi gerektiği belirtilerek zamanaşımı nedeniyle davanın reddine karar verilmiştir.</p>
+
+<p>Anayasa’nın 141/son ve HMK’nın 30.maddesine göre davaların en az giderle ve mümkün olan süratle sonuçlandırılması yargının görevidir. Medeni usul hukukunun amacı yargı önüne gelen dava ve taleplerin hukuka uygun bir biçimde karara bağlanmasını sağlamak olduğundan 5521 sayılı İş Mahkemeleri Kanunu ve 01.10.2011 tarihinde yürürlüğü giren 6100 sayılı HMK’da yargılamanın makul süre içinde ve düzenli bir biçimde yürütülmesini sağlamaya yönelik hükümler bulunmaktadır.</p>
+
+<p>HMK’da yargılamanın makul süre içinde ve düzenli bir biçimde yürütülmesini sağlamaya yönelik hükümlerin medeni usul hukukunun sağlıklı ve adil bir yargılama yapılması ve hüküm kurulması amacına uygun olarak yorumlanması gerekir. Aksine düşünce biçimin (şeklin) işin esasından (özünden) üstün tutulması sonucunu doğurur ki bu halde biçim, maddi hukukun tanıdığı hakkın elde edilmesinin önünde engel oluşturur. Biçim, maddi hakka uluşmaya yardımcı bir araç olmaktan çıkarılıp araç haline getirilmemelidir. 5521 sayılı İş Mahkemeleri Kanunu ve 01.10.2011 tarihinde yürürlüğü giren 6100 sayılı HMK’da yargılamanın makul süre içinde ve düzenli bir biçimde yürütülmesini sağlamaya yönelik hükümlerinin amaçlanın aksine yargılamanın uzun sürmesi ve gereksiz gider yapılmasına neden olacak biçimde uygulanmaması gerekir.</p>
+
+<p>İster kanun, isterse hakim tarafından tayin edilmiş olsun kesin süre içerisinde yerine getirilmeyen bir işlemin bu süre geçtikten sonra yerine getirilmesine yasal olanak yoktur. Böylece kesin sürenin kaçırılması; o delile veya hakka dayanamamak gibi ağır sonuçları birlikte getirmekte, bazen davanın kaybedilmesine dahi neden olmaktadır. Bu itibarla geciken adaletin de bir adaletsizlik olduğu düşüncesinden hareketle, davaların yok yere uzamasını veya uzatılmak istenmesini engellemek üzere konan kesin süre kuralı, kanunun amacına uygun olarak kullanılmalı, davanın reddi için bir araç sayılmamalıdır. Öncelikle, kesin süreye ilişkin ara karar her türlü yanlış anlaşılmayı önleyecek biçimde açık ve eksiksiz yazılmalı, yapılacak işler teker teker belirtilmelidir. Bunun yanında verilen süre yeterli, emredilen işler, gerekli ve yapılabilir nitelik taşımalı, ayrıca hakim süreye uyulmamanın sonuçlarını açıkca anlatmalı, tarafları uyarmalıdır. Öte yandan, kesin süre tarafların yanında hakimi de bağlayacağından uyulmaması halinde gereği hakim tarafından hemen yerine getirilmelidir.</p>
+
+<p>Öte yandan, 5510 sayılı Yasa’nın 13. maddesinde, İş kazasının 4 ncü maddesinin birinci fıkrasının (a) bendi ile 5 nci madde kapsamında bulunan sigortalılar bakımından bunları çalıştıran işveren tarafından, o yer yetkili kolluk kuvvetlerine derhal ve Kuruma en geç kazadan sonraki üç iş günü içinde iş kazası ve meslek hastalığı bildirgesi ile doğrudan ya da taahhütlü posta ile bildirilmesinin zorunlu olduğu, iş kazasının işverenin kontrolü dışındaki yerlerde meydana gelmesi halinde iş kazasının öğrenildiği tarihten başlayacağı, Kuruma bildirilen olayın iş kazası sayılıp sayılmayacağı hakkında bir karara varılabilmesi için gerektiğinde, Kurumun denetim ve kontrol ile yetkilendirilen memurları tarafından veya … İş Müfettişleri vasıtasıyla soruşturma yapılabileceği bildirilmiştir.</p>
+
+<p>Kurumun iş kazası tahkikatının ve giderek zararlandırıcı olayın iş kazası olarak tespitinin açılan tazminat davalarına doğrudan etkisi bulunmaktadır. Şöyle ki İş kazasından kaynaklanan tazminat davaları nitelikçe Kurumca karşılanmayan zararların tahsiline ilişkin davalar olduğundan mükerrer tahsile neden olunmasının önüne geçebilmek için iş kazası sigorta kolundan Kurumun hak sahiplerine bağladığı gelirlerin tespiti ile bunun hesaplanan maddi tazminattan tenzili gerektiği gibi,tek başına manevi tazminat davası açılması durumunda dahi mahkemenin görevine ilişkin neticeleri bulunmasından dolayı (olay iş kazası değilse yargılama iş mahkemelerinde yapılamayacağından) Kurumun iş kazası tahkikatı ve giderek olayın iş kazası olarak tespit olunması önem arz etmektedir.</p>
+
+<p>Somut olayda, mahkemenin 23/10/2012 tarihli celsenin ara kararı ile verdiği kesin sürenin usulüne uygun olmadığı anlaşılmaktadır. Şöyle ki, kesin süre içerisinde yatırılması gereken müzekkere masrafının ne kadar olduğu açık bir şekilde belirtilmemiş ve kesin süreye uyulmadığı taktirde yaptırımının ne olacağı açıkça ve ayrıntılı şekilde taraflara bildirilmemiş, taraflar bu hususta uyarılmamıştır. Bununla birlikte, davanın sıfatı ve olay ortaya konmadan zamanaşımının değerlendirilmesi de hatalı olmuştur.</p>
+
+<p>Ayrıca, … Başkanlığınca davaya konu zararlandırıcı olay nedeniyle yapılmış bir iş kazası tahkikatının bulunup bulunmadığı anlaşılamamaktadır. Şu halde öncelikle yapılması gereken … … Kurumundan davaya konu kazaya ilişkin iş kazası tahkikatı yapılıp yapılmadığını sormak, yapılmamış ise davacı tarafa davaya konu zararlandırıcı olayı … … Kurumuna ihbarda bulunması, olayın Kurumca iş kazası olarak kabul edilmemesi halinde … … Kurumuna ve hak alanını etkileyeceğinden işveren aleyhine “iş kazasının tespiti” davası açması için önel vermek, tespit davasını bu dava için bekletici sorun yaparak çıkacak sonuca göre, görev hususunu (davaya İş Mahkemesi sıfatıyla bakılıp bakılmayacağını) değerlendirmek, dava konusu olayın iş kazası olarak kabul edilmemesi halinde Asliye Hukuk Mahkemesi sıfatıyla davaya bakmaya devam etmek, olayın Kurumca iş kazası olduğunun kabul edilmesi halinde ise İş Mahkemesi sıfatıyla davaya bakıp üç kişilik iş güvenliği uzmanlarından oluşacak bilirkişi heyetinden kusura ilişkin rapor almak, davacı eşin destekten yoksun kalmasına ilişkin zararını hesap uzmanı bilirkişiye tespit ettirerek sonuca varılması gerekirken yasal prosedür uygulanmadan yazılı şekilde karar verilmesi usul ve yasaya aykırı olup bozma nedenidir.</p>
+
+<p>O halde, davacılar vekilinin bu yönleri amaçlayan temyiz itirazları kabul edilmeli ve hüküm bozulmalıdır.</p>
+
+<p>SONUÇ: Hükmün yukarıda açıklanan nedenlerle BOZULMASINA, temyiz harcının istek halinde davacılara iadesine, 30/03/2017 tarihinde oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 8. HUKUK DAİRESİ 
+Esas : 2015/2745 Karar : 2017/4338</strong> Tarih : 27.03.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 30. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Usul Ekonomisi İlkesi</strong></p>
+  </li>
+</ul>
+
+<p>Borçlu vekili, İcra Mahkemesi’ne başvurusunda; alacaklı tarafça takip talebi ve icra emrinde yasal faiz talep edildiğini, devam eden takipte banka mevduat faizi üzerinden hesaplama yapılamayacağını, bu durumun taleple bağlılık ilkesine aykırılık teşkil ettiğini ileri sürerek İcra Müdürlüğü’nün 18.07.2014 tarihli banka mevduat faizi üzerinden hesaplama yapılmasına ilişkin kararının, bu karar doğrultusunda kendilerine gönderilen 21.07.2014 tarihli bakiye borç muhtırasının ve muhtıranın dökümü ile muhtırada yazılı miktarın düzeltilmesine ilişkin 24.07.2014 tarihli müdürlük işleminin iptaline karar verilmesini talep etmiştir.</p>
+
+<p>Mahkemece, şikayetin kabulüne, 18.07.2014 tarihli ve 24.07.2014 tarihli memur işlemleri ile 21.07.2014 tarihli bakiye borç muhtırasının iptaline karar verilmesi üzerine; hüküm, alacaklı vekili tarafından temyiz edilmiştir.</p>
+
+<p>Faiz alacağına mahkeme ilamı ile hükmedilmesi halinde alacaktan açıkça feragat edilmediği sürece hukuki varlığını koruyacağından, alacaklı fazlaya ilişkin hakkını saklı tutmasa bile zamanaşımı süresinin dolmasına kadar ilamda yazılı eksik kalan faiz alacağını her zaman talep edebilir.</p>
+
+<p>6100 sayılı HMK’nun 30. maddesinde “Hakim, yargılamanın makul süre içinde ve düzenli bir biçimde yürütülmesini ve gereksiz gider yapılmamasını sağlamakla yükümlüdür.” şeklinde usul ekonomisi ilkesi hüküm altına alınmıştır.</p>
+
+<p>Borçlunun aynı ilamdan kaynaklı bakiye faiz alacağını harcını yatırarak aynı dosya üzerinden verdiği ek takip talepnamesi ile istemesi mümkündür.</p>
+
+<p>Öte yandan, 193 sayılı Gelir Vergisi Kanunu’nun 94. maddesinde, kazanç ve ücretlerde kesinti halleri belirtilmiş ve 3. fıkrasında ise; “Yaptıkları serbest meslek işleri dolayısı ile bu işleri icra edenlere yapılan ödemelerden (18.inci maddede yazılı olanlarla kazançları götürü olarak tespit edilen serbest meslek erbabına ve noterlere serbest meslek faaliyetlerinden dolayı yapılan ödemeler hariç) istihkak sahiplerinin gelir vergilerine mahsuben (avans olarak ödenenler dâhil) tevkifat yapmaya mecburdurlar.” düzenlemesi mevcuttur.</p>
+
+<p>İİK’nun 138/3. maddesi gereğince de; vekil vasıtasıyla yapılan takiplerde vekalet ücreti miktarının, alacaklı ile borçlu arasında yapılmış sözleşmeye bakılmaksızın icra müdürü tarafından avukatlık ücret tarifesine göre hesaplanacağı, bu şekilde tayin olunan vekalet ücretinin de takip masraflarına dahil olduğu belirtilmiştir. Bu nedenle borçlunun, icra vekalet ücreti borcunu icra dairesi vasıtasıyla öderken gelir vergisi kesintisi yapması anılan Yasa maddeleri çerçevesinde mümkün değildir.</p>
+
+<p>Somut olayda, Mahkemece hükme esas alınan bilirkişi raporunda, yukarıdaki açıklanan yasal düzenleme ve ilkelere aykırı olarak, alacaklının, takip dayanağı ilamda kıdem tazminatı ve fazla mesai alacak kalemleri için hükmedilen bir yıllık mevduata uygulanan en yüksek banka mevduat faizini talep edemeyeceğinin ve borçlu tarafça söz konusu gelir vergisi kesintisinin yapılabileceğinin benimsendiği görülmekte olup, Mahkemece hatalı bilirkişi raporuna itibar edilerek yazılı şekilde hüküm kurulması isabetsizdir.</p>
+
+<p>Kabule göre de, İİK’nun 17. maddesinde düzenlenen “ Şikayet icra mahkemesince kabul edilirse, şikayet olunan muamele ya bozulur, yahut düzeltilir.” hükmü uyarınca, Mahkemece bakiye borç belirlendiği, bakiye borç miktarı üzerinden muhtıradaki miktarın düzeltilmesi gerekirken muhtıranın tamamen iptali yönünde hüküm kurulması doğru olmamıştır.</p>
+
+<p>SONUÇ: Yukarıda açıklanan nedenlerle, alacaklı vekilinin temyiz itirazlarının kabulü ile mahkeme kararının yukarıda yazılı nedenlerle İİK’nun 366. ve 6100 sayılı HMK’nun Geçici 3. maddesi yollamasıyla 1086 sayılı HUMK’nun 428. maddesi uyarınca BOZULMASINA; taraflarca İİK’nun 366/3. maddesi gereğince Yargıtay Daire ilamının tebliğinden itibaren ilama karşı 10 gün içinde karar düzeltme isteğinde bulunulabileceğine, 27.03.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 1. HUKUK DAİRESİ 
+Esas : 2016/1975 Karar : 2016/8836</strong> Tarih : 28.09.2016</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 30. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Usul Ekonomisi İlkesi</strong></p>
+  </li>
+</ul>
+
+<p>Davacı, miras bırakanı …`nin maliki olduğu taşınmazlarını tapuda ve kadastro tespiti sırasında kardeşlerine, onlarında davalı çocuklarına devrettiğini temliklerin mal kaçırma amaçlı ve muvazaalı olduğunu ileri sürerek, davalılar adına olan tapuların iptali ile miras payı oranında adına tescilini istemiştir.</p>
+
+<p>Davalılar Bahattin ve …, davacının yaşlılığı ve hastalıkları sebebiyle hukuki ehliyetinin araştırılmasını, bir kısım taşınmazlar miras bırakanın ölümünden sonra kadastroda tespiti sonucu tescil edildiğinden 10 yıllık hak düşürücü sürenin dolduğu, bir kısım taşınmazların da miras bırakan ile ilgisi bulunmadığından davanın reddini savunmuşlardır.</p>
+
+<p>Mahkemece, dava konusu 6 ve 517 parsel sayılı taşınmazlar yönünden dava şartı yokluğundan davanın usulden reddine, 149, 196, 204, 432, 453, 37,40, 198, 205, parsel sayılı taşınmazlarla ilgili davanın hak düşürücü süre nedeniyle reddine karar verilmiştir.</p>
+
+<p>Davacının muris muvazaası iddiasına dayalı olarak açtığı davada, bir kısım davalılar davacının yaşlılığı ve hastalıkları sebebiyle hukuki ehliyetinin bulunmadığını savunmuşlar, davacı vasisi sıfatıyla…tarafından verilen dilekçe ekindeki …. Eğitim ve Araştırma Hastanesinin 15.06.2016 günlü Sağlık Kurulu raporunda “ davacı …`nin akli yeteneğinin akıllıca yaşam sürmesi için yeterli olmadığı, iradesinin verdiği kararlar ve hareketleri üzerinde olumsuz etki yaratabileceği,..hastalığının sürekli olduğu, vasi tayininin gerekli olduğu..” belirtilmiş, mahkemece bu konu üzerinde durulmadan esastan karar verilmiştir.</p>
+
+<p>Bilindiği üzere; Türk Medeni Kanununun 404/2 maddesi uyarınca, görevlerini yaparken vesayeti gerektiren böyle bir halin varlığını öğrenen nüfus memurları, idari makamlar, noterler ve mahkemeler, bu durumu hemen yetkili vesayet makamına bildirmek zorundadırlar.</p>
+
+<p>Öte yandan, HMK’nun 56. (HUMK`nun 42.) maddesi uyarınca, taraflardan birinin vesayet altına alınması veya kendisine yasal danışman atanması talebi mahkemece uygun bulunur ya da mahkemece gerekli görülürse, bu konuda kesin karar verilinceye kadar yargılama ertelenebilir.</p>
+
+<p>6100 sayılı HMK’nun 51. maddesinde (1086 sayılı HUMK’ nun 38. maddesi ) “dava ehliyeti” dava şartı olarak benimsenmiştir. Hukuk Genel Kurulunun 03.03.1993 tarih, 773/82 sayılı kararında da; dava şartlarının davanın açıldığı tarihten, hükmün kurulduğu tarihe kadar varlığını devam ettirmesinin temel kural olduğu açıkça vurgulanmıştır. Bu yasal düzenlemeler ve yargısal uygulamalar karşısında şüphesiz hakim, davanın başında dava şartlarının mevcut olup olmadığını kendiliğinden (re’sen ) araştırmak zorundadır. Ne var ki; dava açılırken bulunmayan dava şartının yargılama sırasında tamamlanması halinde dava ekonomisi yönünden davanın esasına girilerek sonuçlandırılması gerekeceği de gerek doktrinde gerekse Yargıtayın istikrar kazanmış içtihatlarıyla kabul edilmiştir. Başka bir deyişle, yargılama sırasında dava şartı noksanlığının ortadan kalkması halinde 6100 sayılı HMK`nun 30. maddesindeki usul ekonomisine ilişkin düzenleme karşısında davanın reddedilemeyeceği kuşkusuzdur.</p>
+
+<p>Hâl böyle olunca; davacı vasisi olduğunu bildiren Saadet Kalemci’nin Türk Medeni Kanununun 405 ve devamı maddelerince vasi olarak atanıp atanmadığının araştırılması, vasi olarak atanmış ise HMK’nun 52. maddesinde belirtilen dava şartı niteliğindeki kanuni temsil eksikliği de giderileceğinden, aynı Kanunun 30. maddesinde belirtilen usul ekonomisi ilkesi gözetilerek atanan vasiye davanın ihbarı, vasinin husumete izin kararı aldıktan sonra davaya katılımı sağlanmak suretiyle (TMK`nun 462/8.m )yargılamaya devam edilerek işin esasının incelenmesi gerekirken, yazılı şekilde davanın reddine karar verilmesi doğru bulunmamıştır.</p>
+
+<p>Ayrıca; 6100 sayılı Hukuk Muhakemeleri Kanunu ile usul hukukumuzda, ilk derece yargılamasının beş temel aşamadan oluşması öngörülmüştür. Bunlar sırası ile, 1) dilekçelerin karşılıklı olarak verilmesi, 2) ön inceleme, 3) tahkikat, 4) sözlü yargılama, 5) hüküm aşaması olduğu açıktır.( Prof. Dr. …. Prof. Dr. …., Prof. Dr. …, Medeni Usul Hukuku eseri Sh.376) Bu aşamalar içinde yeni olan ise ön inceleme aşamasıdır.</p>
+
+<p>Yargılamanın gereksiz yere uzamasının engellenmesi; mahkemenin ve tarafların yargılamada gereken hazırlığı davanın başında yapmasının sağlanması bakımından, Hukuk Muhakemeleri Kanunu ile dilekçelerin verilmesinden sonra ve tahkikat aşamasından önce gelmek üzere “ön inceleme” adıyla yeni bir yargılama aşaması kabul edilmiştir. …, Medeni Usul Hukuku, Yetkin Yayınları,11 Bası, 2011, s.375-376). 6100 sayılı Hukuk Muhakemeleri Kanununun 137. maddesinde, ön incelemenin kapsamı, 138. maddesinde ön inceleme aşamasında dosya üzerinden dava şartları ve ilk itirazlar hakkında verilecek kararlar, 139. maddesinde, ön inceleme duruşmasına davet, 140. maddesinde ise, yapılması zorunlu olan ön inceleme duruşmasına yer verilmiştir.</p>
+
+<p>6100 sayılı HMK`nun ön incelemenin kapsamı başlıklı 137. maddesinde, “dilekçelerin karşılıklı verilmesinden sonra ön inceleme yapılacağı, 138. madde dikkate alınarak öncelikle dava şartları ve ilk itirazlar hakkında dosya üzerinden karar vereceği, dava şartları ve ilk itirazlar hakkında gerektiği takdirde kararını vermeden önce, bu konuda tarafları ön inceleme duruşmasında dinleyebileceği, ön inceleme duruşmasında tarafların iddia ve savunmaları kapsamında uyuşmazlık konularını tam olarak belirleyebileceği, hazırlık işlemleri ile tarafların delillerini sunmaları ve delillerin toplanması için gereken işlemleri yapacağı, tarafların üzerinde serbestçe tasarruf edebileceği davalarda onları sulhe veya ara buluculuğa teşvik edeceği ve bu hususların tutanağa geçirileceği” belirtilmiştir.</p>
+
+<p>Ön inceleme duruşmasında dava şartları ve ilk itirazlar ile sınırlı olmak üzere tanık dinleme, belge inceleme, bilirkişi görüşü alma, keşif yapma ve yemin teklif etme gibi işlemler yapılabilir, ancak tahkikata yönelik işlemler yapılamaz. HMK`nin 137. maddesinin ikinci fıkrasında ise, ön inceleme tamamlanmadan ve gerekli kararlar alınmadan tahkikata geçilemeyeceği ve tahkikat için duruşma günü verilemeyeceği düzenlenmiştir.</p>
+
+<p>Ne var ki, mahkemece ön inceleme yapılmadan evrak üzerinde yapılan inceleme sonucunda, esastan verilen kararla dava sonuçlandırılmıştır. Böyle bir uygulamanın ön inceleme için öngörülen 6100 sayılı Yasanın 137. ile 142. maddelerinde düzenlenen hükümlerine uygun düşmeyeceği tartışmasızdır.</p>
+
+<p>Diğer taraftan, usul hükümleri kamu düzenine ilişkin bulunduğundan ve re`sen gözetilmesi gerektiğinden, davacı tarafın temyizinde anılan hususlara değinmemiş olması da neticeye etkili değildir.</p>
+
+<p>Dosya içeriğinden, davalı …`a dava dilekçesinin tebliğ edilmediği de anlaşılmaktadır.</p>
+
+<p>Hemen belirtilmelidir ki, yargılamanın sağlıklı bir biçimde sürdürülebilmesi, iddia ve savunma ile ilgili delillerin eksiksiz toplanıp tartışılabilmesi davanın süratle sonuçlandırabilmesi, öncelikle tarafların yargılama gününden haberdar edilmesi ile mümkündür. Kişinin, hangi yargı merciinde duruşmasının bulunduğunu, hakkındaki iddia ve isnatların nelerden ibaret olduğunu bilebilmesi, usulüne uygun olarak tebligat yapılması ile sağlanabilir. HMK’nun 27. (HUMK` nun 73.) maddesi hükmünde çok açık bir şekilde vurgulanan temel kurala göre, mahkeme, tarafları dinlemeden, onlara, iddia ve savunmalarını bildirmeleri için usulüne uygun olarak davet etmeden hükmünü veremez. Bu bakımdan davetin ve bunun yazılı şeklinin (davetiyenin) davadaki önemi büyüktür, davalıya dava dilekçesi usulünce tebliğ edilmeden, delillerini toplama olanağı ve savunma hakkı verilmeksizin usulü dairesince taraf teşkili sağlanmadan işin esası hakkında karar verilmesi de isabetli değildir.</p>
+
+<p>Hâl böyle olunca, belirtilen ilke ve yasal düzenlemeler doğrultusunda, öncelikle davacının dava ehliyetinin araştırılması, vasi atanmış ise vasinin davada kanuni temsilinin ve davalı …‘ye usulüne uygun tebligat yapılarak taraf teşkilinin sağlanması, HMK`nun 137 ve 142. maddelerinde belirtilen usul ve esaslar doğrultusunda yargılama yapılarak karar verilmesi gerekirken yanılgılı değerlendirme ile anılan hususlar gözardı edilerek yazılı olduğu üzere karar verilmiş olması doğru değildir.</p>
+
+<p>Davacının, yerinde olan temyiz itirazlarının kabulü ile, hükmün (6100 sayılı Yasanın geçici 3.maddesi yollaması ile) 1086 sayılı HUMK`un 428.maddesi gereğince BOZULMASINA, alınan peşin harcın temyiz edene geri verilmesine, 28.09.2016 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. HUKUK DAİRESİ 
+Esas : 2015/19124 Karar : 2016/11654</strong> Tarih : 14.06.2016</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 30. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Usul Ekonomisi İlkesi</strong></p>
+  </li>
+</ul>
+
+<p>Kısa kararda davanın kabulü ile tarafların Türk Medeni Kanununun 166/1. maddesi gereğince boşanmalarına karar verildiği halde gerekçeli kararda tarafların Türk Medeni Kanununun 166/3. maddesi gereğince boşanmalarına karar verilmesi suretiyle kısa karar ile gerekçeli karar arasında çelişki yaratılmıştır.</p>
+
+<p>6100 sayılı Hukuk Muhakemeleri Kanununun 294/3. maddesi uyarınca, hükmün tefhimi, her halde hüküm sonucunun duruşma tutanağına geçirilerek okunması suretiyle olur. Gerekçeli karar, tefhim edilen hüküm sonucuna aykırı olamaz. (6100 s. HMK. m. 298/2) Buna göre, tefhim edilen hüküm sonucu yanlış da olsa, gerekçeli kararın, tefhim edilen hüküm sonucuna uygun düzenlenmesi gerekmektedir. Yanlışlık ancak temyiz/ kanun yoluna başvurulması ve kararın bozulması halinde düzeltilebilir. Tefhim edilen ve duruşma tutanağına geçirilen hüküm sonucu ile gerekçeli karar arasındaki aykırılık diğer yönler incelenmeden tek başına bozma sebebi olur. O halde mahkemece yapılacak iş, 10.04.1992 tarihli 7/4 sayılı İçtihadı Birleştirme Kararı gözetilerek yeniden karar oluşturmaktan ibarettir.</p>
+
+<p>SONUÇ: Temyiz edilen hükmün yukarıda açıklanan sebeple BOZULMASINA, bozma sebebine göre diğer temyiz itirazlarının şimdilik incelenmesine yer olmadığına, temyiz peşin harcının istek halinde yatırana geri verilmesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere oyçokluğuyla karar verildi. 14.06.2016</p>
+
+<p>( Muhalif )</p>
+
+<p>KARŞI OY YAZISI</p>
+
+<p>Eldeki dava TMK.166/1 maddesi gereğince açılmıştır. Mahkemenin hukuki nitelendirmesi de bu yöndedir. Nitekim kısa karara, hukuki nitelendirmeye uygun şekilde TMK. 166/1 maddesi yasal dayanak olarak yazılmıştır.</p>
+
+<p>Hüküm boşanma yönünden temyiz edilmeyip sadece maddi manevi tazminatlar yönünden temyiz edilmiştir.</p>
+
+<p>Mahkemece, gerekçeli kararın hüküm fıkrasına TMK.166/1 maddesi yerine TMK.m.163/3 maddesinin yazılması ise, maddi hataya dayalı olup, bu hatanın mahallinde düzeltilmesi her zaman için mümkündür. Dairemizin yerleşik içtihatları da bu yöndedir ( Dairemizin, 15.07.2009 gün ve 2008/11817 E- 2009/14119 K. 09.03.2010 gün ve 2009/2066 E- 2010/4408 K. 26.01.2011 gün ve 2010/109 E- 2011/1150 K. 21.02.2012 gün ve 2011/6814 E-2012/3402 K. 02.04.2013 gün ve 2012/22843 E-2013/9054 K. 03.03.2014 gün ve 2013/22077 E-2014/4435 K. 19.10.2015 gün ve 2015/20041 E- 2015/18537 K. 21.03.2016 gün ve 2015/14375 E- 2016/5482 K. sayılı kararları).</p>
+
+<p>Öte yandan, “ Hâkim, yargılamanın makul süre içinde ve düzenli bir biçimde yürütülmesini ve gereksiz gider yapılmamasını sağlamakla yükümlüdür” [HMK.m.30-(1)].</p>
+
+<p>Sayın çoğunluğun görüşü, Dairemizin yerleşik içtihatları ve [HMK.m.30-(1)]` de düzenlenen usul ekonomisi ilkesine uygun değildir.</p>
+
+<p>Bu sebeple, temyiz edilen hükmün esastan incelenip sonuçlandırılması gerekirken, sırf maddi hatadan dolayı hükmün tamamının bozulması yönündeki sayın çoğunluğun görüşüne katılmıyorum.</p>
+
+<hr>
+
+<p><strong>YARGITAY 6. HUKUK DAİRESİ
+Esas : 2015/11460 Karar : 2016/1486</strong> Tarih : 1.03.2016</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 30. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Usul Ekonomisi İlkesi</strong></p>
+  </li>
+</ul>
+
+<p>Dava, kira bedelinin istirdadına ilişkindir.Mahkemece davanın husumetten reddine karar verilmiş hüküm davacı ve davalı vekili tarafından temyiz edilmiştir.</p>
+
+<p>Hükme esas alınan 03.11.2006 başlangıç tarihli ve 10 yıl süreli 4 adet parsele ilişkin taşınmaz kira sözleşmesi konusunda taraflar arasında bir uyuşmazlık bulunmamaktadır. Sözleşme kiraya veren olarak Defterdarlık Milli Emlak Müdürlüğü, kiracı olarak da davacı şirket arasında imzalanmıştır. Dava … aleyhine açılmıştır.Ancak davaya cevap … adına Maliye Bakanlığı (…) hazine vekili tarafından verilmekle husumetin Maliye Bakanlığı adına yöneltildiğini kabul etmiştir. Bu durumda hasımda değil temsilcide yanılma olduğunun ve Hazine vekilinin duruşmalara katılmakla temsilcide yanılmanın da giderildiği ve böylece davanın Maliye Hazinesi adına açıldığının kabulü gerekir Öte yandan HMK.`nın 124. maddesinde “Bir davada taraf değişikliği, ancak karşı tarafın açık rızası ile mümkündür. Bu konuda Kanunlarda yer alan özel hükümler saklıdır. Ancak, maddi bir hatadan kaynaklanan veya dürüstlük kuralına aykırı olmayan taraf değişikliği talebi, karşı tarafın rızası aranmaksızın hâkim tarafından kabul edilir. Dava dilekçesinde tarafın yanlış veya eksik gösterilmesi kabul edilebilir bir yanılgıya dayanıyorsa, hâkim karşı tarafın rızasını aramaksızın taraf değişikliği talebini kabul edebilir. Bu durumda hâkim, davanın tarafı olmaktan çıkarılan ve aleyhine dava açılmasına sebebiyet vermeyen kişi lehine yargılama giderlerine hükmeder.” hükmü yer almaktadır. Bu maddenin gerekçesinde de vurgulandığı üzere, taraf değişikliğini mutlak olarak davalının rızasına bağlamak yargılama ilişkisini katı bir forma bağlayacaktır ki, bu da yargılamaya hakim olan ilkelerden “usul ekonomisi ilkesi” (HMK. madde 30) ile bağdaşmaz.</p>
+
+<p>Bu nedenle yukarıda açıklanan nedenlerle işin esasının incelenmesi gerekirken yazılı şekilde davanın husumetten reddi doğru olmadığından hükmün bozulması gerekmiştir.</p>
+
+<p>SONUÇ:Yukarıda açıklanan nedenlerle temyiz itirazlarının kabulü ile 6100 sayılı HMK.ya 6217 Sayılı Kanunla eklenen geçici 3.madde hükmü gözetilerek HUMK.nın 428.maddesi uyarınca hükmün BOZULMASINA, bozma nedenine göre davalı vekilinin temyiz incelemesinin şimdilik incelenmesine yer olmadığına, Yargıtay duruşması için kendisini vekille temsil ettiren davacı yararına takdir olunan 1.350.-TL vekalet ücretinin davalıdan alınarak davacıya verilmesine keza Yargıtay duruşması için kendisini vekille temsil ettiren davalı yararına takdir olunan 1.350.-TL vekalet ücretinin davacıdan alınarak davalıya verilmesine istek halinde peşin alınan temyiz harcının temyiz eden davacıya iadesine, 01/03/2016 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 10. HUKUK DAİRESİ 
+Esas : 2015/4818 Karar : 2015/22413</strong> Tarih : 17.12.2015</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 30. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Usul Ekonomisi İlkesi</strong></p>
+  </li>
+</ul>
+
+<p>Dava, malullük aylığı bağlanması istemine ilişkindir.</p>
+
+<p>Mahkemece, ilamında belirtildiği şekilde davanın kısmen kabulüne karar verilmiştir.</p>
+
+<p>Hükmün, davalı K… vekili tarafından temyiz edilmesi üzerine, temyiz isteğinin süresinde olduğu anlaşıldıktan ve Tetkik Hakimi tarafından düzenlenen raporla dosyadaki kağıtlar okunduktan sonra işin gereği düşünüldü ve aşağıdaki karar tespit edildi.</p>
+
+<p>1-) Dosyadaki yazılara, toplanan delillere ve hükmün dayandığı gerektirici sebeplere göre sair temyiz itirazlarının REDDİNE;</p>
+
+<p>2-) Malullük sigortasından aylık bağlanması istemine ilişkin davalarda, davalı K…‘a başvuruda bulunulduğu tarih itibarıyla tümüyle oluşmayan tahsis koşullarının yargılama aşamasında gerçekleşmesi durumunda, özellikle, Anayasa’nın “Duruşmaların açık ve kararların gerekçeli olması” başlığını taşıyan 141. maddesindeki, davaların en az giderle ve mümkün olan süratle sonuçlandırılmasının, yargının görevi olduğunu belirten hüküm, 01.10.2011 günü yürürlüğe giren 6100 sayılı Hukuk Muhakemeleri Kanunu’nun “Usul ekonomisi ilkesi” başlıklı 30. maddesinde yer alan, hakimin, yargılamanın kabul edilebilir süre içinde ve düzenli bir biçimde yürütülmesini ve gereksiz gider yapılmamasını sağlamakla yükümlü olduğu yönündeki düzenleme, sosyal koruma, dayanışma, sosyal denkleştirme ve zorunluluk ilkelerine dayanan sosyal sigortalar, bireyin onuru ile kişiliğinin geliştirilmesi için kaçınılmaz ekonomik, sosyal ve kültürel hakların doyurulması temeline dayanan sosyal güvenlik hukukunun ilkeleri dikkate alındığında, bütün şartların yerine getirildiği tarihi izleyen ay başından itibaren aylığa hak kazanıldığının tespitine ilişkin hüküm kurulmalı, ancak, yargılama aşamasında aylık bağlama koşulları gerçekleşen davacı sigortalı yönünden, tahsis talep günü itibariyle şartlar oluşmamakla Kurum`un dava açılmasına sebep olan herhangi bir haksız işlemi de söz konusu bulunmadığından yargılama giderlerinin davacı üzerinde bırakılması gerektiği gözetilerek karar verilmesi gerekirken yazılı şekilde karar verilmiş olması, usul ve yasaya aykırı olup, bozma nedenidir.</p>
+
+<p>Ne var ki; bu hususun düzeltilmesi yeniden yargılama yapılmasını gerektirmediğinden hüküm bozulmamalı, 6217 sayılı Kanunun 30’uncu maddesi ile 6100 sayılı Hukuk Muhakemeleri Kanununa eklenen geçici 3’üncü madde atfıyla uygulanmakta olan 1086 sayılı Hukuk Usulü Muhakemeleri Kanunu`nun 438’inci maddesi gereğince düzeltilerek onanmalıdır.</p>
+
+<p>SONUÇ : Hükmün 2 nolu bendinde yer alan “Davacı yararına yürürlükte bulunan Av ücret tarifesine göre 1500 TL vekalet ücretinin davalıdan alınıp davacıya verilmesine, ibaresinin silinerek hükümden çıkarılmasına; hükmün 3 nolu bendinde yer alan 665,75 TL yargılama giderinin (harç hariç) davalıdan alınıp davacıya verilmesine,`` ibaresi silinerek yerine “Davacı tarafından yapılan yargılama giderlerinin kendisi üzerinde bırakılmasına” ibaresinin yazılmasına ve hükmün bu şekliyle DÜZELTİLEREK ONANMASINA, 17.12.2015 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 22. HUKUK DAİRESİ
+Esas : 2015/29624 Karar : 2015/30479</strong> Tarih : 9.11.2015</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 30. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Usul Ekonomisi İlkesi</strong></p>
+  </li>
+</ul>
+
+<p>Davacı, kıdem, ihbar tazminatı, ücret alacağı, fazla mesai, ulusal bayram ve genel tatil ile yıllık izin ücreti alacaklarının ödetilmesine karar verilmesini istemiştir.</p>
+
+<p>Mahkeme, davanın açılmamış sayılmasına karar vermiştir.</p>
+
+<p>Hüküm süresi içinde davacı avukatı tarafından temyiz edilmiş olmakla, dava dosyası için Tetkik Hakimi tarafından düzenlenen rapor dinlendikten sonra dosya incelendi, gereği konuşulup düşünüldü:</p>
+
+<p>Davacı, davalı şirket bünyesinde çalışırken iş sözleşmesinin davalı tarafından haklı sebep olmadan feshedildiğini belirterek kıdem tazminatı ile ödenmeyen bir kısım işçilik alacaklarının hüküm altına alınmasını talep etmiştir.</p>
+
+<p>Davalı vekili, davanın reddini savunmuştur.</p>
+
+<p>Mahkemece, 21.05.2014 tarihli duruşmada, yeni duruşma gününün tebliği için masraf yatırılmadığı gerekçesi ile davacı vekilinin mazeretinin reddine karar verilmiş ve ikinci kez takipsiz bırakılan dava açılmamış sayılmıştır.</p>
+
+<p>Karar, süresi içerisinde davacı tarafından temyiz edilmiştir.</p>
+
+<p>6100 sayılı Hukuk Muhakemeleri Kanunu`nun 150/1. maddesinde; “Usulüne uygun şekilde davet edilmiş olan taraflar duruşmaya gelmedikleri ve gelip de davayı takip etmeyeceklerini bildirdikleri taktirde dosyanın işlemden kaldırılmasına karar verilir”</p>
+
+<p>Anılan Kanun`un 320/4. maddesinde; “Basit yargılama usulüne tabi davalarda, işlemden kaldırılmasına karar verilmiş olan dosya, yenilenmesinden sonra takipsiz bırakılırsa, dava açılmamış sayılır.” düzenlemesine yer verilmiştir.</p>
+
+<p>Dava, 12.08.2011 tarihinde 6100 sayılı Kanun yürürlüğe girmeden önce açılmıştır. Davacı vekili ilk defa 04.06.2013 tarihinde, anılan kanun yürürlüğe girdikten sonra davayı takipsiz bırakmış ve mahkemece dosya işlemden kaldırılmıştır. 17.02.2014 tarihli duruşmada, bilirkişi raporundaki hesap hatalarının giderilmesi için ek rapor alınmasına ve 65,00 TL gider avansının davacı tarafından iki haftalık kesin süre içerisinde ödenmesine karar verilmiştir. Duruşma 21.05.2014 tarihine bırakılmıştır. Davacı vekili belirtilen tarihteki duruşmaya UYAP ortamından gönderdiği mazeret dilekçesinde, Giresun Dereli Asliye Hukuk Mahkemesinin 2014/93-94-95-96 esas sayılı dosyalarındaki keşifler sebebi ile katılamayacağını bildirmiş ve yeni bir duruşma günü belirlenmesini talep etmiştir. Mahkemece, eksik kalan gider avansının tamamlanmadığı ve mazeret dilekçesi ekinde masraf bulunmadığı, davacı vekilinin duruşma gününden ne şekilde haberdar edileceğini de bildirmediği gerekçesi ile mazeretinin reddine karar verilmiştir. Ardından 6100 sayılı Kanun`un 320/4. maddesi gereğince ikinci kez takipsiz bırakılan dava açılmamış sayılmıştır.</p>
+
+<p>Davacı vekili UYAP ortamından gönderdiği mazeret dilekçesinde, Giresun Dereli Asliye Hukuk Mahkemesinde keşfi bulunduğu yönünde geçerli bir mazeret bildirmiştir. Aynı yöntemle, belirlenecek duruşma gününün öğrenilmesi mümkün olup, yeni duruşma gününün tebliği için masraf yatırılmamış olması mazeretin reddini gerektirmez. Mahkemece mazeretin kabulü ile yargılamaya devam edilmesi gerekirken, yazılı gerekçe ile mazeretin reddedilmesi ve ardından dosyanın ikinci kez takipsiz bırakıldığı gerekçesi ile davanın açılmamış sayılması hatalı olup bozmayı gerektirmiştir.</p>
+
+<p>Hükmün yukarıda açıklanan sebepten BOZULMASINA, peşin alınan temyiz harcının istek halinde ilgiliye iadesine, oyçokluğu ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 3. HUKUK DAİRESİ
+Esas : 2014/13607 Karar : 2015/6088</strong> Tarih : 13.04.2015</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 30. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Usul Ekonomisi İlkesi</strong></p>
+  </li>
+</ul>
+
+<p>Davacı vekili; davalının abonesi olduğu tesisattan kullandığı elektrik bedellerini ödemediği için, alacağın tahsili amacıyla davalı hakkında İstanbul 25. (Eyüp 1. İcra Müdürlüğü) İcra Müdürlüğü`nün 2008/6078 takip sayılı dosyası ile icra takibi başlatıldığını,</p>
+
+<p>davalının takibe ve borca itiraz ettiğini, itirazın haksız olduğunu ileri sürerek, itirazının iptali ile takibin devamına, % 40`dan aşağı olmamak üzere icra inkar tazminatına karar verilmesini talep ve dava etmiştir.</p>
+
+<p>Davalı vekili, davanın reddini savunmuştur.</p>
+
+<p>Mahkemece, davanın kısmen kabulü ile, davalı borçlunun İstanbul 25. İcra Müdürlüğünün 2008/6078 sayılı takibe yapmış olduğu itirazın kısmen iptali ile takibin 51,70 TL üzerinden devamına, asıl alacak 5,97 TL’ye takip tarihinden itibaren kademeli faiz işletilmesine, % 40 icra inkar tazminatı 2,38 TL`nin davalıdan alınıp davacıya verilmesine, fazla istemin reddine karar verilmiş,</p>
+
+<p>hüküm davacı vekili tarafından temyiz edilmiştir.</p>
+
+<p>Uyuşmazlık; aboneliği iptal ettirmedikçe abonenin kullanılan elektrik bedelinden sorumlu olup olmayacağı ve zamanında ödenmeyen elektrik faturalarından dolayı tarife ve yönetmelik hükümleri gereğince davacının elektriği kesmesi gerekirken kesmemesinin, dolayısıyla davacının müterafik kusuru nedeniyle ana tüketim bedelinden indirim yapılıp yapılmayacağı noktasında toplanmaktadır.</p>
+
+<p>Yargıtay Hukuk Genel Kurulu abonenin sorumluğunun hüküm altına alındığı 2003/13-492/505 Esas, Karar, 2008/19-174 Esas, 199 Karar esas sayılı ilamları ile; “abonenin aboneliğini iptal ettirmediği sürece sorumluluğunun devam edeceği benimsenmiştir”.</p>
+
+<p>Taraflar arasındaki uyuşmazlığı giderecek meri mevzuat hükümlerinin incelenmesinde yarar vardır.</p>
+
+<p>09.11.1995 tarih, 22458 sayılı Resmi Gazetede yayınlanan Elektrik Tarifeleri Yönetmeliğinin 26. maddesine göre; 
+aboneliğinin başlangıç tarihinin sözleşmenin yürürlüğe girdiği tarih olduğu, başka bir yere taşınacak abonenin taşınma tarihinden en az bir hafta önce şirkete yazılı olarak başvurarak sayaç değerinin okunmasını istemek zorunda olduğu, bir hafta içinde sayaç değeri belirlenmediği takdirde abonenin bildiriminin esas kabul edileceği, 38. maddeye göre idarenin faturalama dönemlerinde abone sayacının kaydettiği değeri mahallinde ve zamanında okuyarak faturalamaya esas olacak şekilde kayda geçirilmesinin esas olduğu,</p>
+
+<p>50.maddeye göre; 
+fatura bedeli son ödeme tarihine kadar ödenmediği takdirde 20 gün içerisinde Tebligat Kanunu hükümlerine göre tebligat yapılacağı, “bu tebligattan sonra fatura bedeli 10 gün içinde ödenmediği takdirde abonenin elektriği kesilir” hükmü getirilmiştir.</p>
+
+<p>25.09.2002 tarihli ve 24887 sayılı Resmi Gazetede yayınlanan Elektrik Piyasası Müşteri Hizmetleri Yönetmeliğinin 24. maddesine göre; 
+zamanında ödenmeyen borçlar başlığı altında “müşterinin perakende satış sözleşmesi veya ikili anlaşmalar kapsamında öngörülen ödemeleri zamanında yapmaması halinde dağıtım lisansı sahibi tüzel kişiler tarafından elektriği kesilebilir”    şeklindedir.</p>
+
+<p>01.03.2003 tarihinde yürürlüğe giren Elektrik Piyasası Müşteri Hizmetleri Yönetmeliğinin 24/2. maddesine göre, 
+“müşterinin perakende satış sözleşmesi veya ikili anlaşmalar kapsamında öngörülen ödemeleri zamanında yapmaması halinde nihai tüketicilere enerji tedarik eden lisans sahibi şirketlerin bildirimi üzerine en az 5 iş günü içerisinde dağıtım lisansı sahibi tüzel kişiler tarafından elektriği kesilir”   söz konusu durum 2 gün içerisinde dağıtım şirketi tarafından ilgili tedarikçiye bildirilir.</p>
+
+<p>09.11.1995 tarihli Elektrik Tarifeleri Yönetmeliği ve 01.03.2003 tarihli Elektrik Piyasası Müşteri Hizmetleri Yönetmeliğinin ilgili hükümleri gereğince zamanında ödenmeyen faturalardan dolayı elektriğin kesilmesinin amir hüküm olduğu anlaşılmaktadır.</p>
+
+<p>HMK.nın 30. maddesine göre; yargılamaya hakim olan ilkelerinden birisi de usul ekonomisi ilkesidir.</p>
+
+<p>Somut olayda; davalının davacı kurumun …nolu mesken abonesi olduğu, aboneliğin bulunduğu daireyi sattığı ancak aboneliğini iptal ettirmediği, 01.08.1999-19.02.2004 dönemi arasında düzenlenen 35 adet fatura bedelinin ödenmemesi üzerine davalı hakkında İstanbul 25. İcra Müdürlüğünün 2008/6078 sayılı dosyası ile icra takibi başlatıldığı, davalının borca itiraz ettiği anlaşılmaktadır.</p>
+
+<p>Yargılama sırasında düzenlenen 02.04.2012 tarihli Bilirkişi Raporunda, 
+Davalının aboneliğini iptal ettirmediği için toplam 4.885,29 TL fatura bedelinden sorumlu olduğu, 20.02.2013 tarihli Bilirkişi Raporunda toplam takip tutarının 4.885,29 TL olduğu, davacı kurumun elektriği kesmediği için % 20 oranında, davalının ise aboneliğini iptal ettirmediği için % 80 oranında müterafik kusuru bulunduğu, kusur durumlarına göre 3.919,74 TL`lik miktar için itirazın iptali ile takibin devamına, asıl alacağa takip tarihinden itibaren değişen oranlarda yasal faiz yürümesine karar verilmesi gerektiği belirtilmiştir.</p>
+
+<p>Hükme esas alınan 26.07.2013 tarihli Bilirkişi Raporunda ise; Elektrik Tarifeleri Yönetmeliği’nin 50. maddesi gereğince ödenmemiş elektrik faturaları olması durumunda birbirini takip eden iki dönem sonrası elektriğin fiziki olarak kesilmesinin esas olduğunu, bağımsız bölümleri satın alanların kendi adına aboneliklerini yaptırmadıkları, bu nedenle davalı E…`in 08.09.1999 son ödeme tarihli 2,20 TL ve 04.10.1999 son ödeme tarihli 5,97 TL elektrik faturalarından sorumlu olduğu, davacının …numaralı tesisatın borcunu tahsil etmek için Elektrik Tarifeleri Yönetmeliğine uygun şekilde elektriği kesmek suretiyle takibini yapması gerekirken bunu yapmadığından mevzuata aykırı bir şekilde elektrik kullanımına müsaade ederek kendi kusuruyla borcun büyümesine sebebiyet verdiği, bu borcun tahsil edilmesi gereken kişinin E… yerine tesisatın fiili kullanıcıları olduğu belirtilerek; davacının takip tarihi itibariyle davalıdan 51,70 TL alacaklı olduğu hesap edilmiştir.</p>
+
+<p>Somut olayda; davalı, davacının elektrik abonesidir. 
+Davalı aboneliği iptal ettirmedikçe abonelik üzerinden tüketilen normal veya kaçak enerji bedelinden davacıya karşı sorumludur. 
+Davacının (5) yıl gibi uzun bir süre elektrik tüketim bedeline esas faturaların ödenmemesine rağmen yönetmelik gereği elektriği kesmemesi davacı açısından müterafik kusur teşkil etse de bu kusur tüketilen enerji bedelinin aslından davacının beraatını gerektirmeyeceği gibi (tüketim bedeli olan ana borçtan) hukuki sorumluluğunu da ortadan kaldırmaz ve müterafik kusur nedeniyle ana tüketim bedeli üzerinden indirimi gerektirmez. Olsa olsa davacının elektriği kesmemesi dolaysıyla davacının müterafik kusuru nedeniyle davalı açısından normal tüketim bedeli dışında gecikme zammından indirim sağlar. 
+Davacının müterafik kusuru nedeniyle ana tüketim bedeli üzerinden indirim davalının sebepsiz zenginleşmesine yol açar ki bu da yukarıda bahsedilen usul ekonomisi ilkesine aykırılık teşkil eder.</p>
+
+<p>Mahkemeler bir davadan başka bir dava üreten kurumlar olmadığı gibi hukuki uyuşmazlıkları nihai olarak sona erdiren yargı mercileridir.</p>
+
+<p>Hal böyle olunca; mahkemece yapılacak iş, dosyanın yeniden bilirkişiye tevdi ile davalının dava konusu ana borçtan (ana tüketim bedelinden) her halükarda sorumlu olduğu, davacının yönetmelik gereği elektriği uzun süre kesmemesinin (somut olayda 5 yıl) dairemiz uygulamasına göre davacı açısından müterafik kusur oluşturacağı ancak bu kusurun da gecikme zammından indirim sağlayacağı bu indirimin de %50 oranında ve en fazla yasal faize kadar olacağı dikkate alınarak bilirkişiden rapor alınmak suretiyle bir karar verilmesi gerekirken aksine düşüncelerle yazılı şekilde hüküm kurulması isabetsizdir.</p>
+
+<p>Yukarıda açıklanan esaslar gözönünde tutulmaksızın yazılı şekilde hüküm tesisi isabetsiz, temyiz itirazları bu nedenlerle yerinde olduğundan kabulü ile hükmün ( BOZULMASINA ) , oybirliği ile, karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY HUKUK GENEL KURULU
+Esas: 2014/21-2371 Karar: 2017/263</strong> Tarih: 15.02.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 30. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Usul Ekonomisi İlkesi</strong></p>
+  </li>
+</ul>
+
+<p>Taraflar arasındaki “iş kazasından kaynaklanan maddi ve manevi tazminat” davasından dolayı yapılan yargılama sonunda; Konya 2. İş Mahkemesince davanın açılmamış sayılmasına dair verilen 16.04.2013 gün ve 2010/585 E., 2013/289 K. sayılı kararın incelenmesi davacı vekili tarafından istenilmesi üzerine, Yargıtay 21. Hukuk Dairesinin 10.10.2013 gün ve 2013/14608 E., 2013/18371 K. sayılı kararı ile;</p>
+
+<p>(… Dava, maddi ve manevi tazminat istemine ilişkindir.</p>
+
+<p>Mahkemece, davacı vekilinin 15.04.2013 tarihli mazeret dilekçesinin kabul edilmeyerek davanın (2.) kez takipsiz bırakıldığı gerekçesiyle HMK’nın 320 /4.maddesine göre davanın açılmamış sayılmasına karar verilmiştir.</p>
+
+<p>Uyuşmazlık, davacı vekilinin mazeretinin reddine dair ara kararın ve sonucunda davanın açılmamış sayılmasına karar verilmesinin yerinde olup olmadığı noktasında toplanmaktadır.</p>
+
+<p>5521 Sayılı İş Mahkemeleri Kanun’un 7.maddesine5521 Sayılı İş Mahkemeleri Kanun’un 7.maddesine göre İş Mahkemelerinde uygulanan şifahi yargılama usulünü düzenleyen 473 vd. maddeleri 6100 Sayılı HMK’nın 450.maddesiyle yürürlükten kaldırılmıştır. Kanun’un 316/d bendine göre “hizmet ilişkisinden doğan davalara”, 316/g maddesine göre de “Diğer kanunlarda yer alan ve yazılı yargılama usulü dışındaki yargılama usullerinin uygulanacağı belirtilen dava ve işlere” basit yargılama usulünün uygulanması gerektiğinden eldeki uyuşmazlığa basit yargılama usulünün uygulanması gerektiği açıktır.</p>
+
+<p>Basit yargılama usulüne dair kurallar HMK’nın 316-322.maddelerinde düzenlenmiş olup Kanun’un 320/4 maddesine göre basit yargılama usulüne tabi davalarda, işlemden kaldırılmasına karar verilmiş olan dosya, yenilenmesinden sonra takipsiz bırakılırsa, davanın açılmamış sayılmasına karar verilir ve Kanun’un 322/1 maddesine göre bu Kanun ve diğer kanunlarda basit yargılama usulü hakkında hüküm bulunmayan hâllerde, yazılı yargılama usulüne dair hükümler uygulanır.</p>
+
+<p>HMK’nın 150.maddesineHMK’nın 150.maddesine göre usulüne uygun şekilde davet edilmiş olan taraflar, duruşmaya gelmedikleri veya gelip de davayı takip etmeyeceklerini bildirdikleri takdirde dosyanın işlemden kaldırılmasına karar verilir. İşlemden kaldırıldığı tarihten başlayarak üç ay içinde yenilenmeyen davalar, sürenin dolduğu gün itibarıyla açılmamış sayılır ve mahkemece kendiliğinden karar verilerek kayıt kapatılır.</p>
+
+<p>6100 HMK’nın 30.maddesine “Hâkim, yargılamanın makul süre içinde ve düzenli bir biçimde yürütülmesini ve gereksiz gider yapılmamasını sağlamakla yükümlüdür” ve HMK’nın 150/2 maddesinde ifade edildiği üzere “geçerli bir özrü olmaksızın duruşmaya gelmeyen taraf yokluğunda yapılan işlemlere itiraz edemez”.</p>
+
+<p>Yukarıda yer alan hükümler birlikte değerlendirildiğinde; Anayasa’nın 141/ son ve HMK’nın 30.maddelerine göre “Davaların en az giderle ve mümkün olan süratle sonuçlandırılması” biçiminde açıklanan temel ilke çerçevesinde, davacının duruşmaya katılmama gerekçesi “geçerli bir özür” olarak kabul edilebilir ise yargılamaya devam edilmeli ve dosya işlemden kaldırılmamalıdır.</p>
+
+<p>Somut olayda, davanın 16.04.2013 tarihinde takipsi z bırakılması sebebiyle birinci defa işlemden kaldırılmasına karar verildiği, davacı vekilinin 15.04.2013 tarihinde sunduğu mazeret dilekçesi ile Adana 4.Ağır Ceza Mahkemesi’nin 2012/218 Esas sayılı dava dosyasının karar duruşması yapılacağından eldeki davada yapılacak 16.04.2013 tarihli duruşmaya katılamayacağını belirterek Kurum işlemlerinin sonucunun beklenmesini ve mazeretinin kabulüyle duruşmanın ileri bir tarihe ertelenmesini talep ettiği, dilekçe ekinde yeni duruşma gününün tebliği için posta pulu ile Adana 4.Ağır Ceza Mahkemesi’nin 2012/218 Esas sayılı dava dosyasında 16.04.2013 günü saat 09:00 da duruşma yapılacağına dair tebligat fotokopisini sunduğu anlaşılmaktadır.</p>
+
+<p>Öncelikle davacı vekilinin mazeret dilekçesinde duruşmaya katılmama gerekçesi yer aldığı gibi mazeret dilekçesi ekinde yeni duruşma gününün tebliği için gerekli masrafın da sunulduğu anlaşılmaktadır. Dava maddi ve manevi tazminat istemine dair olup davacı tarafın davanın sürüncemede kalmasında kural olarak menfaati bulunmamaktadır.</p>
+
+<p>Mahkemece davacı vekiline 20.11.2012 tarihli duruşmada mazeretinin son kez kabul edildiğine dair bildirimde bulunulmuş ise de daha sonra dile getirilecek mazeretlerin haklı olup olmadığı bu aşamada bilinemeyeceğinden, sunulacak mazeretlerin reddedileceğine dair ara karar kurulması doğru değildir.</p>
+
+<p>Yukarıda yer alan açıklamalar ışığında davacı vekilinin 15.04.2013 tarihli mazeret dilekçesinin “Davaların en az giderle ve mümkün olan süratle sonuçlandırılması” biçiminde açıklanan temel ilkeye aykırı ve kötüniyetli bir davranış olarak kabul edilmesinin mümkün olmadığı anlaşılmakla davacı vekilinin geçerli bir özrü bulunmasına karşın yetersiz gerekçe ile mazeret dilekçesinin reddi ile davanın açılmamış sayılmasına karar verilmesi usul ve yasaya aykırı olup bozma nedenidir.</p>
+
+<p>O halde davacı vekilinin bu yönleri amaçlayan temyiz itirazları kabul edilmeli ve hüküm bozulmalıdır…),</p>
+
+<p>Gerekçesiyle bozularak dosya yerine geri çevrilmekle, yeniden yapılan yargılama sonunda, mahkemece önceki kararda direnilmiştir.</p>
+
+<p>Hukuk Genel Kurulu’nca incelenerek direnme kararının süresinde temyiz edildiği anlaşıldıktan ve dosyadaki kağıtlar okunduktan sonra gereği görüşüldü:</p>
+
+<p>KARAR : Dava, iş kazasından kaynaklanan maddi ve manevi tazminat istemine ilişkindir.</p>
+
+<p>Davacı vekili müvekkilinin davalılara ait inşaatta çalışırken 18.06.2004 tarihinde kafasına aldığı darbe sonucunda hayati tehlike geçirecek şekilde yaralandığını ileri sürerek, 5.000-TL maddi ve 5.000- TL manevi tazminatın olay tarihinden itibaren işleyecek yasal faiziyle davalılardan müştereken ve müteselsilsen tahsiline karar verilmesini istemiştir.</p>
+
+<p>Davalı … davacının yaralanmasına sebep olan kazayı geçirdiği sırada kendi işçisi olmadığını, davacının kaza tarihinden 3-4 gün önce istemi üzerine işine son verildiğini, ücretinin kalan kısmını almak için geldiği sırada kaza geçirdiğini belirterek davanın reddinin gerektiğini savunmuştur.</p>
+
+<p>Davalı … kendisinin asıl işverenin işçisi olarak çalıştığını husumetin kendisine yöneltilemeyeceği ayrıca davacının kardeşiyle şakalaştığı sırada yük asansöründen yere düştüğünü, kazanın meydana gelmesinde davacının kusurlu olduğunu ifade etmiştir.</p>
+
+<p>Mahkemece 21.02.2013 tarihli celsede dosyanın HMK. 150. madde gereği işlemden kaldırılmasına karar verildiği ve 16.04.2013 tarihli duruşmanın takip edilmediği gerekçesiyle davanın açılmamış sayılmasına karar verilmiştir.</p>
+
+<p>Yerel mahkemece verilen karar, davacı vekilinin temyizi üzerine Özel Dairece yukarıda başlık bölümünde açıklanan gerekçelerle bozulmuştur.</p>
+
+<p>Mahkemece; önceki gerekçeler tekrar edilmek suretiyle direnme kararı verilmiştir.</p>
+
+<p>Direnme kararını davacı vekili temyize getirmiştir.</p>
+
+<p>Direnme yoluyla Hukuk Genel Kurulu önüne gelen uyuşmazlık; basit yargılama usulünün uygulandığı İş Mahkemelerinde davacı vekilinin 15.04.2013 tarihli mazeret dilekçesinin kabul edilmemesi sonucu 6100 Sayılı HMK’nın 320. maddesinin 4. bendi 4. bendi gereği davanın açılmamış sayılmasına karar verilmesinin usul ve yasaya uygun olup olmadığı noktasında toplanmaktadır.</p>
+
+<p>Bilindiği üzere hukuk yargılamasına dair kurallar, yargılamanın düzenli yapılması ve hakkın olabildiğince çabuk elde edilmesi amacını gerçekleştirmek için getirilmiştir. İşte hakkın elde edilmesi için birer araç olan bu kurallar amaca uygun somut bir görevin varlığı halinde uygulama alanı bulurlar. Aksi halde, araçla ulaşılması istenilen amaç arasında gerçek ve esaslı bağın bulunmaması anlamsızlığı (şekilcilik) ortaya çıkarır. Mahkemelerin amacı, ne olursa olsun uyuşmazlıkları ortadan kaldırmak değil, pozitif hukukun ölçüsünde, hakkı belirleyerek sonuca ulaşmaktadır.</p>
+
+<p>Bu sebeple geciken adaletin adaletsizlik olduğu düşünülerek, davaların uzamasını veya uzatılmak istenmesini engellemek üzere getirilen usul kuralları, kanunun amacına uygun olarak kullanılmalı, davanın reddi için bir araç sayılmamalıdır.</p>
+
+<p>Somut uyuşmazlığın incelenmesinde, mahkemece davacı vekilinin 16.04.2013 tarihli oturuma, aynı gün başka mahkemedeki duruşması sebebiyle katılamayacağı yönünde vermiş olduğu 15.04.2013 tarihli mazeret dilekçesinin davanın gereksiz yere uzatıldığı gerekçesiyle reddine ve davanın 320. maddesi uyarınca açılmamış sayılmasına karar verildiği anlaşılmaktadır.</p>
+
+<p>Ne var ki, davacı vekilinin 15.04.2013 tarihli mazeret dilekçesinde Adana 4. Ağır Ceza Mahkemesi’nde duruşması olması sebebiyle katılamayacağını ve mazeretinin kabulüyle duruşmanın ileri bir tarihe ertelenmesini talep ettiği, mahkemece kabul edilmeyen söz konusu mazeretin haklı bir mazeret olduğu ve özellikle davanın niteliği gereği davacı tarafın davayı uzatmakta hukuki yararı bulunmadığı gibi, söz konusu iş kazası dosyalarında davacının maluliyetinin belirlenmesinin öncelikli olması sebebiyle mazeretin kabul edilmesi gerekli iken, mazeretin reddine dair verilen kararın usul kurallarının ruhuna ve özüne uygun düşmediği açıktır.</p>
+
+<p>O halde, dosyadaki tutanak ve kayıtlara, bozma kararında açıklanan gerektirici nedenlere göre, Hukuk Genel Kurulu’nca da benimsenen Özel Daire bozma ilamına uyulmak gerekirken, davacı vekilinin mazeret talebinin reddi ile davanın açılmamış sayılmasına dair önceki kararda direnilmesi usul ve yasaya aykırıdır.</p>
+
+<p>Bu sebeple direnme kararı bozulmalıdır.</p>
+
+<p>SONUÇ : Davacı vekilinin temyiz itirazlarının kabulüyle direnme kararının Özel Daire bozma kararında gösterilen nedenlerden dolayı BOZULMASINA, istenmesi halinde temyiz peşin harcının yatırana iadesine, karar düzeltme yolu kapalı olmak üzere, 15.02.2017 tarihinde oybirliğiyle karar verildi.</p>
+<hr>
+
+</div></div></main>
+</div>
+
+<footer>
+<section>
+<div class="contact-info">
+
+<div class="adres">
+
+<div class="telefon-wrapper">
+
+
+</div>
+</div>
+</section>
+
+</div>
+
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+"vars": {
+"account": "UA-58342443-1"
+},
+"triggers": {
+"trackPageview": {
+"on": "visible",
+"request": "pageview"
+}
+}
+}
+</script>
+</amp-analytics>
+
+</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="../../index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="../../dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="../../ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="../../knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="../../search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/slideToggle.min.js"></script>
+    <script src="../js/internet-status.js"></script>
+    <script src="../js/tiny-slider.js"></script>
+    <script src="../js/baguetteBox.min.js"></script>
+    <script src="../js/countdown.js"></script>
+    <script src="../js/rangeslider.min.js"></script>
+    <script src="../js/vanilla-dataTables.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/magic-grid.min.js"></script>
+    <script src="../js/dark-rtl.js"></script>
+    <script src="../js/active.js"></script>
+    <!-- PWA -->
+    <script src="../js/pwa.js"></script>
+  </body>
+</html>

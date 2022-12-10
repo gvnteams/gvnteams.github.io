@@ -1,0 +1,1095 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tiny-slider.css">
+    <link rel="stylesheet" href="../css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="../css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="tck-search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+               <div class="page-content-wrapper py-0">
+        </div>
+      </div>
+
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<h2 id="davaların-birleştirilmesi">Davaların Birleştirilmesi</h2>
+
+<h2 id="hmk-madde-166">HMK Madde 166</h2>
+
+<p>(1) Aynı yargı çevresinde yer alan aynı düzey ve sıfattaki hukuk mahkemelerinde açılmış davalar, aralarında bağlantı bulunması durumunda, davanın her aşamasında, talep üzerine veya kendiliğinden ilk davanın açıldığı mahkemede birleştirilebilir. Birleştirme kararı, ikinci davanın açıldığı mahkemece verilir ve bu karar, diğer mahkemeyi bağlar.</p>
+
+<p>(2) Davalar, ayrı yargı çevrelerinde yer alan aynı düzey ve sıfattaki hukuk mahkemelerinde açılmış ise bağlantı sebebiyle birleştirme ikinci davanın açıldığı mahkemeden talep edilebilir. Birinci davanın açıldığı mahkeme, talebin kabulü ile davaların birleştirilmesine ilişkin kararın kesinleşmesinden itibaren, bununla bağlıdır.</p>
+
+<p>(3) Birleştirme kararı, derhâl ilk davanın açıldığı mahkemeye bildirilir.</p>
+
+<p>(4) Davaların aynı veya birbirine benzer sebeplerden doğması ya da biri hakkında verilecek hükmün diğerini etkileyecek nitelikte bulunması durumunda, bağlantı var sayılır.</p>
+
+<p>(5) İstinaf incelemesi ayrı dairelerde yapılması gereken davaların da bu madde hükmüne göre birleştirilmesine karar verilebilir. Bu hâlde istinaf incelemesi, birleştirilen davalarda uyuşmazlığı doğuran asıl hukuki ilişkiye ait kararı inceleyen bölge adliye mahkemesi dairesinde yapılır.</p>
+
+<hr>
+
+<ul>
+  <li><a href="../6100-sayili-hukuk-muhakemeleri-kanunu-(hmk).html"><strong>6100 sayılı HMK (Hukuk Muhakameleri Kanunu) Tam Metin</strong></a></li>
+</ul>
+
+<hr>
+
+<amp-img src="../tokmak-yargitay-kararlari-1280x720.png" alt="HMK Madde 166  Davaların Birleştirilmesi" width="1280" height="720" layout="responsive">
+            </amp-img>
+<h2 id="hmk-madde-166-gerekçesi">HMK Madde 166 Gerekçesi</h2>
+
+<p>“Davaların birleştirilmesi” başlığını taşıyan bu maddeye göre, ayrı ayrı açılmış davalar arasında ancak bu maddede gösterilen anlamda bir bağlantı bulunması hâlinde, davaların birleştirilmesi istenebilir. Davaların aynı veya birbirine benzer sebeplerden doğması ya da biri hakkında verilecek hükmün diğerini etkileyecek nitelikte bulunması hâlinde, davaların birleştirilmesi usul ekonomisi açısından önem taşımaktadır.</p>
+
+<p>Bu durumda aynı yargı çevresinde yer alan, aynı düzey ve sıfattaki hukuk mahkemelerinde açılmış olan davalarda birleştirme kararı, talep üzerine veya kendiliğinden hüküm verilinceye kadar her zaman verilebilecektir. Aynı düzey ve aynı sıfattaki mahkemelerden anlaşılması gereken; her iki davanın da görüldüğü mahkemenin, asliye hukuk mahkemesi veya sulh hukuk mahkemesi yahut iş mahkemesi yahut aile mahkemesi olması gerekir. Birleştirme kararı ikinci davanın açıldığı mahkemece verilecek ve bu karar diğer mahkemeyi bağlayacaktır.</p>
+
+<p>Ayrı yargı çevrelerinde yer alan aynı düzey ve sıfattaki hukuk mahkemelerinde açılan davalarda birleştirme talepleri, her zaman ileri sürülebilecektir. Zira, 1086 sayılı Kanunda olduğu gibi ilk itiraz olarak muhafazası halinde çoğunlukla bu davalar birbiri yönünden bekletici mesele yapıldığından yargılamanın daha da uzamasına sebebiyet vermektedir. Ayrıca ilk itirazda bulunulmaması halinde, hâkim, irtibat unsurunu re’sen gözetip, davaları birleştiremeyeceği için aynı konuda çelişik kararların ortaya çıkması da muhtemeldir. Bunun önüne geçmek için sözü edilen halde de davaların birleştirilmesi ilk itiraz olmaktan çıkarılmıştır.</p>
+
+<p>Üçüncü fıkrada, birleştirme kararının derhâl, ilk davanın açıldığı mahkemeye bildirileceğine ilişkin usul hükmüne yer verilmiştir.</p>
+
+<p>1086 sayılı Kanundan farklı olarak, davalar arasında bağlantıdan ne anlaşılması gerektiğini ifade eden dördüncü fıkrada, davaların benzer sebeplerden doğması birleştirme sebebi olarak kabul edilmiş ve genişletilmiştir.</p>
+
+<p>5235 sayılı Kanunun 3 üncü maddesinde, adli yargı ikinci derece mahkemeleri olarak bölge adliye mahkemelerinin kuruluşu düzenlenmiştir. Adli yargı alanında ilk derece mahkemelerinin verdiği kararlar bakımından istinaf kanun yolu getirilmiştir.</p>
+
+<p>Beşinci fıkra ile istinaf incelemesi sırasında da davaların birleştirilebileceği kabul edilmiştir. Bu durumda istinaf incelemesinin, birleştirilen davalarda uyuşmazlığı doğuran asıl hukukî ilişkiye ait kararı inceleyen bölge adliye mahkemesi dairesinde yapılacağı kabul edilmiştir.</p>
+
+<hr>
+
+<h2 id="hmk-166-davaların-birleştirilmesi-emsal-yargıtay-kararları">HMK 166 (Davaların Birleştirilmesi) Emsal Yargıtay Kararları</h2>
+
+<hr>
+
+<p><strong>YARGITAY 2. HUKUK DAİRESİ 
+Esas : 2018/1321 Karar : 2018/8588</strong> Tarih : 4.07.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 166. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Davaların Birleştirilmesi</strong></p>
+  </li>
+</ul>
+
+<p>Davalar arasında bağlantı bulunması durumunda,davaların birleştirilmesine karar verilir. (HMK m.166/1). Davaların aynı veya birbirine benzer sebeplerden doğması, ya da biri hakkında verilecek hükmün diğerini etkileyecek nitelikte bulunması durumunda bağlantı var sayılır (HMK m, 166/4). Boşanma davalarında tarafların kusurlarının belirlenmesi, boşanmanın eki niteliğinde bulunan maddi-manevi tazminat (TMK m. 174/1-2), yoksulluk nafakası (TMK m. 175) gibi taleplerin sağlıklı değerlendirilerek doğru karar verilebilmesi, bu davaların birlikte görülmesi ve delillerin birlikle değerlendirilmesiyle mümkündür.</p>
+
+<p>Davacı erkeğin … Asliye Hukuk (Aile) Mahkemesinde açmış olduğu eldeki boşanma davasından sonra davalı kadın tarafından … 5. Aile mahkemesinde boşanma davası açılmış olup kadın birleştirme talebinde bulunmuştur.Taraflarca açılan boşanma davaları arasında bağlantı bulunduğuna göre kadın tarafından açılan ve erkek tarafından açılmış olan davaların birleştirilerek, her iki davanın esası hakkında hüküm kurulması gerektiğinden hükmün bozulmasına karar verilmesi gerekmiştir.</p>
+
+<p>SONUÇ: Temyiz edilen hükmün yukarıda gösterilen sebeple BOZULMASINA, bozma sebebine göre sair temyiz itirazlarının şimdilik incelenmesine yer olmadığına, temyiz peşin harcının istek halinde yatırana geri verilmesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere oybirliğiyle karar verildi. 04.07.2018 (Çrş.)</p>
+
+<hr>
+
+<p><strong>YARGITAY 1. HUKUK DAİRESİ
+Esas : 2016/15327 Karar : 2018/11039</strong> Tarih : 5.06.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 166. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Davaların Birleştirilmesi</strong></p>
+  </li>
+</ul>
+
+<p>Dava, muris muvazaası hukuksal nedenine dayalı tazminat isteğine ilişkindir.</p>
+
+<p>Davacı, mirasbırakan babası … ’ın, … (yeni … ada … ve … ) parsel sayılı taşınmazını dava dışı … ’ı ara malik kılmak suretiyle davalı oğlu … ’e devrettiğini, işlemin mirasçıdan mal kaçırma amaçlı ve muvazaalı olduğunu, davalının da taşınmazı iyiniyetli 3. kişiye satış suretiyle devrettiğini ileri sürerek, taşınmazın dava tarihindeki değeri belirlenerek miras payı karşılığı tazminatın yasal faizi ile birlikte davalıdan tahsiline karar verilmesini istemiştir.</p>
+
+<p>Davalı, zamanaşımı itirazında bulunup davanın reddini savunmuştur.</p>
+
+<p>Mahkemece, iddianın sabit olduğu gerekçesiyle davanın kısmen kabulüne karar verilmiştir.</p>
+
+<p>Dosya içeriği ve toplanan delillerden, mirasbırakan … ’un, … parsel sayılı taşınmazını 19.01.1984 tarihinde dava dışı ara malik … ’a … ’nin de 23.12.1985 tarihinde davalı … ’a, … ’in de 03.01.2008 tarihinde dava dışı … ’na satış suretiyle devrettiği, 20.01.2010 tarihinde şuyulandırma ile … ada … ve … parsellerin oluştuğu, 1947 doğumlu murisin 21.08.1991 tarihinde öldüğü, geride mirasçı olarak davacı kızı … , davalı oğlu … , dava dışı kızları … ile … ’nin kaldıkları, eldeki davada mahkemece 440.591,05 TL tazminata hükmedildiği, dava dışı mirasçı … tarafından aynı taşınmaza ilişkin davalı … aleyhine … 4. Asliye Hukuk Mahkemesinin 2012/641 Esas sayılı dosyası ile açılan dava sonucunda ise 429.700,03 TL tazminata hükmedildiği, her iki mahkeme tarafından yaptırılan bilirkişi incelemesi sonucu temin edilen bilirkişi raporlarında tazminat miktarların farklı belirlendiği anlaşılmaktadır.</p>
+
+<p>Hemen belirtilmelidir ki, bir davada aynı maddi vakıalara dayanılarak ileri sürülen isteklerin birlikte incelenmesinde, sağlıklı bir hukuki değerlendirme yapılabilmesi bakımından hukuki yarar bulunduğu kuşkusuzdur.</p>
+
+<p>Nitekim değinilen ilke, 6100 sayılı Hukuk Usulü Muhakemeleri Kanunu’nun (HMK) aralarında bağlantı bulunan davaların birleştirilmesi hakkındaki 166. maddesinde de benimsenmiş ve anılan maddenin 1. fıkrasında; “Aynı yargı çevresinde yer alan aynı düzey ve sıfattaki hukuk mahkemelerinde açılmış davalar, aralarında bağlantı bulunması durumunda, davanın her aşamasında, talep üzerine veya kendiliğinden ilk davanın açıldığı mahkemede birleştirilebilir. Birleştirme kararı, ikinci davanın açıldığı mahkemece verilir ve bu karar, diğer mahkemeyi bağlar.” hükmü düzenlenmiştir.</p>
+
+<p>Somut olayda, farklı mirasçılar tarafından aynı taşınmazlara yönelik aynı davalı aleyhine açılan tazminat istekli davaların birlikte değerlendirilmesi, uyuşmazlığın taraflar açısından daha sağlıklı, adil ve hızlı bir çözüme kavuşturulması için gereklidir.</p>
+
+<p>Hal böyle olunca, eldeki dava ile … 4. Asliye Hukuk Mahkemesinin 2012/641 E sayılı dosyasının 6100 sayılı Hukuk Muhakemeleri Kanununun 166. maddesi gözetilerek birleştirilmesi ve bilirkişi raporları arasındaki çelişkinin giderilmesi, davacının mahkeme kararındaki tazminat miktarını temyiz etmediği gözetilerek davalı lehine oluşan kazanılmış hak kuralı da gözetilerek hasıl olacak sonuca göre bir karar verilmesi gerekirken eksik inceleme ile yazılı şekilde karar verilmesi doğru değildir.</p>
+
+<p>Davalının bu yöne ilişkin yerinde bulunan temyiz itirazlarının kabulü ile hükmün (6100 sayılı Yasanın geçici 3.maddesi yollaması ile) 1086 sayılı HUMK’un 428.maddesi gereğince BOZULMASINA, alınan peşin harcın temyiz edene geri verilmesine, 05.06.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. HUKUK DAİRESİ
+Esas : 2016/19695 Karar : 2018/7355</strong> Tarih : 6.06.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 166. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Davaların Birleştirilmesi</strong></p>
+  </li>
+</ul>
+
+<p>1-Dosyadaki yazılara, kararın dayandığı delillerle kanuna uygun sebeplere ve özellikle delillerin takdirinde bir yanlışlık görülmemesine göre, davacı-karşı davalı kadının aşağıdaki bentlerin kapsamı dışında kalan temyiz itirazları yersizdir.</p>
+
+<p>2-Davacı-karşı davalı kadın ve davalı-karşı davacı erkek tarafından karşılıklı olarak şiddetli geçimsizlik (HMK m. 166/1) hukuki sebebine dayalı olarak boşanma davası açılmış, mahkemece, her iki davanın kabulü ile tarafların boşanmalarına karar verilmiştir. Yapılan yargılama ve toplanan delillerden erkeğe yüklenilen, kadının ilk eşinden olan çocuğuna hakaret etmesi, evin ihtiyaçları ve geçimiyle ilgilenmemesi, kadın belini incittiğinde tedavisiyle ilgilenmemesi kusurlarının yanında, erkeğin kadına oğlunla kırıştırdın mı dediği ve hakaret ettiği anlaşılmaktadır. Mahkemece, kadının da erkeğe hakaret ettiği gerekçesi ile erkeğin davasının kabulüne karar verilmiş ise de, erkeğin dilekçeler aşamasında kadının kendisine hakaret ettiği vakıasına dayanmadığı görülmektedir. Dayanılmayan vakıa kusur belirlemesine esas alınamaz. Bu durumda, kadının boşanmayı gerektiren kusurlu bir davranışı kanıtlanamamıştır. Erkeğin davasının reddi gerekirken kabulü doğru olmamıştır. Kadının boşanma davası temyize konu olmamış ve kesinleşmiştir. Bu durumda erkeğin davası konusuz kalmıştır. Mahkemece erkeğin davası konusuz kaldığından karar verilmesine yer olmadığına karar verilmek ve haklılık durumuna göre yargılama ile vekalet ücreti giderleri ile konusundan hüküm verilmek üzere hükmün bozulmasına karar vermek gerekmiştir.</p>
+
+<p>3-Yapılan yargılama ve toplanan delillerden mahkemece erkeğe yüklenilen, kadının ilk eşinden olan çocuğuna hakaret etmesi, evin ihtiyaçları ve geçimiyle ilgilenmemesi, kadın belini incittiğinde tedavisiyle ilgilenmemesi kusurlarının yanında, erkeğin kadına oğlunla kırıştırdın mı dediği ve küçük düşürücü şekilde hitap ettiği anlaşılmaktadır. Bu duruma göre; boşanmaya sebebiyet veren vakıalarda davalı-karşı davacı erkeğin ağır kusurlu olduğu ve davacı-karşı davalı kadının kişilik haklarının saldırıya uğradığı anlaşılmaktadır. Türk Medeni Kanununun 174/2. maddesi, boşanmaya sebep olan olaylar yüzünden kişilik hakkı saldırıya uğrayan tarafın, kusurlu olandan manevi tazminat isteyebileceğini öngörmüştür. Toplanan delillerden evlilik birliğinin temelinden sarsılmasına sebep olan olaylarda tazminat isteyen davacı-karşı davalı kadının ağır yada eşit kusurlu olmadığı, bu olayların onun kişilik haklarına saldırı teşkil ettiği anlaşılmaktadır. O halde mahkemece, tarafların sosyal ve ekonomik durumları, tazminata esas olan fiilin ağırlığı ile hakkaniyet kuralları (TMK m. 4. TBK m. 50, 51) dikkate alınarak davacı-karşı davalı kadın yararına uygun miktarda manevi tazminata hükmedilmesi gerekir. Bu yönün dikkate alınmaması doğru görülmemiş, bozmayı gerektirmiştir.</p>
+
+<p>SONUÇ: Temyiz edilen hükmün yukarıda 2. ve 3. bentlerde gösterilen sebeplerle BOZULMASINA, bozma kapsamı dışında kalan bölümlerinin ise yukarıda 1. bentte gösterilen sebeple ONANMASINA, temyiz peşin harcının istek halinde yatırana geri verilmesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere oybirliğiyle karar verildi. 06.06.2018 (Çrş.)</p>
+
+<hr>
+
+<p><strong>YARGITAY 17. HUKUK DAİRESİ
+Esas : 2015/2769 Karar : 2017/8638</strong> Tarih : 5.10.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 166. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Davaların Birleştirilmesi</strong></p>
+  </li>
+</ul>
+
+<p>Asıl dosyada davacı vekili, … plaka sayılı aracın davalı şirket tarafından mali mesuliyet (trafik) sigortası ile sigortalı olduğunu, 22.07.2010 tarihinde müvekkili … yolcu olarak bulunurken kaza meydana geldiğini, bu kaza nedeniyle sigorta şirketinin müvekkiline tazminat ödemekle yükümlü olduğunu, müvekkilinin kaza esnasında hamile olduğunu ve kaza nedeniyle çocuğunu kaybettiğini, müvekkilinin mağdur olduğunu ve yatağa bağlı duruma geldiğini, müvekkilinin çocuklarının geçimini sağlamakla yükümlü olduğunu, kaza sonucunda müvekkile 2 ay boyunca yatak istirahati önerildiğini, ayrıca kaza nedeniyle müvekkilinin yüzünde kalıcı izler meydana geldiğini, davalı … şirketine ihtarname göndermelerine rağmen herhangi bir ödeme yapılmadığını bu nedenlerle davalı … şirketinden 8.000 TL maddi tazminatın olay tarihinden itibaren işleyecek ticari faizle birlikte müvekkiline ödenmesine karar verilmesini talep etmiştir.</p>
+
+<p>Birleştirilen dosyada davacı vekili, aynı kaza nedeni ile hizmet kusuruna dayanarak davalı kurumdan müvekkilinin uğramış olduğu zarar karşılığı olarak 10.000,00 TL maddi, 50.000,00 TL manevi tazminatın fazlaya ilişkin talep ve dava hakları saklı kalmak kaydıyla tahsilini talep etmiştir. 
+Davalılar vekilleri, asıl ve birleşen dosyada açılan davanın reddini savunmuştur.</p>
+
+<p>Mahkemece, iddia, savunma ve toplanan delillere göre; 6100 sayılı HMK`nın 114/1-g ve 115/2, 448 maddeleri gereğince yatırılması gereken gider avansının yatırılmamış olması nedeniyle dava şartı yokluğundan davanın usulden reddine karar verilmiş; hüküm, asıl-birleşen davada davacı vekili tarafından temyiz edilmiştir.</p>
+
+<p>1-) Asıl dava, trafik kazasından kaynaklı cismani zarar nedeni ile maddi tazminat istemine, birleşen dava trafik kazasından kaynaklı cismani zarar nedeni ile maddi ve manevi tazminat istemine ilişkindir. Bir usul hükmünün yürürlüğe girmesinden sonra bir dava açılırsa, bu davaya yeni usul kurallarının uygulanması esastır. Dava konusu işlemin daha önce yapıldığı ileri sürülerek, o sırada geçerli kuralların uygulanması istenemez. Ancak yeni hükümlerin ne zaman yürürlüğe gireceği açıkça düzenlenmişse, bu düzenleme dikkate alınacaktır. Buna ilişkin hüküm yoksa, usul işleminin tamamlanıp tamamlanmadığına bakılması gerekir. Eğer bir usul işlemi tamamlandıktan sonra yeni kural yürürlüğe girerse o işlem geçerli olarak kalır. Buna karşılık bir usul işlemi henüz tamamlanmamış veya başlamamış ise, yeni kanun, kural olarak hemen yürürlüğe girecektir. Çünkü genel olarak kanunlar hemen etkili olur ve uygulanırlar (Prof.Dr.Hakan Pekcanıtez ,Medeni Usul Hukuku, Ankara 2000,syf 47 vd.) .</p>
+
+<p>Somut olayda, asıl dava 11.03.2011 tarihinde, birleşen dava 20.04.2011 tarihinde 1086 sayılı HMUK’nın yürürlükte olduğu zamanda açılmıştır. Dava açılırken yürürlükte olan HMUK gereği alınması gereken harç ve yargılama giderleri alınmış ve bu işlem tamamlanmıştır. O halde, mahkemece 23.02.2012 tarihli celsede “01/10/2011 tarihinden itibaren 6100 sayılı HMK’nın yürürlüğe girdiği, gider avansı, tarifesine göre taraf sayısının 5 katı olan katı tutardaki 105 TL tebligat gideri, diğer iş ve işlemler için 50 TL, keşif ve bilirkişi incelemesi talep edildiğinden 129,20 TL keşif harcı, 750 TL bilirkişi gideri ,150 TL ulaşım gideri, olmak üzere toplam, 1184,20 TL tutarın yatırılmadığı, bu tutarın yatırılmasının dava şartı olduğu ve gider avansının sonradan ikmalinin mümkün olduğu anlaşılmakla 6100 sayılı HMK’nın 448, 114,115,120/2 maddesi gereği 2 haftalık kesin süre içerisinde davacı tarafça Yazı İşleri Müdürlüğü kasasında depo ettirilmesine, kesin süre içerisinde eksiksiz olarak dava şartı olan avans ikmal edilmediği taktirde aynı yasanın 115/2 maddesine göre davanın, dava şartı yokluğundan reddedileceğinin ihtarına bu hususta davacı vekiline ihtaratlı müzekkere yazılmasına, ihtar ve duruşma zaptı örneğinin davacı vekiline tebliğine masrafın davacı tarafça karşılanmasına” dair ara karar kurması ve 6100 sayılı HMK`nın 114/1-g ve 115/2, 448 maddeleri gereğince yatırılması gereken gider avansının yatırılmamış olması nedeniyle dava şartı yokluğundan davanın usulden reddine karar verilmesi hatalı olmuştur.</p>
+
+<p>2-) 1086 Sayılı HUMK’nun 388 ve 389. maddeleri ile 6100 Sayılı HMK’nun karşılık 297/1-2 maddeleri uyarınca, mahkeme kararında; hüküm sonucunun, taraflara yükletilen hak ve sorumlulukların şüphe ve tereddüt uyandırmayacak şekilde ayrı ayrı ve açıkça gösterilmesi gerekir. Ayrıca; 1086 Sayılı HUMK’nun 45. maddesi ile 6100 Sayılı HMK`nun karşılık 166. maddesi uyarınca, birleştirilen dava dosyaları birbirlerinden bağımsız ayrı bir dava olup, birleştirilen her dava hakkında usul hükümlerine göre ayrı ayrı hüküm kurulması gerekir. Yukarıda belirtilen ilkeler gözardı edilerek, infazda tereddüt oluşturacak şekilde asıl ve birleştirilen davalar yönünden ayrı ayrı hüküm kurulmamış olması doğru görülmediğinden, kararın açıklanan nedenlerle bozulması gerekmiştir.</p>
+
+<p>O halde mahkemece yapılacak iş, her bir dava için iddia ve savunmalar irdelenip gerekçelendirme yapılarak, sonrasında da asıl ve birleşen davalar için ayrı ayrı hüküm kurmak olacaktır.</p>
+
+<p>SONUÇ: Yukarıda (1) ve (2) numaralı bentlerde açıklanan nedenlerle asıl-birleşen davada davacı vekilinin temyiz itirazlarının kabulü ile hükmün 
+BOZULMASINA, peşin alınan harcın istek halinde temyiz eden asıl-birleşen davada davacıya geri verilmesine 05/10/2017 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 12. HUKUK DAİRESİ 
+Esas : 2016/27455 Karar : 2017/9492</strong> Tarih : 15.06.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 166. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Davaların Birleştirilmesi</strong></p>
+  </li>
+</ul>
+
+<p>1- Şikayetçiler … ve …`ın temyiz itirazlarının incelenmesinde;</p>
+
+<p>Tarafların iddia ve savunmalarına, dosya içeriğindeki bilgi ve belgelere ve kararın gerekçesine göre şikayetçiler … ve …`ın temyiz itirazlarının (REDDİNE),</p>
+
+<p>2- Şikayetçi … vasisinin temyiz itirazlarının incelenmesinde;</p>
+
+<p>6100 sayılı HMK`nun 166. maddesine göre ayrı ayrı açılmış davaların aralarında bağlantı bulunmaları halinde birleştirilerek bakılabilmeleri mümkündür. Ancak, birleştirme kararı, taraflar arasındaki uyuşmazlığı esastan çözümleyen bir karar değildir. Bu karar, sadece birleştirilen davaların yargılama safhalarının müşterek cereyan etmesi sonucunu doğurup, her dava, ayrı ayrı hükme bağlanmalıdır. Davaların birbirlerinin içerisinde erimesi, tek bir davaya dönüşmesi gibi bir durum söz konusu değildir. Başka bir anlatımla, birleştirmeye konu davalar bağımsız kimliklerini korurlar.</p>
+
+<p>Dosya içeriğinden asıl davanın davacısı … tarafından ihalenin feshi istemiyle dava açıldığı, davacılar … ve … vasisi tarafından ayrı ayrı açılan ihalenin feshi davalarının da mahkemece asıl dava ile birleştirildiği, bu haliyle somut uyuşmazlıkta, asıl ve birleşen davalar mevcut olmasına rağmen … vasisi tarafından açılan birleşen 2016/284 Esas sayılı dava dosyası hakkında ayrı hüküm kurulmaksızın istemin reddine karar verildiği görülmektedir.</p>
+
+<p>O halde mahkemece, yukarıda açıklanan ilkeler göz önünde bulundurularak her bir dava için ayrı ayrı hüküm tesis edilmesi gerekirken anılan ilkelere aykırı olarak birleşen 2016/284 Esas sayılı dava dosyası hakkında ayrı hüküm kurulmadan karar verilmesi isabetsizdir.</p>
+
+<p>SONUÇ:</p>
+
+<p>Şikayetçi … vasisinin temyiz itirazının yukarıda (2) nolu bentte yazılı nedenle kabulü ile ( BOZULMASINA ), karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 15. HUKUK DAİRESİ 
+Esas : 2016/2170 Karar : 2017/1928</strong> Tarih : 5.05.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 166. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Davaların Birleştirilmesi</strong></p>
+  </li>
+</ul>
+
+<p>Islah edilen asıl dava eser sözleşmesinden kaynaklanan bakiye iş bedeli ve sözleşme dışı işler bedelinin tahsili, ıslah edilen karşı dava ise; iş sahibince yüklenici adına ödenen … işçilik primi ve zarara uğrayan malzeme bedelinin tahsili istemlerine ilişkin olup, mahkemece asıl davanın kabulüne, karşı davanın kısmen kabulüne dair verilen karar taraf vekillerince temyiz edilmiştir.</p>
+
+<p>Bu dava dosyası ile birleştirilmesine karar verilen … …. Asliye Hukuk Mahkemesi’nin 2015/251 Esas ve 2015/261 karar sayılı dosyasında davacı-karşı davalı …, taşeron sözleşmesi gereğince fazlaya ilişkin hakları saklı kalmak kaydıyla ödenmeyen hakediş alacağı olan 194.873,00 TL’nin ….02.2012 tarihinden itibaren ticari faizi ile davalıdan tahsiline karar verilmesini ve bu davanın … …. Asliye Hukuk Mahkemesi’nin 2012/232 Esas sayılı dosyasındaki taleplere ek olarak açıldığından … …. Asliye Hukuk Mahkemesi’nin 2012/232 Esas sayılı dosyası ile birleştirilmesine karar verilmesini talep etmiş, mahkemece de bu dava ile…. …. Asliye Hukuk Mahkemesi’nin 2012/232 Esas sayılı dava dosyası arasında hukuki ve fiili irtibat bulunduğu değerlendirilerek HMK’nın 166. maddesi uyarınca davaların birleştirilmesine, yargılamanın … …. Asliye Hukuk Mahkemesi’nin 2012/232 Esas sayılı dosyası üzerinden yürütülmesine karar verilmiştir. Söz konusu birleştirme kararının davalı vekili tarafından temyizi üzerine Dairemizin 05.05.2016 tarih 2015/4024 Esas ve 2016/2628 Karar sayılı ilamı ile aynı yer mahkemesince verilen birleştirme kararlarının müstakilen temyiz edilemeyeceği ancak esas hükümle birlikte temyiz edilebileceği gerekçesi ile temyiz talebinin reddine karar verilmiştir.</p>
+
+<p>Mahkemece dava dosyası ile birleştirilen … …. Asliye Hukuk Mahkemesi’nin 2015/251 Esas ve 2015/261 Karar sayılı dosyasının temyizden dönüşünün beklenmesine karar verilmiş ancak taraf vekillerinin birleşen dosya beklenilmeden karar verilmesi talepleri üzerine, birleşen dosyanın beklenilmesi yönündeki ara karardan dönülerek birleştirme kararının temyiz edilmiş olması nedeniyle …‘da bulunması ve dosyanın beklenilmesinin yargılamayı uzatıcı mahiyette olacağı gerekçesi ile birleştirilmesine karar verilen dosyanın dosya arasına alınması beklenilmeden asıl ve karşı dava hakkında karar verilmiş, birleşen … …. Asliye Hukuk Mahkemesi’nin 2015/251 Esas ve 2015/261 Karar sayılı dosyası hakkında olumlu veya olumsuz bir karar verilmediği anlaşılmıştır.</p>
+
+<p>6100 sayılı HMK’nın Hükmün Kapsamı başlıklı 297. maddesinin …. bendi hükmüne göre; hükmün sonuç kısmında, gerekçeye ait herhangi bir söz tekrar edilmeksizin, taleplerden her biri hakkında verilen hükümle, taraflara yüklenen borç ve tanınan hakların, sıra numarası altında; açık, şüphe ve tereddüt uyandırmayacak şekilde gösterilmesi gerekli ve zorunludur.</p>
+
+<p>Mahkemece asıl, karşı ve birleşen dava dosyası olmak üzere üç dava dosyası bulunmasına rağmen birleşen dava dosyası ile ilgili karar verilmemesi doğru olmamıştır.</p>
+
+<p>O halde mahkemece yapılması gerekli iş; açılan üç davanın talepleri incelenmek suretiyle açılan davalar hakkında hükümde karışıklığa meydan vermeyecek şekilde 6100 sayılı HMK’nın 297. maddesine uygun karar vermekten ibaret olmalıdır.</p>
+
+<p>Açıklanan nedenlerle hükmün bozulması uygun bulunmuştur.</p>
+
+<p>SONUÇ: Yukarıda açıklanan nedenlerle hükmün taraflar yararına BOZULMASINA, bozma nedenine göre tarafların sair temyiz itirazlarının şimdilik incelenmesine yer olmadığına, ….480,00’er TL duruşma vekillik ücretinin taraflardan karşılıklı olarak alınarak …‘daki duruşmada vekille temsil olunan diğer tarafa verilmesine, ödedikleri temyiz peşin harçlarının istek halinde temyiz eden taraflara geri verilmesine, karara karşı tebliğ tarihinden itibaren … gün içinde karar düzeltme isteminde bulunulabileceğine 05.05.2017 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 20. HUKUK DAİRESİ 
+Esas : 2015/13306 Karar : 2017/2401</strong> Tarih : 23.03.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 166. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Davaların Birleştirilmesi</strong></p>
+  </li>
+</ul>
+
+<p>Davacı … Yönetimi vekili 26.06.2012 havale tarihli dilekçesiyle, … köyünde yapılan 3302 sayılı Kanunun 2/B madde uygulaması sırasında, P.CLXXIII (173) poligon numarasıyla belirlenen taşınmazın; aynı tarihli birleşen dosya dava dilekçesinde ise P.CLXXII (172) poligon numarasıyla belirlenen taşınmazın 31.12.1981 tarihinden önce bilim ve fen bakımından … niteliğini kaybetmedikleri halde, … Kadastro Komisyonunca … sınırları dışına çıkarıldıkları iddiasıyla, dava konusu P.CLXXII (172) ve P.CLXXIII (173) poligon numaralı taşınmazların … sınırları dışına çıkarma işlemenin iptali ile bu taşınmazların … vasfıyla Hazine adına tapuya kayıt ve tescilleri ile beyanlar hanesindeki şerhlerin terkini istemleriyle her bir taşınmaz yönünden ayrı ayrı dava açmıştır.</p>
+
+<p>Mahkemece, HMK’nın 166. maddesi gereğince davalar birleştirilerek yapılan yargılama sonucunda, davanın kabulüne ve dava konusu… köyü, P.CLXXII (172) ve P.CLXXIII (173) poligon numaralı taşınmazlar hakkındaki 6831 sayılı Kanunun 2/B madde uygulamasının iptali ile taşınmazların … sınırları içerisine alınmasına karar verilmiş, hükmün davalı Hazine vekili tarafından temyiz edilmesi üzerine Dairenin 10/02/2014 tarih 2013/5710 E-2014/1594 K sayılı kararı ile bozulmuştur.</p>
+
+<p>Hükmüne uyulan bozma kararında özetle; [ “6831 sayılı Kanunun 11. maddesine göre, … sınırları dışına çıkarma işlemlerine karşı … Genel Müdürlüğünce açılacak davalarda hasım, hak sahibi gerçek ve tüzel kişiler ile Çevre ve … Bakanlığıdır (… ve Su İşleri Bakanlığı). … Yönetimi ise, sadece Hazineyi taraf göstererek eldeki davayı açmıştır. Ancak, Hazinenin bu tür davalarda taraf sıfatı bulunmamaktadır.</p>
+
+<p>Bilindiği üzere taraf ehliyeti, 6100 sayılı HMK’nın 114/1-d maddesine göre dava şartıdır. Mahkeme, dava şartı noksanlığını tesbit ederse, davanın usûlden reddine karar verir. Ancak, dava şartı noksanlığının giderilmesi mümkün ise, bunun tamamlanması için kesin süre verir. Bu süre içinde dava şartı noksanlığı giderilmemişse, davayı dava şartı yokluğu sebebiyle usûlden reddeder (HMK’nın 115/2. maddesi). Yine, HMK’nın “Tarafta İradî Değişiklik” başlığını taşıyan 124. maddesinde aynen “Bir davada taraf değişikliği, ancak, karşı tarafın açık rızası ile mümkündür. Bu konuda kanunlarda yer alan özel hükümler saklıdır. Ancak, maddî bir hatadan kaynaklanan veya dürüstlük kuralına aykırı olmayan taraf değişikliği talebi, karşı tarafın</p>
+
+<p>rızası aranmaksızın hâkim tarafından kabul edilir. Dava dilekçesinde tarafın yanlış veya eksik gösterilmesi kabul edilebilir bir yanılgıya dayanıyorsa, hâkim karşı tarafın rızasını aramaksızın taraf değişikliği talebini kabul edebilir. Bu durumda hâkim, davanın tarafı olmaktan çıkarılan ve aleyhine dava açılmasına sebebiyet vermeyen kişi lehine yargılama giderlerine hükmeder.” denilmektedir.</p>
+
+<p>O halde, mahkemece; öncelikle, kanunî prosedüre uygun olarak HMK’nın 115/2. maddesine göre, davacı … Yönetimine, davayı doğru hasma yöneltmesi için kesin süre verilmeli, HMK’nın 124. maddesine göre usûlüne uygun olarak davalı tarafta değişiklik yapılsa dahi davacı … Yönetiminin Hazineye karşı açtığı davanın pasif sıfat yokluğu sebebiyle reddine karar verilmelidir. … Yönetimi, verilecek kesin süre içinde husumeti doğru hasma yöneltir ve tarafta iradî değişiklik HMK’nın 124. maddesinde açıklandığı şekliyle sağlanabilirse (karşı tarafın açık rızası veya maddenin üçüncü ve dördüncü fıkralarında açıklanan hususlarla sınırlı olmak üzere hâkimin gerekçeli kabulüyle) mahkemece varsa çekişmeli taşınmazı fiilen kullanan kişi veya kişiler (hak sahibi kişi veya kişiler) ile Çevre ve … Bakanlığının (… ve Su İşleri Bakanlığının) davaya katılımı sağlanarak husumet yaygınlaştırılmalı ve tarafların savunma ve delillerini bildirmesine olanak tanındıktan sonra işin esasına girilmelidir.</p>
+
+<p>Açıklanan hususlar gözetilmeksizin yazılı şekilde hüküm kurulması usûl ve kanuna aykırıdır.”] denilmiştir.</p>
+
+<p>Mahkemece bozma kararına uyulmasının ardından yapılan yargılama sonunda; dava konusu taşınmazların dört tarafının ormanla çevrili humuslu … toprağına sahip … vasfında olup … niteliğini yitirmedikleri gerekçesiyle davanın kabulüne, taşınmazlar hakkındaki 2/B uygulamasının iptali ile taşınmazların … sınırları içerisine alınmasına karar verilmiş, hüküm davalı Hazine vekili ve … tarafından esasa ilişkin olarak temyiz edilmiştir.</p>
+
+<p>Dava dilekçesindeki açıklamaya göre dava, altı aylık süre içinde açılan 6831 sayılı Kanunun 2/B madde uygulamasına itiraza ilişkindir.</p>
+
+<p>Çekişmeli taşınmazın bulunduğu yerde dava tarihinden önce 3116 sayılı Kanun hükümlerine göre yapılıp 11.09.1949 tarihinde ilân edilerek kesinleşen … kadastrosu, daha sonra 2003-2007 yılları arasında yapılıp 30.12.2011 tarihinde ilân edilerek itirazlı yerler yönünden kesinleşen, eldeki dava yönünden ise kesinleşmeyen evvelce sınırlaması yapılmamış ormanların kadastrosu ve evvelce sınırlaması yapılmış ormanlarda 3302 sayılı Kanun ile değişik 6831 sayılı Kanunun 2/B madde uygulaması bulunmaktadır.</p>
+
+<p>1)Davalı …’nın temyiz itirazları yönünden mahkemece yapılan araştırmaya, hükme esas alınan bilirkişinin usulünce yaptığı araştırma sonucu, çekişmeli taşınmazın toprağının … toprağı olduğu, eylemli … vasfının yakın zamanda zorla yok edildiği ve 31.12.1981 tarihinden önce doğal yollardan … niteliğini yitiren yerlerden olmadığı belirlenerek davanın kabulüne karar verilmesinde bir isabetsizlik bulunmadığına göre davalı kişinin temyiz itirazlarının reddine karar vermek gerekmiştir.</p>
+
+<p>2)Davalı Hazinenin temyiz itirazlarına gelince, mahkemece bozma kararına uyulduğu halde, bozma gerekleri yerine getirilmemiştir. Şöyle ki; hükmüne uyulan bozma kararında, 6831 sayılı Kanunun 11.maddesine göre … sınırları dışına çıkarma işlemlerine karşı … Genel Müdürlüğünce açılacak davalarda hasım, hak sahibi gerçek ve tüzel kişiler ile Çevre ve … Bakanlığı (… ve Su İşleri Bakanlığı) olacağından, … Yönetiminin sadece Hazineyi taraf göstererek açtığı eldeki davada Hazine aleyhine açılan davanın pasif sıfat yokluğu</p>
+
+<p>sebebiyle reddine karar verilmesi gereğine değinilmesine rağmen, mahkemece bozma sonrası yapılan yargılama sonrasında sadece davanın kabulüne ilişkin hüküm kurulmuş, davalı Hazine bakımından açılan davanın reddine ilişkin hüküm kurulmaması doğru görülmemiştir.</p>
+
+<p>SONUÇ : 1) Yukarıda birinci bentte açıklanan nedenlerle; davalı …‘nın temyiz itirazlarının REDDİNE, temyiz harcının istek halinde iadesine,</p>
+
+<p>2) Yukarıda ikinci bentte açıklanan nedenlerle; davalı Hazinenin temyiz itirazlarının kabulü ile hükmün bu yönden BOZULMASINA 23/03/2017 günü oy birliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 23. HUKUK DAİRESİ
+Esas : 2015/6696 Karar : 2017/863</strong> Tarih : 20.03.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 166. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Davaların Birleştirilmesi</strong></p>
+  </li>
+</ul>
+
+<p>Davacı vekili, müvekkili bankanın dava dışı borçlu … hakkında … 2. İcra Müdürlüğü’nün 2013/2863 E. sayılı dosyasında 450.000,00 TL tutarlı ve 665.000,00 TL tutarlı iki ayrı senet yönünden yaptığı icra takibinin kesinleştiğini, borçlunun … Merkez 2116 ada 3 parsel 1 no’lu bağımsız bölümüne haciz yaptıklarını, satış işlemleri sonrası anılan dosyada ihale yapıldığını ve sonrasında sıra cetveli düzenlendiğini, söz konusu sıra cetvelinde 1., 2. ve 3. sırasında pay ayrılan davalıların icra takibine konu ettiği alacaklarının gerçek bir alacak olmadığını, muvazaalı olduğunu ileri sürerek, davalıların alacaklarının muvazaalı olduğunun tespiti ile takip dosyalarının sıra cetvelinden çıkartılmasını talep ve dava etmiştir.</p>
+
+<p>Davalı … vekili, müvekkillerinin ihtiyati hacizlerinin davacının icra takibine girişmesinden önce kesinleştiğini, muvazaa iddialarını kabul etmediğini, bononun illetten mücerret olduğunu savunarak, davanın reddini istemiştir.</p>
+
+<p>Davalı … vekili, müvekkil ile dava dışı borçlu arasında ticari ilişki bulunduğunu, borçlunun işleri kötü gidince müvekkilinin borçluya verdiği ödünç paraya karşılık takibe konu senedi aldığını, daha sonra borçlu ile müvekkili arasında husumet oluştuğunu savunarak, davanın reddini istemiştir.</p>
+
+<p>Mahkemece, iddia, savunma, bilirkişi raporu ve tüm dosya kapsamına göre, muvazaa iddiasına dayalı sıra cetveline itiraz davalarında ispat yükünün kural olarak davalı alacaklı üzerinde olduğu, davalının alacağın varlığını ve miktarını usulüne uygun delillerle kanıtlamak zorunda olduğu, her zaman düzenlenmesi mümkün olan bono, çek, vs. gibi belgelerin alacağın varlığını ispatlamaya tek başına yeterli olmadığı, davalı … vekilinin borçlu ile aralarındaki ticari ilişki bulunduğunu gösterir belgeler olduğunu iddia ettiği çeklerin bir çoğunda davalı …‘ın alacaklı sıfatının bulunmadığı, bu gibi belgelerin her zaman düzenlenmesinin mümkün olduğu, davalı …‘ın ise iddiasını ispata yarar yeterli delil sunamadığı, dolayısıyla davalıların borçludan olan alacaklarının varlığını ispata yönelik yeterli delil ibraz edemedikleri, davalıların icra takibinin dayanağını oluşturan senetlerden kaynaklanan alacaklarının gerçek bir hukuki ilişkiye dayandığını takipten önce düzenlenmiş ve birbirini teyit eden usulüne uygun delillerle ispatlayamadıkları gerekçesiyle, davanın kabulü ile sıra cetvelinde davalılara ayrılan paydan davacının alacağına yeteri kadar miktarın davacıya ödenmesine karar verilmiştir.</p>
+
+<p>Kararı, davalılar vekilleri temyiz etmiştir.</p>
+
+<p>1- Dosyadaki yazılara, kararın dayandığı delillerle gerektirici sebeplere, delillerin takdirinde bir isabetsizlik bulunmamasına göre, davalılar vekillerinin temyiz itirazları yerinde görülmemiştir.</p>
+
+<p>2-Dava, muvazaa nedenine dayalı sıra cetveline itiraza ilişkindir.</p>
+
+<p>Aynı sıra cetveli için muhtelif alacaklılar tarafından farklı tarihlerde, aynı alacaklılara husumet yöneltilerek davalar açılmış olması halinde açılan tüm davaların birlikte incelenerek varılacak uygun sonuç çerçevesinde tek bir kararla sonuçlandırılması, birbiriyle çelişik hükümlerin engellenmesi açısından ve bir davada verilen kararın diğer davanın sonucunu etkileme olasılığından kaynaklanan bir zorunluluktur. Bu durumda davaların birleştirilerek yargılama yapılması, sıra cetveline ilişkin özel usul hükümlerinden kaynaklanmaktadır. Aynı sıra cetveline yönelik farklı davalar hakkında ayrı ayrı hüküm kurulması; kararların infazında da şüphe ve tereddütlere neden olması ve uyuşmazlıkların uzun süre devam etmesi ihtimalini de doğurabilecektir.</p>
+
+<p>Dairemize, temyiz incelemesi için gönderilen aynı Mahkeme’nin aynı sıra cetveline yönelik 2014/488 E. sayılı ve 2014/474 E. sayılı davaların bulunduğu anlaşılmıştır.</p>
+
+<p>Bu durumda mahkemece, aynı sıra cetveline karşı, aynı mahkemede açılmış yukarıda anılan davaların HMK’nın 166/4. maddesi uyarınca birbiriyle bağlantılı olduğunun kabulü ile davaların birleştirilmesi ve sonucuna göre karar verilmesi gerektiğinin düşünülmemesi doğru olmamıştır.</p>
+
+<p>SONUÇ: Yukarıda (1) numaralı bentte açıklanan nedenlerle, davalılar vekillerinin temyiz itirazlarının reddine, (2) numaralı bentte açıklanan nedenlerle hükmün re’sen BOZULMASINA, aşağıda yazılı onama harçlarının temyiz edenlerden alınmasına, kararın tebliğinden itibaren 15 gün içerisinde karar düzeltme yolu açık olmak üzere, 20.03.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 12. HUKUK DAİRESİ
+Esas : 2016/11525 Karar : 2017/3080</strong> Tarih : 2.03.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 166. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Davaların Birleştirilmesi</strong></p>
+  </li>
+</ul>
+
+<p>Borçlu … Ltd. Şti’nin icra mahkemesine başvurusunda; takip dayanağı çekin keşide tarihinde tahrifat yapıldığını, birleşen dosya şikayetçileri olan borçlular … ile …‘in ise, aynı şikayet ile beraber ciranta olan borçluların, çek tazminatından sorumlu olmadığını ileri sürerek takibin iptalini talep ettikleri, mahkemece, asıl ve birleşen şikayetin reddine karar verildiği, mahkeme kararının, şikayetçi borçlularca temyiz edilmesi üzerine, Dairemizin 17.4.2015 tarih ve 2015/623 Esas – 10125 Karar sayılı ilamı ile, sair temyiz itirazları reddedilerek, cirantaların çek tazminatından sorumlu olmadığı, mahkemece bu konuda olumlu – olumsuz bir karar verilmesi gerektiğinden bahisle kararın bozulduğu, mahkemece, Dairemizin bozma ilamından sonra dosyanın yeni esasa kaydedildiği ve 20.10.2015 tarihli duruşmada bozmaya uyulmasına karar verilerek şikayetin kabulüne hükmedildiği görülmektedir.</p>
+
+<p>Mahkemece, Yargıtay bozma ilamına uyulmasına karar verilmesi halinde ( 6100 sayılı HMK’nun 373. maddesi) mahkeme artık bu uyma kararı ile bağlıdır. Bozmaya uyulmakla, bozma lehine olan taraf yararına usulü kazanılmış hak doğmuş olur (HGK 2010/9-71 E., 2010/87 K.).</p>
+
+<p>Aynı konudaki 04.02.1959 gün ve 1957/13-E. 1959/5 K. sayılı Yargıtay İçtihadı Birleştirme Kararında da (R.G. 28.04.1959 gün ve sayı:10193), usuli kazanılmış hakkın hukukumuzdaki yeri; “Temyiz merciince bir kararın bozulması ve mahkemenin bozma kararına uyması halinde, bozulan kararın, bozma sebeplerinin şümulü dışında kalmış cihetlerinin kesinleşmiş sayılması, davaların uzamasını önlemek maksadıyla kabul edilmiş çok önemli bir usuli hükümdür. Bir cihetin, bozma kararının şümulü dışında kalması da iki şekilde olabilir. Ya o cihet, açıkça bir temyiz sebebi olarak ileri sürülmüş, fakat dairece itiraz reddedilmiştir; yahut da onu hedef tutan bir temyiz itirazı ileri sürülmemiş olmasına rağmen, dosyanın temyiz dairesince incelendiği sırada dosyada bulunan yazılardan, onun bir bozma sebebi sayılması mümkün bulunduğu halde, o cihet dairece bozma sebebi sayılmamıştır. Her iki halde de, o konunun bozma sebebi sayılmamış ve başka sebeplere dayanan bozma kararına mahkemece uyulmuş olması, taraflardan birisi lehine usulü bir müktesep hak meydana getirir…” şeklinde açıklanmıştır.</p>
+
+<p>Öte yandan, HMK’nun 166. maddesine göre, ayrı ayrı açılmış davaların aralarında bağlantı bulunması halinde birleştirilerek bakılmaları mümkündür. Ancak, birleştirme kararı, taraflar arasındaki uyuşmazlığı esastan çözümleyen bir karar değildir. Bu karar, sadece birleştirilen davaların yargılama safhalarının müşterek cereyan etmesi sonucunu doğurup, her dava, ayrı ayrı hükme bağlanmalıdır. Davaların birbirlerinin içerisinde erimesi, tek bir davaya dönüşmesi gibi bir durum söz konusu değildir. Başka bir anlatımla, birleştirmeye konu davalar bağımsız olma niteliklerini korurlar.</p>
+
+<p>Somut olayda, borçluların, takip konusu çekin keşide tarihinde tahrifat yapıldığına ilişkin idialarının mahkemece reddi kararı, Dairemizce isabetli bulunarak, borçluların bu yöne ilişkin temyiz itirazları yukarıda yazılı bozma ilamımızın başında reddedilmiş, mahkeme kararı, sadece çek tazminatı hakkında mahkemece hüküm kurulması gerektiği yönünden bozulmuştur. Mahkemece bozma ilamına uyulmuş olmasına rağmen, kararın hüküm bölümünün (1) numaralı bendinde “davanın kabulüne” karar verilmiş, (2) numaralı bendinde ise, takibin çek tazminatına ilişkin kısmının asıl ve birleşen dosyalar yönünden iptaline hükmedilmiştir. Hakim, HMK’nun 26. maddesi gereğince tarafların talep sonuçlarıyla bağlı olup, ondan fazlasına veya başka bir şeye karar veremeyeceğinden ve asıl şikayet dosyasında, borçlu şirketin, çek tazminatına ilişkin bir şikayeti bulunmadığından, asıl dosya yönünden çek tazminatının iptali yönünde hüküm tesisi yerinde değildir.</p>
+
+<p>Bunun yanısıra, her ne kadar kararın hüküm bölümünde, asıl ve birleşen dosyalar yönünden yargılama giderleri hususunda ayrı ayrı hüküm kurulmuş ise de, şikayetin esası hakkında asıl ve birleşen dosyalar yönünden ayrı ayrı hüküm kurulmadığı gibi, bozma ilamına da aykırı olacak şekilde şikayetin tümden kabulüne karar verilmesi doğru bulunmamıştır.</p>
+
+<p>O halde, mahkemece, yukarıda açıklanan ilkeler göz önünde bulundurularak, asıl şikayetin tümden reddine, birleşen şikayetin ise kısmen kabul kısmen reddi ile borçlular … ile … için takibin çek tazminatı yönünden iptaline karar verilmesi gerekirken, şikayetin tümden kabulünün yanısıra, asıl dosyada çek tazminatına ilişkin bir şikayet bulunmadığı ve asıl dosya şikayetçisi borçlu şirketin keşideci olmakla çek tazminatından sorumlu olacağı hususları gözden kaçırılarak her iki dosya için de çek tazminatına ilişkin şikayetin kabulüne karar verilmesi isabetsizdir.</p>
+
+<p>SONUÇ : Alacaklının temyiz itirazlarının kabulü ile mahkeme kararının yukarıda yazılı nedenlerle İİK’nun 366. ve HUMK’nun 428. maddeleri uyarınca (BOZULMASINA), peşin alınan harcın istek halinde iadesine, ilamın tebliğinden itibaren 10 gün içinde karar düzeltme yolu açık olmak üzere, 02/03/2017 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 23. HUKUK DAİRESİ 
+Esas : 2016/7657 Karar : 2017/110</strong> Tarih : 23.01.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 166. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Davaların Birleştirilmesi</strong></p>
+  </li>
+</ul>
+
+<p>Davacı vekili; davalıların müvekkili kooperatifin eski yönetim olduğunu, kooperatifin … farklı parsel üzerinde yapılacak olan inşaatın projelerinin ….. Mimarlık firmasına yaptırıldığını, ancak tüm proje ücretini …‘e ödediklerini, ayrıca inşaat ruhsatını süresi içinde yenilettirmeyerek kooperatifi zarara uğrattıklarını ileri sürerek, uğranılan zararların, tesbiti ile tahsiline karar verilmesini talep ve dava etmiştir.</p>
+
+<p>Davalı …, … ve …, davanın zamanaşımından reddi gerektiğini, derdest dava olduğunu, ayrıca davalı Mimar …‘ten hizmet alındığını savunarak, davanın reddini istemişlerdir.</p>
+
+<p>Davalı …, … ve … davanın reddini istemiştir.</p>
+
+<p>Mahkemece, iddia, savunma, benimsenen bilirkişi raporu ve dosya kapsamına göre; …. …. Asliye Ticaret Mahkemesi’nin 2012/… Esas sayılı dosyasında ileri sürülen ve talep edilen zararlandırıcı eylemler ve zararın ayrı dönemlere ilişkin olduğu, bir kısım davalıların derdestlik itirazının reddine karar verilmiş, ……. …. Ağır Ceza Mahkemesi’nin 2010/359 Esas, 2013/63 Karar sayılı dava dosyasının bekletici mesele yapılmayarak kooperatifin yönetim kurulunu oluşturan davalıların usulsüz işlemleri sonucu zararlar oluştuğu gerekçesiyle, davanın kısmen kabul kısmen reddine karar verilmiştir.</p>
+
+<p>Karar, davalılar …, …, … …, … ve davacı vekili tarafından temyiz edilmiştir.</p>
+
+<p>…- Dosya kapsamından bir kısım davalılar hakkında ……. …. Ağır Ceza Mahkemesi’nin 2010/359 Esas sayılı dosyası ile dava açıldığı, karar verildiği ve dosyanın …‘da olduğu anlaşılmaktadır.</p>
+
+<p>Bu itibarla, mahkemece öncelikle ……. …. Ağır Ceza Mahkemesi’nin 2010/359 Esas sayılı dosyası ile davalılar hakkında açılan kamu davasına konu eylem ve işlemler ile işbu davaya konu eylem ve işlemlerin kısmen aynı olup olmadığı araştırılıp 818 sayılı Borçlar Kanunu’nun 53. maddesi (TMK’nın 74. m.) kapsamında bir değerlendime yapılmak suretiyle, ceza yargılaması sonuçlanmamış ise her iki davaya konu eylem ve işlemlerin kısmen veya tamamen aynı olduğunun tespiti halinde ilgili ceza mahkemesi kararının işbu davanın sonucunu etkileme olasılığı bulunduğundan kesinleşmesi beklenmelidir. Açıklanan nedenlerle, yanılgılı gerekçeyle yazılı şekilde hüküm kurulması doğru olmamıştır.</p>
+
+<p>…- ……. …. Asliye Ticaret Mahkemesi’nin 2012/… Esas sayılı dosyasında eldeki davanın bir kısım davalılarının eylem ve işlemlerinden doğan zararların tazmini için dava açıldığı, bu davada da sorumluluğa neden olan eylem ve işlemlerin aynı olduğu anlaşıldığından ……. …. Asliye Ticaret Mahkemesi’nin 2012/… Esas sayılı dosyası ile eldeki dosya arasında bağlantı bulunduğu, her iki davanın HMK’nın 166. maddesi gereğince birleştirilerek birlikte görülmesi gerektiği dikkate alınmadan yazılı şekilde karar verilmesi de doğru olmamıştır.</p>
+
+<p>…)Bozma nedenine göre, davalılar …, …, … …., … ve davacı vekilinin diğer temyiz itirazlarının şimdilik incelenmesine gerek görülmemiştir.</p>
+
+<p>SONUÇ:Yukarıda (…) ve (…) numaralı bentte açıklanan nedenlerle, davalılar …, …,… …. davalı … ve davacı vekilinin temyiz itirazlarının kabulü ile hükmün, BOZULMASINA, (…) numaralı bentte açıklanan nedenlerle, diğer temyiz itirazlarının şimdilik incelenmesine yer olmadığına, peşin alınan harçların istek halinde temyiz edenlere iadelerine, kararın tebliğinden itibaren … gün içerisinde karar düzeltme yolu açık olmak üzere, ….01.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 11. HUKUK DAİRESİ
+Esas : 2016/65 Karar : 2017/337</strong> Tarih : 18.01.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 166. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Davaların Birleştirilmesi</strong></p>
+  </li>
+</ul>
+
+<p>Davacı vekili; müvekkili nezdinde Yurtiçi Taşıyıcı Sorumluluk Sigortası ile sigortalı muhtelif kırtasiye ve temizlik malzemesinin davalılardan …‘a ait … marka çekiciye bağlı dorse ile taşınırken araçta çıkan yangın sonucu tamamen yandığını, yangın sebebinin aracın motor kısmındaki kabloların şase yapmaları olduğunu, 180.000 USD hasar bedelinin sigortalıya ödenerek onun haklarına halef olduğunu ileri sürerek 180.000 USD rücuen tazminatın ödeme tarihi olan 22/01/2014 tarihinden itibaren 3095 sayılı yasanın 4/a maddesi gereğince işleyecek faiz ile birlikte taşıyıcı ve araç işleteni davalı … ile yangının araçtaki imalat hatasından doğması nedeniyle de üretici diğer davalı …den müştereken ve müteselsilen tahsiline karar verilmesini talep ve dava etmiştir.</p>
+
+<p>Davalı … vekili; yetki itirazında bulunmuş ve yangının araçtaki imalat hatasından kaynaklandığını, sorumluluğun diğer davalıya ait olduğunu, bu konuda … Asliye Hukuk Mahkemesinde … A.Ş. aleyhine dava açtığını, işbu davanın … mahkemelerinde devam eden davayla birleştirilmesi gerektiğini savunmuştur.</p>
+
+<p>Davalı …Ş. vekili; yangının araçtaki imalat hatasından doğmadığını, araca fabrika çıkışında olmayan donanımların eklendiğini, yangının bu ilave ekipmandan çıkmış olabileceğini savunarak davanın reddini istemiştir.</p>
+
+<p>Mahkemece iddia, savunma ve tüm dosya kapsamına göre; davalı …‘un birleştirme talebinin değerlendirildiği, … Asliye Hukuk Mahkemesinde açılan dava ile işbu davanın konusunun ve taraflarının aynı olduğu, HMK’nın 166. maddesi uyarınca ilk açılan mahkemede dosyanın birleştirilmesi gerektiği gerekçesiyle davanın … 2. Asliye Hukuk Mahkemesinin 2014/56 esas sayılı dosyası ile görülen dava ile birleştirilmesine karar verilmiştir.</p>
+
+<p>Kararı, davacı vekili ve davalı …Ş. vekili temyiz etmiştir.</p>
+
+<p>Dava dosyası içerisindeki bilgi ve belgelere, mahkeme kararının gerekçesinde dayanılan delillerin tartışılıp, değerlendirilmesinde usul ve yasaya aykırı bir yön bulunmamasına göre, davacı vekili ve davalı …Ş. vekilinin tüm temyiz itirazları yerinde değildir.</p>
+
+<p>SONUÇ: Yukarıda açıklanan nedenlerden dolayı, davacı vekili ve davalı …Ş. vekilinin bütün temyiz itirazlarının reddiyle usul ve kanuna uygun bulunan hükmün ONANMASINA, aşağıda yazılı bakiye 3,70 TL temyiz ilam harcının temyiz eden davacı ve davalı …Ş.’den ayrı ayrı alınmasına, 18/01/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 9. HUKUK DAİRESİ 
+Esas : 2016/23454 Karar : 2016/20011</strong> Tarih : 15.11.2016</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 166. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Davaların Birleştirilmesi</strong></p>
+  </li>
+</ul>
+
+<p>Davacı, icra takibine yapılan itirazın iptali, takibin devamı ile %20 icra inkar tazminatına hükmedilmesine karar verilmesini istemiştir.</p>
+
+<p>Yerel mahkemece dava dosyasının aralarında hukuki, şahsi ve fiili irtibat bulunması sebebi ile HMK. nun 166. maddesi uyarınca… 15. İş Mahkemesinin 2013/2 Esas sayılı dava dosyası ile BİRLEŞTİRİLMESİNE, karar verilmiştir.</p>
+
+<p>Birleştirme kararı davalı vekili tarafından temyiz edilmiş.</p>
+
+<p>Mahkemece davalı vekilinin temyiz talebi “ …birleştirme kararlarının asıl hüküm ile birlikte temyiz edilebileceği, bu aşamada temyiz edilemeyeceği “ gerekçesi ile reddedilmiştir.</p>
+
+<p>Mahkemenin temyiz talebinin reddi kararı süresi içinde davalı avukatı tarafından temyiz edilmiş olmakla, dava dosyası için Tetkik Hakimi tarafından düzenlenen rapor dinlendikten sonra dosya incelendi, gereği konuşulup düşünüldü:</p>
+
+<p>Dosyadaki yazılara, kararın dayandığı delillerle kanuni gerektirici sebeplere ve özellikle “ birleştirme kararını veren Mahkeme ile birleştirilen dosyanın bulunduğu Mahkeme, aynı yargı çevresinde yer alan, aynı düzey ve sıfattaki hukuk mahkemeleri olup, bu mahkemeler arasında verilen birleştirme kararına karşı ancak hükümle birlikte kanun yoluna başvurulabileceğinin anlaşılmasına göre davalı vekilinin temyiz talebinin reddi kararına yönelik bütün temyiz itirazlarının reddi ile usul ve kanuna uygun olan temyiz talebinin reddi kararının ONANMASINA, 15/11/2016 gününde oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 11. HUKUK DAİRESİ 
+Esas : 2015/7718 Karar : 2015/9171</strong> Tarih : 14.09.2015</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 166. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Davaların Birleştirilmesi</strong></p>
+  </li>
+</ul>
+
+<p>Davacı vekili, müvekkilinin davalılar ile yakın akraba olduğunu, müvekkiline ait . Y. mahallesinde bulunan .. pafta, .. ada.. parselde kayıtlı 4/42 hisseli dükkan ile İ.Ç. Ç. mahallesinde bulunan A.ö. mevkii, …G I pafta .. ada .. parselde kayıtlı arsaların 1/2 hissesinin müvekkili tarafından 13/01/2003 yılında davalı S.. A..’a satıldığını, satış işlemlerinin davalı S.. A.. tarafından verilen vekaletnameye istinaden annesi diğer davalı B.. A.. tarafından yapıldığını, taşınmazların devrinin davalı S.. A..’a yapıldığı halde vekalet ile taşınmazı alan davalı B.. A.. tarafından satış bedeli karşılığı olarak 30/12/2002 tanzim tarihli 290.000,00 ABD doları bedelli bono verildiğini, bono bedelinin davalılar tarafından ödenmediğini, bonoyu davalı B.. A..`ın imzalamasına rağmen borcu davalıların birlikte ödemeleri gerektiğini, davalı B. A.’ın mal varlığı olmadığı için kambiyo senetlerine mahsus icra takibi yapılmadığını ileri sürerek, bono bedeli veya taşınmazların bedeli olarak fazlaya ilişkin hakları sakılı tutularak 40.000,00 TL alacağın davalılardan tahsilini, birleşen davada ise davalıların aldıkları taşınmazların ve verilen bonunn karşılığında fazlaya dair hakları saklı kalmak kaydı ile daha önce talep edilen 40.000 TL alacaklarının haricinde 482.000.00 TL alacağın yasal faizi ile tahsilini talep ve dava etmiştir.</p>
+
+<p>Davalılar vekili, müvekkili B.. A..’ın davaya konu senedi düzenlemediğini,diğer müvekkili S.. A..’ın annesi B.. A..`a kendisi adına senet düzenlenme yetkisi vermediğini, davacıdan satın alınan taşınmazlar için davacıya toplam 100.000,00 İsviçre Frangının bir kısmının havale yoluyla bir kısmının ise elden ödendiğini, tapuda satış esnasında davacının parasını alarak satış işlemini gerçekleştirdiğini, davacının iddiasını tapu gibi bir belge ile kanıtlanması gerektiğini savunarak davanın reddini istemiştir.</p>
+
+<p>Mahkemece iddia savunma bilirkişi raporları ve tüm dosya kapsamına göre; satış işleminin davacı ile davalı S.. A.. arasındaki gerçekleşmesine rağmen bonoda davalı B.A.’ın imzasının olduğunu, davacı tarafından bononun tapudaki satış nedeniyle düzenlendiği ileri sürüldüğünden bononun ihdas nedeninin talil edildiği, senedi talil eden davacının ispat yükünü üzerine aldığı ve borcun varlığı hususunda ispat yükünü yerine getiremediği, temel borç ilişkisinin taşınmaz satışından kaynaklanması nedeniyle davalı B.. A..`ın sorumluluğunun bulunmadığı gerekçesiyle asıl ve birleşen davada davalı B.. A.. yönünden davanın reddine davalı S.. A.. yönünden ise açılan davanın tefrikine karar verilmiştir.</p>
+
+<p>Kararı taraf vekilleri temyiz etmiştir.</p>
+
+<p>1-Asıl ve birleşen dava, taşınmaz satışı esnasında davalılar tarafından davacıya verilen bono bedelinin veya taşınmaz bedelinin tahsili istemine ilişkin olup, mahkemece bono kesidecisi davalı B.A. `a açılan davanın, davacının senedi talil ederek ispat yükünü üzerine aldığı ve davacının borcun varlığını ispat edemediği gerekçesiyle reddine karar verilmiştir. Ancak taraflar arasındaki ilişkinin taşınmaz satışından kaynaklandığı, bononun keşidecisinin davalı B.. A.. olduğu ve davalıların yargılama sırasında satım sözleşmesini kabul ederek bedelini ödediklerini iddia ettikleri anlaşılmaktadır. Bu durumda taşınmazın satım bedelinin ödendiğine ilişkin ispat külfeti davalıların üzerindedir O halde mahkemece ispat külfeti konusunda hatalı değerlendirme yapılarak ispat külfetinin davacı tarafa yüklenmesi doğru görülmemiş, kararın bu nedenle asıl ve birleşen dava yönünden davacı yararına bozulması gerekmiştir.</p>
+
+<p>2- Ayrıca mahkemece diğer davalı S.. A..’a açılan davanın tefrikine karar verilmiştir. HMK’nın 166. maddesi uyarınca davaların aynı sebepten doğması veya birisi hakkında verilecek hükmün diğerini etkileyecek nitelikte bulunması halinde davalar arasında bağlantı var sayılır. Somut uyuşmazlıkta da tarafların iddia ve savunmaları birlikte değerlendirildiğinde, davalar arasında hukuki ve fiili irtibatın bulunduğu, birisi hakkında verilecek hükümün diğerini etkileyecek nitelikte olduğu anlaşılmaktadır. Dolayısıyla davalılara karşı açılan davaların birlikte görülmesi gerekmektedir. Bu durumda mahkemece, tefrik kararı verilmeden davalara birlikte bakılması gerekirken davalı S.. A..`a dava hakkında tefrik kararı verilerek yazılı şekilde hüküm kurulması doğru görülmemiş kararın bu nedenle taraflar yararına bozulması gerekmiştir.</p>
+
+<p>Yukarıda (1) numaralı bentte açıklanan nedenlerle asıl ve birleşen davacı vekilinin temyiz itirazlarının kabulü ile hükmün asılve birleşen davacı yararına (2) numaralı bentte açıklanan nedenlerde taraf vekilerinin temyiz itirazlarının kabulü ile hükmün taraflar yararına ( BOZULMASINA ), ödediği temyiz peşin harcın istekleri halinde temyiz edenlere iadesine, oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 15. HUKUK DAİRESİ
+Esas : 2014/6831 Karar : 2015/5430</strong> Tarih : 2.11.2015</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 166. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Davaların Birleştirilmesi</strong></p>
+  </li>
+</ul>
+
+<p>Dava, eser sözleşmesinden kaynaklanan edimin ifasının götürü bedel olarak kararlaştırılan miktarın fahiş şekilde aşılması nedeniyle imkansızlaşması sonucuna bağlı olarak sözleşmenin feshi ve kesin teminat mektubunun iadesine karar verilmesi istemine ilişkin olup; mahkemece davanın fesih istemi yönünden kabulüne, teminat mektubunun iadesi talebi yönünden karar verilmesine yer olmadığına dair verilen karar, davalı iş sahibi idare vekilince temyiz edilmiştir.</p>
+
+<p>6100 sayılı Hukuk Muhakemeleri Kanunu`nun 166/1. maddesi uyarınca, kural olarak aynı yargı çevresinde yer alan aynı düzey ve sıfattaki hukuk mahkemelerinde açılmış davalar, aralarında bağlantı bulunması durumunda yargılamanın her aşamasında, talep üzerine veya kendiliğinden ilk davanın açıldığı mahkemede birleştirilebilir. Davaların birleştirilerek görülmesinde, gerek usûl ekonomisi gerekse birbirleriyle çelişkili kararların çıkmasının önlenmesi bakımından fayda bulunmaktadır.</p>
+
+<p>Davacı yüklenici şirket temyiz incelemesine konu eldeki dosyada açılan davada yargılamaya devam edildiği sırada Karabük 2. Asliye Hukuk Mahkemesi’nin 2013/237 Esas sayılı sırasına kaydedilen davayı açmış ve sözleşmenin idarece haksız olarak feshedildiğinin tespiti ve haksız fesih nedeniyle uğradığı zararların tazmini talep etmiş, yargılama sırasında ıslah dilekçesi vererek teminat mektubu bedelinin de tahsiline karar verilmesini dilemiştir. Karabük 2. Asliye Hukuk Mahkemesi`nin 2013/237 Esas sayılı dosyasında açılan dava ile eldeki dava arasında fiilî ve hukukî irtibat olduğu, her iki davanın aynı yargı çevresinde ve aynı düzeyde mahkemede açıldığı ve davalar arasında bağlantı bulunduğu açıkça anlaşılan bu davaların birleştirilerek görülmesinde zorunluluk bulunmaktadır.</p>
+
+<p>Bu nedenlerle, Karabük 2. Asliye Hukuk Mahkemesi’nin 2013/237 Esas sayılı sırasına kaydedilen dosya ile eldeki dosyanın 6100 sayılı Hukuk Muhakemeleri Kanunu`nun 166. maddesi uyarınca birleştirilmesi gerektiği düşünülmeden işin esasına girilerek karar verilmiş olması doğru değildir.</p>
+
+<p>Yukarıda açıklanan nedenlerle davalı idare vekilinin temyiz itirazının kabulüyle hükmün davalı yararına ( BOZULMASINA ), bozma nedenine göre diğer temyiz itirazlarının bu aşamada incelenmesine yer olmadığına, Yargıtay duruşmasında vekille temsil edilmediğinden davalı yararına vekâlet ücreti takdirine yer olmadığına, ödediği temyiz peşin harcının istek halinde temyiz eden davalıya geri verilmesine, karara karşı tebliğ tarihinden itibaren 15 gün içinde karar düzeltme isteminde bulunulabileceğine  oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY HUKUK GENEL KURULU
+Esas: 2015/7-3380 Karar: 2017/378</strong> Tarih: 01.03.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 166. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Davaların Birleştirilmesi</strong></p>
+  </li>
+</ul>
+
+<p>Taraflar arasındaki “işçilik alacakları” davasından dolayı yapılan yargılama sonunda; Konya 1. İş Mahkemesince davanın kabulüne dair verilen 13.06.2014 gün ve 2013/31 E., 2014/447 K. sayılı kararın davalı vekili tarafından temyizi üzerine, Yargıtay 7. Hukuk Dairesinin 28.01.2015 gün ve 2014/15570 E., 2015/733 K. sayılı kararı ile;</p>
+
+<p>( … Davacılar vekili, davacı … yönünden ihbar tazminatı ile ücret, fazla mesai, ulusal bayram genel tatil ücreti alacaklarının; davacı … yönünden ise kıdem ve ihbar tazminatı ile ücret, fazla mesai, ulusal bayram genel tatil ile yıllık izin ücreti alacaklarının tahsilini istemiştir.</p>
+
+<p>Davalı davanın reddine karar verilmesini istemiştir.</p>
+
+<p>Mahkemece davacılar yönünden davanın kabulüne karar verilmiştir.</p>
+
+<p>Davacılar arasında mecburi dava arkadaşlığı mevcut değildir. Bu sebeple davaların birleştirilmesi zorunlu değildir. İddia ve savunmanın usule uygun şekilde araştırılması, delillerin tümüyle toplanıp ayrıntılı olarak değerlendirilmesi ve hukuki gerçekliğin tam olarak sağlanması ve ayrıca kararın, Yargıtay denetimine elverişli olabilmesi için davaların ayrı ayrı görülüp sonuçlandırılmasında zorunluluk vardır. Bu sebeple mahkemece davalar tefrik edilmeli; her bir davacı için ayrı esasa kaydedilerek, yapılacak yargılama sonucuna göre karar verilmelidir.</p>
+
+<p>Mahkemece bu husus gözetilmeden karar verilmesi hatalı olup bozma nedenidir… ),</p>
+
+<p>Gerekçesiyle karar bozularak dosya yerine geri çevrilmekle yeniden yapılan yargılama sonunda mahkemece önceki kararda direnilmiştir.</p>
+
+<p>Hukuk Genel Kurulunca incelenerek direnme kararının süresinde temyiz edildiği anlaşıldıktan ve dosyadaki kağıtlar okunduktan sonra gereği görüşüldü:</p>
+
+<p>KARAR : Dava işçilik alacaklarının tahsili istemine ilişkindir.</p>
+
+<p>Davacılar vekili davacı işçi …‘nun aylık ücretinin net 00 TL olduğunu, diğer davacı işçi …‘nun ise aylık net 1.000,00 TL ücret aldığını, davacı işçilerin yıllık izinlerini kullanmadıklarını, fazla çalışma ve genel tatil ücretlerinin ödenmediğini, 2012 yılı Haziran-Temmuz ve Ağustos aylarına ait ücretlerinin ödenmediğini, iş sözleşmelerinin davalı tarafından haksız şekilde feshedildiğini ileri sürerek davacı … yönünden ihbar tazminatı ile ödenmeyen ücret, fazla çalışma ve genel tatil alacaklarının; diğer davacı … yönünden ise kıdem ve ihbar tazminatı ile yıllık izin alacağı, ödenmeyen ücret, fazla çalışma ve genel tatil alacaklarının davalıdan tahsiline karar verilmesini istemiştir.</p>
+
+<p>Davalı vekili davacıların baba-oğul olup işyerinde gazete ve promosyon dağıtımı ile yapılan satışların tahsilatı işlerini yaptıklarını, gazetenin davacılar tarafından usulüne uygun dağıtılmadığını, bu gazeteler için yeni aboneler yapıldığını, abonelik için öngörülen ücretlerin tahsil edildiğini ancak işverene haber verilmediğini, bir kısım abonelik ücretlerinin de tahsil edildiği halde işverene intikal ettirilmediğini, durumun tespiti üzerine davacıların verdiği bilgi ve incelemelere göre yaklaşık 7.500-8.000 TL civarında bir zararın oluştuğu, davacıların bu zararı ödemeyi kabul etmeleri üzerine senet düzenlendiğini, davacıların bir kısım ücretlerini alamadıklarından bahisle bu davayı açtıklarını, davacıların tüm iddia ve yapmış oldukları şikayetlerin hakkın kötüye kullanılması niteliğinde olduğunu belirterek davanın reddine karar verilmesini istemiştir.</p>
+
+<p>Mahkemece davalı işveren tarafından yapılan feshin haksız olduğu, bu sebeple davacılardan Mustafa’nın kıdem tazminatına hak kazandığı, davacılara bir bildirim yapıldığı ya da ücretinin ödendiğinin tespit edilmemesi sebebiyle davacıların ihbar tazminatına da hak kazandıkları, davacı tanık beyanlarıyla davacıların ayda iki hafta 5 saat fazla mesai yapıp genel tatillerde çalıştıklarını ispatladıkları, yıllık izinlerini kullandıkları ve tüm ücretlerinin ödendiğinin davalı işveren tarafından ispatlanamadığı gerekçesiyle davacılar yönünden ayrı ayrı hüküm kurulmak suretiyle davanın kabulüne karar verilmiştir.</p>
+
+<p>Davalı vekilinin temyizi üzerine hüküm Özel Dairece, yukarıda açıklanan gerekçelerle bozulmuştur.</p>
+
+<p>Mahkemece, davacıların işçi oldukları, işten çıkarılmaları sebebiyle bu davayı açtıkları, ekonomik durumları, davaların birlikte açılması, usul ekonomisi, davacıların tüm delillerinin ayrı ayrı toplanıp değerlendirilerek her bir davacı için her bir kalem alacak yönünden ayrı ayrı hüküm kurulması yanında HMK’nın 57/1.maddesinin c bendinde ifade edilen hususların davacılar için gerçekleştiği, işlemlerin tamamlanıp sonuçlandıktan sonra baştaki şekil ve usul eksikliğinin ileri sürülemeyeceği, davalı vekilinin ilk karara yönelik temyiz dilekçesinde netice-i talep bölümünde “resen nazara alınacak” hususlar denilmişse de bozma kararı gerekçesinin ayrıca ve açıkça temyiz nedeni olarak ileri sürülmemesi gerekçeleri ile önceki gerekçelerde tekrarlanarak suretiyle direnme kararı verilmiştir.</p>
+
+<p>Direnme kararını davalı vekili temyiz etmiştir.</p>
+
+<p>Direnme yoluyla Hukuk Genel Kurulu önüne gelen uyuşmazlık, somut olayda davacı işçiler arasında mecburi ya da ihtiyari dava arkadaşlığı bulunup bulunmadığı, burada varılacak sonuca göre birlikte açılan davaların tefrikinin gerekip gerekmediği noktalarında toplanmaktadır.</p>
+
+<p>İhtiyari ve mecburi dava arkadaşlığı 5521 Sayılı İş Mahkemeleri Kanununda düzenlenmemiştir. Bununla birlikte 5521 Sayılı Kanun’un 15. maddesine göre bu Kanunda sarahat bulunmayan hallerde Hukuk Muhakemeleri Usulü Kanunu ( 6100 Sayılı Hukuk Muhakemeleri Kanunu ) hükümleri uygulanacağı belirtilmiştir.</p>
+
+<p>Bu kapsamda 6100 Sayılı Hukuk Muhakemeleri Kanununun ( ) 57.maddesinde</p>
+
+<p>“Birden çok kişi, aşağıdaki hallerde birlikte dava açabilecekleri gibi aleyhlerine de birlikte dava açılabilir:</p>
+
+<p>a- ) Davacılar veya davalılar arasında davaya konu olan hak veya borcun, elbirliği ile mülkiyet dışındaki bir sebeple ortak olması,</p>
+
+<p>b- ) Ortak bir işlemle hepsinin yararına bir hak doğmuş olması veya kendilerinin bu şekilde yükümlülük altına girmeleri,</p>
+
+<p>c- ) Davaların temelini oluşturan vakıaların ve hukuki sebeplerin aynı veya birbirine benzer olması”</p>
+
+<p>şeklinde düzenleme getirilmiştir.</p>
+
+<p>Şu durumda, maddede açıkça sayılan davaya konu hak ve borcun ortak olması, birden fazla kişinin ortak bir işlem ( örneğin sözleşme ) ile borç altına girmiş olması, davanın birden fazla kişi hakkında aynı ( veya benzer ) sebepten doğmuş olması hallerinde birden çok kimsenin birlikte dava açması olanaklı olduğu gibi, birlikte aleyhlerine de dava açılabilir.</p>
+
+<p>Alacaklının müteselsil borçluların tümüne veya bunlardan bazısına karşı alacak davası açtığı hallerde davalı müteselsil borçlular; yine mirasçılar miras bırakanın borçlarından müteselsilen sorumlu olduklarından birden fazla mirasçıya karşı alacak davası açılması halinde davalı mirasçılar; birden çok kişinin aynı sözleşmeyle borç altına girdiği hallerde bölünebilen bir borç sebebiyle birden çok kişiye karşı birlikte dava açılması halinde, bu kişiler arasındaki ilişki ihtiyari dava arkadaşlığıdır.</p>
+
+<p>Davanın birden fazla kişi hakkında aynı veya benzer sebepten doğması haline gelince; aynı sebepten maksat yalnız hukuki sebep olmayıp bir olaya, yani aynı vakıaya ve fakat farklı hukuki sebeplere dayanılarak da birden fazla kişinin dava açması veya dava edilmesi olanaklıdır. Örneğin sebepsiz iktisap hükümlerine göre sorumlu olan kişilere karşı ve haksız fiili birlikte işleyen kişilere karşı birlikte dava açılabilir. Burada da ihtiyari dava arkadaşlığı söz konusudur.</p>
+
+<p>6100 Sayılı HMK’nın 58. maddesinde6100 Sayılı HMK’nın 58. maddesinde, ihtiyari dava arkadaşlığında davaların birbirinden bağımsız olduğu, dava arkadaşlarından her birinin diğerinden bağımsız olarak hareket edeceği; 59. maddesinde ise mecburi dava arkadaşlığının, bir hakkın birden fazla kimse tarafından birlikte kullanılması veya birden fazla kimseye karşı birlikte ileri sürülmesi ve tamamı hakkında tek hüküm verilmesi gereken hallerde söz konusu olacağı; 60. maddesinde ise mecburi dava arkadaşlarının ancak birlikte dava açabilecekleri veya aleyhlerine birlikte dava açılabileceği düzenlenmiştir.</p>
+
+<p>Yine 6100 Sayılı HMK’nın 166. maddesinde davaların aynı veya birbirine benzer sebeplerden doğması ya da biri hakkında verilecek hükmün diğerini etkileyecek nitelikte bulunması durumunda davaların birleştirilebileceği; 167. maddesinde ise mahkemenin, yargılamanın iyi bir şekilde yürütülmesini sağlamak için birlikte açılmış veya sonradan birleştirilmiş davaların ayrılmasına, davanın her aşamasında talep üzerine veya kendiliğinden karar verebileceği hüküm altına alınmıştır.</p>
+
+<p>Tüm bu açıklamalar ışığında somut olay değerlendirildiğinde;</p>
+
+<p>Dava, işçilik alacaklarının tahsili istemine dair olup yasal dayanağını4857 Sayılı İş Kanunu oluşturmaktadır. Yukarıda da belirtildiği üzere birden fazla davacının ( işçinin ) birlikte tek dilekçeyle dava açmalarını mümkün kılan herhangi bir yasal düzenleme bulunmamaktadır.</p>
+
+<p>İş sözleşmesi ancak taraflar açısından bağlayıcıdır. Ayrıca her işçinin çalışma şekil ve esasları ( hizmet süresi, aylık ücret seviyesi, günlük çalışma süresi, yapılan iş ve işin niteliği gibi ) farklı olup bu hali ile aynı hukuki sebebe dayandığı ileri sürülemeyecektir. Davacı işçilerin aynı sebeple işten çıkarılmaları ve aynı alacakları talep etmeleri aynı hukuki sebebe dayandıklarını göstermez.</p>
+
+<p>O halde, davacı işçiler arasında maddi yada şekli anlamda zorunlu dava arkadaşlığının varlığından söz edilemeyecektir. İhtiyari dava arkadaşlığının varlığı kabul edilse dahi iddia ve savunmanın araştırılması, delillerin toplanıp ayrıntılı olarak değerlendirilmesi ve hukuki gerçekliğin tam olarak ortaya konulması, ayrıca kararın Yargıtay denetimine elverişli olabilmesi için davaların ayrılması gerekmektedir.</p>
+
+<p>Kaldı ki kimi zaman aynı nedenler ile çok sayıda işçinin birlikte işten çıkarıldığı ( toplu işçi çıkarma gibi ) durumlar söz konusu olup bu durumda davaların birlikte görülebileceğinin kabulü halinde yargılamanın içinden çıkılmaz hal alacağı da açıktır.</p>
+
+<p>Açıklanan durum karşısında, ayrı ayrı iş sözleşmesi ile iş görme edimini üstlenen, farklı çalışma süreleri ve ücret seviyesi ile çalışan davacıların, feshe bağlı alacaklar ile diğer işçilik alacaklarını birlikte dava etmelerini haklı kılacak açık bir yasal düzenleme ve geçerli hukuksal bir nedenin varlığından söz edilemez. Yargılamanın sağlıklı olarak yürütülebilmesi ve uyuşmazlığın kolaylıkla çözüme ulaştırılabilmesi için aynı işveren aleyhine benzer taleplerle birlikte açılmış olan davaların ayrılmasının uygun olacağının kabulü gerekir. ( Nitekim HGK’nın 09.05.2007 gün ve 2007/21-255 E., 2007/260 K; 08.07.2009 gün ve 2009/21-286 E., 2009/328 K.; 03.07.2013 gün ve 2012/21-1699 E., 2013/1029 K. sayılı kararlarında da aynı ilkeler benimsenmiştir. )</p>
+
+<p>Hukuk Genel Kurulunda yapılan görüşmede aralarında ihtiyari dava arkadaşlığı bulunan davacıların davalarının temelini oluşturan hukuki ve fiili sebeplerin HMK’nın 57/1-c maddesi anlamında aynı olması sebebiyle davaların birlikte görülebileceğinden direnme kararının yerinde olduğu görüşü belirtilmişse de bu görüş çoğunluk tarafından benimsenmemiştir.</p>
+
+<p>Sonuç itibariyle yerel mahkemece davacı işçilerin açtıkları işçilik alacağı davalarının tefriki sağlandıktan sonra işin esasına girilerek bir sonuca varılmak gerekirken; aksine düşüncelerle önceki kararda direnilmesi usul ve yasaya aykırıdır.</p>
+
+<p>Bu sebeple direnme kararı bozulmalıdır.</p>
+
+<p>SONUÇ : Yukarıda açıklanan sebeplerle davalı vekilinin temyiz itirazlarının kabulü ile, direnme kararının Özel Daire bozma kararında gösterilen nedenlerden dolayı BOZULMASINA, istek halinde temyiz peşin harcının yatırana iadesine, karar düzeltme yolu kapalı olmak üzere, 01.03.2017 gününde oyçokluğuyla karar verildi.</p>
+
+<p>KARŞI OY :</p>
+
+<p>Yerel mahkemenin direnme kararının gerekçesinde ayrıntılı açıklandığı gibi aralarında ihtiyari dava arkadaşlığı bulunan davacıların davalarının temelini oluşturan hukuki ve fiili sebeplerin 57/1-c maddesi anlamında aynı olması sebebiyle direnme kararının yerinde olduğu kanaatinde olduğumuzdan sayın çoğunluğun aksi yöndeki görüşüne katılmıyoruz.</p>
+
+<hr>
+
+<p><strong>YARGITAY HUKUK GENEL KURULU
+Esas: 2014/15-1024 Karar: 2016/630</strong> Tarih: 25.05.2016</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 166. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Davaların Birleştirilmesi</strong></p>
+  </li>
+</ul>
+
+<p>Taraflar arasındaki “itirazın iptali” davasından dolayı yapılan yargılama sonunda; Ankara 5. Sulh Hukuk Mahkemesince davanın reddine dair verilen 06.12.2012 gün ve 2009/2061 E., 2012/1936 K. sayılı kararın incelenmesi davacı vekili tarafından istenilmesi üzerine, Yargıtay 15. Hukuk Dairesinin 21.01.2014 gün ve 2013/5728 E., 2014/431 K. sayılı ilamı ile;</p>
+
+<p>“… Davada, eser sözleşmesi ilişkisinden kaynaklandığı iddia olunan alacağın tahsili istemi ile başlatılan ilâmsız icra takibine davalı borçlu tarafından yapılan itirazın iptali ile takibin devamı ve icra inkâr tazminatının tahsili istenmiş, mahkemece fatura tarihi itibariyle reklam anlaşmasının yürürlükte olduğunun, anlaşma uyarınca reklamın yayınlandığının ve faturanın davalıya tebliğ edildiğinin kanıtlanamadığı gerekçeleri ile dava reddedilmiş, karar davacı vekili tarafından temyiz edilmiştir.</p>
+
+<p>Davanın dayanağını Ankara 17. İcra Müdürlüğü’nün 2008/12801 Sayılı dosyasına konu 31.07.2007 tarihli fatura oluşturmaktadır. Aynı sözleşme uyarınca kesilen 30.05.2007, 31.05.2007, 30.08.2007, 31.08.2007 ve 31.10.2007 tarihli diğer 5 adet faturaya dayanılarak Ankara 30. İcra Müdürlüğü’nün 2008/1852 Sayılı dosyası ile takibe geçildiği ve itiraz üzerine Ankara 4. Asliye Ticaret Mahkemesi’nin 2008/646 Esas sayılı itirazın iptâli davasının açıldığı ve davanın halen derdest olduğu anlaşılmaktadır. Her iki davanın aynı sözleşmeden kaynaklanması ve taraflarının aynı olması sebebiyle davalar arasında bağlantı bulunmaktadır.</p>
+
+<p>6100 Sayılı HMK’nın 166. maddesi uyarınca aynı yargı çevresi içinde yer alan aynı düzey ve sıfattaki hukuk mahkemelerinde açılan davalar aralarında bağlantı bulunması durumunda davanın her aşamasında talep üzerine veya kendiliğinden ilk davanın açıldığı mahkemede birleştirilebilir.Aynı yargı çevresindeki aynı düzey mahkemelerde açılmış olan bağlantılı davaların birleştirilerek görülmesinde zorunluluk bulunduğundan, birleştirme kararı verilmek üzere kararın bozulması gerekmiştir…“gerekçesiyle bozularak dosya yerine geri çevrilmekle yeniden yapılan yargılama sonunda, mahkemece önceki kararda direnilmiştir.</p>
+
+<p>Hukuk Genel Kurulunca incelenerek direnme kararının süresinde temyiz edildiği anlaşıldıktan ve dosyadaki kâğıtlar okunduktan sonra gereği görüşüldü:</p>
+
+<p>KARAR : Dava, eser sözleşmesinden kaynaklanan alacağın tahsili için başlatılan icra takibine vaki itirazın iptali istemine ilişkindir.</p>
+
+<p>Davacı vekili, müvekkilinin faturadan kaynaklanan alacağının tahsili için başlattığı takibe davalı borçlunun itiraz ettiğini, borca itirazın mesnetsiz ve kötüniyetli olduğunu, müvekkili reklâm ajansının davalı için yayınlattığı reklâm filminin Aralık 2006 tarihinden Ekim 2007 tarihine kadar devam ettiğini, davalıya Temmuz ayına dair bedel için fatura kesildiğini ancak ödenmediğini, ödenmeyen bu borcun takibe konu edildiğini, tarafları aynı olan ve aynı hizmet ilişkisinden kaynaklanan diğer aylara ait reklâm bedelleri de ödenmediği için yapılan diğer takiplerin de itiraza uğradığını ve o itirazların iptali için açılan davanın Ankara 4. Asliye Ticaret Mahkemesi’nin 2008/646 Esas sayılı dosyasında derdest olduğunu ileri sürerek, itirazın iptaline ve inkâr tazminatına karar verilmesini istemiştir.</p>
+
+<p>Davalı vekili, yayınlanan reklâm bedelinin tamamının ödendiğini, müvekkilinin davacıya başkaca bir borcunun bulunmadığını, aynı konuda açılmış bir dava bulunduğundan iş bu davanın reddinin gerektiğini savunmuştur.</p>
+
+<p>Yerel Mahkemece, fatura tarihi itibariyle reklâm anlaşmasının varlığı, reklâmın yapıldığı ve faturanın davalıya tebliğ edildiği iddialarının ispatlanmadığı gerekçesiyle davanın reddine karar verilmiştir.</p>
+
+<p>Davacı vekilinin temyizi üzerine karar, Özel Dairece yukarıda başlık bölümünde gösterilen sebeplerle bozulmuştur.</p>
+
+<p>Yerel Mahkemece, sulh hukuk mahkemesi ile asliye ticaret mahkemesinin aynı düzey mahkeme olmadığından dosyaların birleştirilemeyeceği gerekçesiyle önceki kararda direnilmiştir.Hükmü temyize davacı vekili getirmiştir.Hukuk Genel Kurulu önüne gelen uyuşmazlık; asliye ticaret mahkemesi ile sulh hukuk mahkemesinde görülmekte olan davalar arasında bağlantı bulunması sebebiyle eldeki davanın asliye ticaret mahkemesindeki dava ile birleştirilmesine yasal olarak imkan olup olmadığı noktasında toplanmaktadır.</p>
+
+<p>Bilindiği üzere mülga 1086 Sayılı Hukuk Usulü Muhakemeleri Kanunu ( )’nun 187. maddesi hükmü uyarınca, davanın diğer bir mahkemede derdest olan diğer bir dava ile irtibatının bulunduğu iddiası bir ilk itiraz olarak düzenlenmiş iken, 6100 Sayılı Hukuk Muhakemeleri Kanunu ( 6100 Sayılı )’nunda davaların birleştirilmesi bir ilk itiraz olmaktan çıkartılarak davanın her aşamasında ileri sürülebileceği kabul edilmiştir.</p>
+
+<p>Konuya dair olan 6100 Sayılı HMK’nın 166. maddesi;” ( 1 ) Aynı yargı çevresinde yer alan aynı düzey ve sıfattaki hukuk mahkemelerinde açılmış davalar, aralarında bağlantı bulunması durumunda, davanın her aşamasında, talep üzerine veya kendiliğinden ilk davanın açıldığı mahkemede birleştirilebilir. Birleştirme kararı, ikinci davanın açıldığı mahkemece verilir ve bu karar, diğer mahkemeyi bağlar.</p>
+
+<p>( 2 ) Davalar, ayrı yargı çevrelerinde yer alan aynı düzey ve sıfattaki hukuk mahkemelerinde açılmış ise bağlantı sebebiyle birleştirme ikinci davanın açıldığı mahkemeden talep edilebilir. Birinci davanın açıldığı mahkeme, talebin kabulüyle davaların birleştirilmesine dair kararın kesinleşmesinden itibaren, bununla bağlıdır.</p>
+
+<p>( 3 ) Birleştirme kararı, derhâl ilk davanın açıldığı mahkemeye bildirilir. ( 4 ) Davaların aynı veya birbirine benzer sebeplerden doğması ya da biri hakkında verilecek hükmün diğerini etkileyecek nitelikte bulunması durumunda, bağlantı var sayılır.</p>
+
+<p>( 5 ) İstinaf incelemesi ayrı dairelerde yapılması gereken davaların da bu madde hükmüne göre birleştirilmesine karar verilebilir. Bu hâlde istinaf incelemesi, birleştirilen davalarda uyuşmazlığı doğuran asıl hukuki ilişkiye ait kararı inceleyen bölge adliye mahkemesi dairesinde yapılır.” düzenlemesini içermektedir.</p>
+
+<p>Davaların birleştirilmesi usul ekonomisi bakımından önemli olup, anılan madde metninden de açıkça anlaşıldığı üzere davaların birleştirilmesi, davalar arasında bağlantı bulunması durumunda söz konusu olabilecektir.Davalar arasında bazı ortak hususların bulunması veya salt görünüşteki benzerlikler bağlantının varlığı için yeterli değildir. Davaların aynı veya birbirine benzer sebeplerden doğması ya da biri hakkında verilecek hükmün diğerini etkileyecek nitelikte bulunması durumunda aralarında bağlantı var sayılacaktır.</p>
+
+<p>Uyuşmazlığın çözümü için bu aşamada davaların birleştirilmesi usulünün açıklanması gereklidir:</p>
+
+<p>Öncelikle 6100 Sayılı HMK’nın 448. maddesi uyarınca usul kuralları derhal uygulanacağından somut olaya HMK’nın 166. maddesi uygulanacaktır. Bu durumda aynı yargı çevresinde yer alan aynı düzey ve sıfattaki hukuk mahkemelerinde açılmış davalar, aralarında bağlantı bulunması durumunda, davanın her aşamasında, talep üzerine veya kendiliğinden ilk davanın açıldığı mahkemede birleştirilebilir. Birleştirme kararı, ikinci davanın açıldığı mahkemece verilir ve bu karar, diğer mahkemeyi bağlar ( 6100 Sayılı HMK. m. 166/1 ).</p>
+
+<p>Davalar, ayrı yargı çevrelerinde yer alan aynı düzey ve sıfattaki hukuk mahkemelerinde açılmış ise, bağlantı sebebiyle birleştirme ikinci davanın açıldığı mahkemeden talep edilebilir. Birinci davanın açıldığı mahkeme, talebin kabulüyle davaların birleştirilmesine dair kararın kesinleşmesinden itibaren, bununla bağlıdır ( 6100 Sayılı HMK. m.l66/2 ).</p>
+
+<p>Bu itibarla, aynı yargı çevresinde yer alan, aynı düzey ve sıfattaki hukuk mahkemelerinde açılmış olan davalarda birleştirme kararı, talep üzerine veya kendiliğinden davanın her aşamasında verilebilecektir. Fakat vurgulamakta yarar vardır ki, ayrı yargı çevrelerinde yer alan aynı düzey ve sıfattaki hukuk mahkemelerinde açılan davalarda re’sen birleştirme kararı verilemez.Buradaki aynı düzey ve aynı sıfattaki mahkemelerden anlaşılması gereken; her iki davanın da görüldüğü mahkemenin, asliye hukuk mahkemesi veya sulh hukuk mahkemesi yahut iş mahkemesi yahut aile mahkemesi olmasıdır. Aynı düzey ve sıfatta olmayan mahkemeler arasında bu şekilde davaların birleştirilmesi söz konusu olmayacaktır ( Hakan Pekcanıtez, Oğuz Atalay, Muhammet Özekes, Medeni Usul Hukuku, Ankara 2013, 14. Bası, s.636 ).</p>
+
+<p>İkinci davanın açıldığı mahkemece verilen birleştirme kararı diğer mahkemeyi bağlayacaktır. İkinci davanın açıldığı mahkeme birleştirme kararı verdikten sonra, ilk mahkemenin bu konuda dosyayı iade etmesi, geri göndermesi mümkün değildir. Sadece bir mahkeme eğer yanlışlıkla aynı düzey ve sıfatta olmadığı halde başka bir mahkemedeki dosya ile birleştirme kararı vermişse, kendisine dosya gönderilen mahkeme, dosyayı iade edebilir. Bunun dışında, ilk mahkemenin birleştirme konusundaki kararı ikinci mahkemeyi bağlar. Fakat kendisine dosya gönderilen mahkeme, birleştirme kararının yerinde olmadığını düşünüyorsa, birleştirilmiş bu davada ayırma kararı verebilir, ancak ayırma kararı verdiğinde davaya bakmaya devam eder ( Pekcanıtez, Atalay, Özekes, s. 637 ).</p>
+
+<p>5235 Sayılı Adli Yargı İlk Derece Mahkemeleri İle Bölge Adliye Mahkemelerinin Kuruluş, Görev ve Yetkileri Hakkında Kanun’un “Hukuk Mahkemeleri” başlıklı 4. maddesiyle de hukuk mahkemelerinin, sulh hukuk ve asliye hukuk mahkemeleri ile özel kanunlarla kurulan diğer hukuk mahkemeleri olduğu belirtilmiş durumdadır.</p>
+
+<p>Bu açıklamalar ışığında somut olay incelendiğinde; eldeki davada kararı veren mahkeme Ankara 5. Sulh Hukuk Mahkemesi olup, aynı eser sözleşmesinden kaynaklanan ve aralarında irtibat bulunduğu konusunda yerel Mahkeme ile Özel Daire arasında uyuşmazlık bulunmayan birleştirmeye konu diğer dava Ankara 4. Asliye Ticaret Mahkemesi’nin 2008/646 Esas sayılı dosyasında derdesttir.</p>
+
+<p>Bu itibarla, Ankara 5. Sulh Hukuk Mahkemesi ile Ankara 4. Asliye Ticaret Mahkemesi aynı yargı çevresinde bulunmalarına rağmen “aynı düzey ve sıfattaki” hukuk mahkemeleri olmadıklarından birisindeki davanın diğerindeki dava ile birleştirilmesine yasal olarak imkân bulunmamaktadır.Hukuk Genel kurulundaki görüşmeler sırasında azınlıkta kalan bazı üyelerce, eldeki davanın 1086 Sayılı döneminde açıldığı, bu sebeple HUMK’nın 45. maddesinin uygulanmasının gerektiği, anılan yasa hükmü uyarınca birleştirme kararı verilebilmesi için mahkemelerin aynı düzey ve sıfatta olmalarının gerekmediği belirtilmiş ise de çoğunluk tarafından bu görüş kabul edilmeyerek, 6100 Sayılı HMK’nın 448. maddesindeki derhal uygulanırlılık kuralı uyarınca somut olayda 6100 Sayılı HMK’nın 166. maddesinin uygulanmasının gerektiği, bu sebeple de aynı düzey ve sıfatta olmayan hukuk mahkemelerindeki davaların birleştirilemeyeceğine karar verilmiştir.</p>
+
+<p>Hal böyle olunca; sulh hukuk mahkemesi ile asliye ticaret mahkemesi aynı düzey ve sıfatta hukuk mahkemesi olmadığından ilgili davaların birleştirilemeyeceğine dair Yerel Mahkemece verilen direnme kararı yerindedir.</p>
+
+<p>Ne var ki, esasa dair temyiz itirazları Özel Dairece incelenmediğinden, bu konuda inceleme yapılmak üzere dosya Özel Daireye gönderilmelidir.</p>
+
+<p>SONUÇ : Yukarıda açıklanan sebeplerle direnme uygun bulunduğundan davacı vekilinin işin esasına yönelik diğer temyiz itirazlarının incelenmesi için dosyanın 15. HUKUK DAİRESİNE GÖNDERİLMESİNE, 25.05.2016 gününde oyçokluğu ile karar verildi.</p>
+
+<p>KARŞI OY :</p>
+
+<p>Dava, eser sözleşmesinden kaynaklanan alacağın tahsili için yapılan icra takibine itirazın iptâli takibin devamı ve %40’tan az olmamak üzere icra inkâr giderimi tayini istemine ilişkindir.</p>
+
+<p>Yerel mahkemede görülen davanın yapılan açık yargılaması sonucunda fatura tarihi itibariyle reklam anlaşmasının varlığı, reklamın yapıldığı ve faturanın davalıya tebliğ edildiği iddialarının kanıtlanamadığı gerekçesiyle davanın reddine karar verilmiş, davacı yanın temyizi üzerine karar Yargıtay 15. Hukuk Dairesi’nin 21.01.2014 gün ve 2013/5728 Esas, 2014/431 Karar ayılı ilâmı ile bozulmuş bozma kararında Ankara 4. Asliye Ticaret Mahkemesi’nin 2008/646 Esas sayılı dava dosyasında görülen dava ile arada bağlantı bulunduğu her iki davanın 6100 Sayılı HMK’nın 166. maddesi uyarınca birleştirilerek görülmesi gerektiği ifade edilmiş yerel mahkemece her iki mahkemenin aynı düzey ve sıfattaki mahkeme olmadığı gerekçesiyle önceki kararında ısrar edilmiştir.</p>
+
+<p>Davacı yüklenici Başkent Haber Ajansı A.Ş. davalı iş sahibi ANB tekstil Ltd. Şti.’ne ait kanal B televizyonunda yayınlanacak bir reklam film gösterimi işinin yapımını üstlenmiştir.Yanlar arasında düzenlenmiş yazılı bir sözleşme bulunmamaktadır.Ancak akdî ilişkinin varlığı her iki yanın kabulü dahilindedir.</p>
+
+<p>Uyuşmazlık işin bedeli ve ödemeler noktasında toplanmaktadır.</p>
+
+<p>Davacı yüklenici işin bedeli ile ilgili olarak 30.05.2007 tarihli 11.025,92 TL bedelli, 31.05.2007 tarihli 7.844,64 TL bedelli, 30.08.2007 tarihli 2.775,36 TL bedelli, 31.08.2007 tarihli 3.511,68 TL bedelli, 31.10.2007 tarihli 3.518,76 TL bedelli, 31.07.2007 tarihli 2.303,36 TL bedelli altı adet fatura düzenlemiştir.</p>
+
+<p>Yüklenici şirket tarafından davalı iş sahibi hakkında 31.07.2007 tarihli 2.303,36 TL bedelli faturaya dayanılarak Ankara 17. İcra Müdürlüğü’nün 2008/12801 Esas sayılı dosyasında yapılan icra takibinde 2.303,36 TL asıl alacak 921,20 TL işlemiş faiz olmak üzere toplam 3.224,56 TL istenmiş davalı borçlunun itirazı üzerine takip durmuştur.</p>
+
+<p>Diğer 5 adet faturaya dayanılarak Ankara 30. İcra Müdürlüğü’nün 2008/1852 Esas sayılı dosyasında icra takibi yapılmış iş sahibi borçlunun itirazı üzerine takip durmuştur.</p>
+
+<p>Ankara 17. İcra Müdürlüğü’nün 2008/12801 Esas sayılı dosyası ile ilgili olarak açılan itirazın iptâli takibin devamına dair dava Ankara 5. Sulh Hukuk Mahkemesi’nin 2009/2061 Esas, 2012/1936 Karar sayılı dava dosyasında görülmüş davanın reddine karar verilmiştir.</p>
+
+<p>Ankara 30. İcra Müdürlüğü’nün 2008/1852 Esas sayılı dosyası ile ilgili olarak açılan itirazın iptâli takibin devamına dair dava Ankara 4. Asliye Ticaret Mahkemesi’nin 2008/646 Esas sayılı dava dosyasında görülmüş, davanın reddine karar verilmiştir.</p>
+
+<p>Davacı tarafın temyizi üzerine her iki dava dosyasında verilen kararlar bozulmuştur.</p>
+
+<p>Direnmeye konu edilen Ankara 5. Sulh Hukuk Mahkemesi’nin 2009/2061 Esas, 2012/1936 Karar sayılı dava dosyasında verilen davanın reddine dair kararın temyizi sonucunda verilen bozma kararında Ankara 4. Asliye Ticaret Mahkemesi’nin 2008/646 Esas sayılı dava dosyası ile arada bağlantı bulunduğu 6100 Sayılı HMK’nın 166. maddesi uyarınca her iki davanın birleştirilmesi gerektiği düşüncesine yer verilmiştir.</p>
+
+<p>Yerel mahkemece her iki mahkeme aynı sıfat ve düzeyde olmadığından birleştirmenin mümkün olamayacağı gerekçesiyle önceki kararda ısrar edilmiştir.</p>
+
+<p>6100 Sayılı HMK’nın 166. maddesinde6100 Sayılı HMK’nın 166. maddesinde yapılan düzenlemede aynı düzey ve sıfattaki mahkemelerde görülen davalar arasında bağlantı bulunması halinde davanın her aşamasında, talep üzerine veya kendiliğinden ilk davanın açıldığı mahkemede birleştirilebileceği birleştirme kararının ikinci davanın açıldığı mahkemece verileceği hükme bağlanmıştır.</p>
+
+<p>Yüksek özel dairenin bozma kararında birleştirmenin HMK’nın 166. maddesi gereğince yapılması ifade edilmiştir. Ancak bu kapsamda bozma gerekçesi isabetli değildir. Çünkü somut olayda ayrı hukuk mahkemelerinde görülen iki dava dosyası vardır.</p>
+
+<p>6100 Sayılı aynı düzey ve sıfattaki hukuk mahkemelerinde görülen davalar arasında bağlantı bulunması halinde birleştirme usulü düzenlenmiş, ayrı hukuk mahkemelerinde görülen davalarla ilgili düzenleme yapılmamıştır. Ancak ayrı hukuk mahkemelerinde görülen davaların birleştirilmesine engel herhangi bir düzenleme de bulunmamaktadır.</p>
+
+<p>Yerel mahkeme ile yüksek özel daire arasındaki temel uyuşmazlık ayrı hukuk mahkemelerinde görülen davalar arasında bağlantı olması halinde birleştirme kararı verilip verilemeyeceği noktasında toplanmaktadır.</p>
+
+<p>Her iki dava 6100 Sayılı yürürlüğe girmeden önce açılmıştır. O zaman yürürlükte bulunan 1086 Sayılı HUMY’nın 5-45 187/5 maddelerinde ayrı hukuk mahkemelerinde açılan davaların birleştirilebileceği hususu düzenlenmiş, uygulamada yürürlüğe girmesine kadar da birleştirme kararları verilmiştir.</p>
+
+<p>6100 Sayılı ayrı hukuk mahkemelerinde görülen davalar arasında bağlantı bulunması halinde birleştirme konusunun düzenlenmemesi kural içi bir boşluk yaratmıştır. Anılan kural içi boşluğun doldurulması hukuk yaratılması mahkeme yargıcının taktir yetkisi alanında kalmaktadır. Buradaki hukuk yaratma yetkisi yargıcın hem görevi hem de sorumluluğu dahilindedir.</p>
+
+<p>Yargıç kural içi boşluğu doldururken geçmiş tüm yasal düzenlemeleri, içtihatları, uygulamayı ve somut olayın özelliklerini dikkate alarak yöntemine uygun bir çözüm üretmelidir.</p>
+
+<p>Mevcut usul yasasında herhangi bir düzenleme bulunmadığından bahisle sorunun çözümsüz bırakılması ve olumsuz yönde sonuca gidilmesi isabetli olmamıştır.</p>
+
+<p>O halde anılan kural içi boşluğun doldurulması ve açıklığa kavuşturulması görevi HGK’ya aittir.</p>
+
+<p>Davaya konu somut olayda eserin bedeliyle ilgili 6 adet fatura düzenlemiştir. Bir adet fatura ile ilgili uyuşmazlık konusunda sulh hukuk mahkemesinde diğer 5 adet fatura ile ilgili uyuşmazlık konusunda asliye ticaret mahkemesinde dava açılmıştır. Her iki mahkemede davaya konusu edilen faturalar aynı sözleşme ve eser ile ilgilidir. Bu durumda her iki davanın konusu tarafları bakımından bağlantı vardır. Birleştirilerek görülmesinde gerek usul ekonomisi, gerekse yargılama tekniği ve birbirine aykırı kararların çıkmasının önlenmesi bakımından hem fayda hem de zaruret bulunmaktadır.</p>
+
+<p>Yüksek özel dairenin bozma kararının yukarıdan beri açıkladığım olgular gözetilmek suretiyle ilaveli değişik gerekçeyle bozulması gerektiği görüş ve kanaatindeyim.</p>
+
+<p>Tüm bu sebeplerle HGK’nın yerel mahkeme kararının onanması yönündeki çoğunluk görüşüne katılmıyorum.</p>
+<hr>
+
+</div></div></main>
+</div>
+
+<footer>
+<section>
+<div class="contact-info">
+
+<div class="adres">
+
+<div class="telefon-wrapper">
+
+
+</div>
+</div>
+</section>
+
+</div>
+
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+"vars": {
+"account": "UA-58342443-1"
+},
+"triggers": {
+"trackPageview": {
+"on": "visible",
+"request": "pageview"
+}
+}
+}
+</script>
+</amp-analytics>
+
+</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="../../index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="../../dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="../../ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="../../knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="../../search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/slideToggle.min.js"></script>
+    <script src="../js/internet-status.js"></script>
+    <script src="../js/tiny-slider.js"></script>
+    <script src="../js/baguetteBox.min.js"></script>
+    <script src="../js/countdown.js"></script>
+    <script src="../js/rangeslider.min.js"></script>
+    <script src="../js/vanilla-dataTables.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/magic-grid.min.js"></script>
+    <script src="../js/dark-rtl.js"></script>
+    <script src="../js/active.js"></script>
+    <!-- PWA -->
+    <script src="../js/pwa.js"></script>
+  </body>
+</html>

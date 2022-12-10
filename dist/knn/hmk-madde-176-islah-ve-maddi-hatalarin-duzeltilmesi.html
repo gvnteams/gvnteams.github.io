@@ -1,0 +1,1081 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tiny-slider.css">
+    <link rel="stylesheet" href="../css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="../css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="tck-search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+               <div class="page-content-wrapper py-0">
+        </div>
+      </div>
+
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<h2 id="islah-ve-maddi-hataların-düzeltilmesi">Islah ve Maddi Hataların Düzeltilmesi</h2>
+
+<h2 id="kapsamı-ve-sayısı">Kapsamı ve Sayısı</h2>
+
+<h2 id="hmk-madde-176">HMK Madde 176</h2>
+
+<p>(1) Taraflardan her biri, yapmış olduğu usul işlemlerini kısmen veya tamamen ıslah edebilir.</p>
+
+<p>(2) Aynı davada, taraflar ancak bir kez ıslah yoluna başvurabilir.</p>
+
+<hr>
+
+<ul>
+  <li><a href="../6100-sayili-hukuk-muhakemeleri-kanunu-(hmk).html"><strong>6100 sayılı HMK (Hukuk Muhakameleri Kanunu) Tam Metin</strong></a></li>
+</ul>
+
+<hr>
+
+<amp-img src="../tokmak-yargitay-kararlari-1280x720.png" alt="HMK Madde 176  Islah" width="1280" height="720" layout="responsive">
+            </amp-img>
+
+<h2 id="hmk-madde-176-islah-gerekçesi">HMK Madde 176 (Islah) Gerekçesi</h2>
+
+<p>1086 sayılı Kanunun 83 üncü maddesi hükmü esas olarak kabul edilmiş, ancak anlaşılmasını kolaylaştırmak için ifadesi değiştirilmiş ve iki fıkra hâlinde düzenlenmiştir.</p>
+
+<p>Taraflar, daha önce olduğu gibi, ıslah yolu ile iddialarını ve savunmalarını genişletip değiştirebileceklerdir. Buna göre, davacı dava dilekçesinde belirttiği dava sebebini değiştirebileceği gibi, örneğin; daha önce belirttiği ödünç sözleşmesi sebebini değiştirip, sebepsiz zenginleşme sebebine dayanabilecektir. Keza, davacı dava dilekçesinde belirttiği vakıaları eksik belirtmişse, onları ıslah yolu ile tamamlayabilecektir. Ayrıca, davacının dava dilekçesinde belirttiği talebini ıslah yolu ile artırması, örneğin daha önce istediği ellibin Türk Lirasını yüzbin Türk Lirasına çıkarması mümkün olduğu gibi, talebini değiştirmesi de mümkündür, aynen talep ettiği otomobilden vazgeçip, ıslah yolu ile değerini isteyebileceği gibi, otomobilden tümüyle vazgeçip, ıslah yolu ile bilgisayar istemesi de mümkündür. Aynı şekilde davalı da, vermiş olduğu cevap dilekçesini ıslah edip, daha önce eksik bıraktığı savunmasını tamamlayabileceği gibi, savunmasını dayandırdığı vakıaları tümüyle de değiştirebilecektir.</p>
+
+<p>Hukukumuzda, ıslah yolu ile davanın taraflarının değiştirilip değiştirilemeyeceği konusunda farklı görüşler mevcut olup, Yargıtayın uygulaması da ıslah yolu ile davanın taraflarının değiştirilemeyeceği yönündedir. Bu Tasarıda, açıklanan esaslar tamamen kabul edilmiştir.</p>
+
+<p>Islah yolu ile davanın geciktirilmesi ve sürüncemede bırakılması mümkün olduğundan, ikinci fıkra ile, tarafların ıslah yoluna bir defa başvurabileceklerine ilişkin sınırlama bu Tasarıda da kabul edilmiştir.</p>
+
+<p>Uygulamada, zamanaşımının ıslah yolu ile ileri sürülüp sürülemeyeceğine dair bazı tereddütler var ise de zamanaşımı ilk itiraz olmayıp, ıslah yolu ile de ileri sürülebileceğinde tereddüt etmemek gerekir.</p>
+
+<hr>
+
+<h2 id="islah">ISLAH</h2>
+
+<center><p>(YİBGK-K.2019/3)</p></center>
+
+<p><strong>Islah</strong>, 6100 sayılı HMK’nın Üçüncü Kısım Beşinci Bölümün Altıncı Ayrımında 176 ile 182’nci maddeler arasında düzenlenmiştir. Bu düzenleme genel anlamda HUMK’da yer alan düzenlemenin sadeleştirilmiş hâlinden ibarettir. Islaha ilişkin düzenlemelerin hemen ardından ise 183’üncü maddede maddi hataların düzeltilmesine yer verilmiştir.</p>
+
+<h3 id="1-islah-kavramı">1. Islah kavramı</h3>
+
+<p>Islah kelime olarak bir şeyi iyileştirme, düzeltme anlamını içerse de, yargılama hukuku bakımından bundan daha özel ve teknik bir anlama sahiptir (Pekcamtez, Pekcamtez Usûl, s. 1486). <strong>Islah</strong>; taraflardan birinin yapmış olduğu usul işleminin tamamen veya kısmen düzeltilmesine denir (Kuru, s.3965). Islah müessesesi, dava değiştirme, başka deyişle iddia ve müdafaanın değiştirilmesi veya genişletilmesi yasağını bertaraf eden bir imkândır. Zira bu suretle, aslında yasal itiraz ile karşılaşılabilecek olan herhangi bir taraf muamelesi, ıslah kurumu yardımı ile artık bu itirazı davet etmeksizin yapılabilmektedir (S., Üstündağ: Medeni Yargılama Hukuk, C.I-II, B.5, İstanbul 1989, s.454). Bu tanımlardan da anlaşılacağı üzere, bir davada, davacı veya davalı iddia veya savunma sebeplerinin hepsini usul işlemlerinde yapılan bir hata ya da unutma nedeni ile mahkemeye sunmamış olabilir. Yargılama sırasında ortaya çıkan bazı gelişmeler de yeni iddia veya savunma sebeplerinin ileri sürülmesini gerektirebilir. İşte bu eksiklikler HUMK’nm yürürlükte olduğu dönemde diğer tarafın açık veya zımni muvafakati ile giderilebilmekteydi. HMK`nın yürürlüğe girmesi ile birlikte zımni muvafakat ile eksikliklerin giderilebilmesi kaldırılmış ve sadece diğer tarafın açık muvafakati ile eksikliklerin giderilebileceği kabul edilmiştir. Taraflardan birinin iddiasını veya savunmasını değiştirmek veya genişletmek istemesi hâlinde, karşı taraf buna açık bir şekilde rıza göstermezse; iddiasını veya savunmasını değiştirmek veya genişletmek isteyen tarafın ıslaha başvurmaktan başka çaresi yoktur. Şu hâlde ıslah hem iddianın hem de savunmanın genişletilmesi ve değiştirilmesi yasaklarının istisnalarından birini oluşturur. Sözü edilen yasakların işlerlik kazandığı andan itibaren, iddiasını ya da savunmasını genişletmek ya da değiştirmek isteyen tarafın, karşı tarafın buna açık muvafakat vermemesi halinde müracaat edeceği kurum, ıslah kurumudur (Tanrıver, 729).</p>
+
+<p>6100 sayılı HMK`nın ıslaha ilişkin madde gerekçesinde de “<em>…1086 sayılı Kanunun 83 üncü maddesi hükmü esas olarak kabul edilmiş, ancak anlaşılmasını kolaylaştırmak için ifadesi değiştirilmiş ve iki fıkra hâlinde düzenlenmiştir. Taraflar, daha önce olduğu gibi, ıslah yolu ile iddialarım ve savunmalarını genişletip değiştirebileceklerdir. Buna göre, davacı dava dilekçesinde belirttiği dava sebebini değiştirebileceği gibi, örneğin; daha önce belirttiği ödünç sözleşmesi sebebini değiştirip, sebepsiz zenginleşme sebebine dayanabilecektir. Keza, davacı dava dilekçesinde belirttiği vakıaları eksik belirtmişse, onları ıslah yolu ile tamamlayabilecektir. Ayrıca, davacının dava dilekçesinde belirttiği talebini ıslah yolu ile artırması, örneğin daha önce istediği ellibin Türk Lirasını yüzbin Türk Lirasına çıkarması mümkün olduğu gibi, talebini değiştirmesi de mümkündür, aynen talep ettiği otomobilden vazgeçip, ıslah yolu ile değerini isteyebileceği gibi, otomobilden tümüyle vazgeçip, ıslah yolu ile bilgisayar istemesi de mümkündür. Aynı şekilde davalı da, vermiş olduğu cevap dilekçesini ıslah edip, daha önce eksik bıraktığı savunmasını tamamlayabileceği gibi, savunmasını dayandırdığı vakıaları tümüyle de değiştirebilecektir…</em>” yönünde açıklamalara yer verilerek ıslahın iddia ve savunmasının değiştirilmesine imkân veren yönüne vurgu yapılmıştır.</p>
+
+<p>…</p>
+
+<h3 id="2-islahın-hukuki-niteliği">2. Islahın hukuki niteliği</h3>
+
+<p>İddia ve savunmanın genişletilmesi veya değiştirilmesi yasağı yazılı yargılama usulüne tabi davalarda cevaba cevap ve ikinci cevap dilekçesinin verilmesinden sonra başlar. Başka bir anlatımla davacı cevaba cevap dilekçesi ile iddiasını; davalı ise ikinci cevap dilekçesi ile savunmasını serbestçe değiştirip genişletebilir. Basit yargılama usulünün uygulandığı davalarda ise bu yasak davacı yönünden davanın açılması ile; davalı yönünden ise cevap dilekçesinin verilmesi ile devreye girer. 
+…
+Bu yasak ya ıslah ile ya da diğer tarafın açık muvafakati ile aşılabilmektedir. Bu nedenle ıslah, kendine özgü (sui generis) hukuki bir çare ve yoldur.</p>
+
+<p>Islah sözlü olarak yapılabileceği gibi, yazılı olarak da yapılabilir (HMK m. 177/1). Islah duruşmada sözlü olarak yapılmış ise, sözlü ıslah beyanı tutanağa geçirildikten sonra, altı ıslah talebinde bulunan tarafından imzalanır (HMK m. 154).</p>
+
+<p>Tek taraflı bir irade beyanıyla kullanılan ıslahın yapılabilmesi için hâkimin onay vermesine veya karşı tarafın muvafakatini almaya gerek yoktur. Hâkim, sadece ıslahın koşullarını inceler ve yapılan ıslahın geçerli olup olmadığım değerlendirir. Islah nitelik olarak değerlendirildiğinde, taraflardan birinin tahkikat aşamasında yapmış olduğu usul işlemini düzeltmesidir.</p>
+
+<p>Şu hâlde kanunun aradığı şartlara ve usulüne uygun olarak yapılan ıslah, tek taraflı irade beyanı ile kullanılan ve sonuç doğuran bir usulî işlemdir; mahkemenin ya da karşı tarafın rızasına bağlı değildir (Arslan /Yılmaz /Taşpmar/Hanağası, s.525).</p>
+
+<h3 id="3-islahın-amacı">3. Islahın amacı</h3>
+
+<p>Islahın amacı, yargılama sürecinde şekil ve süreye aykırılık sebebiyle ortaya çıkabilecek maddi hak kayıplarım ortadan kaldırmak olup ıslah, tahkikat aşamasında yapılmış olan hatalı bazı taraf usul işlemlerini bir defaya mahsus olmak üzere düzeltme hakkı veren hukukî bir çaredir. Islah yoluna başvuran taraf, diğer hukuki imkânlara nazaran daha kısa sürede ve daha az masrafla gerçekte istediği sonuca ulaşır. Eğer taraflara ıslah hakkı tanınmamış olsa idi, genel olarak davacı tekrar dava açmak zorunda kalacaktı.</p>
+
+<p>Sonuç olarak, ıslah dava sebebinin veya savunmanın değiştirilmesi, delillerin ileri sürülmesi ve davaya dâhil edilmemiş vakıaların davaya dâhil edilmesi amaçlarına hizmet eden hukuki bir müessesedir.</p>
+
+<h3 id="4-islahın-şartları">4. Islahın şartları</h3>
+
+<p>Islah, bir davada taraflara bir defaya mahsus olmak üzere tanınmış istisnai bir hak ise de, yargılama süreci boyunca yapılan her usûl işleminin ıslahla değiştirilmesi ya da düzeltilmesi mümkün değildir. Kanun koyucu, ıslah hakkının kullanılabilmesini bazı şartların gerçekleşmesine bağlamakla birlikte bu şartlara Kanun`da ıslaha ilişkin hükümlerde dağınık bir şekilde yer verilmiştir. Islahın şartlarının şu şekilde sıralanması mümkündür.</p>
+
+<ul>
+  <li>
+    <p>Islaha elverişli bir usul işleminin bulunması (HMK m. 176/1),</p>
+  </li>
+  <li>
+    <p>Islahı davanın taraflarının yapabilmesi (HMK m. 176/2)</p>
+  </li>
+  <li>
+    <p>Islaha tarafların sadece bir kez başvurabilmesi (HMK m. 176/2)</p>
+  </li>
+  <li>
+    <p>Islahın tahkikatın sonuna kadar yapılabilmesi (HMK m. 177)</p>
+  </li>
+  <li>
+    <p>Islahın yazılı olarak bir dilekçeyle veya sözlü olarak yapılabilmesi (HMK m. 177/2)</p>
+  </li>
+  <li>
+    <p>Islah yoluna başvuran tarafın, ıslah yapılması nedeniyle ortaya çıkan yargılama giderlerini ve karşı tarafın zararlarını tazmin etmesinin gerekmesi (HMK m. 178)</p>
+  </li>
+</ul>
+
+<h4 id="4a-islaha-elverişli-bir-i̇şlemin-bulunması">4a. Islaha Elverişli Bir İşlemin Bulunması</h4>
+
+<p>Islahın amacı yukarıda da açıklandığı üzere yargılama sürecinde şekil ve süreye aykırılık sebebiyle ortaya çıkabilecek maddi hak kayıplarını ortadan kaldırmak olduğundan, hak ve alacağı bu sürecin dışında ortadan kaldırmış olan işlemlerin, yani maddi hukuk işlemlerinin ıslah yoluyla düzeltilebilmesi olanaklı değildir.</p>
+
+<p>Tarafların usul işlemlerinin içinde maddi hukuk işlemlerinin yapılması da mümkündür. Örneğin davadan feragat, davayı kabul, sulh, bir sözleşmenin feshi, takas beyanı gibi. Bu maddi hukuk işlemleri, bir usul işlemi içinde yapılmış olmakla beraber içerik bakımından maddi hukuk işlemi niteliğini korurlar. Çünkü bu işlemlerin şart ve etkileri maddi hukuk tarafından düzenlenmektedir. Bu nedenle, bir usul işlemi içinde yapılmış olan bu gibi maddi hukuk işlemlerinin ıslah yolu ile düzeltilmesine imkân yoktur (Arslan/Yılmaz/Taşpınar/Hanağası, s.523).</p>
+
+<p>Usûl işlemleri, yargılamaya katılanlar tarafından yapılan ve yargılamayı başlatan, sürdüren ve sona erdiren işlemlerdir. Gerçekten, davanın açılmasından sonuçlanmasına kadar birçok işlem yapılır. Örneğin, dava dilekçesi ile açılan davada, taraflar duruşmaya çağrılır, bu duruşmada iddia ve savunmalarını ispat için deliller gösterirler, delillerin incelenmesinden sonra mahkeme bir karar verir ve bu karara karşı taraflarca kanun yoluna başvurulabilir. Bu işlemlerin bir kısmı mahkemece, bir kısmı ise taraflarca yapılır. Mahkeme tarafından yapılan usûl işlemlerine mahkeme usûl işlemleri; taraflarca yapılan usûl işlemlerine ise taraf usûl işlemleri denir (Pekcamtez, Pekcamtez Usûl, s. 433).</p>
+
+<p>Taraf usûl işlemleri ise davanın açılmasından mahkemenin dava sonunda verdiği karara kadarki süreçte, tarafların tek başına, birbirleri ile ya da mahkeme ile yaptığı işlemlerdir. Bu işlemler davanın ilerlemesini sağlar ve davanın sonunda verilecek karara etki edecek irade beyanı ve bilgilerin mahkemede açıklanmasını sağlar. Eğer söz konusu irade beyanı ya da mahkemeye sunulan bilgi davanın çözümüne etkili değilse, bu işlem taraf usul işlemi olarak kabul edilemez.</p>
+
+<p>Şu hâlde HMK’nın 176’ncı maddesi hükmü karşısında ıslahın konusunun taraflarca yapılmış usûl işlemleri olduğu anlaşılmakladır.</p>
+
+<p>Mahkeme usûl işlemleri, ıslaha başvurmak suretiyle düzeltilemezler. Yine, taraf usûl işlemleri arasında yer almakla birlikte iki taraflı usûl işlemi konumunda bulunan usûl sözleşmelerinin ıslahla geçersiz kılınması mümkün değildir (Tanrıver, 730, 731).</p>
+
+<p>Kanun’da açıkça (HMK 179/2) sayılmış olmaları nedeni ile, ikrar, tanık ifadeleri, bilirkişi rapor ve beyanları, keşif ve isticvap tutanakları, yerine getirilmiş olan veya henüz yerine getirilmemiş olmakla beraber, karşı tarafın yerine getireceğini ıslahtan önce bildirmiş olması koşuluyla, yeminin teklifi, reddi veya iadesi ıslah ile geçersiz kılınamaz.</p>
+
+<p>Buna karşın özellikle ilk itirazlar yönünden cevap dilekçesinde ileri sürülmemesi hâlinde ıslah bir hukuki çare sunamayacaktır. Zira, cevap dilekçesi HMK’nın 116’ncı maddesinde hüküm altına alman ilk itirazlar için hak düşürücü niteliktedir.</p>
+
+<p>Tarafların dilekçelerinde yer alan açık yazı ve hesap hatalarının, yani maddi hataların, karar verilinceye kadar her zaman düzeltilebilmesi mümkün olduğundan, bu tür hatalar açısından ıslaha başvurmaya ihtiyaç yoktur (HMK m. 183).</p>
+
+<p>Şu hâlde davacının davasının temelini oluşturan maddi vakıaları ıslah yolu ile değiştirip genişletmesi, talep sonucunu rakam olarak arttırması, talep sonucunun yanına yeni kalemler ilave etmesi veya eskisinin yerine yeni bir talebi ikame etmesi; davalının ise cevap ve ikinci cevap dilekçesinde ileri sürülmemiş olan bir defiyi (örneğin zamanaşımı defi) yargılamaya dâhil etmesi, savunmasını değiştirip genişletmesi mümkündür.</p>
+
+<p>Bu noktada belirtmek gerekir ki, her ne kadar ıslah, mahkemenin onayına ihtiyaç olmadan yapılabilen tek taraflı bir usul hukuku işlemi ise de, ıslaha başvuran tarafın düzeltmek veya değiştirmek istediği usul işleminin, ıslaha elverişli olup olmadığının ve işlemin ıslah sonrasında bürüneceği hâlin, davaya uygun bir talep olup olmadığının hâkim tarafından değerlendirilmesi ve ıslah dilekçesinin diğer tarafa tebliği gerekecektir. Böylece hâkimin gözünden kaçabilecek hususların karşı tarafça tespit edilip hâkimin önüne getirilebilmesi ve aynı zamanda davalı yana hukuki dinlenilme hakkı açısından bilgilenme, açıklama, dikkate alınma ve değerlendirilme imkânı sağlanmış olacaktır.</p>
+
+<h4 id="4b-islahın-davanın-taraflarınca-yapılabilmesi">4b. Islahın davanın taraflarınca yapılabilmesi</h4>
+
+<p>HMK’nın 177’nci maddesinin ikinci fıkrası uyarınca ıslah, yazılı veya sözlü olarak yapılabilmektedir. Uygulamada genellikle ıslah, ıslaha başvuran tarafın dilekçe ile mahkemeye başvurması sureti ile yapılmaktadır. Ancak duruşma sırasında ıslah talebinde bulunmak mümkün olup bu hâlde ıslah beyanı duruşma tutanağına geçirilir ve hazır olan karşı tarafa ıslaha karşı beyanda bulunmak üzere süre verilir. Karşı taraf dilerse ıslahın yapıldığı duruşmada beyanda bulunabilecektir. Islahın dilekçe ile yapılması hâlinde ise ıslah dilekçesi karşı tarafa tebliğ edilir.</p>
+
+<p>Ancak bu tebligat ıslahın geçerlilik şartı değildir. Bununla birlikte hukuki dinlenilme hakkının gereği olarak karşı tarafın ıslah talebi hakkında bilgi sahibi olması ve gerektiğinde bu konuda açıklama yapabilmesi gerekir (Pekcamtez, Pekcamtez Usûl, s. 1532).</p>
+
+<h4 id="4c-islaha-aynı-davada-bir-kez-başvurulabilmesi">4c. Islaha aynı davada bir kez başvurulabilmesi</h4>
+
+<p>HMK’nın 176’ncı maddesinin ikinci fıkrası hükmü uyarınca tarafların aynı davada yalnızca bir kez ıslah hakkı bulunmaktadır.</p>
+
+<p>Islahın tarafların ihmal ve hataları sebebiyle başlangıçta davaya dâhil edemedikleri hususların yargılamaya sonradan da olsa dâhil edilmesini sağlayarak yeni davaların açılmasına engel olmak ve hak aramayı kolaylaştırmak gibi bir amacı olmakla birlikte, amacı dışında kullanılarak davaların uzamasına sebep olmaması için bir kez kullanılmasına izin verilmiştir. Islah yapan iyi düşünmeli ve bu imkânı bir defa kullanmalıdır. Bu hak bir defa kullanılarak tüketilmişse artık ikinci bir imkân tanınmayacaktır. İkinci kez ıslah yoluna başvurulursa mahkeme bu beyanı kendiliğinden reddeder (Pekcamtez, Pekcamtez Usûl, s. 1528).</p>
+
+<p>HMK’da ıslahın geçerlilik şartı olarak harca tabi olduğuna ilişkin bir hükme yer verilmemiş ise de, örneğin, kısmî ıslah yolu ile dava değerinin arttırılması hâlinde, noksan harem tamamlanması gerekecektir. Böyle bir durumda, harç yatırılmamış olsa dahi ıslah hakkı kullanılmış olduğundan bu durumda hâkim, eksik harcı yatırmayan tarafı (örnekte davacıyı) ıslah ile elde edeceği haktan mahrum edecektir. Taraf, ıslah hakkını kullandığı için de ikinci kez ıslah talebinde bulunamayacaktır.</p>
+
+<h4 id="4d-islahın-tahkikatın-sonuna-kadar-yapılabilmesi">4d. Islahın tahkikatın sonuna kadar yapılabilmesi</h4>
+
+<p>HMK’nın 177’nci maddesinin birinci fıkrası hükmü gereğince ıslah, tahkikatın sona ermesine kadar yapılabilmektedir.</p>
+
+<p>Hukuk yargılaması davanın açılmasından başlayıp, hükmün kesinleşmesine kadar devam eden bir süreci kapsar. Yargılama usulünde gerek taraflarca gerekse mahkeme tarafından yapılacak usul işlemleri de dâhil olmak üzere bütün işlemlerin belirli bir süre içerisinde yapılması gerekir. Bu sürelerin bir kısmı cevap süresi, temyiz süresi gibi kanun tarafından belirlenmiş, bir kısım sürelerin belirlenmesi ise hâkime bırakılmıştır. Islah yoluna da diğer usul işlemleri gibi belli bir zaman dilimi içerisinde başvurulabilir. Bir başka deyişle taraflar istedikleri zaman ıslah yoluna başvuramazlar.</p>
+
+<p>Islah yoluna başvurulma anının başlangıcı iddianın ve savunmanın değiştirilmesi yasağının başlangıcı ile ilgilidir. Bir başka deyişle iddianın ve savunmanın değiştirilme yasağının başlangıcı, aynı zamanda ıslah yoluna başvurulma anının başlangıcını oluşturmaktadır. Zira iddia ve savunma yasağının başlamadığı bir dönemde taraflar iddia ve savunmalarını serbestçe değiştirebilirler. İddianın ve savunmanın değiştirilmesi anının başlangıcı yazılı (HMK md. 118-142) ve basit (HMK. md. 116, 322) yargılama usulüne tabi davalarda farklılık gösterir. Kural olarak yazılı yargılama usulüne tabi davalarda iddia ve savunmanın değiştirilmesi yasağı davacı yönünden cevaba cevap dilekçesinin verilmesiyle, davalı yönünden ise ikinci cevap dilekçesinin verilmesiyle başlar. Bunun yanında ön inceleme duruşmasına taraflardan biri mazeretsiz olarak gelmezse, gelen taraf onun muvafakati aranmaksızın iddia veya savunmasını genişletebilir yahut değiştirebilir. Ön inceleme aşamasının tamamlanmasından sonra iddia veya savunma genişletilemez yahut değiştirilemez (HMK. md. 141/1).</p>
+
+<p>Basit yargılamaya tabi davalarda ise iddianın genişletilmesi veya değiştirilmesi yasağı dava açılmasıyla; savunmanın genişletilmesi veya değiştirilmesi yasağı cevap dilekçesinin mahkemeye verilmesiyle başlar (HMK. md. 319).</p>
+
+<p>Davanın her aşamasında karşı tarafın muvafakati ile iddia ve savunmayı değiştirebilme hakkı saklıdır.</p>
+
+<p>…     <br>
+Mahkemenin, duruşmada hazır bulunan tarafların (o ana kadar yapılan) tahkikatın tümü hakkındaki açıklamalarından sonra, tahkikatı gerektiren bir husus kalmadığını görmesi üzerine tahkikatın bittiğini taraflara tefhim etmesi (HMK m. 184/2) anından sonra ıslah yapılamaz. Keza HMK’nın 357’nci maddesinin birinci fıkrası uyarınca istinaf aşamasında da ıslah yapılamaz.</p>
+
+<h4 id="4e-islah-yoluna-başvuran-tarafın-ıslah-yapılması-nedeniyle-ortaya-çıkan-yargılama-giderlerini-ve-karşı-tarafın-zararlarını-tazmin-etmesinin-gerekmesi">4e. Islah yoluna başvuran tarafın, ıslah yapılması nedeniyle ortaya çıkan yargılama giderlerini ve karşı tarafın zararlarını tazmin etmesinin gerekmesi</h4>
+
+<p>Islah hakkının kullanılması ile bazı işlemler yapılmamış sayılacak ve yargılamanın bir kısmı boşa çıkacaktır. Buna bağlı olarak karşı tarafın zarara uğrama ihtimali yüksektir. Kanun koyucu bu nedenle HMK’nın 178’inci maddenin birinci fıkrasında “Islah eden taraf, ıslah sebebiyle geçersiz hâle gelen işlemler için yapılan yargılama giderleri ile karşı tarafın uğradığı ve uğrayabileceği zararları karşılamak üzere hâkimin takdir edeceği teminatı, bir hafta içinde, mahkeme veznesine yatırmak zorundadır. Aksi hâlde, ıslah yapılmamış sayılır.</p>
+
+<p>Karşı tarafın zararının kesin olarak tespit edilmesinden sonra, mahkeme veznesine yatırılan miktar eksikse tamamlattırılır, fazla ise iade edilir.” hükmü ile getirilen düzenlemeye göre yargılama giderleri ile teminatın mahkeme veznesine yatırılması, ıslah hakkını kullananın kusursuz olmasına veya iyi niyetine bağlı değildir. Yani ıslah hakkını kullanan taraf, ıslah nedeni ile geçersiz hâle gelen işlemler için karşı tarafın yapmış olduğu giderleri ödemekle mükelleftir. Burada dikkat edilmesi gereken husus, karşılanacak olan yargılama giderleri, dava sonunda aleyhine hüküm verilen tarafın ödeyeceği yargılama gideri kadar kapsamlı değildir. Bu giderler sadece davanın ıslah edilmesi sebebi ile hükümsüz hâle gelen işlemler için ödenmiş bulunan yargılama giderleridir. Yatırılacak olan gider hâkim tarafından dosya üzerinden belirlenecektir. Islah tarihinden önce
+yapılan bir işlem, ıslah hakkının kullanılmasından sonra da geçerliliğini koruyacaksa, o zaman bu işleme dair yargılama giderinin karşılanmasına gerek yoktur ve ödenecek yargılama giderlerinin kapsamı dışında bırakılmalıdır.</p>
+
+<p>Uğranılan zarar kapsamında ödenecek olan tazminatın ise esasen yargılamanın uzaması sebebi ile karşı tarafın uğradığı zarar olduğunu söylemek mümkündür. 1086 sayılı HUMK`da yer alan düzenlemeden farklı olarak HMK’da karşı tarafın ıslah sebebi ile uğramış olduğu zararın yanında, uğrayabileceği zararların da tazmin edilmesi hüküm altına alınmıştır. Islah hakkının kullanılması ile birlikte karşılanması gereken yargılama giderleri ile karşı tarafın uğradığı veya uğrayabileceği zararların miktarı belirlendikten sonra hâkim, ıslah edene bir hafta süre verir. Eğer hâkim miktarı geçici olarak duruşmada tespit etmiş ise bir haftalık süre ıslah edene o duruşmada tefhim edilir. Eğer tazminat ve yargılama giderleri celse arasında takdir edilmişse, miktar ıslah edene tebliğ edilir. Süre tefhim veya tebliğden itibaren işlemeye başlar. Islah eden, bir haftalık süre içerisinde takdir ve tespit edilen miktarı mahkeme veznesine yatırmazsa, ıslah yapılmamış kabul edilir ve hâkim kararını ıslahtan önceki durum ve koşullara göre verir.</p>
+
+<h3 id="5-islahın-türleri">5. Islahın türleri</h3>
+
+<p>Islah davanın tamamen ıslahı ve kısmen ıslahı olmak üzere ikiye ayrılır. Zira HMK’nın 176’ncı maddesinin birinci fıkrasında `Taraflardan her biri, yapmış olduğu usul işlemlerini kısmen veya tamamen ıslah edebilir.” şeklindeki hüküm ile bu husus düzenlenmiştir.</p>
+
+<p>Dava dilekçesinin verilmesi dâhil, tüm usul işlemlerinin yapılmamış sayılması sonucunu doğuran ıslaha “davanın tamamen ıslahı”; buna karşılık tarafın, teşmil edeceği noktadan itibaren usûl işlemlerinin yapılmamış sayılması sonucunu doğuran ıslaha ise “kısmen ıslah” denir.</p>
+
+<h4 id="5a-kısmen-kısmi-ıslah">5a. Kısmen (kısmi) ıslah</h4>
+
+<p>Kısmen ıslah gerek davacı gerek davalı tarafından yapılabilir ve dava dilekçesinden sonra herhangi bir usul işlemi sonrası yapılabilmektedir.</p>
+
+<p>Davalı tarafça gerçekleştirilecek olan ıslah, bu yolla savunma ister genişletilsin, ister değiştirilsin, daima kısmen ıslah olacaktır. Çünkü, davalı yapacağı ıslahla en fazla cevap dilekçesinin verilmesi dâhil tüm usul işlemlerinin yapılmamış sayılmasını sağlayabilir. Sözü edilen hâlde, dava dilekçesinin verilmesi ve o çerçevede yapılmış olan usûl işlemleri geçersiz kılınamaz. Bu tespit çerçevesinde davanın tamamında ıslaha başvuru hakkı, münhasıran davacıya aittir. Çünkü ıslaha başvuru sureti ile, dava dilekçesinin verilmesi dâhil tüm usûl işlemlerinin yapılmamış sayılmasını sadece o sağlayabilir. Davacı taraf, iddiasını yani dava sebepleriyle talep sonucunu değiştirmek istiyorsa, yapacağı ıslah davanın tamamen ıslahı olacaktır. Buna karşılık iddianın yani dava sebepleriyle talep sonucunun değiştirilmesi değil de, genişletilmesi arzulanıyorsa, müracaat edilebilecek olan ıslah türü, kısmen ıslahtır (Tanrıver, 734).</p>
+
+<p>Kısmen ıslaha başvuran tarafa HMK’nın 181’inci maddesi uyarınca, ıslah ettiği usul işlemini yapması için bir haftalık süre verilir. Bu süre içinde ıslah edilen işlem yapılmazsa. ıslah hiç yapılmamış gibi davaya devam edilir. Dolayısıyla ıslah edilecek usul işlemin yapılabilmesi bir haftalık kesin süreye tabi kılınmıştır. Bu sürenin geçmesi ile birlikte, ıslah hakkı bir kereye mahsus olduğu için tükenecek ve dava ıslah edilmeden kaldığı yerden devam edecektir.</p>
+
+<p>Burada yeri gelmişken belirtilmelidir ki, kısmî davada dava konusu edilmemiş olan alacak kısmının bu dava devam ederken davaya dahil edilmesinde, ek dava açılabileceği gibi, ıslah yoluna başvurulması da seçeneği de kullanılabilir.</p>
+
+<p>Sözü edilen hâlde işlerlik kazanacak olan ıslah türü, davanın tamamen ıslahı değil, kısmen ıslahıdır. Çünkü talep sonucu değiştirilmemekte; sadece tutar arttırılmakta, yani genişletilmektedir. Değiştirme değil de, genişletme varsa, işlerlik kazanacak olan ıslah türü, kısmen ıslahtır. Kısmî davada zamanaşımı, ek davanın açıldığı anda kesiliyorsa, kısmen ıslah talebinde bulunulması halinde de, bu talepte bulunulduğu andan itibaren kesilir. Çünkü, kısmen ıslah, dava dilekçesinin verilmesi dahil, tüm usûl işlemlerinin yapılmamış sayılması sonucunu doğurmaz. Dolayısıyla, kısmen ıslah talebinde bulunulması hâlinde de, kısmî davanın açıldığı andan itibaren dava dışı tutulan alacak kesimi bakımından da, zamanaşımının kesilmesi gerektiği şeklindeki bir çözümlemeye varılamaz (Tanrıver, 732).</p>
+
+<p>…</p>
+
+<h4 id="5b-tamamen-tam-ıslah">5b. Tamamen (tam) ıslah</h4>
+
+<p>Tamamen ıslah ise, sadece davacı tarafından yapılabilen bir usûl işlemidir. Zira tamamen ıslah ile davanın en başından başka bir deyişle dava dilekçesinden itibaren o ana kadar yapılan usûl işlemleri geçersiz olmaktadır.</p>
+
+<p>Davasını tamamen ıslah eden davacı, yeni bir dava dilekçesi hazırlayıp mahkemeye sunmak sureti ile ıslah yoluna gidebileceği gibi, henüz ıslah dilekçesi hazırlamadan mahkemeye davasını tamamen ıslah edeceğini bildirebilir. Bu durumda davacı bildirimden itibaren bir hafta içinde yeni bir dava dilekçesi hazırlayarak mahkemeye vermek zorundadır (HMK m. 180/1 c.l).</p>
+
+<p>Davasını tamamen ıslah eden davacı bir hafta içinde yeni bir dava dilekçesi verirse veya ıslah dilekçesi aynı zamanda yeni bir dava dilekçesi niteliğinde ise mahkeme m.l78’e göre yargılama gideri ve davalının zararını karşılamak üzere takdir edilen teminatın da mahkeme veznesine yatırılmasından sonra, davayı yeni şekline (yeni dava dilekçesine) göre yürütür (görür). Kanun (m. 80) “yeni bir dava dilekçesi vermek zorundadır” demekte ise de, burada, davacının vermiş olduğu yeni dava dilekçesi ile yeni bir dava açılmış olmaz. Davanın tamamen ıslahı üzerine (yeni şekline göre) bakılan dava da eski (ilk açılan) davanın bir devamı niteliğindedir; bu nedenle m,180’deki bir hafta içinde yeni bir dava dilekçesi veren davacıdan yeniden başvurma harcı ile peşin karar ve ilâm harcı alınmaz. Davanın açıldığı tarihte ortaya çıkan zamanaşımı kesilmesi sonucu devam eder; davanın tamamen ıslahı, bu konuda bir değişiklik ortaya çıkarmaz (Arslan/Yılmaz/Taşpınar/Hanağası, s.525).</p>
+
+<p>Davasını tamamen ıslah ettiğini bildiren ve bu nedenle kendisine yeni bir dava dilekçesi sunması için bir hafta süre verilen davacı, bu bir haftalık süre içinde yeni dava dilekçesini vermezse, ıslah hakkını kullanmış sayılacağı gibi, ıslah hiç yapılmamış gibi davaya mevcut hâliyle devam edilir (HMK m. 180).</p>
+
+<p>Davalı ise yeni dava dilekçesinin kendisine tebliği üzerine bu yeni dava dilekçesine karşı süresi içinde (HMK m. 127) yeni bir cevap dilekçesi verecektir.</p>
+
+<h3 id="6-islahın-etkisi">6. Islahın etkisi</h3>
+
+<p>Davanın tamamen ıslahında dava dilekçesinin verilmesi dâhil o ana kadar yapılan tüm usûl işlemleri geçersiz kılınmakta adeta yargılamanın en başına dönülmektedir.</p>
+
+<p>Buna karşılık kısmen ıslahta kısmen ıslahın kapsamına dâhil edilen, ıslaha başvuran tarafın kısmî ıslahını teşmil ettiği usûl işlemleri geçersiz hâle gelir.</p>
+
+<p>Islahla davada düzeltme (değiştirme) yapıldığından; ıslah yapan tarafın ıslah anından geriye doğru olan işlemler, kural olarak yapılmamış sayılır (m. 179). Bu hükmün amacı, ıslahtan önceki işlemleri ve sonuçlarını ortadan kaldırmaya yöneliktir (Arslan/Yılmaz/Taşpmar/Hanağası, s.526).</p>
+
+<hr>
+
+<h2 id="hmk-176-islah-yargıtay-kararları">HMK 176 (Islah) Yargıtay Kararları</h2>
+
+<hr>
+
+<p><strong>Yargıtay 9. Hukuk Dairesi         2021/9897 E.  ,  2021/14096 K.</strong></p>
+
+<ul>
+  <li><strong>Islah</strong></li>
+  <li><strong>HMK 176</strong></li>
+  <li><strong>Bazı hallerde iki kere ıslah yapmak mümkündür.</strong></li>
+  <li><strong>Birden fazla kere ıslah yapılabilen haller</strong></li>
+</ul>
+
+<p>Davaya konu tazminatlar ve alacakların ayrı ayrı açılabilecek davalarda talebi mümkün iken aynı dava dilekçesinde talep edilmesi, Hukuk Muhakemeleri Kanunu’nun 110. maddesi kapsamında “davaların yığılması” olarak adlandırılmaktadır. Bu nedenle her bir alacak kalemi için ayrı ayrı ıslah veya talep artışı işleminin uygulanmasına engel bir durum yoktur.</p>
+
+<p>Davaların yığılması ilkesine göre esasen birden fazla dava ve talep söz konusu olup, diğer taleplerle ilgili talep artışı ikinci ıslah olarak değerlendirilemez. Somut uyuşmazlıkta; davacı iki kez ıslah dilekçesi sunmuş ise de, her iki dilekçesinde de ayrı ayrı alacaklarını ıslah etmiştir. Başka bir anlatımla bir alacağın iki kez artırılması söz konusu değildir. Dairemiz uygulamasına göre farklı alacak kalemleri için ayrı ayrı ıslah dilekçesi verilmesi mümkündür. Açıklanan nedenlerle davacının her iki ıslah dilekçesine de değer verilerek sonuca gidilmesi için hükmün bozulması gerekmiştir.</p>
+
+<hr>
+
+<p><strong>Hukuk Genel Kurulu         2017/2815 E.  ,  2021/888 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 176</strong></li>
+  <li><strong>Islah nedir?</strong></li>
+  <li><strong>Kısmen veya tamamen ıslah halinde hukuki sonuçlar nelerdir?</strong></li>
+</ul>
+
+<p><strong>Islah</strong> kavram olarak; taraflardan birinin yapmış olduğu usul işleminin tamamen veya kısmen düzeltilmesine denir (HMK m. 176) (Kuru, B.: Hukuk Muhakemeleri Usulü, C: IV, İstanbul 2001, s. 3965). Islah müessesesi, davayı değiştirme, başka deyişle iddia ve müdafaanın değiştirilmesi veya genişletilmesi yasağını bertaraf eden bir imkandır. Zira bu suretle, aslında yasal itiraz ile karşılaşılabilecek olan herhangi bir taraf muamelesi, ıslah kurumu yardımı ile artık bu itirazı davet etmeksizin yapabilmektedir (Üstündağ, S.: Medeni Yargılama Hukuku, Cilt: I-II, 5. Baskı, İstanbul 1992, s. 534).</p>
+
+<p>Islahın konusu tarafların yapmış oldukları usul işlemleri olduğu için, ıslahla düzeltilecek usul işlemlerinin neler olduğundan da söz etmek gerekir. Gerek öğreti, gerekse Yargıtay uygulaması davanın değiştirebileceğini ve genişletilebileceğini aynı şekilde savunmanın genişletilebileceğini ilke olarak kabul etmektedir. Yine müddeabihin artırılıp artırılmayacağı hususu da bir usul işlemi olup, ıslahın konusudur (Kuru, s. 4035).</p>
+
+<p>6100 sayılı HMK’nın 176. maddesine göre ıslah tamamen (kamilen) veya kısmen olmak üzere iki şekilde yapılabilmektedir. Tamamen ıslahta davacı, davasını baştan (dava dilekçesinden) itibaren ıslah eder ve bir hafta içerisinde yeni bir dava dilekçesi verir (HMK m. 180). Davanın tamamen ıslahı yoluna, dava dilekçesinden (dava dilekçesi dahil) itibaren (HMK m. 179/2 de sayılanlar hariç) bütün usul işlemlerinin yapılmamış sayılması için başvurulur (HMK m. 179/1). Bu hâlde dava dilekçesinden itibaren yapılmış olan usul işlemlerinin (HMK m. 179/2 de sayılanlar hariç) tamamının yapılmamış sayılması (ıslah edilmesi, düzeltilmesi) söz konusu olduğu için buna davanın tamamen ıslahı denir (Kuru, B.: İstinaf Sistemine Göre Yazılmış Medeni Usul Hukuku, Ankara 2019, s. 424). Başka bir anlatımla davacı tamamen ıslah ile yeni bir dilekçe vererek davasını baştan itibaren usule müteallik bütün işlemlerini değiştirebilir. Yani davacı bu yolla dava sebebini ve talep sonucunu tamamen değiştirip genişletebileceği gibi, davalı da tam ıslah ile savunmasını tamamen değiştirip genişletebilecektir. Bunun doğal sonucu olarak, dava dilekçesinde yer alan ilk talep içeriği değil, ıslah yoluyla açıklanan talep içeriği nazara alınarak araştırma ve inceleme yapılması ve mahkemece verilecek hükümde de ıslahla ileri sürülen istemin karşılanması gerekecektir.</p>
+
+<p>Davanın kısmen ıslahında ise; davada yapılmış olan belli bir usul işlemi ıslah edilir (HMK m. 181) (düzeltilir) ve bundan sonraki usul işlemlerinin (ıslah edilen usul işlemi ile ilgili oldukları ölçüde) yapılmamış sayılması sağlanır (Kuru, s. 4014). Davacının talep sonucunu (müddeabihi) arttırması, talep sonucunu terditli dava hâline dönüştürmesi ve talep sonucunun daraltılması gibi işlemler kısmen ıslaha örnek olarak sayılabilecek usule müteallik işlemlerdir.</p>
+
+<p>Somut olayda davacı İSKİ vekili, isale hattı güzergâhına rastlayan 1119 ada 70, 78 ve 81 parsel sayılı taşınmazların üzerine davalıların bina yapmak suretiyle el attığı gerekçesiyle müdahalenin önlenmesi ve kâl talepli dava açmıştır. Mahkemece bir kısım davalılar yönünden dava kabul edilmiş, 1119 ada 84 parsel ile ilgili açılmış bir dava bulunmadığından bu parselle ilgili karar verilmesine yer olmadığına karar verilmiştir. Hükmün temyizi üzerine Özel Dairece dava konusu her bir parsel yönünden davaların tefrik edilmesi gereğine değinilmek suretiyle karar bozulmuş, mahkemece bozmaya uyularak ayırma kararı verilmiş ve davalı hakkındaki eldeki davada yapılan keşif ve alınan bilirkişi raporu sonrası davacı İSKİ vekili 14.11.2012 havale tarihli ıslah dilekçesiyle 1119 ada 84 sayılı parselden de aynı isale hattının geçtiğini ve davalı …’nun bu parseldeki işgalinin de kal’i için taleplerini 1119 ada 84 parsel sayılı taşınmazı kapsaması yönünden de ıslah ettiklerini beyan etmiştir. Davalı vekili 11.12.2012 havale tarihli dilekçesinde, yargılaması devam eden bir dava içinde ıslah ile ikinci bir talepte bulunma olanağının bulunmadığını, ıslahta dava konusu olmayan bir istemin dava kapsamına alınmasının mümkün olmadığını bildirerek ıslah talebinin reddini savunmuştur.</p>
+
+<p>Bu aşamada, somut olayda başta dava dilekçesinde yer verilmeyip, dava konusu edilmeyen taşınmazın yargılama sırasında ıslah yolu ile davaya dahil edilmesinin olanaklı olup olmadığı ve bu taşınmaz yönünden usulüne uygun olarak açılmış bir davanın bulunup bulunmadığının irdelenmesi gerekecektir.</p>
+
+<p>Hukuk Genel Kurulunda yapılan görüşmeler sırasında da bu husus öncelikle ve özellikle tartışılmış; daha somut anlatımla elatmanın önlenmesi ve kâl talebine dayalı eldeki dava yönünden ilk önce 1119 ada 70, 78 ve 81 parsel sayılı taşınmazlar dava edilmişken, sonradan 1119 ada 84 parsel sayılı taşınmazın ıslah yoluyla “dava konusu” hâline getirilip getirilemeyeceği üzerinde durulmuştur.</p>
+
+<p>Hemen belirtilmelidir ki kısmi bir dava açılmışsa, bu davanın kalan kısmı bir takım ilkeler çerçevesinde ıslaha konu olabilecektir. Ancak bir dava konusu, bizatihi kendisi davayı oluşturuyor ise, burada kısmi dava bulunmadığından ıslah edilebilecek bir dava da bulunmamaktadır (Örn. Bir taşınmazın tamamı hakkında iptal ve tescil istemiyle açılan davada, davanın konusunu bu taşınmazın bizatihi kendisi teşkil etmekle, bu taşınmazdan başka bir taşınmaz davaya dahil edilmek istenirse bu halde ıslah söz konusu olamayacaktır) .</p>
+
+<p>Eğer bir davanın konusunu teşkil eden taleplerden sadece bir bölümü istenmiş ve kısmi davaya konu edilmişse daha sonra kalan bölümü için ıslah söz konusu olabilecektir (Örn. Bir taşınmaza el atma nedeniyle istenen tazminat miktarının kısmen talep edilip, daha sonra ıslaha konu edilmesi, bir taşınmazın bir bölümü dava edilmişken diğer bölümünün de ıslahen dava edilmesi gibi). Kural olarak dava açıldıktan sonra sebebinde, konusunda, delillerde ve diğer hususlarda usule ilişkin işlemlerin ıslah yoluyla düzeltilmesi mümkün olduğu gibi, davanın konusunda da ıslah mümkündür. Ne var ki ıslaha ilişkin yasal düzenlemeler göstermektedir ki, ıslahla kastedilen dava konusu edilen hususların genişletilmesi veya değiştirilmesidir. Dava konusu edilmeyen bir şeyin ıslah yoluyla davaya ithaline ve dava konusu hâline getirilmesine yasal açıdan olanak bulunmamaktadır.</p>
+
+<p>Somut olayda davacı vekili 14.11.2012 havale tarihli ıslah dilekçesiyle dava konusu 1119 ada 70, 78 ve 81 parsel sayılı taşınmazlar yanında aynı ada 84 parsel sayılı taşınmaz bakımından da ayrıca talepte bulunmuş olup, ıslah suretiyle 1119 ada 84 parsel sayılı taşınmazın dava konusu hâline getirilmesi yasal olarak mümkün değildir.</p>
+
+<p>Hukuk Genel Kurulunda yapılan görüşmeler sırasında, yargılamanın başından itibaren davalı …’ya ait binanın dava konusu olduğu, davacı tarafından bu binanın müdahalesinin men’inin talep edildiği, keşifte de bu yerin gösterildiği, 1119 ada 84 parsel sayılı taşınmazın yanlış yazılmış olmasının ıslahı gerektirmediği, davacı vekilinin sunduğu dilekçenin usuli anlamda ıslah dilekçesi olmayıp parsel numarasının düzeltilmesine ilişkin bir talep olduğu, bu nedenle hükmün Özel Daire kararındaki nedenlerle bozulması gerektiği görüşü ile bozma kararından sonra ıslahın mümkün olmaması nedeniyle hükmün farklı değişik gerekçe ile bozulması gerektiği görüşü ileri sürülmüş ise de, bu görüşler Kurul çoğunluğu tarafından benimsenmemiştir.</p>
+
+<p>O hâlde elatmanın önlenmesi ve kal talebine dayalı eldeki davada, dava konusu edilmeyen taşınmazın hukuken; dava konusu edilen taşınmaza nazaran ayrı bir müddeabih olduğu, bu nedenle de ıslahın konusu olamayacağı, başka bir anlatımla eldeki davada başlangıçta dava edilmeyip, ıslahla davaya katılmak istenen parselin ayrı bir müddeabih olmakla ayrı bir davanın konusunu teşkil edeceği kanaatine varılmıştır. Oluşan bu durum karşısında mahkemece yukarıda açıklanan ilkeler göz ardı edilerek, davacı vekilinin 14.11.2012 havale tarihli dilekçesindeki istemin hukuken “ıslah” olarak kabulüne olanak bulunmadığı ve ayrı bir dava olarak da nitelendirilemeyeceği hâlde, dava konusu olmayan 1119 ada 84 parsel sayılı taşınmaz hakkında hüküm kurulması doğru değildir.</p>
+
+<hr>
+
+<p><strong>Yargıtay 2.Hukuk Dairesi - Karar : 2015/6532</strong></p>
+
+<ul>
+  <li><strong>HMK 176</strong></li>
+  <li><strong>Islah yoluyla ileri sürülen vakıların delili olarak gösterilen tanık listesi, ikinci tanık listesi olarak kabul edilerek reddedilemez.</strong></li>
+</ul>
+
+<p>Davacı, ıslah yoluyla, dayandığı vakıaları değiştirebilir veya davaya yeni vakıaları dahil edebilir. Evvelce göstermiş olsa bile, davaya kattığı bu
+yeni vakılara ilişkin delil de gösterebilir. Bu halde, ikinci tanık listesi verilemeyeceğine ilişkin yasağa (HMK. m. 240/2) dayanılarak, gösterilen bu
+tanıkların dinlenmesinden kaçınılamaz. Davacı, 7.1.2013 günü verdiği ıslah dilekçesiyle, yeni vakıalar ileri sürmüş ve bununla ilgili tanık da göstermiştir.
+Yapılan ıslah kanuna uygundur. O halde, davacının 7.1.2013 günü verdiği ıslah dilekçesinde gösterdiği tanıklar usulünce dinlenmeli ve tüm deliller
+birlikte değerlendirilerek hasıl olacak sonucuna göre karar verilmelidir. Bu yön nazara alınmadan eksik inceleme ile hüküm kurulması doğru
+bulunmamıştır.</p>
+
+<hr>
+
+<p><strong>Yargıtay 9. Hukuk Dairesi-Karar No:2018/12089</strong></p>
+
+<ul>
+  <li><strong>HMK 176</strong></li>
+  <li><strong>Delil listesinin ıslahı yoluyla tanık delilinin gösterilmesi mümkün değildir.</strong></li>
+</ul>
+
+<p>Islah, tek taraflı bir usul işlemi olup, karşı tarafın kabulüne bağlı değildir. Ancak Dairemiz yerleşik kararlarına göre ek dava niteliğinde olduğundan 6100 sayılı HMK’nın 177. maddesi uyarınca ıslah dilekçesinin karşı tarafa tebliği gereklidir. Islah ile; vakıalar, dava konusu ve talep sonucu değiştirilebilir. Islah yoluyla tanık listesi verilemez.</p>
+
+<p>Davacı dava dilekçesinde deliller kısmında tanık deliline dayanmadığı gibi ön inceleme aşamasında da tanık listesi sunmamış, yargılama sırasında alınan bilirkişi raporundan sonra delil listesinin ıslahı ile tanık deliline başvurduğunu belirtmiş, mahkemece bu doğrultuda davacı tanıkları dinlenerek fazla mesai ücret alacağının kabulüne karar verilmiştir.</p>
+
+<p>Davacı delil listesinde dayanmadığı gibi ön inceleme aşamasında da ileri sürmediği tanık deliline bu şekilde ıslah yoluyla dayanamayacağından tanıkların mahkemece dinlenerek hükme esas alınması hatalıdır. Mahkemece, davalı tanık beyanlarına göre işyerinde 3 vardiya halinde çalışıldığının, davacının haftalık 45 saati aşan çalışmanın bulunmadığı ve 18.02.2010 sonrası dosyaya sunulan giriş çıkış kayıtlarına göre tahakkuk etmesi gereken fazla mesai ücretlerinin de bordroda ödendiği anlaşıldığından fazla mesai yapıldığının davacı tarafca ispat edilememesi nedeniyle reddi gerekirken ıslah yoluyla ileri sürülmesi mümkün olmayan davacı tanıklarının dinlenerek fazla mesaiye hükmedilmesi hatalı olup bozmayı gerektirmiştir.</p>
+
+<hr>
+
+<p><strong>YARGITAY 11.HUKUK DAİRESİ - Karar No:2016/9302</strong></p>
+
+<ul>
+  <li><strong>HMK 176</strong></li>
+  <li><strong>Islah yoluyla yeni delil sunulması</strong></li>
+</ul>
+
+<p>Dava, haksız rekabetin tespiti, men’i ile maddi ve manevi tazminat istemine ilişkindir. Davacı vekili, 20.07.2015 tarihli dilekçesi ile yeni delil sunmak için ıslah talebinde bulunmuştur. Mahkemece, yeni delil sunmanın ıslaha konu olamayacağından bahisle ıslah talebi reddedilerek, ispatlanamayan davanın reddine karar verilmiştir. Oysa, 6100 sayılı HMK’nın 176. ve 177/1. maddelerinde, davanın her iki tarafının da, yargılama usulüyle ilgili bir işlemini bir defaya mahsus olmak üzere kısmen veya tamamen ıslah edebileceği ve ıslahın tahkikata tabi olan davalarda tahkikatın bitimine kadar yapılabileceği belirtilmiştir. Taraflarca delil listesinin sunulması işlemi de yargılama usulüyle ilgili bir işlem olup, ıslah ile değiştirilmesi mümkündür.</p>
+
+<p>Diğer bir söyleyişle ıslah, iyi niyetli tarafın, davayı açtıktan veya kendisine karşı bir dava açıldıktan sonra öğrendiği olgularla ilgili yanlışlıkları düzeltmesine, eksiklikleri tamamlamasına, bu çerçevede yeni deliller sunabilmesine olanak sağlayan bir kurumdur. (YİBK, 04.02.1948 gün ve E:1944/10, K:1948/3) Bu durumda, mahkemece, ıslah talebi kabul edilerek sunulan deliller değerlendirildikten sonra sonucuna göre bir karar verilmesi gerekirken, eksik incelemeye dayalı karar verilmesi doğru olmamış, kararın bozulması gerekmiştir.</p>
+
+<hr>
+
+<p><strong>YARGITAY HUKUK GENEL KURULU - Karar: 2020/87</strong></p>
+
+<ul>
+  <li><strong>HMK 176</strong></li>
+  <li><strong>Süresinde verilmiş cevap dilekçesi ıslah edilebilir.</strong></li>
+  <li><strong>Cevap dilekçesinin süresinden sonra verilmiş olması veya hiç verilmemiş olması hâlinde ortada ıslah edilmesi mümkün bir usul işleminin varlığından söz edilemez.</strong></li>
+</ul>
+
+<p>Islahın konusu tarafların yaptıkları kendi usul işlemleridir. Taraflar ıslahla, dilekçelerinde belirttikleri vakıaları, dava konusunu, talep sonucunu değiştirebilirler. Yukarıda değinildiği üzere ıslahın konusunu tarafların yaptıkları usul işlemleri oluşturduğundan taraflardan birinin ıslah yoluna başvurabilmesi için daha önce yapmış olduğu bir usul işleminin bulunması gerekir. 6100 Sayılı HMK’nın 176. maddesinde taraflardan her birinin yapmış olduğu usul işlemlerini kısmen veya tamamen ıslah edebileceği açık bir şekilde ifade edilmiştir. Bu nedenle cevap dilekçesinin ıslahı için öncelikle yapılması gereken usul işlemi davaya cevap vermekten ibarettir. <strong>Cevap dilekçesinin hiç verilmemiş olması hâlinde ortada ıslah edilmesi mümkün bir usul işleminin varlığından söz edilemez.</strong> Aksi hâlde, suskun kalınarak hiç cevap verilmemiş olması hâlinin bir usul işlemi olarak kabulü gerekir. Bu çerçevede süresi geçtikten sonra yapılan ve karşı çıkılan savunmanın da hiç yapılmamış gibi olduğunu ve aynı hukuki sonucu doğuracağını belirtmek gerekir. Usul işleminin ıslahla düzeltilmesi öncelikle geçerli bir hukuki işlemin varlığını gerektirdiğinden, yapılmamış hükmünde kabul edilen bir usul işleminin ıslahla düzeltilmesi de düşünülemez.</p>
+
+<p>Bilindiği üzere davalı, davaya cevap vermek zorunda değildir. Davanın cevapsız bırakılması ya da süresi içinde cevap dilekçesi verilmemesi hâlinde davalının, dava dilekçesinde ileri sürülen vakıaların tamamını inkâr etmiş sayılacağı hususu 6100 Sayılı HMK’nın 128. maddesinde düzenlenmiştir. Ancak, süresinde cevap dilekçesi vermemek suretiyle davanın inkârı, ileri sürülen vakıaların inkârı niteliğinde olup, bu inkârın zamanaşımı defini de kapsadığı söylenilemez. Ayrıca, davalının süresinden sonra verdiği cevap dilekçesini ıslah ederek zamanaşımı definde bulunabileceğini kabul etmek ıslah ile kaçırılmış olan sürenin geri getirilmesi, daha doğrusu ıslah ile davaya cevap verilmesi sonucunu doğuracaktır. Oysaki kanun ile belirlenen süreler kesin olup, ıslah kaçırılmış olan süreleri geri getiren bir müessese değildir.</p>
+
+<p>Hâl böyle olunca, kanuni süre içinde verilmeyen cevap dilekçesinin ıslahı suretiyle zamanaşımı definin ileri sürülemeyeceği kabul edilmiştir. Nitekim Hukuk Genel Kurulunun 07.06.2017 tarihli ve 2017/17-1093 E., 2017/1090 K. sayılı kararında da aynı ilkelere yer verilmiştir.</p>
+
+<hr>
+
+<p><strong>YARGITAY HUKUK GENEL KURULU - Karar: 2021/1182</strong></p>
+
+<ul>
+  <li><strong>HMK 176</strong></li>
+  <li><strong>Süresinde veya hiç cevap dilekçesi verilmemiş olması halinde; cevap dilekçesi ıslah edilerek zamanaşımı defi ileri sürülemez.</strong></li>
+</ul>
+
+<p>Bilindiği üzere davalı, davaya cevap vermek zorunda değildir. Davanın cevapsız bırakılması ya da süresi içinde cevap dilekçesi verilmemesi hâlinde davalının, davacının dava dilekçesinde ileri sürdüğü vakıaların tamamını inkâr etmiş sayılacağı HMK’nın 128. maddesinde düzenlenmiştir. Ancak süresinde cevap dilekçesi vermemek suretiyle davanın inkârı, davacının dayandığı vakıaların inkârı niteliğinde olup, bu inkârın zamanaşımı def’ini de kapsadığı söylenemez.</p>
+
+<p>Ayrıca, davalının süresinden sonra verdiği cevap dilekçesini ıslah ederek zamanaşımı def’inde bulunabileceğini kabul etmek ıslah ile kaçırılmış olan sürenin geri getirilmesi, daha doğrusu ıslah ile davaya cevap verilmesi sonucunu doğuracaktır. Oysa kanun ile belirlenen süreler kesin olup, ıslah kaçırılmış olan süreleri geri getiren bir yol değildir. Aynı ilkeler Hukuk Genel Kurulunun 07.06.2017 tarihli ve 2017/17-1093 E., 2017/1090 K. sayılı kararında da benimsenmiştir.</p>
+
+<p>Tüm bu açıklamalar ışığında somut olay değerlendirildiğinde; mahkemece HMK’nın 176. maddesi uyarınca ıslahın konusunu tarafların yaptıkları usul işlemleri oluşturduğundan taraflardan birinin ıslah yoluna başvurabilmesi için daha önce yapmış olduğu bir usul işleminin bulunması gerektiği, yasal süresi geçtikten sonra verilen ve davacı arsa sahibinin itirazı ile karşılaştığı için hiç verilmemiş sayılan cevap dilekçesinin ıslahı suretiyle zamanaşımı def’inin ileri sürülmesinin mümkün olmadığı, HMK’nın 141. maddesinde düzenlenen savunmanın genişletilmesi yasağına aykırı şekilde süresi geçtikten sonra yapılan zamanaşımı def’ine davacının muvafakat etmediği gözetilmeksizin, süresinden sonra cevap dilekçesi verilmesinin ya da hiç cevap dilekçesi verilmemesinin ıslahla zamanaşımı def’i hakkını ortadan kaldırmayacağı gerekçesiyle direnme kararı verilerek davanın zamanaşımından reddine yönelik hüküm tesisi usul ve yasaya aykırıdır.</p>
+
+<hr>
+
+<p><strong>YARGITAY 13. HUKUK DAİRESİ
+Esas : 2015/16658 Karar : 2017/2065</strong> Tarih : 20.02.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 176. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yargılaması devam eden bir dava içinde ıslah ile ikinci bir talepte bulunma olanağı bulunmamaktadır.</strong></p>
+  </li>
+</ul>
+
+<p>6100 sayılı HMK’nun “Taleple bağlılık ilkesi” başlıklı 26. maddesinde (1086 sayılı HUMK’nun 74.maddesi), “Hakim, tarafların talep sonuçlarıyla bağlıdır; ondan fazlasına veya başka bir şeye karar veremez.” denilmektedir.</p>
+
+<p>HMK`nun 176.(HUMK 83.) ve devam maddelerinde düzenlenmiş olan ıslah müessesesi, mahkemeye yöneltilmesi gereken tek taraflı ve açık bir irade beyanı ile tarafların dilekçelerinde belirttikleri vakıaları, dava konusunu veya istem sonucunun değiştirebilmesi imkanı sağlamaktadır. Usule ilişkin işlemlerin tamamen ya da kısmen ıslahı mümkündür. Ancak, her iki durumda da usulüne uygun açılmış bir davanın bulunması şarttır. Bu hale göre yargılaması devam eden bir dava içinde ıslah ile ikinci bir talepte bulunma olanağı bulunmamaktadır. Davacı isterse dava dilekçesini tamamen ıslah ederek dava konusunu değiştirebilirse de, yeni dava konusu önceki dava konusunun yerine geçer ve yine tek bir dava söz konusu olur. Islahta dava konusu olmayan bir istemin dava kapsamına alınması mümkün değildir.</p>
+
+<p>Somut olayda, dava alacak talebi ile açılmış olup davacının dava dilekçesinde asıl sözleşmenin kurulmasına yönelik talebi olmadığından ıslah ile dava konusu olmayan bir talebin dava kapsamına alınması mümkün değildir. Kaldı ki usulüne uygun bir ıslahta yoktur. Açıklanan nedenlerle yazılı şekilde dava dilekçesi ile talep edilmeyen asıl sözleşmenin kurulmasına yönelik talebin kabulüne karar verilmesi hatalı olmuştur.</p>
+
+<hr>
+
+<p><strong>Yargıtay 2. Hukuk Dairesi         2021/5514 E.  ,  2021/5952 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 177</strong></li>
+  <li><strong>Islah ne zamana kadar yapılabilir?</strong></li>
+  <li><strong>Bozmadan sonra ıslah mümkündür.</strong></li>
+</ul>
+
+<p>Islah kurumu, 6100 sayılı Hukuk Muhakemeleri Kanunu’nun (HMK) 176’ncı ve devamı maddelerinde ayrıntılı olarak düzenlenmiştir. Islah, davacı veya davalının, iddianın ve savunmanın değiştirilmesi yasağı kapsamındaki usul işlemlerini, karşı tarafın iznine ve hâkimin onayına bağlı olmaksızın belli kurallar çerçevesinde bir defaya mahsus olmak üzere düzeltmesini sağlayan bir usul hukuku kurumudur. Islahın zamanı ve şekli, HMK’nin 177. maddesinde düzenlenmiştir. HMK’nin 177/1. maddesinde “Islah, tahkikatın sona ermesine kadar yapılabilir.” hükmü yer almakta olup, Yargıtay’ın 04.02.1948 tarihli ve 1944/10 Esas, 1948/3 Karar sayılı, yine 06.05.2016 tarihli ve 2015/1 Esas, 2016/1 Karar sayılı İçtihadı Birleştirme Kararları gereği uygulama bozmadan sonra ıslah yapılamayacağı ve bozma sonrası ıslah taleplerinin reddi gerektiği şeklinde gerçekleşmiştir.</p>
+
+<p>Bununla birlikte HMK’nin 177. maddesinde yer alan ıslahın zamanı hususunda 22.7.2020 tarihinde yürürlüğe giren 7251 sayılı Hukuk Muhakemeleri Kanunu ile Bazı Kanunlarda Değişiklik Yapılması Hakkında Kanun’un 18. maddesi ile açıklayıcı bir düzenleme getirilmiştir. Buna göre; birinci fıkradan sonra gelmek üzere ikinci fıkra olarak “Yargıtayın bozma kararından veya bölge adliye mahkemesinin kaldırma kararından sonra dosya ilk derece mahkemesine gönderildiğinde, ilk derece mahkemesinin tahkikata ilişkin bir işlem yapması hâlinde tahkikat sona erinceye kadar da ıslah yapılabilir. Ancak bozma kararına uymakla ortaya çıkan hukuki durum ortadan kaldırılamaz.” hükmü getirilmiştir. Böylelikle kanunda öngörülen şartları sağladığı takdirde Yargıtay bozma kararından sonra ıslah yapılabilmesi mümkün kılınmıştır.</p>
+
+<p>Somut olayda, Mahkemece, bozmadan sonra ıslah yapılamayacağı gerekçesiyle dava dilekçesinde talep edilen miktarla bağlı kalınarak alacağın kabulüne karar verilmiş ise de, bozmadan sonra bozma doğrultusunda tahkikata dair işlemlerin yapıldığı ve davacı vekilinin tahkikat sona ermeden 04.08.2019 tarihinde ıslah dilekçesi sunduğu anlaşıldığına göre, davacı vekilinin 04.08.2019 tarihli dilekçesinde talep edilen miktar göz önünde bulundurularak karar verilmesi gerekirken yazılı şekilde karar verilmesi doğru görülmemiştir.</p>
+
+<hr>
+
+<p><strong>Yargıtay HGK-Karar : 2021/267</strong></p>
+
+<ul>
+  <li><strong>HMK 176</strong></li>
+  <li><strong>Kira bedelinin tespiti davalarında ıslah yoluyla kira bedeli arttırılamaz.</strong></li>
+</ul>
+
+<p>Davacılar vekili, davalı ile aralarında 01.02.2011 tarihinde başlayıp 01.02.2016 tarihinde sona erecek kira sözleşmenin 3. maddesine göre kira bedelinin 2011 yılı için 4.500,00TL olarak belirlendiğini, sonraki yıllarda kira bedelinin (ÜFE+TEFE)/2 oranında artırıldığını, sözleşmenin 3. maddesinin son fıkrasında, tarafların ilk üç yılın sonunda kira bedelinde yapılacak olan artışa ilişkin mutabakata varamazlar ise, kira bedeli artışının bilirkişi marifeti ile tespit ettirileceğinin düzenlendiğini, ancak davalının kira bedeli konusunda ortak mutabakata varılmaksızın 2014 yılı için 5.693,27TL ödeme yaptığını ileri sürerek, taşınmazın kira bedelinin 17.02.2014 tarihinden itibaren geçerli olmak üzere aylık 8.000,00TL olarak tespitine karar verilmesini talep etmiş, 12.02.2015 tarihli ıslah dilekçesi ile de davayı brüt 8.000,00TL kira bedeli üzerinden açtıklarını belirterek kira bedelinin brüt 9.200,00TL olarak tespitine karar verilmesini istemiştir.</p>
+
+<p>Daha önce de belirtildiği gibi kira bedelinin tespiti davaları kendine özgü bir dava olup inşai davalar sonunda verilen kararlara yakın bir niteliktedir. Bu davalarda sadece ilgili kira döneminde geçerli olacak kira bedelinin tespiti istenir ve kira bedelinin tespiti davasının sınırlı bir konusu vardır. Dava sonucunda hâkim, ileriye yönelik olarak bir yıllık süre zarfında uygulanacak olan kira bedelini belirler ve kira sözleşmesinde yer alan kira bedeli, hâkim kararı ile değiştirilmiş olur.</p>
+
+<p>Davanın bu niteliği gereğince kira bedelinin tespitine ilişkin talep bölünemez ve kira bedeli davacı tarafından bir seferde açık ve net olarak istenilmesi gerekir. Diğer bir anlatımla kira bedelinin tespiti davalarında fazlaya ilişkin haklar saklı tutulamaz ve saklı tutulan bu hakla ilgili olarak <strong>ıslah talebinde</strong> bulunulamaz. Öte yandan kira bedelinin tespitine ilişkin talep dava dilekçesinde belirtilen döneme ilişkin olduğundan, ıslahla bedelin artırılması durumunda ise daha sonraki bir dönemi kapsayacak şekilde talepte bulunulmuş olur ve bu da kira bedelinin tespiti davalarının niteliğine aykırıdır.</p>
+
+<hr>
+
+<p><strong>YARGITAY 3. HUKUK DAİRESİ 
+Esas : 2017/7010 Karar : 2018/8269</strong> Tarih : 11.09.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 176. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tamamen ıslah yoluyla tazminat davasına dönüştürülen davaya bakma görevi, yeni davaya bakmakla görevli mahkemeye aittir.</strong></p>
+  </li>
+</ul>
+
+<p>Davacı, davalı hakkında icra takibi başlattığını, icra takibine konu edilen fatura içeriğini oluşturan malların davalı şirkete ait maden sahasında kulanılmak üzere kendisi tarafından davalı şirkete satıldığını ve teslim edildiğini, ancak borcun ödenmediğini belirterek itirazın iptaline karar verilmesini istemiştir.</p>
+
+<p>Davacı vekili, 15/11/2011 tarihli duruşmada, davayı tamamen ıslah ettiklerini bildirmiş, 22/11/2011 tarihli ıslah dilekçesinde de, taraflar arasında …bulunan maden sahası ile ilgili 29/07/2010 tarihli rödövans sözleşmesi düzenlendiğini, yine davalıya ait … bulunan iki adet maden sahası içinde 27/09/2010 tarihli rödövans sözleşmesi düzenlendiğini ancak davalının bu sözleşme altındaki imzayı kabul etmediğini bu durumda taraflar arasında sözlü kira sözleşmesi düzenlendiğinin kabulü gerektiğini ileri sürerek … maden sahası ile ilgili sözleşmenin feshedilmesi nedeniyle menfi zararına karşılık şimdilik 15.000 TL… mevkiinde bulanan maden sahalarına ilişkin müspet zarar olarakta şimdilik 100.000 TL tazminatın ve 30.000 TL manevi tazminatın tahsiline karar verilmesini istemiştir.</p>
+
+<p>Davalı, davanın reddini dilemiştir.</p>
+
+<p>Mahkemece, somut olayda ilk haliyle faturaya dayalı alacak talebi ticaret mahkemesinin görevinde ise de; daha sonra tam ıslah suretiyle dava sebebi ve konusu değiştirilerek, rödövans sözleşmesinden kaynaklanan tazminat talebine dönüştürüldüğü, 6100 Sayılı HMK nın 4.maddesindeki düzenlemeye göre rödövans sözleşmesinin bir tür hasılat kirası sözleşmesi olduğu gözetildiğinde; bu tür davalara Sulh Hukuk Mahkemesinde bakılacağı gerekçesiyle görevsizlik kararı verilmiş, hüküm taraf vekillerince temyiz edilmiştir.</p>
+
+<p>HMK’nun 176. maddesine göre; taraflardan her biri, yapmış olduğu usul işlemlerini, kısmen veya tamamen ıslah edebilir. Islahın, bir tarafın tek taraflı ve açık bir irade beyanı ile yapılması mümkün olup, karşı tarafın veya mahkemenin kabulüne bağlı değildir.</p>
+
+<p>Davanın tamamen ıslahı durumunda, yeni bir dava açılmamış sayılacak, tamamen ıslah edilen dava ilk açılan davanın devamı niteliğinde olduğundan, davanın ilk açıldığı 17/06/2011 tarihinde açılmış sayılacaktır.</p>
+
+<p>01/10/2011 tarihinde yürürlüğe giren 6100 sayılı Hukuk Muhakemeleri Kanunu’nun geçici 1. maddesinin 1. fıkrası hükmüne göre; bu kanunun yargı yolu ve göreve ilişkin hükümleri, Kanunun yürürlüğe girmesinden önceki tarihte açılmış olan davalarda uygulanmaz. Davanın tamamen ıslahı sonucu, dava, kira sözleşmesinden kaynaklanan tazminat istemine ilişkindir. Davanın ilk açıldığı tarih göz önünde bulundurulduğunda, 1086 sayılı Hukuk Usulü Muhakemeleri Kanunu`nun göreve ilişkin 8. maddesi hükmü uygulanacaktır. Dava değeri itibariyle Mahkeme görevlidir. Bu nedenle Mahkemece işin esası incelenerek bir karar verilmesi gerekirken yazılı şekilde görevsizlik nedeniyle davanın usulden reddine karar verilmesi usul ve yasaya aykırı olup hükmün bozulması gerekmiştir.</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. HUKUK DAİRESİ 
+Esas : 2018/1484 Karar : 2018/8676</strong> Tarih : 5.07.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 176. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Islah yoluyla yeni boşanma sebebi eklenebilir.</strong></p>
+  </li>
+</ul>
+
+<p>Taraflardan her biri, yapmış olduğu usul işlemlerini kısmen veya tamamen ıslah edebilir [HMK m.176-(l)]. Islah, tahkikatın sona ermesine kadar yapılabilir [HMK m.l77-(l)]. Hukuk Muhakemeleri Kanunu’nun 176 vd. maddelerinde, ıslahın harca tabi olacağına ilişkin bir düzenleme bulunmamaktadır. 492 sayılı Harçlar Kanunu’nda da “ıslah harcı” şeklinde bir harç türü yer almamaktadır. O halde sırf ıslah istemi sebebiyle harç alınamaz.</p>
+
+<p>Bunun yanında, ıslah sonucunda, dava/talep konusunun miktar veya değeri artarsa ve artan miktar veya değer için harç ödenmesi gerekiyorsa, ancak o zaman harç ödenmesi/tamamlanması gerekir.</p>
+
+<p>Somut olayda, davalı-davacı erkek duruşmada ve 08.03.2016 tarihli ıslah dilekçesiyle davanın hukuki sebebini zina sebebi ile boşanma yanında, haysiyetsiz hayat sürme ve pek kötü veya onur kırıcı davranış sebebiyle boşanma olarak ıslah ettiğini beyan etmiştir. Mahkemece, davalı-davacı erkek tarafından ıslaha ilişkin maktu ıslah harcı yatırılmamış olduğu böylelikle usulüne uygun yapılmış bir ıslah işlemi olmadığı gerekçesiyle davalı-davacı erkeğin haysiyetsiz hayat sürme ve pek kötü veya onur kırıcı davranış sebebine dayalı boşanma talebi hakkında karar verilmesine yer olmadığına karar verilmiştir. Oysa Hukuk Muhakemeleri Kanunu’nun 176 vd. maddelerine göre, taraflardan herbiri dava/cevap dilekçesini ıslah ederek yeni bir vakıa ekleyebilir, davanın hukuki sebebini genişletip, değiştirebilir ıslah karşı tarafın veya mahkemenin kabulüne bağlı olmadığı gibi bu konularda harç ödenmesine de gerek yoktur.</p>
+
+<p>O halde mahkemece; davalı-davacınm haysiyetsiz hayat sürme (TMK m. 163), pek kötü veya onur kırıcı davranış sebebine dayalı (TMK m. 162) boşanma talebi hakkında tüm deliller değerlendirilerek sonucu uyarınca bir karar verilmesi gerekirken ıslah işlemi dikkate alınmaksızın yazılı şekilde karar verilmesi doğru olmayıp, bozmayı gerektirmiştir.</p>
+
+<p>SONUÇ: Temyiz edilen hükmün yukarıda gösterilen sebeple BOZULMASINA, bozma sebebine göre yeniden hüküm kurulması gerekli hale gelen boşanma davaları ve fer’ileri hakkında diğer temyiz itirazlarının şimdilik incelenmesine yer olmadığına, temyiz peşin harcının istek halinde yatırana geri verilmesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere oybirliğiyle karar verildi. 05.07.2018(Prş.)</p>
+
+<hr>
+
+<p><strong>YARGITAY 1. HUKUK DAİRESİ
+Esas : 2018/249 Karar : 2018/11336</strong> Tarih : 20.06.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 176. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tapu iptal ve tescil talebine ıslah yoluyla menfi tespit ve takibin iptali taleplerinin eklenmesi mümkün değildir.</strong></p>
+  </li>
+</ul>
+
+<p>Dava, yolsuz tescil hukuksal nedenine dayalı tapu iptal ve tescil isteğine ilişkindir.</p>
+
+<p>..</p>
+
+<p>Hemen belirtmek gerekir ki; borçlu taraf İcra İflas Kanunu’nun 72. maddesi hükmü çerçevesinde; icra takibi öncesinde ve icra takibi sırasında borçlu bulunmadığını ispat için menfi tespit davası açabilir.</p>
+
+<p>Öte yandan, HMK’nın 176 ve devam maddelerinde düzenlenmiş olan ıslah müessesesi, mahkemeye yöneltilmesi gereken tek taraflı ve açık bir irade beyanı ile tarafların dilekçelerinde belirttikleri vakıaları, dava konusunun veya istem sonucunun değiştirebilmesi imkanı sağlamaktadır. Usule ilişkin işlemlerin tamamen ya da kısmen ıslahı mümkündür. Ancak, her iki durumda da usulüne uygun açılmış bir davanın bulunması şarttır. Bu hale göre yargılaması devam eden bir dava içinde ıslah ile ikinci bir talepte bulunma olanağı bulunmamaktadır. Davacı isterse dava dilekçesini tamamen ıslah ederek dava konusunu değiştirebilirse de, yeni dava konusu önceki dava konusunun yerine geçer ve yine tek bir dava söz konusu olur. Islahta dava konusu olmayan bir istemin dava kapsamına alınması mümkün olmayıp başından beri dava konusu edilmeyen bir şeyin ıslah yoluyla dava konusuna dahil edilmesine yasal açıdan olanak bulunmamaktadır. (HGK’nın 29.06.2011 gün, 2011/1-364 E.-2011/453 K., 15.06.2016 gün, 2014/4-1193 E.-2016/800 ve 2015/7-917 E-2017/265 K. sayılı İlâmları)</p>
+
+<p>Somut olaya gelince, davacı vekilinin 08.12.2015 tarihli ıslah dilekçesi ile; tapu iptal ve tescil talebinin yanında dava dilekçesinde dile getirilmeyen menfi tespit ve takibin iptali isteklerinin de hükme bağlanmasını istediği, mahkemece davacının menfi tespit ve takibin iptali istemleri de kabul edilmek suretiyle tapu iptal ve tescil hükmü kurulduğu anlaşılmaktadır.</p>
+
+<p>Eldeki davada, davacı, takibe konulan 60.000-TL bedelli senedin davalı tarafından sonradan doldurulduğunu, davalıya olan borcunu ödemesine rağmen senedin takibe koyularak maliki olduğu taşınmazların cebri satış suretiyle usulsüz olarak edinildiği iddiasını ileri sürmüş, davalı taraf ise davacının borcunu ödemediği savunmasına bulunmuştur.</p>
+
+<p>Bu durumda, uyuşmazlığın davacının davalıya borcu bulunup bulunmadığı noktasında toplandığı açık olup, bu hususun da ancak usulüne uygun olarak açılmış bir menfi tespit davası ile çözümleneceğin de kuşku yoktur.</p>
+
+<p>Hal böyle olunca; davacı vekilinin 08.12.2015 tarihli ıslah dilekçesi ile ileri sürdüğü yeni istekler ıslah kapsamında değerlendirilemeyeceği gibi 6100 sayılı Hukuk Muhakemeleri Kanununun 119 vd. maddelerinde düzenlenen dava açma prosedürüne ilişkin usuli şartları taşımaması nedeniyle ek dava olarak da kabul edilemeyeceğinden davacı tarafa menfi tespit davası açması için süre verilmesi ve bu davanın sonucuna göre tapu iptal ve tescil istekli eldeki davanın çözüme kavuşturulması gerekirken yanılgılı değerlendirme ile yazılı şekilde karar verilmesi doğru değildir.</p>
+
+<p>Davalının yerinde bulunan temyiz itirazlarının kabulü ile, hükmün açıklanan nedenlerden ötürü (6100 sayılı Yasanın geçici 3.maddesi yollaması ile) 1086 sayılı HUMK’un 428.maddesi gereğince BOZULMASINA, alınan peşin harcın temyiz edene geri verilmesine, 20/06/2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<hr>
+
+<p><strong>YARGITAY 6. HUKUK DAİRESİ Esas : 2015/10296 Karar : 2016/5704</strong></p>
+
+<ul>
+  <li>
+    <p><strong>HMK 182. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Islah yoluyla kira alacağına ilişkin itirazın iptali davası, ecrimisil alacağı davasına çevrilebilir.</strong></p>
+  </li>
+</ul>
+
+<p>Dava, itirazın iptali istemine ilişkindir. Mahkemece davanın reddine karar verilmiş, hüküm davacı vekili tarafından temyiz edilmiştir.</p>
+
+<p>Davacı vekili dava dilekçesinde; müvekkilinin 01.01.2008 başlangıç, 31.12.2015 bitiş tarihli kira sözleşmesi ile Akköy Döşeme Mevkii 1926, 2047 ve 2043 parsel sayılı taşınmazları davalıya kiraladığını, kira bedelinin sözleşmede yazılmadığını, mahalli geleneğe göre kira süresinin sonunda elde edilecek gelire göre %30-50 arasında belirleneceğinin kararlaştırıldığını, davalının 2008, 2009 ve 2010 yılları kira bedellerini ödemediğini, yıllık 6.000.-TL den toplam 18.000,-TL kira alacağının tahsili için takip başlattıklarını ancak davalının haksız olarak itiraz ettiğini belirterek, şimdilik 18.000-TL üzerinden itirazın iptali ile tazminata hükmedilmesini talep etmiş, daha sonra 27.11.2012 havale tarihli ıslah dilekçesini sunmuş ve bu dilekçede; mahkemece kira ilişkisi kabul edilmez ise talebinin ecrimisil olarak değerlendirilmesini, davalının bu taşınmazları ekip dikerek kazanç elde ettiğini, bu nedenle dava dilekçesinde davanın niteliğini (konusunu), müddeabih kısmı hariç olmak üzere bağımsız kira alacağından ecrimisil tazminatına ıslah ettiklerini bildirmiştir.</p>
+
+<p>Davalı vekili ise; kira sözleşmesi olarak sunulan belgelerde bedel kısmı yazılmadığından kiracılık ilişkisinin söz konusu olamayacağını, sözleşmenin taraflar arasında danışıklı olarak düzenlendiğini ve doğrudan gelir desteği almak için kullanıldığını, kira ilişkisinin mevcut olmadığını, bu nedenle de davanın reddini savunmuştur. Mahkemece davacının ıslah talebi değerlendirilerek; itirazın iptali davasında sadece ilgili icra dosyasındaki takibe yapılan itirazın iptali istenebileceği, takip dayanağı alacağın niteliğinin ıslahla değiştirilemeyeceği belirtilerek ıslaha itibar edilmemiş, sunulan kira sözleşmesinde de kira bedeli belirtilmediğinden sözleşmenin kira sözleşmesi niteliğini taşımayacağını, bu nedenle de alacağın varlığının sözleşme ile kanıtlanamadığı gerekçesi ile davanın reddine karar verilmiştir.</p>
+
+<p>HMK.nun 176-182 maddelerinde düzenlenen ıslah kurumu, davacı veya davalının iddianın ve savunmanın değiştirilmesi yasağı kapsamındaki usul işlemlerini, karşı tarafın iznine ve hakimin onayına bağlı olmaksızın, belli kurallar çerçevesinde düzeltilmesini sağlayan bir hukuksal çözümdür. Burada söz konusu olan var olan davanın ıslah edilmesidir.</p>
+
+<p>Bu bağlamda davanın açılması ile meydana gelen hüküm ve sonuçlar, tarafların davacı ya da davalı sıfatları vb. geçerliliğini korumaktadır. Islah talebinde bulunan davacı, bu yöntemle davada dayandığı hukuki sebebi veya talep sonucunu değiştirebilir. Dava konusu olayda da; davacının ödenmeyen kira alacağının tahsili için başlatılan takibe yapılan <strong>itirazın iptali</strong> talebini bırakarak, alacak miktarını değiştirmeden talebini <strong>ecrimisil alacağı</strong> davasına dönüştürdüğü anlaşılmaktadır. Bu nedenle mahkemece davacının ecrimisil talebi ile ilgili değerlendirme yapılarak işin esası hakkında bir karar verilmesi gerekirken yazılı gerekçe ile davanın reddine karar verilmesi doğru değildir.</p>
+
+<hr>
+
+<p><strong>YARGITAY 8. HUKUK DAİRESİ Esas : 2017/4267 Karar : 2017/17637</strong></p>
+
+<ul>
+  <li>
+    <p><strong>HMK 176. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Islah yoluyla tahliye davasına itirazın kaldırılması talebi eklenemez.</strong></p>
+  </li>
+</ul>
+
+<p>Davacı alacaklı 18.02.2012 başlangıç tarihli yazılı kira akdine dayanarak 13.04.2015 tarihinde haciz ve tahliye talepli olarak başlattığı icra takibi ile aylık 120.000,00 TL’den 2014 yılı Temmuz ayından 2015 yılı Mart ayına kadarki 9 aylık kira alacağı 1.080.000,00 TL kira alacağının faiziyle tahsilini talep etmiştir. Ödeme emri davalı borçluya 14.04.2015 tarihinde tebliğ edilmiş, davacı 20.05.2015 tarihinde takibe itiraz edilmediğinden bahisle kesinleşen takip nedenine dayalı tahliye istemiyle bu davayı açmıştır.</p>
+
+<p>Davalı borçlu takibe 26.06.2015 tarihinde itiraz ederek, dayanak icra takibindeki ödeme emri tebliğ tarihinin düzeltilmesi istemi ile icra mahkemesinde dava açmıştır. … İcra Hukuk Mahkemesi’nin 06.11.2015 tarih ve E.2015/366 – ….2015/470 sayılı kararı ile, … 2. İcra Müdürlüğü’nün 2015/2184 esas sayılı takip dosyasında borçluya yapılan ödeme emri tebliğ tarihinin 25.06.2015 olarak düzletilmesine karar verilmiştir.</p>
+
+<p>Davacı alacaklı, davalı borçlu aleyhine kira alacağının tahsili amacıyla tahliye istekli olarak başlatılan icra takibine davalının itiraz etmeyerek takibin kesinleştiği gerekçesi ile açtığı tahliye davasında, 05.02.2016 havale tarihli ıslah dilekçesi ile itirazın kaldırılmasını da talep etmiştir.</p>
+
+<p>Mahkemece, davalı şirketin borcu ödediğine dair herhangi bir yazılı belge ibraz edemediği, bahsedilen çeklerin binanın yıpranma ve bakımına ait olduğu, bu sebeple kira bedeli ödemesi yerine geçmeyeceği anlaşılmakla, davalı yasal süre içerisinde borcunu ödemediğinden kiralananın tahliyesine ve davacı vekilinin ıslah talebine konu edilen itirazın kaldırılması talebinin de kabulüne karar verilmiş, karar davalı vekili tarafından temyiz edilmiştir.</p>
+
+<p>Taraflar, Hukuk Mahkemeleri Kanunu`nun 176 ve devamı maddelerine göre ıslah yolu ile dava konusu iddialarını ve savunmalarını genişletip, değiştirebilirler. Ancak daha önce dava konusu edilmeyen bir hususun ıslah yoluyla istem konusu yapılmasına yasal açıdan olanak yoktur. Davacı alacaklı tahliye olan ilk davasına, itirazın kaldırılması davasını ıslah yoluyla ekleyemez. Bu durumda Mahkemece ıslah talebinin reddi ile süresinde yapılmış bir itiraz bulunduğundan, takip kesinleşmediğinden ve itirazın kaldırılması istenilmeden tahliye istenemeyeceğinden davanın reddine karar verilmesi gerekirken, yazılı gerekçe ve ıslah talebinin kabul edilerek, davanın kabulüne karar verilmesi doğru değildir.</p>
+
+<p>SONUÇ: Yukarıda açıklanan nedenlerle temyiz itirazlarının kabulü ile 6100 sayılı HMK.ya 6217 Sayılı Kanunla eklenen geçici 3.madde hükmü gözetilerek HUMK.nın 428.maddesi uyarınca kararın BOZULMASINA, taraflarca İİK`nun 366/3. maddesi gereğince Yargıtay Daire ilamının tebliğinden itibaren ilama karşı 10 gün içinde karar düzeltme isteğinde bulunulabileceğine, istek halinde peşin harcın temyiz edene iadesine, 26.12.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 21. HUKUK DAİRESİ
+Esas : 2016/11587 Karar : 2017/2491</strong> Tarih : 28.03.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 176. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Islah yoluyla tarafların dilekçelerinde bulunan vakıaları, dava konusunu veya istem sonucunun değiştirebilmesi mümkündür. Dava dilekçesinde bulunmayan manevi tazminat istemi ıslah yoluyla davaya eklenemez.</strong></p>
+  </li>
+</ul>
+
+<p>Davacı, iş kazası sonucu maluliyetinden doğan maddi ve manevi tazminatın ödetilmesine karar verilmesini istemiştir.</p>
+
+<p>Mahkemece, manevi tazminat istemine ilişkin olarak açılmış bir dava olmadığı halde, ıslah dilekçesindeki manevi tazminat istemi dikkate alınarak, manevi tazminat isteminin kısmen kabulüne karar verilmesi yanlıştır. HMK’nun 176. ve devam maddelerinde düzenlenmiş olan ıslah müessesesi, mahkemeye yöneltilmesi gereken tek taraflı ve açık bir irade beyanı ile tarafların dilekçelerinde belirttikleri vakıaları, dava konusunu veya istem sonucunun değiştirebilmesi imkânını sağlamaktadır. Usule ilişkin işlemlerin tamamen ya da kısmen ıslahı mümkündür. Ancak, her iki durumda da usulüne uygun açılmış bir davanın bulunması şarttır. Başka bir anlatımla ıslah, açılmış bir davada taraflarca yapılmış usule ilişkin işlemlere yönelik olarak yapılmalıdır. Bu bağlamda, yargılaması devam eden bir dava içinde ıslah ile ikinci bir davanın açılması olanağı bulunmamaktadır.</p>
+
+<p>Öte yandan harca tabi davalarda her dava açılırken davalıdan başvurma harcı ile nispi harca tabi davalarda nispi karar ve ilam harcının dörtte biri peşin olarak alınır. Gerekli harçlar alındıktan sonra dava dilekçesi esas defterine kaydedilir ve dava, dava dilekçesinin esas defterine kayıt edildiği tarihte açılmış sayılır. İnceleme konusu olan bu olayda manevi tazminata ilişkin dilekçenin nispi harç yatırılmak suretiyle mahkemeye verildiği ve ancak başvuru harcının yatırılmadığı anlaşılmaktadır. Dilekçenin bu haliyle bir ek dava dilekçesi olarak kabulü dahi mümkün değildir. Islahta dava konusu olmayan bir istemin dava kapsamına alınması mümkün değildir.</p>
+
+<p>Bu halde mahkemece yapılacak iş “davacının ayrıca dava açma hakkı saklı kalmak üzere manevi tazminata ilişkin ıslah isteminin reddine” şeklinde karar verilmesiyken; davacının manevi tazminat talebinin kısmen kabulü ile 8.300,00 TL manevi tazminatın olay tarihi olan 13.10.2010 tarihinden itibaren yasal faiziyle davalıdan tahsiline karar verilerek, ıslaha değer verilmesi doğru bulunmamıştır. Mahkemece, yukarda belirtilen maddi ve hukuksal olgular gözetilmeden yazılı şekilde hüküm kurulması usul ve yasaya aykırı olup, bozma nedenidir.</p>
+
+<hr>
+
+<p><strong>YARGITAY 3. HUKUK DAİRESİ 
+Esas : 2017/1396 Karar : 2017/1042</strong> Tarih : 9.02.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 176. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Dava sebebini değiştirerek duruşmada uzama süresinin dolduğu gerekçesiyle tahliye isteyen davacının bu isteği ıslah niteliğinde olup ıslah yoluyla ortaya çıkan bu yeni dava sebebine göre hüküm kurulmalıdır.</strong></p>
+  </li>
+</ul>
+
+<p>Davacı vekili dilekçesinde; kira sözleşmesinde belirlenen sürenin bittiğini, davalıya ihtar gönderdilerini buna rağmen taşınmazı tahliye etmediğini bildirerek, davalının süre bitimi nedeniyle tahliyesini istemiştir. Mahkemece; taşınmazın ihale ile kiraya verilmediği gerekçesiyle, davanın reddine karar verilmiş; hüküm, davacı vekili tarafından temyiz edilmiştir.</p>
+
+<p>Davacı vekili, ….07.2015 tarihli celsede; TBK`nun 347.maddesi uyarınca … yıllık uzama süresinin dolduğunu, bu nedenle de taşınmazın tahliyesini istemiş, mahkemece iddianın genişletilmesine davalı tarafın muvafakatı olmadığından bahisle bu talep incelenmemiştir.</p>
+
+<p>6100 sayılı HMK nın 176. maddesinde;” Taraflardan her biri, yapmış olduğu usul işlemlerini kısmen veya tamamen ıslah edebilir. Aynı davada, taraflar ancak bir kez ıslah yoluna başvurabilir.” düzenlemesi, 177. maddesinde;”Islah, tahkikatın sona ermesine kadar yapılabilir.  Islah, sözlü veya yazılı olarak yapılabilir. Karşı taraf duruşmada hazır değilse veya ıslah talebi duruşma dışında yapılıyorsa, bu yazılı talep veya tutanak örneği, haber vermek amacıyla karşı tarafa bildirilir.” düzenlemeleri bulunmaktadır.</p>
+
+<p>Davacı vekilinin, ….07.2015 tarihli celsede, TBK`nun 347.maddesi uyarınca … yıllık uzama süresi nedeniyle tahliye isteminde bulunduğu anlaşılmakla; mahkemece, davacı vekilinin bu talebinin ıslah olarak değerlendirilip sonucuna göre bir karar verilmesi gerekirken; yazılı şekilde karar verilmesi doğru görülmemiş, bozmayı gerektirmiştir.</p>
+
+<hr>
+
+<p><strong>YARGITAY 6. HUKUK DAİRESİ
+Esas : 2016/7352 Karar : 2016/5694</strong> Tarih : 5.10.2016</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 176. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Davacı alacaklı itirazın kaldırılması talebi olan ilk davasına, tahliye davasını ıslah yoluyla ekleyemez.</strong></p>
+  </li>
+</ul>
+
+<p>Dava, ödenmeyen kira alacağının tahsili için başlatılan icra takibine vaki itirazın kaldırılması ve tahliye istemine ilişkindir. Davacı dava açıldıktan sonra verdiği 01.07.2015 tarihli dilekçesi ile davalının tahliyesini de talep etmiş olup mahkemece, davanın kısmen kabulüne, 9.488-TL asıl alacak ve ferileri yönünden itirazın kaldırılmasına ve davalının dava konusu taşınmazdan tahliyesine karar verilmiş, karar davalı vekili tarafından temyiz edilmiştir.</p>
+
+<p>2-Davalının tahliyeye yönelik temyiz ve itirazlarına gelince; Hukuk Mahkemeleri Kanunu`nun 176 ve devamı maddelerine göre taraflar ıslah yolu ile dava konusu iddialarını ve savunmalarını genişletip, değiştirebileceklerse de daha önce dava konusu edilmeyen bir hususun ıslah yoluyla istem konusu yapılmasına yasal açıdan olanak yoktur. Davacı alacaklı itirazın kaldırılması talebi olan ilk davasına, tahliye davasını ıslah yoluyla ekleyemez. Bu durumda mahkemece davacının tahliye isteminin reddine karar verilmesi gerekirken, yazılı gerekçe ile ıslah talebinin kabul edilerek, tahliye isteminin de kabulüne karar verilmesi doğru değildir.</p>
+
+<hr>
+
+<p><strong>YARGITAY 23. HUKUK DAİRESİ
+Esas : 2014/7935 Karar : 2015/1026</strong> Tarih : 19.02.2015</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 176. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>İkinci ıslah dilekçesi geçersiz olup ikinci ıslah dilekçesi dikkate alınarak hüküm kurulması hukuka aykırıdır.</strong></p>
+  </li>
+</ul>
+
+<p>Asıl davada, davacı arsa sahibi dava dilekçesinde, arsa payı inşaat sözleşmesinin geriye etkili feshi ile 1.000,00 TL oluşan zararın tazminini talep etmiş, bilahare 30.11.2012 tarihli duruşmada davada yıkılan eski evin bedeliyle halihazır inşaatın yıkım masraflarının tahsilini istediğini bildirmiş, 22.10.2013 tarihli ıslah dilekçesinde ise dava dilekçesindeki 1.000,00 TL tazminat miktarını mahsup ederek yıkılan depo. ev ve mevcut inşaatın söküm bedeli karşılığında oluşan zararının tahsilini istemiş, ıslah dilekçesinde belirtilen işlemlerin hesaplandığı bilirkişi raporuna dayalı olarak 97.997,04 TL alacağın ödetilmesini istemiştir.</p>
+
+<p>Açıklanan bu duruma göre, birbirini teyit eden sözlü ve yazılı izahat karşısında davacının dava dilekçesindeki tazminat talebinin yıkılan ve sökülmesi gereken inşaat masraflarına dair olduğu ortadadır. Yani davacının eldeki davada kira tazminatına dair bir talebi bulunmamaktadır. Her ne kadar 18.6.2014 tarihli 2. ıslah dilekçesiyle kira tazminatı talebinde bulunmuş ise de, H.M.K.nın 176/2. maddesi uyarınca, aynı davada taraflar ancak bir kez ıslah yoluna başvurabileceklerinden, yapılan bu ıslah açıkça yasaya aykırı olduğundan mahkemece dikkate alınabilmesi mümkün değildir. Şu halde, kira tazminatı isteminin belirtilen sebeplerle reddi gerekirken, kabulüne karar verilmesi doğru olmamıştır.</p>
+
+<hr>
+
+<p><strong>Y8HD - Karar : 2019/3483</strong></p>
+
+<ul>
+  <li>
+    <p><strong>HMK 176</strong></p>
+  </li>
+  <li>
+    <p><strong>Dava dilekçesinde faiz talebi olmamasına rağmen ıslah dilekçesiyle faiz istendiğinde, sadece ıslah edilen kısım için faize hükmedilebilir.</strong></p>
+  </li>
+</ul>
+
+<p>Mahkemece verilen görevsizlik kararının Yargıtay 1. Hukuk Dairesince bozulması ve mahkemenin görevli olduğunun belirlenmesi üzerine yapılan yargılama sonucu verilen karar, Yargıtay 1. Hukuk Dairesince “ karşı dava bakımından faiz isteği hakkında olumlu veya olumsuz bir karar verilmemiş olması doğru değildir” gerekçesiyle karşı davada faize ilişkin olarak bozulmuş, bunun dışında kalan kısımlar onanmış olup, Mahkemece bozulan kısma ilişkin yargılamaya devam edilerek, karşı davada tahsiline karar verilen 67.500,00 TL’ye karşı dava tarihi olan 11.06.2007 tarihinden itibaren yasal faiz yürütülmesine karar verilmiş, hüküm davacı karşı davalı vekili tarafından temyiz edilmiştir.</p>
+
+<p>Asıl dava; el atmanın önlenmesi, ecrimisil ve manevi tazminat, karşı dava ise; katkı payından kaynaklanan tapu iptali ve tescil olmazsa alacak isteklerine ilişkindir.</p>
+
+<p>Somut olayda karşı davada, dava değeri olarak gösterilen 7.000,00 TL için karşı dava dilekçesinde faiz talebi yoktur. Ancak ıslah dilekçesinde alacağın tamamına dava tarihinden itibaren faiz uygulanması talep edilmiştir. Islah edilen 60.500,00 TL’ye ıslah tarihi olan 05.08.2011 tarihinden itibaren faize hükmetmek gerekirken, alacağın tamamına dava tarihinden itibaren faize hükmedilmesi doğru değildir.</p>
+
+<hr>
+
+<p><strong>YARGITAY Hukuk Genel Kurulu	- Karar No: 2011/70</strong></p>
+
+<ul>
+  <li><strong>HMK 176</strong></li>
+  <li><strong>Zamanaşımı defi kısmi ıslah yoluyla ileri sürülebilir.</strong></li>
+</ul>
+
+<p>Zamanaşımı (HUMK. m. 187 kapsamında bir ilk itiraz olmayıp) maddi hukuktan kaynaklanan bir defi ve savunma aracı olup, davanın başında, süresinde verilecek cevap dilekçesinde (veya sözlü yargılama usulünde ilk oturumda esasa girişilmeden önce) ileri sürülmelidir.</p>
+
+<p>Zamanaşımı definin, yukarıda belirtilen aşama geçildikten sonra ileri sürülmesi, savunmanın genişletilmesi ve değiştirilmesi anlamına gelir. Bu durum ise, karşı tarafın izni(açık veya zımni) olmaksızın yada ıslah yoluna gidilmeksizin yapılırsa geçerli değildir.</p>
+
+<p>Görüldüğü üzere, zamanaşımı defi, unutma veya benzeri nedenlerle, davanın başında ileri sürülmemiş olabilir. Daha sonra bu durumun farkına varılırsa, ıslah yoluyla ileri sürülebilmesi gerekir. Öğretide, yasal süresi içerisinde cevap dilekçesi verilmiş olup olmamasına göre bir ayırıma gidilmiş ise de, genellikle zamanaşımı definin ıslah yoluyla sonradan ileri sürülebilmesi olanağının bulunduğu kabul edilmektedir. Nitekim Hukuk Genel Kurulu’nun 19.02.1958 gün ve E:4-23, K:16;13.02.1963 gün ve E:4-51, K:19 sayılı kararlarında da, sonradan ıslah yoluyla zamanaşımı definin ileri sürülebileceği kabul edilmiştir.</p>
+
+<hr>
+
+<p><strong>YARGITAY 17. HUKUK DAİRESİ
+Esas : 2014/21090 Karar : 2014/17659</strong> Tarih : 4.12.2014</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 176. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kısmi davada fazlaya dair hakkını saklı tutmayan davacı, ıslah yoluyla fazla alacağı talep edemez.</strong></p>
+  </li>
+</ul>
+
+<p>Dava, trafik kazasından kaynaklanan maddi tazminat istemine ilişkindir. 6100 Sayılı HMK`nın 26. maddesi gereğince “Hakim, tarafların talep sonuçlarıyla bağlıdır; ondan fazlasına veya başka birşeye karar veremez. Duruma göre, talep sonucundan daha azına karar verebilir.” Aynı Yasanın 
+176 ila 182. Maddelerinde ıslah müessesesi düzenlenmiştir. Islahla müddeabihin artırılması için, dava dilekçesinde fazlaya ilişkin talep ve dava hakkının saklı tutulması gerekir. Davaya konu tazminat, ticari araçta meydana gelen değer kaybı ve kazanç kaybına ilişkin olup, zararın tespiti aşağı yukarı tahmin edilebilir niteliktedir. Belirsiz alacak değildir. Kaldı ki fazlaya ilişkin haklar saklı tutularak kısmi dava açılıp kesin ve gerçek zarar uzman bilirkişice tespit edildikten sonra, zamanaşımı süresi içinde ıslahla talep artırılabilir.</p>
+
+<p>Somut olayda, davacı vekili fazlaya ilişkin haklarını saklı tutmadan, davalı sürücünün olayda %100 kusurlu olduğunu ileri sürerek 3.000,00 TL. gelir, 5.000,00 TL. değer kaybı zararının davalılardan tahsilini talep etmiş; hükme esas alınan bilirkişi raporlarında, davalı sürücünün %75 oranında kusurlu olduğu, araçta 7.500,00 TL. tutarında değer kaybı oluştuğu, 1.770,00 TL. gelir kaybı bulunduğu, davalı tarafın kusur oranına göre 1.327,50 TL. kazanç kaybı, 5.625,00 TL. değer kaybından sorumlu oldukları belirtilmiştir.</p>
+
+<p>Davacı vekili, bilirkişi raporlarının ibrazından sonra, dava dilekçesinde fazlaya ilişkin haklarını saklı tutmadığı halde, zarar miktarının önceden kestirilememesi ve bilinememesini gerekçe göstererek 27.03.2014 tarihli ıslah dilekçesi ile değer kaybına yönelik talebini 2.500,00 TL. daha artırarak toplam 7.500,00 TL. değer kaybı zararının davalılardan tazminini istemiştir.</p>
+
+<p>Bu durumda mahkemece, davacı tarafça fazlaya ilişkin talep ve dava hakkı saklı tutulmadan dava açıldığından, davacı vekilinin ıslah talebinin reddine, dava dilekçesinde talep edilen 5.000,00 TL. değer kaybı zararının, davalı tarafın kusuruna isabet eden 3.750,00 TL. değer kaybının davalılardan tahsiline karar verilmesi gerekirken, yazılı olduğu biçimde hüküm kurulması doğru görülmemiştir.</p>
+
+<hr>
+
+<p><strong>YARGITAY 22. HUKUK DAİRESİ 
+Esas : 2013/15600 Karar : 2014/19224</strong> Tarih : 25.06.2014</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 176. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Aynı davada ancak bir kez ıslah yapılabilir. İkinci kez ıslah yapılamaz.</strong></p>
+  </li>
+</ul>
+
+<p>Islah taraflara karşı tarafın muvafakati olmaksızın yapılan usul işlemlerini değiştirebilme imkanı veren bir usul hukuku kurumu olup, taraflar aynı davada bir defa ıslah yapma imkanına sahiptirler. Bu husus 6100 sayılı Hukuk Muhakemeleri Kanunu`nun 176/2. maddesinde, “Aynı davada, taraflar ancak bir kez ıslah yoluna başvurabilirler” denilerek açıklanmıştır.</p>
+
+<p>Somut olayda, davacı tarafından bilirkişi raporu ve ek rapor doğrultusunda biri 03.10.2012 tarihinde diğeri ise 16.04.2013 tarihinde olmak üzere iki defa ıslah işlemi gerçekleştirilmiştir. Davacı tarafından ikinci ıslah işlemi fazla çalışma ücretinin ikinci kez artırılması şeklinde gerçekleştirilmiştir. Yukarıda açıklandığı üzere aynı davada tek bir ıslah işlemi yapılabileceğinden ikinci ıslah işlemi geçerli değildir. Mahkemece ikinci ıslah işlemine göre davacının fazla çalışma ücreti talebi hakkında karar verilmesi hatalıdır.</p>
+<hr>
+
+</div></div></main>
+</div>
+
+<footer>
+<section>
+<div class="contact-info">
+
+<div class="adres">
+
+<div class="telefon-wrapper">
+
+
+</div>
+</div>
+</section>
+
+</div>
+
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+"vars": {
+"account": "UA-58342443-1"
+},
+"triggers": {
+"trackPageview": {
+"on": "visible",
+"request": "pageview"
+}
+}
+}
+</script>
+</amp-analytics>
+
+</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="../../index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="../../dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="../../ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="../../knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="../../search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/slideToggle.min.js"></script>
+    <script src="../js/internet-status.js"></script>
+    <script src="../js/tiny-slider.js"></script>
+    <script src="../js/baguetteBox.min.js"></script>
+    <script src="../js/countdown.js"></script>
+    <script src="../js/rangeslider.min.js"></script>
+    <script src="../js/vanilla-dataTables.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/magic-grid.min.js"></script>
+    <script src="../js/dark-rtl.js"></script>
+    <script src="../js/active.js"></script>
+    <!-- PWA -->
+    <script src="../js/pwa.js"></script>
+  </body>
+</html>

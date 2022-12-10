@@ -1,0 +1,1256 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tiny-slider.css">
+    <link rel="stylesheet" href="../css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="../css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="tck-search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+               <div class="page-content-wrapper py-0">
+        </div>
+      </div>
+
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<h2 id="tanık-gösterme-şekli">Tanık Gösterme Şekli</h2>
+
+<h2 id="hmk-madde-240">HMK Madde 240</h2>
+
+<p>(1) Davada taraf olmayan kişiler tanık olarak gösterilebilir.</p>
+
+<p>(2) Tanık gösteren taraf, tanık dinletmek istediği vakıayı ve dinlenilmesi istenen tanıkların adı ve soyadı ile tebliğe elverişli adreslerini içeren listeyi mahkemeye sunar. Bu listede gösterilmemiş olan kimseler tanık olarak dinlenemez ve ikinci bir liste verilemez.</p>
+
+<p>(3) Tanık listesinde adres gösterilmemiş veya gösterilen adreste tanık bulunamamışsa, tarafa adres göstermesi için, işin niteliğine uygun kesin süre verilir. Bu süre içinde adres gösterilmez veya gösterilen yeni adres de doğru değilse, bu tanığın dinlenilmesinden vazgeçilmiş sayılır.</p>
+
+<hr>
+
+<ul>
+  <li><a href="../6100-sayili-hukuk-muhakemeleri-kanunu-(hmk).html"><strong>6100 sayılı HMK (Hukuk Muhakameleri Kanunu) Tam Metin</strong></a></li>
+</ul>
+
+<hr>
+
+<amp-img src="../tokmak-yargitay-kararlari-1280x720.png" alt="HMK Madde 240  Tanık Gösterme Şekli" width="1280" height="720" layout="responsive">
+            </amp-img>
+
+<h2 id="hmk-madde-240-gerekçesi">HMK Madde 240 Gerekçesi</h2>
+
+<p>Maddenin birinci fıkrasında kimlerin tanık gösterilebileceği ifade edilmiştir. Buna göre, davanın tarafları dışında ancak üçüncü kişilerin davada tanık olarak gösterilebileceği açıkça vurgulanmıştır.</p>
+
+<p>Tanık deliline ancak davanın tarafları başvurabilecekleri için, davada tanık gösteren taraf, tanık dinletmek istediği vakıa ile dinlenilmesi istenen tanıkların ad ve soyadları ile tebliğe elverişli adreslerini bir liste hâlinde mahkemeye sunmak zorundadır. Buna tanık listesi denir.</p>
+
+<p>Listede gösterilmemiş olan kimseler tanık olarak dinlenemeyecekleri gibi, ikinci bir tanık listesi de verilemez.</p>
+
+<p>İkinci tanık listesinin verilemeyeceğine ilişkin bu kesin kural, kamu düzeninden olup, davanın hâkimi bunu kendiliğinden dikkate almak zorundadır. İkinci bir tanık listesinin verilemeyeceğine ilişkin kural, aynı zamanda davaların makul süre içinde bitirilmesi açısından usul ekonomisine hizmet eden bir kuraldır.</p>
+
+<p>Tanığın mahkemece dinlenebilmesi için hâkim huzurunda bulunması gerekmektedir. Tanığa çıkarılacak davetiyenin, bildirilen adrese tebliği zorunludur. Bu amaçla, tanığın adresinin tanık listesinde gösterilmesi gerekir. Tanık listesinde adres gösterilmemiş veya gösterilen adreste tanık bulunamamışsa tarafa adres göstermesi için, işin niteliğine uygun kesin süre verilir. Bu uygun süreyi hâkim kendisi tespit edecektir. Verilen süre içinde adres gösterilmez veya bildirilen yeni adres doğru olmazsa tanığın dinlenilmesinden vazgeçilmiş sayılacağı düzenlemesine de yer verilmiştir. Böylece tanığın adresinin gösterilmemesi veya yanlış gösterilmesinden doğan gecikmelerin önlenmesi amaçlanmıştır.</p>
+
+<hr>
+
+<h2 id="hmk-240-tanık-gösterme-şekli-emsal-yargıtay-kararları">HMK 240 (Tanık Gösterme Şekli) Emsal Yargıtay Kararları</h2>
+
+<hr>
+
+<p><strong>Hukuk Genel Kurulu         2017/2626 E.  ,  2021/814 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 140</strong></li>
+  <li><strong>Tanık deliline dayanan tarafça sunulmamış olan tanık listesi için kesin süre verilmesi gerekmektedir. Bu süreye ve tanığın dinlenileceği günün belirlenmiş olmasına rağmen tanık listesi sunmayan ancak tanık deliline dayanan tarafın hazır bulundurduğu tanığın dinlenilmesi zorunludur.</strong></li>
+</ul>
+
+<p>Uyuşmazlık konusu itibariyle tanık deliline ilişkin hukukî kavram ve kuralların irdelenmesi de önem arz etmekte olup tanık, kavram olarak uyuşmazlık hakkında bilgi ve görgüsü bulunan üçüncü kişidir. Bu hususla alakalı olarak HMK’nın 240/1. maddesi; “Davada taraf olmayan kişiler tanık olarak gösterilebilir.” hükmünü haiz olup kural olarak, üçüncü kişi olması şartıyla herkes tanık olarak dinlenebilir. Aynı maddenin ikinci ve üçüncü fıkrası ise “(2)Tanık gösteren taraf, tanık dinletmek istediği vakıayı ve dinlenilmesi istenen tanıkların adı ve soyadı ile tebliğe elverişli adreslerini içeren listeyi mahkemeye sunar. Bu listede gösterilmemiş olan kimseler tanık olarak dinlenemez ve ikinci bir liste verilemez.</p>
+
+<p>(3) Tanık listesinde adres gösterilmemiş veya gösterilen adreste tanık bulunamamışsa, tarafa adres göstermesi için, işin niteliğine uygun kesin süre verilir. Bu süre içinde adres gösterilmez veya gösterilen yeni adres de doğru değilse, bu tanığın dinlenilmesinden vazgeçilmiş sayılır.” hükmünü içermekle tanık listesinde gösterilmeyen kimselerin dinlenemeyeceği düzenlendiği gibi ikinci bir tanık listesinin de verilemeyeceği belirtilmiştir. Bu kapsamda dilekçelerin teatisi aşamasında sadece tanık deliline dayanılmış olunması yeterli olup tanık listesinin sonraki aşamalarda da sunulması mümkündür. Tanık deliline dayanılması durumunda, tanıkların hangi vakıa veya hangi hususta dinletileceği HMK’nın 194. maddesinde düzenlenen somutlaştırma yükü açısından ayrıca belirtilmelidir..</p>
+
+<p>Tanığın dinlenilmesine ilişkin HMK’nın 243/1. maddesi “(1) Tanık davetiye ile çağrılır. Ancak, davetiye gönderilmeden taraflarca hazır bulundurulan tanık da dinlenir. Şu kadar ki, tanık listesi için kesin süre verildiği ve dinlenme gününün belirlendiği hâllerde, liste verilmemiş olsa dahi taraf, o duruşmada hazır bulundurursa tanıklar dinlenir .” hükmünü haiz olup bu aşamada dikkat çeken husus; tanık için kesin süre verildiği ve dinlenme günü belirlendiği hâlde, liste verilmemiş olsa dahi taraflarca hazır bulundurulan tanığın dinlenileceğine dair emredici hükümdür. <strong>Madde metninden de anlaşılacağı üzere tanık deliline dayanan tarafça sunulmamış olan tanık listesi için kesin süre verilmesi gerekmektedir. Bu süreye ve tanığın dinlenileceği günün belirlenmiş olmasına rağmen tanık listesi sunmayan ancak tanık deliline dayanan tarafın hazır bulundurduğu tanığın dinlenilmesi zorunludur. Ancak bu durum, dilekçelerin teatisi aşamasında tanık deliline dayanmayan tarafın duruşma sırasında hazır bulundurduğu tanığın dinlenebileceği anlamına gelmez. Bu kapsamda ve HMK’nın 31. maddesinde düzenlenen hâkimin davayı aydınlatma ödevi gereği mahkemece tanık deliline dayanan taraflara tanık listesini sunmak üzere usulüne uygun kesin süre verilmesi gerekmektedir.</strong></p>
+
+<hr>
+
+<p><strong>Hukuk Genel Kurulu         2017/2301 E.  ,  2021/807 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 240</strong></li>
+  <li><strong>Tanık deliline dayanılması hâlinde; dinlenilmesi istenen tanığın isim, adres ve hangi vakıa yönünde bilgi sahibi olduğu açıklamasıyla birlikte mahkemeye bildirilmesi gerekir ve bunun dışında ikinci bir tanık listesi verilemez. Bu kuralın iki istisnası bulunmakta olup, bunlardan ilki tarafların cevaba cevap ve ikinci cevap dilekçeleriyle iddia ve savunmalarını serbestçe genişletip veya değiştirmeleri iken; ikincisi de sonradan ileri sürülen delilin yargılamayı geciktirme amacı taşımaması veya ilgilinin kusurundan kaynaklanmaması durumudur.</strong></li>
+</ul>
+
+<p>Bilindiği üzere 6100 sayılı Hukuk Muhakemeleri Kanunu’nun (HMK) “Tanık gösterme şekli” başlıklı 240. maddesinin 2. fıkrası ile “Tanık gösteren taraf, tanık dinletmek istediği vakıayı ve dinlenilmesi istenen tanıkların adı ve soyadı ile tebliğe elverişli adreslerini içeren listeyi mahkemeye sunar. Bu listede gösterilmemiş olan kimseler tanık olarak dinlenemez ve ikinci bir liste verilemez.” hükmü düzenleme altına alınmıştır. Tanık deliline ancak davanın tarafları başvurabilecekleri için, davada tanık gösteren taraf, tanık dinletmek istediği vakıa ile dinlenilmesi istenen tanıkların ad ve soyadları ile tebliğe elverişli adreslerini bir liste hâlinde mahkemeye sunmak zorundadır. Buna tanık listesi denir. Listede gösterilmemiş olan kimseler tanık olarak dinlenemeyecekleri gibi, ikinci bir tanık listesi de verilemez. İkinci tanık listesinin verilemeyeceğine ilişkin bu kesin kural, kamu düzeninden olup, Hâkim tarafından re’sen nazara alınır. İkinci bir tanık listesinin verilemeyeceğine ilişkin kural, aynı zamanda davaların makul süre içinde bitirilmesi açısından usul ekonomisine hizmet eden bir kuraldır.</p>
+
+<p>HMK ile yapılan düzenlemelerle amaçlanan; yargılamanın makul sürede tamamlanması olup, bu zorunluluk 2709 sayılı Türkiye Cumhuriyeti Anayasası’nın 90/5. maddesine göre “…Usulüne göre yürürlüğe konulmuş temel hak ve özgürlüklere ilişkin milletlerarası andlaşmalarla kanunların aynı konuda farklı hükümler içermesi nedeniyle çıkabilecek uyuşmazlıklarda milletlerarası andlaşma hükümleri esas alınır.” hükmü gereğince Avrupa İnsan Hakları Sözleşmesi (AİHS) 6. maddesi ile düzenleme altına alınan adil yargılanma hakkının en önemli unsurlardan olan “makul sürede yargılanma” ilkesine dayanmaktadır. Bu bağlamda, Avrupa İnsan Hakları Mahkemesi (AİHM), sözleşmenin tarafı devletlerin yasal sistemlerini, AİHS şartlarına uyacak şekilde düzenlemekle görevli olduğunu belirtmiştir (AİHM, Zimmerman ve …., 13 Temmuz 1983, 29. Paragraf).</p>
+
+<p>Kuşkusuz ki; yargılamanın mümkün olan en kısa sürede sonuçlanması için öngörülen hususların en önemlisi, taraflara yapacakları işlemler için belirli bir süre tanınması ve bu sürelerin hak düşürücü nitelik taşımasıdır. Bu yolla amaçlanan usul ekonomisidir. Usul ekonomisi ilkesi, HMK’nın 30. maddesiyle düzenleme altına alınmış olup; uyuşmazlıkların en az giderle, en makul sürede ve en az emekle çözümü ve gereksiz yere dava açılmasının engellenmesi şeklinde açıklanmaktadır. Bu ilke çabukluğu, gerçeğe ulaşmadan ödün vererek sağlamayı hedeflemez. İlke, adil yargılanma açısından makul sürede yargılanma hakkı ile ilgilidir. Bu sebeple yargılamanın makul sürede gerçekleşip gerçekleşmediğini belirleme açısından AİHM bu konuda; davanın niteliği, tarafların yargılamanın sürüncemede kalmaması için üzerlerine düşen yükümlülükleri yerine getirip getirmediği ve bireysel başvuruya konu olan dava bağlamında o devletin ulusal mahkemelerinin genel olarak sergilediği tavır olmak üzere üç ölçüt geliştirmiştir.</p>
+
+<p>Bir davaya taraf olan herkes, karşı taraf karşısında kendisini dezavantajlı bir konumda bırakmayacak şartlarda, iddialarını mahkemeye sunabilmesi için makul bir fırsata sahip olabilmelidir (AİHM, De … ve …, 24 Şubat 1997). Aynı şekilde, tarafların gösterilen tüm delillerden haberdar olması ve görüş bildirebilmesi de adil yargılanma hakkı kapsamında gözetilmesi gereken ilke olarak belirtilmiştir (AİHM, …., 30 Ekim 1991). Açıklanan bu ilkelere paralel olarak 6100 sayılı HMK ile yargılamanın makul sürede bitirilmesini sağlamak amacıyla düzenlemeler yapılmış ve bu amaca ulaşılabilmesi için önemli bir katkı sağlayan delillerin bildirilme zamanı özel olarak düzenlenmiştir. HMK’nın 194. maddesi ile düzenleme altına alınan hüküm gereği, taraflar dayandıkları vakıaları, ispata elverişli şekilde somutlaştırma yükümlülüğü altındadırlar. Bu madde kapsamında taraflar; dayandıkları delilleri ve hangi delilin, hangi vakıanın ispatı için gösterdiklerini açıkça belirtme zorunluluğu altında bırakılmışlardır. Buradan hareketle açıkça söylenmelidir ki; 6100 sayılı HMK ile benimsenen yargılama usulünde “dayanak vakıa ve o vakıanın ispatı için gösterilecek delil” birbirinden ayrılmaz bir bütünün parçası olarak ele alınmıştır. Delillerin belirli bir zaman dilimi içinde gösterilip sunulması yargılamayı çabuklaştıracak olmasının yanı sıra, taraflara da gösterilen delillerden haberdar olarak zamanında bunlara karşı delil veya görüş bildirebilme imkânı tanıyacak, böylece uyuşmazlıklar en kısa sürede adilane çözüme kavuşacaktır (YHGK. 20.04.2016 tarihli ve 2014/2-695 E., 2016/522 K.; 04.02.2021 tarihli ve 2017/2-2710 E., 2021/34 K. sayılı kararları).</p>
+
+<p>HMK’nın 194. maddesi ile düzenleme altına alınan “somutlaştırma yükü ve delillerin gösterilmesi” zorunluluğu; davacı taraf yönünden “Dava dilekçesinin içeriği” başlıklı 119. maddenin 1-f bendiyle “İddia edilen her bir vakıanın hangi delillerle ispat edileceği” hususunun düzenleme altına alınmasıyla, davalı taraf yönünden ise “Cevap dilekçesinin içeriği” başlıklı 129. maddenin 1-e bendiyle “Savunmanın dayanağı olarak ileri sürülen her bir vakıanın hangi delillerle ispat edileceği” hususunun düzenleme altına alınmasıyla “iddia ve savunmaya yönelik dayanılan vakıa ve o vakıanın hangi delille ispatlanacağı” hususları birbiri ile bir bütün olarak ele alınmış olup, dayanılan vakıa ve o vakıanın ispat vasıtası delilin aynı anda gösterilmesi zorunluluğu tartışmasız olarak açıklanmıştır.</p>
+
+<p>Kanunda aksi düzenlenmediği için HMK’nın 119/1-f ve 129/1-e maddeleriyle düzenleme altına alınan hükümde belirtilen “delil” sözcüğünün hem asıl ispat hem de karşı ispatı kapsadığını belirtmek gerekir.</p>
+
+<p>HMK’nın “İddia ve savunmanın genişletilmesi veya değiştirilmesi” başlıklı 141. maddesi 22.07.2020 tarih ve 7251 sayılı Kanun’un 15 maddesi ile değişiklikten önceki hâliyle; “(1) Taraflar, cevaba cevap ve ikinci cevap dilekçeleri (m.136) ile serbestçe; ön inceleme aşamasında (m.137) ise ancak karşı tarafın açık muvafakati ile iddia veya savunmalarını genişletebilir yahut değiştirebilirler. Ön inceleme duruşmasına (m.140) taraflardan biri mazeretsiz olarak gelmezse, gelen taraf onun muvafakati aranmaksızın iddia veya savunmalarını genişletebilir yahut değiştirebilir (m.139). Ön inceleme aşamasının tamamlanmasından sonra iddia veya savunma genişletilemez yahut değiştirilemez. (2) İddia ve savunmanın genişletilip değiştirilmesi konusunda ıslah (m.176) ve karşı tarafın açık muvafakati hükümleri saklıdır.” değişiklikten sonra ise “- (1) (Değişik:22/7/2020-7251/15 md.) Taraflar, cevaba cevap ve ikinci cevap dilekçeleri ile serbestçe iddia veya savunmalarını genişletebilir yahut değiştirebilirler. Dilekçelerin karşılıklı verilmesinden sonra iddia veya savunma genişletilemez yahut değiştirilemez. (2) İddia ve savunmanın genişletilip değiştirilmesi konusunda ıslah ve karşı tarafın açık muvafakati hükümleri saklıdır.” şeklinde düzenleme altına alınmıştır. HMK’nın 141. maddesine göre; tarafların karşılıklı dilekçelerini verdikleri aşamada, herhangi bir sınırlamaya bağlı olmaksızın uyuşmazlığın genel çerçevesi içinde iddia ve savunmalarını değiştirebilecekleri kabul edilmiştir. Dilekçelerin karşılıklı verilmesi aşamasında bu yasağın uygulanmaması ile daha uyuşmazlığın en başında, karşı tarafın açıklamasını, iddia ve savunmasını tam olarak görmeden, sağlıklı ve tam bir iddia ve savunma örgüsü kurmanın mümkün ve gerçekçi olmadığı gözetilerek; tarafların dilekçelerinde rahat, doğru ve sağlıklı bir iddia ve savunma bütünü oluşturmalarını sağlamak olduğu gibi, maddi ve hukukî nitelendirmeleri uyuşmazlığı çözecek doğrulukta ortaya koymaları amaçlanmaktadır. Şüphesiz ki bu imkân, sadece cevaba cevap ve ikinci cevap dilekçesi ile söz konusudur. Bu iki dilekçeden sonra, hangi ad altında olursa olsun verilecek dilekçeler, sınırlama ve yasak kapsamında kabul edilmelidir. Kanun’un 141. maddesinin birinci fıkrasında 28.07.2020 tarih, 7251 sayılı Kanun’un 15. maddesi ile yapılan değişiklikten önceki hâlinin hükümet gerekçesinde, ön inceleme duruşmasının yargılama bakımından öneminden dolayı, tarafların bu duruşmaya katılımını sağlamak amacıyla “gelen tarafın ödüllendirildiği, mazereti olmadığı hâlde gelmeyen tarafın ise cezalandırıldığı” bir yol izlenmesinin zorunlu olduğu görüşüyle hareket edilerek, her iki tarafın da ön inceleme duruşmasına gelmesi hâlinde karşı tarafın muvafakati ile genişletme söz konusu iken, taraflardan biri mazeretsiz olarak gelmediği takdirde, gelen taraf karşı tarafın muvafakatine gerek olmaksızın iddia ve savunmasını genişletip değiştirebileceği kabul edilmiş idi. Maddede yapılan değişiklikle, dilekçeler aşaması tamamlandıktan sonra, ıslah ve karşı tarafın açık muvafakati hariç olmak üzere, iddia ve savunma genişletilemeyecek veya değiştirilemeyecektir. Gerekçede değişikliğin amacı “sırf ön inceleme duruşmasına katılım sağlanmadığı için aleyhte iddia ve savunmanın rahatlıkla genişletilebilmesi veya değiştirilebilmesinin” silahların eşitliği ilkesinin ihlali olarak açıklanmıştır. Bu ihlalin “davayı takip etmediğinde davayı inkâr ettiği kabul edilen ve duruşmaya katılma zorunluluğu bulunmayan davalı taraf” yönünden çok daha güçlü bir şekilde ortaya çıkma ihtimali üzerinde durulduktan sonra adil yargılanma hakkı ayrıca uyuşmazlığın ön inceleme aşamasında netleşmesini sağlaması sayesinde, ön inceleme duruşma tutanağının “yargılamanın yol haritası” olma özelliğini güçlendireceği gerekçelerine de yer verilmiştir.</p>
+
+<p>Görüldüğü üzere, HMK’nın sistematiği içinde; tahkikat aşamasına geçilmezden evvel tarafların uyuşmazlık konularının ve bu uyuşmazlıkların çözümü için ileri sürdükleri delillerin daha işin en başında belirlenerek tahkikatın etkin bir şekilde yapılmasının hedeflendiği anlaşılmaktadır. Zira tahkikatın amacı; kural olarak delil toplamak değil, delilleri incelemek ve değerlendirmektir; aksi hâlde tahkikat tamamlanamaz ve yargılama uzar. Bu itibarla, yukarıda ayrıntılı olarak açıklanan hususların özetlenmesi gerekirse; AİHS’nin 6. maddesinde düzenlenen adil yargılama hakkının etkin ve makul bir süre içinde kullanılabilmesi için HMK’da düzenlemelere yer verilmiş olup, bu bağlamda delil gösterilmesi dilekçelerin teatisi (dava, cevap, cevaba cevap ve ikinci cevap) aşamasına hasredilmiştir. Tarafların, Kanunda belirtilen bu sürelerden sonra delil gösterebilmeleri ancak iki yasa maddesinde belirtilen hâllerle sınırlıdır. Onlar da; iddia ve savunmanın genişletilmesi veya değiştirilmesini düzenleyen 141. madde ile sonradan delil gösterilmesinin hüküm altına alındığı 145. maddedeki durumlardır.</p>
+
+<p>Eldeki davada; davacı-karşı davalı vekili 08.05.2014 tarihli dava dilekçesinde; müvekkilinin kusursuz bir eş ve baba olmasına rağmen, davalının davacıya hiçbir zaman yakınlık göstermediği, sebepsiz kıskançlıkları ve kurguları nedeniyle evlilik birliğini çekilmez hâle getirdiği, ayrıca müvekkili hakkında sadakatsiz davrandığı yönünde dedikodu yapmak suretiyle toplumda rezil ettiği vakıalarını ispat etmek için tanık deliline dayanmış ve … ile Hacı …’ı tanık olarak bildirmiştir. Davalı-karşı davacı vekili 19.06.2014 tarihli cevap ve karşı dava dilekçesinde ise; erkeğin eşini… isimli bir kadın ile aldattığını, tüm kazancını başka şehirlerde kadınlara yedirdiğini, hakaret ettiğini, birlik görevlerini yerine getirmediğini, çocukları ve müvekkili ile ilgilenmediğini ileri sürerek boşanmaya karar verilmesini talep etmiştir. Bunun üzerine davacı-karşı davalı vekili 01.07.2014 tarihli cevaba cevap ve karşı davaya cevap dilekçesi sunmuş, ileri sürülen tüm iddiaları inkâr ederek, müvekkilinin kusursuz bir eş ve baba olduğunu tekrar etmiş, şehir dışında iş alma sebebini ise “tüm hayatı boyunca ailesine daha iyi bir yaşam standardı sunabilmek amacıyla nerede iş bulursa orada çalışmak zorunda kaldığı” şeklinde savunmuş, bu iddia ve savunmasına yönelik olarak da…ve…’ın tanık olarak dinlenmesini istemiştir. Davalı-karşı davacı vekili 01.09.2014 tarihli cevaba cevap dilekçesinde önceki iddia ve savunmalarını tekrar etmiş, buna karşılık davacı-karşı davalı vekili 15.09.2014 tarihli ikinci cevap dilekçesini sunmuş, bu dilekçesinde de … ve …’ın dinlenilmesini talep etmiştir. Davacı-karşı davalı vekilinin 15.09.2014 tarihli ikinci cevap dilekçesinin incelenmesinde önceki iddia ve savunmalarının aynısını ileri sürerek, müvekkilinin karısını aldatmadığını, kusursuz bir eş ve baba olduğunu, şehir dışında ailesinin geçimini daha iyi sağlayabilmek amacıyla çalıştığını açıkladığı anlaşılmıştır.</p>
+
+<p>Oysa ki yukarıda açıkça vurgulandığı üzere tanık deliline dayanılması hâlinde; dinlenilmesi istenen tanığın isim, adres ve hangi vakıa yönünde bilgi sahibi olduğu açıklamasıyla birlikte mahkemeye bildirilmesi gerekir ve bunun dışında ikinci bir tanık listesi verilemez. Bu kuralın iki istisnası bulunmakta olup, bunlardan ilki tarafların cevaba cevap ve ikinci cevap dilekçeleriyle iddia ve savunmalarını serbestçe genişletip veya değiştirmeleri iken; ikincisi de sonradan ileri sürülen delilin yargılamayı geciktirme amacı taşımaması veya ilgilinin kusurundan kaynaklanmaması durumudur. Dosya kapsamı bir bütün olarak değerlendirildiğinde; davacı-karşı davalı asıl davadaki iddialarına yönelik … ve Hacı …’ı dinletmek istemiş, karşı dava ile aleyhine ileri sürülen iddiaların aksini ispat için, başka bir ifadeyle karşı ispat bağlamında da…ve…’ın tanık olarak dinlenmesini istemiştir. Bundan sonra, 15.09.2014 tarihli ikinci cevap dilekçesi ile dava ve karşı davaya cevap dilekçesinde yer alan aynı vakıalara dayandığı hâlde bu kez de … ve …’ın dinlenilmesini talep etmiştir. Özel Dairece yapılan incelemede ise davacı-karşı davalının tanık deliline dayandığı, bu nedenle her bir dilekçesinde dinlenilmesini istediği tanıklarını toplu olarak ön inceleme duruşmasında kendisine verilen süre içerisinde bildirdiği gerekçesiyle dinlenmeyen tüm tanıklarının dinlenilmesi gerektiği belirtilerek karar bozulmuştur.</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. HUKUK DAİRESİ 
+Esas : 2016/19639 Karar : 2018/7482</strong> Tarih : 7.06.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 240. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanık Gösterme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Tanıkların dinlenilmesi Usulü Hukuk Muhakemeleri Kanununun 240. ve devamı maddelerinde düzenlenmiştir. Hukuk Muhakemeleri Kanununun 243. maddesinde “tanık davetiye ile çağrılır. Ancak, davetiye gönderilmeden taraflarca hazır bulundurulan tanık da dinlenir. Şu kadar ki tanık listesi için kesin süre verildiği ve dinlenme gününün belirlendiği hallerde, liste verilmemiş olsa dahi taraf, o duruşmada hazır bulundurursa tanıklar dinlenir” hükmü yer almıştır.</p>
+
+<p>Davacı kadın dava dilekçesinde tanık deliline dayanmış, mahkemece ön inceleme duruşmasında, taraflara tanıklarını ve adreslerini bildirmek üzere iki haftalık kesin süre verilmiş, davacı kesin süre içinde tanıklarını bildirmemiştir. Her ne kadar davacı kesin süre içinde tanık listesini vermemiş ise de; davacı vekili ön incelemeyi izleyen tahkikat duruşmasında mazeret bildirmiş olup mazereti kabul edildiğine ve takip eden celsede de tanıklarının hazır olduğunu belirttiğine göre, HMK’nın 243. maddesinde düzenleme gereğince tanıkların dinlenip, bütün deliller birlikte değerlendirilerek sonucu uyarınca bir karar verilmesi gerekirken, eksik inceleme ile hüküm tesisi doğru olmayıp, bozmayı gerektirmiştir.</p>
+
+<p>SONUÇ: Temyiz edilen hükmün yukarıda gösterilen sebeple BOZULMASINA, bozma sebebine göre diğer temyiz itirazlarının şimdilik incelenmesine yer olmadığına, temyiz peşin harcının istek halinde yatırana geri verilmesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere oybirliğiyle karar verildi. 07.06.2018(Prş.)</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. HUKUK DAİRESİ
+Esas : 2016/18794 Karar : 2018/6787</strong> Tarih : 28.05.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 240. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanık Gösterme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Davacı-karşı davalı kadın tarafından evlilik birliğinin sarsılması hukuki sebebi ile (TMK m.166/1) boşanmaya karar verilmesi talep edilmiş, erkek tarafından ise karşı dava yoluyla zina hukuki sebebine dayalı ( TMK m. 161 ) boşanma talep edilmiştir. Mahkemece yapılan yargılama sonucunda kadının asıl davasının reddine, erkeğin karşı davasının TMK m.166/1 uyarınca kabulü ile tarafların boşanmalarına, davalı-karşı davacı erkek lehine ayrıca maddi - manevi tazminata hükmedilmiştir. Davacı-karşı davalı kadın dava dilekçesinde tanık deliline dayanmış, süresinde sekiz tane tanık ismi bildirmiştir. Davacı-karşı davalı kadının tanıklarından sadece … ve … isimli tanıklar dinlenmiş, diğer altı tanık ise dinlenmemiştir. Mahkemece davacı-karşı davalı kadının dinlenmeyen tanıklarının hazır edilmeleri halinde dinlenmelerine karar verilmiş, takip eden celselerde davacı-karşı davalı tarafça hazır edilmediğinden kadının diğer tanıkları dinlenmeden hüküm verilmiştir. Davacı-karşı davalı kadın tanıklarının dinlenmesinden açıkça vazgeçmemiştir. Tanıkların dinlenilmesi usulü Hukuk Muhakemeleri Kanununun 240 ve devamı maddelerinde düzenlenmiştir. Hukuk Muhakemeleri Kanununun 243. maddesinde “tanık davetiye ile çağrılır. Ancak, davetiye gönderilmeden taraflarca hazır bulundurulan tanık da dinlenir. Şu kadar ki tanık listesi için kesin süre verildiği ve dinlenme gününün belirlendiği hallerde, liste verilmemiş olsa dahi taraf, o duruşmada hazır bulundurursa tanıklar dinlenir” hükmü yer almıştır. Görüldüğü üzere, kural olan tanığın davetiye ile çağrılmasıdır. Ancak, taraflarca hazır bulundurulan tanıkların da dinlenilmesi mümkündür. Mahkemece, yasal dayanağı bulunmadığı halde, taraflara tanıklarını duruşmada hazır bulundurma yükümlülüğü yüklenemeyeceği gibi, tanıkların hazır edilmesi konusunda süre de verilemez. Verilmiş olsa dahi sonuç doğurmaz. Bu durumda, mahkemece yapılacak iş, Türk Medeni Kanunun 166/1. maddesine dayalı kadının asıl boşanma davası ile Türk Medeni Kanunun 161. Maddesine dayalı erkeğin karşı boşanma davasında; davacı-karşı davalı tarafa Hukuk Muhakemeleri Kanununun 240/3. maddesi uyarınca dinlenmeyen tanıkları … ve …‘in adreslerini bildirmek üzere işin niteliğine uygun kesin süre verilmesi, bu süre içerisinde adres gösterilmemesi halinde vazgeçmiş sayılacağına karar verilmesi, adres gösterilmesi halinde ise bu tanıklar ile birlikte adresleri bildirilen tanıklar … ve …‘nın da usulüne uygun çağrılarak dinlenildikten ve tarafların karşılıklı boşanma davalarında tüm deliller birlikte değerlendirildikten sonra hasıl olacak sonucuna göre karar verilmesi gerekirken açıklanan yönlerde işlem yapılmadan eksik inceleme ile hüküm kurulması doğru bulunmamıştır.</p>
+
+<p>SONUÇ: Temyiz edilen hükmün yukarıda gösterilen sebeple BOZULMASINA, temyiz peşin harcının istek halinde yatırana geri verilmesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere oybirliğiyle karar verildi. 28.05.2018 (Pzt. )</p>
+
+<hr>
+
+<p><strong>YARGITAY 1. HUKUK DAİRESİ 
+Esas : 2015/12818 Karar : 2018/9896</strong> Tarih : 7.05.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 240. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanık Gösterme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Taraflar arasında görülen davada;</p>
+
+<p>Davacı, mirasbırakan annesi … ’ın çekişme konusu 227 ada 2 parsel sayılı taşınmazı davalı oğlu … ’a satış suretiyle devrettiğini, temlikin mirastan mal kaçırma amaçlı ve muvazaalı olduğunu ileri sürerek, davalı adına olan tapu kaydının iptali ile miras payı oranında adına tesciline karar verilmesini istemiştir.</p>
+
+<p>Davalı, davanın reddini savunmuştur.</p>
+
+<p>Mahkemece, muvazaa iddiasının kanıtlandığı gerekçesiyle davanın kabulüne karar verilmiştir.</p>
+
+<p>Karar, davalı vekili tarafından süresinde temyiz edilmiş olmakla, Tetkik Hakimi … ’un raporu okundu, düşüncesi alındı. Dosya incelendi, gereği görüşülüp, düşünüldü.</p>
+
+<p>Dosya içeriğine, toplanan delillere, hükmün dayandığı yasal ve hukuksal gerekçeye, delillerin takdirinde bir isabetsizlik bulunmamasına ve özellikle davalı vekilince tanık listesi süresinde verilmeyip, bundan sonraki ilk celsede davalı tanıkları hazır edilmediği, davalı tarafça süresinden sonra tanık listesi verilmesine davacı vekilinin muvafakat etmediği saptanarak mahkemece davalı tanıklarının dinlenmelerine yer olmadığına karar verilmesinin doğru olduğu gözetilerek, davanın kabulüne karar verilmiş olmasında bir isabetsizlik bulunmadığına göre davalının yerinde bulunmayan temyiz itirazının reddiyle, usul ve yasaya uygun olan hükmün ONANMASINA, aşağıda yazılı 22.757.96.-TL bakiye onama harcının temyiz eden davalıdan alınmasına, 07.05.2018 tarihinde oyçokluğuyla karar verildi.</p>
+
+<p>…</p>
+
+<ul>
+  <li>KARŞI OY-</li>
+</ul>
+
+<p>Dava; muris muvazaası hukuksal nedenine dayalı tapu iptal ve tescil istemine ilişkindir.</p>
+
+<p>Mahkemece, muvazaa idiasının kanıtlandığı gerekçesiyle davanın kabulüne karar verilmiştir.</p>
+
+<p>Davalı, davacı tanıklarının varsayıma dayalı beyanlarına itibar edilerek davanın kabulünün doğru olamadığını, 03.10.2013 tarihli oturumda verilen iki haftalık kesin sürede her iki tarafın da tanık listesi ibraz etmediğini, 30.10.2013 tarihli tanık listesiyle birlikte gider avansını yatırıp, tanıklarının davatiye ile çağrılması taleplerinin mahkemece kabul edilmediğini, sonra da tanıkların kesin sürede bildirilmediği gerekçersiyle tanık dinletme taleplerinin reddedildiğini, savunma haklarının kısıtlandığı ve tanıkları dinlenmeden verilen kararın hakkaniyete, kanunlar önünde eşitlik ve adalet ilkelerine aykırı oldugunu ileri sürerek kararı temyiz etmiştir.</p>
+
+<p>Daire çoğunlugu ile aramızda ki uyuşmazlık, ön inceleme duruşmasında verilen kesin süreden sonra her iki tarfça tanık listesi verilmesine rağmen, davalı tanıklarının davetiye ile çağrılarak duruşmada dinlenmesi talepleri kabül edilmeyerek sadece davacı tanıkları dinlenerek sonuca gidilmesinin, mahkeme önünde silahların eşitliği ilkesine aykırılık ve savunma hakkının ihlali niteliğinde olup olmadığı noktasında toplanmaktadır.</p>
+
+<p>Mahkemece, 03.10.2013 tarihli ön inceleme oturumunun 2 nolu ara kararıyla, “ Davalı tarafın delillerini ve tanıklarını bildirmeleri, herbir tanık için 30,00TL tanıklık ücreti, 8,00 TL davetiye giderinin varsa avanstan yoksa ikmal edilmesi için 2 haftalık kesin süre verilmesine, süreye riayetsizlik halinde mevcut duruma göre karar verileceğinin ihtarına, ihtar edildi”, 3. nolu ara kararıyla “Davacı tarafa tanıklarını bildirmesi, her bir tanık için 30,00TL tanıklık ücreti, 8,00 TL davetiye giderinin varsa avanstan yoksa ikmal edilmesi için 2 haftalık kesin süre verilmesine, süreye riayetsizlik halinde mevcut duruma göre karar verileceğinin ihtarına, ihtar edildi”, 4 nolu ara kararıyla da “Bildirilen ilk iki davacı tanığı adına davetiye çıkarılmasına”, duruşmanın 06.02.2014 tarihine bırakılmasına karar verildiği saptanmıştır.</p>
+
+<p>Davalı vekili 30.10.2013 tarihli dilekçesiyle “… bayramı tatili ve devamında … Bayramı tatilinin araya girmesiyle tanık listesinin sunulduğu, fiili olarak tanıklarını dinletmeye hazır olduklarını, bu yöndeki (kesin süre) Yargıtay kararları esas alınarak tanık dinletme taleplerinin kabulüyle ad ve adresleri bildirilen tanıklara davetiye tebliği ve 06.02.2014 tarihli oturumda dinlenmelerinin” talep edildiği, aynı gün 84.00TL gider avansının mahkeme veznesine yatırıldığı, dilekçe üzerine, “Ara kararı olmadığı için davalı tanıklarına davetiye çıkmadığı” kaydının konulduğu tespit edilmiştir.</p>
+
+<p>Davacı vekilinin, kesin süreden sonra, 07.11.2013 tarihli dilekçeyle tanık listesi verdiği, adı geçen iki tanığın davetiye ile çağrılarak, 06.02.2014 tarihli oturumda dinlendiği, oturumun 1 nolu ara kararıyda, davalı tanık listesi iki haftalık kesin sürede verilmediğinden, davalı tanıklarının dinlenmesine yer olmadığına karar verilmiştir.</p>
+
+<p>6100 sayılı Hukuk Muhakemeleri Kanunun 240. maddesinde tanık gösterme şekli düzenlenmiş, aynı kanunun 243/1 maddesinde,” Tanık davetiye ile çağrılır. Ancak, davetiye gönderilmeden taraflarca hazır bulundurulan tanık da dinlenir. Şu kadar ki, tanık listesi için kesin süre verildiği ve dinlenme gününün belirlendiği hallerde, liste verilmemiş olsa dahi taraf, o duruşmada hazır bulundulursa tanık dinlenir.” şeklinde düzenleme yapılmıştır.</p>
+
+<p>Bilindiği üzere, davaların kısa zamanda sonuçlandırılması, adaletin bir an önce tecellisi için, taraflarca veya mahkemelerce yapılması gereken bir kısım adli işlemler sürelere bağlanmıştır. Bu sürelerin bazılarını kanun bizzat belirlerken bir kısmını işin özelliğine, tarafların durumlarına göre belirlenmesi için hakime bırakmıştır. Kanuni süreler açıkça belirtilen ayrıcalıklar dışında kesindir. Hakimin belirlediği süreler ise kural olarak kesin değildir. Hakim tayin ettiği süreyi henüz dolmadan azaltıp çoğaltacağı gibi, süre geçtikten sonra da tarafın isteği üzerine yeni bir süre tanıma yoluna da gidebilir. Bu takdirde verilen ikinci süre kesindir. Ancak, hakim kendi belirlediği sürenin kesin olduğuna da karar verebilir. Kesin sürenin tayin edilmesi halinde, karşı taraf yararına usulü kazanılmış hak doğacağı da kuşkusuzdur.</p>
+
+<p>../…</p>
+
+<p>Hemen belirtmek gerekir ki, ister kanun, isterse hakim tarafından tayin edilmiş olsun kesin süre içerisinde yerine getirilmeyen bir işlemin bu süre geçtikten sonra yerine getirilmesine yasal olanak yoktur. Böylece kesin sürenin kaçırılması; o delile veya hakka dayanamamak gibi ağır sonuçları birlikle getirmekte, bazen davanın kaybedilmesine dahi neden olmaktadır. Bu itibarla geciken adaletin de bir adaletsizlik olduğu düşüncesinden hareketle, davaların yok yere uzamasını veya uzatılmak istenmesini engellemek üzere konan kesin süre kuralı, kanunun amacına uygun olarak kullanılmalı, davanın reddi için bir araç sayılmamalıdır. Öte yandan, kesin süre tarafların yanında hakimi de bağlayacağından uyulmaması halinde gereği hakim tarafından hemen yerine getirilmelidir.</p>
+
+<p>Yargıtayın yerleşik uygulamasında, verilen kesin süreye rağmen tanık listesi verilmediği hallerde, duruşmadan önce listenin verilerek, giderin karşılanması ve tanıklara davetiye gönderilmesi veya tanıkların duruşmada hazır bulundurulması durumunda tanıklar dinlenmektedir. Yargıtayın bu uygulamasının temel nedeni, kesin sürenin, davanın sürüncemede kalmasını engellemek amacıyla konulmuş olması ve duruşma günü tanıkların hazır bulundurulması ile oturum ertelenmesine sebebiyet verilmemiş olması ve kesin süreden beklenen amacın gerçekleşmiş olması görüşüne dayanmaktadır.</p>
+
+<p>Savunma hakkı Anayasamızın hak arama hürriyeti başlıklı 36. maddesinde “Herkes, meşru vasıta ve yollardan faydalanmak suretiyle yargı mercileri önünde davacı veya davalı olarak iddia ve savunma ile adil yargılanma hakkına sahiptir.” düzenlemesi ile açıkça hüküm altına alınmıştır.</p>
+
+<p>İddia ve savunma hakkı, 6100 sayılı Hukuk Muhakemeleri Kanunu’nun hukuki dinlenilme haklı başlıklı 27. maddesi ile usûl hukukumuzda da yer almıştır..Anılan maddenin birinci fıkrasında davanın taraflarının kendi hakları ile bağlantılı olarak hukuki dinlenilme hakkına sahip oldukları belirtildikten sonra maddenin ikinci fıkrasında bu hakkın “açıklama ve ispat hakkı”nı da içerdiği vurgulanmıştır. Davanın taraflarının, usul hukuku hükümlerine aykırı olarak ispat hakkını kullanmalarının kısıtlanması, iddia ve savunma hakkının kısıtlanması sonucunu doğurur.</p>
+
+<p>Somut uyuşmazlıkta; davalı vekiline tanıklarını bildirmesi için iki hafta kesin süre verilmiş, davalı tanık listesi 30.10.2013 tarihinde verilen kesin süreden sonra duruşma günü olan 06.02. 2014 gününden önce gider avansı mahkeme veznesine yatırılarak mahkemeye verilmiş, tanıkları fiilen dinletmeye hazır oldukları, tanıkların davetiye ile çağrılarak, 06.02.2014 günlü oturumda dinlenilmesi talep edilmiştir. Mahkemece, 03.10.2013 günlü oturum ara kararında sadece davacının bildirdiği iki, tanık için dinlenme kararı alındığından, davalı tanıklarının davet edilmediği anlaşılmaktadır.</p>
+
+<p>Bu durumda, davalı tarafın duruşma gününden önce tanık listesini ve gider avansını mahkeme veznesine yatırıp, fiilen tanıklarını dinletmeye hazır olduklarını bildirip davetiyeyle çağrılmaları talebinin, ara kararıyla davalı tanıklarının çağrılmasına karar verilmediğinden reddedildiği, davalı tanıklarının 06.02.2014 günlü oturumda dinlenmesi yönünde mahkeme ara kararı olmadığına göre, HMK’nun 243/1 maddesinin uygulama yerinin de olmadığı, davalı tarafın, duruşma günden önce tanık listesini vermekle kesin süreden beklenen amacın hasıl olduğu, bu nedenle duruşma ertelenmesine sebebiyet vermediği gözetildiğinde, yerinde olmayan gerekçeyle davalı tanıklarının dinlenmemesi hukuki dinlenme hakkı ve savunma hakkının kısıtlanması, adil yargılanma hakkının ihlali sonucunu doğurduğu açıktır.</p>
+
+<p>Açıklanan nedenlerle, davalı tanıklarının dinlenmesi, tüm deliller birlikte değerlendirilerek varılacak sonuça göre karar verilmesi gerektiği görüşünde olduğumdan, davalının temyiz itirazının kabulüyle, mahkeme kararının bozulması gerektiğini düşündüğümden, çoğunluğun mahkeme kararının onanması yönündeki görüşüne katılmıyorum.</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. HUKUK DAİRESİ 
+Esas : 2016/14918 Karar : 2018/4524</strong> Tarih : 4.04.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 240. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanık Gösterme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Davacı-davalı kadının tanık listesinde gösterdiği tanıklardan “… dinlenmelerinden açıkça vazgeçmediği gibi, bu tanıklar yönünden mahkemenin de dinlenilmesinden vazgeçilmesine yönelik bir ara kararı bulunmamaktadır. Davacı-davalının dinlenmelerinden açıkça vazgeçmediği yukarıda isimleri yazılı olan tanıkların dinlenmeden hüküm kurulması hukuki dinlenilme hakkının (HMK m.27) ihlali niteliğinde olup, bu tanıkların HMK’nun 240 ve devamı maddeleri gereğince usulünce davetiye ile çağrılarak dinlenip, delillerin hep birlikte değerlendirilerek sonucuna göre karar verilmesi gerekirken, eksik inceleme ile yazılı şekilde hüküm kurulması doğru olmamış ve bozmayı gerektirmiştir.</p>
+
+<p>SONUÇ: Temyiz edilen hükmün yukarıda gösterilen sebeple BOZULMASINA, bozma sebebine göre tarafların diğer temyiz itirazlarının şimdilik incelenmesine yer olmadığına, temyiz peşin harcının istek halinde yatırana geri verilmesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere oybirliğiyle karar verildi. 04.04.2018(Çrş.)</p>
+
+<hr>
+
+<p><strong>YARGITAY 1. HUKUK DAİRESİ 
+Esas : 2015/8386 Karar : 2018/7833</strong> Tarih : 19.03.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 240. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanık Gösterme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Dava, muris muvazaası hukuksal nedenine dayalı … payı oranında … iptal ve tescil isteğine ilişkindir.</p>
+
+<p>Davacı, … bırakan eşi … ’ın, 135 ada 13 … sayılı taşınmazını davalı oğulları … ve … ’a satış suretiyle devrettiğini, yapılan temliklerin … tan mal kaçırma amaçlı ve muvazaalı olduğunu ileri sürerek, davalılar adına olan … kaydının iptali ile … payı oranında adına tesciline karar verilmesini istemiştir.</p>
+
+<p>Davalı … , annesinin babasından bir çok taşınmaz kaldığını,… bırakanları … ’ın bu taşınmazları satarak dava konusu taşınmazı adlarına satın aldığını, … bırakanın davacıya da maddi yardımda bulunarak davacı adına taşınmaz satın aldığını, düğününde takılan tüm altınları ve birikimini … bırakana verdiğini ve bu birikimler ile taşınmaz üzerine ev yapıldığını bildirip davanın reddini savunmuştur.</p>
+
+<p>Davalı … davaya cevap vermemiştir.</p>
+
+<p>Mahkemece, muvazaa iddiasının ispatlandığı gerekçesiyle davanın kabulüne karar verilmiştir. Dosya içeriği ve toplanan delillerden, … bırakan … ’ın paydaşı olduğu 135 ada 13 … sayılı taşınmazdaki paylarının yarısını … davalı … ’a, kalan yarısını da davalı diğer … ’a 19.4.1985 tarihinde satış suretiyle devrettiği, 1938 doğumlu murisin 25.02.2003 tarihinde … , geride … çıları olarak ikinci eşi davacı … ile, dava dışı ilk eşinden olan çocukları … ve … ile , davacıdan olan … ve … ’in kaldıkları anlaşılmaktadır.</p>
+
+<p>Davacı ve davalı, iddia ve savunmalarının ispatı için … kayıtları, … , bilirkişi incelemesi ve … delillerine dayanmış, Mahkemece, bir kısım taraf tanıkları dinlenmek suretiyle sonuca gidilmiştir.</p>
+
+<p>Hemen belirtilmelidir ki, tanıklık, taraflar dışındaki kişilerin dava ile ilgili bir vakıa hakkında, dava dışında bizzat edinmiş oldukları bilgiyi mahkemeye bildirmeleridir.</p>
+
+<p>Tanık delili, 6100 Sayılı … Kanunu’nun (HMK) 240 ile 266. maddeleri arasında düzenlenmiştir. Tanıkların davet edilmesini düzenleyen 243. maddesinde açıkça; ‘‘(1) Tanık davetiye ile çağrılır. Ancak, davetiye gönderilmeden taraflarca hazır bulundurulan tanık da dinlenir. Şu kadar ki, tanık listesi için kesin süre verildiği ve dinlenme gününün belirlendiği hâllerde, liste verilmemiş olsa dahi taraf, o duruşmada hazır bulundurursa tanıklar dinlenir. (2) Davetiyenin duruşma gününden en az bir hafta önce tebliğ edilmiş olması gerekir. Acele hâllerde tanığın daha önce gelmesine karar verilebilir. (3)Tanığı davet, gerektiğinde telefon, faks, elektronik posta gibi araçlardan yararlanılmak suretiyle de yapılabilir. Ancak, davete rağmen gelmemeye bağlanan sonuçlar, bu durumda uygulanmaz hükmüne yer verilmiştir. Aynı Kanunun 245. maddesinde ise; ‘‘(1) Kanunda gösterilen hükümler saklı kalmak üzere, tanıklık için çağrılan herkes gelmek zorundadır. Usulüne uygun olarak çağrıldığı hâlde mazeret bildirmeksizin gelmeyen tanık zorla getirtilir, gelmemesinin sebep olduğu giderlere ve beşyüz … Lirasına kadar disiplin para cezasına hükmolunur. Zorla getirtilen tanık, evvelce gelmemesini haklı gösterecek sebepleri sonradan bildirirse, aleyhine hükmedilen giderler ve disiplin para cezası kaldırılır.</p>
+
+<p>Tanıkların taraflarca hazır edilmesini zorunlu kılan bir kural yoktur. Bunun aksinin kabulü, adil yargılanma hakkı (TC. Anayasası 36. madde) kapsamında olan iddia ve savunma hakkının (6100 s. HMK’nın 27., 1086 sayılı HUMK’un 78. maddeleri) kısıtlanması ve eksik inceleme sonucunu doğurur.</p>
+
+<p>Somut olayda, davalı 25.11.2013 havale tarihli dilekçesi ile … ,… ,… ,… isimli tanıkların isim ve adreslerini bildirdiği, tanıklar adına keşif gününü bildirir tebligat çıkartılmasına karar verildiği, tüm tanıklara tebligat çıkarıldığı ,05.12.2014 tarihinde yapılan keşifte davalı tanıkları … , … , … ’ın dinlenildiği, adı geçen diğer tanık … ’ın ise beyanının alınmadığı görülmektedir.</p>
+
+<p>O halde; yukarıda belirtilen ilkeler ve olgular birlikte değerlendirildiğinde; davalı tanıklarından … dinlenmeden, olaya ilişkin bilgi ve görgülerine başvurulmadan sonuca gidilmiş, diğer bir söyleyişle davalının tanık delili toplanmayarak savunma hakkı kısıtlanmıştır.</p>
+
+<p>Hâl böyle olunca, davalının bildirmiş olduğu tanıkların dinlenmesi, toplanan deliller toplanacak delillerle birlikte değerlendirilerek varılacak sonuç çerçevesinde bir hüküm kurulması gerekirken eksik inceleme ile yetinilerek yazılı olduğu şekilde karar verilmiş olması doğru değildir.</p>
+
+<p>Davalılar vekilinin temyiz itirazları yerindedir. Kabulüyle hükmün belirtilen nedenlerle (6100 sayılı Yasanın geçici 3.maddesi yollaması ile) 1086 sayılı HUMK’nun 428. maddesi gereğince BOZULMASINA, peşin alınan harcın istek halinde yatırana iadesine, 19.03.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 9. HUKUK DAİRESİ
+Esas : 2015/10807 Karar : 2017/9720</strong> Tarih : 5.06.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 240. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanık Gösterme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>A) Davacı İsteminin Özeti:</p>
+
+<p>Davacı vekili; müvekkilinin davalıya ait işyerinde Haziran 2008 tarihinden 08.03.2013 tarihine kadar kasa görevlisi olarak çalıştığını, son maaşının 850 TL olduğunu, 3 ayda bir 300 TL prim aldığını, maaş ödemelerinin düzensiz olması nedeniyle iş akdini haklı nedenle feshettiğini, işçilik alacaklarının ödenmediğini ileri sürerek, kıdem tazminatı, yıllık izin, fazla mesai ve ulusal bayram genel tatil ücretlerinin davalıdan tahsilini talep etmiştir.</p>
+
+<p>B) Davalı Cevabının Özeti:</p>
+
+<p>Davalı vekili; davacının kendi isteğiyle işten ayrılmasına rağmen iyiniyetli olarak davacıya kıdem tazminatı ödemesi yapıldığını, bakiye kıdem tazminatı alacağının 5.939,64 TL olduğunu ve en kısa sürede ödeneceğini, davacının ücretinin asgari geçim indirimi ile birlikte 950 TL olduğunu, yıllık izin, fazla mesai ve ulusal bayram genel tatil ücreti hakkı bulunmadığını savunarak, davanın reddini talep etmiştir.</p>
+
+<p>C) Yerel Mahkeme Kararının Özeti:</p>
+
+<p>Mahkemece davanın kısmen kabulü ile kıdem tazminatı, fazla mesai ve ulusal bayram genel tatil ücretlerinin davalıdan tahsiline hükmedilmiştir.</p>
+
+<p>D) Temyiz:</p>
+
+<p>Kararı davalı temyiz etmiştir.</p>
+
+<p>E) Gerekçe:</p>
+
+<p>1-Usul açısından;</p>
+
+<p>a) Davalı tanıklarından …‘ya davetiye tebliğ edilememesi, diğer davalı tanığı …‘nın ise usulüne uygun davetiye tebliğine rağmen duruşmaya gelmemesi üzerine 30/04/2014 tarihli celsede davalı vekilinin “ gelecek celse tanıklarımı hazır edeceğim” şeklindeki talebi üzerine mahkemece “Davalı vekiline gelecek celse tanıklarını hazır etmesi için kesin süre verilmesine, hazır etmediğinde bu delile dayanmaktan vazgeçmiş sayılacağının ihtarına(ihtarat yapıldı) “ şeklinde ara kararı oluşturulduğu, takip eden 11/06/2014 tarihli celseye davalı vekilinin mazeret bildirerek katılmaması sonrasında ise mahkemece davalı tanıkları dinlenmeksizin dosyanın bilirkişiye gönderildiği ve bilirkişiden dönmesini müteakip de karara bağlandığı anlaşılmaktadır.</p>
+
+<p>Usul yasasında taraflarca tanıkların hazır edilmesi gibi bir düzenleme yer almamakta olup, mahkemece adına çıkarılan davetiye tebliğ edilemeyen tanık bakımından HMK.’nın 240. maddesi uyarınca davalı vekiline tanığın yeni adresini bildirmesi için kesin süre verilmesi, kendisine davetiye tebliğ edildiği halde mazeret bildirmeksizin çağrıya uymayan tanık bakımından ise HMK.’nın 245/1. maddesi uyarınca zorla getirilmesi yoluna gidilmesi gerekirken usuli işlemler tamamlanmadan karar verilmesi hukuki dinlenilme hakkının ihlalidir.</p>
+
+<p>2-Esas açısından;</p>
+
+<p>a) Somut uyuşmazlıkta, taraflar arasında davacı işçinin fazla çalışmasının olup olmadığı hususu ihtilaflıdır.</p>
+
+<p>Mahkemece hükme esas alınan bilirkişi raporunda tanık beyanlarına dayalı olarak davacının haftanın 6 günü 09.00-19.00 saatleri arası 10 saat çalıştığı, kasiyer olması nedeniyle yarım saat daha fazla çalışma yaparak çalışmanın günde 10,5 saat olduğu, günde 1,5 saat ara dinlenmesinin tenzili ile haftalık çalışmasının (10 saat x6 gün) 60 saat olduğu ve buna göre 45 saati aşan 15 saat fazla çalışma yaptığının kabulü ile sonuca gidilmesi isabetsiz olup, yapılan hesap matematiksel hata içermektedir.</p>
+
+<p>Davacının günlük 10,5 saat olarak belirlenen çalışması üzerinden 1,5 saat ara dinlenmesinin tenzili ile günlük çalışmanın 9 yerine hataen 10 saat olarak saptanması haftalık fazla çalışmanın hatalı hesaplanmasına neden olmuştur. Hatalı hesaba dayalı karar verilmesi isabetsizdir.</p>
+
+<p>b) Hüküm altına alınan alacakların net mi, yoksa brüt mü olduğunun hükümde belirtilmemesi HMK. nun 297/2. maddesine aykırı olup, bu durumun infazda tereddüde yol açacağının düşünülmemesi de isabetsizdir.</p>
+
+<p>F) Sonuç:</p>
+
+<p>Temyiz olunan kararın yukarıda yazılı sebeplerden dolayı BOZULMASINA, peşin alınan temyiz harcının istek halinde ilgilisine iadesine, 05/06/2017 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 3. HUKUK DAİRESİ
+Esas : 2015/18225 Karar : 2017/4257</strong> Tarih : 29.03.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 240. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanık Gösterme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Davacı, tarafların ortak murisin hesabına taşınmazın kamulaştırılması nedeniyle 756.497,00 TL yatırıldığını, bu paranın davalıya borç olarak verildiğini, davalı tarafından bir kısmına ev alındığını, diğer kısmını banka hesabına aktardığını, davalının parayı murise iade etmediğini, murisin vefatında hesabında para bulunmadığını, miras payı oranında iade etmesi gerektiğini belirterek fazlaya ilişkin hakların saklı kalması kaydıyla 96.405,00 TL miras alacağının 20/6/2013 tarihinden yasal faiziyle tahsiline karar verilmesini talep ve dava etmiştir.</p>
+
+<p>Davalı, davacıya borcu olmadığını, muris annelerine kendisinin baktığını, davacının bakım masraflarına katılmadığını, murisin kendisine yaptığı iyiliklere karşılık vermek istediğini savunarak davanın reddini istemiştir.</p>
+
+<p>Mahkemece; davanın ispatlanamadığı gerekçesiyle davanın reddine karar verilmiş, hüküm süresi içerisinde davacı vekili tarafından temyiz edilmiştir.</p>
+
+<p>1- Hukuk Muhakemeleri Kanununun “hukuki dinlenilme başlıklı 27.maddesi, T.C. Anayasasının hak arama hürriyetini düzenleyen 36.maddesi ve Avrupa İnsan Hakları Sözleşmesinin adil yargılanma hakkına ilişkin 6.maddesi nazara alındığında; davanın tarafları, müdahiller ve yargılamanın diğer ilgilileri, kendi hakları ile bağlantılı olarak hukuki dinlenilme hakkına sahiptirler. Yargılama ile ilgili bilgi sahibi olunmasını, açıklama ve ispat hakkını mahkemenin açıklamaları dikkate alarak değerlendirmesini içeren bu hakkın ve yargılamanın aleniliği ilkelerinin gerçekleşmesinin en önemli aracı duruşma yapılmasıdır.</p>
+
+<p>Duruşma günü celseye katılma imkanı olmayan taraf buna ilişkin mazeretini bildirip, belgeleyerek, bildirim giderlerini de yatırarak duruşmanın ertelenmesini isteme olanağına sahiptir.</p>
+
+<p>Dosyanın incelenmesinde; hüküm verilen 17/09/2015 tarihli 4. celse için davalı vekili tarafından aynı tarihte, davacı vekili tarafından 16/09/2015 tarihinde mazeret dilekçesi sunulduğu, dilekçelerde yeni duruşma gününün öğrenilmesine karar verilmesini talep ettikleri, mahkemece aynı celsede verilen ara karar ile mazeretlerin kabul edildiği, sonrasında ise araştırılması gereken başka bir husus kalmadığı belirtilip duruşmaya son verilerek davanın reddine karar verildiği görülmektedir.</p>
+
+<p>O halde mahkemece; davacı vekilinin mazeretinin kabulüne karar verilmekle yeni duruşma günü belirlenmesi ve taraflara bildirilerek yargılamaya devam edilmesi gerekirken, mazeretin kabulüne karar verildikten sonra yeni duruşma günü verilmeden doğrudan hüküm kurulması usul ve yasaya aykırı olup bozmayı gerektirir.</p>
+
+<p>2- 6100 sayılı Hukuk Muhakemeleri Kanunu’nun 240 ve devamı maddelerinde tanıkların dinlenilme usulü belirlenmiştir.</p>
+
+<p>Aynı Kanun’un, “tanığın davet edilmesi” başlıklı 243. maddesinde, tanığın davetiye ile çağrılacağı, “çağrıya uyma zorunluluğu” başlıklı 245. maddesinin 1. fıkrasının 2. cümlesinde, usulüne uygun olduğu halde çağrıya uymayan tanığın zorla getirileceği hüküm altına alınmıştır. Dava tarihinde yürürlükte bulunan 1086 sayılı Hukuk Usulü Muhakemeleri Kanunu’nun 253 ve 258. maddelerinde aynı düzenleme yer almaktadır.</p>
+
+<p>Dosyanın incelenmesinde, davacı tanıklarının 17/09/2015 tarihli celsede beyanlarının alınması için usulüne uygun davetiye ile duruşmaya davet edildikleri, duruşmaya mazeret bildirmeksizin gelmedikleri, mahkemece HMK.’nın 245. maddesinde yer alan çağrıya uymayan tanıkların zorla getirilmesine ilişkin hükmün uygulanmadan nihai karar verildiği anlaşılmaktadır.</p>
+
+<p>O halde; mahkemece, usulüne uygun davetiyeye rağmen gelmeyen tanıklar hakkında tanıklar hakkında zorla getirme kararı verilmesi gerekirken, usul kuralları tüketilmeksizin, yazılı şekilde karar verilmesi hatalıdır.</p>
+
+<p>3- Bozma nedenine göre, şimdilik davacı vekilinin sair temyiz itirazlarının incelenmesine gerek görülmemiştir.</p>
+
+<p>SONUÇ: Yukarıda birinci ve ikinci bentte açıklanan nedenlerle hükmün HUMK’nun 428. maddesi gereğince davacılar yararına BOZULMASINA, üçüncü bentte açıklanan nedenle davacı tarafın diğer temyiz itirazlarının incelenmesine şimdilik yer olmadığına, peşin alınan temyiz harcının istek halinde temyiz edene iadesine, 6100 sayılı HMK’nun geçici madde 3 atfıyla 1086 sayılı HUMK’nun 440.maddesi gereğince kararın tebliğinden itibaren 15 günlük süre içerisinde karar düzeltme yolu açık olmak üzere, 29.03.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 22. HUKUK DAİRESİ
+Esas : 2017/5707 Karar : 2017/4669</strong> Tarih : 7.03.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 240. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanık Gösterme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Davacı vekili, müvekkili işçinin iş sözleşmesinin haklı sebep olmadan feshedildiğini, işçilik alacaklarının ödenmediğini ileri sürerek, kıdem tazminatı, ihbar tazminatı, yıllık izin ve fazla çalışma ücreti alacaklarının hüküm altına alınmasını talep etmiştir.</p>
+
+<p>Davalı vekili, davanın reddini savunmuştur.</p>
+
+<p>Mahkemece, toplanan deliller ve bilirkişi raporuna dayanılarak, yazılı gerekçeyle davanın kabulüne karar verilmiştir.</p>
+
+<p>Kararı, davalı vekili temyiz etmiştir.</p>
+
+<p>Dava, 6100 sayılı Hukuk Muhakemeleri Kanunu’nun yürürlükte olduğu tarihte açılmıştır.</p>
+
+<p>6100 sayılı Kanun’un, 240. maddesinde tanık listesi sunulması hususundan, 243. maddesinde ise, tanık listesi için kesin süre verilmesi hususundan bahsedilmekle birlikte, tanık listesi sunulması için kesin sürenin hangi aşamada verileceğine ilişkin, kanunda açık bir düzenleme bulunmamaktadır. Ancak, Kanun’un 140/…. ve 320/…. maddelerinde, ön inceleme aşamasında tarafların anlaştıkları ve anlaşamadıkları hususların tek tek tespit edilmesi gerektiği düzenlenmiştir. Uyuşmazlık konularının tespit edilmesinden önceki bir aşamada, tarafların tanık listesi sunmalarını beklemek doğru değildir. Bu halde, tanık deliline dayanmış ve fakat tanık listesi sunmamış tarafa, tanık listesi sunması için kesin sürenin ön inceleme sonunda verilmesi gereklidir. Tensip zaptında bu yönde verilen kesin süre hukuki sonuç doğurmayacaktır.</p>
+
+<p>Somut olayda, mahkemece ön inceleme duruşmasının ….03.2014 tarihinde yapılmasına karar verilmiştir. Davalı vekili, mazeret bildirerek duruşmaya katılmamış, mahkemece de davalı vekilinin mazereti kabul edilerek, duruşmanın takip eden celsesinin ….05.2014 tarihinde yapılmasına karar verilmiştir. ….05.2014 tarihli celseye katılan davalı vekili, ….05.2014 tarihli dilekçesiyle tanık listesini mahkemeye sunmuştur. Mahkemece, davalı tarafa tebliğ edilen tensip zaptında kesin süre verilmesine rağmen, verilen süre içerisinde tanıkların bildirilmediği ve duruşmada da hazır edilmediği gerekçesiyle davalı tarafın tanıkları dinlenilmemiştir. Yukarıdaki paragrafta ayrıntılı açıklandığı üzere, tanık deliline dayanmış ve fakat tanık listesini sunmamış tarafa, tanık listesi sunması için kesin sürenin ön inceleme sonunda verilmesi gerekli olup, tensip zaptında bu yönde verilen kesin süre hukuki sonuç doğurmaz. Davalı tarafın, belirlenen günde ön inceleme duruşmasına mazeret bildirerek katılmadığı ve mahkemenin de mazereti kabul ettiği, davalı vekilinin takip eden ….05.2014 tarihli celseye katıldığı ve aynı tarihli tanık listesini sunduğu nazara alındığında, tanıkların süresinde bildirildiğinin kabul edilmesi gereklidir. Mahkemece aksi yönde kabulle sonuca gidilmesi hatalı olup, sair yönler incelenmeksizin kararın bozulmasını gerektirmiştir.</p>
+
+<p>SONUÇ : Temyiz olunan kararın yukarıda yazılı sebepten BOZULMASINA, bozma sebebine göre sair temyiz itirazlarının bu aşamada incelenmesine yer olmadığına, peşin alınan temyiz harcının istek halinde ilgiliye iadesine, 07.03.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 9. HUKUK DAİRESİ 
+Esas : 2016/12252 Karar : 2016/20517</strong> Tarih : 21.11.2016</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 240. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanık Gösterme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>A) Davacı isteminin özeti:</p>
+
+<p>Davacı vekili, davalı tarafından iş aktinin haksız feshedildiğini, bir kısım işçilik alacaklarının ödenmediğini ileri sürerek kıdem tazminatı, ihbar tazminatı, ücret, yıllık izin ücreti, fazla mesai ücreti, genel tatil ücreti alacaklarını istemiştir.</p>
+
+<p>B) Davalı cevabının özeti:</p>
+
+<p>Davalı vekili,davalı tarafından iş aktinin haklı nedenle feshedildiğini, “lost” adlı müşteriler tarafından unutulan eşyaların tutulduğu kasadan kaybolan 5000 USD ve bazı eşyalarla ilgili olarak davalı bünyesinde içinde soruşturma başlatıldığını, çalışanların ifadelerinin alındığını, davacının kaybolma vakıasına dair beyanını verdiğini, bu esnada çalışanlar benzer dosya davacısı …’nun ve eldeki dosya davacısı Aslı’nın birbirleri aleyhine özel hayatlarına dair bazı beyanlarda bulunduklarını, hırsızlık soruşturması yaparken davalının o güne kadar bilmediği, bilmek de istemediği, bilmesi de gerekmeyen özel ilişkilere vakıf olduğunu, davalıyı çalışanlarının özel hayatının, bu özel hayat çalışanlar arasındaki iş ilişkisini, iş ilişkisindeki güveni ve sadekati, işyeri barışını, huzurunu etkileyinceye kadar ilgilendirmediğini, bu özel ilişkilerin tüm davalı işyeri bünyesinde bilinir hale geldiğini, çalışanların davacı ve diğer 2 kişiyi dışlamaya başladıklarını, her ortamda konuşmaya başladıklarını, davacı ve diğer 2 kişinin yemekhanede yemek yerken kafalarını kaldırıp mesai arkadaşları ile göz göze gelemez olduklarını, birbirleri hakkındaki ifşaatları nedeni ile birbirlerinin yüzüne bakamaz olduklarını, aralarında husumet oluştuğunu, birbirleri ile çalışmak bir yana artık yan yana duramaz olduklarını, işyerinde huzuru barışı bozduklarını, diğer çalışanların dedikodu malzemesi haline geldiklerini, iş akitlerini feshetmekten başka davalıya çare kalmadığını, bu nedenle ifşaatların gerçekliğine bile bakılmadan her 3 işçinin de iş aktinin feshedildiğini, iddia ve taleplerin yersiz olduğunu savunarak davanın reddini istemiştir.</p>
+
+<p>C) Yerel Mahkeme kararının özeti:</p>
+
+<p>Mahkemece, toplanan delillere ve bilirkişi raporuna göre, davalı iş yerinde şifresinin çalışanlarca bilinen kasalardan 5000 USD paranın kaybolduğu, bunun üzerine savunmaların alındığı, dosyaya sunulu 9.11.2012 tarihli yazılı savunmasında davacının 4.11.2012 tarihinde 707 nolu oda kasasının kilitli olduğunu deftere işlediğini, akşam şefi …’nun kendisini arayarak 707 nolu oda kasasından 5000 $ para çıktığını söylediğini deftere işleyerek kasaya kilitlediğini söylediğini kasanın şifresini sorduğunu ertesi sabah işe geldiğinde …nun yazdığı notu ve paranın kasada olduğunu öğrendiğini 8.11.2012 tarihinde yapılan kontrol esnasında paranın kasada bulunmadığını öğrendiğini defterde üzerinin çizildiğini ancak teslim tutanağının olmadığının belirtildiğini kayıp eşyalarla ilgili bir bilgisinin olmadığını beyan ettiği, 4.12.2012 tarihli insan kaynakları dikkatine başlıklı yazıda ise olayla ilgili bir kısım çalışanla konuştuğunu … ile İlhan’ın bir yıl önce arkadaşlıklarının başladığını …nun kendisine hamile olduğunu söylediğini bir kısım alt kadroda çalışan personel ile arkadaşlık kurup eğlence içki durumlarında bulunduğunu kendisine anlattığını Ahmet isimli personelle arkadaşlık kurduğunu beyan ettiği, … ’ın bila tarihli yazılı savunmasında ise 6-7 ay önce davacı İlhan, davacı ve bir başka çalışan ile dışarı çıktıklarını, İlhanla yakınlaşmalarının olduğunu görüşmeye başladığını ancak pişman olduğunu ve görüşmeyi kestiğini, davacının erkek arkadaşı ile bir akşam evine geldiğinde siz şimdi esrar da içmişsinizdir dediğin de davacının gülerek neden olmasın dediğini beyan ettiği, 7.12.2012 tarihli disiplin Kurulu kararının içeriğinde yazdı savunmalar özetlendikten sonra … ve davacı aslının departman içindeki hiyerarşik yapı içerisinde ast üst ilişkilerini hiçe sayarak gayri ahlaki ilişki yaşamaları ve bunu da işyerine yansıtmaları nedeniyle 4857 sayılı yasanın 25/11 maddesi uyarınca iş akitlerinin sonlandırılmasına oybirliğiyle karar verildiği, tanık olarak dinlenen …’nun ifadesinde kasayı ilişkin defter kaydını farketmeyen müdürün işten atılma korkusuyla birilerini suçlamak için birbirleri aleyhine ifade vermesini istediğini, davacının madde bağımlısı olduğu ve esrar içtiğine dair kendisinden zorla yazı alındığını yoksa işten çıkartacağını beyan ettiği, 4857 sayılı İş Kanunu’nun 25 inci maddesinin (II) numaralı bendinde, ahlâk ve iyi niyet kurallarına uymayan haller sıralanmış ve belirtilen durumlar ile benzerlerinin varlığı halinde, işverenin iş sözleşmesini haklı fesih imkânının olduğu, yine değinilen bendin (e) alt bendinde, işverenin güvenini kötüye kullanmak, hırsızlık yapmak, işverenin meslek sırlarını ortaya atmak gibi doğruluk ve bağlılığa uymayan işçi davranışlarının da işverene haklı fesih imkânı verdiği, yasadaki haller sınırlı sayıda olmayıp, genel olarak işçinin sadakat borcuna aykırılık oluşturan söz ve davranışları işverene fesih imkânı tanıdığı, Yargıtayın benzer olaylarda, işyeri dışında yaşanan olayların işyerine sirayet etmesi, bir başka anlatımla işyeri işleyişini etkilemesi ve işin aksamasına neden olması durumunda, dışarıda yaşanan olaylar nedeni de iş akdini sonlandırmada işverenin haklı nedene sahip olduğunu içtihat ettiği, somut dosyada tartışılması gereken husus, çalışanlar arasında işyeri dışında yaşanandan yakınlaşmanın işyerine sirayet edip etmediği, dinlenen tanık anlatımları nazara alınarak yaşanan …sal yakınlaşmaların işyerindeki huzuru ve çalışma ortamını bozacak nitelikte olduğu, yine iş yeri kasası içinden kaybolan para olayına ilişkin de çalışana karşı işverenin güveninin sarsıldığı tüm bu olaylar bir bütün olarak değerlendirildiğinde iş aktinin haklı nedenle sonlandırdığı, davacı resmi dini bayram çalışması alacak talebinde bulunmuşsa da dosya içeriği itibariyle bu iddiasını ispatlar yeterli kesin inandırıcı delil bulunmadığı, yıllık izinlerin kullandırıldığının ücretlerin ödendiğinin ispat külfetinin davalıya ait olduğu, davacının kullanmadığı yıllık izinler ve ücret alacağı bulunduğu, davacının fazla mesai yaptığı ve fazla mesai alacağının bulunduğu görüldüğü, 1/3 oranında hakkaniyet indirimi yapıldığı gerekçesi ile karar verilmiştir.</p>
+
+<p>D) Temyiz:</p>
+
+<p>Karar süresi içinde davacı vekili ve davalı vekili tarafından temyiz edilmiştir.</p>
+
+<p>E) Gerekçe:</p>
+
+<p>1- Dosyadaki yazılara, toplanan delillerle kararın dayandığı kanuni gerektirici sebeplere göre davacının tüm, davalının aşağıdaki bentlerin kapsamı dışında kalan temyiz itirazları yerinde değildir.</p>
+
+<p>2- İş hukukunda çalışma olgusunu, bu kapsamda fazla mesai yaptığını, tatillerde çalıştığını iddia eden işçi, karşılığı ücretin ödendiğini de işveren kanıtlamalıdır.</p>
+
+<p>Fazla ve tatillerde çalışma her türlü delille kanıtlanabilir. Fazla çalışmanın ispatı konusunda işyeri kayıtları, özellikle işyerine giriş çıkışı gösteren belgeler, işyeri iç yazışmaları, delil niteliğindedir.</p>
+
+<p>İşçinin çalışma olgusunun tespitinde işyerinde veya komşu işyerinde çalışanların tanıklığı önemli olduğu gibi tanık olarak dinlenecek kişinin tanıklığına güveni etkileyebilecek bir durumun olup olmadığı da araştırılmalıdır.</p>
+
+<p>Diğer taraftan 6100 HMK.’un tanıkla ilgili hükümleri incelendiğinde, 240/1 maddesinde “Davada taraf olmayan kişiler tanık olarak gösterilebilir”, 250. maddesinde “Tanığın davada yararı bulunmak gibi tanıklığının doğruluğu konusunda kuşkuyu gerektiren sebepler varsa, bunu iki taraftan biri iddia ve ispat edebilir” ve 254. Maddesinde ise “Dinleme sırasında öncelikle tanıktan adı, soyadı, doğum tarihi, mesleği, adresi, taraflarla akrabalığının veya başka bir yakınlığının bulunup bulunmadığı, tanıklığına duyulacak güveni etkileyebilecek bir durumu olup olmadığı sorulur” kurallarına yer verilmiştir.</p>
+
+<p>Dairemizin istikrarlı uygulaması gereği, davalı aleyhine dava açanlar tanık olarak dinlenmiş ise bu işçilerin tanıklıklarına kural olarak itibar edilmemesi gerekir. Bu beyanların diğer yan delillerle birlikte değerlendirilerek, sonuca gidilmesi gerekir.</p>
+
+<p>İmzalı ücret bordrolarında fazla çalışma ücreti ödendiği anlaşılıyorsa, kural olarak bordro hilesi taşımadığı sürece işçi tarafından gerçekte daha fazla çalışma yapıldığını yazılı delillerle kanıtlanması gerekir. Ancak, işçinin fazla çalışma alacağının daha fazla olduğu yönündeki ihtirazî kaydının bulunması halinde, bordroda görünenden daha fazla çalışmanın ispatı her türlü delille söz konusu olabilir. Keza bordro hilesi bulunmadığı ve bordro ile fazla mesai ücreti ödenmiş ve ihtirazı kayıt konmamış ise tanık beyanlarına dayalı fazla çalışma tespitinde ödenen ayların dışlanması, aksi halde ise ödenenlerin mahsup edilmesi gerekir. Başka bir anlatımla, işverence işçilerin fazla çalışma ücreti talep etmesine engel olacak şekilde sembolik fazla çalışma tahakkukları yapılırsa bu aylar fazla çalışma hesabından dışlanmaz ancak yapılan fazla çalışma ödemeleri tespit edilen fazla çalışma ücreti alacağından mahsup edilir.</p>
+
+<p>Dosya içeriğine ve kayıtlara göre davacı tanıklarının davalı aleyhine dava açan kişiler olduğu anlaşılmaktadır. Bu nedenle salt bu tanık beyanları esas alınamaz. Ancak Dairemiz tarafından temyiz incelemeleri aynı gün yapılan benzer dosya olan Dairemizin 2015/5147 Esas sayılı dosyasında (…. İş Mahkemesi’nin 2013/678 Esas sayılı dosyası) bir takım işyeri giriş çıkış kayıtları olduğu anlaşılmıştır. Davacının işyeri giriş çıkış kayıtları taraflardan sorularak celbedilmeli, bordrolarda da fazla mesai ödemesi olduğu dikkate alınarak bu delillerle birlikte değerlendirilmeli ve fazla mesai belirlenmelidir.</p>
+
+<p>Diğer taraftan bir kısım fazla mesai tahakkuku olan bordrolar da sunulmuştur. Bu nedenle işe giriş-çıkış kayıtları olan dönemler için, giriş-çıkış kayıtları gün gün incelenerek her hafta için haftalık şekilde fazla mesai süresini hesaplamalı, fazla mesai tahakkuku olan bordrolardaki fazla mesai süresi eğer giriş-çıkış kayıtlarına uygun ise o aylar dışlanmalı, imzasız bordrolar nedeni ile bu bordrodaki ücretlerin bankaya ödenip ödenmediği araştırılmalı, bordrolarda tahakkuku yapılan fazla mesai süresi giriş-çıkış kayıtlarındakinden düşük olan ay var ise o ay için bordroya göre ödenen fazla mesai ücreti mahsup edilerek giriş çıkış kayıtlarına göre artan fazla mesai süresi hesaplanarak sonuca gidilmelidir.</p>
+
+<p>Eksik inceleme ile sonuca gidilmesi hatalıdır.</p>
+
+<p>F) SONUÇ:</p>
+
+<p>Temyiz olunan kararın yukarda yazılı sebeplerden BOZULMASINA, peşin alınan temyiz harcının istek halinde ilgiliye iadesine, 21/11/2016 tarihinde oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. HUKUK DAİRESİ
+Esas : 2014/15957 Karar : 2014/26464</strong> Tarih : 23.12.2014</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 240. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanık Gösterme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Tanıkların dinlenilmesi usulü Hukuk Muhakemeleri Kanununun 240 ve devamı maddelerinde düzenlenmiştir. Hukuk Muhakemeleri Kanununun 243. maddesinde “Tanık davetiye ile çağrılır. Ancak, davetiye gönderilmeden taraflarca hazır bulundurulan tanık da dinlenir. Şu kadar ki tanık listesi için kesin süre verildiği ve dinlenme gününün belirlendiği hallerde, liste verilmemiş olsa dahi taraf, o duruşmada hazır bulundurursa tanıklar dinlenir.” hükmü yer almıştır. Davacı, 31.12.2012 tarihli dilekçe ile tanık olarak “R. ve Ş.`ı” bildirmiştir. Davacı tanıklarının, davetiye ile çağrılması yönünde mahkemece yapılmış bir işlem bulunmamaktadır.</p>
+
+<p>Davacının, 09.03.2013 tarihli oturumdaki beyanı, bu tanıkların dinlenilmesinden açıkça vazgeçme niteliğinde değildir. Davacı (koca)`nın yukarıda isimleri bildirilen tanıkları usulünce davet edilip dinlenmeden eksik inceleme ile hüküm tesisi doğru bulunmamıştır.</p>
+
+<p>Temyiz edilen hükmün yukarıda gösterilen sebeple ( BOZULMASINA ), temyiz peşin harcının istek halinde yatırana geri verilmesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 20. CEZA DAİRESİ
+Esas: 2016/2388 Karar: 2016/5745</strong> Tarih: 05.12.2016</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 240. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanık Gösterme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>1-)Dosyadaki yazılara, kararın dayandığı delillerle kanuni gerektirici sebeplere ve özellikle “davacı lehine takdir edilen yoksulluk nafakasının davacının evlendiği tarih olan 21.06.2014 tarihinde Kanun gereği ( m.176/3) kendiğinden ortadan kalkacağının ve maddi tazminata dair faizin dava tarihinden itibaren geçerli olacağının anlaşılmasına göre” davalının aşağıdaki bentler dışında kalan temyiz itirazları yersizdir.</p>
+
+<p>2-)Hukuk Muhakemeleri Kanununa göre sadece uyuşmazlık konusu hakkında ihtiyati tedbir kararı verilebilir ( m.389/1). Uyuşmazlık konusu olmayan ve davalı erkek adına kayıtlı bulunan araç üzerine ihtiyati tedbir konulması doğru değildir.</p>
+
+<p>3-)Davacı kadın dava dilekçesinde ayrıca cins,nev’i ve miktarlarını bildirdiği ziynet eşyalarının bedelini talep etmiş, ziynet eşyalarının davalı erkekte kaldığını beyan etmiş, davalı erkek ise ziynet eşyalarının kadının ailesi tarafından alındığını savunmuştur.Davacı kadın ziynet eşyasının erkek tarafından zorla alındığını ispatla yükümlüdür. Ziynet eşyalarının niteliği gereği kadının ortak konuttan ayrılırken yanında götürmesi hayatın olağan akışına uygun düşer. Yapılan yargılama ve toplanan delillerden davacı kadın tanıklarının ziynet eşyaları konusunda görgüye dayalı bilgilerinin bulunmadığı anlaşılmaktadır. Davacı kadın davaya konu ziynet eşyalarının erkek tarafından götürüldüğünü, elinden zorla alındığını ispat edememiştir. Bu durumda mahkemece, davacı kadının ziynet alacağı davasının reddi gerekirken, kabulü doğru olmayıp, bozmayı gerektirmiştir.</p>
+
+<p>SONUÇ : Temyiz edilen hükmün yukarıda 3. bentlerde gösterilen sebeple BOZULMASINA, bozma kapsamı dışında kalan temyize konu diğer bölümlerin ise yukarıda 1 .bentte gösterilen sebeple ONANMASINA, temyiz peşin harcının istenmesi halinde yatırana iadesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere, 10.01.2017 tarihinde oybirliğiyle karar verildi.Yukarıda tarihi, konusu ve tarafları gösterilen hükmün; düzeltilerek onanmasına dair Dairemizin 26.04.2016 gün ve 7574-8448 Sayılı ilamıyla ilgili karar düzeltme isteminde bulunulmakla, evrak okundu, gereği düşünüldü:</p>
+
+<p>KARAR : 6100 Sayılı Hukuk Muhakemeleri Kanunu 01.10.2011 tarihinde yürürlüğe girmiş ise de, bu Kanuna 6217 Sayılı Kanunla ilave edilen (1.) bendinde, Bölge Adliye Mahkemelerinin göreve başlama tarihine kadar, 1086 Sayılı Kanun’un kanun yollarına dair hükümlerinin uygulanmasına devam olunacağı hükme bağlandığından, karar düzeltme talebinin incelenmesi gerekmiştir.</p>
+
+<p>1-)Temyiz ilamında yer alan açıklamalara göre davacı-karşı davalının aşağıdaki bendin kapsamı dışında kalan karar düzeltme istekleri yersizdir.</p>
+
+<p>2-)Mahkemece, davacı-karşı davalı baba tarafından açılan velayetin değiştirilmesi olmadığı takdirde kişisel ilişkinin yeniden düzenlenmesi davasında; babanın velayetin değiştirilmesi talebinin reddine, baba ile çocuk arasındaki kişisel ilişkinin yeniden düzenlenmesi talebinin kabulüne, anne tarafından açılan karşı iştirak nafakası davasının da kısmen kabulüne karar verilmiş, bu karara karşı tarafların temyizi üzerine Dairemizin 26.04.2016 gün ve 2016/7574 esas, 2016/8448 karar sayılı ilamıyla, tarafların diğer temyiz itirazlarının reddine, davacı-karşı davalının kabul edilen davası ile ilgili yargılama giderleri ile vekalet ücretinin ve baba ile çocuk arasında yeniden düzenlenen kişisel ilişkinin düzeltilerek onanmasına karar verilmiş, davacı-karşı davalı tarafından süresi içerisinde karar düzeltme talebinde bulunulmuştur.</p>
+
+<p>Davacı-karşı davalı baba, velayetin değiştirilmesi istemli dava açmış, 10.12.2015 tarihli ıslah dilekçesi ile davasını kademeli (terditli) hale getirerek ortak çocuğun velayetinin davalı-karşı davacı anneden alınarak kendisine verilmesini, bu talebi kabul edilmediği takdirde ise ortak çocuk ile kişisel ilişkinin yeniden düzenlenmesini istemiştir. Davacı-karşı davalı babanın velayetin değiştirilmesine dair talebi reddedilmiş, ancak kişisel ilişkinin yeniden düzenlenmesine karar verilmiştir. Davanın kısmen kabulü söz konusu değildir. İki ayrı dava değil tek dava vardır. Bu sebeple babanın kademeli talebi kabul edildiğinden sadece davacı-karşı davalı yararına karar tarihinde yürürlükte bulunan Avukatlık Asgari Ücret Tarifesi uyarınca maktu vekalet ücreti takdiri gerekirken ve aynı sebeple mahkeme masraflarının davalı-karşı davacı üzerinde bırakılması gerekirken davalı-karşı davacı anne yararına vekalet ücreti ve yargılama gideri takdiri usul ve yasaya aykırıdır. Karar tarihinde yürürlükte bulunan Avukatlık Asgari Ücret Tarifesi uyarınca maktu vekalet ücreti 1.800,00 TL. olduğu halde Dairemizin düzelterek onama ilamında 1.500,00 TL olarak belirtilmiş, davacı-karşı davalının kabul edilen davasında yaptığı masraflarla ilgili bir düzeltme yapılmamıştır. Davacı-karşı davalının davasında yargılama giderleri ve vekalet ücreti konusunda düzelterek onama kararının yukarıda gösterilen şekilde yazılmaması usul ve kanuna aykırıdır. Ne var ki bu husus ilk inceleme sırasında gözden kaçırıldığından davacı-karşı davalının bu konudaki karar düzeltme isteğinin kabulüne Dairemizin 26.04.2016 gün ve 2016/7574 esas, 2016/8448 karar sayılı düzelterek onama ilamının sonuç kısmının aşağıdaki şekilde yeniden düzenlenmesine karar vermek gerekmiştir.</p>
+
+<p>SONUÇ : Yukarıda 2. bentte gösterilen sebeple, Hukuk Usulü Muhakemeleri Kanununun 440- uyarınca davacı-karşı davalının karar düzeltme isteğinin kısmen kabulüne, Dairemizin 26.04.2016 gün ve 2016/7574 esas, 2016/8448 karar sayılı düzelterek onama ilamının sonuç kısmının, “Temyiz edilen hükmün yukarıda 3. bentlerde gösterilen sebeplerle, gerekçeli kararın hüküm fıkrasının 1 numaralı bölümünün “ç) ve e) bentlerinin” hükümden tamamen çıkarılmasına yerine ç) bendi olarak “davanın kabulü nazara alınarak davalı-karşı davacının bu dava sebebiyle yapmış olduğu yargılama giderlerinin üzerinde bırakılmasına, davacı-karşı davalı tarafından bu dava sebebiyle yapılan yargılama giderlerinin davalı-karşı davacıdan tahsili ile davacı-karşı davalıya verilmesine” e) bendi olarak “davanın kabulü nazara alınarak Avukatlık Asgari Ücret Tarifesi uyarınca 1.800,00 TL. vekalet ücretinin davalı-karşı davacı anneden alınarak davacı-karşı davalı babaya verilmesine” cümlelerinin eklenmesine yine kişisel ilişkiye dair b) bölümünde yer alan “…okulların yarıyıl tatilinin ilk haftasında hafta süresince “ sözcüklerinin hükümden çıkarılmasına, yerine “… her yıl yarıyıl tatilinin ilk haftası Pazartesi günü sabah saat bir sonraki hafta Pazartesi günü sabah saat 10:00’a…” sözcüklerinin eklenmesine, hükmün bu bölümlerinin DÜZELTİLMİŞ ŞEKLİYLE, temyize konu diğer bölümlerinin ise yukarıda 1. bentte gösterilen sebeple ONANMASINA” olarak değişik şekilde düzeltilerek onanmasına, davacı-karşı davalının velayetin değiştirilmesine yönelik karar düzeltme isteklerinin ise 1. bentte gösterilen sebeple REDDİNE, karar düzeltme harcının istenmesi halinde yatırana iadesine, 10.01.2017 gününde oybirliğiyle karar verildi.Çocuk Hakları Sözleşmesi/m.12</p>
+
+<p>Çocuk Haklarının Kullanılmasına Dair Avrupa Sözleşmesi/m.3, 6</p>
+
+<p>DAVA : Taraflar arasındaki davanın yapılan muhakemesi sonunda mahalli mahkemece verilen, yukarıda tarihi ve numarası gösterilen hüküm davacı tarafından temyiz edilmekle, evrak okunup gereği görüşülüp düşünüldü:</p>
+
+<p>KARAR : layetin değiştirilmesine yönelik olup,mahkemece davanın reddine karar verilmiştir.</p>
+
+<p>Davacı süresinde vermiş olduğu 05.09.2014 tarihli delil listesinde üç tanık ismi bildirmiştir.Mahkemece davacı tanıklarından ikisi dinlenilmiş, tanık R. K. dinlenilmeden karar verilmiştir. Davacı bildirdiği tanığının dinlenilmesinden açıkça vazgeçmemiştir. Bu tanık dinlenmeden eksik incelemeyle hüküm kurulmuştur. Hukuk Muhakemeleri Kanununun 240. vd. maddeleri gereğince davacı tanığı R. K. da dinlenilerek, dosyada mevcut tüm deliller değerlendirilip sonucuna göre karar verilmesi gerekirken, eksik inceleme ile yazılı şekilde karar verilmesi usul ve yasaya aykırı olup, bozmayı gerektirmiştir.</p>
+
+<p>2-)Ortak çocuk Çayka 2003 doğumlu olup, idrak çağındadır. Birleşmiş Milletler Çocuk Hakları Sözleşmesinin ve Çocuk Haklarının Kullanılmasına Dair Avrupa Sözleşmesinin iç hukuk tarafından yeterli idrake sahip olduğu kabul edilen çocuklara, kendilerini ilgilendiren davalarda görüşlerini ifade etmeye olanak tanınmasını ve görüşlerine gereken önemin verilmesi gerektiğini öngörmektedir. Velayet düzenlemesinde asıl olan çocukların yararıdır ve bu düzenlemede ana ve babanın yararı ile çocuğun yararı çatıştığı takdirde, çocuğun yararına üstünlük tanınması gerekir. Çocuğun üstün yararı gerektirdiği takdirde, görüşlerinin aksine karar verilmesi de mümkündür. Bu nedenle, ortak çocuğun velayeti konusunda mahkemece görüşünün alınması, bu görüşün değerlendirilmesi ve gerçekleşecek sonucuna göre karar verilmesi gerekirken, ortak çocuk dinlenmeden hüküm tesisi bozmayı gerektirmiştir.</p>
+
+<p>SONUÇ : Temyiz edilen hükmün yukarıda 2. bentlerde gösterilen sebeplerle BOZULMASINA, bozma sebebine göre davacının sair temyiz itirazlarının şimdilik incelenmesine yer olmadığına, temyiz peşin harcının istenmesi halinde yatırana iadesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere, 10.01.2017 tarihinde oybirliğiyle karar verildi.Temyiz incelemesi, yöntemine uygun davetiye tebliğine rağmen, sanık … müdafiinin duruşmaya gelmemesi ve herhangi bir mazeret de bildirmemesi sebebiyle tüm sanıklar hakkında duruşmasız olarak yapıldı.</p>
+
+<p>Dosya incelendi.</p>
+
+<p>Gereği Görüşülüp Düşünüldü :</p>
+
+<p>KARAR : Gerekçeli karar başlığında suç tarihlerinin “23.10.2014, 09.11.2014, 16.11.2014, 27.11.2014, 07.01.2015, 08.01.2015, 20.01.2015” yerine “09.11.2014, 27.11.2014, 20.01.2015, 23.10.2014” olarak gösterilmiş olması, mahkemesince düzeltilebilecek maddi hata olarak değerlendirilmiştir.</p>
+
+<p>05.07.2012 tarihinde Resmi Gazete’de yayımlanarak yürürlüğe giren 6352 Sayılı Kanun’un 100. maddesiyle CMK’nın 324/4. maddesinde eklenen “Devlete ait yargılama giderlerinin 21.07.1953 tarihli ve 6183 Sayılı Amme Alacaklarının Tahsil Usulü Hakkında Kanunun 106. maddesindeki terkin edilmesi gereken tutarlardan az olması halinde, bu giderin Devlet Hazinesine yüklenmesine karar verilir.” şeklindeki cümle ile yargılama giderlerinin tahsili bakımından 6183 Sayılı Kanun’un 106. maddesine atıfta bulunulduğu, anılan maddede “Yapılacak takip sonunda tahsili imkansız veya tahsili için yapılacak giderlerin alacaktan fazla bulunduğu anlaşılan ve 213 Sayılı Kanun kapsamına giren amme alacaklarında 10 Türk Lirasına (10 Türk Lirası dahil), diğer amme alacaklarında 20 Türk Lirasına (20 Türk Lirası dahil) kadar amme alacakları, amme idarelerinde terkin yetkisini haiz olanlar tarafından tahsil zamanaşımı süresi beklenilmeksizin terkin olunabilir. Bakanlar Kurulu, bu tutarları topluca veya ayrı ayrı on katına kadar artırmaya yetkilidir” düzenlemesine yer verildiği, incelemeye konu dosyada, hüküm tarihi itibariyle yargılama giderleri her bir sanık için 9 TL olarak hesaplamış ise de, hükmün kesinleşmesine kadar yapılan harcamaların tamamının yargılama giderleri kapsamında olması, dosyanın …‘a gönderilmesi için yapılan giderin henüz hesaplanmamış olması ve bu giderin hesaplanmasından sonra ortaya çıkan bakiyenin, 6183 Sayılı Amme Alacaklarının Tahsil Usulü Hakkında Kanunun 106. maddesindeki terkin edilmesi gereken tutarlardan az olması halinde hazine üzerinde bırakılabilmesi, bu hususun infaz aşamasında değerlendirilmesinin mümkün olması nedeniyle, tebliğnamede bu yönden düzeltilerek onama öneren görüşe iştirak edilmemiştir.</p>
+
+<p>A-)Sanıklar …, …,… ve … hakkındaki hükümlerin incelenmesinde;</p>
+
+<p>TCK’nın 53. maddesininTCK’nın 53. maddesinin uygulanması ile ilgili olarak Anayasa Mahkemesi’nin 08.10.2015 tarih ve E.2014/140; K.2015/85 Sayılı kararının infaz aşamasında gözetilmesi mümkün görülmüştür.</p>
+
+<p>Yargılama sürecindeki işlemlerin kanuna uygun olarak yapıldığı, aşamalarda ileri sürülen iddia ve savunmaların toplanan tüm delillerle birlikte gerekçeli kararda gösterilip tartışıldığı, eylemlerin sanıklar tarafından gerçekleştirildiğinin saptandığı, vicdanî kanının dosya içindeki belge ve bilgilerle uyumlu olarak kesin verilere dayandırıldığı, eylemlere uyan suç tipi ile yaptırımların doğru biçimde belirlendiği anlaşıldığından; sanıklar …, … ve … ile sanıklar müdafilerinin yerinde görülmeyen temyiz itirazlarının reddiyle hükümlerin ONANMASINA, hükmolunan hapis cezasının süresi ile tutuklama tarihine göre, sanıklar … ve … hakkındaki salıverilme taleplerinin reddine,</p>
+
+<p>B-)Sanık … hakkında uyuşturucu madde ticareti suçundan kurulan hükmün incelenmesinde;</p>
+
+<p>Yargılama sürecindeki işlemlerin kanuna uygun olarak yapıldığı, aşamalarda ileri sürülen iddia ve savunmaların toplanan tüm delillerle birlikte gerekçeli kararda gösterilip tartışıldığı, vicdanî kanının dosya içindeki belge ve bilgilerle uyumlu olarak kesin verilere dayandırıldığı, eylemin sanık tarafından gerçekleştirildiğinin saptandığı, eyleme uyan suç tipi ile yaptırımların aşağıda belirtilenler dışında doğru biçimde belirlendiği anlaşıldığından; yerinde görülmeyen diğer temyiz itirazlarının reddine, ancak;</p>
+
+<p>1-)İştirak halinde suç işleyen sanıklara, sebebiyet verdikleri yargılama giderinin CMK’nın 326. maddesinin 2. fıkras 2. fıkrası gereğince ayrı ayrı yükletilmesi gerektiğinden, Adli Tıp Kurumu’nun 11.11.2014 tarih ve 3263489494 numaralı faturasında belirtilen giderlerin sanıklar …, …, …, … ve … ile ilgili olduğu nazara alınmaksızın fatura bedeli olan 8912 TL’nin tamamının yargılama gideri olarak sanık …‘a yükletilmesi,</p>
+
+<p>2-)Hükümden sonra 24.11.2015 tarih ve 29542 Sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren Anayasa Mahkemesi’nin 08.10.2015 tarihli 2014/140 esas ve 2015/85 karar sayılı kararı ile, 5237 Sayılı TCK’nın 53. maddesinin bazı hükümlerinin iptal edilmesi nedeniyle, bu maddenin uygulanması açısından, sanıkların durumlarının yeniden belirlenmesinde zorunluluk bulunması,</p>
+
+<p>Kanuna aykırı, sanık müdafiinin temyiz itirazları bu sebeple yerinde görülmüş olduğundan, hükümlerin CMUK’nın 321. maddesi gereğince BOZULMASINA; ancak bu durumun yeniden duruşma yapılmaksızın aynı Kanun’un 322. maddesi uyarınca düzeltilmesi ve eksikliğin giderilmesi mümkün bulunduğundan;</p>
+
+<p>1-)Yargılama giderlerine dair bölümlerin hüküm fıkrasından çıkarılması ve yerlerine ‘‘1782,40 TL yargılama gideri ve 14,55 TL posta giderinin sanık …‘tan tahsiline, kalan kısmının sanıklar …, …, … ve …‘in beraat etmeleri sebebiyle hazine üzerine bırakılmasına” ibarelerinin eklenmesi,</p>
+
+<p>2-)TCK’nın 53. maddesinin uygulanması ile ilgili bölümün hüküm fıkrasından çıkarılması ve yerine “Anayasa Mahkemesi’nin 08.10.2015 tarihli iptal kararından sonra oluşan durumuna göre, sanık hakkında, TCK’nın 53. maddesinin 1, 2. fıkralar 1 ve 2. fıkraları ile 3. fıkrasının birinci cümlesinin uygulanmasına” ibaresinin yazılması,</p>
+
+<p>Suretiyle, hükmün DÜZELTİLEREK ONANMASINA,</p>
+
+<p>C-)Sanık … hakkında tehdit suçundan kurulan hükmün incelenmesinde;</p>
+
+<p>02.12.2016 tarihli Resmi Gazete’de yayımlanarak aynı tarihte yürürlüğe giren 6763 Sayılı Kanun’un 34. maddesiyle değişik 5271 Sayılı CMK’nın 253. maddesi ve maddeye eklenen fıkraya göre uzlaştırma hükümleri yeniden düzenlenmiş ve sanığa isnat edilen TCK’nın 106/1. maddesi kapsamındaki tehdit suçunun uzlaştırma kapsamında bulunduğu anlaşılmış olmakla, 5237 Sayılı Türk Ceza Kanunu’nun 2, 7. maddeleri de gözetilerek, uzlaştırma işlemi uygulanarak sonucuna göre sanığın hukuki durumunun bu kapsamda tekrar değerlendirilip belirlenmesinde zorunluluk bulunması,</p>
+
+<p>SONUÇ : Bozmayı gerektirmiş, sanık müdafiinin temyiz itirazları bu sebeple yerinde olduğundan, hükmün BOZULMASINA, 05.12.2016 tarihinde oybirliği ile karar verildi.1-)Dosyadaki yazılara, kararın dayandığı delillerle kanuni gerektirici sebeplere ve özellikle “davacı lehine takdir edilen yoksulluk nafakasının davacının evlendiği tarih olan 21.06.2014 tarihinde Kanun gereği ( m.176/3) kendiğinden ortadan kalkacağının ve maddi tazminata dair faizin dava tarihinden itibaren geçerli olacağının anlaşılmasına göre” davalının aşağıdaki bentler dışında kalan temyiz itirazları yersizdir.</p>
+
+<p>2-)Hukuk Muhakemeleri Kanununa göre sadece uyuşmazlık konusu hakkında ihtiyati tedbir kararı verilebilir ( m.389/1). Uyuşmazlık konusu olmayan ve davalı erkek adına kayıtlı bulunan araç üzerine ihtiyati tedbir konulması doğru değildir.</p>
+
+<p>3-)Davacı kadın dava dilekçesinde ayrıca cins,nev’i ve miktarlarını bildirdiği ziynet eşyalarının bedelini talep etmiş, ziynet eşyalarının davalı erkekte kaldığını beyan etmiş, davalı erkek ise ziynet eşyalarının kadının ailesi tarafından alındığını savunmuştur.Davacı kadın ziynet eşyasının erkek tarafından zorla alındığını ispatla yükümlüdür. Ziynet eşyalarının niteliği gereği kadının ortak konuttan ayrılırken yanında götürmesi hayatın olağan akışına uygun düşer. Yapılan yargılama ve toplanan delillerden davacı kadın tanıklarının ziynet eşyaları konusunda görgüye dayalı bilgilerinin bulunmadığı anlaşılmaktadır. Davacı kadın davaya konu ziynet eşyalarının erkek tarafından götürüldüğünü, elinden zorla alındığını ispat edememiştir. Bu durumda mahkemece, davacı kadının ziynet alacağı davasının reddi gerekirken, kabulü doğru olmayıp, bozmayı gerektirmiştir.</p>
+
+<p>SONUÇ : Temyiz edilen hükmün yukarıda 3. bentlerde gösterilen sebeple BOZULMASINA, bozma kapsamı dışında kalan temyize konu diğer bölümlerin ise yukarıda 1 .bentte gösterilen sebeple ONANMASINA, temyiz peşin harcının istenmesi halinde yatırana iadesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere, 10.01.2017 tarihinde oybirliğiyle karar verildi.Yukarıda tarihi, konusu ve tarafları gösterilen hükmün; düzeltilerek onanmasına dair Dairemizin 26.04.2016 gün ve 7574-8448 Sayılı ilamıyla ilgili karar düzeltme isteminde bulunulmakla, evrak okundu, gereği düşünüldü:</p>
+
+<p>KARAR : 6100 Sayılı Hukuk Muhakemeleri Kanunu 01.10.2011 tarihinde yürürlüğe girmiş ise de, bu Kanuna 6217 Sayılı Kanunla ilave edilen (1.) bendinde, Bölge Adliye Mahkemelerinin göreve başlama tarihine kadar, 1086 Sayılı Kanun’un kanun yollarına dair hükümlerinin uygulanmasına devam olunacağı hükme bağlandığından, karar düzeltme talebinin incelenmesi gerekmiştir.</p>
+
+<p>1-)Temyiz ilamında yer alan açıklamalara göre davacı-karşı davalının aşağıdaki bendin kapsamı dışında kalan karar düzeltme istekleri yersizdir.</p>
+
+<p>2-)Mahkemece, davacı-karşı davalı baba tarafından açılan velayetin değiştirilmesi olmadığı takdirde kişisel ilişkinin yeniden düzenlenmesi davasında; babanın velayetin değiştirilmesi talebinin reddine, baba ile çocuk arasındaki kişisel ilişkinin yeniden düzenlenmesi talebinin kabulüne, anne tarafından açılan karşı iştirak nafakası davasının da kısmen kabulüne karar verilmiş, bu karara karşı tarafların temyizi üzerine Dairemizin 26.04.2016 gün ve 2016/7574 esas, 2016/8448 karar sayılı ilamıyla, tarafların diğer temyiz itirazlarının reddine, davacı-karşı davalının kabul edilen davası ile ilgili yargılama giderleri ile vekalet ücretinin ve baba ile çocuk arasında yeniden düzenlenen kişisel ilişkinin düzeltilerek onanmasına karar verilmiş, davacı-karşı davalı tarafından süresi içerisinde karar düzeltme talebinde bulunulmuştur.</p>
+
+<p>Davacı-karşı davalı baba, velayetin değiştirilmesi istemli dava açmış, 10.12.2015 tarihli ıslah dilekçesi ile davasını kademeli (terditli) hale getirerek ortak çocuğun velayetinin davalı-karşı davacı anneden alınarak kendisine verilmesini, bu talebi kabul edilmediği takdirde ise ortak çocuk ile kişisel ilişkinin yeniden düzenlenmesini istemiştir. Davacı-karşı davalı babanın velayetin değiştirilmesine dair talebi reddedilmiş, ancak kişisel ilişkinin yeniden düzenlenmesine karar verilmiştir. Davanın kısmen kabulü söz konusu değildir. İki ayrı dava değil tek dava vardır. Bu sebeple babanın kademeli talebi kabul edildiğinden sadece davacı-karşı davalı yararına karar tarihinde yürürlükte bulunan Avukatlık Asgari Ücret Tarifesi uyarınca maktu vekalet ücreti takdiri gerekirken ve aynı sebeple mahkeme masraflarının davalı-karşı davacı üzerinde bırakılması gerekirken davalı-karşı davacı anne yararına vekalet ücreti ve yargılama gideri takdiri usul ve yasaya aykırıdır. Karar tarihinde yürürlükte bulunan Avukatlık Asgari Ücret Tarifesi uyarınca maktu vekalet ücreti 1.800,00 TL. olduğu halde Dairemizin düzelterek onama ilamında 1.500,00 TL olarak belirtilmiş, davacı-karşı davalının kabul edilen davasında yaptığı masraflarla ilgili bir düzeltme yapılmamıştır. Davacı-karşı davalının davasında yargılama giderleri ve vekalet ücreti konusunda düzelterek onama kararının yukarıda gösterilen şekilde yazılmaması usul ve kanuna aykırıdır. Ne var ki bu husus ilk inceleme sırasında gözden kaçırıldığından davacı-karşı davalının bu konudaki karar düzeltme isteğinin kabulüne Dairemizin 26.04.2016 gün ve 2016/7574 esas, 2016/8448 karar sayılı düzelterek onama ilamının sonuç kısmının aşağıdaki şekilde yeniden düzenlenmesine karar vermek gerekmiştir.</p>
+
+<p>SONUÇ : Yukarıda 2. bentte gösterilen sebeple, Hukuk Usulü Muhakemeleri Kanununun 440- uyarınca davacı-karşı davalının karar düzeltme isteğinin kısmen kabulüne, Dairemizin 26.04.2016 gün ve 2016/7574 esas, 2016/8448 karar sayılı düzelterek onama ilamının sonuç kısmının, “Temyiz edilen hükmün yukarıda 3. bentlerde gösterilen sebeplerle, gerekçeli kararın hüküm fıkrasının 1 numaralı bölümünün “ç) ve e) bentlerinin” hükümden tamamen çıkarılmasına yerine ç) bendi olarak “davanın kabulü nazara alınarak davalı-karşı davacının bu dava sebebiyle yapmış olduğu yargılama giderlerinin üzerinde bırakılmasına, davacı-karşı davalı tarafından bu dava sebebiyle yapılan yargılama giderlerinin davalı-karşı davacıdan tahsili ile davacı-karşı davalıya verilmesine” e) bendi olarak “davanın kabulü nazara alınarak Avukatlık Asgari Ücret Tarifesi uyarınca 1.800,00 TL. vekalet ücretinin davalı-karşı davacı anneden alınarak davacı-karşı davalı babaya verilmesine” cümlelerinin eklenmesine yine kişisel ilişkiye dair b) bölümünde yer alan “…okulların yarıyıl tatilinin ilk haftasında hafta süresince “ sözcüklerinin hükümden çıkarılmasına, yerine “… her yıl yarıyıl tatilinin ilk haftası Pazartesi günü sabah saat bir sonraki hafta Pazartesi günü sabah saat 10:00’a…” sözcüklerinin eklenmesine, hükmün bu bölümlerinin DÜZELTİLMİŞ ŞEKLİYLE, temyize konu diğer bölümlerinin ise yukarıda 1. bentte gösterilen sebeple ONANMASINA” olarak değişik şekilde düzeltilerek onanmasına, davacı-karşı davalının velayetin değiştirilmesine yönelik karar düzeltme isteklerinin ise 1. bentte gösterilen sebeple REDDİNE, karar düzeltme harcının istenmesi halinde yatırana iadesine, 10.01.2017 gününde oybirliğiyle karar verildi.Çocuk Hakları Sözleşmesi/m.12</p>
+
+<p>Çocuk Haklarının Kullanılmasına Dair Avrupa Sözleşmesi/m.3, 6</p>
+
+<p>DAVA : Taraflar arasındaki davanın yapılan muhakemesi sonunda mahalli mahkemece verilen, yukarıda tarihi ve numarası gösterilen hüküm davacı tarafından temyiz edilmekle, evrak okunup gereği görüşülüp düşünüldü:</p>
+
+<p>KARAR : layetin değiştirilmesine yönelik olup,mahkemece davanın reddine karar verilmiştir.</p>
+
+<p>Davacı süresinde vermiş olduğu 05.09.2014 tarihli delil listesinde üç tanık ismi bildirmiştir.Mahkemece davacı tanıklarından ikisi dinlenilmiş, tanık R. K. dinlenilmeden karar verilmiştir. Davacı bildirdiği tanığının dinlenilmesinden açıkça vazgeçmemiştir. Bu tanık dinlenmeden eksik incelemeyle hüküm kurulmuştur. Hukuk Muhakemeleri Kanununun 240. vd. maddeleri gereğince davacı tanığı R. K. da dinlenilerek, dosyada mevcut tüm deliller değerlendirilip sonucuna göre karar verilmesi gerekirken, eksik inceleme ile yazılı şekilde karar verilmesi usul ve yasaya aykırı olup, bozmayı gerektirmiştir.</p>
+
+<p>2-)Ortak çocuk Çayka 2003 doğumlu olup, idrak çağındadır. Birleşmiş Milletler Çocuk Hakları Sözleşmesinin ve Çocuk Haklarının Kullanılmasına Dair Avrupa Sözleşmesinin iç hukuk tarafından yeterli idrake sahip olduğu kabul edilen çocuklara, kendilerini ilgilendiren davalarda görüşlerini ifade etmeye olanak tanınmasını ve görüşlerine gereken önemin verilmesi gerektiğini öngörmektedir. Velayet düzenlemesinde asıl olan çocukların yararıdır ve bu düzenlemede ana ve babanın yararı ile çocuğun yararı çatıştığı takdirde, çocuğun yararına üstünlük tanınması gerekir. Çocuğun üstün yararı gerektirdiği takdirde, görüşlerinin aksine karar verilmesi de mümkündür. Bu nedenle, ortak çocuğun velayeti konusunda mahkemece görüşünün alınması, bu görüşün değerlendirilmesi ve gerçekleşecek sonucuna göre karar verilmesi gerekirken, ortak çocuk dinlenmeden hüküm tesisi bozmayı gerektirmiştir.</p>
+
+<p>SONUÇ : Temyiz edilen hükmün yukarıda 2. bentlerde gösterilen sebeplerle BOZULMASINA, bozma sebebine göre davacının sair temyiz itirazlarının şimdilik incelenmesine yer olmadığına, temyiz peşin harcının istenmesi halinde yatırana iadesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere, 10.01.2017 tarihinde oybirliğiyle karar verildi.Temyiz incelemesi, yöntemine uygun davetiye tebliğine rağmen, sanık … müdafiinin duruşmaya gelmemesi ve herhangi bir mazeret de bildirmemesi sebebiyle tüm sanıklar hakkında duruşmasız olarak yapıldı.</p>
+
+<p>Dosya incelendi.</p>
+
+<p>Gereği Görüşülüp Düşünüldü :</p>
+
+<p>KARAR : Gerekçeli karar başlığında suç tarihlerinin “23.10.2014, 09.11.2014, 16.11.2014, 27.11.2014, 07.01.2015, 08.01.2015, 20.01.2015” yerine “09.11.2014, 27.11.2014, 20.01.2015, 23.10.2014” olarak gösterilmiş olması, mahkemesince düzeltilebilecek maddi hata olarak değerlendirilmiştir.</p>
+
+<p>05.07.2012 tarihinde Resmi Gazete’de yayımlanarak yürürlüğe giren 6352 Sayılı Kanun’un 100. maddesiyle CMK’nın 324/4. maddesinde eklenen “Devlete ait yargılama giderlerinin 21.07.1953 tarihli ve 6183 Sayılı Amme Alacaklarının Tahsil Usulü Hakkında Kanunun 106. maddesindeki terkin edilmesi gereken tutarlardan az olması halinde, bu giderin Devlet Hazinesine yüklenmesine karar verilir.” şeklindeki cümle ile yargılama giderlerinin tahsili bakımından 6183 Sayılı Kanun’un 106. maddesine atıfta bulunulduğu, anılan maddede “Yapılacak takip sonunda tahsili imkansız veya tahsili için yapılacak giderlerin alacaktan fazla bulunduğu anlaşılan ve 213 Sayılı Kanun kapsamına giren amme alacaklarında 10 Türk Lirasına (10 Türk Lirası dahil), diğer amme alacaklarında 20 Türk Lirasına (20 Türk Lirası dahil) kadar amme alacakları, amme idarelerinde terkin yetkisini haiz olanlar tarafından tahsil zamanaşımı süresi beklenilmeksizin terkin olunabilir. Bakanlar Kurulu, bu tutarları topluca veya ayrı ayrı on katına kadar artırmaya yetkilidir” düzenlemesine yer verildiği, incelemeye konu dosyada, hüküm tarihi itibariyle yargılama giderleri her bir sanık için 9 TL olarak hesaplamış ise de, hükmün kesinleşmesine kadar yapılan harcamaların tamamının yargılama giderleri kapsamında olması, dosyanın …‘a gönderilmesi için yapılan giderin henüz hesaplanmamış olması ve bu giderin hesaplanmasından sonra ortaya çıkan bakiyenin, 6183 Sayılı Amme Alacaklarının Tahsil Usulü Hakkında Kanunun 106. maddesindeki terkin edilmesi gereken tutarlardan az olması halinde hazine üzerinde bırakılabilmesi, bu hususun infaz aşamasında değerlendirilmesinin mümkün olması nedeniyle, tebliğnamede bu yönden düzeltilerek onama öneren görüşe iştirak edilmemiştir.</p>
+
+<p>A-)Sanıklar …, …,… ve … hakkındaki hükümlerin incelenmesinde;</p>
+
+<p>TCK’nın 53. maddesininTCK’nın 53. maddesinin uygulanması ile ilgili olarak Anayasa Mahkemesi’nin 08.10.2015 tarih ve E.2014/140; K.2015/85 Sayılı kararının infaz aşamasında gözetilmesi mümkün görülmüştür.</p>
+
+<p>Yargılama sürecindeki işlemlerin kanuna uygun olarak yapıldığı, aşamalarda ileri sürülen iddia ve savunmaların toplanan tüm delillerle birlikte gerekçeli kararda gösterilip tartışıldığı, eylemlerin sanıklar tarafından gerçekleştirildiğinin saptandığı, vicdanî kanının dosya içindeki belge ve bilgilerle uyumlu olarak kesin verilere dayandırıldığı, eylemlere uyan suç tipi ile yaptırımların doğru biçimde belirlendiği anlaşıldığından; sanıklar …, … ve … ile sanıklar müdafilerinin yerinde görülmeyen temyiz itirazlarının reddiyle hükümlerin ONANMASINA, hükmolunan hapis cezasının süresi ile tutuklama tarihine göre, sanıklar … ve … hakkındaki salıverilme taleplerinin reddine,</p>
+
+<p>B-)Sanık … hakkında uyuşturucu madde ticareti suçundan kurulan hükmün incelenmesinde;</p>
+
+<p>Yargılama sürecindeki işlemlerin kanuna uygun olarak yapıldığı, aşamalarda ileri sürülen iddia ve savunmaların toplanan tüm delillerle birlikte gerekçeli kararda gösterilip tartışıldığı, vicdanî kanının dosya içindeki belge ve bilgilerle uyumlu olarak kesin verilere dayandırıldığı, eylemin sanık tarafından gerçekleştirildiğinin saptandığı, eyleme uyan suç tipi ile yaptırımların aşağıda belirtilenler dışında doğru biçimde belirlendiği anlaşıldığından; yerinde görülmeyen diğer temyiz itirazlarının reddine, ancak;</p>
+
+<p>1-)İştirak halinde suç işleyen sanıklara, sebebiyet verdikleri yargılama giderinin CMK’nın 326. maddesinin 2. fıkras 2. fıkrası gereğince ayrı ayrı yükletilmesi gerektiğinden, Adli Tıp Kurumu’nun 11.11.2014 tarih ve 3263489494 numaralı faturasında belirtilen giderlerin sanıklar …, …, …, … ve … ile ilgili olduğu nazara alınmaksızın fatura bedeli olan 8912 TL’nin tamamının yargılama gideri olarak sanık …‘a yükletilmesi,</p>
+
+<p>2-)Hükümden sonra 24.11.2015 tarih ve 29542 Sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren Anayasa Mahkemesi’nin 08.10.2015 tarihli 2014/140 esas ve 2015/85 karar sayılı kararı ile, 5237 Sayılı TCK’nın 53. maddesinin bazı hükümlerinin iptal edilmesi nedeniyle, bu maddenin uygulanması açısından, sanıkların durumlarının yeniden belirlenmesinde zorunluluk bulunması,</p>
+
+<p>Kanuna aykırı, sanık müdafiinin temyiz itirazları bu sebeple yerinde görülmüş olduğundan, hükümlerin CMUK’nın 321. maddesi gereğince BOZULMASINA; ancak bu durumun yeniden duruşma yapılmaksızın aynı Kanun’un 322. maddesi uyarınca düzeltilmesi ve eksikliğin giderilmesi mümkün bulunduğundan;</p>
+
+<p>1-)Yargılama giderlerine dair bölümlerin hüküm fıkrasından çıkarılması ve yerlerine ‘‘1782,40 TL yargılama gideri ve 14,55 TL posta giderinin sanık …‘tan tahsiline, kalan kısmının sanıklar …, …, … ve …‘in beraat etmeleri sebebiyle hazine üzerine bırakılmasına” ibarelerinin eklenmesi,</p>
+
+<p>2-)TCK’nın 53. maddesinin uygulanması ile ilgili bölümün hüküm fıkrasından çıkarılması ve yerine “Anayasa Mahkemesi’nin 08.10.2015 tarihli iptal kararından sonra oluşan durumuna göre, sanık hakkında, TCK’nın 53. maddesinin 1, 2. fıkralar 1 ve 2. fıkraları ile 3. fıkrasının birinci cümlesinin uygulanmasına” ibaresinin yazılması,</p>
+
+<p>Suretiyle, hükmün DÜZELTİLEREK ONANMASINA,</p>
+
+<p>C-)Sanık … hakkında tehdit suçundan kurulan hükmün incelenmesinde;</p>
+
+<p>02.12.2016 tarihli Resmi Gazete’de yayımlanarak aynı tarihte yürürlüğe giren 6763 Sayılı Kanun’un 34. maddesiyle değişik 5271 Sayılı CMK’nın 253. maddesi ve maddeye eklenen fıkraya göre uzlaştırma hükümleri yeniden düzenlenmiş ve sanığa isnat edilen TCK’nın 106/1. maddesi kapsamındaki tehdit suçunun uzlaştırma kapsamında bulunduğu anlaşılmış olmakla, 5237 Sayılı Türk Ceza Kanunu’nun 2, 7. maddeleri de gözetilerek, uzlaştırma işlemi uygulanarak sonucuna göre sanığın hukuki durumunun bu kapsamda tekrar değerlendirilip belirlenmesinde zorunluluk bulunması,</p>
+
+<p>SONUÇ : Bozmayı gerektirmiş, sanık müdafiinin temyiz itirazları bu sebeple yerinde olduğundan, hükmün BOZULMASINA, 05.12.2016 tarihinde oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 20. CEZA DAİRESİ
+Esas: 2016/2388 Karar: 2016/5745</strong> Tarih: 05.12.2016</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 240. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanık Gösterme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>1-)Dosyadaki yazılara, kararın dayandığı delillerle kanuni gerektirici sebeplere ve özellikle “davacı lehine takdir edilen yoksulluk nafakasının davacının evlendiği tarih olan 21.06.2014 tarihinde Kanun gereği ( m.176/3) kendiğinden ortadan kalkacağının ve maddi tazminata dair faizin dava tarihinden itibaren geçerli olacağının anlaşılmasına göre” davalının aşağıdaki bentler dışında kalan temyiz itirazları yersizdir.</p>
+
+<p>2-)Hukuk Muhakemeleri Kanununa göre sadece uyuşmazlık konusu hakkında ihtiyati tedbir kararı verilebilir ( m.389/1). Uyuşmazlık konusu olmayan ve davalı erkek adına kayıtlı bulunan araç üzerine ihtiyati tedbir konulması doğru değildir.</p>
+
+<p>3-)Davacı kadın dava dilekçesinde ayrıca cins,nev’i ve miktarlarını bildirdiği ziynet eşyalarının bedelini talep etmiş, ziynet eşyalarının davalı erkekte kaldığını beyan etmiş, davalı erkek ise ziynet eşyalarının kadının ailesi tarafından alındığını savunmuştur.Davacı kadın ziynet eşyasının erkek tarafından zorla alındığını ispatla yükümlüdür. Ziynet eşyalarının niteliği gereği kadının ortak konuttan ayrılırken yanında götürmesi hayatın olağan akışına uygun düşer. Yapılan yargılama ve toplanan delillerden davacı kadın tanıklarının ziynet eşyaları konusunda görgüye dayalı bilgilerinin bulunmadığı anlaşılmaktadır. Davacı kadın davaya konu ziynet eşyalarının erkek tarafından götürüldüğünü, elinden zorla alındığını ispat edememiştir. Bu durumda mahkemece, davacı kadının ziynet alacağı davasının reddi gerekirken, kabulü doğru olmayıp, bozmayı gerektirmiştir.</p>
+
+<p>SONUÇ : Temyiz edilen hükmün yukarıda 3. bentlerde gösterilen sebeple BOZULMASINA, bozma kapsamı dışında kalan temyize konu diğer bölümlerin ise yukarıda 1 .bentte gösterilen sebeple ONANMASINA, temyiz peşin harcının istenmesi halinde yatırana iadesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere, 10.01.2017 tarihinde oybirliğiyle karar verildi.Yukarıda tarihi, konusu ve tarafları gösterilen hükmün; düzeltilerek onanmasına dair Dairemizin 26.04.2016 gün ve 7574-8448 Sayılı ilamıyla ilgili karar düzeltme isteminde bulunulmakla, evrak okundu, gereği düşünüldü:</p>
+
+<p>KARAR : 6100 Sayılı Hukuk Muhakemeleri Kanunu 01.10.2011 tarihinde yürürlüğe girmiş ise de, bu Kanuna 6217 Sayılı Kanunla ilave edilen (1.) bendinde, Bölge Adliye Mahkemelerinin göreve başlama tarihine kadar, 1086 Sayılı Kanun’un kanun yollarına dair hükümlerinin uygulanmasına devam olunacağı hükme bağlandığından, karar düzeltme talebinin incelenmesi gerekmiştir.</p>
+
+<p>1-)Temyiz ilamında yer alan açıklamalara göre davacı-karşı davalının aşağıdaki bendin kapsamı dışında kalan karar düzeltme istekleri yersizdir.</p>
+
+<p>2-)Mahkemece, davacı-karşı davalı baba tarafından açılan velayetin değiştirilmesi olmadığı takdirde kişisel ilişkinin yeniden düzenlenmesi davasında; babanın velayetin değiştirilmesi talebinin reddine, baba ile çocuk arasındaki kişisel ilişkinin yeniden düzenlenmesi talebinin kabulüne, anne tarafından açılan karşı iştirak nafakası davasının da kısmen kabulüne karar verilmiş, bu karara karşı tarafların temyizi üzerine Dairemizin 26.04.2016 gün ve 2016/7574 esas, 2016/8448 karar sayılı ilamıyla, tarafların diğer temyiz itirazlarının reddine, davacı-karşı davalının kabul edilen davası ile ilgili yargılama giderleri ile vekalet ücretinin ve baba ile çocuk arasında yeniden düzenlenen kişisel ilişkinin düzeltilerek onanmasına karar verilmiş, davacı-karşı davalı tarafından süresi içerisinde karar düzeltme talebinde bulunulmuştur.</p>
+
+<p>Davacı-karşı davalı baba, velayetin değiştirilmesi istemli dava açmış, 10.12.2015 tarihli ıslah dilekçesi ile davasını kademeli (terditli) hale getirerek ortak çocuğun velayetinin davalı-karşı davacı anneden alınarak kendisine verilmesini, bu talebi kabul edilmediği takdirde ise ortak çocuk ile kişisel ilişkinin yeniden düzenlenmesini istemiştir. Davacı-karşı davalı babanın velayetin değiştirilmesine dair talebi reddedilmiş, ancak kişisel ilişkinin yeniden düzenlenmesine karar verilmiştir. Davanın kısmen kabulü söz konusu değildir. İki ayrı dava değil tek dava vardır. Bu sebeple babanın kademeli talebi kabul edildiğinden sadece davacı-karşı davalı yararına karar tarihinde yürürlükte bulunan Avukatlık Asgari Ücret Tarifesi uyarınca maktu vekalet ücreti takdiri gerekirken ve aynı sebeple mahkeme masraflarının davalı-karşı davacı üzerinde bırakılması gerekirken davalı-karşı davacı anne yararına vekalet ücreti ve yargılama gideri takdiri usul ve yasaya aykırıdır. Karar tarihinde yürürlükte bulunan Avukatlık Asgari Ücret Tarifesi uyarınca maktu vekalet ücreti 1.800,00 TL. olduğu halde Dairemizin düzelterek onama ilamında 1.500,00 TL olarak belirtilmiş, davacı-karşı davalının kabul edilen davasında yaptığı masraflarla ilgili bir düzeltme yapılmamıştır. Davacı-karşı davalının davasında yargılama giderleri ve vekalet ücreti konusunda düzelterek onama kararının yukarıda gösterilen şekilde yazılmaması usul ve kanuna aykırıdır. Ne var ki bu husus ilk inceleme sırasında gözden kaçırıldığından davacı-karşı davalının bu konudaki karar düzeltme isteğinin kabulüne Dairemizin 26.04.2016 gün ve 2016/7574 esas, 2016/8448 karar sayılı düzelterek onama ilamının sonuç kısmının aşağıdaki şekilde yeniden düzenlenmesine karar vermek gerekmiştir.</p>
+
+<p>SONUÇ : Yukarıda 2. bentte gösterilen sebeple, Hukuk Usulü Muhakemeleri Kanununun 440- uyarınca davacı-karşı davalının karar düzeltme isteğinin kısmen kabulüne, Dairemizin 26.04.2016 gün ve 2016/7574 esas, 2016/8448 karar sayılı düzelterek onama ilamının sonuç kısmının, “Temyiz edilen hükmün yukarıda 3. bentlerde gösterilen sebeplerle, gerekçeli kararın hüküm fıkrasının 1 numaralı bölümünün “ç) ve e) bentlerinin” hükümden tamamen çıkarılmasına yerine ç) bendi olarak “davanın kabulü nazara alınarak davalı-karşı davacının bu dava sebebiyle yapmış olduğu yargılama giderlerinin üzerinde bırakılmasına, davacı-karşı davalı tarafından bu dava sebebiyle yapılan yargılama giderlerinin davalı-karşı davacıdan tahsili ile davacı-karşı davalıya verilmesine” e) bendi olarak “davanın kabulü nazara alınarak Avukatlık Asgari Ücret Tarifesi uyarınca 1.800,00 TL. vekalet ücretinin davalı-karşı davacı anneden alınarak davacı-karşı davalı babaya verilmesine” cümlelerinin eklenmesine yine kişisel ilişkiye dair b) bölümünde yer alan “…okulların yarıyıl tatilinin ilk haftasında hafta süresince “ sözcüklerinin hükümden çıkarılmasına, yerine “… her yıl yarıyıl tatilinin ilk haftası Pazartesi günü sabah saat bir sonraki hafta Pazartesi günü sabah saat 10:00’a…” sözcüklerinin eklenmesine, hükmün bu bölümlerinin DÜZELTİLMİŞ ŞEKLİYLE, temyize konu diğer bölümlerinin ise yukarıda 1. bentte gösterilen sebeple ONANMASINA” olarak değişik şekilde düzeltilerek onanmasına, davacı-karşı davalının velayetin değiştirilmesine yönelik karar düzeltme isteklerinin ise 1. bentte gösterilen sebeple REDDİNE, karar düzeltme harcının istenmesi halinde yatırana iadesine, 10.01.2017 gününde oybirliğiyle karar verildi.Çocuk Hakları Sözleşmesi/m.12</p>
+
+<p>Çocuk Haklarının Kullanılmasına Dair Avrupa Sözleşmesi/m.3, 6</p>
+
+<p>DAVA : Taraflar arasındaki davanın yapılan muhakemesi sonunda mahalli mahkemece verilen, yukarıda tarihi ve numarası gösterilen hüküm davacı tarafından temyiz edilmekle, evrak okunup gereği görüşülüp düşünüldü:</p>
+
+<p>KARAR : layetin değiştirilmesine yönelik olup,mahkemece davanın reddine karar verilmiştir.</p>
+
+<p>Davacı süresinde vermiş olduğu 05.09.2014 tarihli delil listesinde üç tanık ismi bildirmiştir.Mahkemece davacı tanıklarından ikisi dinlenilmiş, tanık R. K. dinlenilmeden karar verilmiştir. Davacı bildirdiği tanığının dinlenilmesinden açıkça vazgeçmemiştir. Bu tanık dinlenmeden eksik incelemeyle hüküm kurulmuştur. Hukuk Muhakemeleri Kanununun 240. vd. maddeleri gereğince davacı tanığı R. K. da dinlenilerek, dosyada mevcut tüm deliller değerlendirilip sonucuna göre karar verilmesi gerekirken, eksik inceleme ile yazılı şekilde karar verilmesi usul ve yasaya aykırı olup, bozmayı gerektirmiştir.</p>
+
+<p>2-)Ortak çocuk Çayka 2003 doğumlu olup, idrak çağındadır. Birleşmiş Milletler Çocuk Hakları Sözleşmesinin ve Çocuk Haklarının Kullanılmasına Dair Avrupa Sözleşmesinin iç hukuk tarafından yeterli idrake sahip olduğu kabul edilen çocuklara, kendilerini ilgilendiren davalarda görüşlerini ifade etmeye olanak tanınmasını ve görüşlerine gereken önemin verilmesi gerektiğini öngörmektedir. Velayet düzenlemesinde asıl olan çocukların yararıdır ve bu düzenlemede ana ve babanın yararı ile çocuğun yararı çatıştığı takdirde, çocuğun yararına üstünlük tanınması gerekir. Çocuğun üstün yararı gerektirdiği takdirde, görüşlerinin aksine karar verilmesi de mümkündür. Bu nedenle, ortak çocuğun velayeti konusunda mahkemece görüşünün alınması, bu görüşün değerlendirilmesi ve gerçekleşecek sonucuna göre karar verilmesi gerekirken, ortak çocuk dinlenmeden hüküm tesisi bozmayı gerektirmiştir.</p>
+
+<p>SONUÇ : Temyiz edilen hükmün yukarıda 2. bentlerde gösterilen sebeplerle BOZULMASINA, bozma sebebine göre davacının sair temyiz itirazlarının şimdilik incelenmesine yer olmadığına, temyiz peşin harcının istenmesi halinde yatırana iadesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere, 10.01.2017 tarihinde oybirliğiyle karar verildi.Temyiz incelemesi, yöntemine uygun davetiye tebliğine rağmen, sanık … müdafiinin duruşmaya gelmemesi ve herhangi bir mazeret de bildirmemesi sebebiyle tüm sanıklar hakkında duruşmasız olarak yapıldı.</p>
+
+<p>Dosya incelendi.</p>
+
+<p>Gereği Görüşülüp Düşünüldü :</p>
+
+<p>KARAR : Gerekçeli karar başlığında suç tarihlerinin “23.10.2014, 09.11.2014, 16.11.2014, 27.11.2014, 07.01.2015, 08.01.2015, 20.01.2015” yerine “09.11.2014, 27.11.2014, 20.01.2015, 23.10.2014” olarak gösterilmiş olması, mahkemesince düzeltilebilecek maddi hata olarak değerlendirilmiştir.</p>
+
+<p>05.07.2012 tarihinde Resmi Gazete’de yayımlanarak yürürlüğe giren 6352 Sayılı Kanun’un 100. maddesiyle CMK’nın 324/4. maddesinde eklenen “Devlete ait yargılama giderlerinin 21.07.1953 tarihli ve 6183 Sayılı Amme Alacaklarının Tahsil Usulü Hakkında Kanunun 106. maddesindeki terkin edilmesi gereken tutarlardan az olması halinde, bu giderin Devlet Hazinesine yüklenmesine karar verilir.” şeklindeki cümle ile yargılama giderlerinin tahsili bakımından 6183 Sayılı Kanun’un 106. maddesine atıfta bulunulduğu, anılan maddede “Yapılacak takip sonunda tahsili imkansız veya tahsili için yapılacak giderlerin alacaktan fazla bulunduğu anlaşılan ve 213 Sayılı Kanun kapsamına giren amme alacaklarında 10 Türk Lirasına (10 Türk Lirası dahil), diğer amme alacaklarında 20 Türk Lirasına (20 Türk Lirası dahil) kadar amme alacakları, amme idarelerinde terkin yetkisini haiz olanlar tarafından tahsil zamanaşımı süresi beklenilmeksizin terkin olunabilir. Bakanlar Kurulu, bu tutarları topluca veya ayrı ayrı on katına kadar artırmaya yetkilidir” düzenlemesine yer verildiği, incelemeye konu dosyada, hüküm tarihi itibariyle yargılama giderleri her bir sanık için 9 TL olarak hesaplamış ise de, hükmün kesinleşmesine kadar yapılan harcamaların tamamının yargılama giderleri kapsamında olması, dosyanın …‘a gönderilmesi için yapılan giderin henüz hesaplanmamış olması ve bu giderin hesaplanmasından sonra ortaya çıkan bakiyenin, 6183 Sayılı Amme Alacaklarının Tahsil Usulü Hakkında Kanunun 106. maddesindeki terkin edilmesi gereken tutarlardan az olması halinde hazine üzerinde bırakılabilmesi, bu hususun infaz aşamasında değerlendirilmesinin mümkün olması nedeniyle, tebliğnamede bu yönden düzeltilerek onama öneren görüşe iştirak edilmemiştir.</p>
+
+<p>A-)Sanıklar …, …,… ve … hakkındaki hükümlerin incelenmesinde;</p>
+
+<p>TCK’nın 53. maddesininTCK’nın 53. maddesinin uygulanması ile ilgili olarak Anayasa Mahkemesi’nin 08.10.2015 tarih ve E.2014/140; K.2015/85 Sayılı kararının infaz aşamasında gözetilmesi mümkün görülmüştür.</p>
+
+<p>Yargılama sürecindeki işlemlerin kanuna uygun olarak yapıldığı, aşamalarda ileri sürülen iddia ve savunmaların toplanan tüm delillerle birlikte gerekçeli kararda gösterilip tartışıldığı, eylemlerin sanıklar tarafından gerçekleştirildiğinin saptandığı, vicdanî kanının dosya içindeki belge ve bilgilerle uyumlu olarak kesin verilere dayandırıldığı, eylemlere uyan suç tipi ile yaptırımların doğru biçimde belirlendiği anlaşıldığından; sanıklar …, … ve … ile sanıklar müdafilerinin yerinde görülmeyen temyiz itirazlarının reddiyle hükümlerin ONANMASINA, hükmolunan hapis cezasının süresi ile tutuklama tarihine göre, sanıklar … ve … hakkındaki salıverilme taleplerinin reddine,</p>
+
+<p>B-)Sanık … hakkında uyuşturucu madde ticareti suçundan kurulan hükmün incelenmesinde;</p>
+
+<p>Yargılama sürecindeki işlemlerin kanuna uygun olarak yapıldığı, aşamalarda ileri sürülen iddia ve savunmaların toplanan tüm delillerle birlikte gerekçeli kararda gösterilip tartışıldığı, vicdanî kanının dosya içindeki belge ve bilgilerle uyumlu olarak kesin verilere dayandırıldığı, eylemin sanık tarafından gerçekleştirildiğinin saptandığı, eyleme uyan suç tipi ile yaptırımların aşağıda belirtilenler dışında doğru biçimde belirlendiği anlaşıldığından; yerinde görülmeyen diğer temyiz itirazlarının reddine, ancak;</p>
+
+<p>1-)İştirak halinde suç işleyen sanıklara, sebebiyet verdikleri yargılama giderinin CMK’nın 326. maddesinin 2. fıkras 2. fıkrası gereğince ayrı ayrı yükletilmesi gerektiğinden, Adli Tıp Kurumu’nun 11.11.2014 tarih ve 3263489494 numaralı faturasında belirtilen giderlerin sanıklar …, …, …, … ve … ile ilgili olduğu nazara alınmaksızın fatura bedeli olan 8912 TL’nin tamamının yargılama gideri olarak sanık …‘a yükletilmesi,</p>
+
+<p>2-)Hükümden sonra 24.11.2015 tarih ve 29542 Sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren Anayasa Mahkemesi’nin 08.10.2015 tarihli 2014/140 esas ve 2015/85 karar sayılı kararı ile, 5237 Sayılı TCK’nın 53. maddesinin bazı hükümlerinin iptal edilmesi nedeniyle, bu maddenin uygulanması açısından, sanıkların durumlarının yeniden belirlenmesinde zorunluluk bulunması,</p>
+
+<p>Kanuna aykırı, sanık müdafiinin temyiz itirazları bu sebeple yerinde görülmüş olduğundan, hükümlerin CMUK’nın 321. maddesi gereğince BOZULMASINA; ancak bu durumun yeniden duruşma yapılmaksızın aynı Kanun’un 322. maddesi uyarınca düzeltilmesi ve eksikliğin giderilmesi mümkün bulunduğundan;</p>
+
+<p>1-)Yargılama giderlerine dair bölümlerin hüküm fıkrasından çıkarılması ve yerlerine ‘‘1782,40 TL yargılama gideri ve 14,55 TL posta giderinin sanık …‘tan tahsiline, kalan kısmının sanıklar …, …, … ve …‘in beraat etmeleri sebebiyle hazine üzerine bırakılmasına” ibarelerinin eklenmesi,</p>
+
+<p>2-)TCK’nın 53. maddesinin uygulanması ile ilgili bölümün hüküm fıkrasından çıkarılması ve yerine “Anayasa Mahkemesi’nin 08.10.2015 tarihli iptal kararından sonra oluşan durumuna göre, sanık hakkında, TCK’nın 53. maddesinin 1, 2. fıkralar 1 ve 2. fıkraları ile 3. fıkrasının birinci cümlesinin uygulanmasına” ibaresinin yazılması,</p>
+
+<p>Suretiyle, hükmün DÜZELTİLEREK ONANMASINA,</p>
+
+<p>C-)Sanık … hakkında tehdit suçundan kurulan hükmün incelenmesinde;</p>
+
+<p>02.12.2016 tarihli Resmi Gazete’de yayımlanarak aynı tarihte yürürlüğe giren 6763 Sayılı Kanun’un 34. maddesiyle değişik 5271 Sayılı CMK’nın 253. maddesi ve maddeye eklenen fıkraya göre uzlaştırma hükümleri yeniden düzenlenmiş ve sanığa isnat edilen TCK’nın 106/1. maddesi kapsamındaki tehdit suçunun uzlaştırma kapsamında bulunduğu anlaşılmış olmakla, 5237 Sayılı Türk Ceza Kanunu’nun 2, 7. maddeleri de gözetilerek, uzlaştırma işlemi uygulanarak sonucuna göre sanığın hukuki durumunun bu kapsamda tekrar değerlendirilip belirlenmesinde zorunluluk bulunması,</p>
+
+<p>SONUÇ : Bozmayı gerektirmiş, sanık müdafiinin temyiz itirazları bu sebeple yerinde olduğundan, hükmün BOZULMASINA, 05.12.2016 tarihinde oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY HUKUK GENEL KURULU
+Esas: 2014/2-1239 Karar: 2016/1058</strong> Tarih: 16.11.2016</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 240. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanık Gösterme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Taraflar arasındaki “boşanma” davasından dolayı yapılan yargılama sonunda Ankara 11. Aile Mahkemesi’nce davanın kabulüne dair verilen 20.10.2011 gün ve 2010/1591 E., 2011/1405 K. sayılı karar davalı vekilinin temyizi üzerine Yargıtay 2. Hukuk Dairesinin 19.02.2013 gün ve 2013/1745 E., 2013/4151 K. sayılı kararı ile;</p>
+
+<p>( … Davalı tanıkları Ş. O. ve D. O. ‘ın dinlenilmeleri talep edilmiş ise de, mahkemece; davalı vekilinin, davacı tanıklarının dinlendiği üçüncü duruşmaya mazeretsiz olarak katılmadığı ve tanıklarının dinlenilmesi yönünde bu sebeple ara kararı kurulamadığı ve katıldığı dördüncü duruşmada dinlenilmeleri yönündeki talebinin de yargılamayı uzatmaya yönelik olduğu gerekçesiyle bu tanıklar dinlenilmeden hüküm kurulmuştur. Tanıkların beyanının alınması ve buna itibar edilmesi durumunda, davadan verilecek kararın etkilenme olasılığı mevcuttur. Davalının dinletme talebinden vazgeçmediği yukarıda belirtilen tanıkları dinlenilmeksizin hüküm kurulması savunma hakkını da içeren “hukuki dinlenilme hakkına ( HMK. md.27 ) aykırı olur. Açıklanan nedenlerle, mahkemece tanıklar Ş. O. ve D. O. ‘ın dinlenilmeleri için gerekli giderleri yatırması konusunda davalıya kesin süre verilerek dinlenmeleri için gerekli yargılama işlemlerinin yürütülmesi; dinlenildikleri takdirde ise, toplanan diğer delillerle birlikte değerlendirilip, gerçekleşecek sonucu uyarınca karar verilmesi gerekirken; eksik inceleme ile yazılı şekilde karar verilmesi usul ve yasaya aykırı olup, bozmayı gerektirmiştir… ),</p>
+
+<p>Gerekçesiyle bozularak dosya yerine geri çevrilmekle, yeniden yapılan yargılama sonunda, mahkemece önceki kararda direnilmiştir.</p>
+
+<p>Hukuk Genel Kurulunca incelenerek direnme kararının süresinde temyiz edildiği anlaşıldıktan ve dosyadaki kâğıtlar okunduktan sonra gereği görüşüldü:</p>
+
+<p>KARAR : Dava boşanma istemine ilişkindir.</p>
+
+<p>Davacı davalının son zamanlarda savurganca harcamalar yaptığını, zihinsel ve fiziksel engelli çocuklarını odaya kilitleyerek sabahlara kadar telefon görüşmesi yaptığını, sık sık dışarı çıktığını, eve geç geldiğini, çocuklarla ilgilenmediğini, her serzenişine anormal karşılık verdiğini, dava tarihinden 15 gün önce habersizce evi terk ettiğini belirterek boşanma kararı ve müşterek çocukların velayetinin kendisine verilmesini, çocukları için 100-TL tedbir ve iştirak nafakasına 10.000-TL maddi ve 10.000-TL manevi tazminata hükmedilmesini talep ve dava etmiştir.</p>
+
+<p>Davalı davacının başka bir kadınla yaşadığını, kendisini zorla anne ve babasının yanına götürdüğünü, kendisi ve çocuklarına ödenen paraları alıp zevki ve sefası için harcadığını, eve geç saatlerde sarhoş vaziyette gelip çocukları kemerle dövdüğünü, kendisinin evine ve eşine sadık bir insan olduğunu, davacının ağır kusurlu olduğunu savunarak davanın reddine, velayetin anneye verilmesine, her bir çocuk için 250-TL iştirak nafakasına, 500-TL yoksulluk nafakasına, 50.000-TL maddi ve 100.000-TL manevi tazminata hükmedilmesine karar verilmesini istemiştir.</p>
+
+<p>Mahkemece “davalının kusurlu davranışları sonucunda evlilik birliğinin temelinden sarsıldığının kabulüyle tarafların boşanmalarına, müşterek çocukların ihtiyaçları, yaşam alışkanlıkları ve sergiledikleri irade nazara alınarak velayet haklarının davacı babaya tevdiine, anne ile kişisel ilişki kurulmasına, davalının bir iş ve geliri bulunmaması sebebiyle davacının tedbir ve iştirak nafakası taleplerinin reddine, davalının boşanmaya sebep olan olaylarda kusurlu olması sebebiyle nafaka ve tazminat taleplerinin reddine, boşanma davası açılmakla davalının ayrı yaşama hakkı doğduğundan davalı lehine uygun miktarda nafaka takdirine, ancak müşterek çocukların davacı ile beraber yaşaması gibi maddi karşılığı olan durumlar nazara alınarak karar tarihi itibariyle davalı lehine ödenmesine karar verilen tedbir nafakasının kaldırılmasına, tarafların ödeme güçleri, paranın satın alma gücü, genel ekonomik esaslar ile hak ve nesafet ilkeleri nazara alınarak davacının boşanmakla zedelenen ekonomik menfaatleri ile davalının boşanmaya sebep olan eylemlerinin davacının kişilik haklarına saldırı teşkil eder nitelikte bulunması sebebiyle 5.000-TL maddi, 3.000-TL manevi tazminata hükmedilmesine” karar verilmiştir.</p>
+
+<p>Hükmün davalı vekili tarafından “tüm yönlerden” temyizi üzerine Özel Dairece yukarıda başlık bölümünde açıklanan gerekçelerle oybirliği ile karar bozulmuş, mahkemece önceki gerekçe genişletilerek direnme hükmü verilmiştir.</p>
+
+<p>Direnme hükmü davalı vekilince temyiz edilmiştir.</p>
+
+<p>Direnme yoluyla Hukuk Genel Kurulu önüne gelen uyuşmazlık davalı vekilinin süresi içinde verdiği dilekçeyle bildirdiği tanıklarını dinletme talebinin yargılamayı uzatmaya yönelik olup olmadığı ve bu talebin reddedilmesinin hukuki dinlenilme hakkına aykırılık oluşturup oluşturmadığı noktasında toplanmaktadır</p>
+
+<p>6100 Sayılı Hukuk Muhakemeleri Kanunu’nun 27. maddesi6100 Sayılı Hukuk Muhakemeleri Kanunu’nun 27. maddesi hükmüne göre:</p>
+
+<p>” ( I ) Davanın tarafları, müdahiller ve yargılamanın diğer ilgilileri, kendi hakları ile bağlantılı olarak hukuki dinlenilme hakkına sahiptirler.</p>
+
+<p>( 2 ) Bu hak;</p>
+
+<p>a- ) Yargılama ile ilgili olarak bilgi sahibi olunmasını,</p>
+
+<p>b- ) Açıklama ve ispat hakkını,</p>
+
+<p>c- ) Mahkemenin, açıklamaları dikkate alarak değerlendirmesini ve kararların somut ve açık olarak gerekçelendirilmesini,</p>
+
+<p>içerir”.</p>
+
+<p>Hukuki dinlenilme hakkı çoğunlukla “iddia ve savunma hakkı” olarak bilinmektedir. Ancak bu hak iddia ve savunma hakkı kavramına göre daha geniş ve üst bir kavramdır.</p>
+
+<p>Hakkın temel unsurları maddede tek tek belirtilmiş, böylece uygulamada bu temel yargısal hak konusundaki tereddütlerin önüne geçilmesi amaçlanmıştır.</p>
+
+<p>Bunlardan ilki “bilgilenme hakkı” dır. Bu çerçevede, öncelikle tarafların gerek yargı organlarınca gerek karşı tarafça yapılan işlemler konusunda bilgilendirilmeleri zorunludur. Kişinin kendisinden habersiz yargılama yapılarak karar verilmesi, kural olarak mümkün değildir. Hak sahibinin kendisi ile ilgili yargılama ve yargılamanın içeriği hakkında tam bir şekilde bilgi sahibi olması sağlanmalıdır. Tarafın bilgi sahibi olmadığı işlemler, belge ve bilgiler yargılamada esas alınamaz. Bilgilenmenin şekli bakımından, hukuki dinlenilme hakkına uygun davranılmalı, ilgilinin bilgilenmesi şeklen değil, gerçek anlamda sağlanmaya çalışılmalıdır.</p>
+
+<p>Bu hakkın ikinci unsuru, “açıklama ve ispat hakkı”dır. Taraflar, yargılamayla ilgili açıklamada bulunma, bu çerçevede iddia ve savunmalarını ileri sürme ve ispat etme hakkına sahiptirler. Her iki taraf da bu haktan eşit şekilde yararlanırlar. Bu durum “silahların eşitliği ilkesi” olarak da ifade edilmektedir. Avrupa İnsan Hakları Sözleşmesi’nin ( AİHS ) adil yargılanma hakkını düzenleyen 6. maddesinin 1. bendinin 1. bendinin ilk cümlesinde yer alan silahların eşitliği ilkesi, yine AİHS’ne göre, mahkeme önünde sahip olunan hak ve vecibeler bakımından taraflar arasında tam bir eşitliğin bulunması ve bu dengenin bütün yargılama boyunca korunmasıdır. Başka bir deyişle, silahların eşitliği ilkesi, davanın taraflarından birini diğeri karşısında avantajsız bir duruma düşürmeyecek şekilde her iki tarafın deliller de dahil olmak üzere, iddia ve savunmasını ortaya koymak için makul bir olanağa sahip olması, tarafların denge içinde olması demektir. Söz konusu ilke tarafların usulüne uygun olarak mahkemenin önüne gelmelerini sağlayan tebligat işlemi açısından da önemlidir. Çünkü ancak hukuka uygun bir usulde gerçekleşen tebligat üzerine, durumdan haberdar olan taraflar iddia ve savunmalarını eşit şekilde yapabileceklerdir.</p>
+
+<p>Hukuki dinlenilme hakkının üçüncü unsuru, “tarafların iddia ve savunmalarını yargı organlarının tam olarak dikkate alıp değerlendirmesi”dir. Bu değerlendirmenin de karar gerekçesinde yapılması gerekir ( 6100 Sayılı HMK’nın hükümet gerekçesi madde 32 ). Yargılama bakımından, sadece bir tarafın dinlenip diğerinin dinlenmemesi, tek yönlü karar verilmesi demektir. Yargılamada yer alan taraflar yargılamanın objesi değil, süjesidir. Hukukî dinlenilme hakkı doğru karar verilmesinin garantisidir; bu nedenle, haksızlığa karşı koyabilme imkânı tanır. Bu hak, hukuk devletinin, insan onurunun korunması ve eşitlik ilkesinin, hak arama özgürlüğünün, adil yargılanma hakkının bir gereğidir.</p>
+
+<p>Bu genel açıklamalardan sonra uyuşmazlığın çözümü bakımından 4721 Sayılı Türk Medeni Kanunu’nun 184. maddesi incelendiğinde “boşanmada yargılama usulü” hususunun ayrıca düzenlendiği görülmektedir. Anılan maddenin ilk fıkrasında “Boşanmada yargılama, aşağıdaki kurallar saklı kalmak üzere Hukuk Usulü Muhakemeleri Kanununa tabidir” hükmüne yer verilerek, maddede sayılan istisnalar dışında, boşanma davalarının genel yargılama usulüne tabi olduğu belirtilmiştir. Bu bağlamda boşanma davalarında önemli bir delil olan tanık delili ile ilgili HMK’nın 240 vd. maddelerinin uygulanması söz konusu olacaktır. Şöyle ki;</p>
+
+<p>Adı geçen Kanun’un 240. maddesinde “Tanık gösterme şekli” hususu düzenlenmiş, “tanıklardan bir kısmının dinlenmesiyle yetinilmesi” başlıklı 241. maddede ise aynen; “ ( 1 ) Mahkeme, gösterilen tanıklardan bir kısmının tanıklığı ile ispat edilmek istenen husus hakkında yeter derecede bilgi edindiği takdirde, geri kalanların dinlenilmemesine karar verebilir.” şeklinde hükme yer verildikten sonra 242. maddesinde “tanıklığın izne bağlı olduğu haller”, 243 ve izleyen maddelerde tanıkların davet edilmesi ve dinlenme usulleri, tanıklıktan çekinme halleri, çekinmenin sonuçları gibi haller düzenlenmiştir.</p>
+
+<p>Bu ilkeler ışığında; boşanma ve ayrılık davalarında tanıklar, HMK’nın 241. maddesinde belirtilen durum ayrık olmak üzere açıkça vazgeçme olmadıkça dinlenmek zorundadır. Başka bir anlatımla gösterilen tanıklardan bir kısmının tanıklığı ile ispat edilmek istenilen husus hakkında yeter derecede bilgi edinildiği takdirde, geri kalanların dinlenmemesine karar verilebilir. Buna göre, adı geçen tanıkların dinlenmemeleri için, dinlenen tanıklarla ispat edilmek istenen hususun yeter derecede aydınlanmış olması gerekir.</p>
+
+<p>Somut olayda; davacı tarafından 24.11.2010 tarihinde boşanma davası açılmış, davalı davaya süresinde cevap vermiş, tensip zaptının tebliğinden sonra 23.02.2011 tarihli ilk duruşma gününde delil listesini sunarak dört ( 4 ) tanık ismi bildirmiştir. Bunun üzerine mahkemece davalının delil listesinde ismi geçen tanık Y. V. ‘ya talimat yazılması yönünde ara karar oluşturulmuş; davacıya ise delillerini sunması için 20 günlük kesin süre verilmiştir. Davacının verilen kesin süre içinde delillerini bildirmesi üzerine iki tarafında hazır bulunduğu 04.05.2011 tarihli duruşmada davacı tarafa bildirdiği tanıklar için gerekli masrafları yatırması yönünde süre verilirken; davalı tarafa delil listesinde yer alan diğer tanıkların dinlenilmesine dair bir uyarıda bulunulmamıştır. Bu celseyi izleyen ancak davalı ve vekilinin iştirak etmediği 13.07.2011 tarihli duruşma gününde ise davacının hazır olan ve dinletmek istediği tanıkları dinlenmiştir. Davalı vekili 20.10.2011 tarihli karar duruşmasında tanık listesinde adı geçen Y. V. ‘nın dinlenmesi talebinden vazgeçtiğini ancak tanıkları Şükriye ve D. O. ‘ın dinlenmesini istediğini beyan etmiştir. Mahkemece bu talep hakkında olumlu ya da olumsuz bir karar verilmeyerek davalı tanıkları dinlenmeden tarafların boşanmalarına dair hüküm kurulmuştur. Mahkeme gerekçesinde bu davranışın davayı uzatmaya matuf bir davranış olarak değerlendirildiği ve bu sebeple ara karar kurulmadığı belirtilmiş ise de düzenlenen usul kuralları gözetilerek ve hukuki dinlenilme hakkının bir gereği olarak davalının dinlenmesinden açıkça vazgeçmediği tanıklarının dinlenilmemesi doğru görülmemiştir.</p>
+
+<p>Hukuk Genel Kurulundaki görüşmeler sırasında toplanan delillerden boşanmaya sebebiyet veren olaylarda davalı kadının tam kusurlu olduğu, davalı tanıklarının dinlenmesinin esasa etki etmeyeceği bu sebeple direnme kararının onanması gerektiği yönünde görüş bildirilmiş ise de bu görüş çoğunluk tarafından benimsenmemiştir.</p>
+
+<p>O halde Özel Daire bozma kararında belirtilen gerekçelerle Hukuk Genel Kurulunca da benimsenen Özel Daire bozma kararına uyulması gerekirken önceki kararda direnilmesi usul ve yasaya aykırıdır.</p>
+
+<p>SONUÇ : Davalı vekilinin temyiz itirazlarının reddi ile direnme kararının bozma ilamında gösterilen nedenlerden dolayı BOZULMASINA, istenmesi halinde temyiz peşin harcının yatırana iadesine 1086 Sayılı Hukuk Usulu Muhakemeleri Kanunu’nun 440. maddesi uyarınca karar düzeltme yolu açık olmak üzere, 16.11.2016 gününde oyçokluğu ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. HUKUK DAİRESİ
+Esas: 2016/2709 Karar: 2016/9826</strong> Tarih: 12.05.2016</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 240. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanık Gösterme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Dava, aile konutu üzerindeki ipoteğin kaldırılması ve taşınmazın tapu kaydına aile konutu şerhi konulması istemine ilişkindir. Davacı malik olmayan eş, aile konutu niteliğinde bulunan taşınmazın, malik olan davalı eş tarafından “açık rızası bulunmadan” davalı banka lehine ipotek ettirildiğini ileri sürerek, aile konutu üzerine konulan ipoteğin kaldırılmasını ve taşınmazın tapu kaydına aile konutu şerhi konulmasını talep ve dava etmiştir.</p>
+
+<p>Davalı banka, davaya konu taşınmazın tapu kaydında aile konutu olduğuna dair şerhin bulunmadığını, taşınmazın aile konutu olmadığını ve davacının kötüniyetli olduğunu belirterek davanın reddini savunmuştur.</p>
+
+<p>Mahkemece, taşınmazın aile konutu olduğu ve davacı eşin ipotek işleminde açık rızasının alınmadığı gerekçesiyle davanın kabulüne karar verilmiş ise de; davaya konu taşınmazın aile konutu olarak kullanılıp kullanılmadığı yönünde herhangi bir araştırma yapılmamıştır. Davacı eş dava dilekçesinde tanık deliline dayandığını bildirmiştir. Ön inceleme duruşmasında davacıya Hukuk Muhakemeleri Kanunu’nun gereğince “belge niteliğindeki delillerini mahkemeye sunması, başka yerden getirtilecek belgelerle ilgili açıklamada bulunması için” kesin süre verilmiş, ancak tanıklarını bildirmesiyle ilgili bir süre verilmemiştir. Delil gösteren taraf, karşı tarafın açık izni olmadıkça, o delile dayanmaktan vazgeçemez ( m. 196 ). Mahkemece, davacıya, bu kapsamda tanıklarının isim ve adreslerini gösteren listeyi sunması için usulüne uygun şekilde kesin süre verilerek ( m. 240/3 ) gösterdiği takdirde Hukuk Muhakemeleri Kanununun 240 vd. maddeleri uyarınca tüm tanıkları dinlenip, gerektiğinde mahallinde keşif de yapılarak ve tüm deliller birlikte değerlendirilerek davaya konu taşınmazın aile konutu olup olmadığı tespit edilip sonucu uyarınca karar verilmesi gerekirken; eksik inceleme ile yazılı şekilde karar verilmesi doğru görülmemiştir.</p>
+
+<p>SONUÇ : Temyiz edilen hükmün yukarıda gösterilen sebeple BOZULMASINA, temyiz peşin harcının istenmesi halinde yatırana iadesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere, 12.05.2016 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. HUKUK DAİRESİ
+Esas: 2015/10441 Karar: 2016/230</strong> Tarih: 11.01.2016</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 240. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanık Gösterme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Dava münhasıran, nafaka yükümlülüğü konusundaki yabancı mahkeme kararının tanınması ve tenfizi isteğine ilişkindir.</p>
+
+<p>Mahkemece, nafaka alacaklarının tahsili ile ilgili uluslararası sözleşmeye göre tenfize yada tanımaya lüzum olmaksızın doğrudan Türkiye’de icra ettirilebilmesi mümkün bulunduğu gerekçe gösterilerek istek reddedilmiş, kararı davacı temyiz etmiştir.</p>
+
+<p>Özel hukuka ilişkin yabancı mahkeme ilamlarının Türkiye’de icrası tenfiz kararının alınmasına bağlıdır (5718 sayılı MÖHUK md. 50).</p>
+
+<p>Tenfiz kararı alınmadıkça Milletlerarası Özel Hukukuna göre yabancı ilamın Türkiye’de icrası olanağı yoktur. 1956 tarihli Nafaka Alacaklarının Yabancı Memleketlerde Tahsiline İlişkin sözleşme, bir tanıma veya tenfiz sözleşmesi olmayıp, nafaka alacaklısı ile nafaka yükümlüsünün farklı memleketlerde bulunması halinde nafaka alacaklısının tahsiline kolaylaştırıcı hükümler getirmiş olup, bu sözleşme nafaka yükümlülüğüne ilişkin yabancı ilamların, ilamın verildiği devlet dışında sözleşmeye taraf diğer bir devlette doğrudan icrasına imkan vermez. Onun için nafaka yükümlülüğüne ilişkin yabancı ilamın Türkiye’de icra edilebilir olması tenfiz kararı verilmesini gerektirir. 02.10.1973 tarihli Nafaka Yükümlülüğüne Uygulanacak Kanuna Dair Lahey Sözleşmesi 2331 sayılı kanunla onaylanması uygun bulunarak, 26.11.1982 tarihli Bakanlar Kurulu kararı ile onaylanarak yürürlüğe girmiştir. Bu sözleşme, aile, hısımlık, evlilik veya kayın hısımlığı ve evlatlık ilişkilerinden doğan nafaka yükümlülüğü konusunda kanunlar ihtilafını düzenlemektedir (Söz.md.1). Nafaka yükümlülüğü konusundaki kararların tanınması ve tenfizine ilişkin aynı tarihli Lahey Sözleşmesi hükümlerine göre münhasıran nafaka yükümlülüğüne ilişkin bir kararın tanınması veya tenfizi; tanıma ve tenfizin talep edildiği devletin kamu düzeniyle açıkca bağdaşmaması ve tarafları, konusu aynı olan bir davanın tanıma ve tenfizinin talep edildiği devletin bir merciinde açılmış ve görülmekte olması veya bu devlette ya da sözleşmeye taraf başka bir devlette aynı konuda aynı taraflar arasında verilmiş bir kararla bağdaşmaması halinde reddedilebilir (Söz.md.5). Şu halde anılan Sözleşmeye kararın verildiği Almanya’da taraf olduğuna göre, sözleşme hükümleri gözetilerek sonucu uyarınca karar verilmesi gerekirken, bu husus nazara alınmadan 1956 tarihli sözleşme hükümlerinden hareketle davacının tenfiz davası açmakta hukuki yararının bulunmadığı gerekçesi ile isteğin reddi doğru bulunmamıştır.</p>
+
+<p>SONUÇ : Temyiz edilen hükmün yukarıda gösterilen sebeple BOZULMASINA, temyiz peşin harcının istek halinde yatırana geri verilmesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere, 24.12.2015 gününde oybirliğiyle karar verildi.Taraflar arasındaki davanın yapılan muhakemesi sonunda mahalli mahkemece verilen, yukarıda tarihi ve numarası gösterilen hüküm davalı tarafından temyiz edilmekle, evrak okunup gereği görüşülüp düşünüldü:</p>
+
+<p>KARAR : Davalı erkek 11.02.2014 tarihinde sunduğu cevap dilekçesi ile 3 adet tanık ismi bildirmiş, adreslerini bildirmemiştir. Mahkemece, davalının katılmadığı 20.11.2014 tarihli duruşmada davalıya, tanıklarının açık adreslerini bildirmesi ve gider avansını yatırması için iki hafta kesin süre verilmesine ve kesin süreye dair duruşma tutanağının tebliğine karar verilmiş, ancak duruşma tutanağı davalıya tebliğ edilmemiş, davalı tanıkları dinlenmeden hüküm kurulmuştur. Davalı, tanıklarının dinlenilmesinden açıkça vazgeçmiş değildir.</p>
+
+<p>Tanık listesinde adres gösterilmemiş veya gösterilen adreste tanık bulunmamışsa, tarafa adres göstermesi için, işin niteliğine uygun kesin süre verilir. Bu süre içinde adres gösterilmez veya gösterilen yeni adres de doğru değilse, bu tanığın dinlenilmesinden vazgeçilmiş sayılır (HMK.md. 240/3). Mahkemece; davalı erkeğe tanıklarının adreslerini göstermesi hususunda Hukuk Muhakemeleri Kanununun uyarınca verilmiş bir süre bulunmamaktadır. Bu durumda, davalıya tanıklarının adresini göstermesi için kesin süre verilmesi, bu süre içinde adres gösterilmez ise veya gösterilen adres doğru değil ise, bu durumda tanıklarının dinlenmesinden vazgeçmiş sayılması, adres gösterdiğinde tanıklarının Hukuk Muhakemeleri Kanununun gösterilen usulde çağrılıp dinlenmesi ve hasıl olacak sonucuna göre karar verilmesi gerekirken, eksik inceleme ile hüküm kurulması doğru bulunmamıştır.</p>
+
+<p>SONUÇ : Temyiz edilen hükmün yukarıda gösterilen sebeple BOZULMASINA, bozma sebebine göre davalının diğer temyiz itirazlarının şimdilik incelenmesine yer olmadığına, temyiz peşin harcının istenmesi halinde yatırana iadesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere, 11.01.2016 tarihinde oyçokluğuyla karar verildi.</p>
+
+<p>KARŞI OY :</p>
+
+<p>Davacı kadın tarafından açılan boşanma davası mahkemece kabul edilmiş, tarafların müşterek çocuklarının velayeti anneye bırakılmış, kadın lehine maddi-manevi tazminata, tedbir nafakasına, çocuklar yararına tedbir ve iştirak nafakasına hükmedilmiş, kişisel ilişki düzenlenmiştir.</p>
+
+<p>Davalı 11.02.2014 tarihli dilekçesinde tanıklarının ismini bildirmiş, ancak adreslerini bildirmemiştir. Mahkemece 20.11.2014 tarihli celsede davalı tarafa tanıklarının açık adreslerini bildirilmesi ve gider avansını yatırması hususunda kesin süre verilmesine karar verilmiş, ancak duruşma tutanağı tebliğ edilmemiş, davalı tanıkları dinlenilmeden hüküm kurulmuştur.</p>
+
+<p>Hüküm davalı tarafından temyiz edilmiştir. Davalı, tanıklarının dinlenilmemiş olmasını temyiz konusu yapmamıştır. Davalının temyize getirmediği bir hususu resen incelememiz mümkün değildir. Ne var ki, velayet kamu düzenine ilişkindir. Davalı kararı velayet yönünden de temyiz etmiştir. Bu sebeple davalıya tanıklarının isim ve adreslerini bildirmesi hususunda Türk Medeni Kanununun uyarınca kesin süre verilmesi, adres bildirilmesi ve delil avansının da yatırılması halinde, tanıkların, velayete özgü dinlenilmesi gerektiğini düşündüğümden, sayın çoğunluğun görüşüne katılamıyorum.</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. HUKUK DAİRESİ
+Esas: 2014/21030 Karar: 2015/6532</strong> Tarih: 03.04.2015</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 240. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanık Gösterme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Davacı, ıslah yoluyla, dayandığı vakıaları değiştirebilir veya davaya yeni vakıaları dahil edebilir. Evvelce göstermiş olsa bile, davaya kattığı bu yeni vakılara ilişkin delil de gösterebilir. Bu halde, ikinci tanık listesi verilemeyeceğine ilişkin yasağa (HMK. m. 240/2) dayanılarak, gösterilen bu tanıkların dinlenmesinden kaçınılamaz. Davacı, 7.1.2013 günü verdiği ıslah dilekçesiyle, yeni vakılar ileri sürmüş ve bununla ilgili tanık da göstermiştir. Yapılan ıslah kanuna uygundur. O halde, davacının 7.1.2013 günü verdiği ıslah dilekçesinde gösterdiği tanıklar usulünce dinlenmeli ve tüm deliller birlikte değerlendirilerek hasıl olacak sonucuna göre karar verilmelidir. Bu yön nazara alınmadan eksik inceleme ile hüküm kurulması doğru bulunmamıştır.</p>
+
+<p>Sonuç: Temyiz edilen hükmün yukarıda gösterilen sebeple BOZULMASINA, temyiz peşin harcının istek halinde yatırana geri verilmesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere oybirliği ile karar verildi. 03.04.2015</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. HUKUK DAİRESİ
+Esas: 2014/10663 Karar: 2014/21656</strong> Tarih: 05.11.2014</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 240. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanık Gösterme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Davacı koca tarafından cevap dilekçesi ile 2 adet tanık ismi ve adresi bildirilmiştir. Yerel mahkeme tarafından davacı kocanın bildirdiği tanıkların yargı çevresi dışında olması sebebiyle talimat yazılmış, tanıkların belirtilen adreslerinden ayrıldıklarından bahisle talimat evrakı bila ikmal iade edilmiştir. Mahkemece, yazılan talimatın iade edilmesi ve davalı tarafından yeni bir adres bildirilmemesi nedeniyle davalı tanıkların dinlenmelerinden vazgeçilmesine karar verilmiş, davacı kadının boşanmaya neden olan olaylarda kusursuz, davalı kocanın ise ağır kusurlu olduğu kabul edilerek kadının boşanma davasının kabulüne karar verilmiştir. Tanık listesinde adres gösterilmemiş veya gösterilen adreste tanık bulunamamışsa, tarafa adres göstermesi için, işin niteliğine uygun kesin süre verilir. Bu süre içinde adres gösterilmez veya gösterilen yeni adres de doğru değilse, bu tanığın dinlenilmesinden vazgeçilmiş sayılır ( md. 240/3). Mahkemece; davalı tanıkları P.. G.. vc M.. G..’ün yeni adresini göstermesi konusunda davalı vekiline Hukuk Muhakemeleri Kanununun uyarınca verilmiş bir süre bulunmamaktadır. Bu durumda, davalı vekiline bu tanığın yeni adresini göstermesi için kesin süre verilmesi, bu süre içinde adres gösterilmez ise veya gösterilen adres doğru değil ise, bu tanığın dinlenmesinden vazgeçmiş sayılması, adres gösterdiğinde tanığın Hukuk Muhakemeleri Kanununun gösterilen usulde çağrılıp dinlenmesi ve hasıl olacak sonucuna göre tarafların kusur durumlarının tespiti ve davacının nafaka ve tazminat taleplerinin buna göre karara bağlanması gerekir. Açıklanan yönde işlem yapılmadan eksik inceleme ile hüküm kurulması doğru bulunmamıştır.</p>
+
+<p>Sonuç: Temyiz edilen hükmün yukarıda gösterilen sebeple BOZULMASINA, bozma sebebine göre tarafların diğer temyiz itirazlarının şimdilik incelenmesine yer olmadığına, temyiz peşin harcının istek halinde yatıranlara geri verilmesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere oybirliği ile, karar verildi.05.11.2014</p>
+<hr>
+
+</div></div></main>
+</div>
+
+<footer>
+<section>
+<div class="contact-info">
+
+<div class="adres">
+
+<div class="telefon-wrapper">
+
+
+</div>
+</div>
+</section>
+
+</div>
+
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+"vars": {
+"account": "UA-58342443-1"
+},
+"triggers": {
+"trackPageview": {
+"on": "visible",
+"request": "pageview"
+}
+}
+}
+</script>
+</amp-analytics>
+
+</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="../../index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="../../dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="../../ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="../../knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="../../search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/slideToggle.min.js"></script>
+    <script src="../js/internet-status.js"></script>
+    <script src="../js/tiny-slider.js"></script>
+    <script src="../js/baguetteBox.min.js"></script>
+    <script src="../js/countdown.js"></script>
+    <script src="../js/rangeslider.min.js"></script>
+    <script src="../js/vanilla-dataTables.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/magic-grid.min.js"></script>
+    <script src="../js/dark-rtl.js"></script>
+    <script src="../js/active.js"></script>
+    <!-- PWA -->
+    <script src="../js/pwa.js"></script>
+  </body>
+</html>

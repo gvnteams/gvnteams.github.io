@@ -1,0 +1,866 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tiny-slider.css">
+    <link rel="stylesheet" href="../css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="../css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="tck-search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+               <div class="page-content-wrapper py-0">
+        </div>
+      </div>
+
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<h2 id="tespit-davası">Tespit Davası</h2>
+
+<h2 id="hmk-madde-106">HMK Madde 106</h2>
+
+<p>(1) Tespit davası yoluyla, mahkemeden, bir hakkın veya hukuki ilişkinin varlığının ya da yokluğunun yahut bir belgenin sahte olup olmadığının belirlenmesi talep edilir.</p>
+
+<p>(2) Tespit davası açanın, kanunlarda belirtilen istisnai durumlar dışında, bu davayı açmakta hukuken korunmaya değer güncel bir yararı bulunmalıdır.</p>
+
+<p>(3) Maddi vakıalar, tek başlarına tespit davasının konusunu oluşturamaz.</p>
+
+<hr>
+
+<ul>
+  <li><a href="../6100-sayili-hukuk-muhakemeleri-kanunu-(hmk).html"><strong>6100 sayılı HMK (Hukuk Muhakameleri Kanunu) Tam Metin</strong></a></li>
+</ul>
+
+<hr>
+
+<amp-img src="../tokmak-yargitay-kararlari-1280x720.png" alt="HMK Madde 106  Tespit Davası" width="1280" height="720" layout="responsive">
+            </amp-img>
+
+<h2 id="hmk-madde-106-gerekçesi">HMK Madde 106 Gerekçesi</h2>
+
+<p>Maddenin birinci fıkrasında, tespit davalarıyla ilgili genel bir tanımlamaya yer verilmiş ve ikinci ve üçüncü fıkralarında ise tespit davasının açılabilmesi için varlığı gereken şartların neler olduğuna açıkça işaret edilmiştir.</p>
+
+<p>Bu çerçevede, bir hakkın yahut hukukî ilişkinin varlığının ya da yokluğunun yahut da bir belgenin sahte olup olmadığının belirlenmesini hedefleyen davalara, tespit davası denir. Tespit davaları, uygulamada sıkça müracaat edilen bir dava türüdür. Çoğu kere de bir geçici hukuksal korunma türü olan delil tespiti kurumuyla karıştırılmaktadır. Bu genel tanımlama ile tespit davasının hukukumuzda caiz olduğu ve delil tespitinden tümüyle farklı bir kurum olduğu hususuna, uygulamada duyulan tereddüt giderilmek suretiyle açıklık kazandırılmıştır.</p>
+
+<p>İkinci fıkrada, kanunla belirtilen durumlar dışında tespit davası açan davacının, eda davası ile inşaî davalardan farklı olarak dava açmakta hukuken korunmaya değer güncel bir yararının bulunduğu hususunu açıkça ortaya koyması, bir şart olarak öngörülmüştür.</p>
+
+<p>Üçüncü fıkrada ise maddî vakıaların tek başlarına tespit davasına konu yapılamayacağı; ancak bir hakkın yahut hukukî ilişkinin varlığının ya da yokluğunun belirlenmesi bağlamında tespit davasına konu yapılabileceği hususu hüküm altına alınmıştır.</p>
+
+<p>Bu çerçevede, maddî vakıaların tek başlarına tespiti isteniyor ise tespit davasına değil; delil tespiti kurumuna başvurulması gerekecektir.</p>
+
+<p>Maddenin birinci fıkrasında, tespit davalarıyla ilgili genel bir tanımlamaya yer verilmiş ve ikinci ve üçüncü fıkralarında ise tespit davasının açılabilmesi için varlığı gereken şartların neler olduğuna açıkça işaret edilmiştir.</p>
+
+<hr>
+
+<h2 id="hmk-106-tespit-davası-emsal-yargıtay-kararları">HMK 106 (Tespit Davası) Emsal Yargıtay Kararları</h2>
+
+<hr>
+
+<p><strong>Yargıtay 9. Hukuk Dairesi         2021/5787 E.  ,  2021/10040 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 106</strong></li>
+  <li><strong>Tespit davasında temyiz kesinlik sınırı öncüsü olduğu eda davasına göre belirlenir.</strong></li>
+</ul>
+
+<p>Temyiz kesinlik sınırı belirlenirken yalnız dava konusu edilen taşınır malın veya alacağın değeri dikkate alınır. Faiz, icra (inkar) tazminatı, vekalet ücreti ve yargılama giderleri hesaba katılmaz. Birleştirilen davalarda, temyiz sınırı her dava için ayrı ayrı belirlenir. İhtiyari dava arkadaşlığında, temyiz sınırı her dava arkadaşının davası için ayrı ayrı belirlenir. Karşılık davada, temyiz sınırı asıl dava ve karşılık dava için ayrı ayrı belirlenir.</p>
+
+<p>Tespit davalarında, temyiz sınırı tespit davasının öncüsü olduğu eda davasının miktar ve değerine göre belirlenir. Temyiz sınırından fazla bir alacağın tamamının dava edilmiş olması halinde, hükümde asıl istemin kabul edilmeyen bölümü temyiz sınırını geçmeyen tarafın temyiz hakkı yoktur. Kısaca temyize konu edilen miktara bakılarak kesinlik belirlenir.</p>
+
+<p>Alacağın bir kısmının dava edilmiş olması halinde, kısaca kısmi davada kesinlik sınırı dava edilen miktara göre değil, alacağın tamamına göre belirlenir. Dosya içeriğine göre; dava, iş sözleşmesi dava açıldıktan kısa süre sonra son bulmuş olan işçinin kademe ve derecesinin hatalı belirlendiği iddiasına dayalı alacak (eda) davası niteliğinde olup verilen hükmün temyiz kesinlik sınırını aşacak mahiyette ileriye yönelik etkisinin bulunmadığı anlaşılmakla; temyiz kesinlik sınırı kabul ya da reddedilen alacak tutarına göre belirlenmelidir. Buna göre, davacının ve davalının temyiz istemi; Bölge Adliye Mahkemesinin karar tarihi itibari ile temyiz kesinlik sınırı olan 78.630,00 TL kapsamında kaldığından; tarafların temyiz isteminin 6100 sayılı Kanun’un 362/1-(a), 366. ve 352. maddeleri uyarınca ayrı ayrı REDDİNE, peşin alınan karar harcının istek halinde ilgililere iadesine, kararın bir örneğinin kararı veren Bölge Adliye Mahkemesine gönderilmesine, 09.06.2021 tarihinde oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>Yargıtay 14. Hukuk Dairesi         2018/4654 E.  ,  2021/2435 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 106</strong></li>
+  <li><strong>Ortak kiralık kasada bulunan ziynetler üzerinde, ölen diğer ortakla aynı haklara sahip olduğunun ve kasadaki menkullerin tespiti için tespit davası açılmasında hukuki yarar yoktur.</strong></li>
+</ul>
+
+<p>Davacı vekili, davacı ile müteveffa teyzesi …’nun birlikte Ziraat Bankası Şehremini Şubesi’nde 22/05/2002 tarihli sözleşme ile 25 nolu kiralık kasayı münferiden yetkili olarak kiraladıklarını, davacının münferiden yetkili kasa kartı ve anahtarı bulunduğunu ancak münferiden kasa açma yetkisi bulunmasına rağmen davalı bankanın hukuka aykırı olarak kasaya erişimine izin vermediğini, bu nedenle davalı banka nezdinde bulunan 25 nolu kasaya müteveffa … ile aynı haklarla sahip olduğunun ve kasada bulunan ziynet türü menkullerin tespitine karar verilmesini talep ve dava etmiştir.</p>
+
+<p>Davalı vekili, davacının dava konusu kiralık kasanın müşterek kiralayanlarından biri olmadığını, müteveffa …’nun vekili olarak kasa kiralama işlemlerinde yer aldığını, 25 nolu kasanın ortak olarak kiralandığına dair bir belge olmadığını, davacının tüm işlemlerde vekil sıfatıyla hareket ettiğini ileri sürerek davanın reddini savunmuşlardır.
+Mahkemece davanın kabulü ile davacının Ziraat Bankası Şehremini Şubesi 25 nolu kiralık kasada mütevaffa … ile aynı haklarla kullanım hakkı olduğunun tespitine karar verilmiştir.</p>
+
+<p><strong>Tespit davası</strong>, bir hukuki ilişkinin ya da hakkın varlığının ya da yokluğunun mahkeme kararı ile saptanmasıdır. Tespit davaları sadece hukuki ilişkinin varlığının tespitinde açılabilir. Tespit davasındaki hukuki yarar açılmış ya da açılacak davanın konusunu içermektedir. Mahkeme yargılama sonucunda herhangi bir hükümde bulunamaz sadece talep edilen durumu tespit eder.</p>
+
+<p>Tespit davası açılabilmesi için tespitin konusunun hak veya hukuki ilişkiye dayalı olması ve davacının dava açmakta hukuki yararının olması gerekir.</p>
+
+<p>Somut olayda; dosya kapsamında bulunan kiralık kasa sözleşmesi, ekli imza örneği kartlarından anlaşılacağı üzere Ziraat Bankası nezdinde bulunan dava konusu 25 nolu kasanın davacı ile mütevaffa … tarafından müşterek olarak kiralandığı bellidir. Mütevaffa …’nun vefatı üzerine 26/07/2011 tarihinde tensip zaptı ve bilirkişi raporu ile kasa mevcudu tespit edilmiştir.</p>
+
+<p>Mahkemece, davacının istihkak iddiası da bulunmadığı göz önüne alınarak belirtilen şekilde tespit isteminde bulunmasında hukuki yararı bulunmadığından talebin reddine karar verilmesi gerekirken yazılı şekilde karar verilmesi doğru görülmemiş, bu sebeple hükmün bozulması gerekmiştir.</p>
+
+<hr>
+
+<p><strong>Yargıtay 8. Hukuk Dairesi         2017/1004 E.  ,  2017/10073 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 106</strong></li>
+  <li><strong>Tespit davasının açılabilmesi için hukuki yarar dava şartıdır.</strong></li>
+</ul>
+
+<p>Davanın esası hakkında inceleme yapılabilmesi için varlığı gerekli hallere, olumlu dava şartlarından birisi de davacının dava açmakta hukuki yararının bulunmasıdır. Olumsuz dava şartlarından birisi varsa veya olumlu dava şartlarından biri mevcut değilse, davanın esası incelenemez.</p>
+
+<p>Kural olarak inşai ve eda davalarında hukuki yararın bulunduğu varsayılır. Davacı bu tür davalarda hukuki yararının bulunduğunu bildirmek ve ispat etmekle yükümlü değildir. Ancak şüphe halinde hukuki yararın mevcut olup olmadığı inceleme konusu yapılır.</p>
+
+<p>Tespit davasının dinlenebilmesi için, <strong>tespit davası</strong> konusu hukuki ilişkinin var olup olmadığının mahkemece tespit edilmesinde hukuki yararın bulunması gerekir. Davacı tespit davası açmakta hukuki yararı bulunduğunu bildirmeli, açıklamalı ve gerekirse ispat etmelidir.</p>
+
+<p>6100 Sayılı HMK. nın 114. maddesinde, hukuki yarar dava şartı olarak kabul edilmiştir. Davacı tespit davası açmakta hukuki yararı olduğunu ispat edemezse, tespit davası dava şartı yokluğundan usulden reddedilir. Mahkemenin, her tespit davasında hukuki yarar bulunup bulunmadığını kendiliğinden incelemesi gerekir.</p>
+
+<p>6100 sayılı HMK. nun 107. maddesine göre tespit davası açanın, kanunlarda belirtilen istisnai durumlar dışında, bu davayı açmakta hukuken korunmaya değer güncel bir yararı bulunmalıdır. Yani, davacının tespit davasına konu yapılan hukuki ilişkinin hemen tespit edilmesinde hukuki yararının bulunması şarttır. Bir hakkın veya hukuki ilişkinin varlığı veya yokluğu, tespit davası açılabilmesi için tek başına yeterli değildir. Davacının tespit davası ile istediği hukuki koruma diğer dava çeşitlerinden (eda ve inşai dava) biri ile sağlanabiliyorsa, o zaman davacının dava açmada hukuki yararı yoktur. Buna göre eda davası açması mümkün olan davacının, aynı konuda tespit davası açmakta hukuki yararı bulunmamaktadır.</p>
+
+<p>Eldeki davada da, davacı tarafından, davalı dernekte davacının üyeliğinin mevcut durumu ile ileride açılabilecek tazminat davasına dayanak teşkil etmesi için üyeliğinin hukuka aykırı askıya alındığının tespiti isteminde bulunulmuş olup, davacının eda davası açmasının mümkün olmasına göre, tespit davası açmakta hukuki yararı bulunmamaktadır. Bu durumda mahkemece, davanın hukuki yarar yokluğu nedeniyle reddine karar verilmesi gerekirken, yanılgılı değerlendirme sonucu derdestlik sebebi ile davanın reddine karar verilmesi doğru değil ise de; bu husus yeniden yargılama yapmayı gerektirmediğinden ve hükmün redde ilişkin bölümü sonucu itibari ile doğru görüldüğünden, HUMK’nun 438/7 maddesi uyarınca, hükmün gerekçesinin açıklanan şekilde değiştirilip kararın düzeltilerek onanması uygun görülmüştü</p>
+
+<hr>
+
+<p><strong>Yargıtay 8. Hukuk Dairesi         2019/914 E.  ,  2021/4733 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 106</strong></li>
+  <li><strong>Taşınmaz hakkında derdest ortaklığın giderilmesi davasının, kentsel dönüşüm uygulamasının ya da kamulaştırma işleminin bulunması gibi istisnai durumlarda muhdesatın tespiti davasının açılmasında güncel hukuki yarar vardır</strong></li>
+</ul>
+
+<p>Davacılar vekili, müvekkillerinin 2405 ada 20 parsel sayılı, 108 metrekare alanlı, arsa vasıflı taşınmazın malikleri olduğunu, taşınmazın 46/108 arsa payının ise davalıya ait olup, taşınmaz üzerinde iskanı olmayan 1 bodrum kat daire, 1 zemin kat daire ve 4 normal kat daireden oluşan bir apartman bulunduğunu ileri sürerek, hali hazırda ve yıllardır müvekkilleri tarafından kullanılan dairelerin müvekkillerine ait olduğunun tespitine karar verilmesini istemiştir.
+Davalı vekili, davanın reddini savunmuştur.</p>
+
+<p>Mahkemece, davanın reddine karar verilmiştir. Karar, davacılar vekili tarafından temyiz edilmiştir.</p>
+
+<p>Dava, muhdesatın tespiti istemine ilişkindir. Dosya içeriği ve toplanan delillerden, 20 parsel sayılı, 108 metrekare alanlı, tarla nitelikli, fiilen üzerinde apartman bulunan taşınmazda tarafların paydaş olduğu, mahkemece, dava konusu dairelerin davacılar tarafından meydana getirilmediği, dairelerin hali hazır yapılı bir şekilde davacılar tarafından satın alındığı, taşınmazda ruhsata aykırılık nedeniyle kat mülkiyeti veya kat irtifakı tesis edilemediği, davalının arsa üzerinde payı bulunduğu hususları birlikte değerlendirildiğinde davacıların davasının kabulüne imkan bulunmadığı gerekçesiyle davanın reddine karar verildiği sabittir.</p>
+
+<p>Bir şeye malik olan kimse, o şeyin bütünleyici parçalarına da malik olur (4721 s.lı TMK mad.684/1). Arazi üzerindeki mülkiyet, kullanılmasında yarar olduğu ölçüde, üstündeki hava ve altındaki arz katmanlarını kapsar. Bu mülkiyet kapsamına, yasal sınırlamalar saklı kalmak üzere kalıcı yapılar, bitkiler ve kaynaklar da girer (TMK mad.718). 22.12.1995 tarihli ve 1/3 sayılı Yargıtay İçtihadı Birleştirme Kararında da vurgulandığı gibi eşya hukukunda, muhdesattan, bir arazi üzerinde kalıcı yapı ve tesisler ile bağ ve bahçe şeklinde dikilen ağaçları anlamak gerekir . Muhdesat, şahsi bir hak olup (TMK mad.722, 724 ve 729), sahibine arazi mülkiyetinden ayrı bağımsız bir mülkiyet veya sınırlı bir ayni hak bahşetmez. Taşınmaz üzerindeki kalıcı yapı, ağaç gibi bütünleyici parça niteliğindeki muhdesatların taşınmazın arzından ayrı bir mülkiyetinin varlığından söz edilemez. Açıklanan bu ilke ve esaslara göre, kural olarak muhdesatın mülkiyetinin arz malikinden başkasına aidiyetinin tespiti istenemez.</p>
+
+<p><strong>Tespit davası</strong>, kendine özgü davalardan olup dava sonucunda istihsal edilecek ilamın icra ve infaz kabiliyeti bulunmamaktadır. Bunun doğal sonucu olarak da bu davaların uygulama alanı sınırlıdır. Bilindiği üzere, tespit davalarının görülebilmesi için güncel hukuki yararın bulunması (6100 s.lı HMK mad.106/2) ve dava sonuçlanıncaya kadar da güncelliğini kaybetmemesi gerekir. Tespit davaları eda davalarının öncüsüdür, bu nedenle eda davası açılmasının mümkün olduğu hallerde, tespit davası açılmasında hukuki yararın bulunmadığı kabul edilmektedir. Hukuki yararın bulunması dava şartı olup, yargılamanın her aşamasında taraflarca ileri sürülebileceği gibi, hakim tarafından da re’sen gözetilir. Hukuki yararın bulunmadığının tespiti halinde davanın, dava şartı yokluğu gerekçesiyle usulden reddine karar verilmelidir (HMK mad. 114/1-h, 115).</p>
+
+<p>Öğretide ve Yargıtay’ın devamlılık gösteren uygulamalarında, taşınmaz hakkında derdest ortaklığın giderilmesi davasının, kentsel dönüşüm uygulamasının ya da kamulaştırma işleminin bulunması gibi istisnai durumlarda muhdesatın tespiti davasının açılmasında güncel hukuki yararın bulunduğu kabul edilmektedir .</p>
+
+<p>Somut olayda; mahkemece, davanın muhdesatın tespiti davalarında dava şartı niteliğinde bulunan hukuki yarar bulunmaması nedeniyle usulden reddine karar verilmesi gerekirken, yanılgılı değerlendirmeyle yazılı gerekçeyle davanın reddine karar verilmesi, ayrıca davanın usulden reddi nedeniyle davalı yan lehine maktu vekalet ücretine karar verilmesi gerekirken, nispi vekalet ücretine hükmedilmesi, maktu red harcı alınarak bakiye harcın iadesine karar verilmesi gerekirken, yanılgılı değerlendirmeyle yazılı şekilde karar verilmesi doğru olmasa da hüküm sonucu itibarıyla doğru olduğundan ve bu husus yeniden yargılamayı gerektirmediğinden, temyiz edilen hükmün HUMK’un 438/son maddesi uyarınca düzeltilerek onanması gerekmiştir .</p>
+
+<hr>
+
+<p><strong>Yargıtay 10. Hukuk Dairesi         2018/3006 E.  ,  2019/10208 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 106</strong></li>
+  <li><strong>Tespit davasında hukuki yarar nedir?</strong></li>
+  <li><strong>Sigortalılık başlangıcının tespitinde bazı hallerde hukuki yarar yoktur.</strong></li>
+</ul>
+
+<p>Medeni usul hukukunda hukuki yarar, mahkemeden hukuksal korunma istemi ile bir davanın açılabilmesi için davacının bu davayı açmakta (veya mahkemeden hukuksal korunma istemekte) bir çıkarının bulunmasıdır.</p>
+
+<p>Davacının dava açmakta hukuk kuralları tarafından haklı bulunan (korunan) bir yararı olmalı, hakkını elde edebilmesi için mahkeme kararına ihtiyacı bulunmalı ve davacı mahkemeyi gereksiz yere uğraştırmamalıdır (Arslan, R.; aktaran: Hanağası, E., Davada Menfaat, Ankara 2009, önsöz VII).</p>
+
+<p>Hukuk Genel Kurulunun 24.06.1992 gün ve 1992/1-347 E., 1992/396 K. ve 30.05.2001 gün ve 2001/14-443 E., 2001/458 K. sayılı kararlarında da belirtildiği üzere buna hukuki korunma (himaye) ihtiyacı da denir (Rechts-schutzbedürfnis). Mahkemelerden hukuki himaye istenmesinde, himayeye değer bir yarar olmalıdır.</p>
+
+<p>Öte yandan, bu hukuksal yararın, “hukuki ve meşru”, “doğrudan ve kişisel”, “doğmuş ve güncel” olması gerekir (Hanağası, E., a.g.e, s.135).</p>
+
+<p>01.10.2011 tarihinde yürürlüğe giren 6100 sayılı Hukuk Muhakemeleri Kanununda öğreti ve yargısal kararların bu uygulaması aynen benimsenerek, davacının dava açmakta hukuki yararının bulunması “Dava Şartları” başlıklı 114. maddesinin 1. fıkrasının (h) bendinde açıkça dava şartları arasında sayılmıştır.</p>
+
+<p>Bir davada hukuki yarar ilkesinin dava şartı olarak gözetilmesinin yargılamanın amacına ve usul ekonomisi ilkesine uygun olarak yargılama yapılmasına yarar sağlayacağı her türlü duraksamadan uzaktır.</p>
+
+<p>Bu ilkeden hareketle, dava şartı olarak hukuki yararın varlığının mahkemece taraflarca dava dosyasına sunulmuş deliller, olay veya olgular çerçevesinde, kural olarak davanın açıldığı tarihe göre, kendiliğinden ve yargılamanın her aşamasında gözetilmesi gerekir. Bu sayede iç hukukumuzun bir parçası olan Avrupa İnsan Hakları Sözleşmesi (İnsan Hakları ve Temel Özgürlüklerin Korunmasına İlişkin Sözleşme)’nin 6. maddesi ve 1982 Anayasasının 36. maddesinde düzenlenen “hak arama özgürlüğü” nün dürüstlük kuralına uygun kullanılması sağlanabilecek; bu durum, haksız davalar açmak suretiyle, dava hakkının kötüye kullanılmasına karşı bir güvence oluşturacaktır.
+Dava açmaktaki hukuki yarar; hukuk düzenince kabul edilmiş meşru bir yarar olmalı, bu yarar dava açan hak sahibi ile ilgili olmalı ve dava açıldığı sırada halen mevcut bulunmalıdır. Ayrıca açılacak davanın ortaya çıkacak tehlikeyi bertaraf edecek nitelikte olması gerekir. Bir kimsenin hakkına ulaşmak için mahkeme kararının o an için gerekli olması durumunda hukuki yararın olduğundan söz edilebilir. Bir mahkeme kararına ihtiyaç yoksa hukuki yarardan söz edilemez (Pekcanıtez, H., Atalay, O., Özekes, M.; Medeni Usul Hukuku, Ankara 2011, s.297).</p>
+
+<p>Uyuşmazlığın çözümünde, hukuki yarar kavramının tespit davasındaki yansımasının ne olacağının ayrıca irdelenmesi gerekir. <strong>Tespit davaları</strong>, bir hukuki ilişkinin var olup olmadığının tespitine ilişkin davalar olup, konusunu hukuki ilişkiler oluşturur. Bu dava türü ile bir hukuksal ilişkinin varlığı veya yokluğu saptanmaktadır. Bu davalarda davacının amacı ve dolayısıyla talep sonucu, bir hukuki ilişkinin varlığının ya da yokluğunun veyahut içeriğinin belirlenmesi olup, istemin kabule şayan olabilmesi için bu davanın konusunu oluşturan hukuki ilişkinin var olup olmadığının mahkemece hemen tespit edilmesinde davacının menfaatinin (hukuki yararının) bulunması gerekir.</p>
+
+<p>Bir hukuki ilişkinin hemen tespit edilmesinde hukuki yararın bulunması, şu üç şartın birlikte varlığına bağlıdır:</p>
+
+<p>1) Davacının bir hakkı veya hukuki durumu güncel bir tehlike ile tehdit edilmiş olmalı;       <br>
+2) Bu tehdit nedeniyle davacının hukuki durumu tereddüt içinde olmalı ve bu husus davacıya zarar verebilecek nitelikte bulunmalı;     <br>
+3) Yalnız kesin hüküm etkisine sahip olup cebri icraya yetki vermeyen tespit hükmü bu tehlikeyi ortadan kaldırmaya elverişli olmalıdır.</p>
+
+<p>Davacının tespit davası ile istediği hukuki korunma, diğer dava çeşitlerinden biri ile sağlanabiliyorsa, o zaman davacının o konuda tespit davası açmakta hukuki yararı yoktur. (Kuru/ Arslan/ Yılmaz- Medeni Usul Hukuku Ders Kitabı, Ankara 2011, 22. baskı, s.274)</p>
+
+<p>Davaya konu uyuşmazlıktaki tespit istemi 1479 sayılı Kanun kapsamında sigorta başlangıcı kavramına dayalı olup, istemde hukuki yarar bulunup bulunmadığının irdelenmesi gereklidir.</p>
+
+<p>Sigortalılık başlangıç tarihi, talep eden açısından Kanun kapsamında sigortalı sayılmasını gerektirecek biçimde ilk defa çalışmaya başladığı tarih olmakla birlikte, sigortalı açısından önemi “sigortalılık süresi” yönünden taşıdığı değerdir.</p>
+
+<p>Sigortalılık başlangıç tarihinin tespiti davası bir (1) günlük çalışmanın tespiti niteliğinde olduğundan hizmet tespiti davasının bir türüdür. Bu dava türleri hizmet tespiti davaları gibi kamu düzenine ilişkindir.</p>
+
+<p>01.03.1965 tarihinde yürürlüğe giren 17.07.1964 tarih ve 506 sayılı Kanun’unda uzun vadeli sigorta kolları bakımından sigortalılık süresi 108. maddede “Malullük, yaşlılık ve ölüm sigortalarının uygulanmasında nazara alınacak sigortalılık süresinin başlangıcı, sigortalının, yürürlükten kaldırılmış 5417 ve 6900 sayılı Kanunlara veya bu kanuna tabi olarak ilk defa çalışmaya başladığı tarihtir.</p>
+
+<p>Tahsis işlerinde nazara alınan sigortalılık süreleri, bu sürenin başlangıç tarihi ile, sigortalının tahsis yapılması için yazılı istekte bulunduğu tarih, tahsis için istekte bulunmuş olmayan sigortalılar için de ölüm tarihi arasında geçen süredir.” şeklinde düzenlenmiştir.</p>
+
+<p>Ayrıca 01.10.2008 tarihinde yürürlüğe giren 5510 sayılı Kanun’da uzun vadeli sigorta kolları bakımından sigortalılık süresi 38. maddede “Malûllük, yaşlılık ve ölüm sigortalarının uygulanmasında dikkate alınacak sigortalılık süresinin başlangıcı; sigortalının, mülga 2.6.1949 tarihli ve 5417 sayılı İhtiyarlık Sigortası Kanununa, mülga 4.2.1957 tarihli ve 6900 sayılı Malûliyet, İhtiyarlık ve Ölüm Sigortaları Hakkında Kanuna, 17/7/1964 tarihli ve 506 sayılı Sosyal Sigortalar Kanununa, 2/9/1971 tarihli ve 1479 sayılı Esnaf ve Sanatkârlar ve Diğer Bağımsız Çalışanlar Sosyal Sigortalar Kurumu Kanununa, 17/10/1983 tarihli ve 2925 sayılı Tarım İşçileri Sosyal Sigortalar Kanununa, bu Kanunla mülga 17/10/1983 tarihli ve 2926 sayılı Tarımda Kendi Adına ve Hesabına Çalışanlar Sosyal Sigortalar Kanununa ve 8/6/1949 tarihli ve 5434 sayılı Türkiye Cumhuriyeti Emekli Sandığı Kanununa, 506 sayılı Sosyal Sigortalar Kanununun geçici 20 nci maddesi kapsamındaki sandıklara veya bu Kanuna tâbi olarak malûllük, yaşlılık ve ölüm sigortalarına tabi olarak ilk defa kapsama girdiği tarih olarak kabul edilir. Uluslararası sosyal güvenlik sözleşmeleri hükümleri saklıdır.</p>
+
+<p>Bu Kanunun uygulanmasında 18 yaşından önce malûllük, yaşlılık ve ölüm sigortalarına tâbi olanların sigortalılık süresi, 18 yaşını doldurdukları tarihte başlamış kabul edilir. Bu tarihten önceki süreler için ödenen malûllük, yaşlılık ve ölüm sigortaları primleri, prim ödeme gün sayılarının hesabına dâhil edilir.</p>
+
+<p>Aylık bağlama işlemlerinde dikkate alınan sigortalılık süreleri, sigortalılığın başlangıç tarihi ile sigortalının aylık bağlanması için yazılı istekte bulunduğu, aylık bağlanması için istekte bulunmayan sigortalılar için ise ölüm tarihi arasında geçen süredir. 4 üncü maddenin birinci fıkrasının (c) bendi kapsamındaki sigortalılar bakımından sigortalılık süresi; sigortalılığın başlangıç tarihi ile 48 inci maddeye göre yetkili makamdan emekliye sevk onayının alınarak görevi ile ilişiğinin kesildiği ayın son günü arasında geçen süredir.” şeklinde düzenlenmiştir.</p>
+
+<p>506 sayılı Kanunun 108. maddesi ve 5510 sayılı Kanunun 38. maddesi değerlendirildiğinde sigorta başlangıcının yaşlılık aylığından yararlanma şartları arasında olan “sigortalılık süresini” doğrudan etkilediği görülmektedir.</p>
+
+<p>Ne var ki 2.9.1971 tarihli 1479 sayılı Esnaf ve Sanatkârlar ve Diğer Bağımsız Çalışanlar Sosyal Sigortalar Kurumu Kanunu ve 17.10.1983 tarihli ve 2926 sayılı Tarımda Kendi Adına ve Hesabına Çalışanlar Sosyal Sigortalar Kanunu kapsamında sigorta başlangıcının talep eden açısından hukuki sonucu olarak “sigortalılık süresini” belirlemesi yönünden etkisi bulunmamaktadır. Çünkü her iki kanun kapsamında da yaşlılık aylığına hak kazanmak için sigortalılık süresi değil, primi ödenmiş günler asıldır.
+Eldeki dava bakımından ise, davacının 01.03.1997 tarihinin 1479 sayılı Yasa kapsamında sigortalılık başlangıç tarihi olduğunun tespiti istemi bakımından, hukuki yararı bulunmamaktadır.</p>
+
+<p>Ayrıca 6100 sayılı kanunun “Taleple bağlılık ilkesi” başlıklı 26/1. maddesinin “Hakim, tarafların talep sonuçlarıyla bağlıdır; ondan fazlasına veya başka bir şeye karar veremez. Duruma göre, talep sonucundan daha azına karar verebilir.” düzenlemesi gereği Mahkemece talepten fazlasına karar verilemeyeceğinden ve davada, dava şartlarından olan hukuki yararın bulunmaması nedeniyle, davanın usulden reddine dair karar verilmesi gerekirken, yazılı şekilde hüküm tesisi usul ve yasaya aykırı olup bozma nedenidir.</p>
+
+<hr>
+
+<p><strong>Yargıtay 10. Hukuk Dairesi         2016/17097 E.  ,  2019/3591 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 106</strong></li>
+  <li><strong>Kısmi dava açılabilen hallerde tespit davası da açılabilir.</strong></li>
+</ul>
+
+<p>Tespit davaları, bir hakkın veya hukuki ilişkinin var olup olmadığının tespitine ilişkin davalardır. Bu davaların işlevi, bir hukuki ilişkinin var olup olmadığının tespiti olup, bundan öteye gitmez. Henüz şartları oluşmadığı için açılamayan eda davası için ilerideki hukuki ilişkinin belli edilmesi bakımından kesin delil olarak kullanılmak üzere tespit davası açılabilir.</p>
+
+<p>Tespit davasının dinlenebilmesi için diğer genel dava şartlarından başka, iki ek şartın daha bulunması gerekir: Tespit davasının konusu yalnız hak ve hukuki ilişkiler olabilir; davacının bu hak veya hukuki ilişkinin var olup olmadığının hemen tespit edilmesinde (güncel bir) hukuki yararı bulunmalıdır. Bir hukuki ilişkinin varlığı yada yokluğu, tespit davası açılabilmesi için yalnız başına yeterli değildir. Bir hukuki ilişkinin hemen tespit edilmesinde hukuki yararın bulunması ise üç şartın birlikte varlığına bağlıdır:
+Davacının bir hakkı veya hukuki durumu güncel bir tehlike ile tehdit edilmiş olmalı; bu tehdit nedeniyle davacının hukuki durumu tereddüt içinde olmalı ve bu hususun davacıya zarar verebilecek nitelikte bulunması; yalnız kesin hüküm etkisine sahip olup, cebri icraya yetki vermeyen tespit hükmü, bu tehlikeyi ortadan kaldırmaya elverişli olmalıdır. Davacının tespit davası ile istediği hukuki koruma diğer dava çeşitlerinden birisi ile sağlanabiliyorsa, o zaman davacının tespit davası açmakta hukuki yararı yoktur. Bu şartların bulunmaması halinde tespit davası dinlenmez, davanın usulden (dava şartı yokluğundan) reddi gerekir.</p>
+
+<p>Bu müesseseye ilişkin olarak 6100 sayılı Kanunun Eda davası başlığını taşıyan 105. maddesi, “Eda davası yoluyla mahkemeden, davalının, bir şeyi vermeye veya yapmaya yahut yapmamaya mahkûm edilmesi talep edilir.” Tespit davası başlığını taşıyan 106. maddesi, “Tespit davası yoluyla, mahkemeden, bir hakkın veya hukuki ilişkinin varlığının ya da yokluğunun yahut bir belgenin sahte olup olmadığının belirlenmesi talep edilir. Tespit davası açanın, kanunlarda belirtilen istisnai durumlar dışında, bu davayı açmakta hukuken korunmaya değer güncel bir yararı bulunmalıdır. Maddi vakıalar, tek başlarına tespit davasının konusunu oluşturamaz.” Belirsiz alacak ve tespit davası başlığını taşıyan 107. maddesi “Davanın açıldığı tarihte alacağın miktarını yahut değerini tam ve kesin olarak belirleyebilmesinin kendisinden beklenemeyeceği veya bunun imkânsız olduğu hâllerde, alacaklı, hukuki ilişkiyi ve asgari bir miktar ya da değeri belirtmek suretiyle belirsiz alacak davası açabilir. Karşı tarafın verdiği bilgi veya tahkikat sonucu alacağın miktarı veya değerinin tam ve kesin olarak belirlenebilmesinin mümkün olduğu anda davacı, iddianın genişletilmesi yasağına tabi olmaksızın davanın başında belirtmiş olduğu talebini artırabilir. Ayrıca, kısmi eda davasının açılabildiği hâllerde, tespit davası da açılabilir ve bu durumda hukuki yararın var olduğu kabul edilir.” düzenlemelerini içermektedir.</p>
+
+<p>Yukarıda belirtilen çerçevede HMK uyarınca kısmi eda davası açılabilen hallerde tespit davası da açılabildiği gözetilmeksizin; Mahkemece, iş göremezlik oranına itiraz irdelenmeden, esasa girilmeksizin red kararı verilmesi isabetsiz bulunmuştur. Bu durumda mahkemece, sürekli işgöremezlik oranına ilişkin itirazlar doğrultusunda prosedür işletilmelidir.</p>
+
+<hr>
+
+<p><strong>Yargıtay 9. Hukuk Dairesi         2021/5704 E.  ,  2021/10132 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 106</strong></li>
+  <li><strong>Tespit davasında güncel hukuki yarar hem dava açarken hem de dava boyunca varlığını sürdürmelidir.</strong></li>
+</ul>
+
+<p>6100 sayılı Hukuk Muhakemeleri Kanununun 106. maddesi gereğince tespit davasının görülebilmesi için güncel hukuki yararın bulunması (6100 s.lı HMK 106/2 m) ve dava sonuçlanıncaya kadar da güncelliğini kaybetmemesi gerekir. 6100 sayılı Kanunun 114/1-h. maddesine göre ise, hukuki yarar dava şartıdır. “Mahkeme, dava şartlarının mevcut olup olmadığını, davanın her aşamasında kendiliğinden araştırır. Taraflar da dava şartı noksanlığını her zaman ileri sürebilirler (HMK 115/1). Mahkeme, dava şartı noksanlığını tespit ederse davanın usulden reddine karar verir.</p>
+
+<p>Dosya kapsamına göre; davacının 09.04.2010 tarihinde emekli olarak işten ayrıldığı ve fiili çalışmasının sona erdiği, dava dilekçesindeki edaya ilişkin talebinin mahkemece iş bu davadan tefrik edildiği ve talebinin sadece tespite yönelik olduğu anlaşılmaktadır. Bu nedenle dava tarihi itibarıyla fiilen çalışması bulunmayan davacının, derece ve kademe intibakının yanlış yapıldığının tespiti yönündeki talebinde hukuki yararı bulunmamaktadır. Her ne kadar benzer nitelikte açılan bazı davalarda Dairemiz tarafından davacının alacağı ücretin yaşlılık aylığına etkisi nedeni ile tespit davası açılmasında hukuki yarar bulunduğu kabul edilmiş ise de somut olayda davacı, yaşlılık aylığına esas kazancın ve dolayısıyla emeklilik aylığının etkisi nedeniyle bu tespit davası açtığını ileri sürmemiştir. Başka bir anlatımla, davacı bu tespit davasını açarken güncel hukuki yararın varlığı noktasında yaşlılık aylığı ile ilgili bir bağlantı kurmamıştır. Keza, Sosyal Güvenlik Kurumu’nun taraf olmadığı tespit davasında alınacak kararın, davada taraf olarak yer almayan Sosyal Güvenlik Kurumu açısından kesin hüküm teşkil etmesi ve böylece ikinci kez bir dava açılmasını önlemesi de mümkün değildir. Bu nedenlerle, davacının söz konusu tespit davası açmasında güncel hukuki yararının bulunmadığı ve dava şartı yokluğu nedeniyle davanın reddine karar verilmesi gerekirken eksik inceleme ve yanılgılı değerlendirme ile yazılı şekilde hüküm tesisi hatalı olup bozmayı gerektirmiştir.</p>
+
+<hr>
+
+<p><strong>YARGITAY 1. HUKUK DAİRESİ 
+Esas : 2015/13306 Karar : 2018/11623</strong> Tarih : 28.06.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 106. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tespit Davası</strong></p>
+  </li>
+</ul>
+
+<p>Taraflar arasında görülen davada;</p>
+
+<p>Davacı, mirasbırakanı … ’nin maliki olabileceği ve aynı zamanda … , … , … , … , … ve … parsel sayılı taşınmazlara komşu olan taşınmazların tapu kayıtlarının tespiti istemiyle davalı … müdürlüğüne başvurduğunu ancak taleplerinin reddedildiğini ileri sürerek, mirasbırakanı … ’nin maliki olduğu taşınmazların tespitini istemiştir</p>
+
+<p>Davalılar, davanın reddini savunmuşlardır.</p>
+
+<p>Mahkemece, davacının mirasbırakanın davacı haricinde mirasçılarının da olduğu, bu nedenle davacının eldeki davayı tek başına açamayacağı gerekçesiyle davanın reddine karar verilmiştir.</p>
+
+<p>Karar, davacı vekili tarafından süresinde temyiz edilmiş olmakla Tetkik Hakimi … ‘un raporu okundu, düşüncesi alındı. Dosya incelendi, gereği görüşülüp düşünüldü.</p>
+
+<p>Dosya içeriğine, toplanan delillere, hükmün dayandığı yasal ve hukuksal gerekçeye, delillerin takdirinde bir isabetsizlik bulunmamasına ve özellikle; davacının mirasbırakanın 1917 yılında öldüğü, ölüm tarihi itibariyle mirasçılar arasında paylı mülkiyet hükümlerinin geçerli olduğu; bu bakımdan davacının açtığı dava dinlenebilir ise de, tespit davasının (Hukuk Muhakemeleri Kanunu 106.vd maddeleri) koşullarının gerçekleştiğinden söz edilemez. Davanın reddi bu gerekçe ve sonucu itibariyle doğru olduğuna göre davacının yerinde görülmeyen temyiz itirazların reddiyle usul ve yasaya uygun olan hükmün ONANMASINA, aşağıda yazılı 10.70 TL. bakiye onama harcının temyiz eden davacıdan alınmasına 28/06/2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 8. HUKUK DAİRESİ
+Esas : 2017/16289 Karar : 2017/17592</strong> Tarih : 26.12.2017</p>
+
+<ul>
+  <li><strong>HMK 106. Madde</strong></li>
+  <li><strong>Taşınmaz hakkındaki ortaklığın giderilmesine ilişkin dava derdest olduğu sürece muhdesatın tespiti davası açılabilir ve görülebilir.</strong></li>
+</ul>
+
+<p>Davacılar vekili; taraflar arasındaki ortaklığın giderilmesi davasına konu edilen 2416 ada 10 parsel sayılı taşınmaz üzerinde bulunan 6 daireden ibaret binanın; 2. ve 4. katlardaki dairelerin davacı …, 1.kattaki dairenin davacı .., zemin kattaki dairenin davacı …, … kattaki dairenin davacı … 3. kattaki dairenin ise, davacı …`e ait olduğunun tespitine karar verilmesini istemiştir.</p>
+
+<p>Mahkemece, bir kısım davacıların tapu maliki olmadığı, binanın 3. ve 4. katlarının kaçak olarak yapıldığı, davanın dayanağı olan izaleyi şuyu davasının açılmamış sayılmasına karar verildiği ve esasen yapı alım satımlarının kat irtifakı yada kat mülkiyeti esasına göre yapılması gerektiği gerekçeleriyle davanın reddine karar verilmesi üzerine; hüküm, bir kısım davacılar vekili tarafından temyiz edilmiştir.</p>
+
+<p>Dava, taraflar arasında görülen ortaklığın giderilmesi davası nedeniyle dava konusu taşınmaz üzerinde bulunan 6 daireden ibaret binanın davacılara ait olduğunun tespiti isteğine ilişkindir.</p>
+
+<p>Bir şeye malik olan kimse, o şeyin bütünleyici parçalarına da malik olur (4721 s.lı TMK 684/1 m).</p>
+
+<p>Arazi üzerindeki mülkiyet, kullanılmasında yarar olduğu ölçüde, üstündeki hava ve altındaki arz katmanlarını kapsar. Bu mülkiyet kapsamına, yasal sınırlamalar saklı kalmak üzere kalıcı yapılar, bitkiler ve kaynaklar da girer (TMK 718 m).</p>
+
+<p>22.12.1995 tarih ve 1/3 sayılı Yargıtay İçtihadı Birleştirme Kararında da vurgulandığı gibi Eşya Hukukunda, muhdesattan, bir arazi üzerinde kalıcı yapı ve tesisler ile bağ ve bahçe şeklinde dikilen ağaçları anlamak gerekir. Muhdesat, şahsi bir hak olup (TMK 722, 724, 729 m.ler), sahibine arazi mülkiyetinden ayrı bağımsız bir mülkiyet veya sınırlı bir ayni hak bahşetmez. Taşınmaz üzerindeki kalıcı yapı, ağaç gibi bütünleyici parça niteliğindeki muhdesatların taşınmazın arzından ayrı bir mülkiyetinin varlığından söz edilemez.</p>
+
+<p>Açıklanan bu ilke ve esaslara göre, kural olarak muhdesatın arz malikinden başkasına aidiyetinin tespiti istenemez.</p>
+
+<p>Tespit davası, kendine özgü davalardan olup dava sonucunda istihsal edilecek ilamın icra ve infaz kabiliyeti bulunmamaktadır. Bunun doğal sonucu olarak da bu davaların uygulama alanı sınırlıdır. Bilindiği üzere, tespit davalarının görülebilmesi için güncel hukuki yararın bulunması (6100 s.lı HMK 106/2 m) ve dava sonuçlanıncaya kadar da güncelliğini kaybetmemesi gerekir. Tespit davaları eda davalarının öncüsüdür, bu nedenle eda davası açılmasının mümkün olduğu hallerde, tespit davası açılmasında hukuki yararın bulunmadığı kabul edilmektedir. Hukuki yararının bulunması dava şartı olup, yargılamanın her aşamasında taraflarca ileri sürülebileceği gibi, hakim tarafından da re`sen gözetilir. Hukuki yararın bulunmadığının tespiti halinde davanın, dava şartı yokluğu gerekçesiyle usulden reddine karar verilmelidir. (HMK 114/1-h, 115 m.)</p>
+
+<p>Öğretide ve Yargıtay`ın devamlılık gösteren uygulamalarında, taşınmaz hakkında derdest ortaklığın giderilmesi davasının, kentsel dönüşüm uygulamasının ya da kamulaştırma işleminin bulunması gibi istisnai durumlarda muhdesatın tespiti davasının açılmasında güncel hukuki yararın bulunduğu kabul edilmektedir.</p>
+
+<p>Somut olaya gelince; tespit davasına konu edilen muhdesatın üzerinde bulunduğu taşınmazın satış suretiyle ortaklığın giderilmesine ilişkin olarak görülen … 5.Sulh Hukuk Mahkemesi’nin 2007/1238 Esas, 2011/12181 Karar sayılı dosyasında davanın açılmamış sayılmasına karar verildiği, ancak Daire’nin 3.4.2017 tarihli geri çevirme kararı sonrası dosya arasına alınan … 4. Sulh Hukuk Mahkemesi`nin 2013/193 Esas sayılı dosyasında, taşınmazın satış suretiyle ortaklığın giderilmesine ilişkin davanın derdest olduğu ve muhdesatın tespitine ilişkin eldeki davanın bekletici mesele yapıldığı görülmüştür.</p>
+
+<p>Az yukarıda da zikredildiği üzere, bu tür davaların (muhdesat tespiti) görülebilmesi için güncel hukuki yararın bulunması (6100 s.lı HMK 106/2 m) ve dava sonuçlanıncaya kadar da güncelliğini kaybetmemesi gerekir. Yargıtayın ve Dairemizin uygulamaları ile birlikte usul ekonomisi de göz önünde bulundurulduğunda, taşınmaz hakkındaki ortaklığın giderilmesine ilişkin dava derdest olduğu sürece muhdesatın tespiti davası açılabilir ve görülebilir. Bu durumda, davacıların dava konusu parsel üzerindeki muhdesat yönünden tespit davası açmalarında güncel hukuki yararının bulunduğu kabul edilmelidir.</p>
+
+<p>Bundan ayrı, dava konusu taşınmazın davacı ve davalılar adına paylı mülkiyet hükümlerine göre kayıtlı olduğu, yargılama devam ederken davacılardan … ve …‘in hisselerini dava dışı şahıslara devrettikleri görülmüştür</p>
+
+<p>6100 sayılı HMK`nin 125/2 maddesine göre, davanın açılmasından sonra, dava konusunun davacı tarafından devredilecek olması halinde, devralmış olan kişinin, görülmekte olan davada davacı yerine geçeceği ve davanın kaldığı yerden itibaren devam edeceği düzenlendiğinden, Mahkemece davacı sıfatıyla yeni maliklere davanın ihbar edilmesi gerekirken, bu husus gözetilmeksizin bir kısım davacıların malik olmadığı gerekçelerine yer verilmesi doğru görülmemiştir.</p>
+
+<p>O halde Mahkemece, öncelikle davada taraf teşkilinin sağlanması, HMK`nun 125/2. maddesinde belirtilen hükümlerin göz önünde bulundurulması; davaya katıldığı takdirde delillerini sunması konusunda süre ve imkan tanınması, ondan sonra iddia ve savunma çerçevesinde toplanmış ve toplanacak tüm deliller birlikte tartışılıp değerlendirilerek istek hakkında olumlu veya olumsuz karar verilmesi gerekirken, yazılı gerekçeyle davanın reddine karar verilmesi doğru görülmemiştir.</p>
+
+<p>SONUÇ: Bir kısım davacılar vekilinin temyiz itirazları yerinde olduğundan kabulüyle, yerel Mahkeme hükmünün yukarıda açıklanan nedenlerle 6100 sayılı HMK’nun Geçici 3. maddesi yollamasıyla HUMK`nun 428. maddesi uyarınca BOZULMASINA, taraflarca HUMK’nun 440/I maddesi gereğince Yargıtay Daire ilamının tebliğinden itibaren ilama karşı 15 gün içinde karar düzeltme isteğinde bulunulabileceğine, peşin harcın istek halinde temyiz eden davacılara iadesine, 26.12.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 11. HUKUK DAİRESİ Esas : 2016/4880 Karar : 2017/3679</strong></p>
+
+<ul>
+  <li><strong>HMK 106. Madde</strong></li>
+  <li><strong>Ortak banka hesabındaki paranın tamamının kendisine ait olduğunun tespiti amacıyla tespit davası açılmasında hukuki yarar yoktur.</strong></li>
+</ul>
+
+<p>Davacı vekili, müvekkilinin davalı ve dava dışı kız kardeşi ile birlikte … Bankası’nda ortak hesap açtırdıklarını, ancak davalının ortak hesabı tamamen boşaltarak 902.006,68 TL’yi kendi hesabına geçirdiğini, bu paranın 1/3’ünün müvekkiline ait olduğunu ileri sürerek, 300.668,89 TL’nin davalıdan tahsilini talep ve dava etmiştir.</p>
+
+<p>Davalı vekili, davanın reddini istemiştir.</p>
+
+<p>Birleşen davada davacı vekili, müvekkilinin eşi vefat ettikten sonra müvekkili ve eşi adına olan hesaplardaki tüm paranın tek bir hesapta toplandığını, toplam 2.121.506,92 TL paranın müvekkili davalı ve dava dışı kızı arasında eşit olarak paylaşıldığını, ancak müvekkilinin yaşlı olması, seyahat etmekte zorlanması ve finansal piyasaları takip etmekte yetersiz olması oğlu olan davalıya güveninden ötürü kendi payına düşen 1/3 oranındaki parayı kişisel hesabı değil de davalının da dahil olduğu ortak hesapta tuttuğunu, müvekkilinin oğlu olan davalı ile ilişkilerinin bozulması üzerine ortak hesapta tutulan parasının davalının üzerinde tasarruf edebilme ihtimaline binaen kendi kişisel hesabına aktardığını ileri sürerek, müşterek hesapta bulunan ancak daha sonra müvekkil tarafından kendi şahsi hesabına aktarılan tüm paranın kendine ait olduğunun ve bu paranın davalı tarafça talep edilen 1/3’ünün davalıya ait olmadığının tespiti ile muarazanın giderilmesini talep ve dava etmiştir.</p>
+
+<p>Birleşen davada davalı vekili, davanın reddini istemiştir.</p>
+
+<p>Mahkemece, iddia, savunma ve tüm dosya kapsamına göre, davacı … ile davalı … ve dava dışı …‘nin … Bankası A.Ş. … Şubesi’nde 05/07/2012 tarihinde ortak hesap açtırdıkları, davalının 12/02/2014 tarihinde hesaptaki vade işlemini iptal edip toplam 902.006,68 TL’yi kendisine ait hesaba aktardığı, müşterek hesaptaki payların aksi iddia edilip kanıtlanmadıkça birbirine eşit olduğu, hesap sahiplerinden her birinin tek başına para çekme yetkisi söz konusu olsa dahi ortak hesaptan kendi payından fazla para çeken kişinin diğer hak sahibine karşı sorumlu olacağı, davaya konu hesabın müşterek olduğu ve davacının davalıdan 300.668,89 TL alacaklı olduğu, birleşen dava yönünden ise, hesaptaki paranın tamamının birleşen davanın davacısına ait olduğu iddiasının yazılı bir delille ispatlanamadığı gerekçesiyle, asıl davanın kabulüne, birleşen davanın reddine karar verilmiştir.</p>
+
+<p>Birleşen dava, müşterek hesaptaki paranın tamamının davacıya ait olduğunun tespiti ile muarazanın giderilmesi istemine ilişkindir.</p>
+
+<p>6100 sayılı HMK’nın 106. maddesinde düzenlenen, tespit davası; bir hakkın veya bir hukuki ilişkinin var olup olmadığının yahut bir belgenin sahte olup olmadığının belirlenmesi için açılan bir dava türüdür. Tespit davası eda davasının öncüsü durumunda olup, aynı maddenin 2. fıkrası uyarınca, eda davası açılması mümkün olan hallerde davacının tespit davası açmakta hukuken korunmaya değer güncel bir yararının bulunması şarttır. Hukuki yararın varlığının kabulü için ise, talepte bulunanın hakkının tehlike altında bulunması ve verilecek bu tespit kararının bu tehlikeyi bertaraf edici nitelikte bulunması gereklidir.</p>
+
+<p>Somut olayda, mahkemece işin esasına girilerek hesaptaki paranın tamamının birleşen davanın davacısına ait olduğu iddiasının yazılı bir delille ispatlanamadığı gerekçesiyle birleşen davanın reddine karar verilmiş ise de; asıl davada eda davası açılmış ve birleşen dava davacısı birleşen davadaki taleplerini asıl davada savunma olarak getirmiş olup, davacının tespit davası açmakta hukuki yararının bulunmadığı, ancak davanın reddine ilişkin hükmün, sonucu itibariyle doğru olduğu anlaşılmıştır. Ayrıca birleşen davada davacı ortak hesapta bulunan paranın tamamının kendisine ait olduğunu ileri sürmüş olup, ortak hesapta hak sahibi olan Ayşe Nurten Çetin’in davalı olarak gösterilmeyerek eksik hasımla dava açılması da doğru olmamıştır.</p>
+
+<p>Bu durum karşısında, birleşen dava davacısının tespit davası açılmakta güncel hukuki yararın bulunmadığı gözetilerek, 6100 sayılı Hukuk Muhakemeleri Kanunu’nun 114/1-h maddesi atfıyla 115/2. maddesi uyarınca, hukuki yarar yokluğuna ilişkin dava şartı noksanlığı nedeniyle birleşen davanın usulden reddine karar verilmesi gerekirken, mahkemece yazılı gerekçeyle sonuca gidilmesi doğru olmamış, birleşen davaya ilişkin kararın 6100 sayılı Hukuk Muhakemeleri Kanunu’nun geçici 3. maddesi yollamasıyla 1086 sayılı Hukuk Usulü Muhakemeleri Kanunu’nun 438/son maddesi uyarınca değişik gerekçe ile onanması yoluna gidilmiştir.</p>
+
+<hr>
+
+<p><strong>YARGITAY 20. HUKUK DAİRESİ Esas : 2015/16370 Karar : 2017/5124</strong></p>
+
+<ul>
+  <li>
+    <p><strong>HMK 106. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Dava konusu taşınmazın kadastroda durumunun ne olduğunun tespitine, muris adına iskan kaydının tapu kaydına çevrilip çevrilmediği, çevrilmemiş ise ada ve parsel numarasının tespitine, kadastroda dava konusu yerin tespit dışı bırakılıp bırakılmadığının tespitine şeklinde tespit davası açılamaz. Çünkü, maddi vakalar tek başına tespit davasına konu edilemez.</strong></p>
+  </li>
+</ul>
+
+<p>Davacı vekili, müvekkilinin murisi …`nün 2510 sayılı İskan Kanunu gereğince … … ilçesi, … mahallesi … nüfusuna kayıtlı olduğunu, nüfusta soyadı … olan murisin aslında soyadının … olduğunu, murise 2510 sayılı Kanun gereği verilen kaydın çıkarılması için yaptıkları başvuruya … Tapu Müdürlüğünün cevap vermediğini, eski tapu kaydı olan dava konusu taşınmazın yeni ada, parsel numarasına ulaşmalarının mümkün olmadığını, müvekkilinin haricen dava konusu yerin … ilçesi, … mevkii doğuda 1082 ada 1 parsel ve batıda 127 ada 329 parsel ile çevrili olduğunu, dava konusu yerin orman sınırları içinde kalsa da taşınmazın kısmen tarım arazisi, kısmen de çayır olduğunu belirterek ekte sundukları komşu parsele ait … ili, … ilçesi, 13/05/1945 tarih ve 12-70-132-231 sıra nolu kaydın etrafı … olarak gösterilen taşınmazın yeni ada, pafta ve parsel numarası ile yerinin tespitine, dava konusu taşınmazın kadastroda durumunun ne olduğunun tespitine, muris adına iskan kaydının tapu kaydına çevrilip çevrilmediği, çevrilmemiş ise ada ve parsel numarasının tespitine, kadastroda dava konusu yerin tespit dışı bırakılıp bırakılmadığının tespitine, dava konusu taşınmazın kadastro ilanı usulune uygun yapılmadığından oluşturulan tapu kayıtlarının iptali ile müvekkili adına tesciline karar verilmesini talep etmiştir.</p>
+
+<p>Mahkemece, 6100 sayılı HMK.114/1-4 maddesi gereği davacının böyle bir dava açmakta hukuki yararının olmadığı, 106/3 maddesi gereğince maddi vakaların tek başlarına tespit davasının konusunu oluşturamayacağı, davacının dava yoluyla talep ettiği konuları gidip kadastro müdürlüğünden öğrenebileceği gerekçesiyle davacının davasının dava şartı bulunmadığından reddine karar verilmiş, hüküm davacı vekilince temyiz edilmiştir.</p>
+
+<p>İncelenen dosya kapsamına, kararın dayandığı gerekçeye göre, yerinde görülmeyen temyiz itirazlarının reddi ile usûl ve kanuna uygun olan hükmün ONANMASINA, aşağıda yazılı onama harcının temyiz edene yükletilmesine 08/06/2017 gününde oy birliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 4. HUKUK DAİRESİ
+Esas : 2016/16018 Karar : 2017/587</strong> Tarih : 26.01.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 106. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Bir yapının riskli yapı olup olmadığının tespiti, tespit davasının konusu olup dav adli yargı yerinde açılmalıdır.</strong></p>
+  </li>
+</ul>
+
+<p>Dava, HMK`nın 106. maddesi uyarınca açılan tespit istemine ilişkindir. Mahkemece, davanın yargı yolu nedeniyle reddine karar verilmiş, karar, davacı tarafından temyiz edilmiştir.</p>
+
+<p>Davacı, … … … isimli işyerinin işletmecisi olduğunu, davalılar tarafından davaya konu işletmenin 6306 sayılı …. … Altındaki Alanların Dönüştürülmesine İlişkin Kanun kapsamında risk tespiti yapıldığından bahisle yıktırılmasına karar verildiğini belirterek söz konusu yapının riskli yapı olup olmadığının tespitini talep etmiştir.</p>
+
+<p>Mahkemenin davanın hukuki yarar yokluğu nedeniyle reddine dair …/05/2015 tarihli ilk kararı, Dairemizin …/01/2016 gün, 2015/14080 esas, 2016/419 karar sayılı ilamı ile bozulmuştur. Bozma ilamında; “davacının istemi delil tespiti olmayıp dava ve temyiz dilekçelerinden açıkça anlaşılacağı üzere HMK`nun 106. maddesinde düzenlenen tespit davası niteliğindedir. Mahkemece yapılması gereken davacının dilekçesinin tespit davası olarak kabul edilip mahkemenin esas sırasına kaydı yapıldıktan sonra sonucuna göre karar vermektir. Davacının isteminin delil tespiti olarak değişik iş sırasına kaydedilmesi doğru olmamıştır. Mahkemece açıklanan yönler gözetilerek inceleme yapılması gerekirken, yerinde olmayan gerekçeyle istemin reddine karar verilmesi usul ve yasaya aykırı düştüğünden kararın bozulması ” gerektiği belirtilmiştir.</p>
+
+<p>Mahkemece, bozma ilamına uyulmuş; fakat davalıların kamu kurumu olduğu, yapılan işlemlerin idari işlem teşkil ettiği, davanın idari yargıda açılması gerektiği gerekçesiyle mahkemenin yargı yolu nedeniyle görevsizliğine karar verilmiştir.</p>
+
+<p>6100 sayılı HMK`nın 106. maddesinde tespit davası düzenlenmiştir. Bu maddeye göre “Tespit davası yoluyla, mahkemeden, bir hakkın veya hukuki ilişkinin varlığının ya da yokluğunun yahut bir belgenin sahte olup olmadığının belirlenmesi talep edilir.”</p>
+
+<p>Dosya incelendiğinde, davacının istemi HMK`nın 106. maddesinde düzenlenen tespit davası niteliğindedir. Buna göre, davanın görüm ve çözüm yeri adli yargıdır. Mahkemece açıklanan yönler ile idari işlemlere esas olacak şekilde tespit kararı verilemeyeceği hususu da nazara alırak işin esasının incelenmesi gerekirken, yerinde olmayan gerekçeyle yargı yolu nedeniyle görevsizlik karar verilmesi usul ve yasaya aykırı düştüğünden kararın bozulması gerekmiştir.</p>
+
+<p>SONUÇ: Temyiz edilen kararın yukarıda gösterilen nedenlerle BOZULMASINA ve peşin alınan harcın istek halinde geri verilmesine 26/01/2017 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 3. HUKUK DAİRESİ Esas : 2017/764 Karar : 2017/372</strong></p>
+
+<ul>
+  <li>
+    <p><strong>HMK 106. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Muarazanın giderilmesi amacıyla tespit davası açılmasında hukuki yarar vardır.</strong></p>
+  </li>
+</ul>
+
+<p>Mahkemece, davalının BK.302 maddesine aykırı olarak KDV’nin ayrıca ödenmesine ilişkin ek sözleşme yapmak istemesi karşısında davacı tarafından muarazanın giderilmesi amacıyla işbu davanın açıldığı, dava tarihi itibariyle eda davası açılması koşullarının oluşmadığı, davacının dava açmakta hukuki yararı olduğu belirtilerek davanın kabulüne karar verilerek bozmaya karşı direnme kararı verilmiştir.</p>
+
+<p>Direnme kararı süresi içinde davalı tarafından temyiz edilmiş olup, Dairemizin 6763 sayılı Kanun’un 45. maddesi ile 6100 sayılı HMK’na eklenen geçici 4/4. maddesi uyarınca öncelikle inceleme yetkisi olduğu anlaşılmakla dosya incelendi, gereği konuşulup düşünüldü.</p>
+
+<p>Yargıtay 6. Hukuk Dairesi’nin “Taraflar arasındaki uyuşmazlık kira bedeli içinde KDV’nin de bulunduğunun tespit edilmesi noktasında toplanmaktadır. Davacı tarafın bu uyuşmazlığı tespit davası yoluyla değil, açacağı eda davasında ileri sürmesi gerekir. Ayrıca davalı Belediye tek taraflı olarak, kiracı davacıyı ek sözleşme yapmaya zorlayamayacağından, davacı kiracının istemi hukuki değildir. H.M.K.nun 106. maddesi gereğince davacının dava açmasında güncel bir hukuki yararı bulunmadığından mahkemece istemin bu nedenle reddine karar verilmesi gerekirken yazılı şekilde işin esasına girilerek yazılı gerekçe ile davanın kabulüne karar verilmesi doğru değildir.” gerekçesi ile verdiği bozma kararına karşı mahkemece Eldeki dava; davalının yasaya aykırı şekilde çıkardığı muarazanın giderilmesine ilişkin olup TBK 302 maddesi uyarınca sözleşmede aksine bir kararlaştırma da olmadığından KDV ödeme yükümlülüğü kiralayana ait olup davalının kamu gücünü kullanarak KDV nin ayrıca kiracı tarafından ödenmesine ilişkin ek sözleşme yapma konusundaki dayatmasında davacının bu aşamada muarazanın giderilmesi amacı ile tespite ilişkin dava açmasında hukuki yarar görüldüğü, bu aşamada eda davası açmasının mümkün olmadığı” gerekçesi ile direnilmiştir.</p>
+
+<p>02.12.2016 tarihinde yayımlanarak yürürlüğe giren 6763 sayılı Kanunun 43. maddesi ile değişik 6100 sayılı Hukuk Muhakemeleri Kanununun 373. maddesinin 5.fıkrası “İlk derece mahkemesi veya bölge adliye mahkemesi kararında direnirse, bu kararın temyiz edilmesi durumunda inceleme, kararına direnilen dairece yapılır. Direnme kararı öncelikle incelenir. Daire, direnme kararını yerinde görürse kararını düzeltir; görmezse dosyayı Yargıtay Hukuk Genel Kuruluna gönderir” hükmünü içermektedir. Aynı Yasanın 45. maddesiyle 6100 sayılı Hukuk Muhakemeleri Kanunununa eklenen geçici 4. maddesinin ikinci fıkrasında “Bu maddeyi ihdas eden Kanunun yürürlüğe girdiği tarih itibarıyla Yargıtay Hukuk Genel Kurulunda bulunan dosyalar, kararına direnilen daireye gönderilir.”, 4. fıkrasında ise “ Daire, mümkün olan en kısa sürede direnme kararını inceler ve yerinde görürse kararını düzeltir; görmezse dosyayı Yargıtay Hukuk Genel Kuruluna gönderir.” hükmü getirilmiştir.</p>
+
+<p>Anılan yasa maddeleri gereğince, yerel mahkemece verilen direnme kararına yönelik olarak yeniden inceleme yapılması neticesinde; mahkemece verilen direnme kararının doğru olduğu, yerel mahkemece bu hususun düzeltildiği anlaşıldığından; dosyadaki yazılara, kararın dayandığı delillerle ve özellikle bu delillerin takdirinde bir isabetsizlik görülmemesine göre, yerinde bulunmayan tüm temyiz itirazlarının reddi ile usul ve kanuna uygun olan kısmen direnme hükmünün 6763 sayılı Kanunun 44. maddesi ile 6100 sayılı Hukuk Muhakemeleri Kanununa eklenen geçici 4. maddesinin 4. fıkrası uyarınca ONANMASINA, 3.70 TL bakiye temyiz harcının temyiz edene yükletilmesine, HUMK`nun 440/1 maddesi uyarınca karar düzeltme yolu açık olmak üzere, 19.01.2017 günü oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 13. HUKUK DAİRESİ Esas : 2014/38961 Karar : 2015/33705</strong></p>
+
+<ul>
+  <li>
+    <p><strong>HMK 106. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>İrtifak hakkına konu taşınmazların konumlarının tespitinin istenmesi mümkün değildir.</strong></p>
+  </li>
+</ul>
+
+<p>Davacı, davalı idare ile aralarında hazineye ait taşınmazda 29 yıllık irtifak hakkının sağlanması ile ilgili sözleşme bulunduğunu, davalının sözleşmeye göre tespit edilmesi gereken yıllık izin bedelinin hesaplanmasında haksız şekilde taşınmazın sahile cepheli olduğuna dair kabulle işlem yapıldığını, bu durumun gerçeği yansıtmadığını ileri sürerek,  İstanbul İli, Bakırköy İlçesi, Ş…. Mahallesi 1.. ada 28,.. ve 4..parsel nolu taşınmazların sahil yolu caddesine cephesinin bulunmadığının tespitine karar verilmesini istemiştir.</p>
+
+<p>Mahkemece taşınmazların sahil yolu caddesine cephesinin bulunmadığının tespitine karar verilmiş, hüküm davalı tarafça temyiz edilmiştir.</p>
+
+<p>1-Tespit davaları HMK md.106 ile düzenlenmiş olup, madde metninde</p>
+
+<p>“(1) Tespit davası yoluyla, mahkemeden, bir hakkın veya hukuki ilişkinin varlığının ya da yokluğunun yahut bir belgenin sahte olup olmadığının belirlenmesi talep edilir.</p>
+
+<p>(2) Tespit davası açanın, kanunlarda belirtilen istisnai durumlar dışında, bu davayı açmakta hukuken korunmaya değer güncel bir yararı bulunmalıdır. (3) Maddi vakıalar, tek başlarına tespit davasının konusunu oluşturamaz.” denmektedir.</p>
+
+<p>3.bentte açıkça belirtildiği üzere somut olayda davacının irtifak hakkına konu taşınmazların konumlarının tespitini istemesi mümkün değildir. Davacı ancak çekişmeli yargı ile dile getirebileceği iddiadan beklediği sonucu, dinlenmesi hukuken mümkün olmayan bir tespit davası hükmü ile sağlayamaz. Mahkemece bu husus gözetilerek davanın reddine karar verilmesi gerekirken kabulü usul ve yasaya aykırı olup hükmün bozulmasını gerektirir.</p>
+
+<hr>
+
+<p><strong>YARGITAY 1. HUKUK DAİRESİ
+Esas : 2014/5836 Karar : 2015/8180</strong> Tarih : 3.06.2015</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 106. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Ecrimisil miktarının tespiti; tespit davasının değil eda davasının konusudur.</strong></p>
+  </li>
+</ul>
+
+<p>Dava, davalı B.. B..nın ecrimisilden sorumlu olduğunun ve istenebilecek ecrimisil miktarının tesbiti isteğine ilişkindir.</p>
+
+<p>Davacılar, kayden paydaş oldukları …… ada 1 parsel sayılı taşınmaza Bornova Belediyesi tarafından yol olarak kamulaştırmasız elatıldığı gerekçesi ile 19.12.2006 tarihinde 2008/470 E (Bozma öncesi 2006/501 E) sayılı tazminat davası açtıklarını, yargılama sonucunda taşınmazın ifraz edilerek …..ada 32 parselin Belediye adına tesciline, kalan kısmın ise yol olarak terkinine karar verildiğini, İzmir 10. Asliye Hukuk Mahkemesinin 2011/487 E sayılı dosyasında Bornova Belediyesi aleyhine ecrimisil davası açıldığını ve mahkemece dava konusu yerin 5747 sayılı yasa kapsamında kurulan Bayraklı Belediyesi sınırlarında kaldığından bahisle husumetten ret kararı verildiğini ileri sürerek eldeki davada davalı Bayraklı Belediyesinin ecrimisilden sorumlu olduğunun ve talep edilebilecek ecrimisil miktarının tespitini istemişlerdir.</p>
+
+<p>Mahkemece, davacıların dava konusu ….. ada 1 parsel sayılı taşınmazda mülkiyet haklarının 19.12.2006 tarihinde son bulduğu gerekçesi ile davacıların 18.12.2001 – 19.12.2006 tarihleri arasındaki dönem için davalı B.. B..ndan 7.130,16 TL ecrimisil talep edebileceklerinin tespitine karar verilmiştir.</p>
+
+<p>Hemen belirtilmelidir ki, 6100 sayılı HMK`nun 106. maddesinde “ Tespit davası yoluyla, mahkemeden, bir hakkın veya hukuki ilişkinin varlığının ya da yokluğunun yahut bir belgenin sahte olup olmadığının belirlenmesi talep edilir. Tespit davası açanın, kanunlarda belirtilen istisnai durumlar dışında, bu davayı açmakta hukuken korunmaya değer güncel bir yararı bulunmalıdır. Maddi vakıalar, tek başlarına tespit davasının konusunu oluşturamaz” hükmü düzenlenmiştir.</p>
+
+<p>Somut olayda, davacılar doğrudan eda davası açtığında da davanın dinleneceği kuşkusuzdur. Eda davası açılması yerine eldeki davanın açılmasında güncel ve hukuki yarar bulunmamaktadır. Hal böyle olunca, davanın reddine karar verilmesi gerekirken yanılgılı değerlendirme ile tespit hükmü tesisi doğru değildir.</p>
+
+<hr>
+
+<p><strong>YARGITAY 15. HUKUK DAİRESİ Esas: 2016/1477 Karar: 2017/2663</strong></p>
+
+<ul>
+  <li>
+    <p><strong>HMK 106. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Sözleşmenin fesh edildiğinin tespiti ile uyuşmazlığa konu reklam araçlarının tespiti ile davacı şirkete ait olduğunun tespiti, haksız ve hukuka ayıkırı müdahalenin önlenmesi istemleri tespit davasına konu edilemez. Eda davası açılacak yerde tespit davası açılamaz.</strong></p>
+  </li>
+</ul>
+
+<p>Dava, eser sözleşmesinden kaynaklanmakta olup, mahkemece davanın reddine dair verilen hüküm, davacı vekilince temyiz olunmuştur.</p>
+
+<p>Davacı vekili, davalı tarafından açılan ihale sonucunda ihaleyi kazanan müvekkili şirket ile davalı yan arasında 05.05.2010 tarihinde 52.000,00 TL bedelli 3 yıllık kira sözleşmesi imzalandığını, 60 adet ışıklı bilbord, 20 adet CLP raket ışıklı reklam vitrini, 20 adet ışıklı reklam vitrinli otobüs durağı, 30 adet vitrinsiz otobüs durağı, 3 adet megalight ışıklı reklam panosi ile 1 adet led erkanın kiralandığını, sözleşmenin düzenlendiği üzere teknik şartnamedeki ilan araçlarının montajının yapılması gerektiğini, davalı belediyece montajın yapılması beklenmeden Encümen kararı ile sözleşmenin feshedildiğini, sözleşmenin aynen ifası ve tazminat talepli olarak açılan davada verilen tedbir kararına rağmen, davalı yanca her yıl encümence belirlenen kira bedelinin talep edildiğini, sözleşmenin feshedildiğinin ve bahse konu reklam araçlarının hali hazır durumlarının tespiti ile bu araçlara yapılan haksız ve hukuka aykırı müdahalenin önlenmesine, mülkiyetin müvekkilen ait olduğunun, reklam araçlarının belediyenin fen işlerini şantiyesine konulduğunun tespitine karar verilmesini istemiştir.</p>
+
+<p>Davalı vekili, 05.05.2010 tarihinde imzalanan sözleşmenin 3 yıl süreli olduğunu, sözleşme şartlarına riayet edilmemesi sebebiyle sözleşmenin feshedildiğini, feshin iptâline dair açılan davanın da reddedildiğini, sözleşme hükümlerine göre her halde yapılan masrafların belediyeye gelir kaydedileceği ve tüm teknik cihazların belediyeye demirbaş olarak kaydedileceğinin öngörüldüğünü, davanın reddine karar verilmesini istemiştir.</p>
+
+<p>Davada, 05.05.2010 tarihli sözleşmenin fesh edildiğinin tespiti ile uyuşmazlığa konu reklam araçlarının tespiti ile davacı şirkete ait olduğunun tespiti, haksız ve hukuka ayıkırı müdahalenin önlenmesi ve ihtiyati tedbir kararı verilmesi istenmiş, mahkemece davanın esastan reddine karar verilmiştir.</p>
+
+<p>Dava tarihinde yürürlükte bulunan HMK’nın 106/2. maddesi uyarınca davada hukuki yarar dava şartıdır. Tespit davaları, bir hakkın veya hukuki ilişkinin var olup olmadığının tespitine dair davalardır. Tespit davası yolu ile, mahkemeden bir hakkın veya hukuki ilişkinin varlığı veya yokluğu yahut bir belgenin sahte olup olmadığının belirlenmesi talep edilir ( HMK’nın 106/1 ). Tespit davasının dinlenebilmesi için ayrıca davanın konusunun yalnız hak veya hukuki ilişkiler olabilmesi ve bir hakkın veya hukuki ilişkinin var olup olmadığının hemen tespit edilmesinde hukuki yararın bulunması gerekir. Davada tespit ile istenen hukuki koruma diğer dava çeşitleri ( örneğin eda davası gibi )’den biri ile sağlanabiliyorsa bu durumda tespit davası açılmasında yarar bulunmamaktadır. Somut olayda davacının eda dava açması gerekirken tespit davası açmasında hukuki yararı bulunmadığından bu sebeple dava şartı yokluğundan davanın reddine karar verilmesi gerekirken, yazılı şekilde karar verilmesi doğru olmadığından kararın bu sebeple bozulması gerekir ise de; bu husus yeniden yargılama yapılmasını gerektirmediğinden hükmün düzeltilerek onanması HMK’nın geçici 3. maddesi yollamasıyla HUMK’nın 438/ son maddesi gereğidir.</p>
+
+<p>SONUÇ : Yukarıda açıklanan nedenlerle, davacının temyiz itirazının kabulü ile, mahkemece kararının az yukarıda açıklanan sebeplerle gerekçesinin DÜZELTİLEREK ONANMASINA, ödenen temyiz peşin harcının istenmesi halinde temyiz eden davacıya iadesine, karara karşı tebliğ tarihinden itibaren 15 gün içinde karar düzeltme isteminde bulunulabileceğine, 21.06.2017 tarihinde oybirliğiyle karar verildi.</p>
+<hr>
+
+</div></div></main>
+</div>
+
+<footer>
+<section>
+<div class="contact-info">
+
+<div class="adres">
+
+<div class="telefon-wrapper">
+
+
+</div>
+</div>
+</section>
+
+</div>
+
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+"vars": {
+"account": "UA-58342443-1"
+},
+"triggers": {
+"trackPageview": {
+"on": "visible",
+"request": "pageview"
+}
+}
+}
+</script>
+</amp-analytics>
+
+</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="../../index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="../../dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="../../ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="../../knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="../../search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/slideToggle.min.js"></script>
+    <script src="../js/internet-status.js"></script>
+    <script src="../js/tiny-slider.js"></script>
+    <script src="../js/baguetteBox.min.js"></script>
+    <script src="../js/countdown.js"></script>
+    <script src="../js/rangeslider.min.js"></script>
+    <script src="../js/vanilla-dataTables.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/magic-grid.min.js"></script>
+    <script src="../js/dark-rtl.js"></script>
+    <script src="../js/active.js"></script>
+    <!-- PWA -->
+    <script src="../js/pwa.js"></script>
+  </body>
+</html>

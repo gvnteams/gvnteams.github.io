@@ -1,0 +1,820 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tiny-slider.css">
+    <link rel="stylesheet" href="../css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="../css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="tck-search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+               <div class="page-content-wrapper py-0">
+        </div>
+      </div>
+
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<h2 id="tanığın-dinlenilme-şekli">Tanığın Dinlenilme Şekli</h2>
+
+<h2 id="hmk-madde-261">HMK Madde 261</h2>
+
+<p>(1) Tanıklar, hâkim tarafından ayrı ayrı dinlenir ve biri dinlenirken henüz dinlenmemiş olanlar salonda bulunamazlar. Tanıklar gerektiğinde yüzleştirilirler.</p>
+
+<p>(2) Tanık, bildiğini sözlü olarak açıklar ve sözü kesilmeden dinlenir. Dinlenilme sırasında, tanık, yazılı notlar kullanamaz. Şu kadar ki, tanık tarihleri ve rakamları tespit etmek veya bazı hususları açıklamak ya da hatırlayabilmek için yazılarına bakmak zorunda olduğunu hâkime söylerse, hâkim derhâl yazılarına bakmasına veya belirleyeceği duruşmada yeniden dinlenmesine karar verebilir.</p>
+
+<p>(3) Hâkim, tanık sözünü bitirdikten sonra, ifade ettiği hususların açıklanması veya tamamlanması amacıyla başka sorular da sorabilir.</p>
+
+<p>(4) Toplu mahkemede başkan, hâkimlerden her birinin tanığa doğrudan doğruya soru sormasına izin verir.</p>
+
+<p>(5) Tanığın sözleri tutanağa yazılarak önünde okunur ve tutanağın altı kendisine imza ettirilir.</p>
+
+<hr>
+
+<ul>
+  <li><a href="../6100-sayili-hukuk-muhakemeleri-kanunu-(hmk).html"><strong>6100 sayılı HMK (Hukuk Muhakameleri Kanunu) Tam Metin</strong></a></li>
+</ul>
+
+<hr>
+
+<amp-img src="../tokmak-yargitay-kararlari-1280x720.png" alt="HMK Madde 261  Tanığın Dinlenilme Şekli" width="1280" height="720" layout="responsive">
+            </amp-img>
+<h2 id="hmk-madde-261-gerekçesi">HMK Madde 261 Gerekçesi</h2>
+
+<p>Madde, 1086 sayılı Kanunun 265, 269, 272 ve kısmen 267 nci maddelerini karşılamakla birlikte yeni hükümler de içermektedir.</p>
+
+<p>Dinleme usulüne ilişkin birinci fıkrada, 1086 sayılı Kanunun 265 inci maddesindeki ifadeye ek olarak, şahitlerden biri dinlenirken, henüz dinlenmemiş olanların salonda bulunamayacakları açıkça düzenlenmiştir.</p>
+
+<p>İkinci fıkrada, 1086 sayılı Kanunun 269 uncu maddesindeki ifadeye yer verilmiş ve bu fıkranın birinci cümlesine, tanığın sözü kesilmeden dinleneceği hükmü getirilmiştir.</p>
+
+<p>Üçüncü ve dördüncü fıkralar yenidir. Bu fıkralarda tanığın sözü bittikten sonra, hâkimin veya toplu mahkemelerde başkanın izin vermesi suretiyle, üye hâkimin, tanığın ifadesini açıklama ve tamamlama amaçlı sorular sorabileceği düzenlenmiştir.</p>
+
+<p>Beşinci fıkra 1086 sayılı Kanunun 272 nci maddesinin karşılığıdır. Böylece tanığın beyanı belgeye bağlanmış ve güvenliği sağlanmıştır.</p>
+
+<hr>
+
+<h2 id="hmk-261-tanığın-dinlenilme-şekli-emsal-yargıtay-kararları">HMK 261 (Tanığın Dinlenilme Şekli) Emsal Yargıtay Kararları</h2>
+
+<hr>
+
+<p><strong>YARGITAY 1. HUKUK DAİRESİ
+Esas : 2015/18778 Karar : 2018/8953</strong> Tarih : 11.04.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 261. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanığın Dinlenilme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Dava; tapusuz taşınmazın tescili isteğine ilişkindir.</p>
+
+<p>Davacı, 227 sayılı parselin, 1958 yılında yapılan kadastro sırasında mezarlık vasfı ile tespit edilmiş ise de, taşınmazın hiçbir zaman mezarlık olarak kullanılmadığını, 1985 yılında üzerine köy okulu ve eklentilerinin yapıldığını, 1992 yılında yapılan Belediye imar planında da okul yeri olarak gösterildiğini, taşınmazın gerek kadastro sırasında gerekse imar uygulaması sırasında tapuya tescil edilmediğini ileri sürerek 227 parsel sayılı taşınmazın tapu kaydındaki mezarlık vasfının düzeltilerek … Köyü Tüzel Kişiliği adına tapuya tesciline karar verilmesini istemiş, yargılama sırasında … 6360 sayılı Yasa uyarınca davaya dahil olmuştur.</p>
+
+<p>Davalı, davanın reddini savunmuştur.</p>
+
+<p>Mahkemece, davanın reddine dair verilen karar Yargıtay 8. Hukuk Dairesi tarafından ‘’… taşınmazın öncesi, mezarlık niteliğindeki yerlerden olup olmadığı ya da terk edilen mezarlıklardan olup olmadığı, davacı Köy Tüzel Kişiliği’nin zilyetliğinin süreci ve sürdürülüş biçiminin yerel bilirkişi ve tanıklardan ayrı ayrı sorularak belirlenmesi, dava tarihine kadar 20 yıllık kazanma süresinin dolup dolmadığının hesaplanması, uzman bilirkişiler aracılığıyla taşınmaz ve çevresinin toprak yapısı incelenerek gerekçeli, denetime açık, karşılaştırmalı rapor istenmesi, yerel bilirkişi ve tanık beyanları arasında çelişki bulunduğu takdirde HMK’nun 261. maddesi uyarınca yüzleştirilmek suretiyle aykırılığın giderilmesi gerekir. Mahkemece yukarıda yazılı araştırma ve incelemeler yapılmadan yetersiz araştırmayla yazılı gerekçelerle davanın reddine karar verilmesi doğru görülmemiştir. Öte yandan; hüküm tarihinden sonra yürürlüğe giren 6360 sayılı Kanun’un 1.maddesinin 2 ve 3.bentleri uyarınca davanın … Belediyesi ile … Büyükşehir Belediye Başkanlığı’na yöneltilmek suretiyle taraf teşkilinin yapılması gerekmektedir.’’ gerekçesi ile bozulmuş, bozmaya uyularak yapılan yargılama sonucunda taşınmazın dava tarihine kadar 20 yıldan fazla süredir ‘’okul ve arsası’’ olarak kullanıldığı gerekçesi ile davanın kabulüne karar verilmiştir.</p>
+
+<p>Hemen belirtilmelidir ki, taraf teşkili; kamu düzenine ilişkin olduğundan, temyiz edenin sıfatına bakılmaksızın yargılamanın her aşamasında resen gözetilmesi gereken bir usûl kuralıdır.</p>
+
+<p>Somut olayda, eldeki davanın mezarlık vasfında olduğundan tescil harici bırakalın yerin köy tüzel kişiliği adına arsa vasfında tescili isteğine ilişkin olduğu açık olup bu tür bir davanın tapu sicil müdürlüğüne husumet yöneltilerek görülme imkanı bulunmamaktadır.</p>
+
+<p>Hal böyle olunca, davanın husumet yokluğundan reddine karar verilmesi gerekirken işin esasına girilerek yazılı şekilde hüküm kurulması doğru değildir.</p>
+
+<p>Davalının yerinde bulunan temyiz itirazlarının kabulü ile, hükmün (6100 sayılı Yasanın geçici 3.maddesi yollaması ile) 1086 sayılı HUMK’un 428.maddesi gereğince BOZULMASINA, 11/04/2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 20. HUKUK DAİRESİ 
+Esas : 2016/314 Karar : 2017/6282</strong> Tarih : 5.07.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 261. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanığın Dinlenilme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>… ili, … ilçesi, … köyü 182 ada 1 parsel sayılı taşınmaz 4011,43 m² yüzölçümü ve tarla niteliğiyle davalı … köy tüzel kişiliği adına tespit ve tescil edilmiştir.</p>
+
+<p>Davacı … temsilcisi 16/03/2011 havale tarihli dilekçesind 182 ada 1 parsel sayılı taşınmazın hiç işlenmemiş hali arazi görünümünde Devletin hüküm ve tasarrufu altındaki yerlerden iken köy muhtarlığının 2001 yılında iş makinası ile futbol sahası haline getirdiğini ileri sürerek taşınmazın tapusunun iptal edilerek … adına tescil edilmesini talep ve dava etmiştir.</p>
+
+<p>Mahkemece davanın reddine karar verilmiş, hüküm davacı … tarafından temyiz edilmiştir.</p>
+
+<p>Dava tapu iptali ve tescil istemine ilişkindir</p>
+
+<p>Mahkemece yapılan araştırma ve inceleme hüküm kurmaya yeterli değildir. Şöyle ki, davacı …, çekişmeli taşınmazın Devletin hüküm ve tasarrufu altındaki yerlerden olduğu iddiasıyla dava açmış olup, bu iddia taşınmazın … olduğu iddiasını da kapsadığından usulünce … araştırılması yapılması gerekmektedir. Mahkemece alınan fen bilirkişi rapor ve krokisinde taşınmaz dört tarafı … parseli ile çevrili … içi açıklık olarak gösterilmiştir. … bilirkişisi raporunda ise taşınmazın, kuzey güney, doğu ve batısının … parseli olduğu ve taşınmazın … sınırı içinde bulunduğu belirttiği halde, … içi açıklık olup olmadığı değerlendirilmemiş, … tahdit haritası ile kadastro paftasının ölçekleri eşitlenerek çakıştırılmak sureti ile bir uygulama yapılmadan, tahdide göre konumu gösterilmeden memleket haritasındaki konumun gösterilmesi ile yetinilerek taşınmazın … sayılmayan yerlerden olduğu belirtilmiştir.</p>
+
+<p>Mahkemece, öncelikle çekişmeli taşınmazın bulunduğu yörede … kadastrosu yapılıp yapılmadığı … Yönetiminden sorularak yapılmış ise … tahdidine ilişkin işe başlama, çalışma, işi bitirme ve sonuçlarının askı ilan tutanakları ile taşınmazın bulunduğu yeri … tahdit sınır noktalarıyla birlikte gösterir onaylı … tahdit harita örneği ile çekişmeli taşınmaza komşu parsellere ait kadastro tespit tutanağı ile eğer itirazlı ise dava dosyası, varsa bu parsellere ait dayanak tapu ve vergi kayıtları, en eski tarihli memleket haritası, hava fotoğrafları tespit tarihinden 15-20 yıl öncesine ait hava fotoğrafları ve memleket haritası ve varsa amenajman planı ilgili yerlerden getirtilip, önceki bilirkişiler dışında bu konuda uzman serbest … mühendisleri arasından seçilecek bir … mühendisi, bir ziraat mühendisi ve bir fen elemanı marifetiyle yeniden yapılacak inceleme ve keşifte, çekişmeli taşınmaz ile birlikte çevre araziye de uygulanmak suretiyle taşınmazın öncesinin bu belgelerde ne şekilde nitelendirildiği belirlenmeli; 3116, 4785 ve 5658 sayılı kanunlar karşısındaki durumu saptanmalı; tapu ve zilyetlikle ormandan toprak kazanma olanağı sağlayan 3402 sayılı Kanunun 45. maddesinin ilgili fıkraları, Anayasa Mahkemesinin 01.06.1988 gün ve 31/13 E.K.; 14.03.1989 gün ve 35/13 E.K. ve 13.06.1989 gün ve 7/25 E.K. sayılı kararları ile iptal edilmiş ve kalan fıkraları da 3.3.2005 gününde yürürlüğe giren 5304 sayılı Kanunun 14. maddesi ile yürürlükten kaldırılmış olduğundan, bu yollarla ormandan yer kazanılamayacağı, öncesi … olan bir yerin üzerindeki … bitki örtüsü yok edilmiş olsa dahi, salt … toprağının … sayılan yer olduğu düşünülmeli; toprak yapısı, bitki örtüsü ve çevresi incelenmeli; … kadastrosu yapılmış ise … kadastrosu ile irtibatlı kroki düzenlettirilmeli, yukarıda değinilen diğer belgeler fen ve uzman … bilirkişiler eliyle yerine uygulattırılıp; orijinal-renkli (renkli fotokopi) memleket haritasının ve hava fotoğraflarının ölçeği kadastro paftası ölçeğine, yine kadastro paftası ölçeği de memleket haritası ve hava fotoğrafları ölçeğine çevrildikten sonra, her iki harita komşu ve yakın komşu parselleri de içine alacak şekilde birbiri üzerine aplike edilmek suretiyle, çekişmeli taşınmazın konumunu çevre parsellerle birlikte memleket haritaları ve hava fotoğrafları üzerinde gösterecekleri ve yine hava fotoğraflarının stereoskop aleti vasıtasıyla üç boyutlu incelemesi yapılarak taşınmazın niteliği ile üzerinde varsa ağaçların cinsi, yaşı, sayısı, dağılımı, kapalılık oranı ile tasarruf sınırlarının bulunup bulunmadığı ile kullanılan yerlerden olup olamdığını açıklayıcı, yalnız büro incelemesine değil, uygulamaya ve araştırmaya dayalı, bilirkişilerin onayını taşıyan krokili bilimsel verileri bulunan yeterli rapor alınmalı; çekişmeli taşınmaz fen bilirkişisi taarfından düzenlenen krokideki görünüşe göre … içi açıklık olduğundan 6831 sayılı Kanunun 17/1-2. maddeleri karşısındaki durumu araştırılmalıdır.</p>
+
+<p>Yukarıda açıklanan yöntemle yapılacak araştırma sonucu, taşınmazın … sayılan yerlerden olmadığı belirlendiği takdirde, bu kez, zilyetlik yolu ile kazanma (Medeni Kanunun 713. maddesi, 3402 sayılı Kanunun 14. ve 17. maddelerindeki) koşulların araştırılması gerekir. Bu cümleden olarak, yapılacak keşifte getirtilen tespitten geriye doğru 15-20 yıl öncesine ait hava fotoğrafları ve memleket haritasında taşınmazın o yıllardaki kullanım durumu, zilyetlikle kazanılabilecek kültür arazisi olup olmadığı belirlenip, taşınmazların toprak yapısı incelenmeli, ziraatçi bilirkişiden çekişmeli taşınmazın geçmiş ve ayrıntılı fiili durumunu da belirtir şekilde rapor alınmalı, imar - ihya üzerinde durulup, bu konuda ve zilyetliğin tespiti yönünden tanık beyanlarına başvurulmalı, tarafların bildirecekleri zilyetlik tanıkları HMK’nın 259 ve 261. maddeleri gereğince taşınmaz başında dinlenip; taşınmazın öncesi itibariyle niteliğinin ne olduğu, zilyetliğin nasıl meydana geldiği, ne kadar süre ile ne şekilde devam ettiği, bunun ekonomik amacına uygun olup olmadığı, tanıkların bilgi ve görgülerinin hangi eylemli olaylara dayandırıldığı belirlenmeli, yerel bilirkişinin imar ihya ve zilyetlik olgusunu hangi olaylarla nasıl hatırladıkları saptanmalı, toplanacak tüm kanıtlar birlikte değerlendirilip, ulaşılacak sonuca göre bir hüküm kurulmalıdır.</p>
+
+<p>SONUÇ: Yukarıda açıklanan nedenlerle; davacı … vekilinin temyiz itirazlarının kabulü ile hükmün BOZULMASINA 05/07/2017 gününde oy biliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 16. HUKUK DAİRESİ
+Esas : 2016/17024 Karar : 2017/1737</strong> Tarih : 21.03.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 261. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanığın Dinlenilme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Daha önce tescil harici bırakılan yerlerde 3402 sayılı Kadastro Kanunu’nun Geçici 8. maddesine istinaden yapılan kadastro sırasında … Köyü çalışma alanında bulunan 231 ada 1 ve 232 ada 1 parsel sayılı sırasıyla 1.371.23 ve 5.337,63 metrekare yüzölçümündeki taşınmazlar kadastro tutanağının beyanlar hanesinde taşınmaz üzerindeki fıstık çamlarının …Ticaret ve Sanayi Anonim Şirketi’ne ait olduğu belirtilmek suretiyle tarla vasfıyla Hazine adına tespit edilmiş, 244 ada 3 parsel sayılı 5.771,04 metrekare yüzölçümündeki taşınmaz ise kadastro tutanağının beyanlar hanesinde taşınmaz üzerindeki badem ve zeytin ağaçlarının yine adı geçen Şirkete ait olduğu belirtilmek suretiyle badem ve zeytin ağaçlı tarla vasfıyla Hazine adına tespit edilmiş, daha sonra Kadastro Müdürlüğünce taşınmazın çalılık kısmı ifraz edildikten sonra 4.227,02 metrekare yüzölçümü ile Hazine adına tesciline karar verilmiştir. Davacı Hazine, kadastro tutanaklarının beyanlar hanesindeki şerhin iptali istemiyle ayrı ayrı dava açmıştır. Mahkemece dava dosyaları birleştirilmek suretiyle yapılan yargılama sonunda davacı Hazine’nin davasının kısmen kabulüne, çekişmeli 244 ada 3 parsel sayılı taşınmazın beyanlar hanesine, taşınmaz üzerinde bulunan ve ekli 31.08.2015 tarihli bilirkişi raporunda konumu gösterilen 48 adet 10-12, 1 adet 18-20 aşı yaşlı zeytin ağacı ile 26 adet 10-12 ve 2 adet 18-20 yaşlarında badem ağacının, 231 ada 1 parsel sayılı taşınmazın beyanlar hanesine, taşınmaz üzerinde bulunan ve ekli 31.08.2015 tarihli bilirkişi raporunda konumu gösterilen 6 adet 45-50 ve 4 adet 8-10 aşı yaşlı zeytin ağacının, 232 ada 1 parsel sayılı taşınmazın beyanlar hanesine ise taşınmaz üzerinde bulunan ve ekli 31.08.2015 tarihli bilirkişi raporunda konumu gösterilen kargir binanın …Ticaret ve Sanayi Anonim Şirketine ait olduğu şerhinin ayrı ayrı yazılması suretiyle tespit gibi tescillerine karar verilmiş; hükmün, davacı Hazine vekili tarafından temyizi üzerine Dairemizin 01.03.2016 tarih 2015/19219–2016/1989 Esas ve Karar sayılı ilamıyla yetersiz inceleme sonucu verilen hükmün isabetsiz olduğu belirtilerek; mahallinde yaşlı, tarafsız, yöreyi iyi bilen ve davada yararı bulunmayan şahıslar arasından seçilecek yerel</p>
+
+<p>bilirkişilerle, taraf tanıkları, uzman 3 kişilik orman ve 3 kişilik ziraat mühendisleri kurulu ile jeodezi ve fotogrametri mühendisinden oluşturulacak bilirkişi heyeti aracılığıyla keşif yapılarak orman tahdit harita ve mazbatalarının, 1/25.000 ölçekli memleket haritası, amenajman planı ve hava fotoğrafları yerel bilirkişiler yardımı, uzman orman ve ziraat mühendisleri kurulu aracılığıyla uygulanıp kapsamları ve bu kapsamlara göre taşınmazların konumu belirlenmesi, dinlenecek yerel bilirkişi ve taraf tanıklarından taşınmazların geçmişte ne durumda bulunduğu, taşınmazların bitişiğindeki ormanın devamı olup olmadığı, ormandan açılıp açılmadığı, orman sayılan yerlerden olup olmadığı, taşınmazların kime ait olduğu, kimden nasıl intikal ettiği, hangi tarihten beri ne suretle tasarruf edildiği, zilyetliğin sürdürülüş biçimi, tamamı üzerinde zilyetliğin bulunup bulunmadığı hususları etraflıca sorulup maddi olaylara dayalı olarak açıklattırılması, uzman orman ve ziraat mühendisleri kurulundan arazilerin niteliğini ve zilyetlikle mülk edinilebilecek yerlerden olup olmadığını, ormandan açılıp açılmadığını belirtir krokili rapor alınması, bilirkişi ve tanık sözleri komşu parsel tutanak ve dayanaklarıyla denetlenmesi, fotogrametri ve jeodezi mühendisi bilirkişiden belirtilen hava fotoğraflarının stereoskop aleti ile incelenmesi suretiyle hava fotoğraflarının çekildikleri, Kadastro Müdürlüğünden gelen paftaların ise düzenlendikleri tarihlere göre dava konusu taşınmazların kültür arazisi niteliğinde bulunup bulunmadığı, taşınmazların niteliği ve kullanım süresi ve ne zaman kullanılmaya başlandığının belirlenmesi, ziraatçi bilirkişilerden taşınmazların niteliği konusunda ayrıntılı rapor alınması, yerel bilirkişi ve tanık beyanları arasında çelişki bulunduğu takdirde HMK’nın 261. maddesi uyarınca yüzleştirilmek suretiyle aykırılığın giderilmesi, HMK’nın 290/2. maddesi uyarınca birlikte keşfe götürülecek bir fotoğrafçı aracılığıyla taşınmaz ve çevresinin yakın plan ve panoramik fotoğrafları çektirilip mahkemece onaylandıktan sonra dosya arasına konulması ve bundan sonra tüm deliller birlikte değerlendirilerek sonucuna göre karar verilmesi gerektiği belirtilerek araştırma ve incelemeye yönelik olarak bozulmuş, bozma üzerine davalı … A.Ş. vekili tarafından karar düzeltme isteminde bulunulmuştur.</p>
+
+<p>Çekişmeli taşınmazın tespit sırasında üzerindeki muhdesatların davalı şirkete ait olduğu belirtilmek suretiyle davacı Hazine adına tespit edilmiş, davacı Hazine vekili tarafından yasaya ve eylemli duruma aykırı olarak beyanlar hanesinde yer alan muhdesat şerhinin iptali istemiyle eldeki dava açılmıştır. Diğer bir anlatımla davacı Hazinenin taşınmazın aynına yönelik bir talebi bulunmamaktadır. Taşınmazlar başında yapılan keşif sonucunda zirai, inşaat ve harita mühendisi bilirkişileri tarafından verilen müşterek rapor ile zirai bilirkişi tarafından verilen 28.10.2014 havale tarihli raporda taşınmazların üzerinde bulunan muhdesat niteliğindeki ağaçların yaşı, cinsi ve sayıları ile kargir bina gösterilmiştir. Mahkemece; taşınmazlar üzerindeki mevcut fiili durum ile tespit sırasında beyanlar hanesinde gösterilen muhdesatların birbirleriyle uyumlu olmadığı gerekçesiyle davanın kısmen kabulüne karar verilerek taşınmaz üzerinde mevcut bulunan muhdesatların beyanlar hanesine yazılmak suretiyle tespit gibi Hazine adına tesciline karar verildiği anlaşılmaktadır. Hal böyle olunca; incelenmesi gereken husus taşınmazlar üzerindeki muhdesat şerhine yönelik talep olduğu, mahkemenin buna ilişkin kabulünde de isabetsizlik bulunmadığı halde taşınmazın mülkiyeti (aynı) dava konusu imiş gibi değerlendirme yapılarak kararın yukarıda belirtilen nedenlerle bozulmuş olduğu anlaşılmakla davalı Şirket vekilinin karar düzeltme istemi yerinde görüldüğünden Dairemizin 01.03.2016 tarih 2015/19219–2016/1989 Esas ve Karar sayılı ilamının ORTADAN KALDIRILMASINA,</p>
+
+<p>1- Dosya içeriğine, kararın dayandığı delillerle yasaya uygun gerektirici nedenlere, delillerin takdirinde bir isabetsizlik bulunmamasına göre davacı Hazine vekilinin yerinde olmayan temyiz itirazlarının reddiyle 231 ada 1, 232 ada 1 parsel sayılı taşınmazlar hakkındaki usul ve yasaya uygun olan hükmün ONANMASINA,</p>
+
+<p>2- Davacı Hazine vekilinin 244 ada 3 parsel sayılı taşınmaz hakkındaki temyiz itirazlarına gelince; Dosya içeriğine, kararın dayandığı delillerle yasaya uygun gerektirici nedenlere, delillerin taktirinde bir isabetsizlik bulunmamasına göre davacı Hazine vekilinin sair itirazları yerinde değildir. Ancak; çekişmeli taşınmazın tespit sırasındaki belirlenen sınırları komisyon kararı ile değiştiği ve yüzölçümünün azaldığı dikkate alındığında hüküm yerinde komisyon kararı gibi tesciline denilmesi gerekirken tespit gibi denilmek suretiyle infazında tereddüt yaratılması isabetsiz olup bozma nedeni ise de; bu yanlışlığın düzeltilmesi yeniden yargılama yapılmasını gerektirmediğinden 1 nolu hüküm fıkrasının son sırasında yer alan “tespit gibi tescillerine” sözlerinden sonra gelmek üzere “(244 ada 3 parselin komisyon kararında belirlenen sınırları ve yüzölçümüyle tapuya tesciline)” sözlerinin yazılmasına ve hükmün DÜZELTİLMİŞ bu şekli ile ONANMASINA, 21.03.2017 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 8. HUKUK DAİRESİ 
+Esas : 2017/1329 Karar : 2017/602</strong> Tarih : 23.01.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 261. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanığın Dinlenilme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Davacılar vekili, taraflar arasında görülen ortaklığın giderilmesi davasına konu …parsel sayılı taşınmaz üzerinde bulunan iki ev ve iki besihanenin vekil edenleri tarafından meydana getirildiğini açıklayarak, etrafı duvarla çevrili bulunan gayrimenkulun giriş sağdaki ev ve besihanenin vekil edeni …, sol tarafta bulunan ev ve besihanenin vekil edeni … tarafından meydana getirildiğinin ve değerinin tespitine karar verilmesini istemiştir.</p>
+
+<p>Davalı … vekili; dava konusu taşınmaz üzerinde bulunan evlerin tarafların ortak murisi tarafından meydana getirildiğini açıklayarak davanın reddine karar verilmesini savunmuştur.</p>
+
+<p>Mahkemece; davanın kabulü ile, bilirkişi …tarafından düzenlenen 15.12.2015 tarihli raporda A harfi ile gösterilen kargir ev, tuvalet, tandır evi ve deponun davacı … tarafından yapıldığının ve dava tarihi itibariyle yapı bedellerinin 43.932,00TL, B harfi ile gösterilen kargir ev, depo ve besihanenin davacı … tarafından yapıldığının ve dava tarihi itibariyle yapı bedellerinin 46.276,00TL olduğunun tespitine karar verilmesi üzerine; hüküm, davalı … vekili tarafından temyiz edilmiştir.</p>
+
+<p>Dava; dava konusu 191 parsel sayılı taşınmaz üzerinde bulunan ve dava dilekçesinde belirtilen muhdesatların tespit isteğine ilişkindir.</p>
+
+<p>Öğretide ve uygulamada kararlılık kazanan görüşlere göre davada yöntemine uygun biçimde taraf koşulunun oluşturulmamış olması başlı başına bozma nedenidir. Muhtesatın aidiyetinin tespiti davalarında, ortaklığın giderilmesi davasının yargılaması sırasında, muhtesatın davacı tarafça meydana getirildiğini açıkça kabul edenler dışında kalan ve muhtesatın üzerinde bulunduğu taşınmazda paydaş olan tüm tapu maliklerinin davada taraf olmaları zorunludur. Öte yandan, bu tür davalar, tanık dahil her türlü delille ispatlanabilir.</p>
+
+<p>Somut olaya gelince; davalı …‘in, süresinde verdiği cevap dilekçesinde tanıklarını bildirdiği, 16.05.2013 tarihli yargılama oturumunda davalı tanıklarının hazır bulunduğu, Mahkemece, keşif kararı verildiğinden taraf tanıklarının keşif mahallinde dinlenmelerine ve duruşmada dinlenmelerinden vazgeçilmesine, keşif gün ve saatinin ihtarına (ihtar edildi) ilişkin ara karar tesis edildiği ancak ihtar edilen günde keşif yapılamadığı, yargılamanın devam eden oturumlarında keşif için ara karar tesis edildiği ve taraf tanıklarının taraflarca hazır edilmelerine karar verildiği görülmüştür. Bu haliyle, Mahkemece verilen keşif ara kararlarının yöntemine uygun bir biçimde verilmiş bir ara karar olarak kabul edilmesi mümkün değildir. HMK`nun 243, 244 ve 259. maddeleri gereğince Mahkemece belirlenen yerel bilirkişiler ile tanıkların davetiyeyle keşif yerine çağırılmaları, gelmedikleri takdirde zabıta yoluyla keşif yerinde hazır bulundurulmaları, uyuşmazlığın taşınmaza ilişkin bulunması nedeniyle keşif yerinde dinlenilmeleri gerekmektedir.</p>
+
+<p>Buna göre, Mahkemece, öncelikle, taraflar arasında görülmekte olan ortaklığın giderilmesine ilişkin Şuhut Sulh Hukuk Mahkemesi’nin 2011/235 Esas sayılı dosyasının getirtilip incelenerek, tapu maliki ve tarafların ortak mirasbırakanı … mirasçılarından, dava konusu muhtesatların davacı tarafa ait olduğunu kabul etmeyen başka mirasçı olup olmadığının tespiti ile varsa davada taraf olmalarının zorunlu olduğu düşünülerek davada taraf olarak yer almalarının sağlanması, yargılamaya geldiklerinde davaya karşı diyecekleri ve delillerinin sorulup saptanması, gösterecekleri delillerin toplanması, davalı tanıklarının, taşınmazların başında hazır edilebilmeleri için adlarına davetiye çıkartılması, taşınmaz başında yapılacak keşifte ayrı ayrı dinlenmeleri, muhdesatların kim tarafından, ne zaman ve ne şekilde meydana getirildiğinin ayrıntısı ile tanıklardan sorulup belirlenmesi, beyanları arasında aykırılığın çıkması durumunda HMK`nun 261. maddesi uyarınca, yüzleştirilmek sureti ile aykırılığın giderilmesine çalışılması, tanıklarca gösterilen muhdesatların birlikte götürülen teknik fen bilirkişisi aracılığı ile oluşturulacak krokiye işaretlenmesi bundan sonra tüm deliller birlikte tartışılıp değerlendirilerek uyuşmazlığın esası hakkında bir karar verilmesi gerekirken, eksik inceleme ve araştırma ile yazılı şekilde karar verilmesi doğru olmayıp, bozmayı gerektirmiştir.</p>
+
+<p>SONUÇ: Yukarıda açıklanan nedenlerle davalı … vekilinin temyiz itirazlarının kabulüyle usul ve kanuna uygun bulunmayan hükmün 6100 sayılı HMK`nun Geçici 3. maddesi yollamasıyla 1086 sayılı HUMK’nun 428. maddesi uyarınca BOZULMASINA, HUMK’nun 440/1. maddesi gereğince Yargıtay Daire ilamının tebliğinden itibaren ilama karşı 15 gün içinde karar düzeltme isteğinde bulunulabileceğine ve peşin harcın temyiz edene iadesine, 23.1.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 8. HUKUK DAİRESİ
+Esas : 2016/14848 Karar : 2016/16244</strong> Tarih : 28.11.2016</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 261. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanığın Dinlenilme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Davacılar vekili, 114 ada 65 parsel, 108 ada 95 parsel, 367 ada 465 parsel, 118 ada 34 parsel, 114 ada 58 parsel ve … ada … parsel sayılı taşınmazlar üzerindeki muhdesatların vekil edenleri tarafından meydana getirildiğinin tespitine karar verilmesini istemiştir.</p>
+
+<p>Davalı vekili; davanın reddine karar verilmesini savunmuştur.</p>
+
+<p>Mahkemece; davanın kısmen kabulü ile; … nolu parsel üzerindeki … katlı binanın …/…/2013 tarihli bilirkişi raporunda taralı olarak gösterilen 97 m2’lik alanının davacı … tarafından yapıldığının veya yaptırıldığının tespitine, … nolu parsel üzerindeki … katlı binanın 06/…/2013 tarihli bilirkişi raporunda taralı olarak gösterilen 97 m2`lik alanın üzerindeki çatının davacı … tarafından yapıldığının veya yaptırıldığının tespitine, 465 nolu parsel üzerindeki tek gözlü ahşap odanın …..Oda tarafından yapıldığının veya yaptırıldığının tespitine, aynı parsel üzerindeki diğer muhdesatlara yönelik taleplerin reddine, dava dilekçesinde belirtilen 465 parsel, 34 nolu parsel, 58 nolu parsel, 65 nolu parsel ve 95 nolu parsel ile 29 nolu parsel üzerindeki kavak ağaçları ve muhtelif diğer ağaçlara yönelik taleplerin reddine karar verilmiş; hükmün, redde ilişkin bölümü, davacılar vekili tarafından temyiz edilmiştir.</p>
+
+<p>Dava, parsel numaraları dava dilekçesinde bildirilen taşınmazlar üzerindeki muhdesatların tespitine ilişkindir. Bu tür davalar, tanık dahil her türlü delille ispatlanabilir.</p>
+
+<p>Davacı tarafın, delil listesindeki tanıklarından sadece bir tanesi, …/03/2013 tarihinde taşınmazların başında yapılan keşifte, hakkında kabul kararı verilmiş olan ve temyiz edilmeyen … numaralı parselin başında dinlenmiştir. Bahsi geçen tanık, yapılan keşifte diğer taşınmazlar hakkında beyanda bulunmamıştır. Yargılamanın ilerleyen aşamalarında yargılama oturumlarında dinlenen diğer davacı tanıkları dava konusu muhdesatlar hakkında beyanda bulunmuş iseler de taşınmazlar üzerindeki muhdesatların davacılar tarafından meydana getirildiğini, duraksamaya yer vermeyecek şekilde açıklığa kavuşturduklarını söylemeye imkan bulunmamaktadır.</p>
+
+<p>Yukarıda da belirtildiği üzere, mahkemece taşınmazların başında dinlenen …`ın … parsel numaralı taşınmazlar dışındakiler için beyanına başvurulmamış, yargılama oturumunda dinlenen tanıklar da taşınmazları görmeden beyan vermişlerdir.</p>
+
+<p>Duruşmada dinlenen tanıkların afaki olarak verdikleri beyanlar uyuşmazlığın çözülmesinde gözönünde bulundurulamaz.</p>
+
+<p>Buna göre, mahkemece, öncelikle, reddedilen 114 ada 65 parsel, 108 ada 95 parsel ve 118 ada 34 parsel sayılı taşınmazlarda davaya dahil edilmeyen tapu maliklerinin davaya dahilinin sağlanmasından ve pasif dava ehliyeti tamamlandıktan sonra; davacı tanıklarının, taşınmazların başında hazır edilebilmeleri için adlarına davetiye çıkartılması ya da davalılarca hazır edilmeleri halinde her bir taşınmazın başında yapılacak keşifte ayrı ayrı dinlenmeleri, muhdesatların kim tarafından, ne zaman ve ne şekilde meydana getirildiğinin ayrıntısı ile tanıklardan sorulup belirlenmesi, beyanları arasında aykırılığın çıkması durumunda HMK`nun 261. maddesi uyarınca, yüzleştirilmek sureti ile aykırılığın giderilmesine çalışılması, tanıklarca gösterilen muhdesatların birlikte götürülen teknik fen bilirkişisi aracılığı ile oluşturulacak krokiye işaretlenmesi bundan sonra tüm deliller birlikte tartışılıp değerlendirilerek uyuşmazlığın esası hakkında bir karar verilmesi gerekirken, eksik inceleme ve araştırma ile yazılı şekilde karar verilmesi doğru olmayıp, bozmayı gerektirmiştir.</p>
+
+<p>SONUÇ: Yukarıda açıklanan nedenlerle davacılar vekilinin temyiz itirazlarının kabulüyle usul ve kanuna uygun bulunmayan hükmün 6100 sayılı HMK’nun Geçici …. maddesi yollamasıyla 1086 sayılı HUMK’nun 428. maddesi uyarınca BOZULMASINA, HUMK’nun 440/…. maddesi gereğince … Daire ilamının tebliğinden itibaren ilama karşı … gün içinde karar düzeltme isteğinde bulunulabileceğine ve …,… TL peşin harcın istek halinde temyiz edene davacılara iadesine, 28…..2016 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 9. HUKUK DAİRESİ 
+Esas : 2013/11774 Karar : 2015/9101</strong> Tarih : 4.03.2015</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 261. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanığın Dinlenilme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>A ) Davacı İsteminin Özeti:</p>
+
+<p>Davacı, iş sözleşmesini haklı nedenle feshettiğini ileri sürerek, kıdem tazminatı ile fazla mesai ve yıllık izin ücreti alacaklarının ödenmesini istemiştir.</p>
+
+<p>B ) Davalı Cevabının Özeti:</p>
+
+<p>Davalı, davanın reddini istemiştir.</p>
+
+<p>C ) Yerel Mahkeme Kararının Özeti:</p>
+
+<p>Mahkemece, toplanan kanıtlar ve bilirkişi raporuna dayanılarak, davanın kısmen kabulüne karar verilmiştir.</p>
+
+<p>D ) Temyiz:</p>
+
+<p>Karar, davalı vekilince temyiz edilmiştir.</p>
+
+<p>E ) Gerekçe:</p>
+
+<p>1-Dosyadaki yazılara, toplanan delillerle, kararın dayandığı kanuni gerektirici sebeplere göre, davalının aşağıdaki bentleri kapsamı dışında kalan temyiz itirazları yerinde değildir.</p>
+
+<p>2- Davacı SGK kaydında görünenden daha fazla çalıştığını iddia ederek talepte bulunmuş ve mahkemece iddiaya itibar edilmiş ise de davacı iddiasını tanık ile ispatlamaya çalışmış olup, işyeri çalışanı olmayan davacı tanıklarının davacının çalışma süresine ilişkin ifadelerinin soyut ve ispata yeterli olmadığı anlaşıldığından, davacının hizmet süresinin kayda göre belirlenmesi gerekirken iddiaya itibar edilmesi hatalıdır.</p>
+
+<p>3- Davacının fazla çalışma iddiası işyeri çalışanı olmayan davacı tanık beyanlarına itibar edilerek kabul edilmiştir. İşyeri çalışanı olmayan tanıkların çalışma saat ve koşullarını bilmeleri mümkün değildir. Fazla çalışma iddiası işyeri çalışanı olan davalı tanığının beyanına göre belirlenmelidir.</p>
+
+<p>Ancak 20.9.2012 tarihli duruşmada dinlenen davalı tanığı İ. A.’ nın beyanı tamamen soyut soru cevap şeklinde tespit edilmiştir. İfadenin alınış şekli HMK` nın 261.maddesine ve iş yargılamasının amacına uygun değildir.</p>
+
+<p>Tanık HMK 261.maddesi uyarınca yeniden dinlenerek ifadesi kesintisiz şekilde tespit edilip, gerekirse sorularla açılmalıdır. Tanığın sorgusuna esas matbu hazırlanan soru cevaplar içerisinde talep dışı konularda da soruların olduğu görülmektedir.</p>
+
+<p>Soru cevap şeklindeki ifadeden işyerinde çalıştığı izlenimi edinilen tanığın diğer cevapları karşısında işyerinde nasıl çalıştığı anlaşılamamaktadır. İfadenin başındaki soruda “halen çalışıyorum” diye soruyu cevaplayan tanığın diğer sorulara verdiği cevaplardan işyerine ilişkin çalışma koşulları, saatleri gibi esaslı unsurları bilmediğini beyan ettiği görülmektedir.</p>
+
+<p>Matbu soru cevap yöntemiyle yapılan sorgulama yöntemi usule uygun olmadığı gibi amaca da uygun olmadığından tanığın tekrar celbi ile usule ve amaca uygun olarak sorgulanarak tanığın davalı işyerinde fiilen çalıştığı anlaşılır ise beyanı fazla çalışma açısından değerlendirilerek fazla mesai talebi hakkında karar verilmelidir.</p>
+
+<p>Temyiz olunan kararın, yukarıda yazılı nedenlerden dolayı (BOZULMASINA), oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. HUKUK DAİRESİ 
+Esas : 2013/19601 Karar : 2014/2014</strong> Tarih : 6.02.2014</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 261. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanığın Dinlenilme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Mahkemece, davalının gösterdiği tanıklardan R… ve N… dinlenmemiş, buna gerekçe olarak “bu tanıkların, diğer tanıklar dinlenirken duruşma salonunda bulundukları” gösterilmiştir.</p>
+
+<p>Tanıkların hakim tarafından ayrı ayrı dinlenmesi, biri dinlenirken henüz dinlenmemiş olanların salonda bulunmaması temel usul kuralıdır. (HMK md. 261/1) Kuralın amacı, tanığın gerçek bilgisini saptamaktır. Zira, tanıklardan biri dinlenirken, henüz dinlenmemiş olan tanık veya tanıklar, duruşma salonunda bulunuyor iseler, bunların ifadelerini taraflardan biri lehine değiştirme ihtimali mevcuttur.</p>
+
+<p>Bu sebeple birden fazla tanık aynı duruşmaya çağrılmış ise, hakimin oturumu açtıktan sonra, öncelikle tanık yoklaması yapması, bundan sonra tanıkları sırayla duruşma salonuna alıp, her birini ayrı ayrı dinlemesi, aynı olaya ilişkin tanık beyanları arasında çelişki ortaya çıkması halinde tanıkları yüzleştirmesi gerekir.</p>
+
+<p>Ne var ki, hakimin düştüğü bu usulü hata, gösterilen tanığın dinlenmemesi için yasal sebep de değildir.  Bu hal, olsa olsa yüzleştirme ile bir neticeye ulaşılamaz ise, tanığın beyanının takdir ve değerlendirilmesinde göz önünde tutulabilir.</p>
+
+<p>Bu bakımdan adı geçen tanıklar Ruşen ve Necibe usulünce çağrılıp dinlenmeli ve beyanı diğer delillerle birlikte değerlendirilerek sonucuna göre hüküm kurulmalıdır.</p>
+
+<p>Bu yön gözetilmeden eksik inceleme ile hüküm kurulması doğru bulunmamıştır.</p>
+
+<p>Temyiz edilen hükmün yukarıda gösterilen sebeple ( BOZULMASINA ), bozma sebebine göre diğer temyiz itirazlarının şimdilik incelenmesine yer olmadığına, temyiz peşin harcının yatırana geri verilmesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 14. HUKUK DAİRESİ
+Esas: 2016/753 Karar: 2017/1532</strong> Tarih: 28.02.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 261. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanığın Dinlenilme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Davacı köy tüzel kişiliği vekili 25.04.1985 tarihli dilekçesi ile idari sınırlar yönünden Akseki İlçesi … idari sınırları içerisinde kalan ve 1967/134 E.- 1973/1771 K. ve 1978/165 E.- 1984/59 K. sayılı kesinleşmiş ilamların dışında olan ve dava dilekçesinde sınırlarını belirtmiş olduğu 10.000 dönüm kadar yeri yayla olarak kadimden bu yana kullandıklarını beyanla davalı köyün yaylaya vaki müdahalesinin önlenmesini istemiştir.</p>
+
+<p>Davalı … Muhtarlığı vekili kesin hüküm ve esas yönünden davanın reddini savunmuştur.</p>
+
+<p>Mahkemece 11.10.1988 ve 29.06.1996 tarihinde yapılan keşifler sonucu; kesin hüküm nedeni ile davanın reddine dair verilen 17.02.1999 tarihli karar, davacı köy vekilinin temyizi üzerine Dairemizin 26.10.1999 gün, 1999/5438-7285 Sayılı ilamı ile kesin hükmün kapsamı dışında kalan kısım ile ilgili kadim yararlanmanın araştırılması yönünden bozulmasına karar verilmiştir.</p>
+
+<p>Mahkemece bozma ilamına uyulup 08.08.2006 tarihinde yapılan keşif sonucu; ( mahalli bilirkişilerin bilgisi bulunmadığı, bu sebeple başka köylerden olan davacı şahitleri beyanları ve davalı şahidi Kemal Yaşar’ın beyanına göre ) davacı köyün kadim hakkı bulunduğu gerekçesiyle 18.06.2007 tarihli ek rapor ve krokide belirtilen çekişmeli yer ile ilgili hüküm fıkrasında belirtilen şekilde davanın kabulüne karar verilmiştir.</p>
+
+<p>Tarafların temyizi üzerine Dairemizin 30.04.2012 tarih 2012/5096 E. 2012/6041 K. sayılı bozma ilamıyla 18.06.2007 tarihli krokili bilirkişi raporunda davaya konu taşınmazda Mera Komisyonunca yapılan çalışma ile tahsis edilen bölümlerin işaretlendiği, davaya konu taşınmaza ait tahsis kararı bulunup bulunmadığı ve tahsise dair tüm belgeler getirilerek, davaya konu taşınmazın hangi köye tahsis edildiğinin belirlenmesi, bu tahsis kararına karşı dava açılıp açılmadığı, açılmış ise davanın kesinleşip kesinleşmediğinin araştırılması, bu tahsis dışında kalan bölümlerde hangi köyün kadim kullanma hakkı olduğunun saptanması gerektiğinden söz edilerek bozulmuştur.</p>
+
+<p>Mahkemece bozma ilamına uyularak yapılan yargılamada, davalı … Tüzel Kişiliği yönünden açılan davanın kabulüne dair verilen 18.09.2013 tarihli kararın temyizi üzerine hüküm Dairemizin 10.06.2014 tarih ve 2014/3216 Esas 2014/7705 Karar sayılı ilamı ile 6360 Sayılı Kanun uyarınca taraf teşkili yönünden bozulmuştur.</p>
+
+<p>Mahkemece, Yargıtay bozma ilamı doğrultusunda Antalya Belediyesi ve Manavgat Belediyesine usulüne uygun çağrı kağıdı çıkartılarak davaya katılmaları sağlanmıştır.</p>
+
+<p>Antalya Valiliği İl Gıda Tarım ve Hayvancılık Müdürlüğünün 27.05.2013 tarihli cevabi yazısında mera, yaylak tahdit ve tahsis çalışmalarının devam ettiği bildirilmiş, neticede davaya konu yere dair tahsis kararının bulunmadığı, davaya konu alanda davacı köyün kadim yararlanma hakkı olduğu gerekçesiyle davanın KABULÜ ile; Harita Mühendisinin 18.06.2007 tarihli krokili raporunda gösterdiği Asliye Hukuk Mahkemesi’nin 1967/134 Esas ve 1973/1771 Sayılı Kararı ile Asliye Hukuk Mahkemesi’nin 1978/165 Esas,1989/59 Karar sayılı ilamlarındaki ( Siyah renk ve noktalı hat ile göstermiş olduğu ) yerler ve kesinleşen orman sınırları içinde kalan bölümler hariç olmak üzere Harita Mühendisinin 18.06.2007 tarihli krokili raporunda mavi renkli noktalarla ve araları mavi renk kesik hatlarla gösterilen yere davalı tarafından yapılan vaki MÜDAHALENİN ÖNLENMESİNE, … Müdürlüğüne karşı açılan dava kesinleştiğinden bu hususta karar verilmesine yer olmadığına karar verilmiştir.</p>
+
+<p>Hükmü, davalı … vekili temyiz etmiştir.</p>
+
+<p>Mera, bir veya birden fazla köy veya kasaba halkına bağımsız veya birlikte tahsis edilmiş ya da kadimden beri hayvan otlatmak amacıyla kullanılan, hak sahiplerinin üzerinde intifa hakkı olan arazi parçasıdır. Devletin hüküm ve tasarrufu altında olan mera, yaylak ve kışlaklar özel mülkiyete geçirilemez, amacı dışında kullanılamaz, zamanaşımı uygulanamaz, sınırları daraltılamaz ( 4342 Sayılı Mera Kanunu 4 ). 31.05.1965 tarihli ve 4/2 Sayılı Yargıtay İçtihadı Birleştirme Kararı ile “…tek başına bir köye ait bulunan mera, yaylak ve kışlakların tümünün veya bir parçasının bir başka köy sınırı içine alınmış olması halinde, sınır değişikliğinin ikinci köye bir yararlanma hakkı sağlamayacağı ve ilk köyün eskiden olduğu gibi bu yerlerden tek başına yararlanacağı” öngörülmüş olup, bu karar 4342 Sayılı Mera Kanununun 29. maddesiyle de yasa hükmü haline gelmiştir. Böylece, bir köy ya da belediye sınırları içinde kalan mera, yaylak ve kışlaklar üzerinde bir başka köy veya belediyenin de intifa hakkı olabileceği kabul edilmiş, idari sınırların aidiyetin belirlenmesinde önemi olmadığı vurgulanmıştır. İdari sınırlar sadece yetkili mahkemenin saptanmasında önem arz eder.</p>
+
+<p>Meraya elatmanın önlenmesi davası, kadim yararlanma hakkı olan köy veya belediye tüzel kişiliği ya da taşınmazın devletin hüküm ve tasarrufu altındaki yerlerden olması sebebiyle … tarafından açılabilir. Aynı şekilde, bir yerin mera olduğu iddiasıyla köy veya belediye tüzel kişiliğinin ya da …nin tapu iptali ve sınırlandırma istemiyle dava açmasına olanak vardır.</p>
+
+<p>Mera, yaylak ve kışlak davalarında, tahsise ya da kadim kullanma hakkına dayanılabilir. Tahsise dayanıldığında, dayanak belgelerin, ayrıca karşı tarafın savunmasında ileri sürdükleri kayıtların tüm geldileri ile birlikte merciinden getirtilmesi, kadimlik iddiası varsa bu hususun araştırılması, gerektiğinde köyün kuruluş tarihinin İçişleri Bakanlığından sorulması ve köyün kadim ya da muhdes olup olmadığının saptanması gerekir.</p>
+
+<p>Keşifte dinlenecek yerel bilirkişi ve tanıkların çekişmeli mera veya yayla ile herhangi bir yararlanma ilişkisi bulunmayan, yansız anlatımda bulunabilecek, yöreyi iyi bilen ve çevre köy ya da kasabalarda yaşayan yaşlı kişilerden seçilmesi gerekir.</p>
+
+<p>Mahkemece yapılacak keşifte; tahsise dayanılıyorsa tahsis kayıtlarının yerel bilirkişi ve tanıklar aracılığı ile uygulanması, davaya konu yeri kapsayıp kapsamadığının belirlenmesi, taşınmazın mera olmadığı iddiasının bulunması halinde varsa çevre taşınmazlara ait kayıtlar da uygulanarak davaya konu yeri ne şekilde okuduğunun çevre taşınmazlarla toprak yapısı kıyaslanarak uzman bilirkişiler aracılığı ile uyuşmazlığa konu yerin ve niteliğinin saptanması gerekir.</p>
+
+<p>Kadimlik iddiasında ise, yerel bilirkişi ve tanıklara taşınmazın kim tarafından ve ne şekilde kullanıldığı ve sınırları sorularak sonuca gidilmelidir.</p>
+
+<p>Yukarıda açıklanan ilkeler ışığında somut olaya gelince;</p>
+
+<p>Dairemizin 30.04.2012 tarih 2012/5096 - 6041 Sayılı bozma ilamına uyulduğu halde yapılan inceleme ve araştırma hüküm kurmaya yeterli değildir. Davacı kadim kullanma hakkına dayanarak elatmanın önlenmesi isteminde bulunmuştur. Tarım Müdürlüğünün 27.05.2013 tarih 115 Sayılı cevabi yazısına göre tahdit ve tahsis çalışmalarının devam etmekte olduğu anlaşılmıştır. Bu sebeple Tarım Müdürlüğüne yeniden müzekkere yazılarak davaya konu taşınmazın hangi köye tahsis edildiği belirlenmeli; bu tahsis kararına karşı dava açılıp açılmadığı, açılmış ise davanın kesinleşip kesinleşmediği araştırılmalı, araştırma sonucu bu tahsis dışında kalan bölümlerde tahsis yapılmamış ise davaya konu taşınmazda hangi köyün kadim kullanma hakkının bulunduğu saptanmalıdır. Bu durumda davaya konu taşınmazı iyi bilen, olabildiğince yaşlı ve davada menfaati bulunmayan taraf köyler dışında yerel bilirkişiler belirlenmeli, bu kişilerin ve taraf tanıklarının huzuru ile yeniden keşif yapılıp 6100 Sayılı HMK.nın 259/2 maddesi gereğince taşınmaz başında dinlenmeli, beyanlar arasındaki çelişki HMK.nın 261/1 maddesi gereğince yüzleştirme sureti ile giderilmeye çalışılmalı, tarafların dayandığı kayıtların sınırları tespit edilerek keşfi izlemeye ve infaza yeterli olacak şekilde keşif krokisinde işaretlenmelidir. Yerel bilirkişilerin ve tanıkların sözleri toplanacak diğer delillerle birlikte değerlendirilerek yukarıdaki ilkelere uygun inceleme ve araştırmayla bir karar verilmelidir. Bu sebeple hükmün bozulması gerekmiştir.</p>
+
+<p>SONUÇ : Yukarıda yazılı sebeplerle temyiz itirazının kabulüyle hükmün BOZULMASINA, peşin yatırılan harcın istenmesi halinde yatıranlara iadesine, 1.480 TL Yargıtay duruşma vekalet ücretinin davacıdan alınıp davalıya verilmesine, kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere, 28.02.2017 tarihinde oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 16. HUKUK DAİRESİ
+Esas: 2015/2318 Karar: 2016/7551</strong> Tarih: 07.10.2016</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 261. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanığın Dinlenilme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Kadastro sırasında Eskikarahisar Köyü çalışma alanında bulunan 134 ada 206 parsel sayılı 3.807.402,97 metrekare yüzölçümündeki taşınmaz mera niteliğiyle sınırlandırılmıştır. Davacı Z. M., A. T. İ., M. H. ve M. H. kazandırıcı zamanaşımı zilyetliğine dayanarak çekişmeli taşınmazın farklı bölümlerinin tespitinin iptali ve adlarına tescili istemiyle ayrı ayrı dava açmışlar, yargılama sırasında A. D., miras yoluyla gelen hak, paylaşma ve kazandırıcı zamanaşımı zilyetliğine dayanarak çekişmeli taşınmazın bir bölümünün tespitinin iptali ve adına tescili istemiyle davaya katılmıştır. Mahkemece dava dosyaları birleştirilerek yapılan yargılama sonunda davacı O. Ü.’ın davasının kısmen kabulüne, 24.12.2013 tarihli fen bilirkişisi raporunda ( A ) harfi ile gösterilen 9.254,96 metrekare yüzölçümündeki bölümün 1/2 payının davacı O. Ü., 1/2 payının davalı Hazine adına tapuya tesciline, davacı M. D.’ın davasının kabulüne, 24.12.2013 tarihli fen bilirkişisi raporunda ( L ) ile gösterilen 10.006,83 metrekare yüzölçümündeki bölümün belirtilen payları oranında M. D. mirasçıları adına tapuya tesciline, kabul kararı verilen taşınmaz bölümleri dışında kalan bölümlerin mera olarak sınırlandırılmasına, davacılar Z. M., A. T. İ., M. H., M. H. ve müdahil A. D.’ün davalarının reddine karar verilmiş; hüküm, kendi adına ve M. H.’in mirasçısı sıfatıyla davacı M. H., davacılar Z. M. ve A. T. İ., müdahil A. D. vekili ve davalı Hazine vekili tarafından temyiz edilmiştir.</p>
+
+<p>Dosya içeriğine, kararın dayandığı delillerle yasaya uygun gerektirici nedenlere ve delillerin takdirinde bir isabetsizlik bulunmamasına göre davası reddedilen davacılar M. H., Z. M., A. T. İ. ve müdahil A. D. vekilinin temyiz itirazları yerinde değildir. Davalı Hazine vekilinin temyiz itirazlarına gelince; Mahkemece, dava konusu taşınmazın 24.12.2013 tarihli fen bilirkişi raporlarına ekli haritada ( A ) ve ( L ) harfleri ile gösterilen bölümleri üzerinde davacılar O. Ü. ve M. D. lehine zilyetlikle mülk edinme şartlarının gerçekleştiği kabul edilmek suretiyle hüküm kurulmuştur. Çekişmeli taşınmaz mera vasfıyla sınırlandırılmış olduğu halde mahkemece, uyuşmazlığın çözüme kavuşturulabilmesi için gerekli bulunan ve taşınmazın vasfının tespitinde esaslı unsur olan tespit tarihinden öncesine ait hava fotoğraflarından yararlanılmamış olması ve ziraat bilirkişi raporunda kabule karar verilen taşınmazların niteliğinin tam olarak açıklığa kavuşturulmaması nedeniyle yapılan araştırma ve inceleme hüküm vermeye yeterli bulunmamaktadır. Eksik incelemeyle karar verilemez. Hal böyle olunca, doğru sonuca ulaşılabilmesi için, kadastro tespit tarihinden önceki zilyetlik durumunun tespiti amacıyla bu tarihten 20 yıl öncesini 5’er yıllık periyotlar halinde ( 15-20-25 yıl öncesine ait ) tespit gününe kadar gösterecek şekilde 3 farklı tarihe ait hava fotoğrafları getirtildikten sonra, mahallinde yaşlı, tarafsız, yöreyi iyi bilen, davada yararı bulunmayan şahıslar arasından seçilecek yerel bilirkişiler ve aynı yönteme göre tespit edilecek taraf tanıkları, 3 kişiden oluşan ziraat mühendisi fotogrametri ve harita mühendisi bilirkişiden oluşacak bilirkişi kurulu huzuruyla yeniden keşif yapılmalıdır. Taşınmazların başında icra edilecek keşif sırasında dinlenecek yerel bilirkişi ve taraf tanıklarından taşınmazların geçmişte ne durumda bulunduğu, çekişmeli mera parselinin devamı olup olmadığı, meradan açılıp açılmadığı, arada ayırıcı unsur bulunup bulunmadığı, taşınmazların kime ait olduğu, kimden nasıl intikal ettiği, hangi tarihten beri ne suretle tasarruf edildiği, zilyetliğin sürdürülüş biçimi, tamamı üzerinde zilyetliğin bulunup bulunmadığı hususları etraflıca sorulup maddi olaylara dayalı olarak açıklattırılmalı, yerel bilirkişi ve tanık beyanları arasında çelişki bulunduğu takdirde HMK’nın 261. maddesi uyarınca yüzleştirilmek suretiyle aykırılık giderilmeli, uzman ziraat mühendisleri kurulundan arazilerin niteliğini ve zilyetlikle mülk edilebilecek yerlerden olup olmadığı, meradan açılıp açılmadığı, mera parseli ile taşınmazlar arasında ayırıcı sabit ve doğal sınır bulunup bulunmadığını belirtir krokili rapor alınmalı, bilirkişi ve tanık sözleri komşu parsel tutanak ve dayanaklarıyla denetlenmeli, fotogrametri ve jeodezi mühendisi bilirkişiden belirtilen hava fotoğraflarının stereoskop aleti ile incelenmesi suretiyle hava fotoğraflarının çekildikleri, taşınmazın niteliği ve kullanım süresi ve ne zaman kullanılmaya başlandığının, taşınmazın evveliyatının mera ile bütünlük gösterip göstermediği ve meradan açılıp açılmadığı belirlenmeli, yine tespit tarihine yakın tarihli uydu foroğrafları temin edilerek mera parseli ile taşınmazlar arasında ayırıcı unsur bulunup bulunmadığı tespit edilmeli, HMK’nın 290/2. maddesi uyarınca birlikte keşfe götürülecek bir fotoğrafçı aracılığıyla taşınmaz ve çevresinin yakın plan ve panoramik fotoğrafları çektirilip mahkemece onaylandıktan sonra dosya arasına konulmalı ve bundan sonra tüm deliller birlikte değerlendirilerek sonucuna göre karar verilmelidir.</p>
+
+<p>SONUÇ : Eksik inceleme ile yazılı şekilde karar verilmesi isabetsiz olup, davalı Hazine vekilinin temyiz itirazları açıklanan nedenlerle yerinde görüldüğünden kabulüyle hükmün BOZULMASINA, peşin yatırılan temyiz karar harcının talep halinde temyiz eden davacılara iadesine, 07.10.2016 gününde oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 20. HUKUK DAİRESİ
+Esas: 2015/5983 Karar: 2016/3047</strong> Tarih: 10.03.2016</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 261. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanığın Dinlenilme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Davacılar vekili, Asliye Hukuk Mahkemesine hitaben yazdığı dava dilekçesinde … ilçesi, …, … eski 1849 yenileme ile 423 ada 46 sayılı 6340 m2 büyüklüğündeki parselin 1/2’si davacı …, 1/2’si ise Şerife varisleri arasında miras payı devir sözleşmesi ve muvafakatnameye istinaden davacılar H., M. ve D. tarafından kullanıldığını; … …, … mevkii, doğusu yol, batısı 423 ada 46 parsel, kuzeyi yol, güneyi yol ile çevrili yaklaşık 4.500 m2 büyüklüğündeki arazinin Ş. varisleri arasında yine aynı miras payı devir sözleşmesi ve muvafakatnameye istinaden davacılar H. ve M. tarafından kullanıldığını, dava konusu taşınmazların devletin hüküm ve tasarrufu altında olan yerlerden olmadığını belirterek eski 1849 yenileme ile 423 ada 46 sayılı taşınmazın eşit hisse ile davacılar adında, sınırları bildirilen taşınmazın ise 1/2 hisse ile davacılar … ve … adına tesciline karar verilmesini talep ve dava etmiştir.</p>
+
+<p>Asliye Hukuk Mahkemesince davacı tarafın eski 1849 yenileme ile 423 ada 46 sayılı parsele ilişkin davasının tefriki ile ayrı bir esasa kaydına, sınırları bildirilen taşınmaz hakkında 423 ada 63 parseller olarak kadastro tutanakları tanzim edildiğinden, Kadastro Kanununun gereğince mahkemenin görevsizliğine ve dosyanın Kadastro Mahkemesine gönderilmesine karar verilmiştir.</p>
+
+<p>Kadastro Mahkemesince yapılan yargılama sonucunda davacılarının davalarının kabulü ile … ili … ilçesi … Köyü … mevki 423 ada 63 parselin tarla vasfıyla … … adına, … ili … ilçesi … köyü … mevki 423 ada 62 parselin tarla vasfıyla … adına tapuya kayıt ve tesciline karar verilmiş, hüküm davalı … vekili tarafından temyiz edilmiştir.</p>
+
+<p>Dava, 3402 sayılı Kadastro Kanununun 27. maddesi gereğince genel mahkemeden kadastro mahkemesine aktarılan tescil davasıdır.</p>
+
+<p>Çekişmeli taşınmazın bulunduğu yerde, tapulama çalışması 31.05.1971 tarihinde kesinleşmiş, dava konusu taşınmazlar … Çayının çay yatağı olarak tespit ve tescil harici bırakılmış, 2013 yılında Kadastro Kanununun Ek 8. maddesi gereğince tescil harici kalan yerlerin kadastrosu yapılmıştır. Çekişmeli taşınmazın bulunduğu yerde 11.05.1955 tarihinde kesinleşmiş orman tahdidi, 03.09.1993 tarihinde kesinleşmiş 2/B uygulaması vardır. Dava konusu taşınmazlar bu çalışmalarda orman sınırları dışında bırakılmıştır.</p>
+
+<p>Mahkemece eksik inceleme ve araştırma sonucunda karar verilmiştir. Dava konusu taşınmazların 1970 yılında yapılıp 31.01.1971 tarihinde kesinleşen tapulama çalışmalarında, … Çayının çay yatağı olarak tespit ve tescil harici bırakıldığı … Kadastro Müdürlüğünün cevap yazısından anlaşılmasına rağmen keşif sırasında taşınmazın aktif çay yatağı içinde olup olmadığı konusunda bilgi ve uzmanlığına başvurulması gereken jeolog bilirkişi bulundurulmamış, yine davalı …‘nin dava konusu taşınmazların imar planı içerisinde bulunduğu savunması karşısında taşınmazların imar planı içerisinde bulunup bulunmadığı, taşınmazlar imar planı içerisinde bulunuyorlarsa hangi tarihte imar planı içerisine alındıkları, aktif dere yatağı olmadığı, ıslah çalışmaları sonucu dereden ayrıldığı, imar ve ihyaya konu edilmiş olduğu belirlenirse imar ve ihyanın tamamlandığı tarih ile imar planı kapsamına alındığı tarih arasında zilyetlikle kazanmayı sağlayacak yasal 20 yıllık sürenin geçip geçmediği ve bu kapsamda ve … Çayının ıslah edildiği tarih hususları araştırılmamıştır.</p>
+
+<p>Dava konusu taşınmazların imar planı içerisinde bulunup bulunmadığı, imar planı içerisinde bulunuyorlarsa hangi tarihte imar planı içerisine alındıkları ve … Çayının ıslah edildiği tarih ilgili yerlerden sorularak tespit edildikten sonra uzman bir fen ve bir jeolog bilirkişi ile taşınmazlar başında yeniden yapılacak keşifte dava konusu taşınmazların aktif çay yatağında olup olmadığı araştırılmalı, taşınmazların aktif çay yatağında olmadıkları belirlendiği takdirde, bu kez, zilyetlik yolu ile kazanma (Medenî Kanunun 713. maddesi, 3402 sayılı Kanunun 14., 17. maddelerindeki) koşulların araştırılmalıdır. Bu cümleden olarak, yapılacak keşifte, çekişmeli taşınmazların fiili durumunu da belirtir şekilde rapor alınmalı, imar ve ihya üzerinde durulup bu konuda ve zilyetliğin tespiti yönünden tanık beyanlarına başvurulmalı, tarafların bildirecekleri zilyetlik tanıkları HMK’nın 259, 261. maddeleri gereğince taşınmazlar başında dinlenip; taşınmazların öncesi itibariyle niteliğinin ne olduğu, kime ait olduğu, zilyetliğin nasıl meydana geldiği, ne kadar süre ile ne şekilde devam ettiği, bunun ekonomik amacına uygun olup olmadığı, imar ve ihyanın tamamlandığı tarih ile imar planı kapsamına alınma tarihine kadar 20 yıllık sürenin geçip geçmediği, geçmedi ise imar kapsamına alındıktan sonra taşınmaz üzerinde sürdürülen zilyetliğe itibar edilmiyeceği düşünülmeli, tarafların gösterecekleri tanıkları taşınmaz başında yapılacak keşifte dinlenerek bilgi ve görgülerinin hangi eylemli olaylara dayandırıldığı belirlenmeli, yerel bilirkişinin imar ve ihya ile zilyetlik olgusunu hangi olaylarla nasıl hatırladıkları saptanmalı, toplanacak tüm kanıtlar birlikte değerlendirilip ulaşılacak sonuca göre bir hüküm kurulmalıdır.</p>
+
+<p>SONUÇ : Yukarıda açıklanan nedenlerle, davalı Hazine vekilinin temyiz itirazlarının kabulü ile hükmün BOZULMASINA, 10.03.2016 gününde oy birliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 22. HUKUK DAİRESİ
+Esas: 2013/28560 Karar: 2014/37111</strong> Tarih: 25.12.2014</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 261. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Tanığın Dinlenilme Şekli</strong></p>
+  </li>
+</ul>
+
+<p>Davacı vekili satış temsilcisi olan davacının iş sözleşmesini kendisinin haklı nedenle feshettiğini ileri sürerek kıdem ve ihbar tazminatı, yıllık izin ücreti ile ücret alacaklarının davalıdan tahsilini istemiştir.</p>
+
+<p>Davalı vekili, davacının haklı nedenle iş sözleşmesinin feshedildiğini, diğer haklarının ödendiğini ileri sürerek davanın reddine karar verilmesini istemiştir.</p>
+
+<p>Mahkemece, hükme esas alınan bilirkişi raporundaki hesaplamalara göre davanın kısmen kabulüne karar verilmiştir.</p>
+
+<p>Karar davalı tarafından temyiz edilmiştir.</p>
+
+<p>6100 sayılı Hukuk Muhakameleri Kanunu’nun 261. maddesinde tanığın dinlenme usulü açıklanmıştır. Bu madde; “ ( 1 ) Tanıklar, hâkim tarafından ayrı ayrı dinlenir ve biri dinlenirken henüz dinlenmemiş olanlar salonda bulunamazlar. Tanıklar gerektiğinde yüzleştirilirler.</p>
+
+<p>( 2 ) Tanık, bildiğini sözlü olarak açıklar ve sözü kesilmeden dinlenir. Dinlenilme sırasında, tanık, yazılı notlar kullanamaz. Şu kadar ki, tanık tarihleri ve rakamları tespit etmek veya bazı hususları açıklamak ya da hatırlayabilmek için yazılarına bakmak zorunda olduğunu hâkime söylerse, hâkim derhâl yazılarına bakmasına veya belirleyeceği duruşmada yeniden dinlenmesine karar verebilir.</p>
+
+<p>( 3 ) Hâkim, tanık sözünü bitirdikten sonra, ifade ettiği hususların açıklanması veya tamamlanması amacıyla başka sorular da sorabilir.</p>
+
+<p>( 4 ) Toplu mahkemede başkan, hâkimlerden her birinin tanığa doğrudan doğruya soru sormasına izin verir.</p>
+
+<p>( 5 ) Tanığın sözleri tutanağa yazılarak önünde okunur ve tutanağın altı kendisine imza ettirilir.” şeklinde düzenlenmiştir.</p>
+
+<p>İşçi ve işverenin hak ve alacakları konusunda açtıkları davalarda tanık beyanları olayları aydınlatmasında önemli bir delildir. Tanıklık edilecek konuda tanığın serbest iradesi ile bildiklerini anlatması ve bunun sağlanması için de sözünün kesilmemesi gerekir. Tanık bildiklerini bir bütünlük içinde anlatırken yapacağı açıklamalar, kuracağı cümleler, kullanacağı ifadeler ve kavramların gerçeğin ortaya çıkarılmasına katkı sağlayacağı açıktır. Anılan Kanun maddesinin 2. fıkrasında tanığın sözünün kesilmemesi gerektiği, 3. fıkrasında ise hakimin ancak tanığın sözünü bitirdikten sonra açıklanması ve tamamlanması gereken konularda tanığa sorular sorabileceği belirtilmiştir. Somut olayda tanığın sözü kesilmeden dinlenmesi gerektiği kuralına uyulmamıştır. Usule uygun dinlenmeyen bu tanıkların, kısa kısa ve peş peşe sorulan sorulara sadece “var”, “yok”, “evet”, “hayır” şeklince cevaplar verdiği bu sorulara açıklama şeklinde ve esnek cevaplar verebilme ortamı sağlanmamıştır. Kaldı ki olayda fazla çalışma ve hafta tatili gibi dava konusu edilmeyen alacaklar konusunda da tanıklara matbu sorular sorulmuştur. Açıklanan tüm bu nedenlerle mahkemece iddia ve savunma konuları hatırlatıldıktan sonra bu şekilde dinlenen tanıkların yeniden usule uygun şekilde beyanlarına başvurulduktan sonra tüm dosya kapsamına uygun kararın verilmesi gerekir.</p>
+
+<p>SONUÇ : Temyiz olunan kararın yukarıda yazılı sebepten BOZULMASINA, sair temyiz itirazlarının şimdilik incelenmesine yer olmadığına, peşin alınan temyiz harcının istek halinde ilgiliye iadesine, 25.12.2014 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+</div></div></main>
+</div>
+
+<footer>
+<section>
+<div class="contact-info">
+
+<div class="adres">
+
+<div class="telefon-wrapper">
+
+
+</div>
+</div>
+</section>
+
+</div>
+
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+"vars": {
+"account": "UA-58342443-1"
+},
+"triggers": {
+"trackPageview": {
+"on": "visible",
+"request": "pageview"
+}
+}
+}
+</script>
+</amp-analytics>
+
+</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="../../index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="../../dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="../../ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="../../knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="../../search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/slideToggle.min.js"></script>
+    <script src="../js/internet-status.js"></script>
+    <script src="../js/tiny-slider.js"></script>
+    <script src="../js/baguetteBox.min.js"></script>
+    <script src="../js/countdown.js"></script>
+    <script src="../js/rangeslider.min.js"></script>
+    <script src="../js/vanilla-dataTables.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/magic-grid.min.js"></script>
+    <script src="../js/dark-rtl.js"></script>
+    <script src="../js/active.js"></script>
+    <!-- PWA -->
+    <script src="../js/pwa.js"></script>
+  </body>
+</html>

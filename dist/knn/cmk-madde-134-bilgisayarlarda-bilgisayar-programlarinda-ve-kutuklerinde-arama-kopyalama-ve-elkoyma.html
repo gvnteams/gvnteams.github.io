@@ -1,0 +1,1210 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tiny-slider.css">
+    <link rel="stylesheet" href="../css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="../css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="tck-search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+               <div class="page-content-wrapper py-0">
+        </div>
+      </div>
+
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<h2 id="bilgisayarlarda-bilgisayar-programlarında-ve-kütüklerinde-arama-kopyalama-ve-elkoyma">Bilgisayarlarda, Bilgisayar Programlarında ve Kütüklerinde Arama, Kopyalama ve Elkoyma</h2>
+
+<h2 id="cmk-madde-134">CMK Madde 134</h2>
+
+<p>(1) Bir suç dolayısıyla yapılan soruşturmada, somut delillere dayanan kuvvetli şüphe sebeplerinin varlığı ve başka surette delil elde etme imkânının bulunmaması halinde, hâkim veya gecikmesinde sakınca bulunan hâllerde Cumhuriyet savcısı tarafından şüphelinin kullandığı bilgisayar ve bilgisayar programları ile bilgisayar kütüklerinde arama yapılmasına, bilgisayar kayıtlarından kopya çıkarılmasına, bu kayıtların çözülerek metin hâline getirilmesine (…) (2) karar verilir. (Ek üç cümle: 25/7/2018-7145/16 md.) Cumhuriyet savcısı tarafından verilen kararlar yirmi dört saat içinde hâkim onayına sunulur. Hâkim kararını en geç yirmi dört saat içinde verir. Sürenin dolması veya hâkim tarafından aksine karar verilmesi hâlinde çıkarılan kopyalar ve çözümü yapılan metinler derhâl imha edilir.</p>
+
+<p>(2) Bilgisayar, bilgisayar programları ve bilgisayar kütüklerine şifrenin çözülememesinden dolayı girilememesi veya gizlenmiş bilgilere ulaşılamaması ya da işlemin uzun sürecek olması halinde çözümün yapılabilmesi ve gerekli kopyaların alınabilmesi için, bu araç ve gereçlere elkonulabilir. Şifrenin çözümünün yapılması ve gerekli kopyaların alınması halinde, elkonulan cihazlar gecikme olmaksızın iade edilir.</p>
+
+<p>(3) Bilgisayar veya bilgisayar kütüklerine elkoyma işlemi sırasında, sistemdeki bütün verilerin yedeklemesi yapılır.</p>
+
+<p>(4) Üçüncü fıkraya göre alınan yedekten bir kopya çıkarılarak şüpheliye veya vekiline verilir ve bu husus tutanağa geçirilerek imza altına alınır.</p>
+
+<p>(5) Bilgisayar veya bilgisayar kütüklerine elkoymaksızın da, sistemdeki verilerin tamamının veya bir kısmının kopyası alınabilir. Kopyası alınan veriler kâğıda yazdırılarak, bu husus tutanağa kaydedilir ve ilgililer tarafından imza altına alınır.</p>
+
+<hr>
+
+<ul>
+  <li><a href="../5271-sayili-ceza-muhakemesi-kanunu-cmk.html"><strong>5271 sayılı CMK (Ceza Muhakemesi Kanunu) Tam Metin</strong></a></li>
+</ul>
+
+<hr>
+
+<amp-img src="../tokmak-yargitay-kararlari-1280x720.png" alt="CMK Madde 134  Bilgisayarlarda, Bilgisayar Programlarında ve Kütüklerinde Arama, Kopyalama ve Elkoyma" width="1280" height="720" layout="responsive">
+            </amp-img>
+<h2 id="cmk-madde-134-gerekçesi">CMK Madde 134 Gerekçesi</h2>
+
+<p>Madde, bilgisayar programlarında ve kütüklerinde arama, kopyalama ve geçici elkoyma konularını düzenlemektedir. Bireye ait kişisel bilgiler üzerindeki hak, temel insan haklarından olduğundan hakkın kısıtlanabilmesi için yasal düzenleme gerekeceği açıktır.</p>
+
+<p>Ancak bilgisayarlardaki kayıtların gerçeğin açığa çıkarılması yönünden, ceza davasında delil, iz, eser ve emare oluşturacağı ortadadır. Bu itibarla madde hem bu olanağı sağlamak ve hem de bireysel yararları saklı tutmak amacıyla bilgisayar program ve kütüklerinde arama yapılmasını aşağıdaki belirli koşullara tâbi kılmış bulunmaktadır;</p>
+
+<ol>
+  <li>
+    <p>İki yıl veya daha fazla hürriyeti bağlayıcı cezayı gerektiren cürümler hakkında yapılan soruşturmalarda bilgisayarda, bilgisayar programlarında ve bilgisayar kütüklerinde arama, kopyalama ve aygıta geçici olarak elkoyma yapılabilir.</p>
+  </li>
+  <li>
+    <p>Bunun için, söz konusu işleme başvurulmasının zorunlu olması yani bunun bir “ultima ratio” çare oluşturması gereklidir.</p>
+  </li>
+  <li>
+    <p>Bu husustaki kararın mutlaka hâkim tarafından ve gizli olarak verilmesi gerekir. Bu karar, soruşturma evresinde sulh ceza hâkimi tarafından gizli olarak verilecektir.</p>
+  </li>
+  <li>
+    <p>Arama sonucu, suçla ilgili bilgi metin hâline getirilecektir.</p>
+  </li>
+  <li>
+    <p>Bilgiler şifreye bağlanmış ise ve bu nedenle giriş yapılamıyorsa, çözümün yapılabilmesi için araç ve gereçlere, aygıta geçici olarak elkonulabilir. Çözümden hemen sonra bilgisayardaki bilgilere zarar vermeden aygıtın ilgilisine hemen geri verilmesi gerekir. 
+Dikkat edilmelidir ki, bu maddenin amacı 107 nci maddeden farklıdır. 107 nci maddede bilgisayar işlemekte iken içeri girilmekte ve ilgilinin bundan haberi olmamaktadır. Bu maddede ise, durağan hâldeki aygıtta araştırma, arama yapılmaktadır.</p>
+  </li>
+</ol>
+
+<p>Maddenin öngördüğü geçici elkoyma işlemine itiraz edilebilecektir.</p>
+
+<hr>
+
+<h2 id="cmk-134-bilgisayarlarda-bilgisayar-programlarında-ve-kütüklerinde-arama-kopyalama-ve-elkoyma-emsal-yargıtay-kararları">CMK 134 (Bilgisayarlarda, Bilgisayar Programlarında ve Kütüklerinde Arama, Kopyalama ve Elkoyma) Emsal Yargıtay Kararları</h2>
+
+<hr>
+
+<p><strong>Yargıtay Ceza Genel Kurulu         2016/544 E.  ,  2020/127 K.</strong></p>
+
+<ul>
+  <li><strong>CMK 134. maddenin Uygulanma Koşulları</strong></li>
+  <li></li>
+</ul>
+
+<p>Sanık … tarafından kullanılan sabit disklerde yapılan arama işleminin hukuka uygun olup olmadığı;</p>
+
+<p>Bilişim sistemlerinin kullanılmasındaki artışa paralel olarak daha çok bilişim sistemleri ve bu sistemlerde tutulan veriler, delil olarak kullanılmaya başlandığı için bu delillerin toplanmasında göz önünde bulundurulması gerekli olan kurallar düzenlenmeye başlanmıştır. Bu kuralların gelişimi ile amacı bilimsel yöntemlerle dijital ortamlarda güvenilir deliller elde etmek olan “adli bilişim” bilimi ortaya çıkmıştır. Bilişim araçlarından deliller elde edilmesi amacıyla bilişim teknikleri kullanılarak yapılan uygulamalar şeklinde tanımlanabilecek olan “adli bilişim” ceza hukukuyla ilgili olarak bakıldığında ceza muhakemesi hukukuna ait bir alandır (Muharrem Özen-İhsan Baştürk, Bilişim-İnternet ve Ceza Hukuku, Adalet Yayınevi, Ankara, 2011, s. 140.). Ülkemizde, adli bilişim alanındaki temel kural ise 5271 sayılı CMK’nın “Bilgisayarlarda, bilgisayar programlarında ve kütüklerinde arama, kopyalama ve el koyma” başlıklı 134. maddesidir.</p>
+
+<p>Gelişen teknolojiyle beraber hayatın her alanında kullanılan bilişim teknolojisi muhakeme konusu olayların aydınlatılmasında etkin rol oynayan deliller arasında ön sıralarda yer almaktadır. 5070 sayılı Elektronik İmza Kanunu’nda “elektronik, optik veya benzeri yollarla üretilen, taşınan veya saklanan kayıtlar” olarak tanımlanan ve bilişim teknolojilerinin temel işlev aracı olan elektronik veriler, bilgisayar sistemleri tarafından otomatik olarak (değişken IP adresleri, log kayıtları, güvenlik kamerası kayıtlar vb.) oluşturulabileceği gibi kullanıcılar tarafından bilgisayar medyaları (dizüstü bilgisayar, PC, hard disk, USB Bellek, CD/DVD, bilgisayar işletim sistemi vasıtasıyla çalışan ve veri yüklenebilen akıllı telefon, mp3 çalar video kameralar, vb.) üzerinde de oluşturulabilmektedir. Soruşturma aşamasında olayın aydınlatılması amacıyla el koyulan veya talep edilen elektronik verilerden doğrudan suçla ilgili olanlar ise elektronik delil olarak kabul edilmektedir. Elektronik delil, bir elektronik araç üzerinde saklanan veya bu araçlar aracılığıyla iletilen, soruşturma açısından değeri olan bilgi ve verilerdir (Leyla Keser Berber, Adli Bilişim, Yetkin Yayınları, Ankara, 2004, s. 46.).</p>
+
+<p>CMK’nın 134. maddesinde geçen bilgisayar teriminden ne anlaşılması gerektiği konusu CMK’da açık bir şekilde belirtilmemiştir. Bilgisayar; belleğindeki programa uygun olarak aritmetik ve mantıksal işlemleri yapabilen, karar verebilen, yürüteceği programı ve işleyeceği verileri ezberinde tutabilen, çevresiyle etkileşimde bulunabilen araçları ifade etmektedir. Genel olarak 134. maddesinin uygulamada; bilgisayar, akıllı telefonlar, GPS cihazları, donanım ve yan donanımlar, verileri dijital olarak kaydetme ve işleme yeteneğinde olan her türlü dijital cihazları kapsadığı kabul edilmektedir. Aynı şekilde madde kapsamına; içağlar, veri tabanları, sistem odaları, sunucular, yedek üniteler, arşivler, veri iletim hatları, yönlendiriciler vs. dâhilinde bulunan tüm dijital alanlar, veriler ve veri taşıyıcıları da girmektedir. Zira bunlar belleğindeki programa uygun olarak aritmetik ve mantıksal işlemleri yapabilen, karar verebilen, yürüteceği programı ve işleyeceği verileri ezberinde tutabilen, çevresiyle etkileşimde bulunabilen araçlar olan bilgisayarların bileşenleri olarak fonksiyon icra etmektedir. Bilgisayar programı, bir bilgisayar vasıtasıyla belirli bazı görevleri gerçekleştirmek için oluşturulan yazılı talimatlar dizisi olarak tarif edilmektedir. Esasen bilgisayar programları bilgisayarların çalışmasını sağlayan düz metin komutlarıdır. Genelde bilgisayarlar, program olmaksızın fonksiyon icra edemezler. Bilgisayar kütükleri daha çok olay kayıtları anlamında log kayıtlarının karşılığı olarak Türkçe’ye çevrilebilirse de CMK’nın 134. maddesinde kastedilen aslında İngilizce “database” olarak bildiğimiz terimin karşılığı olarak “veri tabanı”dır. Hard diskleri veya verilerin saklandığı ortamları ve aynı zamanda her türlü veri taşıyıcıları bilgisayar kütüğü kavramı içerisinde değerlendirilebilir.</p>
+
+<p>Bilgisayarlarda, bilgisayar programlarında ve kütüklerinde arama, kopyalama ve el koyma CMK’nın 134. maddesinde düzenlenmiş olup CMK’nın 116 ve 123. maddeleri arasında yer alan arama koruma tedbirinin özel bir görünümünü oluşturmaktadır. CD, DVD, flash bellek, disket, harici ve dahili harddisk, bilgisayar özelliği içeren noktaları bakımından akıllı telefon ve benzerlerinden elde edilen ve tamamı “dijital delil” olarak adlandırılan, suistimale müsait olan verilerin; sıhhatini ve güvenliğini sağlamak amacıyla ve bireyin özel hayatına, kişisel verilerine yönelik olumsuz tesirleri göz önünde tutularak “özel koşullara bağlı” bir koruma tedbiri olması nedeniyle, genel adli aramadan ayrıksı ve istisnai olarak ayrıntılı şekilde düzenlenmiştir.</p>
+
+<p>5271 sayılı CMK’nın 134. maddesine ilişkin kanun taslağı gerekçesi;</p>
+
+<p>“Madde 110. - Madde, bilgisayar programlarında ve kütüklerinde arama, kopyalama ve geçici elkoyma konularını düzenlemektedir. Bireye ait kişisel bilgiler üzerindeki hak, temel insan haklarından olduğundan hakkın kısıtlanabilmesi için yasal düzenleme gerekeceği açıktır.
+Ancak bilgisayarlardaki kayıtların gerçeğin açığa çıkarılması yönünden, ceza davasında delil, iz, eser ve emare oluşturacağı ortadadır. Bu itibarla madde hem bu olanağı sağlamak ve hem de bireysel yararları saklı tutmak amacıyla bilgisayar program ve kütüklerinde arama yapılmasını aşağıdaki belirli koşullara tâbi kılmış bulunmaktadır;</p>
+
+<ol>
+  <li>
+    <p>İki yıl veya daha fazla hürriyeti bağlayıcı cezayı gerektiren cürümler hakkında yapılan soruşturmalarda bilgisayarda, bilgisayar programlarında ve bilgisayar kütüklerinde arama, kopyalama ve aygıta geçici olarak elkoyma yapılabilir.</p>
+  </li>
+  <li>
+    <p>Bunun için, söz konusu işleme başvurulmasının zorunlu olması yani bunun bir ‘ultima ratio’ çare oluşturması gereklidir.</p>
+  </li>
+  <li>
+    <p>Bu husustaki kararın mutlaka hâkim tarafından ve gizli olarak verilmesi gerekir. Bu karar, soruşturma evresinde sulh ceza hâkimi tarafından gizli olarak verilecektir.</p>
+  </li>
+  <li>
+    <p>Arama sonucu, suçla ilgili bilgi metin hâline getirilecektir.</p>
+  </li>
+  <li>
+    <p>Bilgiler şifreye bağlanmış ise ve bu nedenle giriş yapılamıyorsa, çözümün yapılabilmesi için araç ve gereçlere, aygıta geçici olarak elkonulabilir. Çözümden hemen sonra bilgisayardaki bilgilere zarar vermeden aygıtın ilgilisine hemen geri verilmesi gerekir.</p>
+  </li>
+</ol>
+
+<p>Dikkat edilmelidir ki, bu maddenin amacı 107 nci maddeden farklıdır. 107 nci maddede bilgisayar işlemekte iken içeri girilmekte ve ilgilinin bundan haberi olmamaktadır. Bu maddede ise, durağan hâldeki aygıtta araştırma, arama yapılmaktadır. Maddenin öngördüğü geçici elkoyma işlemine itiraz edilebilecektir.”,</p>
+
+<p>Komisyonun değişiklik gerekçesi ise; “Tasarının 110 uncu maddesinin birinci fıkrasının başındaki ‘İki yıl veya daha fazla hürriyeti bağlayıcı cezayı gerektiren cürümler’ ibaresi suç sınırlamasının kaldırılması düşüncesiyle, son fıkrası gereksiz görülerek metinden çıkarılmış, ikinci fıkraya açıklık getirmek üzere bir cümle ilave edilmiş ve 134 üncü madde olarak kabul edilmiştir.” şeklinde düzenlenmiştir. Kanun tasarısı gerekçesine göre, bireye ait kişisel bilgiler üzerindeki hak, temel insan haklarından olduğundan hakkın kısıtlanabilmesi için yasal düzenleme gerektiğini, ancak bilgisayarlardaki kayıtların gerçeğin açığa çıkarılması yönünden, ceza davasında delil, iz, eser ve emare oluşturacağından CMK’nın 134. maddesi ile hem bu olanağı sağlamak ve hem de bireysel yararları saklı tutmak amacıyla bilgisayar program ve kütüklerinde arama yapılmasının belirli koşullara tabi kılındığı açıklanmıştır.</p>
+
+<p>Arama işleminin yapıldığı tarihte yürürlükte bulunan CMK’nın “Bilgisayarlarda, bilgisayar programlarında ve kütüklerinde arama, kopyalama ve elkoyma” başlıklı 134. maddesi;</p>
+
+<p>“(1) Bir suç dolayısıyla yapılan soruşturmada, başka surette delil elde etme imkânının bulunmaması halinde, Cumhuriyet savcısının istemi üzerine şüphelinin kullandığı bilgisayar ve bilgisayar programları ile bilgisayar kütüklerinde arama yapılmasına, bilgisayar kayıtlarından kopya çıkarılmasına, bu kayıtların çözülerek metin hâline getirilmesine hâkim tarafından karar verilir.</p>
+
+<p>(2) Bilgisayar, bilgisayar programları ve bilgisayar kütüklerine şifrenin çözülememesinden dolayı girilememesi veya gizlenmiş bilgilere ulaşılamaması halinde çözümün yapılabilmesi ve gerekli kopyaların alınabilmesi için, bu araç ve gereçlere elkonulabilir. Şifrenin çözümünün yapılması ve gerekli kopyaların alınması halinde, elkonulan cihazlar gecikme olmaksızın iade edilir.</p>
+
+<p>(3) Bilgisayar veya bilgisayar kütüklerine elkoyma işlemi sırasında, sistemdeki bütün verilerin yedeklemesi yapılır.</p>
+
+<p>(4) İstemesi halinde, bu yedekten bir kopya çıkarılarak şüpheliye veya vekiline verilir ve bu husus tutanağa geçirilerek imza altına alınır.</p>
+
+<p>(5) Bilgisayar veya bilgisayar kütüklerine elkoymaksızın da, sistemdeki verilerin tamamının veya bir kısmının kopyası alınabilir. Kopyası alınan veriler kâğıda yazdırılarak, bu husus tutanağa kaydedilir ve ilgililer tarafından imza altına alınır.” şeklinde iken aynı maddenin 06.03.2014 tarihli Resmî Gazete’de yayımlanarak yürürlüğe giren 6526 sayılı Kanun’un 11. maddesi ile değişik birinci fıkrası;</p>
+
+<p>“Bir suç dolayısıyla yapılan soruşturmada, somut delillere dayanan kuvvetli şüphe sebeplerinin varlığı ve başka surette delil elde etme imkânının bulunmaması halinde, Cumhuriyet savcısının istemi üzerine şüphelinin kullandığı bilgisayar ve bilgisayar programları ile bilgisayar kütüklerinde arama yapılmasına, bilgisayar kayıtlarından kopya çıkarılmasına, bu kayıtların çözülerek metin hâline getirilmesine hâkim tarafından karar verilir.”, aynı maddenin dördüncü fıkrası ise;</p>
+
+<p>“(4) Üçüncü fıkraya göre alınan yedekten bir kopya çıkarılarak şüpheliye veya vekiline verilir ve bu husus tutanağa geçirilerek imza altına alınır.” biçiminde hüküm altına alınarak bu maddenin birinci fıkrasında yer alan “soruşturmada,” ibaresinden sonra gelmek üzere “somut delillere dayanan kuvvetli şüphe sebeplerinin varlığı ve” ibaresi eklenmiş ve dördüncü fıkrasında yer alan “İstemesi halinde, bu” ibaresi “Üçüncü fıkraya göre alınan” şeklinde değiştirilmiştir.</p>
+
+<p>Yine aynı maddenin 31.07.2018 tarihli Resmî Gazete’de yayımlanan 7145 sayılı Kanun’un 16. maddesi ile değişik birinci fıkrası;</p>
+
+<p>“(1) Bir suç dolayısıyla yapılan soruşturmada, somut delillere dayanan kuvvetli şüphe sebeplerinin varlığı ve başka surette delil elde etme imkânının bulunmaması halinde, hâkim veya gecikmesinde sakınca bulunan hâllerde Cumhuriyet savcısı tarafından şüphelinin kullandığı bilgisayar ve bilgisayar programları ile bilgisayar kütüklerinde arama yapılmasına, bilgisayar kayıtlarından kopya çıkarılmasına, bu kayıtların çözülerek metin hâline getirilmesine karar verilir. Cumhuriyet savcısı tarafından verilen kararlar yirmi dört saat içinde hâkim onayına sunulur. Hâkim kararını en geç yirmi dört saat içinde verir. Sürenin dolması veya hâkim tarafından aksine karar verilmesi hâlinde çıkarılan kopyalar ve çözümü yapılan metinler derhâl imha edilir.” ikinci fıkrası ise;</p>
+
+<p>“(2) Bilgisayar, bilgisayar programları ve bilgisayar kütüklerine şifrenin çözülememesinden dolayı girilememesi veya gizlenmiş bilgilere ulaşılamaması ya da işlemin uzun sürecek olması halinde çözümün yapılabilmesi ve gerekli kopyaların alınabilmesi için, bu araç ve gereçlere elkonulabilir. Şifrenin çözümünün yapılması ve gerekli kopyaların alınması halinde, elkonulan cihazlar gecikme olmaksızın iade edilir.” şeklinde yeniden düzenlenerek bu maddenin birinci fıkrasında yer alan “Cumhuriyet savcısının istemi üzerine” ibaresi “hâkim veya gecikmesinde sakınca bulunan hâllerde Cumhuriyet savcısı tarafından” şeklinde değiştirilmiş, fıkrada yer alan “hâkim tarafından” ibaresi madde metninden çıkarılmış, fıkraya “Cumhuriyet savcısı tarafından verilen kararlar yirmi dört saat içinde hâkim onayına sunulur. Hâkim kararını en geç yirmi dört saat içinde verir. Sürenin dolması veya hâkim tarafından aksine karar verilmesi hâlinde çıkarılan kopyalar ve çözümü yapılan metinler derhâl imha edilir.” cümlesi eklenmiş, aynı maddenin ikinci fıkrasına “bilgilere ulaşılamaması” ibaresinden sonra gelmek üzere “ya da işlemin uzun sürecek olması” ibaresi eklenmek suretiyle de madde son hâlini almıştır.</p>
+
+<p>Suç ve arama tarihinde yürürlükte bulunan hâliyle madde metni bilgisayarlarda, bilgisayar programlarında ve kütüklerinde arama, bilgisayar kayıtlarından kopya çıkarma ve bu kayıtları çözerek metin hâline getirme işlemlerinin yapılabilmesi için Cumhuriyet savcısının istemi üzerine hâkim tarafından verilmiş bir karar olması şartını ararken 7145 sayılı Kanun ile değiştirilen CMK’nın 134. maddesi ile hâkim veya gecikmesinde sakınca bulunan hâllerde Cumhuriyet savcısı tarafından karar verilmesine imkân tanınmıştır. Cumhuriyet savcısı tarafından verilen karar süresi içerisinde hâkim onayına sunulacaktır. Ayrıca CMK’nın 134/2. maddesinde gerekli kopyaların alınabilmesi işleminin uzun sürecek olması sebebiyle de dijital materyallere doğrudan el konulabilecek, kopya alma işlemi el koyma işleminden sonra da yapılabilecektir.</p>
+
+<p>Hükmün uygulanmasına ilişkin ayrıntılara Adli ve Önleme Aramaları Yönetmeliği’nde yer verilmiştir. Anılan Yönetmelik’in “Bilgisayarlarda, bilgisayar programlarında ve kütüklerinde arama, kopyalama ve el koyma” başlıklı 17. maddesi, CMK’nın 134. maddesi temelinde düzenlenmiştir. Yönetmelik’te ayrıca 3. fıkradan sonra gelmek üzere “Bu işlem, bilgisayar ağları ve diğer uzak bilgisayar kütükleri ile çıkarılabilir donanımları hakkında da uygulanır.” hükmü eklenmiş olup 5. fıkra ise Kanun’da yer alan düzenlemeden farklı olarak “Bilgisayar veya bilgisayar kütüklerine elkoymaksızın da, sistemdeki verilerin tamamının veya bir kısmının kopyası alınabilir. Kopyası alınan verilerin mahiyeti hakkında tutanak tanzim edilir ve ilgililer tarafından imza altına alınır. Bu tutanağın bir sureti de ilgiliye verilir.” şeklinde düzenlenmiştir.</p>
+
+<p>Somut olay bakımından mevzuat hükümleri irdelendiğinde suç ve arama tarihi itibarıyla CMK’nın 134. maddesinde tanımlanan tedbire başvurabilmek için şu iki ön şartın birlikte bulunması gerekmektedir:</p>
+
+<p>1- Bir suç dolayısıyla yapılan soruşturmanın bulunması,</p>
+
+<p>2- Başka surette delil elde etme imkânının bulunmaması.</p>
+
+<p>Yukarıda açıklanan iki ön şartın gerçekleşmesi durumunda Cumhuriyet savcısının istem üzerine şüphelinin kullandığı bilgisayar ve bilgisayar programları ile bilgisayar kütüklerinde arama yapılmasına, bilgisayar kayıtlarından kopya çıkarılmasına, bu kayıtların çözülerek metin hâline getirilmesine hâkim tarafından karar verilir. Ayrıca tedbirin uygulanacağı bilgisayar, bilgisayar programı ve kütükleri bakımından “şüphelinin kullandığı” ifadesine yer verilerek, bunların şüpheliye ait olması gibi bir koşul da aranmamıştır.</p>
+
+<p>CMK’nın 134. maddesinde düzenlenen bilişim sistemlerinde arama ve el koyma konusunda önemli bir terim “yedekleme” olarak karşımıza çıkmaktadır. Bilişim sitemlerinin tamamına veya bir kısmına el konulmasına karar verilmesi hâlinde, el koyma esnasında öncelikle bilişim sisteminde bulunan bütün verilerin yedeklemesinin yapılması şart koşulmaktadır. Ancak Kanun’da yedekleme ile ne ifade edilmek istendiği açıklanmamıştır. Maddenin üçüncü fıkrasında belirtilen “yedekleme” tabirinden, “imaj alma” işlemini anlamak gerekir. Zira imaj alma, dijital medyanın alelade kopyalanması değil aktif, silinmiş veya artık alanlarında bulunan verilerin, orijinal medyadaki hâliyle birebir aynı, adeta aynadaki görüntüsü gibi yedeklenmesidir. Bu işlem “verilerin özet-kriptografik hash değerinin çıkarılması” olarak da adlandırılmaktadır (Muharrem Özen-İhsan Baştürk, Bilişim-İnternet ve Ceza Hukuku, Adalet Yayınevi, Ankara, 2011, s. 158.).</p>
+
+<p>Arama işleminin yapıldığı tarihte yürürlükte bulunan CMK’nın 134. maddesine göre yukarıda açıklanan ön koşullar gerçekleşmesi üzerine maddesinin birinci fıkrası uyarınca hâkimden karar alındıktan sonra bilgisayarlarda, bilgisayar programlarında ve kütüklerinde arama, kopyalama ve geçici el koyma işlemlerinin ne şekilde yapılacağı madde metninde ayrıntılı şekilde düzenlenmiştir. Bu fıkra kural olarak arama, kopyalama ve kayıtların çözülerek metin hâline getirilmesi işlemlerinin şüphelinin kullandığı bilişim sisteminin bulunduğu yerde yapılmasını içermektedir.</p>
+
+<p>Anılan maddenin ikinci fıkrasında ise birinci fıkranın istisnası olarak geçici elkoyma tedbiri düzenlemiştir. Bu tedbire başvurabilmenin ön koşulunu ise bilgisayar, bilgisayar programları ve bilgisayar kütüklerine şifrenin çözülememesinden dolayı girilememesi veya gizlenmiş bilgilere ulaşılamaması oluşturmaktadır. Bu durumlarda çözümün yapılabilmesi ve gerekli kopyaların alınabilmesi için, bu araç ve gereçlere geçici olarak elkonulabilir. Ancak şifrenin çözümünün yapılması ve gerekli kopyaların alınması hâlinde, elkonulan cihazların gecikme olmaksızın iade edilmesi gerekmektedir. Diğer taraftan bilgisayarlarda mahallinde inceleme yapılması çoğu kez mümkün olmayıp tedbirin doğru uygulanması için delillerin mevcut hâllerini koruyucu ve şüphelinin mağduriyetini önleyici tüm önlemlerin alınarak bilgisayara el konulması ve teknik uzmanlar tarafından laboratuvar ortamında incelenmesi gerekmektedir (Muharrem Özen-…, Adli Bilişim, Elektronik Deliller ve Bilgisayarlarda Arama ve El Koyma Tebrinin Hukuki Rejimi, Hakemli Makale.).
+El koyma işlemi sırasında sistemdeki bütün verilerin yedeklenmesi (imaj alma işlemi), yedeklenen kayıtların birer kopyasının istenmesi hâlinde şüpheliye veya vekiline verilmesi, bu hususun tutanağa geçirilerek imza altına alınması gerekmektedir. Yedekleme işlemi de mutlak suretle şüpheli ve/veya müdafisinin huzurunda yapılarak imaj alınmadan önce sisteme veri yerleştirildiği ve daha sonra imaj alındığı şüphesi ortadan kaldırılmalıdır.</p>
+
+<p>Tüm bu hususlar birlikte değerlendirildiğinde CMK’nın 134. maddesinde düzenlenen tedbire ilişkin olarak kanun koyucunun amacının ceza davasında delil oluşturabilecek dijital verilerin mevcut hâllerinin korunması, bu verilere imajlarının alınmasından önce müdahale etme imkânının ortadan kaldırılması ve şüphelinin mağduriyetinin önlenmesi olduğunun kabulü gerekmektedir. Bu itibarla suç ve arama tarihi itibarıyla yürürlükte bulunan CMK’nın 134. maddesi uyarınca bilgisayar, bilgisayar programları ve bilgisayar kütüklerine şifrenin çözülememesinden dolayı girilememesi veya gizlenmiş bilgilere ulaşılamaması ya da kolluk personelinin yetersizliği, ekipman yokluğu, ortamın incelemeye elverişli olmaması, soruşturmanın kapsamı gibi objektif olarak kabulü gereken zorunlu nedenlerden dolayı mahallinde inceleme yapılamaması nedenleriyle suça konu dijital verilere el konulduğu hususu tutanakta belirtilmeden, elkoyma işlemine geçildiği sırada da sistemdeki verilerin yedeklemesi yapılmadan ve istenmesi hâlinde yedekten bir kopya alınıp şüpheli veya müdafisine verilmeden ya da somut olayın özelliklerine göre mahallinde yedekleme yapma ve yedekten kopya verme olanağının bulunmadığının objektif olarak kabulünde zorunluluk bulunan hâllerde, dijital delillere imaj alınmadan önce müdahale edildiği intibasını ortadan kaldıracak önlemler alınmadan inceleme yapılması hâlinde arama ve elkoyma işleminin yasaya ve hukuka uygunluğundan bahsetmek mümkün olmayacak ve elde edilen veriler hukuka aykırı yöntemle elde edilen delil niteliğinde olacaktır. Bu anlamda yapılan yedekleme işlemi soruşturmanın güvenilirliği, tarafsızlığı ve adil yargılanma hakkına uygunluğu açısından son derece önem taşımaktadır.</p>
+
+<p>Bu aşamada, uyuşmazlık konusunda isabetli bir hukuki çözüme ulaşılması için “hukuka aykırı yöntemle elde edilen delillerin kullanılması” konusu üzerinde de durulması gerekmektedir.</p>
+
+<p>İstikrar kazanmış yargı kararlarında vurgulandığı ve öğretide de ifade edildiği üzere, ceza muhakemesinin amacı usul kurallarının öngördüğü ilkeler doğrultusunda maddi gerçeğin her türlü şüpheden uzak biçimde kesin olarak belirlenmesidir. Maddi gerçeğe ulaşılmasında kullanılan araç delillerdir. Ceza Muhakemesi Kanunu’nun “Delilleri takdir yetkisi” başlıklı 217. maddesinin ikinci fıkrasında yer alan; “Yüklenen suç, hukuka uygun bir şekilde elde edilmiş her türlü delille ispat edilebilir.” şeklindeki hükümle, ceza muhakemesinde kullanılacak delillerin hukuka uygun bir şekilde elde edilmesi gerektiği açıkça belirtilmiş ve “delillerin serbestliği” ilkesine de vurgu yapılmıştır. Buna göre bütün deliller hukuka uygun olarak elde edilmeli ve değerlendirilmelidir.</p>
+
+<p>Öğretide; “Ceza muhakemesinde delilleri elde etmek amacıyla kullanılan soruşturma işlemlerinin ve yöntemlerinin çoğunluğuyla, koruma tedbirlerinin tamamı, kişilerin temel hak ve özgürlüğüne müdahaleyi gerektirir. Ceza muhakemesi toplumun suçun aydınlatılmasındaki menfaati ile bireylerin temel hak ve özgürlüklerine dokunulmasındaki çıkarının dengelenmesi esasına dayanır. Özellikle soruşturma aşamasında maddi gerçeğe ulaşmak amacıyla delil elde edilmeye çalışılırken, insan onuru ve insan hakları ile hukukun ve ceza muhakemesinin temel ilkelerinden ödün verilemez.” denilmektedir (Murat Volkan Dülger, Ceza Muhakemesi Hukukunda Dışlama Kuralı ve Hukuka Aykırı Delillerin Uzak Etkisi, Seçkin Yayınları, Ankara 2014, s. 38.).</p>
+
+<p>Ceza Muhakemesi Kanunu’nun 206. maddesinin ikinci fıkrasının (a) bendinde; ortaya konulmak istenen delilin kanuna aykırı olarak elde edilmesi hâlinde reddolunacağı belirtilmiş, 217. maddesinin ikinci fıkrasında ise yüklenen suçun, hukuka uygun olarak elde edilmiş her türlü delille ispat edilebileceği belirtilmiştir. Madde metinlerinden anlaşılacağı üzere, hukuka uygun olarak elde edilmeyen deliller, ceza yargılama sistemimizde ispat aracı olarak kullanılamayacaktır. CMK’nın 230. maddesinin birinci fıkrası uyarınca, hükmün gerekçesinde delillerin tartışılması ve değerlendirilmesi, hükme esas alınan veya reddedilen delillerin belirtilmesi, bu kapsamda dosya içerisinde bulunan ve hukuka aykırı yöntemlerle elde edilen delillerin ayrıca ve açıkça gösterilmesi zorunludur.</p>
+
+<p>Ceza muhakemesinin amacı olan maddi gerçeğe ulaşabilmek için, delil elde edilmesi aşamasında şahsi ve toplumsal değerlerin korunması da gereklidir. Kanun koyucu bu amaçla, delil serbestliği ilkesine, öğreti ve uygulamada “delil yasakları” olarak adlandırılan bir takım sınırlamalar getirmiştir. Delil yasakları; “delil elde etme” ve “değerlendirme” yasakları olarak ikiye ayrılmaktadır. Delillerin elde edilme şekline ilişkin yasaklara “delil elde etme yasakları” hukuka uygun olarak elde edilmiş bulunsa bile bir delilin yargı mercilerince ortaya konulup değerlendirilebilmesine ilişkin yasaklara ise “delil değerlendirme yasakları” denilmektedir.</p>
+
+<p>İfade alma ve sorgunun yasak usullerle gerçekleştirilmesi, tanıklıktan çekinme hakkı olanlara bu hakkın hatırlatılmaması, aramanın herhangi bir karara dayanmadan yapılması, ses veya görüntülerin montajlanması delil elde etme yasağına; tanıklıktan çekinen şahidin önceki ifadelerinin okunamaması, iletişimin denetlenmesi sırasında tesadüfen elde edilen delillerin CMK’nın 135. maddesinin altıncı fıkrasında sayılanlar dışındaki bir suçun soruşturma ve kovuşturulmasında kullanılamaması ise delil değerlendirilmesi yasaklarına örnek olarak gösterilebilir.</p>
+
+<p>Kanuna aykırılıktan daha geniş bir içeriğe sahip olan hukuka aykırılık kavramının kapsam ve çerçevesi belirlenirken, gerek pozitif hukuk metinlerine, gerekse kişilerin temel hak ve hürriyetlerine ilişkin evrensel hukuk ilkelerine aykırılık bulunup bulunmadığı gözetilmeli ve aykırılığın varlığı durumunda, “hukuka aykırılığın mevcudiyeti” kabul edilmelidir.</p>
+
+<p>Ceza muhakemesinde temel hak ve özgürlükleri sınırlayan kurallar ihlal edilerek toplanan deliller hukuka aykırı sayılacaktır. Avrupa İnsan Hakları Mahkemesi de kararlarında istikrarlı bir biçimde; dürüst ve adil bir yargılamadan söz edilebilmesi için, delillerin elde edilme yol ve yöntemi dahil olmak üzere yargılamanın bütün olarak adil olup olmadığının değerlendirilmesi gerektiğini belirtmektedir.</p>
+
+<p>Bu açıklamalar ışığında ön sorun değerlendirildiğinde;</p>
+
+<p>Bilişim sisteminin işleyişini engelleme veya bozma suçundan yapılmakta olan soruşturmaya ilişkin olarak sanık …’in Acar Sokak, No: 12, K: 1, D: 1 Maltepe/İstanbul adresinde oturduğunun tespit edilmesi üzerine Kartal (Kapatılan) 2. Sulh Ceza Mahkemesince 15.08.2007 tarih ve 2007/1860 sayı ile söz konusu adreste ele geçirilecek bilgisayar veya bilgisayar programları ile bilgisayar kütükleri üzerinde CMK’nın 134. maddesi uyarınca arama yapılmasına, suç unsuru bulunması hâlinde bilgisayar kayıtlarından kopya çıkartılmasına ve bu kayıtların çözülerek metin hâline getirilmesine karar verildiği, bu karar doğrultusunda yapılan arama işlemi neticesinde; 1 adet Western Digital marka, WD1600 model, WCANM2161062 seri numaralı, 1 adet Western Digital marka, WD2500JS model, WCANKF242910 seri numaralı, 1 adet Samsung marka, SP0802N model, S00JJ60Y104312 seri numaralı ve 1 adet Western Digital marka, WD200 model, WMAAV1766500 seri numaralı sabit disklerin ele geçirildiği, ardından sebebi belirtilip bu husus tutanağa geçirilmeden ve mahallinde sistemdeki bütün verilerin yedeklemesi yapılmadan söz konusu sabit disklere el konularak teknik inceleme için İstanbul Emniyet Müdürlüğü, Asayiş Şube Müdürlüğü, Ar-Ge Büro Amirliğine getirildiği anlaşılan olayda; kural olarak bulundukları mahalde incelenmeleri gereken suça konu sabit disklere gerek CMK’nın arama tarihi itibarıyla yürürlükte bulunan 134/2. maddesinde “Bilgisayar, bilgisayar programları ve bilgisayar kütüklerine şifrenin çözülememesinden dolayı girilememesi veya gizlenmiş bilgilere ulaşılamaması…” şeklinde belirtilen hükme; gerekse objektif olarak kabulü gereken zorunlu nedene dayalı bir gerekçe gösterilmeden elkonulması, yine somut olayın özelliklerine göre engel bir durum bulunmadığı hâlde el koyma işlemi sırasında sistemdeki bütün verilerin yedeklenmesi gerektiği ve istenmesi hâlinde bu yedekten bir kopya çıkartılarak arama sırasında hazır bulunan sanığa verilmesi gerektiğinin gözetilmemesi suretiyle CMK’nın 134. maddesinin üç ve dördüncü fıkralarına aykırı hareket edilmesi sebebiyle usulüne uygun olmayan elkoyma işlemi sonucu suça konu sabit disklerden elde edilen verilerin hukuka aykırı olarak elde edilen delil niteliğinde olduğu ve Anayasa’nın 38. maddesinin altıncı fıkrası ile CMK’nın 206. maddesinin ikinci fıkrasının (a) bendi, 217. maddesinin ikinci fıkrası ile 230. maddesinin birinci fıkrasının (b) bendi uyarınca hükme esas alınamayacağı anlaşılmakla dosyada mevcut bulunan diğer delillerin karar yerinde gösterilip tartışılarak sonucuna göre sanıkların hukuki durumlarının belirlenmesi gerektiği kabul edilmelidir.
+Bu itibarla Yargıtay Cumhuriyet Başsavcılığı itirazının değişik gerekçe ile kabulüne, Özel Daire onama kararının kaldırılmasına ve Yerel Mahkeme hükümlerinin suça konu sabit disklerden elde edilen veriler hukuka aykırı yöntemle elde edilen delil niteliğinde olduğundan değerlendirme dışında bırakılmasından sonra, dosyada mevcut bulunan diğer delillerin karar yerinde gösterilip tartışılması gerektiği hususunun gözetilmemesi isabetsizliğinden sair yönleri incelenmeksizin bozulmasına karar verilmelidir.
+Ulaşılan sonuç karşısında, sanıklar …, … (…), … ve … hakkında 12.07.2007 tarihinden sonra gerçekleştiği kabul edilen DDos saldırıları ile ilgili dava açılıp açılmadığı, sanıklara atılı bilişim sisteminin işleyişini engelleme veya bozma suçunun sabit olup olmadığı ve bilişim sisteminin işleyişini engelleme veya bozma suçundan sanıklara ek savunma hakkı verilmeden sanıklar müdafilerine ek savunma hakkı verilmek suretiyle iddianamede gösterilmeyen TCK’nın 244/1 ve 43. maddelerinin uygulanmasının, 5271 sayılı CMK’nın 226. maddesine aykırılık oluşturup oluşturmadığının belirlenmesine ilişkin uyuşmazlık konuları değerlendirilmemiştir.</p>
+
+<p>SONUÇ:</p>
+
+<p>Açıklanan nedenlerle;</p>
+
+<p>1- Yargıtay Cumhuriyet Başsavcılığının itirazının DEĞİŞİK GEREKÇEYLE KABULÜNE,</p>
+
+<p>2- Yargıtay 8. Ceza Dairesinin 17.06.2014 tarihli ve 2566-15115 sayılı onama kararının KALDIRILMASINA,</p>
+
+<p>3- İstanbul 21. Asliye Ceza Mahkemesinin 01.12.2011 tarihli ve 364-330 sayılı hükümlerinin, suça konu sabit disklerden elde edilen veriler hukuka aykırı yöntemle elde edilen delil niteliğinde olduğundan değerlendirme dışında bırakılmasından sonra, dosyada mevcut bulunan diğer delillerin karar yerinde gösterilip tartışılması gerektiği hususunun gözetilmemesi isabetsizliğinden sair yönleri incelenmeksizin BOZULMASINA,</p>
+
+<p>4- Dosyanın, mahalline gönderilmek üzere Yargıtay Cumhuriyet Başsavcılığına TEVDİ EDİLMESİNE, 25.02.2020 tarihinde oy birliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>Yargıtay 17. Ceza Dairesi         2015/27517 E.  ,  2017/1716 K.</strong></p>
+
+<ul>
+  <li>
+    <p><strong>Cep Telefonun İncelenmesi Usulü</strong></p>
+  </li>
+  <li>
+    <p><strong>CMK 134. Madde</strong></p>
+  </li>
+</ul>
+
+<p>Cumhuriyet Savcısının talimatıyla yapıldığı belirtilen, telefon inceleme tutanağının 20.04.2014 saat 14.10’da düzenlendiği, bu saatten daha önceki bir saatte saat 12.57’de düzenlenen “fotoğraf teşhis tutanağına” göre şüphe üzerine durdurulan sanığın cep telefonunun Cumhuriyet savcısının emri ya da mahkeme kararı olmadan kolluk görevlileri tarafından incelendiği ve telefonda, müştekiye ait çalıntı motosikletin fotoğrafının telefonda K ismiyle kayıtlı bir kişiye gönderildiğinin tespiti üzerine sanık hakkında mahkumiyet kararı verilmiş ise de; işlevi itibarıyla bilgisayar niteliğinde olan cep telefonu üzerinde inceleme yapılabilmesi için CMK’nın 134. maddesi uyarınca hakim kararı alınması gerektiği bu kararın alınmaması nedeniyle arama ve incelemenin yasaya aykırı olduğu ve bu delilin mahkumiyete esas alınmayacağı gibi bu delil yasal kabul edilse bile sanığın cep telefonunda bulunan motosiklet fotoğrafının müştekiye ait motosiklet olduğu ve sanık tarafından çalındığına dair sanığın mahkumiyetine yeterli, kesin ve inandırıcı delil bulunmaması nedeniyle sanığın atılı suçtan beraatine karar verilmesi gerekirken, yetersiz gerekçeyle yazılı şekilde mahkumiyetine karar verilmesi,</p>
+
+<p>Bozmayı gerektirmiş, o yer Cumhuriyet Savcısı’nın ve sanık … müdafiinin temyiz nedenleri bu itibarla yerinde görülmüş olduğundan, hükmün açıklanan nedenlerle tebliğnameye uygun olarak BOZULMASINA, 15.02.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 17. CEZA DAİRESİ
+Esas: 2015/27517 Karar: 2017/1716</strong> Tarih: 15.02.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 134. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Bilgisayarlarda, Bilgisayar Programlarında ve Kütüklerinde Arama, Kopyalama ve Elkoyma</strong></p>
+  </li>
+</ul>
+
+<p>KARAR : Sanığın adli sicil kaydında yer alan Şanlıurfa 1. Asliye Ceza Mahkemesi’nin 2010/504 Esas ve 2011/230 Karar sayılı ilamıyla hükmolunan 2 yıl 6 ay hapis cezası ile mahkumiyete ilişkin, 19.02.2014 tarihinde kesinleşen ilamın 5237 Sayılı TCK’nın 58. maddesi uyarınca tekerrüre esas bulunduğunun gözetilmemesi, aleyhe temyiz olmadığından; her ne kadar hükümden sonra 02.12.2016 tarihinde 29906 Sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren 6763 Sayılı Ceza Muhakemesi Kanunu ile Bazı Kanunlarda Değişiklik Yapılmasına Dair Kanun’un 34. maddesiyle değişik 5271 Sayılı CMK’nın 253. maddesinin 1. fıkras 1. fıkrasının (b) bendine eklenen alt bendler arasında yer alan ve 5237 Sayılı TCK’nın 141. maddesinde tanımı yapılan hırsızlık suçu da uzlaşma kapsamına alınmış ise de açıkta sabit bir noktaya kilitlenmeden bırakılan motosikletin çalınması eyleminin, TCK’nın 142/1-e maddesindeki suçu oluşturması,atıfet kuralı uyarınca Yargıtay Ceza Genel Kurulu’nun 04.03.2008 gün, 2008/6-47 Esas ve 2008/43 Sayılı Kararı ışığında, sanığın yanılgılı uygulama sebebiyle ortaya çıkacak sonuçtan ikinci kez yararlandırılmasının hakkaniyete aykırı sonuçlar doğmasına, adalet ve eşitlik ilkelerinin sakatlanmasına yol açacağı değerlendirildiğinden bozma nedeni yapılmamıştır.</p>
+
+<p>1-)Cumhuriyet Savcısının talimatıyla yapıldığı belirtilen, telefon inceleme tutanağının 20.04.2014 saat 14.10’da düzenlendiği, bu saatten daha önceki bir saatte saat 12.57’de düzenlenen “fotoğraf teşhis tutanağına” göre şüphe üzerine durdurulan sanığın cep telefonunun Cumhuriyet savcısının emri ya da mahkeme kararı olmadan kolluk görevlileri tarafından incelendiği ve telefonda, müştekiye ait çalıntı motosikletin fotoğrafının telefonda K ismiyle kayıtlı bir kişiye gönderildiğinin tespiti üzerine sanık hakkında mahkumiyet kararı verilmiş ise de; işlevi itibarıyla bilgisayar niteliğinde olan cep telefonu üzerinde inceleme yapılabilmesi için CMK’nın 134. maddesi uyarınca hakim kararı alınması gerektiği bu kararın alınmaması sebebiyle arama ve incelemenin yasaya aykırı olduğu ve bu delilin mahkumiyete esas alınmayacağı gibi bu delil yasal kabul edilse bile sanığın cep telefonunda bulunan motosiklet fotoğrafının müştekiye ait motosiklet olduğu ve sanık tarafından çalındığına dair sanığın mahkumiyetine yeterli, kesin ve inandırıcı delil bulunmaması sebebiyle sanığın atılı suçtan beraatine karar verilmesi gerekirken, yetersiz gerekçeyle yazılı şekilde mahkumiyetine karar verilmesi,</p>
+
+<p>Kabule göre de;</p>
+
+<p>2-)Mahkemenin gerekçeli kararda suç tarihinin 13.04.2014 yerine 19.04.2014 olarak yanlış yazılması,</p>
+
+<p>3-)Açıkta sabit bir noktaya kilitlenmeden bırakılan motosikletin çalınması eyleminin, TCK’nın 142/1-e maddesine uyan suçu oluşturduğunun gözetilmemesi,</p>
+
+<p>4-)T.C. Anayasa Mahkemesi’nin, TCK’nın 53. maddesine dair olan, 2014/140 Esas ve 2015/85 Karar sayılı iptal kararının, 24.11.2015 gün ve 29542 Sayılı Resmi Gazete’de yayımlanmış olması sebebiyle iptal kararı doğrultusunda TCK’nın 53. maddesindeki hak yoksunluklarının yeniden değerlendirilmesinde zorunluluk bulunması,</p>
+
+<p>5-)Başka bir hırsızlık eylemi sebebiyle şüphe üzerine durdurulan sanıktan alınan cep telefonunun ne şekilde suçun işlenmesinde kullanılan veya suçun işlenmesine tahsis edilen ya da suçtan meydana gelen eşya niteliğinde olduğu açıklanmadan TCK’nın 54. maddesi uyarınca zoralımına karar verilmesi,</p>
+
+<p>SONUÇ : Bozmayı gerektirmiş, o yer Cumhuriyet Savcısı’nın ve sanık … müdafiinin temyiz nedenleri bu itibarla yerinde görülmüş olduğundan, hükmün açıklanan sebeplerle tebliğnameye uygun olarak BOZULMASINA, 15.02.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 19. CEZA DAİRESİ
+Esas: 2015/2092 Karar: 2015/1175</strong> Tarih: 06.05.2015</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 134. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Bilgisayarlarda, Bilgisayar Programlarında ve Kütüklerinde Arama, Kopyalama ve Elkoyma</strong></p>
+  </li>
+</ul>
+
+<p>Yerel Mahkemece verilen hüküm temyiz edilmekle, başvurunun süresi ve kararın niteliği ile suç tarihine göre dosya incelendi, gereği görüşülüp düşünüldü:</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>Müşteki vekilinin şikayeti üzerine başlatılan soruşturmada, …1. Sulh Ceza Mahkemesi’nin 21/08/2009 tarihli, 2009/1034 D. İş sayılı kararında, CMK’nın 119. maddesi uyarınca sanık tarafından işletilen iki ayrı işyerinde arama yapılmasına karar verilmesine karşın, aynı işyerinde bulunan bilgisayarlar üzerinde arama yapılabilmesine olanak tanıyan CMK’nın 134. maddesine göre verilmiş bir arama kararı bulunmadığı anlaşılmakla, işyerinde bulunan bilgisayarlar üzerinde yapılan arama sonucunda elkonulan ve içerisinde müşteki firmaya ait lisanssız yazılımların olduğu belirtilen harddiskler ve CD’ler hukuka aykırı delil niteliğinde olup hükme esas alınamayacağından, sanık hakkında verilen beraat kararı usul ve yasaya uygun görülmekle,</p>
+
+<p>Sonuç: Eyleme ve yükletilen suça yönelik katılan vekilinin temyiz iddiaları yerinde görülmediğinden tebliğnameye uygun olarak, temyiz davasının esastan reddiyle hükmün ONANMASINA, 06.05.2015 tarihinde oybirliği ile, karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 16. CEZA DAİRESİ
+Esas : 2017/3296 Karar : 2018/605</strong> Tarih : 21.02.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 134. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Bilgisayarlarda, Bilgisayar Programlarında ve Kütüklerinde Arama, Kopyalama ve Elkoyma</strong></p>
+  </li>
+</ul>
+
+<p>Dosya incelenerek gereği düşünüldü:</p>
+
+<p>1- Yargıtay Ceza Genel Kurulu tarafından onanarak kesinleşen Dairemizin ilk derece mahkemesi sıfatıyla verdiği 24.04.2017 tarih, 2015/2 esas, 2017/3 sayılı kararında</p>
+
+<p>ByLock iletişim sisteminin FETÖ/PDY silahlı terör örgütü mensuplarının kullanmaları amacıyla oluşturulan ve münhasıran bu suç örgütünün bir kısım mensupları tarafından kullanılan bir ağ olması nedeniyle;</p>
+
+<p>Örgüt talimatı ile bu ağa dahil olunduğunun ve gizliliği sağlamak için haberleşme amacıyla kullanıldığının, 
+her türlü şüpheden uzak, kesin kanaate ulaştıracak teknik verilerle tespiti halinde, kişinin örgütle bağlantısını gösteren delil olacağının kabul edildiği dikkate alınarak;</p>
+
+<p>Somut olayda, sanığın ByLock kullanıcısı olup olmadığının suç vasfının tayini açısından belirleyici nitelikte olması karşısında,</p>
+
+<p>istinaf aşamasından sonra dosya içerisine konulduğu anlaşılan ve sanığın ByLock kullanıcısı olduğunu bildiren ayrıntılı ByLock tespit ve değerlendirme tutanağının CMK’nın 217. maddesi uyarınca duruşmada sanık ve müdafiine okunarak diyecekleri sorulduktan sonra yargılamaya devamla bir hüküm kurulması gerekirken, sanığın ByLock kullanıcısı olduğuna dair Isparta İl Emniyet Müdürlüğü tarafından düzenlenen yetersiz ve eksik belgeye dayanılarak mahkumiyet kararı verilmesi;</p>
+
+<p>2- Silahlı terör örgütüne üye olma suçunun temadi eden suçlardan olduğu ve temadinin yakalanma ile kesildiği de nazara alındığında, karar başlığında suç tarihinin “06.08.2016” yerine “15.07.2016” olarak gösterilmesi,</p>
+
+<p>3- Isparta Cumhuriyet Başsavcılığı adli emanetinin 2017/657 sırasında kayıtlı eşya hakkında bir karar verilmemesi,</p>
+
+<p>4- Kabul ve uygulamaya göre ise;</p>
+
+<p>Anayasa Mahkemesinin 24.11.2015 tarih ve 29542 sayılı Resmi Gazete`de yayımlanarak yürürlüğe giren 08.10.2015 tarih, 2014/140 E. 2015/85 sayılı iptal kararı ile TCK’nın 53. maddesindeki bazı düzenlemelerin iptal edilmiş olması nedeniyle bu karar doğrultusunda hüküm kurulması gerektiğinin gözetilmemesi,</p>
+
+<p>Kanuna aykırı, sanık müdafiinin temyiz itirazları bu itibarla yerinde görülmüş olduğundan, hükmün bu sebeplerden dolayı BOZULMASINA, 21.02.2018 tarihinde üye …`ın 1 nolu bozma sebebi yönünden karşı oyu ve oyçokluğuyla karar verildi.</p>
+
+<p>KARŞI OY:</p>
+
+<p>Sanık … hakkında silahlı terör örgütü üyesi olmak suçundan kurulan mahkumiyet hükmünün bozulmasına ilişkin sayın çoğunluğun kararına aşağıda yazılı hususlar nedeniyle katılmak mümkün olmamıştır.</p>
+
+<p>Sayın çoğunluğun hükmün bozulmasına esas aldığı gerekçede Dairemizin 24.04.2017 tarih ve 2015/3- 2017/3 sayılı ilk derece mahkemesi sıfatıyla verdiği karar ve Yargıtay Ceza Genel Kurulunun ilk derece mahkemesi olarak verilen yukarıda Dairemizin tarih ve sayısı yazılı karara yönelik temyiz incelemesi ile verdiği 26.09.2017 tarih ve 2017/16-MD-956 2017/370 sayılı kararlarına atıf yapılarak bylock iletişim sisteminin FETÖ/PDY silahlı terör örgütü mensuplarının kullanmaları amacıyla oluşturulduğu ve münhasıran bir kısım örgüt mensupları tarafından bir ağ olması nedeniyle örgütün talimatıyla gizliliği sağlamak için haberleşme amacıyla kullanıldığı her türlü şüpheden uzak kesin kanaate ulaşacak teknik verilerle tespiti halinde kişinin örgüt bağlantısını gösteren delil olduğu tespit ve kabulüne yer verildikten sonra sanığın bylock kullanıcısı olup olmadığının suç vasfının tayini açısından belirleyici nitelikte olması karşısında istinaf aşamasından sonra dosya içerisine konulduğu anlaşılan sanığın bylock kullanıcısı olduğunu bildiren ayrıntılı bylock tespit ve değerlendirme tutanağının CMK`nın 217. maddesi uyarınca duruşmada sanık ve müdafiine okunarak diyecekleri sorulduktan sonra hüküm kurulması gerektiğinden eksik araştırma ile karar verildiğinden bahisle bozulmuştur.</p>
+
+<p>Dairemizin yukarıda tarih ve sayısı yazılı ilk derece mahkemesi kararı ve bu karara yönelik Yargıtay Ceza Genel Kurulunun temyiz mahkemesi sıfatıyla verdiği karar içeriğinde bylock iletişim sisteminin FETÖ/PDY silahlı terör örgütü</p>
+
+<p>mensuplarının kullanmaları amacıyla oluşturulduğu ve münhasıran bir kısım örgüt mensupları tarafından bir ağ olması nedeniyle örgütün talimatıyla gizliliği sağlamak için haberleşme amacıyla kullanıldığı her türlü şüpheden uzak kesin kanaate ulaşacak teknik verilerle tespiti halinde kişinin örgüt bağlantısını gösteren delil olduğu hususunda sayın çoğunluk ile aramızda görüş ayrılığı yoktur.</p>
+
+<p>Cevabını aramamız gereken soru şudur? Sanığın bylock iletişim sistemini örgütsel iletişimde gizliliği sağlama amacıyla kullandığının kesin ve şüpheden uzak tespiti yönünden bylock tespit ve değerlendirme tutanağı dosya kapsamı itibariyle suçun sübutu açısından zorunlu bir delil midir? Sayın çoğunluk ile aramızda görüş ayrılığı bu noktada toplanmaktadır.</p>
+
+<p>İlk derece mahkemesi kararında; Isparta Sulh Ceza Mahkemesinin arama CMK’nın 134. maddesi kapsamında el koyma kopya alma kararı üzerine sanığın evinde yapılan aramada iki hafıza kartı on tabanca mermisi ve 3533… imei numaralı Samsung marka cep telefonu bulunması, sanık 23.07.2016 tarihinde … nolu hattın bulunduğu nokia cep telefonunun kendisi tarafından teslimi, Isparta Emniyet Müdürlüğünün 23.01.2017 tarihli araştırma tutanağında sanık adına kayıtlı …. nolu sanık adına kayıtlı hatta ilk tespit tarihi 27.08.2014 olan bylock programının tespit edilmesi; sanığın örgüt elebaşının çağrısından sonra 27.01.2014 tarihinde Bankasıyla’ da katılım hesabı açtığı 46.000 TL para yatırması; yine sanığın Bankasıyla’ da 29.04.2014 tarihinde de katılım hesabı açıp 47.078 TL yatırdığının tespit edilmesi; kovuşturma aşamasında dosyaya getirtilen …ın sanık hakkındada polis lojmanlarında bulunan bir evde sohbet denilen örgütsel toplantıya sanığında katıldığını sanığın polis memurları . ve …ın evlerinde düzenlenen sohbet toplantılarında zaman zaman gördüğünü bu sohbet toplantılarında; Zaman, Sızıntı ve Yeni Ümit dergisine abone olunmasının öneminden; himmet ve kurban derisinin cemaate verilmesinin öneminden bahsedilip, örgüt elebaşının video kasetlerinin izlenildiğini beyan etmesi; yine … de beyanında yapıya dahil olan … karakolu grubundan …‘in …dan bahsederek bizimle beraber gelip gidiyor şeklinde beyanı, …‘nin cemaatin etkinlik ve aktivitelerinde gördüğü kişileriden bahsederken …`ı kendisinin rahatsız olduğu dönemde Asayiş şube cinayet büroya tayin olduğundan tanıdığını kendisini cemaatin yemek türü bir aktivitesinde gördüğünü yönündeki beyan ve fotoğrafından teşhisi; HTS analiz raporu; sanığın bylock tespit edilen hattın kendisine ait olup hattı kendisinin kullandığı ancak bylock kullanmadığını yönündeki beyanı ve sanık Polis memuru iken FETÖ/PDY ile iltisakı nedeniyle KHK ile ihraç edilmesini hükme dayanak yapılarak, sanığın FETÖ/PDY ile örgütsel bağ kurup örgütsel toplantı ve aktivitelere katıldığı örgütün gizli iletişim sistemi olan bylock programını kullandığı örgütsel soruşturma ve kovuşturmaları olan kişilerle HTS kayıtları ile irtibatının bulunduğu örgüt elebaşının çağrısı ile Bankasyada katılım hesabı açıp para yatırdığı kabulü ile silahlı örgüt üyesi olmak suçundan mahkumiyetine karar verilmiştir.</p>
+
+<p>Mahkemenin kabulünde yer verdiği deliller duruşmada okunarak hükme dayanak yapılmıştır.</p>
+
+<p>Her şeyden önce şunun ifade edilmesi gerekir ki ceza yargılaması şekli delil sistemi üzerinden yürüyen bir yargılama değildir. Bu yönü itibariyle hukuk yargılamasından ayrılır. Ceza yargılamasında hukuka uygun olarak toplanmış her türlü delil kullanılabilir. Delilin akla, mantığa tecrübe kurallarına hukukun genel ilkelerine aykırı olmaması koşuluyla vicdani kanıyı oluşturacak biçimde toplanması karar için yeterlidir. Ceza yargılamasında uygulama sonucu itibariyle şekli delil sistemine dönüşmemelidir. Sanığın sübut bulmuş silahlı örgüt üyesi olma suçunda ayrıca bylock tespit değerlendirme tutanağının aranması şekli delil arandığı gibi bir izlenim oluşturacağı gözetildiğinde yargıtay içtihatlarında böyle bir algıya yol açabilecek uygulamalardan kaçınılması gerekir.</p>
+
+<p>Bu kapsamda kabul ve iddia olunan bir vakıa başka bir delille kesin olarak kanıtlanıyorsa artık bunun şekli anlamda bir başka bir delile ihtiyaç duymayacağı izahtan varestedir.</p>
+
+<p>Somut olayda sanığın atılı suçu; bylock araştırma tutanağı kendi hattından bylock kullandığının belirlenmesi, Bankasya`da birden fazla katılım hesabı açarak yine birden fazla kez polis memuruna göre azımsanmayacak paranın birden fazla kez yatırılması, sanığın başka dosya sanıklarının beyanları ile zamana yayılan örgütsel toplantılara ve etkinliklere katılması ile örgüt üyeliği suçu sübut bulmuş olup ilk derece mahkemesinin hükme dayanak yaptığı tüm deliller duruşmada tartışılmış sanık ve müdafiinden diyecekleri sorulmuştur.</p>
+
+<p>Sanığın bylock kullanıcısı olduğuna ilişkin tespit değerlendirme raporu sanığa atılı suçun kanıtlanmasında artık bir önemi bulunmamaktadır. Kaldı ki Mahkeme dayanak yaptığı delillerle ispatlanmış olan vakıanın sırf bu nedenle bozma nedeni yapılması AİHS ile garanti altına alınan makul sürede yargılanma hakkına da müdahale içermektedir.</p>
+
+<p>Yine sayın çoğunluğun tespit değerlendirme raporunun CMK’nın 217. maddesine göre sanık ve müdafiine duruşmada okunarak diyeceklerinin sorulmasına ilişkin bozma gerekçesine de katılmak mümkün değildir. Mahkeme sonradan gelen tespit değerlendirme raporu hükme esas alınmamıştır. CMK’nın 217. maddesine aykırılıktan söz edilebilmesi için duruşmaya getirilmeyen ve huzurda tartışılmayan bir delilin hükme dayanak yapılması gerekmektedir. Tespit değerlendirme raporu ilk derece kararından sonra dosyaya girmiştir. Somut olayda sonradan dosyaya giren delil nedeniyle CMK’nın 217. maddesine muhalefetten söz edilemeyecektir.</p>
+
+<p>Bylocka ilişkin gerek Dairemizin gerekse Yargıtay Ceza Genel Kurulunun kararlarında bylock içeriklerinin belirlenmiş olmasının aranmayacağı, bylock programının örgütsel iletişimde gizliliği sağlamak amacıyla kurulup kullanıldığının kesin olarak tespitinin tek başına mahkumiyete yeterli olacağına vurgu yapması karşısında; ilk derece mahkemesince ortaya konulup tartışılan delillerle birlikte değerlendirildiğinde sanığın silahlı örgüte üye olmak suçu sabit olduğundan hükmün bozma ilamının 2 - 3 ve 4 nolu bozma nedenleri yönünden düzeltilerek onanması görüşüyle sayın çoğunluğun 1 nolu bozma düşüncesine katılmak mümkün olmamıştır.</p>
+
+<hr>
+
+<p><strong>YARGITAY 16. CEZA DAİRESİ
+Esas : 2017/3634 Karar : 2018/277</strong> Tarih : 13.02.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 134. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Bilgisayarlarda, Bilgisayar Programlarında ve Kütüklerinde Arama, Kopyalama ve Elkoyma</strong></p>
+  </li>
+</ul>
+
+<p>Bölge Adliye Mahkemesince verilen hüküm temyiz edilmekle;</p>
+
+<p>Temyiz edenin sıfatı, başvurunun süresi, kararın niteliği ve temyiz sebebine göre dosya incelendi, gereği düşünüldü;</p>
+
+<p>Temyiz talebinin reddi nedenleri bulunmadığından işin esasına geçildi;</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, tanık beyanları, arama tutanağı, belgeler, savunma ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>1-a)Ayrıntıları Dairemizin 20.12.2017 tarih ve 2017/1862 Esas 2017/5796 Karar sayılı ilamında belirtildiği üzere;</p>
+
+<p>Örgütün kurucusu, yöneticileri ve örgüt hiyerarşisinde üçüncü veya daha yukarı katmanlarda yer alan mensuplarının zaman sınırlaması olmaksızın örgütün nihai amacından haberdar oldukları yönünde kuşku bulunmamakta ise de, bir ve ikinci katmanlarda yer alanlar açısından; Devletin her kurumuna sızan mensupları vasıtasıyla kişi ve kurumlara yönelik, örgütün gerçek yüzünü ortaya koyan operasyonlara başlandığı, bu yapının kamuoyu ve medya tarafından tartışılır hale geldiği, üst düzey hükümet yetkilileri ve kamu görevlileri tarafından yapılan açıklamalarda “paralel yapı” veya “terör örgütü” olduğuna ilişkin tespitler ve uyarıların yapıldığı, Milli Güvenlik Kurulu tarafından da aynı değerlendirmelerin paylaşıldığı süreçten önce icra edilen faaliyetlerin, nitelik, içerik ve mahiyeti itibariyle silahlı terör örgütünün amacına hizmet ettiğinin somut delil ve olgularla ortaya konulmadıkça örgütsel faaliyet kapsamında kabul edilemeyeceği değerlendirilerek;</p>
+
+<p>Sanığın örgütle iltisaklı olduğu değerlendirilen derneklere üye olmak, Bank Asya’ya talimat üzerine para yatırmak, Aktif sen üyesi olmak şeklinde gerçekleşen örgütsel faaliyetlere katıldığı sabit ise de; gizlilik içinde örgütsel toplantılar gerçekleştirildiğine dair Uyap sisteminden yapılan kontrolde dosya içine sonradan girdiği anlaşılan … ve …’ın suçun sübutu, vasfı ve cezanın tayini açısından belirleyici delil olduğundan başka dosya şüphelisi olmaları halinde aşamalardaki beyanlarının getirtilmesi, tanık sıfatını haiz olmaları halinde ise usulüne uygun şekilde beyanlarına başvurularak CMK’nın 217. maddesi gereğince duruşmada tartışılıp değerlendirildikten sonra hükme esas alınabileceğinin gözetilmemesi,</p>
+
+<p>b-)Dosya kapsamında bulunan kollukça düzenlenen 18.04.2017 tarihli bilgi notunda Çorum Cumhuriyet Başsavcılığının 2015/7454 sayılı soruşturma ve Sulh Ceza Hakimliğinin 2016/74 ve 77 D. iş sayılı dosyaları kapsamında şüpheli …’a ait ikamet ve iş yerinde yapılan aramalarda el konulan dijital materyaller üzerinde CMK’nın 134. maddesi gereği yapılan 06.09.2016 tarihli dijital materyal inceleme tutanağında “…_gönüllü…” isimli belge açıldığında sanık …’in 2029. sırada isminin yer aldığının belirtildiği ve adı geçenin tarafı olduğu dosya ile anılan belgenin Yargıtay denetimine olanak verecek şekilde aslı ve onaylı suretinin dosya kapsamına alınmadığının anlaşılması karşısında, belirtilen dosya ve belgenin de getirtilip tüm dosya kapsamının bir bütün halinde değerlendirilmesi suretiyle sanığın hukuki durumunun takdir ve tayini gerekirken eksik araştırma ile yazılı şekilde karar verilmesi,</p>
+
+<p>2-Kabul ve uygulamaya göre ise,</p>
+
+<p>a)Bölge Adliye Mahkemesinin ve ilk derece mahkemesinin gerekçeli karar başlıklarında suç tarihinin “27.07.2016” yerine “2016” olarak yazılması,</p>
+
+<p>b)Anayasa Mahkemesinin 24.11.2015 tarih ve 29542 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren 08.10.2015 tarih, 2014/140 E. 2015/85 sayılı iptal kararı doğrultusunda hüküm kurulması gerektiğinin gözetilmemesi,</p>
+
+<p>Kanuna aykırı, sanık müdafiinin temyiz itirazları bu nedenlerle yerinde görüldüğünden hükmün bu sebeplerden dolayı BOZULMASINA, müsnet suçun niteliği, mevcut delil durumu gözetilerek sanık müdafiinin tahliye talebinin reddi ile sanığın tutukluluk halinin devamına, 13/02/2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 8. CEZA DAİRESİ 
+Esas : 2016/10741 Karar : 2017/13486</strong> Tarih : 29.11.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 134. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Bilgisayarlarda, Bilgisayar Programlarında ve Kütüklerinde Arama, Kopyalama ve Elkoyma</strong></p>
+  </li>
+</ul>
+
+<p>Sanığın, babası … üzerine kayıtlı olan internet hattı üzerinden şirketteki işinden ayrıldıktan sonra şirkete ait sisteme girip bloke ettiğinden bahisle açılan davada; katılanın şikayet dilekçesi ekinde ibraz ettiği deliller dışında delil toplanmayıp bilirkişi raporundan da anlaşılacağı üzere katılanın ibraz ettiği LOG kayıtlarında başka IP’lerin de yer aldığı halde araştırılmaması ve her ne kadar hard diskte “gkavak” kullanıcı adı ve tespit edilen IP numarasına rastlanmışsa da el konulduktan 4 gün sonra CMK.nun 134. maddesine göre bilgisayar kütüklerinde arama kararı verilmesi nedeniyle sanığın bilgisayarından hukuka aykırı olarak elde edilen delillerin hükme ve incelemeye esas alınamayacağından suç tarihi itibariyle bilişim sistemine girip kalmaya devam ettiğine dair delil bulunmaması karşısında mahkemenin kararında bir isabetsizlik görülmemiştir.</p>
+
+<p>Mahkemece, kanıtlar değerlendirilip gerektirici nedenleri açıklanmak suretiyle sanık hakkında verilen beraat kararı usul ve yasaya uygun bulunduğundan katılan vekilinin, bir sebebe dayanmayan temyiz itirazlarının reddiyle hükmün ONANMASINA, 29.11.2017 gününde oy birliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 16. CEZA DAİRESİ 
+Esas : 2016/7025 Karar : 2017/3769</strong> Tarih : 12.04.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 134. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Bilgisayarlarda, Bilgisayar Programlarında ve Kütüklerinde Arama, Kopyalama ve Elkoyma</strong></p>
+  </li>
+</ul>
+
+<p>17.01.2000 tarihinde örgüte yönelik İstanbul/Beykoz’da Hizbullah terör örgütüne yönelik yapılan operasyonda; özgeçmiş raporları ve bir kısım örgütsel dökümanlarda isimleri geçmekte ise de bu tarihten sonra sanıkların bu yönde örgütsel faaliyetlerinin tespit edilememesi, iletişim ve teknik-fizik takip tutanaklarının örgütsel faaliyet içermemesi ve legal bir kısım derneklerde kurucu veya üye olarak görev almanın, bu derneklerin düzenlediği etkinliklere katılmanın örgüt üyeliği için karine olarak kabul edilemeyeceği, sanıkların ev ve iş yeri aramalarında da herhangi bir suç unsuru bulunmadığı, sanıklar …, …, … ve ….’nın daha önce de benzer suçlamalarla yargılandıklarının ve sanıkların örgütsel dökümanların ele geçirildiği 17.01.2000 tarihinden sonra örgütle organik bağ ve faaliyetlerini devam ettirdiklerine dair savunmalarının aksine her türlü şüpheden uzak, maddi ve kesin delil elde edilemediğinin anlaşılması karşısında, operasyon tarihi itibariyle örgüt ile bağlantılarının kalmadığının kabulü gerekeceğinden,</p>
+
+<p>5237 sayılı Türk Ceza Kanununun 7, 5252 sayılı Türk Ceza Kanununun Yürürlük ve Uygulama Şekli Hakkında Kanunun 9. maddeleri karşısında; suç tarihinde yürürlükte bulunan ve lehe olan 765 sayılı TCK’nın 102/3 ve 104/2. maddelerinde belirlenen 15 yıllık kesintili dava zamanaşımının suç ve inceleme tarihleri arasında gerçekleştiği anlaşıldığından, hükmün bu nedenle BOZULMASINA, bu husus yeniden yargılama yapılmasını gerektirmediğinden 5320 sayılı Kanunun 8. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 322. maddesinin</p>
+
+<p>verdiği yetkiye dayanılarak 765 sayılı TCK’nın 102/3, 104/2 ve 5271 sayılı CMK’nın 223/8. maddeleri gereğince sanıklar hakkındaki kamu davasının zamanaşımı nedeniyle DÜŞMESİNE,</p>
+
+<p>II- Sanıklar …, …, …, … ve … hakkında silahlı terör örgütüne üye olma suçundan kurulan beraat hükümleri ile sanık … hakkında 6136 sayılı Kanuna muhalefet suçundan kurulan mahkumiyet hükmü yönünden yapılan incelemede;</p>
+
+<p>Yapılan yargılama sonunda toplanan deliller karar yerinde incelenip, sanık …‘ın 6136 sayılı Kanuna muhalefet suçunun sübutu kabul, olay niteliğine ve kovuşturma sonuçlarına uygun şekilde vasfı tayin edilmiş, cezayı azaltıcı sebebin niteliği takdir kılınmış, savunması inandırıcı gerekçelerle reddedilmiş, sanıklar …, …, …, … ve …‘ın silahlı terör örgütüne üye olma suçunu işlediklerinin sabit olmadığı kabul edilmiş, incelenen dosyaya göre verilen hükümlerde bir isabetsizlik görülmemiş olduğundan, sanık müdafii ve Cumhuriyet savcısının yerinde görülmeyen temyiz itirazlarının reddiyle mahkumiyet ve beraate ilişkin hükümlerin ONANMASINA,</p>
+
+<p>III- Sanıklar …, …, … ve … hakkında silahlı terör örgütüne üye olma, sanık … hakkında tehdit ve 5816 sayılı Kanuna muhalefet suçlarından kurulan hükümler yönünden yapılan incelemede;</p>
+
+<p>1- Sanıklar hakkında silahlı terör örgütüne üye olma suçu yönünden;</p>
+
+<p>19.12.2010 günü … isimli şahsın evinde yapılan aramada ele geçen dökümanlarda sanıkların ad ve iletişim bilgilerinin yer aldığının kabul edilmiş olması karşısında, … isimli şahsın dosyasının getirtilip incelenerek söz konusu arama işleminin CMK’nın 119 ve 134. maddelerine uygun şekilde yapılıp yapılmadığının, ele geçen dökümanların kim tarafından ve hangi tarihte oluşturulduğunun, adı geçen şahıs ile sanıklar arasında herhangi bir irtibat bulunup bulunmadığının, sanık …‘nin dökümanda yazılı telefon numarasının kendisine ait olmadığını savunması nedeniyle bu numaranın sanığa ait olup olmadığı ve sanık tarafından kullanılıp kullanılmadığının tespitinden sonra, sanıkların başkaca örgütsel faaliyetlerinin tespit edilememesi ve legal olarak faaliyet gösteren bir kısım derneklerde kurucu veya üye olarak görev almanın, bu derneklerin düzenlediği etkinliklere katılmanın örgüt üyeliği için karine olarak kabul edilemeyeceğinin, sanıkların ev ve iş yeri aramalarında da herhangi bir suç unsuru bulunmadığı, sanık …‘ın 17.01.2000 tarihinde ele geçirilen örgütsel dökümanlarla ilgili olarak daha önce de yargılandığı gözetildiğinde, terör örgütü üyeliğinin her sanık bakımından ayrı ele alınarak, her bir sanığın terör örgütüne katılma iradesinin olup olmadığı, terör örgütü ile organik bağ içine girerek yoğunluk, çeşitlilik ve süreklilik gösteren eylemlerde bulunup bulunmadığı tartışılarak sonucuna göre hukuki durumlarının takdir ve tayini gerekirken eksik araştırma ile yazılı şekilde mahkumiyetlerine karar verilmesi,</p>
+
+<p>2- Sanık … hakkında tehdit ve 5816 sayılı Kanuna muhalefet suçlarından kurulan hükümler yönünden;</p>
+
+<p>a) Sanık müdafiinin tehdit suçu yönünden yerinde görülmeyen sair temyiz itirazlarının reddine; ancak,</p>
+
+<p>Sanık …‘in kendi internet hesabından yaptığı “…‘in izinden gitmeyin lo, yazık olur ha” şeklindeki paylaşımı nedeniyle, katılanın sanığa “çakma … “ başlığı altında yazdığı özel mesaj üzerine sanığın da katılana tehdit içerikli mesaj göndermesi şeklinde gerçekleşen şahsi olayda, tehdit suçunu terör örgütünün faaliyeti kapsamında gerçekleştirdiğine dair delil bulunmayan sanık hakkında 3713 sayılı Kanunun 5. maddesi uyarınca artırım yapılamayacağının gözetilmemesi,</p>
+
+<p>b) 5816 sayılı Kanuna muhalefet suçu yönünden ise, sanığın kendisine ait e-mail adresinden, başka bir şahısla karşılıklı olarak mesajlaşmaları sırasında Atatürk’ten bahsetmeksizin sadece Kemalizm ideolojisi hakkındaki kaba sövme sözlerinin ne şekilde Atatürk’ün hatırasına hakeret suçunu oluşturacağının karar yerinde tartışılmaması ve söz konusu mesajların başkaları tarafından görülmesinin mümkün olmaması nedeniyle, 5816 sayılı Kanunun 1/1. maddesindeki aleniyet unsurunun bulunmaması karşısında, Atatürk’ün hatırasına hakaret suçunu oluşturmayacağı gözetilerek, başka suçu oluşturup oluşturmayacağı tartışılarak sonucuna göre hukuki durumun takdiri gerekirken yetersiz gerekçe ile yazılı olduğu şekilde karar verilmesi,</p>
+
+<p>3- Kabul ve uygulamaya göre de;</p>
+
+<p>Anayasa Mahkemesinin 24.11.2015 tarih ve 29542 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren 08.10.2015 tarih, 2014/140 E. 2015/85 sayılı iptal kararı ile TCK’nın 53. maddesindeki bazı düzenlemelerin iptal edilmiş olması nedeniyle bu karar doğrultusunda hüküm kurulmasında zorunluluk bulunması,</p>
+
+<p>Bozmayı gerektirmiş olup, sanıklar müdafilerinin ve Cumhuriyet savcısının temyiz itirazları bu nedenle yerinde görüldüğünden, hükümlerin BOZULMASINA, 12.04.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 16. CEZA DAİRESİ 
+Esas : 2016/2112 Karar : 2017/1164</strong> Tarih : 8.03.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 134. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Bilgisayarlarda, Bilgisayar Programlarında ve Kütüklerinde Arama, Kopyalama ve Elkoyma</strong></p>
+  </li>
+</ul>
+
+<p>Hüküm: 1) Silahlı terör örgütüne üye olmamakla birlikte örgüt adına suç işleme suçundan: TCK’nın 314/3, 220/6, 314/2, 220/6, 3713 sayılı Kanunun 5, TCK’nın 62, 53, 58/9 maddeleri uyarınca mahkumiyet 2) Terör örgütünün propagandasını yapma suçundan; 3713 sayılı Kanunun 7/2-a, TCK’nın 62, 50/1-a, 52/2, 52/4 maddeleri uyarınca mahkumiyet 3) 2911 sayılı Kanuna muhalefet suçundan; 2911 sayılı Kanunun 33/2, 32/1, TCK’nın 62, 50/1-a, 52/2, 52/4 maddeleri uyarınca mahkumiyet 4) 2911 sayılı Kanuna muhalefet suçundan; 2911 sayılı Kanunun 23/b, 33/1, 62, 50/1-a, 52/2, 52/4 maddeleri uyarınca mahkumiyet</p>
+
+<p>Dosya incelenerek gereği düşünüldü:</p>
+
+<p>I-Anayasa’nın 38/6 maddesine göre, kanuna aykırı olarak elde edilen bulgular delil olarak kabul edilemez. CMK’nın 217/2 maddesi uyarınca, yüklenen suç, ancak hukuka uygun şekilde elde edilmiş olan delillerle ispat edilebilir ve CMK’nın 289. maddesine göre hükmün hukuka aykırı yöntemlerle elde edilen delile dayanması, hukuka kesin aykırılık sebebidir.</p>
+
+<p>CMK’nın 116 ila 134. maddelerinde “arama ve elkoyma” işlemine dair usul ve esaslar düzenlenmiştir. CMK’nın 118. maddesinde konutta gece vakti arama yapılamayacağı, 119/1. maddesinde, “Hakim kararı üzerine veya gecikmesinde sakınca bulunan hallerde Cumhuriyet savcısının, Cumhuriyet savcısına ulaşılamadığı hallerde ise kolluk amirinin yazılı emri ile kolluk görevlileri arama yapabilirler. Ancak, konutta, işyerinde ve kamuya açık olmayan kapalı alanlarda arama, hakim kararı veya gecikmesinde sakınca bulunan hallerde Cumhuriyet savcısının yazılı emri ile yapılabileceği” belirtildikten sonra aynı maddenin 4. fıkrasında Cumhuriyet savcısı hazır olmaksızın konut, işyeri veya diğer kapalı yerlerde arama yapabilmek için o yer ihtiyar heyetinden veya komşulardan iki kişinin bulundurulacağı şarta bağlanmıştır.</p>
+
+<p>CMK’nın “Elkoyma kararını verme yetkisi” başlıklı 127/1. maddesinde “Hakim kararı üzerine veya gecikmesinde sakınca bulunan hallerde Cumhuriyet savcısının, Cumhuriyet savcısına ulaşılamadığı hallerde ise kolluk amirinin yazılı emri ile kolluk görevlileri, elkoyma işlemini gerçekleştirebilir.” denildikten sonra, aynı maddenin üçüncü fıkrasında, “Hakim kararı olmaksızın yapılan elkoyma işlemi, yirmidört saat içinde görevli hakimin onayına sunulur. Hakim, kararını elkoymadan itibaren kırksekiz saat içinde açıklar; aksi halde elkoyma kendiliğinden kalkar.” hükmü yer almaktadır.</p>
+
+<p>Somut olayda, sanığın konutunda hakim kararı olmaksızın Cumhuriyet savcısının 18.11.2012 tarihli kararı ile gece vakti kolluk tarafından yapılan arama sonucunda, sanığa ait olan pantolona ve ayakkabıya el konulmuş ve bu elkoyma işlemi de hakimin onayına sunulmamıştır. Bu haliyle, CMK’nın 118/1, 119/1-4 ve 127/1-3 maddelerine aykırı yapılan arama ve elkoyma işlemi sonucu elde edilen deliller hukuka aykırı elde edilen delil niteliğinde olup, mahkumiyete esas alınamaması karşısında; sanığın konutunda hukuka aykırı olarak gerçekleştirilen arama ve elkoyma işlemi sonucunda el konulan eşyalara dayanılarak düzenlenen mukayese tutanağı ile bu doğrultuda değerlendirme içeren bilirkişi raporunun hükme esas alınmış olması,</p>
+
+<p>II-Sanığın soruşturma ve kovuşturma evrelerindeki istikrarlı savunmaları ile bilirkişi raporuna karşı itirazları karşısında; sanığın dosya kapsamında bulunan mukayeseye elverişli fotoğraflarının olay tarihinde çekilmiş fotoğraf ve video görüntüleri ile birlikte Adli Tıp, TÜBİTAK veya TRT gibi uzman kuruluşlardan birisine gönderilip görüntü ve fotoğraf analizleri yaptırılarak sanığın, fotoğraf ve görüntülerde yer alan kişilerden olup olmadığı belirlenip, eylem ve faaliyetlerinin kuşkuya yer vermeyecek biçimde kesin olarak saptanmasından sonra hukuki durumunun takdir ve tayini gerekirken, eksik araştırma ile yazılı şekilde hüküm kurulması,</p>
+
+<p>III-Kabul ve uygulamaya göre ise;</p>
+
+<p>a)Silahlı terör örgütüne üye olmamakla birlikte örgüt adına suç işleme suçundan kurulan hükümde TCK’nın 53. maddesinde düzenlenen hak yoksunluklarının uygulanması bakımından, Anayasa Mahkemesinin 24.11.2015 tarih ve 29542 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren 08.10.2015 tarih, 2014/140 Esas 2015/85 Karar sayılı iptal kararının gözetilmesi lüzumu,</p>
+
+<p>b)2911 sayılı Kanuna muhalefet ve terör örgütünün propagandası suçları yönünden kurulan hükümler yönünden;</p>
+
+<p>Sanığın örgüt adına işlediği kabul edilen 2911 sayılı Kanunun 32/1, 33/1 maddelerine aykırılık suçlarının 6459 sayılı Kanunun 8. maddesi ile 3713 sayılı Kanunun 7. maddesine eklenen 4. fıkra kapsamında sayılan suçlardan olmadıkları, ayrıca 3713 sayılı Kanunun 7/2-a maddesinde 6638 sayılı Kanun ile yapılan değişikliğin sanığın açıkça aleyhine olduğu belirlenerek yapılan incelemede;</p>
+
+<p>Adli para cezalarının yerine getirilmemesi halinde 6545 sayılı Kanun ile değişik 5275 sayılı Kanunun 106/3 maddesi uyarınca infaz aşamasında resen uygulama yapılabileceğinden, kurulan hükümlerde TCK’nın 52/4 maddesi gereğince ihtar yapılamayacağının gözetilmemesi,</p>
+
+<p>Bozmayı gerektirmiş, sanık müdafiinin temyiz itirazları bu itibarla yerinde görüldüğünden hükmün bu sebeplerden dolayı BOZULMASINA, 08.03.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 19. CEZA DAİRESİ<br>
+Esas : 2015/12028 Karar : 2016/2099</strong> Tarih : 17.02.2016</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 134. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Bilgisayarlarda, Bilgisayar Programlarında ve Kütüklerinde Arama, Kopyalama ve Elkoyma</strong></p>
+  </li>
+</ul>
+
+<p>Yerel Mahkemece verilen hüküm temyiz edilmekle; başvurunun süresi, kararın niteliği ve suç tarihine göre dosya incelendi, gereği görüşülüp düşünüldü:</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>1-Sanığın, işletmekte olduğu çay ocağında yasadışı şekilde futbol bahsi oynattığının iddia ve kabul edildiği olayda; sanığın suçlamayı kabul etmeyerek ele geçen belgelerin daha önce oynadığı eski tarihli bahislere ait olduğunu savunduğu, tanık olarak dinlenen tutanak mümziinin de olay tarihinde işyerinde müşteri bulunmadığını ve bahis oynatılma şeklinin bilgisayar üzerinden olmadığını tespit ettiklerini beyan etmesi karşısında; sanığın eyleminin Yasanın 5/1. maddesinde gösterilen suçu oluşturduğu dikkate alınmadan yazılı şekilde karar verilmesi,</p>
+
+<p>2-Kabule göre de,</p>
+
+<p>Kasıtlı suçtan hapis cezasına mahkumiyetin kanuni sonucu olarak sanık hakkında 5237 sayılı TCK’nın 53. maddesi uyarınca hak yoksunluklarına hükmedilmiş ise de, 24.11.2015 tarih ve … sayılı Resmi Gazete’de yayımlanan Anayasa Mahkemesinin 08.10.2015 tarih ve … E., … K. sayılı kararı ile anılan maddenin bazı hükümlerinin iptal edilmiş olması nedeniyle yeniden değerlendirme yapılması zorunluluğu,</p>
+
+<p>Bozmayı gerektirmiş ve sanığın temyiz nedenleri bu itibarla yerinde görüldüğünden, tebliğnameye kısmen uygun olarak HÜKMÜN 5320 sayılı Kanun’un 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca ( BOZULMASINA ), yargılamanın bozma öncesi aşamadan başlayarak sürdürülüp sonuçlandırılmak üzere dosyanın mahkemesine gönderilmesine, oyçokluğuyla karar verildi.</p>
+
+<p>Muhalefet Şerhi</p>
+
+<p>Daire çoğunluğu ile aramızdaki görüş farklılığı,</p>
+
+<p>1- CMK’nun 116. maddesindeki şartlarda aynı Kanun’un 119. maddesine göre verilmiş bir karar bulunmadan, daha önceden verilen …sayılı PVSK’nun 9. maddesine göre verilen önleme araması kararı ile yapılan arama sonucu el konulan suça konu eşyanın hukuka aykırı yöntemle elde edilmiş delil olup olmadığı, konut ve işyeri gibi kapalı yerlerde arama yapılırken, ihtiyar heyetinden veya komşulardan iki kişinin bulundurulmaması nedeniyle arama işleminin hukuka aykırı olup olmadığına,</p>
+
+<p>2- Suç eşyasının hukuka aykırı yöntemle elde edilmiş delil olmasından dolayı hükme esas alınamaması karşısında; sanıkların ikrar niteliğinde kabul edilebilecek beyanları olsa bile maddi delillerle desteklenmeyen ikrarına itibar edilip edilemeyeceğine ve mahkumiyete yeterli başkaca delil olup olmadığına,</p>
+
+<p>3- Bu hususların CMK’nun 230/1-b maddesi hükmü gereğince yerel mahkemece gerekçeli kararda tartışılması gerekip gerekmediğine ilişkindir.</p>
+
+<p>1- Ceza usul hukukunda, re’sen araştırma ilkesi ve vicdani delil sistemi geçerli olup, amaç maddi gerçeğe ulaşmaktır. Maddi gerçek, hukuka uygun elde edilen her türlü delille ispatlanabilir. Anayasa’ya göre, kanuna aykırı olarak elde edilen bulgular delil olarak kullanılamaz (m.38/6). CMK uyarınca, yüklenen suç, ancak hukuka uygun şekilde elde edilmiş olan delillerle ispat edilebilir (m. 217/2). Delil, kanuna aykırı olarak elde edilmişse, reddolunur (m.206/2-a). Hükmün hukuka aykırı yöntemlerle elde edilen delile dayanması, hukuka kesin aykırılık sebebidir (m. 289).</p>
+
+<p>5271 sayılı CMK’nda “arama ve elkoyma” işlemine dair usul ve esaslar (m. 116-134) düzenlenmiştir. Anılan Kanun’un suç tarihinde yürürlükte bulunan 116. maddesine göre, “Yakalanabileceği veya suç delillerinin elde edilebileceği hususunda makul şüphe varsa; şüphelinin veya sanığın üstü, eşyası, konutu, işyeri veya ona ait diğer yerler aranabilir.” Aynı Kanun’un 119/1. maddesinde “Hâkim kararı üzerine veya gecikmesinde sakınca bulunan hâllerde Cumhuriyet savcısının, Cumhuriyet savcısına ulaşılamadığı hallerde ise kolluk amirinin yazılı emri ile kolluk görevlileri arama yapabilirler. Ancak, konutta, işyerinde ve kamuya açık olmayan kapalı alanlarda arama, hâkim kararı veya gecikmesinde sakınca bulunan hallerde Cumhuriyet savcısının yazılı emri ile yapılabileceği”, aynı Kanun maddesinin 4. fıkrasında ise Cumhuriyet savcısı hazır olmaksızın konut, işyeri veya diğer kapalı yerlerde arama yapabilmek için o yer ihtiyar heyetinden veya komşulardan iki kişinin bulundurulacağı şarta bağlanmıştır.</p>
+
+<p>a- Yargıtay CGK’nun 25.11.2014 tarih, … Esas,…Karar ve 25.11.2014 tarih, … Esas, …sayılı Kararlarında önleme ve adli aramanın niteliği ve şartları öğretiden görüşlere de yer verilerek ayrıntılı olarak açıklandıktan sonra şu sonuçlara varılmıştır:</p>
+
+<p>1- Makul bir sebep yokken belirli periyotlarla yenilenerek birbirini takip edecek şekilde süreklilik gösterecek ve genel arama izlenimi verecek arama kararı verilmesi hukuka aykırıdır.</p>
+
+<p>2- Suç şüphesinin ortaya çıkmasından sonra 5271 sayılı CMK kuralları uygulanması gerektiğinden, arama işleminin önceden alınmış bulunan önleme araması kararına göre değil CMK kurallarına göre icra edilmesi gerekmektedir.</p>
+
+<p>3- Önleme araması mahiyeti gereği en kısa zamanda tamamlanmalıdır.</p>
+
+<p>Önleme araması sonucunda bir suç unsuruna veya deliline rastlanırsa koruma altına alınacak ve durum Cumhuriyet Başsavcılığına derhâl bildirilerek elkoyma işlemini gerçekleştirmek üzere Cumhuriyet savcısından yeni bir yazılı emir istenecektir. Cumhuriyet savcısına ulaşılamadığı hâllerde kolluk âmirinin yazılı emriyle de elkoyma yapılabilecektir. Hâkim kararı olmaksızın yapılan elkoyma işlemi, yirmidört saat içinde görevli hâkimin onayına sunulmalıdır. Hukuka aykırı arama emri ile gerçekleştirilen aramadaki el koyma işleminin sonradan hakime onaylatılması da işlemi hukuka uygun hale getirmez.</p>
+
+<p>Bu genel açıklamalardan sonra şu sonuca varılmıştır: Mahkemece olaydan önce verilmiş Önleme Araması kararına istinaden otobüsün arandığı, yedek tekerlek konulan kapalı bölmenin içeresinde ise çeşitli gümrük kaçağı eşyaların ele geçirildiği, hakim, Cumhuriyet savcısı veya kolluk amiri tarafından verilmiş bir adli arama kararının bulunmadığı olayda; CMK’nun 2/e, 161 ve …sayılı PVSK’nun Ek 6. maddeleri uyarınca bir suçun işlendiği izlenimini veren bir hâli öğrenen kolluğunun derhal Cumhuriyet savcısına olayı haber verip emri doğrultusunda soruşturma işlemlerine başlaması gerekmekte iken usulüne uygun adli arama emri veya kararı almadan delil elde etmek amacıyla olaydan önce verilmiş mevcut önleme araması kararı uyarınca yaptığı arama işlemi usulüne uygun verilmiş bir arama kararı bulunmadığından açıkça hukuka aykırı olup bu arama sonucunda elde edilen delillerin hükme esas alınması da mümkün değildir.”</p>
+
+<p>Böylece önleme araması esnasında suç şüphesinin ortaya çıktığı andan itibaren yapılacak durdurma ve arama adli bir nitelik taşıdığından, bundan sonra arama ve el koyma gibi işlemlerin CMK’nda öngörülen usullere uygun olarak gereçekleştirilmesi gerektiği belirtilmiştir.</p>
+
+<p>b- Anayasa Mahkemesi, 19.11.2014 tarih ve … Başvuru Numaralı Kararında (07.03.2015 tarih ve …sayılı R. Gz.), ihtiyar heyetinden veya komşulardan iki kişi bulundurulmadan yapılan arama sonucunda elde edilen hukuka aykırı delillerin hükme esas alınmasının adil yargılanma hakkını ihlal ettiğine karar vermiştir. Anılan Kararda (özetle); bireysel başvuru konusu olayda, 3167 sayılı (mülga) Kara Avcılığı Kanunu’na aykırı davrandığı iddiası üzerine, Sulh Ceza Mahkemesince 22/1/2003 tarihinde başvurucunun ev ve müştemilatında arama yapılmasına karar verilmiş ancak arama esnasında o tarihte yürürlükte bulunan 1412 sayılı CMUK’un 97 (CMK m. 119/4) maddesine göre, ihtiyar heyetinden veya komşulardan kimse bulundurulmamıştır. Başvurucu aleyhine 3167 sayılı mülga Kara Avcılığı Kanunu’na dayalı olarak Hukuk Mahkemesinde tazminat davası açılmış, başvurucu tazminata mahkum edilmiştir.</p>
+
+<p>Anayasa Mahkemesi, olay tarihinde yürürlükte bulunan 1412 sayılı CMUK’un 97/2. maddesine göre, hâkim veya Cumhuriyet savcısı hazır olmaksızın ev ve işyeri gibi kapalı yerlerde arama yapılırken ihtiyar heyetinden veya komşulardan iki kişi bulundurulması gerektiğini, aramanın icrasındaki “kanuna aykırılığın” bir bütün olarak yargılamanın adil olup olmamasına etkisini incelerken;</p>
+
+<p>“Yargılamanın, arama ve arama esnasında elde edilen eşyalar üzerine bina edildiği, ilk derece Mahkemesinin davayı kabul gerekçesi incelendiğinde, 23/1/2003 tarihli arama tutanağında belirtilen eşyanın dava konusu edilip, bu belgenin resmi evrak niteliğinde olduğu, aksinin geçerli delillerle kanıtlanamadığının belirtildiği, yargılamanın esaslı ve belirleyici delilinin, aramada ele geçen eşya olduğu, dayanılan diğer delillerin ise, aramada elde edilen eşyaların değer ve niteliğini tespite ilişkin “bilirkişi raporları” ile kollukça tanzim edilmiş “tespit tutanağı” olduğu, hükmün esas ve belirleyici unsurunun, gerçekleştirilen hukuka aykırı arama işlemi sonucunda elde edilen deliller olduğu, Bilirkişi raporlarının, aramada ele geçen delillerin değerlendirilmesine yönelik bir araç olduğu, belirli bir davaya ilişkin olarak delilleri değerlendirme yetkisinin kural olarak yargılamayı yürüten mahkemeye ait olmakla birlikte somut olayda, koruma tedbiri niteliğindeki arama kararının icrasının hukuka aykırı şekilde gerçekleştirilmesi ile elde edilen delillerin tek ve belirleyici delil olarak kullanılmasının bir bütün olarak yargılamanın hakkaniyetini zedelediği ve aramanın icrasındaki “kanuna aykırılığın” yargılamanın bütünü yönünden adil yargılanma hakkını ihlal eder nitelikte olduğu, bu sebeplerle başvurucunun Anayasa’nın 36. maddesinde güvence altına adil yargılanma hakkını ihlal edildiğine” karar vermiştir.</p>
+
+<p>Yargıtay CGK daha önce (26.06.2007 tarih,… sayılı ve 13.03.2012 gün, … E., …sayılı Kararlarda), sırf arama sırasında bulunması gereken kişilerin orada bulundurulmaması, sonuca etkili olmayan “şeklî-nisbî hukuka aykırılık” olarak değerlendirip, şekli bir aykırılıkta, herhangi bir hakkın ihlal edildiğinin söylenemeyeceği” görüşü benimsenmişken, 28.04.2015 gün ve … Esas, … sayılı Kararda, Anayasa Mahkemesinin diğer kararları gibi bireysel başvuru kararlarının da yasama, yürütme ve yargı organlarını, idare makamlarını, gerçek ve tüzelkişileri bağladığını, bu itibarla Anayasa Mahkemesinin emsal nitelikteki bu kararı karşısında mevcut içtihatların yeniden gözden geçirilmesi gerektiğini belirterek, önceki uygulama ve Kararlarından vazgeçtiğini açıkça belirtmiştir:</p>
+
+<p>“Her ne kadar daha önceki kararlarda, sırf arama sırasındaki şekle ilişkin bu koşulun ihlal edilmesine dayanılarak aramanın hukuka aykırı sayılamayacağı ve ele geçen delillerin de ‘hukuka aykırı biçimde elde edilmiş delil’ olarak nitelenemeyeceği sonucuna ulaşılmış ise de, Anayasa</p>
+
+<p>Mahkemesi, konutta arama tanıkları hazır bulundurulmadan yapılan arama ile Anayasa’nın 36. maddesinde güvence altına alınan adil yargılanma hakkının ihlal edildiğine karar verdiğinden, CMK’nun 119/4. maddesinin amir hükmüne aykırı olarak kapalı alanlarda yapılan aramalarda o yer ihtiyar heyetinden veya komşulardan iki kişi hazır bulundurulmadan icra edilmişse aramanın hukuka aykırı olduğunun ve arama sonucu elde edilen suça konu eşyanın hukuka aykırı yöntemle elde edilmiş delil niteliğinde bulunduğunun kabulü gerekir.”</p>
+
+<p>Avrupa İnsan Hakları Mahkemesi de …/Türkiye davasında (…, 24.05.2011), arama esnasında hazır bulunması gereken görevli veya bulunması gerekenler yer almadan konutta yapılan aramanın, AİHS’nin 8. maddesinde düzenlenen özel hayatın ve aile hayatına saygı hakkını ihlal ettiğine karar vermiştir (…).</p>
+
+<p>Somut olayda, CMK’nun 116. maddesindeki şartlarda aynı Kanun’un 119. maddesine göre verilmiş bir karar bulunmadan, daha önceden 2559 sayılı … 9. maddesine göre verilen önleme araması kararı ile yapılan ve ihtiyar heyetinden veya komşulardan kimse de bulundurulmadan yapılan arama sonucu suç delillerine el konulmuş olup, mahkumiyete esas alınan eşya hukuka aykırı yöntemle elde edilen delil niteliğindedir. Dosyadaki hukuka aykırı yöntemlerle elde edilen delillerin değerlendirme dışı tutulması halinde, sanığın cezalandırılmasına imkân yoktur. Bilirkişi raporu aramada ele geçen ürünün değerlendirilmesine yönelik bir araçtır.</p>
+
+<p>Yargıtay CGK’nun 25.11.2014 tarih ve … sayılı Kararı şu şekildedir: “Hukuka uygun olmayan arama işlemi sonucunda ele geçen delillerin hükme esas alınamayacağının belirlendiği olayda; … arama işleminin hukuka aykırı yapılması nedeniyle ele geçirilen ruhsatsız tabancanın hukuka aykırı yöntemle elde edilmiş olmasından dolayı hükme esas alınmayacağı… başkaca maddi delillerle desteklenmeyen ikrara dayanılarak mahkûmiyet hükmü kurulması usul ve kanuna aykırıdır.”</p>
+
+<p>2- CMK’nun “İfade alma ve sorguda yasak usuller” başlıklı 148. maddesine göre “şüphelinin ve sanığın beyanı özgür iradesine dayanmalıdır. Bunu engelleyici nitelikte kötü davranma, işkence, ilâç verme, yorma, aldatma, cebir veya tehditte bulunma, bazı araçları kullanma gibi bedensel veya ruhsal müdahaleler yapılamaz. …Yasak usullerle elde edilen ifadeler rıza ile verilmiş olsa da delil olarak değerlendirilemez.” Maddede yasak sorgu yöntemleri sayılırken, bir kaç yöntem sayıldıktan sonra “gibi” ifadesiyle, sayılan ruhsal ve bedensel müdahalelerin tahdidi (sınırlı) değil, tadadi olarak (örnek olarak) sayıldığı açıktır.</p>
+
+<p>Arama işlemi Kanun’un öngördüğü usullere uygun olarak gerçekleştirilmemişse, bu yolla elde edilen delil hukuka aykırı olduğu gibi suçun maddi unsuru olan ancak hukuka aykırı olarak elde edilen bu deliller sanığın önüne konulup, buna karşı diyecekleri sorularak alınan savunmanın dış müdahaleler olmaksızın, özgür iradeye dayanılarak yapıldığı söylenemez. Nasıl ki sanığın talep etmesine veya yasal zorunluluk bulunmasına rağmen müdafii atanmadan ya da yasal hakları hatırlatılmadan alınan savunması hukuka aykırı olup, bu şekilde alınan savunmada suçun ikrar edilip edilmediğine bakılmaz ya da yasak yöntemlerle (CMK m. 148) alınan savunmada belirtilen adreste hukuka uygun bir arama yapılsa bile elde edilen deliller hukuka aykırı olacağından, ikrar olarak kabul edilen bu itiraflar mahkûmiyete esas alınamaz. Aynı şekilde hukuka aykırı biçimde elde edilip, “delil” olma özelliği bulunmamasına rağmen, suçun sübutuna en büyük delil olarak sanığa gösterilerek alınan savunmadaki “ikrar” özgür iradeye dayalı olmayacağından, değer atfedilmemelidir.</p>
+
+<p>Usulsüz olarak gerçekleştirilen arama işlemi sonucunda elde edilen suçun konusu ve maddi unsuru olan eşya ele geçmeden yapılacak savunma ile suçun konusu eşyanın ele geçirilmesinden sonra yapılacak savunma aynı olacak mıydı? Cumhuriyet savcısı veya Hâkim, hukuka aykırı olarak elde edildiğini belirterek, suça konu eşya ele geçmemiş gibi sanıktan savunma yapmasını isteselerdi sanık aynı şekilde suçunu ikrar edecek miydi? Suçun maddi unsuru ortada yokken ikrarda bulunulsa bile bu ikrar soyut kalacağından, mahkumiyete yeterli delil olarak kabul edilemez. CMK’nun amir hükümleri karşısında, hukuka “mutlak aykırılık”, “nisbi aykırılık” ayırımının yapılması mümkün değildir. Hukuk kurallarına aykırılık kavramı bir bütündür. Hukukun uygulanmasında hukuka uygun olmayan bir şeyin üzerine meşru bir şey bina edilemez. Sistemimiz, delile değil hukuka üstünlük tanımaktadır. Bu durumda sanıklar suçu ikrar etse de da maddi delillerle desteklenmiş sayılmayacağından ikrar soyut kalacak ve mahkumiyete esas alınamayacaktır. Kaldı ki sanığın ikrar olarak nitelendirilecek bir savunması da bulunmamaktadır.</p>
+
+<p>3- Anayasa’nın 141. maddesine göre “mahkemelerin her türlü kararları gerekçeli olarak yazılır.” CMK’nun 34/1 ve 230. maddelerinin amir hükümlerine göre; “Hâkim ve mahkemelerin her türlü kararı, karşı oy dahil, gerekçeli olarak yazılır. Gerekçenin yazımında 230 uncu Madde göz önünde bulundurulur.” “Mahkûmiyet hükmünün gerekçesinde, iddia ve savunmada ileri sürülen görüşler, delillerin tartışılması ve değerlendirilmesi, hükme esas alınan ve reddedilen delillerin belirtilmesi; bu kapsamda dosya içerisinde bulunan ve hukuka aykırı yöntemlerle elde edilen delillerin ayrıca ve açıkça gösterilmesi gerekir.”</p>
+
+<p>Bu amir hükümlere göre; mahkûmiyet hükmünün gerekçesinde, … dosya içerisinde bulunan ve hukuka aykırı yöntemlerle elde edilen delillerin ayrıca ve açıkça gösterilmesi gerekir” iken, gerekçeli kararda bu hususlara hiç değinilmemiştir. Kararın bu yönüyle gerekçesiz olması başlı başına hukuka kesin aykırılıktır (CMUK m. 308/7, CMK m. 289/1-g). Bu durum adil yargılanma hakkını ihlal edici nitelikte olduğundan, hükmün bozulmasını gerektirir.</p>
+
+<p>Açıklanan pozitif hukuk normları, AİHM, Anayasa Mahkemesi ve CGK Kararları karşısında; “hukuka aykırı biçimde” elde edilen deliller hükme esas alınamaz. Bu husus, Avrupa İnsan Haklari Sözleşmesi’nin 6. maddesinde yer alan ve Anayasamıza da eklenen (m. 36) adil yargılanma hakkının ve özel hayatın gizliliğinin gereğidir.</p>
+
+<p>Açıklanan gerekçelerle, hukuka uygun biçimde elde edilmiş, mahkumiyete yeterli başkaca delil bulunmaması ve bu hususların yerel mahkemece tartışılıp değerlendirilmemesi nedeniyle yerel mahkeme kararının bu gerekçelerle bozulması gerektiğini düşündüğümden, sayın çoğunluğun kararına katılamıyorum.</p>
+
+<hr>
+
+<p><strong>YARGITAY 19. CEZA DAİRESİ<br>
+Esas : 2015/8407 Karar : 2016/1917</strong> Tarih : 16.02.2016</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 134. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Bilgisayarlarda, Bilgisayar Programlarında ve Kütüklerinde Arama, Kopyalama ve Elkoyma</strong></p>
+  </li>
+</ul>
+
+<p>Yerel Mahkemece verilen hükümler temyiz edilmekle; başvurunun süresi, kararın niteliği ve suç tarihine göre dosya incelendi, gereği görüşülüp düşünüldü:</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>Mahallinde yapılan keşif sonrasında orman mühendisi bilirkişi tarafından düzenlenen raporda, suç konusu emvalin, motorlu testere ile kesilmiş 39 adet maden direği, damgasız, yapacak nitelikte emval veren kızılçam ağaçları ile sanayi odunu olduğunun belirtilmesine, sanığın emvali çatı yapımında kullanmış olmasına göre; sanığın eyleminin 6831 sayılı Kanun’un 108/1. maddesine uyduğu gözetilmeksizin yazılı şekilde beraat ve idari yaptırım kararları verilmesi,</p>
+
+<p>Kanuna aykırı ve katılan vekilinin temyiz nedenleri bu itibarla yerinde görüldüğünden tebliğnameye uygun olarak HÜKMÜN 5320 sayılı Kanun’un 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca ( BOZULMASINA ), yargılamanın bozma öncesi aşamadan başlayarak sürdürülüp sonuçlandırılmak üzere dosyanın mahkemesine gönderilmesine, oyçokluğuyla karar verildi.</p>
+
+<p>Muhalefet Şerhi</p>
+
+<p>Daire çoğunluğu ile aramızdaki görüş ayrılığı;</p>
+
+<p>1- Konut ve işyeri gibi kapalı yerlerde arama yapılırken, gecikmesinde sakınca olduğu belirtilerek Cumhuriyet savcısının yazılı emri ile sanığın işyerinde arama yapılmasının ve gerçekleştirilen arama işlemi esnasında ihtiyar heyetinden veya komşulardan iki kişi bulundurulmadan suç eşyasına elkonulması nedeniyle arama ve elkoyma işlemlerinin hukuka aykırı olup olmadığı, ele geçirilen suç eşyasının hukuka aykırı yöntemle elde edilmiş delil olmasından dolayı hükme esas alınıp alınamayacağı,</p>
+
+<p>2- Sanığın ikrar niteliğinde kabul edilebilecek beyanlarının bulunup bulunmadığına, ikrarının olduğu kabul edilse bile maddi delillerle desteklenmeyen ikrara itibar edilip edilemeyeceği ve mahkumiyete yeterli başkaca delil olup olmadığı,</p>
+
+<p>3- Anayasa ve CMK’ndaki amir hükümlere göre, hâkim ve mahkemelerin her türlü kararının gerekçeli olarak yazılması, mahkûmiyet hükmünün gerekçesinde, hükme esas alınan ve reddedilen delillerin tartışılıp değerlendirilerek, bu kapsamda dosya içerisinde bulunan ve hukuka aykırı yöntemlerle elde edilen delillerin ayrıca ve açıkça gösterilmesinin gerekmesi (Any. m. 141, CMK m. 34/1 ve 230) karşısında; bu yönden gerekçe (yeterli gerekçe) içermeyen yerel mahkeme kararının usul ve Kanuna uygun bulunup bulunmadığına, hukuka kesin aykırılık oluşturan bu durumun (CMK m. 289/1-g) temyiz mercii olan Yargıtay tarafından tamamlanıp tamamlanamayacağına ilişkindir.</p>
+
+<p>1- Adli Aramanın Niteliği ve Şartları:</p>
+
+<p>Ceza usul hukukunda, re’sen araştırma ilkesi ve vicdani delil sistemi geçerli olup, amaç maddi gerçeğe ulaşmaktır. Maddi gerçek, hukuka uygun elde edilen her türlü delille ispatlanabilir. Anayasa’ya göre, kanuna aykırı olarak elde edilen bulgular delil olarak kullanılamaz (m.38/6). CMK uyarınca, yüklenen suç, ancak hukuka uygun şekilde elde edilmiş olan delillerle ispat edilebilir (m. 217/2). Delil, kanuna aykırı olarak elde edilmişse, reddolunur (m.206/2-a). Hükmün hukuka aykırı yöntemlerle elde edilen delile dayanması, hukuka kesin aykırılık sebebidir (m. 289).</p>
+
+<p>5271 sayılı CMK’nda “arama ve elkoyma” işlemine dair usul ve esaslar (m. 116-134) düzenlenmiştir. Anılan Kanun’un 119. maddesinin 1. fıkrasında “Hâkim kararı üzerine veya gecikmesinde sakınca bulunan hâllerde Cumhuriyet savcısının, Cumhuriyet savcısına ulaşılamadığı hallerde ise kolluk amirinin yazılı emri ile kolluk görevlileri arama yapabilirler. Ancak, konutta, işyerinde ve kamuya açık olmayan kapalı alanlarda arama, hâkim kararı veya gecikmesinde sakınca bulunan hallerde Cumhuriyet savcısının yazılı emri ile yapılabileceği” belirtildikten sonra aynı maddenin 4. fıkrasında Cumhuriyet savcısı hazır olmaksızın konut, işyeri veya diğer kapalı yerlerde arama yapabilmek için o yer ihtiyar heyetinden veya komşulardan iki kişinin bulundurulacağı şarta bağlanmıştır.</p>
+
+<p>CMK’nun “El Koyma Kararını Verme Yetkisi” başlıklı 127. maddesine göre “Hâkim kararı üzerine veya gecikmesinde sakınca bulunan hâllerde Cumhuriyet savcısının, Cumhuriyet savcısına ulaşılamadığı hallerde ise kolluk amirinin yazılı emri ile kolluk görevlileri, elkoyma işlemini gerçekleştirebilir. Hâkim kararı olmaksızın yapılan elkoyma işlemi, yirmidört saat içinde görevli hâkimin onayına sunulur. Hâkim, kararını elkoymadan itibaren kırksekiz saat içinde açıklar; aksi hâlde elkoyma kendiliğinden kalkar.”</p>
+
+<p>CGK., 25.11.2014 tarih ve … sayılı Kararda, hukuka aykırı olarak yapıldığı kabul edilen aramada elde edilen maddi delil dışındaki diğer delillerin (somut olayda ikrarın) mahkûmiyet için yeterli olup olmadığı konusu tartışılırken şu sonuca varılmıştır: “Hukuka uygun olmayan arama işlemi sonucunda ele geçen delillerin hükme esas alınamayacağının belirlendiği olayda; … arama işleminin hukuka aykırı yapılması nedeniyle ele geçirilen ruhsatsız tabancanın hukuka aykırı yöntemle elde edilmiş olmasından dolayı hükme esas alınmayacağı… başkaca maddi delillerle desteklenmeyen ikrara dayanılarak mahkûmiyet hükmü kurulması usul ve kanuna aykırıdır.” Yargıtay CGK, gerek aynı kararda gerekse 28.04.2015 tarih, …, … sayılı Kararda, arama işleminin, arama tanıkları (komşu veya ihtiyar heyetinden) kimseler hazır edilmeden yapılması sonucu elde edilen delillerin hukuka aykırı olduğunu belirtmiştir.</p>
+
+<p>Açıklanan pozitif hukuk normları, Anayasa Mahkemesi ve CGK Kararları karşısında; “hukuka aykırı biçimde” elde edilen deliller hükme esas alınamaz. Bu husus, Avrupa İnsan Haklari Sözleşmesi’nin 6. maddesinde yer alan ve Anayasamıza da eklenen (m. 36) adil yargılanma hakkının gereğidir. Ceza Muhakemesi Kanunu’nun amir hükümleri karşısında, hukuka “mutlak aykırılık”, “nisbi aykırılık” ayırımının yapılması mümkün değildir. Hukuk kurallarına aykırılık kavramı bir bütündür. Hukukun uygulanmasında hukuka uygun olmayan bir şeyin üzerine meşru bir şey bina edilemez. Sistemimiz, delile değil hukuka üstünlük tanımaktadır.</p>
+
+<p>Yargıtay CGK’nun 25.11.2014 tarih ve … sayılı Kararında, arama kararı verilmesinin genel kuralları ve istisnai şartları açıklanırken, gecikmede sakınca bulunma halinin ve Cumhuriyet savcısının yazılı emri ile arama kararı verilmesinin şartları şu şekilde açıklanmıştır: “arama işlemi derhal yapılmadığında sonradan yapılması imkansız veya anlamsız hale gelecekse ya da işlemle hedeflenen amaçlara ulaşılması fazlasıyla zorlaşacaksa gecikmesinde sakınca bulunan halin varlığı kabul edilmelidir. …delil araştırması yapılacak yerde delillerin yok edilmeye başlanacağına ilişkin duyum alınması gibi gecikmesinde sakınca bulunan hallerde, Cumhuriyet savcısı tarafından verilen arama emri hukuka uygun iken, aksi halde, yani gecikmesinde sakınca bulunan halin söz konusu olmadığı durumlarda ise Cumhuriyet savcısının arama emri vermesine ilişkin şartlar oluşmadığından, arama emri hukuka aykırı olacağı gibi arama sonucunda elde edilen delil ya da deliller de hukuka aykırı yöntemlerle elde edilmiş delil olacaktır. Bu şekildeki arama işleminden sonra ele geçen ve ispat aracı olarak yararlı görülen değerlere ilişkin elkoyma işleminin sulh ceza hakimi tarafından onaylanması da arama işlemini geriye dönük olarak hukuka uygun hale getirmeyecektir.</p>
+
+<p>Cumhuriyet savcısı tarafından verilen arama emrinde … gecikmesinde sakınca bulunduğu belirtilse de; arama emrinde şüphelinin suç konusunu yok edeceği, elden çıkaracağı yönünde bilgi edinilmediği gibi, gecikmesinde sakınca bulunan halin kabulü için hakime başvurulup arama kararı talep edilmesi halinde delillerin kaybolacağı veya bu tedbirin uygulanamaz hale geleceği hususunda başkaca somut olgular da ortaya konulmamış ve ilçe merkezindeki hakimden karar alınması halinde ne gibi telafisi mümkün olmayan sonuçların ortaya çıkacağını gösteren ve aciliyeti haklı kılan herhangi bir halden söz edilmemişse … Cumhuriyet savcısının arama konusundaki istisnai yetkisinin doğabilmesi için gereken kanuni şartlar oluşmadan, verilen arama emri ile buna dayalı olarak gerçekleştirilen arama işlemi hukuka aykırıdır…”</p>
+
+<p>Somut olayda Cumhuriyet savcısı tarafından verilen 04.09.2012 tarihli arama ve el koyma emrine bakıldığında; 04.09.2012 tarihli dilekçe ile … ait evde belgesiz orman emvali bulunduğunun ihbar edilmesi üzerine Orman İşletme Şefliğince aynı günlü yazı ile Cumhuriyet Başsavcılığından belirtilen ev ve müştemilatında arama yapılması için izin istenmiş, Cumhuriyet Başsavcılığınca CMK’nun 119. maddesi uyarınca arama için Hakim Kararı alınması yerine derhal arama yapılmazsa ne gibi sakıncaların doğacağı gösterilmeden, soyut olarak gecikmesinde sakınca bulunduğu belirtilerek arama kararı verilmiş ve aramanın icrası esnasında da o yer ihtiyar heyetinden veya komşulardan iki kişi bulundurulmamıştır.</p>
+
+<p>Kaldı ki gecikmesinde sakınca olduğu kabul edilse bile CGK’nun 25.11.2014 gün ve …, …sayılı Kararında belirtildiği gibi hukuka aykırı arama emri ile gerçekleştirilen aramadaki el koyma işleminin hakime onaylatılması işlemi hukuka uygun hale getirmez. Ayrıca arama işlemi esnasında, CMK’nun 119/4. maddesi hükmüne aykırı olarak ihtiyar heyetinden veya komşulardan iki kişi bulundurulmadığından, arama işlemi de hukuka aykırı bir şekilde gereçekleştirilmiştir. Bu itibarla arama sonucunda bulunup el konulan ve mahkumiyete esas alınan orman emvali hukuka aykırı yöntemle elde edilen delil niteliğindedir.</p>
+
+<p>Daire çoğunluğu, CGK’nun arama esnasında iki arama tanığının bulundurulmamasının sonuca etkili olmayan nisbi aykırılık olduğuna ilişkin Kararlarına dayanmakta ise de Anayasa Mahkemesinin, 19.11.2014 tarih ve … Başvuru Numaralı Kararında, ihtiyar heyetinden veya komşulardan iki kişi bulundurulmadan yapılan arama sonucunda elde edilen hukuka aykırı delillerin hükme esas alınarak adil yargılanma hakkının ihlal edildiğine karar vermesi üzerine CGK, Anayasa Mahkemesinin anılan kararı karşısında, bu kabullerinden vazgeçtiğini açıkça belirtmiştir. (CGK, 28.04.2015, … E., … K.).</p>
+
+<p>Avrupa İnsan Hakları Mahkemesi de …/Türkiye davasında (17811/04, 24.05.2011), arama esnasında hazır bulunması gereken görevli veya bulunması gerekenler yer almadan konutta yapılan aramanın, AİHS’nin 8. maddesinde düzenlenen özel hayatın ve aile hayatına saygı hakkını ihlal ettiğine karar vermiştir (…).</p>
+
+<p>2- İfade Alma Yasak Sorgu Yöntemleri ve İkrar:</p>
+
+<p>CMK’nun “İfade alma ve sorguda yasak usuller” başlıklı 148. maddesine göre “şüphelinin ve sanığın beyanı özgür iradesine dayanmalıdır. Bunu engelleyici nitelikte kötü davranma, işkence, ilâç verme, yorma, aldatma, cebir veya tehditte bulunma, bazı araçları kullanma gibi bedensel veya ruhsal müdahaleler yapılamaz. …Yasak usullerle elde edilen ifadeler rıza ile verilmiş olsa da delil olarak değerlendirilemez.” Maddede yasak sorgu yöntemleri sayılırken, bir kaç yöntem sayıldıktan sonra “gibi” ifadesiyle, sayılan ruhsal ve bedensel müdahalelerin tahdidi (sınırlı) değil, tadadi olarak (örnek olarak) sayıldığı açıktır.</p>
+
+<p>Arama işlemi Kanun’un öngördüğü usullere uygun olarak gerçekleştirilmemişse, bu yolla elde edilen delil hukuka aykırı olduğu gibi suçun maddi unsuru olan ancak hukuka aykırı olarak elde edilen bu deliller sanığın önüne konulup, buna karşı diyecekleri sorularak alınan savunmanın dış müdahaleler olmaksızın, özgür iradeye dayanılarak yapıldığı söylenemez. Nasıl ki sanığın talep etmesine veya yasal zorunluluk bulunmasına rağmen müdafii atanmadan ya da yasal hakları hatırlatılmadan alınan savunması hukuka aykırı olup, bu şekilde alınan savunmada suçun ikrar edilip edilmediğine bakılmaz ya da yasak yöntemlerle (CMK m. 148) alınan savunmada belirtilen adreste hukuka uygun bir arama yapılsa bile elde edilen deliller hukuka aykırı olacağından, ikrar olarak kabul edilen bu itiraflar mahkûmiyete esas alınamaz. Aynı şekilde hukuka aykırı biçimde elde edilip, “delil” olma özelliği bulunmamasına rağmen, suçun sübutuna en büyük delil olarak sanığa gösterilerek alınan savunmadaki “ikrar” özgür iradeye dayalı olmayacağından, değer atfedilmemelidir.</p>
+
+<p>Usulsüz olarak gerçekleştirilen arama işlemi sonucunda elde edilen suçun konusu ve maddi unsuru olan eşya ele geçmeden yapılacak savunma ile suçun konusu eşyanın ele geçirilmesinden sonra yapılacak savunma aynı olacak mıydı? Cumhuriyet savcısı veya Hâkim, hukuka aykırı olarak elde edildiğini belirterek, suça konu eşya ele geçmemiş gibi sanıktan savunma yapmasını isteselerdi sanık aynı şekilde suçunu ikrar edecek miydi? Suçun maddi unsuru ortada yokken ikrarda bulunulsa bile bu ikrar soyut kalacağından, mahkumiyete yeterli delil olarak kabul edilemez.</p>
+
+<p>Dosyadaki hukuka aykırı yöntemlerle elde edilen delillerin değerlendirme dışı tutulması halinde, sanığın cezalandırılmasına imkân yoktur. Gerekçeli kararda, sanık savunması, arama ve el koyma tutanağı, bilirkişi raporunun mahkumiyete esas alındığı belirtilse de, hukuka aykırı olarak gerçekleştirilen arama işleminde elde edilen suça konu maddi deliller ile buna dayanılarak düzenlenen bilirkişi raporları mahkemece hükme esas alınmaz. Bilirkişi raporu aramada ele geçen ürünün değerlendirilmesine yönelik bir araçtır. Bu durumda sanık suçun ikrarı niteliğinde sayılabilecek savunmada bulunsa da CGK’nun, 25.11.2014 tarih ve … sayılı Kararında belirtildiği gibi maddi delillerle desteklenmiş sayılmayacağından, ikrar soyut kalacak ve mahkumiyete esas alınamayacaktır.</p>
+
+<p>3- Anayasa ve CMK Hükümlerine Göre Mahkûmiyet Hükmünün Gerekçesinde Gösterilmesi Gereken Hususlar:</p>
+
+<p>Anayasa’nın 141. maddesine göre “mahkemelerin her türlü kararları gerekçeli olarak yazılır.” CMK’nun 34/1 ve 230. maddelerinin amir hükümlerine göre; “Hâkim ve mahkemelerin her türlü kararı, karşı oy dahil, gerekçeli olarak yazılır. Gerekçenin yazımında 230 uncu Madde göz önünde bulundurulur.” “Mahkûmiyet hükmünün gerekçesinde, iddia ve savunmada ileri sürülen görüşler, delillerin tartışılması ve değerlendirilmesi, hükme esas alınan ve reddedilen delillerin belirtilmesi; bu kapsamda dosya içerisinde bulunan ve hukuka aykırı yöntemlerle elde edilen delillerin ayrıca ve açıkça gösterilmesi gerekir.”</p>
+
+<p>1412 sayılı CMUK’nun 308. maddesine kanuna mutlaka muhalefet edilmiş sayıldığı haller tek tek sayılmış olup, bunlardan biri de hükmün gerekçeyi ihtiva etmemesidir (CMK’nun 289. maddesinde de hükmün 230. madde gereğince gerekçeyi içermemesi, hukuka kesin aykırılık hallerinden biri olarak gösterilmiştir).</p>
+
+<p>Yukarıda yer verilen Anayasının 141, CMK’nun 34/1 ve 230. maddelerinin amir hükümlerine göre; mahkûmiyet hükmünün gerekçesinde, … dosya içerisinde bulunan ve hukuka aykırı yöntemlerle elde edilen delillerin ayrıca ve açıkça gösterilmesi gerekir” iken, gerekçeli kararda bu hususlara hiç değinilmemiştir. Kararın bu yönüyle gerekçesiz olması başlı başına hukuka kesin aykırılık (CMUK m. 308/7, CMK m. 289/1-g), bu durum adil yargılanma hakkını ihlal edici nitelikte olduğundan, hükmün bozulmasını gerektirir.</p>
+
+<p>Avrupa İnsan Hakları Sözleşmesi’nde delillerin değerlendirilmesi usulüne ilişkin olarak bir kural bulunmamakta ise de, bu konu doğrudan doğruya Sözleşmenin 6. maddesi ve Anayasamızda (m. 36) düzenlenen adil yargılanma hakkıyla ilgilidir.</p>
+
+<p>Açıklanan gerekçelerle, hukuka uygun biçimde elde edilmiş, sanığın mahkumiyetine yeterli başkaca delil bulunmaması ve bu hususların yerel mahkemece tartışılıp değerlendirilmemesi nedeniyle yerel mahkeme kararının öncelikle bu gerekçeyle bozulması gerektiğini, uygulamaya yönelik hususlara ise ancak kabule göre işaret edilebileceğini düşündüğümden, sayın çoğunluğun kararına katılamıyorum.</p>
+
+<hr>
+
+<p><strong>YARGITAY 19. CEZA DAİRESİ 
+Esas : 2015/8224 Karar : 2016/16</strong> Tarih : 11.01.2016</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 134. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Bilgisayarlarda, Bilgisayar Programlarında ve Kütüklerinde Arama, Kopyalama ve Elkoyma</strong></p>
+  </li>
+</ul>
+
+<p>Yerel Mahkemece verilen hükümler temyiz edilmekle; başvurunun süresi, kararın niteliği ve suç tarihine göre dosya incelendi, gereği görüşülüp düşünüldü:</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede, başkaca temyiz nedenleri yerinde görülmemiştir.</p>
+
+<p>Ancak;</p>
+
+<p>1- Sanık hakkında, 25/08/2011 tarihinde 13:30 ve 12:45 sıralarında tutlan tutanaklar nedeni ile sanık hakkında 29/09/2011 ve 30/09/2011 tarihli tarihli iddianameler ile kamu davalarının açılması ve anılan her iki eylemde de, sanığın aynı mahalde birbirine çok yakın bulunan iki ayrı işyerinde katılan firmaların hak sahibi olduğu tescilli markaların iltibas edilerek kullanıldığı taklit ürünlerin ele geçmesi karşısında, sanığın tek eylemden sorumlu tutulup marka hakkına tecavüz suçu nedeniyle bir kez cezalandırılması ve birden çok hak sahibi şikayetçiye karşı aynı fiili işlediği gözetildiğinde, hakkında 5237 sayılı TCK’nın 43. maddesinin ikinci fıkrası gereğince zincirleme suç hükümlerinin uygulanması gerekirken, her iki eylemden ayrı ayrı ceza tayin edilmesi,</p>
+
+<p>2-Gerekçeli karar başlığında, suç tarihlerinin 25.08.2011 tarihi olmasına rağmen 24.08.2011 olarak hatalı yazılması,</p>
+
+<p>Kanuna aykırı ve sanığın temyiz nedenleri bu itibarla yerinde görüldüğünden, hükümlerin 5320 sayılı Kanun’un 8/1. maddesi gereğince yürürlükte bulunan 1412 sayılı CMUK’nın 321. maddesi uyarınca tebliğnameye uygun olarak BOZULMASINA, 1412 sayılı CMUK’nın 326/son maddesine göre sanığın ceza miktarı itibariyle kazanılmış hakkının saklı tutulmasına, yargılamanın bozma öncesi aşamadan başlayarak sürdürülüp sonuçlandırılmak üzere dosyanın mahkemesine gönderilmesine, 11/01/2015 tarihinde oyçokluğuyla karar verildi.</p>
+
+<p>Muhalefet Şerhi</p>
+
+<p>Daire çoğunluğu ile aramızdaki görüş farklılığı,</p>
+
+<p>1- Konut ve işyeri gibi kapalı yerlerde arama yapılırken, ihtiyar heyetinden veya komşulardan iki kişinin bulundurulmaması nedeniyle arama işleminin hukuka aykırı olup olmadığına,</p>
+
+<p>2- Suç eşyasının hukuka aykırı yöntemle elde edilmiş delil olmasından dolayı hükme esas alınamaması karşısında; sanıkların ikrar niteliğinde kabul edilebilecek beyanları olsa bile maddi delillerle desteklenmeyen ikrarına itibar edilip edilemeyeceğine ve mahkumiyete yeterli başkaca delil olup olmadığına,</p>
+
+<p>3- Bu hususların CMK’nun 230/1-b maddesi hükmü gereğince yerel mahkemece gerekçeli kararda tartışılması gerekip gerekmediğine ilişkindir.</p>
+
+<p>1- Ceza usul hukukunda, re’sen araştırma ilkesi ve vicdani delil sistemi geçerli olup, amaç maddi gerçeğe ulaşmaktır. Maddi gerçek, hukuka uygun elde edilen her türlü delille ispatlanabilir. Anayasa’ya göre, kanuna aykırı olarak elde edilen bulgular delil olarak kullanılamaz (m.38/6). CMK uyarınca, yüklenen suç, ancak hukuka uygun şekilde elde edilmiş olan delillerle ispat edilebilir (m. 217/2). Delil, kanuna aykırı olarak elde edilmişse, reddolunur (m.206/2-a). Hükmün hukuka aykırı yöntemlerle elde edilen delile dayanması, hukuka kesin aykırılık sebebidir (m. 289).</p>
+
+<p>5271 sayılı CMK’nda “arama ve elkoyma” işlemine dair usul ve esaslar (m. 116-134) düzenlenmiştir. Anılan Kanun’un 119. maddesinin 4. fıkrasında Cumhuriyet savcısı hazır olmaksızın konut, işyeri veya diğer kapalı yerlerde arama yapabilmek için o yer ihtiyar heyetinden veya komşulardan iki kişinin bulundurulacağı şarta bağlanmıştır.</p>
+
+<p>Yargıtay Ceza Genel Kurulu da, 25.11.2014 tarih ve 2014/166-514 sayılı Kararında hukuka aykırı olarak yapıldığı kabul edilen aramada elde edilen maddi delil dışındaki diğer delillerin (somut olayda ikrarın) mahkumiyet için yeterli olup olmadığı konusu tartışılırken şu sonuca varmıştır: “Hukuka uygun olmayan arama işlemi sonucunda ele geçen delillerin hükme esas alınamayacağının belirlendiği olayda; … arama işleminin hukuka aykırı yapılması nedeniyle ele geçirilen ruhsatsız tabancanın hukuka aykırı yöntemle elde edilmiş olmasından dolayı hükme esas alınmayacağı… başkaca maddi delillerle desteklenmeyen ikrara dayanılarak mahkumiyet hükmü kurulması usul ve kanuna aykırıdır.”</p>
+
+<p>Daire çoğunluğu, CGK’nun arama esnasında iki arama tanığının bulundurulmamasının sonuca etkili olmayan nisbi aykırılık olduğuna ilişkin Kararlarına dayanmakta ise de Anayasa Mahkemesinin, 19.11.2014 tarih ve 2013/6183 Başvuru Numaralı Kararında, ihtiyar heyetinden veya komşulardan iki kişi bulundurulmadan yapılan arama sonucunda elde edilen hukuka aykırı delillerin hükme esas alınarak adil yargılanma hakkının ihlal edildiğine karar vermesi üzerine CGK, Anayasa Mahkemesinin anılan kararı karşısında, bu kabullerinden vazgeçtiğini açıkça belirtmiştir: “Her ne kadar daha önceki kararlarda, sırf arama sırasındaki şekle ilişkin bu koşulun ihlal edilmesine dayanılarak aramanın hukuka aykırı sayılamayacağı ve ele geçen delillerin de ‘hukuka aykırı biçimde elde edilmiş delil’ olarak nitelenemeyeceği sonucuna ulaşılmış ise de, Anayasa Mahkemesi, konutta arama tanıkları hazır bulundurulmadan yapılan arama ile Anayasa’nın 36. maddesinde güvence altına alınan adil yargılanma hakkının ihlal edildiğine karar verdiğinden, CMK’nun 119/4. maddesinin amir hükmüne aykırı olarak kapalı alanlarda yapılan aramalarda o yer ihtiyar heyetinden veya komşulardan iki kişi hazır bulundurulmadan icra edilmişse aramanın hukuka aykırı olduğunun ve arama sonucu elde edilen suça konu eşyanın hukuka aykırı yöntemle elde edilmiş delil niteliğinde bulunduğunun kabulü gerekir.” (CGK, 28.04.2015, 2013/464 E., 2015/132 K.). Avrupa İnsan Hakları Mahkemesi de …./Türkiye davasında (17811/04, 24.05.2011), arama esnasında hazır bulunması gereken görevli veya bulunması gerekenler yer almadan konutta yapılan aramanın, AİHS’nin 8. maddesinde düzenlenen özel hayatın ve aile hayatına saygı hakkını ihlal ettiğine karar vermiştir (www……gov.tr/ara/karar/….pdf).</p>
+
+<p>Somut olayda mahkemece, CMK hükümleri uyarınca arama yapılmasına karar verilmesi üzerine, belirtilen yerlerde kolluk tarafından yapılan arama sonucunda suça konu eşya bulunup el konulmuş ise de, arama işlemi CMK’nun 119/4. maddesi hükmüne aykırı olarak ihtiyar heyetinden veya komşulardan kimse bulundurulmadan gerçekleştirildiği için, el konulan ve mahkumiyete esas alınan eşya hukuka aykırı yöntemle elde edilen delil niteliğindedir. Dosyadaki hukuka aykırı yöntemlerle elde edilen delillerin değerlendirme dışı tutulması halinde, sanığın cezalandırılmasına imkan yoktur. Bilirkişi raporu aramada ele geçen ürünün değerlendirilmesine yönelik bir araçtır.</p>
+
+<p>Adli ve Önleme Aramaları Yönetmeliğinin “Karar alınmadan yapılacak arama” başlıklı 8. maddesinde, bir arama emri ya da kararı aranmadan arama yapılabilecek hallerden “ilgilinin rızası” ibaresi Danıştay 10. Dairesinin 13.03.2007 tarih, 2005/6392 E., 2007/948 K. sayılı Kararı ile; “Anayasanın “Temel Haklar ve Ödevleri” kısmında yer verilen “özel hayatın gizliliği ve konut dokunulmazlığı hakkı” dokunulmaz, devredilmez, vazgeçilmez kişiliğe bağlı temel haklardandır. Anayasanın 20. ve 21. maddelerinde bu hakkın hangi hallerde ve nasıl sınırlanabileceği belirtilirken, anılan hakların “vazgeçilmez” niteliği nedeniyle sınırlama usulleri içinde ilgilinin rızası”na yer verilmemiştir. … Anayasanın sıkı bir şekilde korumakla yetinmeyip, sınırlama ölçütlerini de sıkı kurallara bağladığı temel haklardan olan “özel hayatın gizliliği” ve “konut dokunulmazlığı” hakkından tümüyle vazgeçilmesi anlamına gelen “rıza” müessesesinin bu hakların ihlalini kolaylaştıracağı ve Anayasa ile getirilen korumayı işlevsiz kılabileceği açıktır. Bu durumda, dava konusu yönetmeliğin 8. maddesinin (f) bendindeki “ilgilinin rızası” ibaresinde hukuka uyarlık bulunmadığı” gerekçesiyle İPTAL edilmiştir. Pozitif hukukumuzda, ilgilinin rızası ile arama yapılabileceğine veya hukuka aykırı aramanın ilgilinin muvafakatı ile geçerlilik kazanacağına ilişkin bir düzenleme bulunmamaktadır.</p>
+
+<p>2- CMK’nun “İfade alma ve sorguda yasak usuller” başlıklı 148. maddesine göre “şüphelinin ve sanığın beyanı özgür iradesine dayanmalıdır. Bunu engelleyici nitelikte kötü davranma, işkence, ilaç verme, yorma, aldatma, cebir veya tehditte bulunma, bazı araçları kullanma gibi bedensel veya ruhsal müdahaleler yapılamaz. …Yasak usullerle elde edilen ifadeler rıza ile verilmiş olsa da delil olarak değerlendirilemez.” Maddede yasak sorgu yöntemleri sayılırken, bir kaç yöntem sayıldıktan sonra “gibi” ifadesiyle, sayılan ruhsal ve bedensel müdahalelerin tahdidi (sınırlı) değil, tadadi olarak (örnek olarak) sayıldığı açıktır.</p>
+
+<p>Arama işlemi Kanun’un öngördüğü usullere uygun olarak gerçekleştirilmemişse, bu yolla elde edilen delil hukuka aykırı olduğu gibi suçun maddi unsuru olan ancak hukuka aykırı olarak elde edilen bu deliller sanığın önüne konulup, buna karşı diyecekleri sorularak alınan savunmanın dış müdahaleler olmaksızın, özgür iradeye dayanılarak yapıldığı söylenemez. Nasıl ki sanığın talep etmesine veya yasal zorunluluk bulunmasına rağmen müdafii atanmadan ya da yasal hakları hatırlatılmadan alınan savunması hukuka aykırı olup, bu şekilde alınan savunmada suçun ikrar edilip edilmediğine bakılmaz ya da yasak yöntemlerle (CMK m. 148) alınan savunmada belirtilen adreste hukuka uygun bir arama yapılsa bile elde edilen deliller hukuka aykırı olacağından, ikrar olarak kabul edilen bu itiraflar mahkumiyete esas alınamaz. Aynı şekilde hukuka aykırı biçimde elde edilip, “delil” olma özelliği bulunmamasına rağmen, suçun sübutuna en büyük delil olarak sanığa gösterilerek alınan savunmadaki “ikrar” özgür iradeye dayalı olmayacağından, değer atfedilmemelidir.</p>
+
+<p>Usulsüz olarak gerçekleştirilen arama işlemi sonucunda elde edilen suçun konusu ve maddi unsuru olan eşya ele geçmeden yapılacak savunma ile suçun konusu eşyanın ele geçirilmesinden sonra yapılacak savunma aynı olacak mıydı? Cumhuriyet savcısı veya Hakim, hukuka aykırı olarak elde edildiğini belirterek, suça konu eşya ele geçmemiş gibi sanıktan savunma yapmasını isteselerdi sanık aynı şekilde suçunu ikrar edecek miydi? Suçun maddi unsuru ortada yokken ikrarda bulunulsa bile bu ikrar soyut kalacağından, mahkumiyete yeterli delil olarak kabul edilemez. CMK’nun amir hükümleri karşısında, hukuka “mutlak aykırılık”, “nisbi aykırılık” ayırımının yapılması mümkün değildir. Hukuk kurallarına aykırılık kavramı bir bütündür. Hukukun uygulanmasında hukuka uygun olmayan bir şeyin üzerine meşru bir şey bina edilemez. Sistemimiz, delile değil hukuka üstünlük tanımaktadır. Bu durumda sanıklar suçu ikrar etse de da maddi delillerle desteklenmiş sayılmayacağından ikrar soyut kalacak ve mahkumiyete esas alınamayacaktır.</p>
+
+<p>3- Anayasa’nın 141. maddesine göre “mahkemelerin her türlü kararları gerekçeli olarak yazılır.” CMK’nun 34/1 ve 230. maddelerinin amir hükümlerine göre; “Hakim ve mahkemelerin her türlü kararı, karşı oy dahil, gerekçeli olarak yazılır. Gerekçenin yazımında 230 uncu Madde göz önünde bulundurulur.” “Mahkumiyet hükmünün gerekçesinde, iddia ve savunmada ileri sürülen görüşler, delillerin tartışılması ve değerlendirilmesi, hükme esas alınan ve reddedilen delillerin belirtilmesi; bu kapsamda dosya içerisinde bulunan ve hukuka aykırı yöntemlerle elde edilen delillerin ayrıca ve açıkça gösterilmesi gerekir.”</p>
+
+<p>Bu amir hükümlere göre; mahkumiyet hükmünün gerekçesinde, … dosya içerisinde bulunan ve hukuka aykırı yöntemlerle elde edilen delillerin ayrıca ve açıkça gösterilmesi gerekir” iken, gerekçeli kararda bu hususlara hiç değinilmemiştir. Kararın bu yönüyle gerekçesiz olması başlı başına hukuka kesin aykırılıktır (CMUK m. 308/7, CMK m. 289/1-g). Bu durum adil yargılanma hakkını ihlal edici nitelikte olduğundan, hükmün bozulmasını gerektirir.</p>
+
+<p>Açıklanan pozitif hukuk normları, AİHM, Anayasa Mahkemesi ve CGK Kararları karşısında; “hukuka aykırı biçimde” elde edilen deliller hükme esas alınamaz. Bu husus, Avrupa İnsan Haklari Sözleşmesi’nin 6. maddesinde yer alan ve Anayasamıza da eklenen (m. 36) adil yargılanma hakkının ve özel hayatın gizliliğinin gereğidir.</p>
+
+<p>Açıklanan gerekçelerle, hukuka uygun biçimde elde edilmiş, mahkumiyete yeterli başkaca delil bulunmaması ve bu hususların yerel mahkemece tartışılıp değerlendirilmemesi nedeniyle yerel mahkeme kararının öncelikle bu gerekçeyle bozulması gerektiğini, uygulamaya yönelik hususlara ise ancak kabule göre işaret edilebileceğini düşündüğümden, sayın çoğunluğun kararına katılamıyorum.</p>
+
+<hr>
+
+<p><strong>YARGITAY 19. CEZA DAİRESİ 
+Esas : 2015/2092 Karar : 2015/1175</strong> Tarih : 6.05.2015</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 134. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Bilgisayarlarda, Bilgisayar Programlarında ve Kütüklerinde Arama, Kopyalama ve Elkoyma</strong></p>
+  </li>
+</ul>
+
+<p>Yerel Mahkemece verilen hüküm temyiz edilmekle, başvurunun süresi ve kararın niteliği ile suç tarihine göre dosya incelendi, gereği görüşülüp düşünüldü:</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>Müşteki vekilinin şikayeti üzerine başlatılan soruşturmada, …1. Sulh Ceza Mahkemesi’nin 21/08/2009 tarihli, 2009/1034 D. İş sayılı kararında, CMK’nın 119. maddesi uyarınca sanık tarafından işletilen iki ayrı işyerinde arama yapılmasına karar verilmesine karşın, 
+aynı işyerinde bulunan bilgisayarlar üzerinde arama yapılabilmesine olanak tanıyan CMK’nın 134. maddesine göre verilmiş bir arama kararı bulunmadığı anlaşılmakla, 
+işyerinde bulunan bilgisayarlar üzerinde yapılan arama sonucunda elkonulan ve içerisinde müşteki firmaya ait lisanssız yazılımların olduğu belirtilen harddiskler ve CD`ler hukuka aykırı delil niteliğinde olup hükme esas alınamayacağından, sanık hakkında verilen beraat kararı usul ve yasaya uygun görülmekle,</p>
+
+<p>Eyleme ve yükletilen suça yönelik katılan vekilinin temyiz iddiaları yerinde görülmediğinden tebliğnameye uygun olarak, temyiz davasının esastan reddiyle hükmün (ONANMASINA ), oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 11. CEZA DAİRESİ
+Esas : 2013/3618 Karar : 2015/1001</strong> Tarih : 22.01.2015</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 134. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Bilgisayarlarda, Bilgisayar Programlarında ve Kütüklerinde Arama, Kopyalama ve Elkoyma</strong></p>
+  </li>
+</ul>
+
+<p>1- Anayasanın 2. maddesine göre, Türkiye Cumhuriyeti bir hukuk devletidir. “Hukuk Devleti”, her eylem ve işlemi hukuka uygun, insan haklarına saygı gösteren, bu hak ve özgürlükleri koruyup güçlendiren, her alanda adaletli bir hukuk düzeni kurup bunu geliştirerek sürdüren, Anayasa’ya aykırı durum ve tutumlardan kaçınan, hukuku tüm devlet organlarına egemen kılan, Anayasa ve hukukun üstün kurallarıyla kendini bağlı sayıp yargı denetimine açık olan, kanunların üstünde kanun koyucunun da bozamayacağı temel hukuk ilkeleri bulunduğunun bilincinde olan devlettir. Anayasa`nın 20. maddesinin ikinci fıkrasına göre de “…usulüne göre verilmiş hakim kararı olmadıkça, yine bu sebeplere bağlı olarak gecikmesinde sakınca bulunan hallerde de kanunla yetkili kılınmış merciin yazılı emri bulunmadıkça; kimsenin üstü, özel kağıtları ve eşyası aranamaz ve bunlara el konulamaz.”</p>
+
+<p>5271 sayılı CMK’nun Birinci Kitap Dördüncü Kısmında, altı bölüm halinde koruma tedbirleri, bu kapsamda “arama ve elkoyma” işlemine dair usul ve esaslar (m. 116-134) düzenlenmiştir. Ancak ceza yargılamasına dair çeşitli usul hükümleri ile “arama ve elkoyma” gibi koruma tedbirlerine ilişkin hükümlere bir çok özel kanunda da yer verilmiştir. Bunlardan biri de 213 sayılı Vergi Usul Kanunu’dur. 213 sayılı Kanun’un 359. maddesindeki suçlara ilişkin olarak Cumhuriyet savcısının dava açması, Kanun gerekçesindeki ifadeyle “vatandaşın mali emniyeti mülahazası ile” vergi idaresinin vereceği mütalaaya bağlandığı gibi anılan Kanun`un 142-147. maddeleri arasında “arama” ve “aramalı inceleme”nin usul ve şartları ayrıntılı bir şekilde hükme bağlanmıştır.</p>
+
+<p>213 sayılı Kanun`un 142. maddesi uyarınca “İhbar veya yapılan incelemeler dolayısıyle, bir mükellefin vergi kaçırdığına delalet eden emareler bulunursa, bu mükellef veya kaçakçılıkla ilgisi görülen diğer şahıslar nezdinde ve bunların üzerinde arama yapılabilir.</p>
+
+<p>Aramanın yapılabilmesi için:</p>
+
+<p>1)Vergi incelemesi yapmaya yetkili olanların buna lüzum göstermesi ve gerekçeli bir yazı ile arama kararı vermeye yetkili sulh yargıcından bunu istemesi,</p>
+
+<p>2) Sulh yargıcının istenilen yerlerde arama yapılmasına karar vermesi, şarttır.”</p>
+
+<p>Buna göre, vergi kaçırıldığına delalet eden emarelerin bulunması halinde, vergi incelemesi yapmaya yetkili olanlar, arama yapılmasını gerekli kılan bir yazıyla sulh ceza hâkiminden talepte bulunacak, arama kararının verilmesi halinde de, arama işlemi genel kolluk görevlileri tarafından değil, vergi inceleme elemanları gerçekleştirilecektir. VUK’nun 7. maddesine göre genel kolluk, talep üzerine sadece gerekli güvenlik önlemlerinin alınmasını sağlamakla yükümlüdür.</p>
+
+<p>VUK’nun 147. maddesinde, “bu bölümde açıkça yazılı olmayan hallerde Ceza Muhakemeleri Usulü Kanununun arama ile ilgili bulunan hükümlerinin uygulanacağı”nın belirtilmesinden maksat, bu Kanun`un aramaya ilişkin 142-146. maddelerinde açıkça düzenlenen konularda bu hükümlerin, açıkça düzenlenmeyen konularda ise CMK hükümlerinin uygulanmasının sağlanmasıdır.</p>
+
+<p>Ceza muhakemesinde, arama olağan bir koruma tedbiri iken, Vergi Hukuku’nda istisnai, olağandışı bir denetim yoludur. Niteliği itibariyle adli arama olmasına rağmen, bu aramanın genel suç kolluğu tarafından değil, vergi inceleme elemanlarınca yapılabilmesi, vergi suçlarına ilişkin olarak yapılacak aramanın özelliğidir. Bir araç koruma tedbiri olarak vergi araması, vergi incelemesi denetim yolunun ön basamağıdır. Amaç, vergi kaçırıldığını ortaya çıkaracak ve destekleyecek belge ve kayıtların bulunmasıdır.</p>
+
+<p>Ceza usul hukukunda, re’sen araştırma ilkesi ve vicdani delil sistemi geçerli olup, amaç maddi gerçeğe ulaşmaktır. Maddi gerçek, hukuka uygun elde edilen her türlü delille ispatlanabilir. Anayasa`ya göre, kanuna aykırı olarak elde edilen bulgular delil olarak kullanılamaz (m.38/6). CMK uyarınca, yüklenen suç, ancak hukuka uygun şekilde elde edilmiş olan delillerle ispat edilebilir (m. 217/2). Delil, kanuna aykırı olarak elde edilmişse, reddolunur (m.206/2-a). Hükmün hukuka aykırı yöntemlerle elde edilen delile dayanması, hukuka kesin aykırılık sebebidir (m. 289). Açıklanan pozitif hukuk normları ve Yargıtay Ceza Genel Kurulu (29.11.2005, 2005/144 Esas, 2005/150 Karar, 17.11.2009, 2009/7-160 Esas, 2009/264 Karar) kararları ile aynı yöndeki Özel Daire Kararları karşısında; “hukuka aykırı biçimde” elde edilen deliller, Türk Ceza Yargılaması Hukuku sisteminde dikkate alınamaz. Bu husus, Avrupa İnsan Haklari Sözleşmesi’nin 6. maddesinde yer alan ve Anayasamıza da eklenen (m. 36) adil yargılanma hakkının gereğidir.</p>
+
+<p>Yukarıda yer verilen Anayasa ve Yasa hükümleri ile 213 sayılı Kanun’un 142 ve devamı maddeleri hükümleri karşısında somut olaya gelince;
+… Müdürlüğü … Müdürlüğünce, istihbari çalışmalar sonucu sanığın, piyasaya komisyon karşılığı sahte fatura keserek sattığının tespit edilmesi üzerine, 06.01.2006 tarihinde Cumhuriyet Başsavcılığından belirlenen işyeri adresinde suç delillerinin ele geçirilmesi amacıyla arama ve el koyma izni istenmiş, Cumhuriyet Başsavcılığınca nöbetçi Sulh Ceza Hâkimliğinden CMK`nun 116, 119 ve 127. maddeleri uyarınca arama ve el koyma kararı verilmesi talep edilmiş, Emniyet Müdürlüğünün 17.01.2006 tarih 2006/46 sayılı yazısına göre, 1. Sulh Ceza Mahkemesinden 06.01.2006 tarihinde alınan 2006/49 Müt. sayılı arama kararı uyarınca aynı gün Kaçakçılık ve Organize Suçlar Şube Müdürlüğü görevlilerince sanığın işyeri olduğu belirtilen adreste yapılan aramada, tamamı başka mükelleflere ait olmak üzere bir kısmı düzenlenmiş, bir kısmı boş, fatura ve irsaliyeler ile boş fatura koçanları ve kaşeler ele geçirilmiş, Cumhuriyet savcısının talimatı ile bir koli içindeki belgeler incelenmek üzere … Başkanlığına gönderilmiş, idarece bu belgeler ve mükellefin tarh dosyası üzerinden yapılan incelemeler sonucunda inceleme raporları düzenlenip, dava şartı olan mütalaanın verilmesi üzerine, 08.09.2008 tarihli iddianame ile 2005 yılında sahte fatura düzenlemek suçundan kamu davası açılmıştır.</p>
+
+<p>… Müdürlüğü görevlileri tarafından, sanığın VUK’nun 359/b maddesi kapsamında kalan suçu işlediğinin tespit edilmesi üzerine, bu aşamada gecikmesinde sakınca bulunduğuna ilişkin bir hâlin varlığı da gösterilmediğine göre, genellikle vergi mükellefleri olan failler için kanun koyucunun öngördüğü ve daha güvenceli olan 213 sayılı Kanun`un 142 ve devamı maddelerindeki özel usule uygun olarak arama ve el koyma işleminin gerçekleştirilmesi, diğer bir ifade ile Cumhuriyet Başsavcılığının, vergi incelemesi yapmaya yetkili olanların sulh ceza hâkiminden talepte bulunması ve arama kararı verilmesi halinde arama işlemini gerçekleştirmesine imkân sağlaması gerekirdi.</p>
+
+<p>Genel hükümlere tabi bir suç ihbarı üzerine, delil elde edilmesi amacıyla CMK uyarınca yapılan arama işlemi sonucunda, vergi suçunun da işlendiğini gösteren delillerin bulunması veya VUK`nun 147. maddesi hükmü karşısında, vergi suçuna ililişkin olmasına rağmen gecikmesinde sakınca bulunan hâllerin varlığı halinde, CMK hükümlerine göre arama işlemi yapılabilir ve bu şartlarda yapılan arama sonucunda elde edilen deliller de hukuka uygun kabul edilebilirdi. Ancak somut olayda … Müdürlüğünce sanığın VUK’nun 359. maddesi kapsamında olan sahte fatura ticareti yaptığı en başından tespit edilerek, bu suçun delillerinin elde edilmesi amacıyla arama kararı talep edilmiştir. Bu durumda aramanın VUK’nun 142. maddesindeki özel hükümlere uygun gerçekleştirilmesi yerine belirtilen şekilde yapılması hukuka aykırıdır. Ayrıca, bu yöntemle elde edilen fatura ve diğer deliller hükme esas alınarak sanığın mahkumiyetine karar verilirken, CMK’nun 230/1-b madde ve bendi uyarınca hükmün gerekçesinde “delillerin tartışılması ve değerlendirilmesi, hükme esas alınan ve reddedilen delillerin belirtilmesi; bu kapsamda dosya içerisinde bulunan ve hukuka aykırı yöntemlerle elde edilen delillerin ayrıca ve açıkça gösterilmesi” gerektiği de gözetilmemiştir.</p>
+
+<p>Dosyadaki hukuka aykırı yöntemlerle elde edilen delillerin değerlendirme dışı tutulması halinde, sanığın cezalandırılmasına imkân bulunmamaktadır. Gerekçeli kararda gösterilen esaslı deliller arasında, vergi tekniği ve vergi inceleme raporları, şirkete ait bir kısım evrak suretleri, 03.10.2005 tarihli fatura düzenlediğine dair tespit tutanağı gösterilip mahkumiyete esas alınmış ise de, VUK hükümlerine, dolayısıyla hukuka aykırı arama el koyma sonucunda elde edilen deliller üzerinden harekete geçilerek düzenlenen vergi tekniği ve vergi inceleme raporları mahkumiyete esas alınamaz. Diğer yönden, dosyada sanığa ait bir ikrar bulunmamaktadır. Bu itibarla; sanığın işyerinde hukuka aykırı olarak gerçekleştirilen arama işleminde elde edilen maddi deliller ile buna dayanılarak düzenlenen inceleme raporlarının mahkemece hükme esas alınmasında isabet bulunmamaktadır.</p>
+
+<p>2- Kabule göre de; 
+a- Sanık savunmasında, hakkında kovuşturmaya yer olmadığına karar verilen … isimli kişi ile ortak olarak gıda toptancılığı yaptıklarını, onun vergi borcu olduğu için mükellefiyetin kendi adına tesis edildiğini, 10 gün sonra iş yerini bu kişiye terk ederek ayrındığını,…‘in kendisi adına Kredi Kartı ve fatura bastırıp, piyasada sattığını, hatta başka çekler bulup üzerine kaşesini bastığı için … Asliye Ceza Mahkemesinde yargılandığını, ancak imznın kendisine ait çıkmaması üzerine beraat ettiğini (buna ilişkin Karar getirilmiş olup, dosyadadır), işyeri nasıl açılır kapanır bilmediğini, …‘in kendisini kullandığını, faturaların da bu şahsın düzenlemiş olabileceği savunmuştur. … Asliye Ceza Mahkemesinin hakkında verilen beraat kararında yer verilen savunmasında da aynı yönde savunmada bulunan sanık ilave olarak da, …‘in kendisinden mahiyetini bilmediği vekaletname aldığını, bunu bir tanıdık muhasebeciye gösterdiğinde bununla başının yakılabileceğini belirtmesi üzerine derhal Notere giderek vekillikten azlettiğini,…`in kendisi adına bastırdığı sahte kaşeyi sahte çeklere vurarak kullandığını, çeklerdeki imza ve kaşenin kendisine ait olmadığını savunmuştur.</p>
+
+<p>Vergi denetmenliğince hazırlanan 06.03.2007 tarihli Vergi Vekniği Raporu’nda, belge basımına ilişkin olarak yapılan denetim sırasında, 03.01.2006 tarih ve 0336297 no’lu tutananağa göre (Ek 10) , vergi mükellefi olan sanığın matbaada 10 Cilt (500) adet fatura bastırdığı, bunlardan tarih ve numaraları gösterilen 3 adedinin düzenlendiğinin tespit edildiği belirtildiğine göre, sanığın savunması ile sahtecilik suçuna ilişkin olarak da… hakkındaki iddiaları dikkate alındığında, savunmanın doğruluğu açısından, … ile suça konu faturalar kullanan …`ın tanık olarak dinlenmesi, anılan fatura örnekleri getirilip, gerektiğinde imza ve yazı incelemesi yaptırılmasından sonra hukuki durumunun değerlendirilmesi gerektiği gözetilmeden, eksik inceleme sonucunda mahkumiyetine karar verilmesi,</p>
+
+<p>b- 2005 takvim yılında birden fazla sahte fatura düzenlenmesi nedeniyle zincirleme biçimde işlenen suçtan dolayı sanık hakkında 5237 sayılı TCK`nun 43. maddesinin uygulanmaması suretiyle eksik ceza tayini,</p>
+
+<p>c- Tekerrüre esas sabıkası bulunduğu halde TCK`nun 58/7. maddesi gereğince mükerrirler hakkındaki infaz rejiminin ve cezanın infazından sonra denetimli serbestlik tedbirinin uygulanmasına karar verilmemesi,</p>
+
+<p>Yasaya aykırı, sanığın temyiz itirazları bu nedenle yerinde görülmüş olduğundan, hükmün bu sebeplerden 5320 sayılı Kanunun 8/1. maddesi gereğince uygulanması gereken CMUK`nun 321. maddesi uyarınca ( BOZULMASINA ), oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 7. CEZA DAİRESİ 
+Esas : 2013/6138 Karar : 2014/22341</strong> Tarih : 10.12.2014</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 134. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Bilgisayarlarda, Bilgisayar Programlarında ve Kütüklerinde Arama, Kopyalama ve Elkoyma</strong></p>
+  </li>
+</ul>
+
+<p>SUÇ : 5846 sayılı yasaya muhalefet</p>
+
+<p>Yerel mahkemece verilen hüküm temyiz edilmekle; başvurunun nitelik, ceza türü, süresi ve suç tarihine göre dosya okunduktan sonra Türk Milleti adına gereği görüşülüp düşünüldü;</p>
+
+<p>Sanığın yetkilisi olduğu ….. Bilgisayar Güvenlik Sistemleri Ticaret Sanayi Limited Şirketi isimli işyerinde Hendek Sulh Ceza Mahkemesinin 2008/524 değişik iş sayılı arama kararı ile yapılan aramada ele geçirilen MSI marka bilgisayarda katılana ait Wındows XP PRO ve OFFİCE 2003 PRO lisansız programların bulunması şeklinde gerçekleşen olayda, 
+aramaya dayanak olan Hendek Sulh Ceza Mahkemesinin 2008/524 değişik iş sayılı arama kararında CMK`nın 134.maddesindeki bilgasayarda, bilgisayar kayıtlarında ve kütüklerinde arama kopyalama ve elkoyma yetkilerinin bulunmadığı, bu nedenle arama kararı usule aykırı olup anılan arama kararı gereğince elde edilen delile dayanılarak hüküm kurulamaycağı gözetilmeden sanığın beraati yerine mahkumiyetine karar verilmesi,</p>
+
+<p>Yasaya aykırı olup, sanığın temyiz itirazları bu itibarla yerinde görüldüğünden hükmün 5320 sayılı yasanın 8/1.maddesi uyarınca yürürlükte bulunan 1412 sayılı CMUK.nun 321.maddesi gereğince BOZULMASINA,   oybirliğiyle karar verildi.</p>
+
+<hr>
+
+</div></div></main>
+</div>
+
+<footer>
+<section>
+<div class="contact-info">
+
+<div class="adres">
+
+<div class="telefon-wrapper">
+
+
+</div>
+</div>
+</section>
+
+</div>
+
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+"vars": {
+"account": "UA-58342443-1"
+},
+"triggers": {
+"trackPageview": {
+"on": "visible",
+"request": "pageview"
+}
+}
+}
+</script>
+</amp-analytics>
+
+</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="../../index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="../../dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="../../ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="../../knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="../../search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/slideToggle.min.js"></script>
+    <script src="../js/internet-status.js"></script>
+    <script src="../js/tiny-slider.js"></script>
+    <script src="../js/baguetteBox.min.js"></script>
+    <script src="../js/countdown.js"></script>
+    <script src="../js/rangeslider.min.js"></script>
+    <script src="../js/vanilla-dataTables.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/magic-grid.min.js"></script>
+    <script src="../js/dark-rtl.js"></script>
+    <script src="../js/active.js"></script>
+    <!-- PWA -->
+    <script src="../js/pwa.js"></script>
+  </body>
+</html>

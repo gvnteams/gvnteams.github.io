@@ -1,0 +1,1407 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tiny-slider.css">
+    <link rel="stylesheet" href="../css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="../css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="tck-search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+               <div class="page-content-wrapper py-0">
+        </div>
+      </div>
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<h2 id="arama-kararı">Arama Kararı</h2>
+
+<h2 id="cmk-madde-119">CMK Madde 119</h2>
+
+<p>(1)(Değişik : 25/5/2005 – 5353/15 md.) Hâkim kararı üzerine veya gecikmesinde sakınca bulunan hâllerde Cumhuriyet savcısının, Cumhuriyet savcısına ulaşılamadığı hallerde ise kolluk amirinin yazılı emri ile kolluk görevlileri arama yapabilirler.</p>
+
+<p>Ancak, konutta, işyerinde ve kamuya açık olmayan kapalı alanlarda arama, hâkim kararı veya gecikmesinde sakınca bulunan hallerde Cumhuriyet savcısının yazılı emri ile yapılabilir. Kolluk amirinin yazılı emri ile yapılan arama sonuçları Cumhuriyet Başsavcılığına derhal bildirilir.</p>
+
+<p>(2) Arama karar veya emrinde;</p>
+
+<p>a) Aramanın nedenini oluşturan fiil,</p>
+
+<p>b) Aranılacak kişi, aramanın yapılacağı konut veya diğer yerin adresi ya da eşya,</p>
+
+<p>c) Karar veya emrin geçerli olacağı zaman süresi, Açıkça gösterilir.</p>
+
+<p>(3) Arama tutanağına işlemi yapanların açık kimlikleri yazılır. (Mülga ikinci cümle: 25/5/2005 – 5353/15 md.)</p>
+
+<p>(4) Cumhuriyet savcısı hazır olmaksızın konut, işyeri veya diğer kapalı yerlerde arama yapabilmek için o yer ihtiyar heyetinden veya komşulardan iki kişi bulundurulur.</p>
+
+<p>(5) (Değişik: 25/7/2018-7145/14 md.) Askerî mahallerde yapılacak arama, Cumhuriyet savcısının nezaretinde askerî makamların katılımıyla adlî kolluk görevlileri tarafından yerine getirilir. Gecikmesinde sakınca bulunan hâllerde Cumhuriyet savcısının yazılı emriyle de askerî makamların katılımıyla adlî kolluk görevlileri tarafından arama yapılabilir.</p>
+
+<hr>
+
+<ul>
+  <li><a href="../5271-sayili-ceza-muhakemesi-kanunu-cmk.html"><strong>5271 sayılı CMK (Ceza Muhakemesi Kanunu) Tam Metin</strong></a></li>
+</ul>
+
+<hr>
+
+<amp-img src="../tokmak-yargitay-kararlari-1280x720.png" alt="CMK Madde 119  Arama Kararı" width="1280" height="720" layout="responsive">
+            </amp-img>
+
+<h2 id="cmk-madde-119-gerekçesi">CMK Madde 119 Gerekçesi</h2>
+
+<p>1) Madde, arama kararının kimler tarafından, nasıl verileceğini, karar veya emirde ne gibi hususların yer alması gerektiğini, aramanın yapılmasında uyulması gerekli hususları ve istisnalarını göstermektedir. Madde, 1412 sayılı Kanunun konuya ilişkin 97 nci maddesine göre esaslı sayılabilecek değişiklikler getirmiştir. Maddenin temel yapısı aşağıdaki şemada gösterilmiştir:</p>
+
+<p>5353 sk.la üçüncü fıkranın ikinci cümlesi ile beşinci fıkrasındaki “hâkim veya” ibaresi madde metninden çıkarılmıştır.
+5353 sk.la Birinci fıkrada yapılan değişiklikle, gecikmesinde sakınca bulunan ve ayrıca Cumhuriyet savcısına ulaşılamayan hallerde, adli kolluk amirinin de arama konusunda yazılı emir verebilmesi kabul edilmiştir. Ancak, kolluk amirinin yazılı emir verme yetkisi konut ve işyeri bakımından kabul edilmemiştir.</p>
+
+<p>5353 sk.la 119 uncu maddenin üçüncü fıkrasındaki “Arama sonucunda bazı eşyaya elkoyma söz konusu olduğunda 127 nci maddenin birinci fıkrası hükmü uygulanır” cümlesi metinden çıkarılmıştır. Bu değişiklikle, arama sonucunda gerçekleştirilecek elkoyma işlemine işlerlik kazandırılması amaçlanmıştır. Böylece, arama sonucunda bazı eşyaya elkoyma söz konusu olduğunda, bunun için ayrıca bir karar veya yazılı emir alınmasına gerek kalmayacak, arama karar veya emrinde, elkoyma yetkisi de verilebilecektir.Son fıkrada “hâkim veya” ibaresi metinden çıkarılmakla, soruşturmanın asıl yürütücüsü olan Cumhuriyet savcısının istem ve katılımı yeterli görülmüştür.</p>
+
+<p>2) Arama kararında veya Cumhuriyet savcının verdiği yazılı emirde mutlaka aramanın nedenini oluşturan fiil, delil, iz, eser ve emarelerin ne olduğu, aranacak kişi, karar veya emrin geçerli olacağı zaman süresi gösterilecektir. Ayrıca yapılan arama üzerine düzenlenecek arama tutanağına bu işlemi yapanların açık kimlikleri yazılacaktır.</p>
+
+<p>3) Konutlarda veya iş görmeye özgü yerlerde veya kapalı yerlerde aramada o yer ihtiyar heyetinden veya komşulardan iki kişi hazır bulundurulacaktır. Ancak arama doğrudan doğruya hâkim veya Cumhuriyet savcısı tarafından yapıldığında bu koşulun yerine getirilmesine gerek yoktur. Keza, 118 uncu maddenin ikinci fıkrasında belirtilen hallerde arama yapılırken de bu koşula uymak gereği yoktur.</p>
+
+<p>4) Askerî mahallerde yapılacak aramalar için hâkim veya Cumhuriyet savcısı istemde bulunacaktır. Bu istem üzerine arama askerî makamlar tarafından yapılacaktır. Ancak, bu işleme hâkim veya Cumhuriyet savcısı mutlaka katılacaktır. Bu katılım sadece hazır bulunmaktan ibaret olmayıp fiilen katılma olarak düşünülmüştür; bunun anlamı adı geçenlerin istemlerinin askerî makamlarca yerine getirilmesidir.</p>
+
+<hr>
+
+<h2 id="cmk-119-arama-kararı-yargıtay-kararları">CMK 119 Arama Kararı Yargıtay Kararları</h2>
+
+<hr>
+
+<p><strong>Ceza Genel Kurulu         2016/235 E.  ,  2019/41 K.</strong></p>
+
+<ul>
+  <li><strong>CMK 116</strong></li>
+  <li><strong>Arama yapılan yapının “Bırakılmış, terk edilmiş, kullanılmayan” anlamında metruk bir bina olması nedeniyle “adli arama kararı” ya da “yazılı arama emri” ile arama yapılabilecek konut vasfında bir yer sayılamayacağı, dolayısıyla bu gibi yerlerde kolluk görevlilerince gerçekleştirilen kontrollerin CMK’nın 116 ve devamı maddelerinde düzenlenen teknik anlamda bir arama işlemi değildir. Metruk bina vasfında olan söz konusu yapının, PVSK’nın 9. maddesinin 4. fıkrasının (d) bendi anlamında “umumi veya umuma açık yer” kapsamında olduğu, suç işlenmesinin veya tehlikenin önlemesi amacıyla bu yerde önleme araması kararı uyarınca arama yapılabilir.</strong></li>
+</ul>
+
+<p>Uyuşmazlık konularının isabetli bir biçimde çözümlenmesi için “arama” tedbirinin hukuki niteliği ile bu tedbire hâkim olan genel ilkelere değindikten sonra konuya ilişkin anayasal ve kanuni düzenlemelerin incelenmesinde fayda bulunmaktadır.</p>
+
+<p><strong>A- Genel Olarak Koruma Tedbiri:</strong></p>
+
+<p>Ceza muhakemesinin yapılmasını veya yapılan muhakemenin sonunda verilecek kararın kâğıt üzerinde kalmamasını ve muhakeme masraflarının karşılanmasını sağlamak amacıyla, kural olarak ceza muhakemesinde karar verme yetkisini haiz olan yetkililer tarafından, gecikmede sakınca bulunan durumlarda geçici olarak başvurulan ve hükümden önce bazı temel hak ve hürriyetlere müdahaleyi gerektiren kanuni çarelere “koruma tedbiri” denir. (Bahri Öztürk, Behiye Eker Kazancı, Sesim Soyer Güleç, Ceza Muhakemesi Hukukunda Koruma Tedbirleri, Seçkin, 2013, 1. Bası, s.1)</p>
+
+<p>Koruma tedbirleri genel itibarıyla 5271 sayılı Ceza Muhakemesi Kanununda düzenlenmiştir. Ceza Muhakemesi Kanununun Birinci Kitabının Dördüncü Kısmı “Koruma Tedbirleri” başlığını taşımakta olup arama ve yakalama tedbirine de bu kısımda yer verilmiştir. Kanunun bu açık düzenlemesine göre arama ve yakalama birer koruma tedbiridir.
+Koruma tedbirleriyle çoğu zaman henüz gerçekten bir suçun işlenip işlenmediği ya da işleme muhatap olan şüpheli tarafından işlendiği yargı kararı ile sabit olmadığı hâlde, gecikmesinde sakınca bulunmasından dolayı görünüşte haklılıkla yetinilerek gerek şüphelinin gerekse şüpheli statüsünde olmayan üçüncü kişilerin temel hak ve özgürlüklerine müdahale edilmektedir. Bu nedenle koruma tedbirlerine ölçülü bir şekilde, görünüşte haklı olan ve gecikmesinde sakınca ya da tehlike bulunan hâllerde başvurulmalıdır.</p>
+
+<p>Yakalama ve tutuklamanın esasları, Anayasamızın 19. maddesinde “Kişi hürriyeti ve güvenliği” başlığı ile;
+“Herkes kişi hürriyeti ve güvenliğine sahiptir.</p>
+
+<p>Şekil ve şartları kanunda gösterilen:</p>
+
+<p>Mahkemelerce verilmiş hürriyeti kısıtlayıcı cezaların ve güvenlik tedbirlerinin yerine getirilmesi; bir mahkeme kararının veya kanunda öngörülen bir yükümlülüğün gereği olarak ilgilinin yakalanması veya tutuklanması; bir küçüğün gözetim altında ıslahı veya yetkili merci önüne çıkarılması için verilen bir kararın yerine getirilmesi; toplum için tehlike teşkil eden bir akıl hastası, uyuşturucu madde veya alkol tutkunu, bir serseri veya hastalık yayabilecek bir kişinin bir müessesede tedavi, eğitim veya ıslahı için kanunda belirtilen esaslara uygun olarak alınan tedbirin yerine getirilmesi; usulüne aykırı şekilde ülkeye girmek isteyen veya giren, ya da hakkında sınır dışı etme yahut geri verme kararı verilen bir kişinin yakalanması veya tutuklanması; halleri dışında kimse hürriyetinden yoksun bırakılamaz.
+Suçluluğu hakkında kuvvetli belirti bulunan kişiler, ancak kaçmalarını, delillerin yokedilmesini veya değiştirilmesini önlemek maksadıyla veya bunlar gibi tutuklamayı zorunlu kılan ve kanunda gösterilen diğer hallerde hâkim kararıyla tutuklanabilir. Hâkim kararı olmadan yakalama, ancak suçüstü halinde veya gecikmesinde sakınca bulunan hallerde yapılabilir; bunun şartlarını kanun gösterir…” şeklinde düzenlenmiştir.</p>
+
+<p>Ceza Muhakemesi Kanunu’nun 2. maddesinde ise suçüstünün tanımına yer verilmiş, koruma tedbirleri başlığı altında aynı Kanun’un 90. maddesinde yakalama ve yakalanan kişi hakkında yapılacak işlemler düzenlenmiştir.</p>
+
+<p>“Madde 2: …j) Suçüstü:</p>
+
+<p>1.İşlenmekte olan suçu,</p>
+
+<p>2.Henüz işlenmiş olan fiil ile fiilin işlenmesinden sonra kolluk, suçtan zarar gören veya başkaları tarafından takip edilerek yakalanan kişinin işlediği suçu,</p>
+
+<p>3.Fiilin pek az önce işlendiğini gösteren eşya ve delille yakalanan kimsenin işlediği suçu…ifade eder”
+Maddedeki tanım doğrultusunda; örneğin failin mağduru bıçaklaması durumunda CMK’nın 2/j-1; failin mağduru bıçakladıktan sonra takip üzerine yakalanması durumunda CMK’nın 2/j-2; failin bıçaklama eyleminden hemen sonra elinde kanlı bıçakla yakalanması durumunda ise CMK’nın 2/j-3 maddesindeki suçüstü hâlleri söz konusu olacaktır.</p>
+
+<p>“Yakalama ve yakalanan kişi hakkında yapılacak işlemler</p>
+
+<p>Madde 90: (1) Aşağıda belirtilen hâllerde, herkes tarafından geçici olarak yakalama yapılabilir:</p>
+
+<p>a) Kişiye suçu işlerken rastlanması.</p>
+
+<p>b) Suçüstü bir fiilden dolayı izlenen kişinin kaçması olasılığının bulunması veya hemen kimliğini belirleme olanağının bulunmaması.</p>
+
+<p>(2) Kolluk görevlileri, tutuklama kararı veya yakalama emri düzenlenmesini gerektiren ve gecikmesinde sakınca bulunan hâllerde; Cumhuriyet savcısına veya âmirlerine derhâl başvurma olanağı bulunmadığı takdirde, yakalama yetkisine sahiptirler.</p>
+
+<p>(3) Soruşturma ve kovuşturması şikâyete bağlı olmakla birlikte, çocuklara, beden veya akıl hastalığı, malûllük veya güçsüzlükleri nedeniyle kendilerini idareden aciz bulunanlara karşı işlenen suçüstü hallerinde kişinin yakalanması şikâyete bağlı değildir.</p>
+
+<p>(4) Kolluk, yakalandığı sırada kaçmasını, kendisine veya başkalarına zarar vermesini önleyecek tedbirleri aldıktan sonra, yakalanan kişiye kanunî haklarını derhal bildirir.</p>
+
+<p>(5) Birinci fıkraya göre yakalanıp kolluğa teslim edilen veya ikinci fıkra uyarınca görevlilerce yakalanan kişi ve olay hakkında Cumhuriyet savcısına hemen bilgi verilerek, emri doğrultusunda işlem yapılır.</p>
+
+<p>(6) Yakalama emrine konu işlemin yerine getirilmesi nedeniyle yakalama emrinin çıkarılma amacının ortadan kalkması durumunda mahkeme, hâkim veya Cumhuriyet savcısı tarafından yakalama emrinin derhâl iadesi istenir” şeklindedir. Madde gereğince; kişiye bir suç işlerken rastlanması veya suçüstü bir fiilden dolayı izlenen kişinin kaçmasının önlenmesi veya kimliğinin hemen belirlenmesinin mümkün olmaması hâllerinde herkesin geçici olarak yakalama yetkisi bulunmaktadır. Kolluk görevlileri, hakkında tutuklama kararı veya yakalama emri düzenlenmesini gerektiren ve gecikmesinde sakınca bulunan hâllerde; Cumhuriyet savcısına veya amirlerine ulaşma imkânlarının bulunmaması durumunda yakalama yetkisine sahiptirler. Kolluk, yakaladığı kişinin kaçmasını, kendisine ya da başkalarına zarar vermesini önleyecek tedbirleri almalı, hemen Cumhuriyet savcısına haber vermeli ve emirleri doğrultusunda işlem yapmalıdır.</p>
+
+<p>2559 sayılı PVSK’nın 13. maddesinde de polise, suçüstü hâlinde veya gecikmesinde sakınca bulunan diğer hâllerde suç işlendiğine veya suça teşebbüs edildiğine dair haklarında kuvvetli iz, eser, emare veya delil bulunan şüphelileri yakalama yetkisi verilmiştir.</p>
+
+<p>PVSK’nın suç tarihinde yürürlükte bulunan 13. maddesi;</p>
+
+<p>“Polis,</p>
+
+<p>A) Suçüstü hâlinde veya gecikmesinde sakınca bulunan diğer hâllerde suç işlendiğine veya suça teşebbüs edildiğine dair haklarında kuvvetli iz, eser, emare veya delil bulunan şüphelileri,</p>
+
+<p>B) Haklarında yetkili mercilerce verilen yakalama veya tutuklama kararı bulunanları,</p>
+
+<p>C) Halkın rahatını bozacak veya rezalet çıkaracak derecede sarhoş olanları veya sarhoşluk hâlinde başkalarına saldıranları, yapılan uyarılara rağmen bu hareketlerine devam edenler ile başkalarına saldırmaya yeltenenleri ve kavga edenleri,</p>
+
+<p>D) Usulüne aykırı şekilde ülkeye giren ya da haklarında sınır dışı etme veya geri verme kararı alınanları,</p>
+
+<p>E) Polisin kanunlara uygun olarak aldığı tedbirlere karşı gelenleri, direnenleri ve görev yapmasını engelleyenleri,</p>
+
+<p>F) Bir kurumda tedavi, eğitim ve ıslahı için kanunlarla ve bu Kanunun uygulanmasını gösteren tüzükte belirtilen esaslara uygun olarak alınan tedbirlerin yerine getirilmesi amacıyla, toplum için tehlike teşkil eden akıl hastası, uyuşturucu madde veya alkol bağımlısı serseri veya hastalık bulaştırabilecek kişileri,</p>
+
+<p>G) Haklarında gözetim altında ıslahına veya yetkili merci önüne çıkarılmasına karar verilen küçükleri,</p>
+
+<p>Yakalar ve gerekli kanunî işlemleri yapar.</p>
+
+<p>Yakalanması belirli bir usule bağlanmış kişilerle ilgili kanun hükümleri saklıdır.</p>
+
+<p>Yakalanan kişilerin kaçması veya saldırıda bulunmasının önlenmesi bakımından kişinin sağlığına zarar vermeyecek şekilde her türlü tedbir alınabilir…” şeklinde düzenlenmiştir.</p>
+
+<p>Arama ve elkoymanın esasları; Anayasamızın 20. maddesinde “Özel hayatın gizliliği”, 21. maddesinde ise “Konut dokunulmazlığı” başlıkları altında düzenlenmiştir.
+Anayasamızın 20. maddesi;</p>
+
+<p>“Herkes, özel hayatına ve aile hayatına saygı gösterilmesini isteme hakkına sahiptir. Özel hayatın ve aile hayatının gizliliğine dokunulamaz.
+Millî güvenlik, kamu düzeni, suç işlenmesinin önlenmesi, genel sağlık ve genel ahlâkın korunması veya başkalarının hak ve özgürlüklerinin korunması sebeplerinden biri veya birkaçına bağlı olarak, usulüne göre verilmiş hâkim kararı olmadıkça; yine bu sebeplere bağlı olarak gecikmesinde sakınca bulunan hallerde de kanunla yetkili kılınmış merciin yazılı emri bulunmadıkça; kimsenin üstü, özel kâğıtları ve eşyası aranamaz ve bunlara el konulamaz. Yetkili merciin kararı yirmidört saat içinde görevli hâkimin onayına sunulur. Hâkim, kararını el koymadan itibaren kırksekiz saat içinde açıklar; aksi halde, el koyma kendiliğinden kalkar…”</p>
+
+<p>21.maddesi ise; “Kimsenin konutuna dokunulamaz. Millî güvenlik, kamu düzeni, suç işlenmesinin önlenmesi, genel sağlık ve genel ahlâkın korunması veya başkalarının hak ve özgürlüklerinin korunması sebeplerinden biri veya birkaçına bağlı olarak usulüne göre verilmiş hâkim kararı olmadıkça; yine bu sebeplere bağlı olarak gecikmesinde sakınca bulunan hallerde de kanunla yetkili kılınmış merciin yazılı emri bulunmadıkça; kimsenin konutuna girilemez, arama yapılamaz ve buradaki eşyaya el konulamaz. Yetkili merciin kararı yirmidört saat içinde görevli hâkimin onayına sunulur. Hâkim, kararını el koymadan itibaren kırksekiz saat içinde açıklar; aksi halde, el koyma kendiliğinden kalkar” hükümlerini amirdir.</p>
+
+<p>Anayasamızın 13. maddesindeki düzenleme ile temel hak ve hürriyetlerin sınırlandırılması anayasal güvence altına alınmış ve belli şartlara tabi kılınmıştır. Bu düzenlemeye göre; temel hak ve hürriyetler, özlerine dokunulmaksızın yalnızca Anayasanın ilgili maddelerinde belirtilen sebeplere bağlı olarak ve ancak kanunla sınırlanabilir. Bu sınırlamalar ise Anayasamızın sözüne ve ruhuna, demokratik toplum düzeninin ve lâik Cumhuriyetin gereklerine ve ölçülülük ilkesine aykırı olamaz.
+B- Koruma Tedbiri Olarak Arama ve Çeşitleri:</p>
+
+<p><strong>1.Arama Kavramı</strong></p>
+
+<p>Arama; “arama işi, taharri, birini veya bir şeyi bulmaya çalışmak, araştırmak, yoklamak” anlamlarına gelmektedir.(Türkçe Sözlük, Türk Dil Kurumu Yayınları, 2009, s.113)</p>
+
+<p>Arama, gizli olanı ortaya çıkarmak için yürütülen bir faaliyet olduğundan gözle görülen veya açıkta bırakılan şeyler aramanın konusu olamaz. Örneğin; bir polis memurunun, yayalar ya da diğer araçlar bakımından tehlike oluşturacak şekilde kullanılması nedeniyle durdurduğu bir aracın arka koltuğunda, uyuşturucu madde veya tabanca görmesi üzerine bunlara el koyması arama olarak kabul edilmemektedir. (Veli Özer Özbek, Ceza Muhakemesinde Koruma Tedbiri Olarak Arama, Seçkin, 1999, 1. Bası, s.18)</p>
+
+<p>Arama; kişilerin konutları, iş yerleri, araçları, diğer yerleri, üstleri, eşyaları, özel kâğıtları, kullandıkları bilgisayar ve bilgisayar programları ile kütükleri üzerinde yapılmaktadır. Kişinin üstünde yapılan aramanın beden muayenesi boyutuna varmaması gerekir. Zira, beden muayenesi ve vücuttan örnek alınması aramadan farklı hükümlere tâbi kılınmış olup cinsel organlar veya anüs bölgesine bakılması iç beden muayenesi sayılmaktadır. Bu bölgeler haricindeki ağız, koltuk altı gibi beden boşlukları ile ayak, kol, saç arası gibi vücut bölgelerine tıbbi araç veya yöntemler kullanılmaksızın bakılması arama hükümlerine tabidir.</p>
+
+<p>Aramaya ilişkin hükümler sadece Ceza Muhakemesi Kanunu’nda düzenlenmiş değildir. Arama işleminin yapılışına ilişkin usulleri ayrıntılı olarak düzenleyen Adli ve Önleme Aramaları Yönetmeliği’nin 3. maddesinde yer verildiği üzere 2559 sayılı Polis Vazife ve Salâhiyet Kanunu, 2803 sayılı Jandarma Teşkilât, Görev ve Yetkileri Kanunu, 2692 sayılı Sahil Güvenlik Komutanlığı Kanunu, 5607 sayılı Kaçakçılıkla Mücadele Kanunu, 5442 sayılı İl İdaresi Kanunu, 6222 sayılı Sporda Şiddet ve Düzensizliğin Önlenmesine Dair Kanun, 5188 sayılı Özel Güvenlik Hizmetlerine Dair Kanun, 5253 sayılı Dernekler Kanunu, 2935 sayılı Olağanüstü Hâl Kanunu, 1402 sayılı Sıkıyönetim Kanunu ile 485 sayılı Gümrük Müsteşarlığının Teşkilât ve Görevleri Hakkında Kanun Hükmünde Kararnamede de bu hususta kurallar vazedilmiştir.</p>
+
+<p><strong>2.Arama Çeşitleri</strong></p>
+
+<p>Arama, amacına göre “adli arama” ve “önleme araması” olarak ikiye ayrılmaktadır. Arama şüpheli veya sanığı ya da bir delili elde etme amacıyla yapılabileceği gibi, bir suçun işlenmesini veya bir tehlikeyi önlemek amacıyla da yapılabilir. Birinci tür aramaya “adli arama”, ikinci tür aramaya ise “önleme araması” denilmektedir. Bu itibarla arama hem koruma, hem de önleme tedbiridir. Her iki tür arama arasında ortak özellikler bulunmakla birlikte hukukî nitelikleri, tâbi oldukları kanuni düzenlemeler ve kapsamları bakımından önemli farklılıklar da bulunmaktadır.</p>
+
+<p><strong>a. Önleme Araması</strong></p>
+
+<p>Genel emniyet ve asayişin korunması ile tehlikelerin önlenmesi amacıyla başvurulan önleme araması; 2559 sayılı PVSK’nın 9 ve Adlî ve Önleme Aramaları Yönetmeliği’nin 18-26. maddelerinde düzenlenmiş olup Yönetmeliğin 19. maddesinde; “Millî güvenlik ve kamu düzeninin, genel sağlık ve genel ahlâkın veya başkalarının hak ve hürriyetlerinin korunması, suç işlenmesinin önlenmesi, taşınması veya bulundurulması yasak olan her türlü silâh, patlayıcı madde veya eşyanın tespiti amacıyla, hâkim kararı veya gecikmesinde sakınca bulunan hâllerde mülkî âmirin yazılı emriyle ikinci fıkrada belirtilen yerlerde, kişilerin üstlerinde, aracında, özel kâğıtlarında ve eşyasında yapılan arama işlemidir” şeklinde tanımlanmıştır. Böylelikle kamu güvenliği ile düzenini bozabilecek kişi ve eşya bulunarak muhtemel bir zararın gerçekleşmesine veya suç işlenmesine engel olunarak toplum yakın bir tehlikeden korunacaktır.</p>
+
+<p>Önleme aramasına karar verilebilmesi için belirtilen konulara ilişkin somut ve öngörülebilir bir tehlike olması gerekir. 2559 sayılı PVSK bu nitelikteki tehlike hâlini “makul sebep” olarak ifade etmektedir. Suç delillerinin elde edilebileceği hususunda somut olgulara dayalı “makul şüphe” ile önleme aramasındaki “makul sebep” farklı kavramlardır. “Makul sebep” konunun uzmanları tarafından ortak görüşle anlamlandırılıp değerlendirilen bir olgu iken “makul şüphe” çok sayıdaki sıradan insanın somut bir olguyu aynı yönde değerlendirmeleri hâlidir. (Feridun Yenisey, Ayşe Nuhoğlu, Ceza Muhakemesi Hukuku Ders Kitabı, Seçkin, 4. Baskı, 2016, s. 381-382)
+Önleme araması ancak kanunda öngörülen yerlerde yapılabilir. 2559 sayılı PVSK’nın 9. maddesinde somut ve yakın bir tehlikenin baş gösterebileceği alanlar esas alınmak suretiyle önleme araması yapılabilecek yerler tek tek sayılmış olup buna göre önleme araması;</p>
+
+<p>1) 2911 sayılı Toplantı ve Gösteri Yürüyüşleri Kanunu kapsamına giren toplantı ve gösteri yürüyüşlerinin yapıldığı yerde veya yakın çevresinde,</p>
+
+<p>2) Özel hukuk tüzel kişileri ile kamu kurumu niteliğindeki meslek kuruluşları veya sendikaların genel kurul toplantılarının yapıldığı yerin yakın çevresinde,</p>
+
+<p>3) Halkın topluca bulunduğu veya toplanabileceği yerlerde,</p>
+
+<p>4) Eğitim ve öğretim özgürlüğünün sağlanması için her derecede eğitim ve öğretim kurumlarının idarecilerinin talebiyle ve kurumun imkânlarıyla önlenmesi mümkün görülmeyen olayların çıkması ihtimali karşısında rektör, acele hâllerde de dekan veya bağlı kuruluş yetkililerinin kolluktan yardım istemeleri hâlinde, girilecek yüksek öğretim kurumlarının içinde, bunların yakın çevreleri ile giriş ve çıkışlarında,</p>
+
+<p>5) Umumî veya umuma açık yerlerde,</p>
+
+<p>6) Her türlü toplu taşıma araçlarında, seyreden taşıtlarda yapılabilecektir.</p>
+
+<p>Konutta, yerleşim yerinde, kamuya açık olmayan işyerlerinde ve eklentilerinde hiçbir şekilde önleme araması yapılması mümkün olmayıp bu yerlerde şartları varsa ancak adli arama yapılabilir.</p>
+
+<p>Önleme araması idari bir işlem olsa da kural olarak hâkim kararıyla yapılmalıdır. Kolluk tarafından somut tehlikenin oluştuğunu gösteren belirlemeler önceden tespit edilip aramanın yapılması önerilen yer ve zaman ile birlikte o yer mülkî âmirine yazılı olarak iletilir. İllerde vali veya bu konuda yetkilendirdiği yardımcısı ve ilçelerde ise kaymakamı ifade eden mülki amir, kolluğun talebini uygun bulursa hâkimden arama kararı talep eder; ancak gecikmesinde sakınca bulunan hâllerde kendisi de yazılı arama emri verebilir. Önleme araması kararının alınmasında ve icrasında Cumhuriyet savcısının herhangi bir görev ve fonksiyonu yoktur. Kolluğun kendi içindeki birim amirlerinin emri ile önleme araması yapılamaz. Adli ve Önleme Aramaları Yönetmeliği’nin 4. maddesi uyarınca, önleme araması bakımından gecikmesinde sakınca bulunan hâl; derhâl işlem yapılmadığı takdirde, millî güvenlik ve kamu düzeninin, genel sağlık ve genel ahlâkın veya başkalarının hak ve hürriyetlerinin korunmasının tehlikeye girmesi veya zarar görmesi, suç işlenmesinin önlenememesi, taşınması veya bulundurulması yasak olan her türlü silâh, patlayıcı madde veya eşyanın tespit edilememesi ihtimâlinin ortaya çıkması ve gerektiğinde hâkimden karar almak için vakit bulunmaması hâlini ifade etmektedir. 2559 sayılı PVSK’nın 9/6. maddesi uyarınca spor karşılaşması, miting, konser, festival, toplantı ve gösteri yürüyüşünün düzenlendiği veya aniden toplulukların oluştuğu hâllerde gecikmesinde sakınca bulunan hâlin bulunduğu kabul edilmektedir.</p>
+
+<p>Önleme araması kararında veya emrinde; aramanın sebebi, konusu ve kapsamı, aramanın yapılacağı yer, aramanın yapılacağı zaman ve geçerli olacağı süre belirtilmelidir. Önleme aramasında gece ile ilgili bir istisnaya yer verilmediğinden her zaman yapılması mümkündür. Önleme araması kararının geçerli olacağı sürenin sınırı ile ilgili olarak da mevzuatta kısıtlayıcı bir hüküm bulunmamaktadır. Zira önleme aramasının geçerli olacağı süre, karar verilmesine dayanak teşkil eden makul sebebin niteliğine göre değişkenlik arz edebilmektedir. Örneğin; olimpiyat oyunları gibi iki ya da üç hafta sürecek ve dünyanın bir çok ülkesinden sporcu ve izleyicilerin katılacağı bir spor organizasyonunda yaşanabilecek kamu düzenini bozucu nitelikteki olayların ve suç işlenmesinin önlenmesi amacıyla makul sebep oluşması hâlinde yapılacak bir önleme aramasının geçerlilik süresi organizasyon süresi kadar olabileceği gibi, başka olaylarda duruma göre bir gün süreli, hatta saatli önleme araması kararlarının verilmesi de mümkündür. Her hâlükarda bu sürenin aramanın haklı kıldığı süreden fazla olmaması lazımdır. Önleme aramasının da kişilerin temel hak ve özgürlüklerine bir müdahale niteliğinde bulunması nedeniyle, makul bir sebep olmadığı hâlde verilen uzun süreli önleme araması kararı görünürde yasal olsa bile hukuka uygun olmayacaktır. Aynı şekilde makul bir sebep yokken belli periyotlarla yenilenmek suretiyle süreklilik arzedecek ve genel arama izlenimi verecek şekilde önleme araması kararı verilmesi de hukuka aykırı olacaktır.</p>
+
+<p>Önleme aramasının nasıl icra edileceği hususunda 2559 sayılı PVSK’da ve Adli ve Önleme Aramaları Yönetmeliği’nde özel bir düzenleme bulunmamaktadır. Yönetmeliğin “Aramaların Yapılma Şekli” başlıklı bölümündeki hükümler hem adli hem de önleme araması için geçerli ortak hükümlerdir.
+Önleme araması sonucunda bir suç unsuruna veya deliline rastlanırsa koruma altına alınacak ve durum Cumhuriyet Başsavcılığına derhâl bildirilerek elkoyma işlemini gerçekleştirmek üzere Cumhuriyet savcısından yeni bir yazılı emir istenecektir. Cumhuriyet savcısına ulaşılamadığı hâllerde kolluk âmirinin yazılı emriyle de elkoyma yapılabilecektir. Hâkim kararı olmaksızın yapılan elkoyma işlemi, yirmidört saat içinde görevli hâkimin onayına sunulmalıdır. Önleme aramasının konusu ve kapsamı içinde olan ancak suç unsuru oluşturmayan örneğin, bozuk para, çakmak gibi bir eşya ise geçici olarak koruma altına alınır ve aramaya sebep teşkil eden husus sona erdiğinde ilgiliye teslim edilir.</p>
+
+<p>Önleme aramasının sonucu arama kararı veya emri veren merci veya makama bildirilir. Ayrıca arama sırasında suç unsuruna rastlanılmışsa bununla ilgili özel olarak önleme araması tutanağı hazırlanır. Bu tutanakta adli arama tutanağında olduğu gibi arama kararının tarih ve sayısı, hâkim kararı yoksa verilmiş olan yazılı emrin tarih ve sayısı ile emri veren merci, aramanın yapıldığı yer, tarih ve saat, aramanın konusu, aranan kişinin kimlik bilgileri, adını söylemediği takdirde eşkâl bilgileri, arama yapılan yerin adresi, araçta arama yapılmışsa aramanın mevkii ve aracın bilgileri, aramanın sonuçları, elkonulan suç eşyası varsa buna ilişkin belirleyici bilgiler, aramada yakalanan kişiler varsa kimlik bilgileri, kimliği belirlenemiyorsa eşkâl bilgileri, arama sonucunda yaralanma veya maddî bir zarar meydana gelip gelmediği ve arama işlemini yapanların adı, soyadı, sicili ve unvanı hususları yer alır. Tutanak arama işlemine katılmış olanlar ve hazır bulunanlarca imzalanarak bir sureti ilgiliye verilir. Suç unsuruna rastlanmadığı durumlarda, aranan kişinin talebi hâlinde, kendisine arama kararı veya emrinin tarih ve sayısı, aramanın tarih ve saati, yeri, aranan şahsın ve arayan görevlinin kimlik bilgilerinin yer aldığı bir belge verilir.</p>
+
+<p>Önleme araması niteliğinde sayılmayan idari denetimler için herhangi bir arama emir veya kararına gerek yoktur. Bir yerin faaliyeti bakımından uymakla yükümlü bulunduğu kurallara uygun olarak çalışıp çalışmadığının tespiti bakımından o yerde yapılan işlem bir denetlemedir. (Murat Aydın, Arama ve El Koyma, Seçkin, 2012, 2. Baskı, s.137) Adli ve Önleme Aramaları Yönetmeliği’nin “denetim yapılacak hâller” başlıklı 18. maddesinde kolluk tarafından kendiliğinden denetim yapılabilecek bu hâller gösterilmiştir. Bu kapsamda örneğin; umuma açık istirahat ve eğlence yerlerinin genel güvenlik ve asayiş yönünden denetimi, kimlik sorma, 2918 sayılı Karayolları Trafik Kanunu’na göre araçlarda bulunması gerekli belgeler ve eşyalarla ilgili yapılan denetimler, elektromanyetik aygıtlar ve dedektör köpekleri aracılığıyla yapılan tarama şeklindeki denetimler kolluk tarafından herhangi bir arama emir veya kararına gerek olmadan kendiliğinden yapılabilecektir. Önleme araması niteliğinde sayılmayan idari denetimler yönetmelikte sayılanlardan ibaret olmadığından daha pek çok özel kanunda ve düzenleyici işlemde idari denetimlere ilişkin hükümler yer almaktadır.</p>
+
+<p>2559 sayılı PVSK’nda ve Adli ve Önleme Aramaları Yönetmeliği’nde hâkimden arama kararı alınması gerekmeyen hâller gösterilmiştir. Buna göre; polisin, tehlikenin önlenmesi veya bertaraf edilmesi amacıyla güvenliğini sağladığı bina ve tesislere gelenlerin herhangi bir emir veya karar olmasına bakılmaksızın, üstünü, aracını ve eşyasını teknik cihazlarla, gerektiğinde el ile kontrol etme ve arama yetkisi bulunmaktadır. (PVSK m.9/7) Bunun dışında Adli ve Önleme Aramaları Yönetmeliği’nin 25. maddesi uyarınca Devletçe kamu hizmetine özgülenmiş bina ve her türlü tesislere giriş ve çıkışın belirli kurallara tâbi tutulduğu hâllerde, söz konusu tesislere girenlerin üstlerinin veya üzerlerindeki eşyanın veya araçlarının aranmasında, 5442 sayılı İl İdaresi Kanunu’nun Ek 1. maddesi kapsamında bulunan, sivil hava meydanlarında, limanlarda ve sınır kapılarında, binaların, uçakların, gemilerin ve her türlü deniz ve kara taşıtlarının, giren çıkan yolcuların X-ray cihazından geçirilerek, gerektiğinde üstünün ve eşyasının aranması ile buralarda görevli kamu kuruluşları ve özel kuruluşlar personelinin, üstlerinin, araçlarının ve eşyalarının aranmasında, 2935 sayılı Olağanüstü Hâl Kanunu’nun 11. maddesi kapsamında, kişilerin üstünün, eşyalarının Olağanüstü Hâl Valisinin emriyle aranmasında, 1402 sayılı Sıkıyönetim Kanunu’nun 3. maddesi kapsamında, konutların ve her türlü dernek, siyasî parti, sendika, kulüp gibi teşekküllere ait binaların, işyerlerinin, özel ve tüzel kişiliklere sahip müesseseler ve bunlara ait eklentilerin ve her türlü kapalı ve açık yerlerin, mektup, telgraf ve sair gönderilerin ve kişilerin üzerlerinin sıkıyönetim komutanının emriyle aranmasında, kanunların, muhafaza altına alınmalarına olanak verdiği kişilerin, üst veya eşyalarının aranmasında, 298 sayılı Seçimlerin Temel Hükümleri ve Seçmen Kütükleri Hakkında Kanun çerçevesinde görevli kolluğun, aynı Kanun’un 79. maddesindeki silâh taşıma yasağı kapsamında, silâh taşıdığından şüphelenilen kişilerin üstlerinin ve eşyalarının aranmasında ayrıca bir arama emri ya da kararı gerekmeyecektir. Yine 2559 sayılı PVSK’nın 20. maddesi gereğince; bir hukuka uygunluk nedenine bağlı olarak yapılan aramalarda da örneğin imdat istenmesi veya yangın, su baskını ve boğulma gibi büyük tehlikelerin haber verilmesi veya görülmesi hâllerinde de arama emir veya kararına gerek olmayacaktır.</p>
+
+<p>Öte yandan 2559 sayılı PVSK’nın 4/A maddesinde polise, kişileri ve araçları tecrübesine ve içinde bulunulan durumdan edindiği izlenime dayanan makul bir sebebin bulunması hâlinde durdurma yetkisi verilmiştir. Adli ve Önleme Aramaları Yönetmeliği’nin 27. maddesinde bu yetkinin kullanılması için “umma” derecesinde makul şüphe aranmıştır.</p>
+
+<p>2559 sayılı PVSK’nın suç tarihinde yürürlükte bulunan “Durdurma ve kimlik sorma” başlıklı 4/A. maddesi;</p>
+
+<p>“Polis, kişileri ve araçları;</p>
+
+<p>a) Bir suç veya kabahatin işlenmesini önlemek,</p>
+
+<p>b) Suç işlendikten sonra kaçan faillerin yakalanmasını sağlamak, işlenen suç veya kabahatlerin faillerinin kimliklerini tespit etmek,</p>
+
+<p>c) Hakkında yakalama emri ya da zorla getirme kararı verilmiş olan kişileri tespit etmek,</p>
+
+<p>ç) Kişilerin hayatı, vücut bütünlüğü veya malvarlığı bakımından ya da topluma yönelik mevcut veya muhtemel bir tehlikeyi önlemek,
+amacıyla durdurabilir.</p>
+
+<p>Durdurma yetkisinin kullanılabilmesi için polisin tecrübesine ve içinde bulunulan durumdan edindiği izlenime dayanan makul bir sebebin bulunması gerekir. Süreklilik arz edecek, fiilî durum ve keyfilik oluşturacak şekilde durdurma işlemi yapılamaz.</p>
+
+<p>Polis, durdurduğu kişiye durdurma sebebini bildirir ve durdurma sebebine ilişkin sorular sorabilir; kimliğini veya bulundurulması gerekli diğer belgelerin ibraz edilmesini isteyebilir.</p>
+
+<p>Durdurma süresi, durdurma sebebine esas teşkil eden işlemin gerçekleştirilmesi için zorunlu olan süreden fazla olamaz.
+Durdurma sebebinin ortadan kalkması halinde kişilerin ve araçların ayrılmalarına izin verilir.
+Polis, durdurduğu kişi üzerinde veya aracında silah veya tehlike oluşturan diğer bir eşyanın bulunduğu hususunda yeterli şüphenin varlığı halinde, kendisine veya başkalarına zarar verilmesini önlemek amacına yönelik gerekli tedbirleri alabilir. Ancak bu amaçla kişinin üzerindeki elbisenin çıkarılması veya aracın, dışarıdan bakıldığında içerisi görünmeyen bölümlerinin açılması istenemez…”,</p>
+
+<p>Adli ve Önleme Aramaları Yönetmeliği’nin suç tarihinde yürürlükte bulunan “Durdurma ve kontrol işlemleri” başlıklı 27. maddesi ise;
+“Bir kişiyi geçici olarak durdurmak, yakalama sayılmaz; yakalama sayılması için kişinin fiilen denetim altına alınması gerekir. Denetim için araçların durdurulması da mümkündür.</p>
+
+<p>Durdurma yetkisinin kullanılabilmesi için, ‘umma’ derecesinde makul şüphe bulunmalıdır. Kolluk görevlisi, tecrübesine dayanarak, izlediği davranışlarından, o kişinin bir suç işleyeceği veya işlediği hususunda kanaat elde eder veya kişinin silâhlı olduğu ve hâlen tehlike yarattığı kanaatine varırsa kişi durdurulabilir.
+Somut emarelerle desteklenen şüphe bulunmadan, süreklilik arzedecek, fiilî durum ve keyfilik oluşturacak şekilde durdurma ve kontrol işlemi yapılamaz.
+Sebebin oluşmasına veya şüpheye yol açan davranışları hakkında, durdurulan kişiye sorular yöneltilebilir. Kişi bu sorulara cevap vermekle yükümlü değildir. Durdurma yetkisinin kullanılmasına neden olan şüphe, yapılan açıklama ile ortadan kalkarsa, kişinin gitmesine engel olunmaz.
+Durdurma üzerine aşağıdaki işlemler yapılır:</p>
+
+<p>a) Durdurulan kişi üzerinde giysilerinden herhangi birisi çıkarılmaksızın, yoklama biçiminde bir kontrol yapılır. Bu işlem sonucunda, kişide silâh bulunduğu sonucunu çıkarmaya yeterli şüphe meydana gelirse, memur kendiliğinden silâh ve diğer suç eşyası araması yapabilir.</p>
+
+<p>b) Yoklama suretiyle kontrol, kişinin cinsiyetinde bulunan görevli tarafından yapılır.</p>
+
+<p>c) Yapılan kontrolün konusu ve sebepleri ilgiliye açıklanır.</p>
+
+<p>d) Bir kişinin veya aracın durdurulma süresinin, şartlara göre makul olması ve kontrol için ayrılan süreyi aşmaması gerekir.</p>
+
+<p>e) Yoklama suretiyle kontrol, kişiye en az sıkıntı verici şekilde yapılır.</p>
+
+<p>f) Yapılan kontrolün neticesinde suça ilişkin iz, eser, emare ve delil elde edilirse, kişi yakalanır.</p>
+
+<p>g) Uyuşturucu gibi belirli bir şeyin, kişinin herhangi bir yerinde gizlendiği düşünülüyorsa, daha geniş çaplı kontrol yapılabilir.</p>
+
+<p>h) Yoklama suretiyle kontrol, kişinin veya aracın ilk durdurulduğu yerde veya o yerin yakınında, mümkün olduğu kadar başkalarının göremeyeceği tarzda yapılır. Başka yere götürülerek kontrol yapılamaz.</p>
+
+<p>i) Makul sebebi oluştuğu takdirde, daha geniş kapsamlı kontrol yapılması için, kolluk aracından veya yakındaki kapalı bir yerden yararlanılabilir.</p>
+
+<p>j) Kontrolden sonra talep üzerine olay yerinde derhâl bir tutanak düzenlenir.
+Bu maddede yazılı işlemler gece de yapılabilir” şeklindedir.</p>
+
+<p>Söz konusu düzenlemelerle kolluğa, koşulları oluştuğu taktirde kişi ve araçları durdurma ve yoklama biçiminde kontrol yapma yetkileri tanınmıştır. Yönetmeliğin 27. maddesinin (g) ve (i) fıkraları gereğince kollukça durdurulan kişinin herhangi bir yerinde uyuşturucu gibi belirli bir şeyin gizlendiği düşünülüyorsa veya makul sebep oluşmuşsa önleyici kolluk yetkisi dahilinde daha geniş kapsamlı kontrol yapma imkânı doğacaktır. Burada dikkat edilmesi gereken husus, kolluk gerekli tedbirleri alabilecek ancak bu amaçla kişinin üzerindeki elbisenin çıkarılması veya aracın, dışarıdan bakıldığında içerisi görünmeyen bölümlerinin açılmasını isteyemeyecektir.</p>
+
+<p><strong>b. Adli Arama</strong></p>
+
+<p>Şüpheli ya da sanığın ya da delillerin yahut müsadere edilecek eşyaların ele geçirilmesi amacıyla yapılan araştırma işlemi olan adli arama, elkoyma ile birlikte 5271 sayılı CMK’nın 116-134, 2559 sayılı PVSK’nın 2, Ek 4, Ek 6, 5607 sayılı Kaçakçılıkla Mücadele Kanunu’nun 9 ve Adlî ve Önleme Aramaları Yönetmeliği’nin 5-17. maddelerinde düzenlenmiş olup Yönetmeliğin 5. maddesinde; “bir suç işlemek veya buna iştirak veyahut yataklık etmek makul şüphesi altında bulunan kimsenin, saklananın, şüphelinin, sanığın veya hükümlünün yakalanması ve suçun iz, eser, emare veya delillerinin elde edilmesi için bir kimsenin özel hayatının ve aile hayatının gizliliğinin sınırlandırılarak konutunda, işyerinde, kendisine ait diğer yerlerde, üzerinde, özel kâğıtlarında, eşyasında, aracında 5271 sayılı Ceza Muhakemesi Kanunu ile diğer kanunlara göre yapılan araştırma işlemidir” şeklinde tanımlanmıştır. (Bahri Öztürk-Durmuş Tezcan-Mustafa Ruhan Erdem-Özge Sırma-Yasemin Saygılar Kırıt-Özdem Özaydın-Esra Alan Akcan-Efser Erden, Nazari ve Uygulamalı Ceza Muhakemesi Hukuku, Seçkin, 10. Baskı, 2016, s.492, Nur Centel-Hamide Zafer, Ceza Muhakemesi Hukuku, Beta, 12. Baskı, 2015, s. 400)</p>
+
+<p>Arama tedbirine başvurulabilmesi için şu üç ön şartın birlikte bulunması gerekmektedir:</p>
+
+<p>1- Gecikmede sakınca ya da tehlike bulunması,</p>
+
+<p>2- Görünüşte haklılık,</p>
+
+<p>3- Ölçülülük.</p>
+
+<p>Arama tedbirinin ilk ön şartı gecikmede sakınca ya da tehlike bulunmasıdır. Bu şart hem arama tedbirine başvurulması hem de kim tarafından karar verilebileceğinin belirlenmesi bakımından önem arz etmektedir. Gecikmede sakınca ya da tehlike bulunması derhâl işlem yapılmadığı takdirde tedbirden beklenen faydanın elde edilemeyecek, ceza muhakemesinin gereği gibi ve amacına uygun biçimde yapılamayacak olmasıdır. Gecikmede sakınca bulunup bulunmadığını olayın özelliklerine göre tedbire karar vermeye yetkili mercii takdir edecektir.</p>
+
+<p>Arama tedbirinin ikinci ön şartı ise görünüşte haklılıktır. Buna göre arama tedbirine ancak bir hakkın tehlikede olduğunu gösteren olaylar mevcut olduğu takdirde başvurulabilecektir. Hakkın bulunup bulunmadığının araştırılması zaman alacağından ve tehlike gecikmeye müsaade etmediğinden haklı görünüşle yetinilmek zorunludur. Bu bağlamda bir ihlal ya da suç işlendiği hususunda şüphe bulunmalıdır. (Buck/Almanya, 28.04.2005; Başvuru no:41604)
+Arama tedbirinin üçüncü ve son ön şartı ölçülülüktür. Ölçülülük ilkesinin temel amaç ve işlevi, arama tedbirine muhatap olacak kişilerin temel hak ve özgürlüklerini güvence altına almak için kullanılacak kamu gücünü, hak ve özgürlükler lehine sınırlandırmak, müdahalelerde aşırılığa gidilmesini ve buna bağlı olarak doğabilecek mağduriyetleri önleyebilmektir. Dar anlamda ölçülülük de denilen orantılılık ise; tedbirin ilgililere “ölçüsüz bir yükümlülük” getirmemesini ve “katlanılamaz” nitelikte olmaması gerektiğini ifade etmektedir. Avrupa İnsan Hakları Mahkemesi tarafından da, Buck/Almanya (28.04.2005; Başvuru no:41604) ile Smirnov/Rusya (07.06.2007; Başvuru no:71362/01) kararlarında; yapılan müdahale ile izlenen meşru amacın orantılı olması gerektiği vurgulanmıştır.</p>
+
+<p>Aramaya konu olabilecek yerler şüphelinin veya sanığın yahut diğer bir kişinin üstü, eşyası, konutu, iş yeri veya ona ait diğer yerlerdir. Adli aramanın günün her saatinde yapılması mümkün olmakla birlikte konutta, iş yerlerinde ve diğer kapalı yerlerde aramanın kural olarak gündüz yapılması gerekir. Suçüstü veya gecikmesinde sakınca bulunan hâller ile yakalanmış veya gözaltına alınmış olup da firar eden kişi veya tutuklu veya hükümlünün tekrar yakalanması amacıyla yapılan aramalar hariç, söz konusu yerlerde gece vakti arama yapılamayacaktır.</p>
+
+<p>Arama kararı verilebilmesi için aramanın konusunu oluşturan kişi veya şeylerin, arama yapılacak yerde bulunduğu hususunda belli bir şüphenin olması gerekir. Kanun aranacak kişinin suçla ilgisine göre, bu şüphenin yoğunluğunu farklı şekillerde düzenlemiş ve suçla ilgisi olmayan kişiler nezdinde aramayı daha sıkı koşullara tâbi kılmıştır.</p>
+
+<p>CMK’nın 116. maddesinin suç tarihinde yürürlükte bulunan haline göre şüpheli veya sanıkla ilgili yapılacak aramalarda arama sonunda şüpheli veya sanığın yakalanabileceği veya suç delillerinin elde edilebileceği hususunda somut delillere dayalı kuvvetli şüphe bulunmalıdır. Aramanın kişi hak ve özgürlüklerine ciddi boyutta bir müdahale olduğu göz önüne alındığında somut delillere dayalı kuvvetli şüphede, günlük hayat deneyimlerine göre eldeki delillerin, şüphelinin suçu işlediğine yönelik objektif bir kişiyi ikna etmeye yeterli somut olgu ve bilgilere dayanması şarttır.</p>
+
+<p>CMK’nın 117. maddesi uyarınca, suç işleme şüphesi altında olmayan diğer kişilerin de üstü, eşyası, konutu, işyeri veya kendisine ait diğer yerleri, şüphelinin veya sanığın yakalanabilmesi veya suç delillerinin elde edilebilmesi amacıyla aranabilecektir. “Diğer kişiler” kavramına tüzel kişiler ile resmi makam ve daireler de dahildir. Kişinin tanıklıktan çekinme hakkının bulunması da aramaya engel değildir. Maddenin ikinci fıkrasına göre diğer kişilerle ilgili arama yapılması, aranılan kişinin veya suç delillerinin, belirtilen yerlerde bulunduğunun kabul edilmesine olanak sağlayan olayların varlığına bağlıdır. Ancak bu sınırlama şüphelinin veya sanığın bulunduğu yerler ile izlendiği sırada girdiği yerler bakımından geçerli değildir.</p>
+
+<p>Arama kararı veya emrinin belli bazı bilgileri içermesi zorunludur. (CMK m.119/2) Arama karar veya emrinde; aramanın nedenini oluşturan fiil, aranılacak kişi, aramanın yapılacağı konut veya diğer yerin adresi ya da eşya, karar veya emrin geçerli olacağı zaman süresi, açıkça gösterilmelidir.
+Arama kural olarak hâkim kararı ile gecikmesinde sakınca bulunan hâllerde Cumhuriyet savcısının, Cumhuriyet savcısına ulaşılamadığı hâllerde ise kolluk amirinin yazılı emri ile yapılabilecektir. Ancak konutta, iş yerinde ve kamuya açık olmayan kapalı alanlarda sadece hâkim kararı veya gecikmesinde sakınca bulunan hâllerde Cumhuriyet savcısının yazılı emri ile arama yapılması mümkündür.</p>
+
+<p>Arama işlemi kural olarak hâkim kararına dayanılarak yapılmakta ise de şartları oluştuğunda Cumhuriyet savcısı veya kolluk amirinin yazılı emri ile de arama yapılabilmektedir. Ancak bazı durumlarda hâkim kararı ve yazılı arama emri bulunmasa dahi arama yapılabilecektir. Bu hâller olayın özelliğinden veya kanun hükmünün verdiği arama yetkisinden kaynaklanabileceği gibi arama emri almaya imkân bulunmaması nedenine de dayanabilir. Bu durumlarda kolluk görevlileri, bir arama kararı veya emri beklemeden arama yapmak, delilleri elde etmek ve failleri yakalamakla görevlidir.</p>
+
+<p>Yakalama kişinin özgürlüğünü kısıtlayıcı bir koruma tedbiridir. Bu niteliği gereği üst arama işlemine göre daha geniş kapsamlı bir işlemdir. Yakalama ve yakalanan kişi hakkında yapılacak işlemleri düzenleyen CMK’nın 90/4. maddesi gereğince de, kolluk yakaladığı kişinin kaçmasını, kendisine ya da başkalarına zarar vermesini engelleyecek tedbirleri almalıdır. Bu bağlamda kişinin yakalanmasından sonra tedbir olarak kaba üst araması yapılabilir. Ayrıca karar alınmasına gerek olmayan bu arama işlemi, en kısa zamanda ve dikkatli bir biçimde elle yoklama şeklinde yapılmalıdır. Bu şekilde yapılan işlem diğer bir anlatımla yoklama bir arama değildir. Bu nedenle arama prosedürüne uyulmasına da gerek bulunmamaktadır. Ancak yapılan yoklamanın arama boyutuna ulaşmaması gerekir. (Veli Özer Özbek-Koray Doğan-Pınar Bacaksız-İlker Tepe, Ceza Muhakemesi Hukuku, Seçkin, 9. Baskı, 2017, s.305) Yakalanan kişinin üstündeki kıyafetlerin tamamen çıkarılması ve beden çukurlarının aranması ise mümkün değildir.</p>
+
+<p>2559 sayılı PVSK’nın Ek 4. maddesinde “Polis, görevli bulunduğu mülki sınırlar içinde, hizmet branşı, yeri ve zamanına bakılmaksızın, bir suçla karşılaştığında suça el koymak, önlemek, sanık ve suç delillerini tesbit, muhafaza ve yetkili zabıtaya teslim etmekle görevli ve yetkilidir…” ,
+“Adlî görev ve yetkiler” başlıklı Ek 6. maddesinde “Polis, bu maddede yazılı görevlerinin yanında, Ceza Muhakemesi Kanunu ve diğer mevzuatta yazılı soruşturma işlemlerine ilişkin görevleri de yerine getirir.</p>
+
+<p>Polis, bir suça ilişkin olarak kendisine yapılan sözlü ihbar ve şikâyetleri ve görevi sırasında öğrendiği suça ilişkin bilgileri yazılı hale getirir.
+Edinilen bilgi veya alınan ihbar veya şikâyet üzerine veya kendiliğinden bir suçla karşılaşan polis, olay yerinde kişilerin ve toplumun sağlığına, vücut bütünlüğüne veya malvarlığına zarar gelmemesi ve suçun delillerinin kaybolmaması ya da bozulmaması için derhal gerekli tedbirleri alır.
+Bir suç işlendiği veya işlenmekte olduğu bilgisini edinen polis, olay yerinin korunması, delillerin tespiti, kaybolmaması ya da bozulmaması için acele tedbirleri aldıktan sonra el koyduğu olayları, yakalanan kişiler ile uygulanan tedbirleri derhal Cumhuriyet savcısına bildirir ve Cumhuriyet savcısının emri doğrultusunda işin aydınlatılması için gerekli soruşturma işlemlerini yapar…” şeklindeki düzenlemeler birlikte değerlendirildiğinde, edinilen bilgi, ihbar veya şikâyet üzerine ya da kendiliğinden suçla karşılaşan polisin, olay yerinde kişilerin ve toplumun sağlığına, vücut bütünlüğüne veya malvarlığına zarar gelmemesi ve suçun delillerinin tespiti, kaybolmaması ya da bozulmaması için derhâl gerekli tedbirleri alması zorunludur. Gerekli tedbirler derhâl alınırken, tedbire başvurulmadığı takdirde ceza muhakemesinin amacına ulaşılamayacağı, yani delillerin kaybolması gibi bir sonucun ortaya çıkabileceği değerlendirilerek, işlemin yapılması esnasında haklı görünmesi ve ölçülülük ilkesine uygun olarak hareket edilmesi gerektiği dikkate alınmalıdır. Aksi durumda ise maddi gerçeğe ulaşma amacı tehlikeye girecek, mağdur ve sanık haklarının ihlali söz konusu olacaktır. Bu hâlde suçun işlendiği bilgisini alan kolluk, olay yerinde delillerin karartılmasını önleme yetki ve görevi kapsamında yakaladığı kişi ya da kişilerin kaba üst aramasını yapabilecek ve el koyduğu olayı, yakalanan kişi ya da kişiler ile uyguladığı tedbirleri en kısa zamanda Cumhuriyet savcısına bildirecektir.</p>
+
+<p>Kanun; anayasal ilkelere uygun olarak yasama organınca yapılan nesnel ve gayri şahsi kurallardır. “Yönetmelik” Anayasamızın 124. maddesi gereğince; Başbakanlık, bakanlıklar ve kamu tüzel kişilerinin kendi görev alanlarını ilgilendiren kanunların ve tüzüklerin uygulanmasını sağlamak üzere ve bunlara aykırı olmamak şartıyla çıkardıkları yazılı hukuk kurallarıdır. Bu hâlde yönetmelikler kanunların uygulanma şeklini göstermek amacıyla kanunun sınırlarını genişletmemek şartıyla çıkarılabilir. Bu kapsamda aramanın usul ve esaslarını göstermek üzere Adalet Bakanlığı tarafından Adli ve Önleme Aramaları Yönetmeliği çıkarılmıştır. Adli ve Önleme Aramaları Yönetmeliği’nin 8. maddesinin (a) ve (c) bentleri ile yine aynı maddenin (f) bendindeki “ilgilinin rızası ile” ibaresinin ve 27. maddesi ile 30. maddesinin 1. fıkrasının iptali istemiyle açılan davada, yönetmeliklerin kanuna aykırı olup olmadığını denetlemeye yetkili Danıştay Onuncu Dairesince 13.03.2007 tarih ve 6392-948 sayı ile Yönetmeliğin 8. maddesinin (a) bendindeki “…yakalanması amacıyla konutunda, işyerinde, yerleşim yerinde, bunların eklentilerinde ve aracında yapılacak aramada…” ibaresi, aynı maddenin (f) bendindeki “ilgilinin rızası” ibaresi ile 30. maddesinin 1. fıkrasının iptaline ve 8. maddesinin (c) bendi ile 27. maddesinin iptali isteminin reddine ilişkin verilen kararın temyizi üzerine inceleme yapan Danıştay İdari Dava Daireler Kurulu 14.09.2012 tarih ve 2257-1117 sayı ile iptal kararlarının onanmasına karar vermiştir. Bu anlamda sözü edilen Yönetmeliğin 2559 sayılı Polis Vazife ve Salâhiyet Kanunu’na, 2803 sayılı Jandarma Teşkilât, Görev ve Yetkileri Kanunu’na, 2692 sayılı Sahil Güvenlik Komutanlığı Kanunu’na, 5607 sayılı Kaçakçılıkla Mücadele Kanunu’na, 5442 sayılı İl İdaresi Kanunu’na, 6222 sayılı Sporda Şiddet ve Düzensizliğin Önlenmesine Dair Kanun’a, 5188 sayılı Özel Güvenlik Hizmetlerine Dair Kanun’a, 5253 sayılı Dernekler Kanunu’na, 2935 sayılı Olağanüstü Hâl Kanunu’na, 1402 sayılı Sıkıyönetim Kanunu’na, 485 sayılı Gümrük Müsteşarlığının Teşkilât ve Görevleri Hakkında Kanun Hükmünde Kararnameye ve diğer ilgili mevzuat hükümlerine aykırı olmadığı, bu düzenlemeleri açıklayıcı ve uygulamaları kolaylaştırıcı nitelikte olduğu görülmektedir. Yönetmeliğin kamu düzeninin sağlanmasında ortaya çıkan sorunların çözümü için kanunlara aykırı olmamak şartıyla söz konusu kanunların uygulanmasını göstermek amacıyla çıkartılabileceği ve adli arama konusunda Adalet Bakanlığının idare hukuku kuralları çerçevesinde yönetmelikle düzenleme yetkisinin bulunduğu gözetildiğinde söz konusu Yönetmeliğin 8. maddesinin karar alınamadan yapılacak arama işlemini somut olgulara bağladığı ve kanuna aykırı olmadığı anlaşılmaktadır.</p>
+
+<p>Adli ve Önleme Aramaları Yönetmeliği’nin “Karar alınmadan yapılacak arama” başlıklı 8. maddesinin suç tarihinde yürürlükte bulunan hâli;</p>
+
+<p>“a) Hakkında tutuklama kararı veya yakalama emri veya zorla getirme kararı bulunan kişi ile hakkında gıyabî tutuklama kararı verilen kaçak yakalandığında üstünde,</p>
+
+<p>b) Hâkim kararı veya Cumhuriyet savcısının yazılı emri ile veya kolluk tarafından doğrudan yakalanan kişinin, kendisine, başkalarına veya yakalama işlemini yapan kolluk görevlilerine zarar vermesini önlemek amacıyla yapılacak kaba üst aramasında,</p>
+
+<p>c) Gözaltına alınan kişinin, nezarethaneye konmadan önce yapılan üst aramasında,</p>
+
+<p>d) Herhangi bir sebeple hukuka uygun şekilde yakalandıktan sonra kolluk güçlerinin elinden kaçmakta olan kişilerin veya işlenmekte olan veya henüz işlenmiş olan veya pek az önce işlendiğini gösteren belirtilerin olduğu suçun failinin yakalanması amacıyla takibi sırasında girdikleri araç, bina ve eklentilerinde yakalanması amacıyla yapılacak aramalarda,</p>
+
+<p>e) 1) 4926 sayılı Kaçakçılıkla Mücadele Kanununun 17 nci maddesinin ikinci fıkrası kapsamında, kaçak eşya, her türlü silâh, mühimmat, patlayıcı ve uyuşturucu maddelerin bulunduğu şüphe edilen her türlü kap, ambalaj veya taşımaya yarayan diğer araçlarda hemen yapılan aramalarda,</p>
+
+<p>2) 4926 sayılı Kaçakçılıkla Mücadele Kanununun 17 nci maddesinin altıncı fıkrası kapsamında gümrük salonları ve gümrük kapılarında kaçak eşya sakladığından kuşkulanılan kişilerin gümrük kontrolü amacıyla gümrük görevlilerince aranmasında;</p>
+
+<p>3) 4926 sayılı Kaçakçılıkla Mücadele Kanununun 18 inci maddesinin ikinci fıkrası kapsamında, 27/10/1999 tarihli ve 4458 sayılı Gümrük Kanunu gereğince belirlenen kapı ve yollardan başka yerlerden gümrük bölgesine girmek, çıkmak veya geçmek ve bu yerlerde rastlanacak kişi ve her nevi taşıma araçlarının yetkili memurlar tarafından durdurulmasında ve bu kişilerin eşya, yük ve üzerleri ile varsa taşıma araçlarının aranmasında,</p>
+
+<p>f) 5237 sayılı Türk Ceza Kanununun 24 üncü maddesindeki kanunun hükmü ve âmirin emrini yerine getirme, 25 inci maddesindeki meşru savunma ve zorunluluk hâli ve 26 ncı maddesindeki hakkın kullanılması ve diğer kanunların öngördüğü hukuka uygunluk sebepleri ve suçüstü hâlinde yapılan aramalarda, toplum için veya kişiler bakımından hayatî tehlikeyi ortadan kaldırmak amacıyla veya kapalı yerlerden gelen yardım çağrıları üzerine, konut, işyeri ve yerleşim yeri ile eklentilerine girmek için” şeklinde olup bu durumlarda arama kararı alınmasına gerek yoktur.</p>
+
+<p>Bu açıklamalar ışığında uyuşmazlık konusu değerlendirildiğinde;</p>
+
+<p>31.10.2014 tarihinde saat 20.58 sıralarında KOM Şube Müdürlüğünce “Doğanlar Mahallesi, Asayiş Şube arkasındaki tarla içerisinde bulunan harabe binada uyuşturucu satıyorlar” şeklinde ihbar alınması üzerine görevlilerin aynı gün saat 21.30 sıralarında söz konusu yere gittikleri, ihbarda belirtilen yerin “pencereleri ve kapıları bulunmayan, yarı yıkık vaziyette, tek katlı metruk bina” olduğunu görüp binaya girdikleri, kullanılabilir hâldeki tek oda içerisinde minder üzerinde oturan sanık … ile tanıklar Müslüm, ….. ve Şeyda’yı gördükleri, Konya 1. Sulh Ceza Hakimliğinin önleme araması kararına istinaden metruk binada yapılan aramada, tanıklar ile sanığın oturduğu minderin altında (1) adet kitap sayfasına sarılı vaziyette eroin, minderin yan tarafında uyuşturucu madde paketlemede kullanıldığı değerlendirilen kâğıt parçalarının ele geçirildiği olayda;</p>
+
+<p>2559 sayılı PVSK’nın Ek 5. maddesi uyarınca uyuşturucu madde suçlarıyla daha etkin mücadele etmek amacıyla olayları takip etmekle görevlendirilen kolluk görevlilerinin, ihbarın doğruluğunu araştırmak üzere bahsi geçen yere gittikleri, bu yerin ihbarda belirtildiği gibi harabe bir bina olduğunu, pencereleri ile kapılarının bulunmadığını ve yarı yıkık vaziyette olduğunu gördükleri, görevlilerin bina içerisine girdiklerinde mumlarla aydınlatılan oda içerisinde minder üzerinde oturan sanık … ile tanıklar Müslüm, ….. ve Şeyda’yı görmeleri üzerine mesleki tecrübelerinden ve içinde bulundukları durumdan çıkardıkları izlenimden kaynaklanan makul sebebe dayalı olarak adı geçenlere müdahalede bulunma hak ve gerekliliğinin ortaya çıktığı, önleme araması kararına istinaden tanıklar ile sanık …‘in üzerinde yapılan aramada suç unsuruna rastlanılmadığı, oda içerisinde yapılan kontrollerde ise şahısların oturdukları görülen minderin altında suç konusu eroin ile paketlenmesinde kullanıldığı değerlendirilen kâğıt parçalarının ele geçirildiği anlaşılmıştır.</p>
+
+<p>Her ne kadar Özel Dairece, suç konusu uyuşturucu maddenin “bina” içerisinde ele geçirildiği, bu yerde CMK’nın 116, 117 ve 119. maddelerine uygun şekilde “adli arama kararı” ya da “yazılı arama emri” alınmadan arama yapılmasının hukuka aykırı olduğu, suçun maddi konusu ve delilini oluşturan uyuşturucu maddenin hükme esas alınamayacağı belirtilerek, sanık hakkında beraat kararı verilmesi gerektiğinden bahisle hükmün bozulmasına karar verilmiş ise de; gerek ihbar, gerekse olay tutanağı içeriği ile tanıklar…..ve ….. ile sanık …‘in beyanlarından anlaşılacağı üzere, suç konusu eroinin ele geçirildiği yerin; pencereleri ile kapıları bulunmayan ve yarı yıkık vaziyette olduğu, kişilerin devamlı veya geçici olarak yerleşmek ve barınmak amacıyla oturmalarına elverişli yerlerden olmadığı gibi özel ve aile yaşamının geliştiği maddi olarak belirlenmiş yerler kapsamında nitelendirilemeyeceği, suç konusu eroinin ele geçirildiği yerin gerek tanıklar gerekse sanık … ile yeterli ve devam eden bir bağının olmadığı, dış dünyadan ayrı tutulduğunu açıkça gösterir bir irade ve tespit bulunmadığının anlaşılması karşısında; söz konusu yapının “Bırakılmış, terk edilmiş, kullanılmayan” anlamında metruk bir bina olması nedeniyle “adli arama kararı” ya da “yazılı arama emri” ile arama yapılabilecek konut vasfında bir yer sayılamayacağı, dolayısıyla bu gibi yerlerde kolluk görevlilerince gerçekleştirilen kontrollerin CMK’nın 116 ve devamı maddelerinde düzenlenen teknik anlamda bir arama işlemi olarak değerlendirilemeyeceği, bu nedenlerle Anayasanın 20 ve 21. maddeleri altında güvence altına alınan “Özel hayatın gizliliği” ve “Konut dokunulmazlığı”na ilişkin temel hak ve özgürlükler ile Avrupa İnsan Hakları Sözleşmesinin “Özel hayatın ve aile hayatının korunması” başlıklı 8. maddesinin ihlalinin de söz konusu olmayacağı, öte yandan metruk bina vasfında olan söz konusu yapının, PVSK’nın 9. maddesinin 4. fıkrasının (d) bendi anlamında “umumi veya umuma açık yer” kapsamında olduğu, suç işlenmesinin veya tehlikenin önlemesi amacıyla bu yerde önleme araması kararı uyarınca arama yapılabileceği de gözetildiğinde, suç konusu eroinin ele geçirilmesinde herhangi bir hukuka aykırılık bulunmadığının ve elde edilen delillerin hükme esas alınabileceğinin kabulü gerekmektedir.</p>
+
+<hr>
+
+<p><strong>Ceza Genel Kurulu         2016/380 E.  ,  2019/52 K.</strong></p>
+
+<ul>
+  <li><strong>CMK 119</strong></li>
+  <li><strong>Aracın dışardan bakıldığında görülebilen yerinde bulunan uyarıcı nitelikteki tabletlere el koyma işlemi arama işlemi olmadığından karar alınmasına gerek yoktur.</strong></li>
+</ul>
+
+<p>Görevlilerce, sanık …‘un da içerisinde olduğu araçta yapılan kontrolde, aracın dışarıdan bakıldığında görülebilen yerinde bulunan uyarıcı nitelikteki tabletlere bu şekilde elkonulmasının; “Gizlenmiş bir şeyi bulmaya çalışma ve araştırma” anlamlarına gelen arama işlemi olarak değerlendirilemeyeceği, dolayısıyla somut olayda adli arama kararı ya da yazılı arama emri alınmasına gerek bulunmadığı,</p>
+
+<p>Durdurulduğu ana kadar, inceleme dışı sanık …‘ın ikametinde olduğuna dair herhangi bir tespit bulunmayan ve bu yerden çıkması sonrasında ilk defa görülen sanık … hakkında, PVSK’nın 4/A maddesinin verdiği yetkiye dayalı olarak alınması gereken tedbirler kapsamında gerçekleştirilen yoklamanın arama işlemi olarak değerlendirilemeyeceği, ayrıca bu yoklama işleminin haklı ve ölçülü olduğu, soyut nitelikte olan ve başkaca herhangi bir somut emare ile desteklenmeyen istihbarat bilgisi ile kolluk tarafından yapılan çalışmaların geldiği aşama da dikkate alındığında, istihbarat bilgisinin adli arama kararı almayı gerektirecek boyuta ulaşmadığı, dolayısıyla CMK’nın 119. maddesi uyarınca adli arama kararı ya da yazılı arama emri alınmasını veya talebini gerektirecek şartların bulunmadığı, bu şekliyle sanığın üzerinin ve elindeki poşetin kontrol edilmesi önleyici nitelikte bulunduğundan adli nitelik taşımadığı,</p>
+
+<p>İstihbarat bilgisi hakkında araştırma yapan kolluk görevlilerinin, sanık …‘un içerisinde olduğu aracın dışarından bakıldığında görünen kısmında bulunan suç konusu uyarıcı nitelikteki tabletleri fark etmeleri ve sanık …‘in elindeki poşette yaptıkları kontrolde suç konusu uyuşturucu ve uyarıcı nitelikteki tabletleri ele geçirmeleri nedeniyle işlenmekte olan bir suçla diğer bir anlatımla “suçüstü” hali ile karşılaştıkları ve buna bağlı olarak da suç işlerken rastlanan sanıkları CMK’nın 90. maddesinin 1. fıkrasının (a) bendi ile aynı maddenin 4. fıkrası ve PVSK’nın 13. maddesinin 1. fıkrasının (A) bendi ile Ek 6. maddesi gereğince yakaladıkları, suç konusu uyuşturucu ve uyarıcı maddeleri muhafaza altına alan görevlilerce uygulanan tedbirler ile somut olay hakkında Cumhuriyet savcısına bilgi verildiği ve müteakiben emirleri doğrultusunda soruşturma işlemlerinin sürdürüldüğü, suçun delili ve konusunu oluşturan uyuşturucu ve uyarıcı maddelerin muhafaza altına alınmasının hukuka uygun olduğu ve hukuka aykırı bir delilden söz edilemeyeceği anlaşıldığından, Özel Daire bozma kararında isabet bulunmamaktadır.</p>
+
+<hr>
+
+<p><strong>Ceza Genel Kurulu         2016/272 E.  ,  2019/86 K.</strong></p>
+
+<ul>
+  <li><strong>CMK 119</strong></li>
+  <li><strong>Sanığın kemeri çözdürülüp, pantolonunu indirmesi sağlanarak iç çamaşırından sarktığı görülen peçetenin bulunduğu yerden alınması suretiyle ele geçirilen suç konusu uyuşturucu maddenin, hukuka aykırı yöntemle elde edilen delil niteliğinde olduğu ve bu delilin hükme esas alınamayacağı kabul edilmelidir.</strong></li>
+</ul>
+
+<p>Yapılan istihbarat çalışmalarında sanığın, 35 .. … plakalı aracı kiralayarak Karşıyaka ve Alsancak’ta bulunan kişilere kokain götürüp teslim ettiği bilgilerine ulaşıldığı, 19.05.2015 tarihinde sanığın bulunabileceği yollarda tertibat alan görevlilerin saat 20.30 ile 21.00 sıralarında söz konusu aracı görüp takibe aldıkları, bir süre takip edilen aracın trafiğin yoğun olması nedeniyle gözden kaybedildiği, araştırmalara devam eden görevlilerin aracı saat 22.00 sıralarında Konak istikametine doğru ilerlerken görüp, tekrardan takibe almaları sonrasında hızını artırması nedeniyle fark edildiklerini değerlendirerek Alsancak Garı önündeki trafik ışıklarında önünü kesmek suretiyle durdurdukları, araçta veya üzerinde suç unsuru madde bulunup bulunmadığı sorulan sanığın olmadığını beyan ettiği, kaba üst araması yapıldığı sırada sesinin titremeye başlaması, davranışlarında değişiklik olması ve etrafın karanlık olması nedeniyle düzgün bir şekilde arama yapılabilmesi için sanık ile yanında bulunan tanık Şindar’ın Alsancak Huzur Timleri Amirliğine götürüldüğü, burada yapılan üst aramasında pantolonunun arkasında, kuyruk sokumunun aşağısına doğru bir kabarıklık olduğu görülen sanığın tedirginliğinin artması nedeniyle şişkinliğin ne olduğunun sorulduğu, cevap vermeyen sanıktan pantolonunun kemerini açmasının istenildiği, sanığın pantolonunun kemerini açtığı esnada boxer tipi iç çamaşırı içerinden paçasına doğru beyaz bir peçete sarktığını gören görevlilerce bahsi geçen peçete alınarak kontrol edildiğinde, içerisinde iki ayrı kilitli poşet içerisinde (11) paket hâlinde suç konusu uyuşturucu maddenin ele geçirildiği olayda;</p>
+
+<p>Yapılan istihbarat çalışmalarında, 35 .. … plakalı araçla Karşıyaka ve Alsancak bölgelerinde kokain sattığı bilgisine ulaşılan sanığın açık kimlik bilgilerinin tespit edilmesi, bahsi geçen yerlerde tertibat alan görevlilerin sanığın araç ile Karşıyaka istikametine doğru ilerlerken görüp takibe almaları, hızını artıran sanığın kendilerini fark ettiğini değerlendirmeleri üzerine trafik ışıklarında söz konusu aracın önünü keserek durdurmaları, üzerinde suç unsuru bulunmadığını söyleyen ve tedirgin davranışlar sergileyen sanığın üst aramasının yapılabilmesi için Alsancak Huzur Timleri Amirliğine götürülmesi, pantolonunun arkasında kuyruk sokumunun aşağısına doğru bir kabarıklık olduğu fark edilip kemerini açmasının istenilmesi, sanığın kemerini açtığı anda iç çamaşırından paçasına doğru beyaz bir peçete sarktığının görülmesi, görevlilerce iç çamaşırı içerisinden alınan beyaz peçetenin kontrol edilmesi neticesinde suç konusu uyuşturucu maddelerin ele geçirilmesi, dosya kapsamı itibarıyla sanığın üzerinde arama yapılmasına olanak sağlayan adli arama kararı ya da yazılı arama emri ile derhâl işlem yapılmadığı takdirde işlendiği iddia edilen suçun iz, eser, emare ve delillerinin kaybolacağına diğer bir anlatımla gecikmesinde sakınca bulunduğuna ilişkin hiçbir bilgi ve belgenin de bulunmaması, sanığın üzerine yapılan arama işleminin PVSK’nın 4/A maddesinin verdiği yetkiye dayalı olarak alınması gereken tedbirler kapsamında kaçmasını, kendisine veya başkalarına zarar vermesini önlemek ve silah ya da tehlike oluşturan diğer bir eşyadan arındırmak amacıyla kişiler üzerinde yapılabilecek yoklama düzeyini aşan nitelikte ve orantısız olduğunun anlaşılması karşısında; usulüne uygun olarak verilmiş arama kararı veya yazılı arama emri olmaksızın, sanığın kemeri çözdürülüp, pantolonunu indirmesi sağlanarak iç çamaşırından sarktığı görülen peçetenin bulunduğu yerden alınması suretiyle ele geçirilen suç konusu uyuşturucu maddenin, hukuka aykırı yöntemle elde edilen delil niteliğinde olduğu ve bu delilin hükme esas alınamayacağı kabul edilmelidir.</p>
+
+<hr>
+
+<p><strong>Yargıtay 7. Ceza Dairesi          <br>
+2021/581 E.  ,  2021/7919 K.</strong></p>
+
+<ul>
+  <li><strong>CMK 119. Madde</strong></li>
+  <li><strong>Arama Kararı</strong></li>
+</ul>
+
+<p>Suç tarihinde ihbar üzerine sanığa ait iş yerinde savcılık tarafından verilen yazılı arama emrine istinaden yapılan arama sonucunda buzdolabının arka kısmında bulunan poşette 12 paket kaçak sigara ele geçirilmesi şeklinde gerçekleşen olayda;</p>
+
+<p>5271 sayılı Ceza Muhakemesi Yasasının 206/2-a, 271/2, 230/1. maddeleri fıkraları da hukuka uygun surette elde edilen delillerin kullanılabileceğini, yani kanuna aykırı elde edilenlerin ise hükme esas alınamayacağı şeklinde açık düzenlemeleri içermektedir.</p>
+
+<p>Adli aramaların nasıl yapılacağını düzenleyen 5271 sayılı CMK’nun 116. maddesi arama kararı verebilmesi için makul şüphenin bulunması ve aynı Yasanın 119. maddesi aramanın, hakim kararı üzerine veya gecikmesinde sakınca bulunan hallerde Cumhuriyet savcısının, Cumhuriyet savcısına ulaşılamadığı takdirde, kolluk amirinin yazılı emri ile kolluk görevlilerince yapılabileceği biçimindedir. Bu koşullara uyulmadan yapılan arama kanuna aykırıdır.</p>
+
+<p>Dosya kapsamına göre; aramaya esas teşkil eden ihbarın 29/09/2015 tarihinde yapıldığı, 01/10/2015 tarihinde kolluk güçlerinin talebi üzerine Cumhuriyet Savcısı tarafından makul şüphe ve gecikmesinde sakınca bulunduğundan bahisle verilmiş yazılı bir arama izni bulunmasına rağmen arama kararında gecikmesinde sakınca bulunan halin gerekçesinin belirtilmediği, dosya içerisinde bulunan 01/10/2015 tarihli arama tutanağının tarih ve saati incelendiğinde aramanın hafta içi mesai saatleri içerisinde yapılmış olması nedeniyle arama kararının savcılık tarafından verilemeyeceği, buna göre yapılan aramanın usul ve yasaya aykırı olduğu, hukuka aykırı arama sonucu ele geçen eşyanın yasak delil niteliğinde olduğu, eşyanın kaçak olmasının durumu değiştirmeyeceği, sanığın suça konu kaçak sigaraları ticari amaçla bulundurduğuna dair bir ikrarının da olmadığı, Anayasa’nın 38/2, 5271 sayılı CMK’nun 206/2-a, 217/2, 230/1. madde ve fıkralarına göre, hukuka aykırı surette elde edilen delillere dayanılarak mahkumiyet hükmü kurulamayacağı ve bu gerekçeyle sanığın beraatine karar verilmesi gerekirken, dosya kapsamına uygun olmayan gerekçeyle beraat kararı verilmesi sonuca etkili görülmediğinden, katılan … İdaresi vekilinin temyiz itirazlarının reddiyle sonucu itibariyle doğru olan hükmün ONANMASINA, 15/06/2021 tarihinde oy birliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 19. CEZA DAİRESİ
+Esas : 2016/10119 Karar : 2017/6607</strong> Tarih : 12.09.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 119. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Arama Kararı</strong></p>
+  </li>
+</ul>
+
+<p>Yerel Mahkemece verilen hüküm temyiz edilmekle; başvurunun süresi, kararın niteliği ve suç tarihine göre dosya incelendi, gereği görüşülüp düşünüldü:</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>UYAP ortamında yapılan araştırmada sanık adına başka dosya kaydının çıkmaması nedeniyle tebliğnamedeki bozma görüşüne iştirak edilmemiştir.</p>
+
+<p>Kısa süreli hapis cezası adli para cezasına çevrilirken uygulanan kanun maddesi gösterilmemiş ise de, bu husus mahallinde düzeltilebilir nitelikte maddi hata kabul edilerek bozma yapılmamıştır.</p>
+
+<p>Ceza Muhakemesinin amacı; sosyal düzenin korunması ile kişilerin hak ve özgürlüklerine saygı arasında bir denge kurulması suretiyle hukuken geçerli kanıtlarla hiçbir duraksamaya yer vermeden maddi gerçeğin ortaya çıkarılmasıdır.</p>
+
+<p>Ceza Muhakemesi hukukumuz delil serbestliği ilkesini benimsemiş, delilleri değerlendirmede de hakime tam bir serbestlik tanınmıştır. Delillerin hukuka uygun yöntemlerle toplanması zorunludur.</p>
+
+<p>Delillerin bir ya da bir kaçının hukuka aykırı yöntemlerle elde edilmesi hukuka uygun yöntemle elde edilen diğer delillerin yok sayılmasını gerektirecek midir?</p>
+
+<p>Avrupa İnsan Hakları Sözleşmesinde sunulan kanıtların kabul edilebilir olup olmadığına karar verme usulünü gösteren ve hangi kanıtların kabul edilebilir olduğunu, hangilerinin kabul edilemez olduğunu belirleyen bir kural olmadığı gibi,</p>
+
+<p>Avrupa İnsan Hakları Mahkemesi de 
+“ İç hukukta yeterli hukuki temeli bulunmadan veya hukuka aykırı vasıtalar kullanılarak elde edilmiş materyallerin yargılamada kanıt olarak kullanılması kural olarak, başvurucuya gerekli usulü güvencelerin sağlanmış olması ve materyelin baskı, zorlama ve tuzak gibi yargılamayı lekeleyebilecek nitelikli ve kaynaklı olmaması şartıyla, sözleşmenin 6. maddesinin (1) numaralı fıkrasındaki adil yargılanma standartlarına aykırılık oluşturmaz ” ( Chalkley/ Birleşik Krallık [kk] B.No: 6383/100, 26.09.2002)</p>
+
+<p>Bir delilin, diğer yan delillerle desteklenmemiş olması, mutlak suretle adil yargılanma hakkı bakımından sorun oluşturmaz.</p>
+
+<p>Mahkemece hükme esas alınan bir delilin çok kuvvetli olması ve güvenilirliği konusunda herhangi bir risk bulunmaması, destekleyici delillere olan ihtiyacın yoğunluğunu azaltır. Buna karşılık gücü ve güvenilirliği konusunda birtakım şüpheler bulunan bir delilin, suçun sübutu konusunda ulaşılan vicdani kanaat bakımından belirleyici olması halinde, bu durum hakkaniyete uygun yargılanma hakkı bakımından sorun oluşturabilir ” (Güllüzar Erman, B. No: 2012/542 04.11.2014) şeklinde kararlar vermiştir.</p>
+
+<p>5271 sayılı Ceza Muhakemesi Kanunu<code class="language-plaintext highlighter-rouge">nun 230. madde 1. fıkra (b) bendinde mahkumiyet hükmünün gerekçesinde dosya içerisinde bulunan ve hukuka aykırı yöntemlerle elde edilen deliller ayrıca ve açıkça</code>` gösterilir.
+denilmek suretiyle hukuka uygun yöntemlerle elde edilen diğer delillerin geçerliliğini koruyacağı benimsenmiştir.</p>
+
+<p>Temyiz davasına konu olayda her ne kadar 24/06/2011 tarihlerinde yapılan aramada CMK`nın 119/4. maddesi uyarınca o yer ihtiyar heyetinden veya komşulardan iki kişi hazır bulundurulmamış ise de; sanığın arama işleminin içeriğine herhangi bir itirazının bulunmaması, mahkeme huzurundaki beyanı ve hükmün münhasıran arama sonucu elde edilen delile dayanmaması karşısında suçun sübutuna ilişkin yerel mahkeme kararında bir isabetsizlik görülmemiştir.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>Yükletilen suçun sanık tarafından işlendiğinin kanuna uygun olarak yürütülen duruşma sonucu saptandığı, bütün kanıtlarla aşamalarda ileri sürülen iddia ve savunmaların temyiz denetimini sağlayacak biçimde ve eksiksiz sergilendiği, özleri değiştirilmeksizin tartışıldığı, vicdani kanının kesin, tutarlı ve çelişmeyen verilere dayandırıldığı,</p>
+
+<p>Eylemin doğru olarak nitelendirildiği ve Kanun `da öngörülen suç tipine uyduğu,</p>
+
+<p>Cezanın kanuni bağlamda uygulandığı,</p>
+
+<p>Anlaşıldığından, sanığın temyiz nedenleri yerinde görülmemiş olmakla, tebliğnameye aykırı olarak, TEMYİZ DAVASININ ESASTAN REDDİYLE HÜKMÜN ONANMASINA, 12/09/2017 tarihinde oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 7. CEZA DAİRESİ 
+Esas : 2014/35187 Karar : 2017/5422</strong> Tarih : 22.06.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 119. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Arama Kararı</strong></p>
+  </li>
+</ul>
+
+<p>Yerel mahkemece verilen hüküm temyiz edilmekle; başvurunun nitelik, ceza türü, süresi ve suç tarihine göre dosya okunduktan sonra Türk Milleti adına gereği görüşülüp düşünüldü;</p>
+
+<p>5271 sayılı CMK.nun 116-119. maddelerinde arama kararının hangi hallerde ve ne şekilde alınacağı kanun koyucu tarafından açıkça düzenlenmiş olup, sanık … dava konusu kaçak eşya hakkında mahkemece verilmiş bir arama kararı olmadığı gibi, gecikmesinde sakınca olduğu gerekçesiyle Cumhuriyet Savcısı tarafından da verilmiş bir yazılı arama izni ya da Cumhuriyet Savcısı’na ulaşılamaması nedeniyle kolluk amirince verilmiş yazılı arama emri de bulunmaması karşısında, hukuka aykırı arama sonucu ele geçen eşyanın yasak delil niteliğinde olduğu, eşyanın kaçak olmasının durumu değiştirmeyeceği nazara alındığında, Anayasa’nın 38/2, 5271 sayılı CMK.nun 206/2-a, 217/2, 230/1 madde ve fıkralarına göre, hukuka aykırı surette elde edilen delillere dayanılarak mahkumiyet hükmü kurulamayacağı gözetilerek sanığın beraati yerine yazılı şekilde mahkumiyetine karar verilmesi,</p>
+
+<p>Kabule göre de;</p>
+
+<p>1- Dairemizin 25.10.2011 gün ve 2009/20014 Esas, 2011/17869 Karar sayılı bozma ilamına uyulup uyulmadığı hususunda bir karar verilmemesi,</p>
+
+<p>2- 4926 sayılı Kaçakçılıkla Mücadele Kanunu’nda atılı eylemin müeyyidesi adli para cezasını, 5607 sayılı Kaçakçılıkla Mücadele Kanunu’nda ise hürriyeti bağlayıcı cezanın yanında adli para cezasını da içermekte olduğu; kısa süreli hürriyeti bağlayıcı cezanın 5237 sayılı TCK.nun 50. maddesi gereğince adli para cezasına veya diğer seçenek yaptırımlara çevrilmesi halinde verilen sonuç ceza itibariyle 5607 sayılı Yasanın sanık lehine olabileceği gözetilerek;</p>
+
+<p>Olaya suç tarihinde yürürlükte bulunan 4926 Sayılı Kaçakçılıkla Mücadele Kanunu ile suç tarihinden sonra 31/03/2007 tarihinde yürürlüğe giren 5607 sayılı Kaçakçılıkla Mücadele Kanunu’nun ilgili bütün hükümleri uygulanarak elde edilecek sonuçların birbiriyle karşılaştırılması ve karar yerinde tartışılması suretiyle lehe olan Yasanın belirlenmesi sırasında uygulama sonucu 5607 sayılı Kanunun lehe olmasına rağmen 4926 sayılı Kanunun lehe olduğu kabul edilerek, yazılı şekilde fazla ceza tayini ile hüküm tesisi,</p>
+
+<p>Yasaya aykırı sanık …’ın temyiz itirazları bu itibarla yerinde görüldüğünden hükmün 5320 sayılı Yasanın 8/1. maddesi gereğince yürürlükte bulunan 1412 sayılı CMUK.nun 321. maddesi uyarınca BOZULMASINA, bozmanın niteliğine göre hükmü temyiz etmeyen sanık …‘ya teşmiline, 22/06/2017 günü oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 18. CEZA DAİRESİ
+Esas : 2015/24478 Karar : 2017/6109</strong> Tarih : 17.05.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 119. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Arama Kararı</strong></p>
+  </li>
+</ul>
+
+<p>Yerel Mahkemece verilen hüküm temyiz edilmekle, başvurunun süresi ve kararın niteliği ile suç tarihine göre dosya görüşüldü.</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre, yapılan incelemede başkaca nedenler yerinde görülmemiştir.</p>
+
+<p>Ancak;</p>
+
+<p>Organize suçların toplum için yarattığı yıkıcı tehlike ve gelişen teknolojik gelişmeler karşısında örgütlü olarak işlenen terör ve çıkar amaçlı suçlarla mücadele için ceza muhakemesinde yeni koruma tedbirlerine başvurulması zorunluluğu son 50 yılda zorunluluk haline gelmiş bu kapsamda yer alan koruma tedbirlerinden biri olan gizli soruşturmacı tedbiri pozitif hukukumuza ilk kez 4422 sayılı Çıkar Amaçlı Suç Örgütleriyle Mücadele Kanunu ile girmiştir. Daha sonra yürürlüğe giren CMK ile bu koruma tedbiri 139. maddede yeniden düzenlenmiştir.</p>
+
+<p>CMK’nın 139. maddesi uyarınca gizli soruşturmacı tedbirine ancak CMK’nın 139. maddesinde sayılan katalog içerisinde yer alan suçları işleyen örgüt ve örgüt mensubu suçlu aleyhine başvurulabilir. Örgüt faaliyeti kapsamında işlenmeyen suçlar yönünden gizli soruşturmacı görevlendirilemez.</p>
+
+<p>Ancak parada sahtecilik, uyuşturucu madde ticareti ile fuhuş gibi suçlarda faile ulaşmak ve delil elde etmek amacıyla kolluk görevlisinin kimliğini gizleyerek delil toplanmasının hukuka uygun olup olmadığı ile bunun hangi hallerde hukuka uygun sayılacağının tespiti gerekir.</p>
+
+<p>Yargıtay Ceza Genel Kurulu 12.05.2015 tarih, 2014/10-454 esas, 2015/156 sayılı kararında CMK’nın 139. maddesi dışındaki suçlar yönünden de kolluk görevlilerinin CMK’nın 160 ve devamı maddeleri uyarınca Cumhuriyet Savcısının emri doğrultusunda ve genel yetkileri ile görevleri kapsamında, suç ve failini belirlemek ve suçla ilgili delilleri toplamak amacıyla alıcı rolüne girerek suça azmettirmeden ve teşvik etmeden şüpheliden uyuşturucu madde satın almasını mümkün görmüştür. Aynı kararda bu durumda görev yapan görevlinin gizli soruşturmacı değil “gizli soruşturma yapan adli kolluk görevlisi” olduğunu, gizli soruşturma yapan adli kolluk görevlisinin suça teşvik etmeden veya azmettirmeden elde ettiği delillerin hukuka uygun olacağına hükmetmiştir.</p>
+
+<p>AİHM verdiği kararlarda, gizli soruşturma yapan adli kolluk görevlisi yöntemine başvuru halinde, yapılan başvuruları AİHM’nin 6. maddesi kapsamında ele almaktadır. Aşağıda AİHM kararlarında kabul edilen ilkelere yer verilecektir.</p>
+
+<p>Öğretide “gizli soruşturma yapan adli kolluk görevlisinin “CMK’nın 160 ve devamı maddeleri uyarınca görevlendirilmesi yeterli görülürken, V. Özer ÖZBEK uygulamada sıkça başvurulan ve muhakemede tanık olarak dinlenebilen gizli soruşturma yapan polis tedbirinin kapsam ve sınırlarının belirsizliği bakımından bunun hukuk devleti bakımından ciddi sorunlar yarattığı düşüncesindedir. (Prof. Dr. Veli Özer ÖZBEK) (CHKD. Cilt 2. sayı 1-2-2014 s. 142.)</p>
+
+<p>Dairemizce YCGK kararları, AİHM kararları ve CMK’daki düzenleme bir arada değerlendirildiğinde CMK’nın 139. maddesi dışında kalan suçlar yönünden adli kolluk görevlisinin kimliğini gizlemesi halinde rolü “gizli soruşturma yapan adli kolluk görevlisi” olarak kabul edilmektedir. Bu kişinin elde ettiği delillerin hukuka uygun kabul edilebilmesi için aşağıda belirtilen koşulların varlığı aranmaktadır.</p>
+
+<p>1- Gizli soruşturma yapan adli kolluk görevlisi hiç bir zaman kışkırtıcı ajan gibi hareket edemez. Önceden failde bulunmayan suç işleme kastı yaratılarak, fail suç işlemeye azmettirilmemelidir.</p>
+
+<p>Her ne kadar organize suçlardaki artış uygun önlemler alınmasını gerektirse de adil yargılamadan vazgeçilmemeli bu nedenle amaca ulaşmak uğruna adil yargılama hakkı feda edilerek polisin kışkırtması sonucu elde edilen delil meşru kabul edilmemelidir. (Teixeria de Cortro Peri (36)/ Portekiz davası Başvuru No:44/1997/828/1034)</p>
+
+<p>Gizli soruşturma yapan adli kolluk görevlisi soruşturma sırasında pasif bir davranışta bulunmanın ötesine geçmemeli, suçun işlenmesine teşvik eder bir tarzda etki uygulamamalıdır.(Costro/Portekiz per. 38)</p>
+
+<p>Somut olayda polis memurlarının faili suça kışkırtması ve mücadelesi olmadan suçun işlendiğine ilişkin delil elde edilemiyorsa, polis memurunun kışkırtıcı ajan rolüne geçtiğinin ve adil yargılama hakkının ihlal edildiğinin kabulü gerekir. (Aynı yönde Costro-Portekiz per.39)</p>
+
+<p>Mahkemelerce sadece gizli görevlinin tutanaklarına dayanarak değerlendirme yapılmamalıdır, tutanaklar başka sonuca götürecek unsurlarla teyit edilmelidir. (a Contrario, Burak-Hun-Türkiye davası) (Hun-Türkiye davası başvuru no:17570/04)</p>
+
+<p>Sanık suç işleme potansiyeline sahip bir kişi olsa bile somut olayda görevlinin müdahalesinden önce failin suç işleme hazırlığında olduğunun başka delillerle desteklenmesi gerekir. Yani failin müdahale olmadan suçu işleyeceğinin başka delillerle kanıtlanması gerekir. (Hun-Türkiye davası)</p>
+
+<p>2- CMK’nın 160 ve devamı maddeleri uyarınca Cumhuriyet Savcısı tarafından yapılan bir görevlendirmenin bulunması gerekir.</p>
+
+<p>CMK’nın 160 ve 161. maddeleri uyarınca Cumhuriyet Savcısının gizli soruşturma yapan adli kolluk görevlisi görevini, yazılı veya acele hallerde sözlü olarak vermesi gerekir. Cumhuriyet Savcısının yazılı veya sözlü emri olmadan yine CMK’nın 161/2. maddesi uyarınca adli kolluk görevlisinin Cumhuriyet Savcısına bilgi vermeden kimliğini gizleyerek adli işlem yapması hukuka aykırı olup elde ettiği delil de hukuka aykırı olduğundan, bu şekilde elde edilen CMK’nın 216/3. maddesi gereği hükme esas alınamaz. Kimliğin gizlenerek adli işlem ifası olağan bir işlem olmayıp ikincil bir tedbirdir. Bu tedbirin gerekliliği ve orantılılığının mutlaka Cumhuriyet Savcısı tarafından denetlenmesi gerekir.</p>
+
+<p>AİHM Hun-Türkiye davasında bu konuya şöyle temas etmiştir. “AİHS sınırları belirlendiğinde ve güvence altına alındığında gizli ajanla müdahaleye tölerans gösterebilir.”</p>
+
+<p>AİHM İsviçre-Lüdi kararında İsviçre makamlarının Alman polisi tarafından haberdar edilmesi, olayın soruşturma hakiminin bilgisi dahilinde yürütülmesi nedeniyle 6. maddenin ihlal edilmediğine karar vermiştir. (Lüdi-İsviçre kararı başvuru No:12433/86)</p>
+
+<p>3- Kolluk görevlisinin tutanağı delil olarak kabul edildiğinde diğer delillerle birlikte tutanağa da dayanılıyorsa mutlaka tutanak düzenleyiciler dinlenilmeli, sanığa, tutanak ve düzenleyicilerinin anlatımlarına karşı savunma yapma imkanı sağlanmalıdır.</p>
+
+<p>AİHM Calabro-İtalya kararında “Gizli ajanın ifadeleri, başvuranın mahkumiyetinde belirleyici faktör olmamıştır. Buna ek olarak başvurana yargılama aşamasında, soruşturmada görev alan polis memurlarını sorgulama, polis operasyonunun niteliği ve kullanılan usulleri netleştirme fırsatı vermiştir. Bu nedenle adil yargılama hakkı ihlal edilmemiştir” sonucuna ulaşmıştır.(Başvuru No:58895/0011 Mart 2002)</p>
+
+<p>Ayrıca bir suç işlendiğini öğrenen kolluk görevlilerinin, gecikmeksizin durumu Cumhuriyet Savcısına bildirerek şüphelilerin yakalanması ve suç delillerinin elde edilmesini temin amacıyla CMK’nın 116 ve devamı maddeleri uyarınca usulüne uygun arama kararı alarak işlem yapması gerektiği, CMK’nın 119. maddesi uyarınca konutta yapılacak aramanın ancak hakim kararı veya gecikmesinde sakınca bulunan hallerde Cumhuriyet savcısının yazılı emri ile yapılabileceği, CMK’nın 123. maddesi uyarınca, ispat aracı olarak yararlı görülen ya da eşya veya kazanç müsaderesinin konusunu oluşturan malvarlığı değerlerinin, muhafaza altına alınabileceği, yanında bulunduran kişinin rızasıyla teslim etmediği bu tür eşyaya ise elkonulabileceği, CMK’nın 127. maddesinde ise, hâkim kararı üzerine veya gecikmesinde sakınca bulunan hâllerde Cumhuriyet savcısının, Cumhuriyet savcısına ulaşılamadığı hallerde ise kolluk amirinin yazılı emri ile kolluk görevlilerinin, elkoyma işlemini gerçekleştirebileceği, hâkim kararı olmaksızın yapılan elkoyma işleminin, yirmidört saat içinde görevli hâkimin onayına sunulması gerektiği, hâkimin, kararını elkoymadan itibaren kırksekiz saat içinde açıklaması; aksi hâlde elkoymanın kendiliğinden kalkacağı düzenlenmiştir.</p>
+
+<p>Somut olayda, yukarıda sözü edilen yasal düzenlemelere aykırı şekilde sanığın fuhuş yaptırdığının ihbar edilmesi üzerine, Cumhuriyet Savcısının CMK’nın 160 vd. maddelerine göre yaptığı yazılı veya sözlü bir görevlendirmesi bulunmaksızın, Ahlak Büro Amirliğinin düzenlediği operasyon kapsamında kolluk görevlilerinin, sanığı ihbarda verilen cep telefonundan müşteri kılığında aradıkları, sonrasında adrese gittikleri, mağdurun teklifi ile fuhuş pazarlığı yaptıkları ve sonrasında kolluk personeli olduklarına dair kimliklerini açıkladıkları ve masaj salonunda bulunan sanık, tanık ve mağduru Emniyete getirdikleri, Cumhuriyet Savcısının talimatı ile ilgili tahkikatın yapılarak, tahkikat evrakları ile sanığın mevcutlu olarak gönderildiği belirtilmiştir.</p>
+
+<p>Belirtilen ilkelere uygun bir gizli soruşturma için adli kolluk görevlendirmesi yapılmadan, adli kolluk görevlilerinin masaj salonunu arayıp randevu almaları, Cumhuriyet Savcısının yaptığı yazılı veya sözlü bir görevlendirme bulunmaksızın yapılan işlemler sonucunda mahkumiyet kararına dayanak olan delillerden yakalama tutanağı ve mağdurun sanığa suç isnadı içeren beyanlarına ulaşılması nedeniyle, bu delillerin hukuka uygun kabul edilemeyeceği, dolayısıyla sanığın üzerine atılı fuhuş suçunu işlediğine ilişkin, hukuka uygun yöntemlerle elde edilmiş delil bulunmadığının anlaşılması karşısında, sanığın beraati yerine mahkumiyetine karar verilmesi,</p>
+
+<p>Kanuna aykırı ve sanık …‘un temyiz nedenleri yerinde görüldüğünden, tebliğnameye aykırı olarak, HÜKMÜN BOZULMASINA, yargılamanın bozma öncesi aşamadan başlayarak sürdürülüp sonuçlandırılmak üzere dosyanın esas/hüküm mahkemesine gönderilmesine, 17/05/2017 tarihinde oy birliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 19. CEZA DAİRESİ
+Esas : 2016/3296 Karar : 2017/3663</strong> Tarih : 25.04.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 119. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Arama Kararı</strong></p>
+  </li>
+</ul>
+
+<p>556 sayılı Markaların Korunması Hakkında Kanun Hükmünde Kararname’ye aykırılık suçundan şüpheli … hakkında İstanbul Cumhuriyet Başsavcılığınca yürütülen 2015/60812 sayılı soruşturma sırasında, şüphelinin iş yeri adresinde arama yapılmasına, arama neticesi ele geçirilecek taklit ürünlere el konulmasına dair, İstanbul 5. Sulh Ceza Hakimliğinin 05/05/2015 tarihli ve 2015/2537 değişik iş sayılı kararına yönelik itirazın kabulüne el koyma kararının kaldırılmasına ilişkin, İstanbul 6. Sulh Ceza Hakimliğinin 18/05/2015 tarihli ve 2015/2261 değişik iş sayılı kararı aleyhine, Adalet Bakanlığı’nın 26/02/2016 gün ve 13146 sayılı kanun yararına bozma istemini içeren yazısı ekindeki dava dosyası, Yargıtay Cumhuriyet Başsavcılığının 09/03/2016 gün ve KYB. 2016/94117 sayılı ihbarnamesi ile dairemize gönderilmekle okundu.</p>
+
+<p>Anılan ihbarnamede,</p>
+
+<p>Dosya kapsamına göre, 556 sayılı Markaların Korunması Hakkında Kanun Hükmünde Kararname’ye aykırılık suçundan şüpheli … hakkında İstanbul Cumhuriyet Başsavcılığınca yürütülen 2015/60812 sayılı soruşturma kapsamında, mahallinde suç konusu ve delillerin elde edilmesi için 5271 sayılı Ceza Muhakemesi Kanunu’nun 119. maddesi uyarınca arama yapılmasına ve anılan Kanun’un 127. maddesi uyarınca taklit ürünlere el konulmasına karar verilmesine dair anılan Başsavcılığın 05/05/2015 tarihli talebi üzerine, İstanbul 5. Sulh Ceza Hakimliğinin 05/05/2015 tarihli ve 2015/2537 değişik iş sayılı kararı ile talebin kabulüne … Caddesi No: 4-6 … adresinde yer alan … Çanta isimli işyerinde ve … Caddesi … Han 1. Kat 4 numarada yer alan işyerinin deposunda arama yapılmasına ve arama sonucunda elde edilecek taklit ürünlere el konulmasına karar verildiği, bu arama kararına istinaden, İstanbul İl Emniyet Müdürlüğü’ne bağlı ekipler tarafından kararda belirtilen adreslerde arama kararının icra edildiği hususunun 08/05/2015 tarihli şüpheli …‘in de imzası bulunan tutanak ile belgelendirildiği, bunun yanında şüpheli müdafi Avukat … tarafından 14/05/2015 tarihli itiraz dilekçesi ile arama ve el koyma işleminin arama kararında yer almayan Ağa Han 1. Kat 3 numarada yapıldığı öne sürülmüş ise de, 08/05/2015 tarihli tutanak içeriğine göre depoda yapılan aramanın şüphelinin huzurunda, rızası dahilinde ve kendisine ait olduğu ikrar edilen depoda gerçekleştirildiğinin anlaşılması karşısında, arama ve el koyma işleminde herhangi bir usulsüzlük bulunmadığı gözetilmeden, farklı adreste arama ve el koyma işlemi yapıldığından bahisle arama kararının kaldırılması ile el konulan malların iadesine karar verilmesinde isabet görülmediği, gerekçesiyle 5271 sayılı Ceza Muhakemesi Kanunu’nun 309. maddesi uyarınca anılan kararın kanun yararına bozulması isteminde bulunulmakla,</p>
+
+<p>Gereği görüşülüp düşünüldü:</p>
+
+<p>Suç tarihinde yürürlükte bulunan ve 21/01/2009 tarihli 5833 sayılı Kanun’un 3. maddesi ile yapılan değişiklik sonucu 556 sayılı KHK’nın 61/A-1 maddesinde yer alan, güncel haliyle 10/01/2017 tarihinde yürürlüğe giren 6769 sayılı Sınai Mülkiyet Kanunu’nun 30. maddesinde yer alan “marka hakkına tecavüz” suçunun unsurlarının, “Başkasına ait marka hakkına iktibas veya iltibas suretiyle tecavüz ederek mal veya hizmet üretmek, satışa arz etmek veya satmak, ithal ya da ihraç etmek, ticari amaçla; satın almak, bulundurmak, nakletmek veya depolamak” olduğu, suçun oluştuğunun her türlü delille ispatının mümkün olduğu, bu hususta soruşturmaya konu olay özelinde, marka hakkına tecavüz iddiasıyla başlatılan soruşturma dosyasında İstanbul 5. Sulh Ceza Hakimliğince verilen 2015/ 2537 D.İş sayılı arama ve el koyma kararına istinaden, kararda yazılı adreste yapılan usulüne uygun arama sonucu ele geçen taklit olduğu iddia edilen ürünlerin muhafaza altına alındığı ve el konulduğu, ürünlerden numunelerin adli emanete alındığı, ancak aramadan bir hafta sonra şüpheli vekilinin başvurusu üzerine, İstanbul 6. Sulh Ceza Hakimliğinin 18/05/2015 tarihli ve 2015/2261 değişik iş sayılı kararı ile “aramanın 4 nolu dairede değil, 3 nolu dairede yapıldığı” gerekçesiyle usulüne uygun yapılan aramaya dayanak kararın kaldırılmasına ve sonucu ele geçen ürünlerin iadesine kesin olarak karar verdiği görülmüştür.</p>
+
+<p>Somut olayda; arama kararında yazılı adreste arama yapıldığı, usulüne uygun alınan arama ve el koyma kararının, yerinde olmayan ve ispat gücü olan hiçbir delille desteklenmeyen soyut iddialarla ortadan kaldırıldığı, şikayete konu ürünlerin, şikayetçinin hak sahibi olduğu markaların yurt dışından kaçak yollarla yurda giren ve bilinen ürünlerin taklitleri oldukları, bu nedenle başlı başına ticaret amacıyla bulundurulması suç olan ve suçta kullanılan eşya sıfatına haiz olduğu, ancak yasal ve yerinde olmayan gerekçeyle şüpheliye iade edildiği anlaşılmakla,</p>
+
+<p>Yargıtay Cumhuriyet Başsavcılığının kanun yararına bozma istemine dayanan ihbarname içeriği bu nedenle yerinde görüldüğünden, İstanbul 6. Sulh Ceza Hakimliğinin 18/05/2015 tarihli ve 2015/2261 değişik iş sayılı kararının CMK’nın 309/4-a. maddesi uyarınca BOZULMASINA, müteakip işlemlerin mahallinde yerine getirilmesine, 25/04/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 7. CEZA DAİRESİ
+Esas: 2015/23918 Karar: 2017/8075</strong> Tarih: 19.10.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 119. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Arama Kararı</strong></p>
+  </li>
+</ul>
+
+<p>KARAR : Sanık …‘ün temyiz istemi yönünden yapılan incelemede;</p>
+
+<p>Suç tarihinde kolluk kuvvetlerine yapılan ihbarda sanığa ait iş yerinde kaçak sigara satıldğının bildirilmesi üzerine sanığa ait iş yerinde, ikametgah ve aracında yapılan arama sonucunda toplamda 290 paket farklı markalarda bandrolsüz sigara bulunmuş, yapılan yargılama sonunda sanığın ticari nitelikte kaçak sigara bulundurduğundan bahisle mahkumiyetine karar verilmiş ise de;</p>
+
+<p>5271 Sayılı Ceza Muhakemesi Yasasının fıkraları da hukuka uygun surette elde edilen delillerin kullanılabileceğini, yani kanuna aykırı elde edilenlerin ise hükme esas alınamayacağı şeklinde açık düzenlemeleri içermektedir.</p>
+
+<p>Adli aramaların nasıl yapılacağını düzenleyen 5271 Sayılı CMK.nun 116. maddesi arama kararı verebilmesi için makul şüphenin bulunması ve aynı Kanun’un 119. maddesi aramanın, hakim kararı üzerine veya gecikmesinde sakınca bulunan hallerde Cumhuriyet Savcısının, Cumhuriyet Savcısına ulaşılamadığı takdirde, kolluk amirinin yazılı emri ile kolluk görevlilerince yapılabileceği biçimindedir. Bu koşullara uyulmadan yapılan arama kanuna aykırıdır.</p>
+
+<p>Dosya kapsamına göre; Cumhuriyet Savcısı tarafından gecikmesinde sakınca bulunduğundan bahisle verilmiş yazılı bir arama izni bulunmasına rağmen arama kararında gecikmesinde sakınca bulunan halin gerekçesinin belirtilmediği, dosya içerisinde bulunan 14.06.2013 tarihli arama tutanağının tarih ve saati incelendiğinde aramanın hafta içi mesai saatleri içerisinde yapılmış olması sebebiyle arama kararının savcılık tarafından verilemeyeceği, buna göre yapılan aramanın usul ve yasaya aykırı olduğu, sanık aşamalardaki savunmalarında ise sigaraları içmek amacıyla aldığını, ticari amacının olmadığını beyan etmiş olup usulsüz arama sonucu kanuna aykırı olarak elde edilen delil ( eşya ) dışında sanığın mahkumiyetini gerektirecek başka bir delil de elde edilemediği gözetildiğinde, beraati yerine yazılı gerekçeyle mahkumiyetine karar verilmesi,</p>
+
+<p>SONUÇ : Yasaya aykırı olup, sanığın temyiz itirazları bu itibarla yerinde görüldüğünden hükmün, 5320 Sayılı Kanun’un 8/1. maddesi uyarınca yürürlükte bulunan 1412 Sayılı CMUK.nun 321. maddesi uyarınca BOZULMASINA, 19.10.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 8. CEZA DAİRESİ
+Esas: 2016/2625 Karar: 2017/744</strong> Tarih: 26.01.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 119. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Arama Kararı</strong></p>
+  </li>
+</ul>
+
+<p>KARAR : Türkiye Cumhuriyeti Anayasası’nın , kişilerin özel yaşamlarının ve haberleşmenin gizliliği ilkeleri güvence altına alınmış, kanuna aykırı olarak elde edilen bulguların delil olarak kabul edilemeyeceği ifade edilmiş, 5271 Sayılı Ceza Muhakemesi Kanunu’nun 119/1. maddesinde Hakim kararı üzerine veya gecikmesinde sakınca bulunan hallerde Cumhuriyet Savcısının, Cumhuriyet Savcısına ulaşılamayan hallerde ise kolluk amirinin yazılı emri ile kolluk görevlilerinin arama yapabileceği, ancak; konutta, işyerinde ve kamuya açık olmayan kapalı alanlarda arama hakim kararı veya gecikmesinde sakınca bulunan hallerde Cumhuriyet Savcısının yazılı emri ile arama yapmanın mümkün olacağı düzenlenmiştir. Aynı Kanun’un 206/2-a ve 217/2. maddelerinde de yasa ve hukuka aykırı delillerin hükme esas alınamayacağı öngörülmüştür.</p>
+
+<p>Somut olayda; 12.10.2012 günü saat 04:35 sıralarında ilçe haber merkezinin Devlet Karayolu 21 sokak No:50 Sayılı yerde kumar oynandığının bildirilmesi üzerine olay yerine intikal eden kolluk görevlilerinin sanığın, abisinin bekar evi olduğunu söylediği konuta girerek suça konu kumar malzemelerini ele geçirdiği, yetkili merciilerce usülüne uygun verilmiş bir arama kararı bulunmadan hukuka aykırı olarak ele geçen deliller dışında sanığın atılı suçu işlediğine dair hukuka uygun olarak elde edilmiş, mahkumiyetine yeterli, her türlü şüpheden uzak, kesin ve yeterli delil elde edilemediğinden sanığın beraati yerine yazılı şekilde mahkumiyetine karar verilmesi,</p>
+
+<p>SONUÇ : Yasaya aykırı, Cumhuriyet Savcısının temyiz itirazları bu itibarla yerinde görülmüş olduğundan hükmün bu sebepten dolayı 5320 Sayılı Kanun’un 8/1. maddesi uyarınca uygulanması gereken 1412 Sayılı CMUK.nun 321. maddesi gereğince BOZULMASINA, 26.01.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 8. CEZA DAİRESİ
+Esas: 2016/2055 Karar: 2017/504</strong> Tarih: 19.01.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 119. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Arama Kararı</strong></p>
+  </li>
+</ul>
+
+<p>KARAR : Türkiye Cumhuriyet Anayasası’nın , kişilerin özel yaşamlarının ve haberleşmenin gizliliği ilkeleri güvence altına alınmış, , kanuna aykırı olarak elde edilen bulguların delil olarak kabul edilemeyeceği ifade edilmiş, 5271 Sayılı Ceza Muhakemesi Kanunu’nun 119/2. maddesinde arama karar veya emrinde; aramanın nedenini oluşturan fiil, aranılacak kişi, aramanın yapılacağı konut veya diğer yerlerin adresi ya da eşya, karar veya emrin geçerli olacağı zaman süresinin açıkça gösterilmesi gerektiği belirtilmiş, aynı Kanun’un 206/2-a ve 217/2. maddelerinde de yasa ve hukuka aykırı delillerin hükme esas alınamayacağı açıklanmıştır.</p>
+
+<p>Somut olayda Cumhuriyet Savcılığınca uyuşturucu ticareti yapmak suçundan sanık ile kendisiyle aynı ismi taşıyan ve farklı konutta oturan babası hakkında iki ayrı adreste arama yapılmasına karar verilmesi talep edilmesine karşın, mahkumiyet kararında esas alınan Bandırma Sulh Ceza Mahkemesi’nin 24.07.2014 gün ve 2014/50 D.iş sayılı arama kararında, sanık ve babasının üzerinde ve sanığın babasının “… Mahallesi … Caddesi No:83” sayılı ikamet adresinde arama yapılmasına karar verildiği, sanığın babasına ait bu adreste yapılan arama sonucu suç unsuruna rastlanılmadığı; suça konu silahın bulunduğu sanığa ait … Mahallesi … Sokak No:14 Sayılı yerde ise arama yapılabileceğine dair usulüne uygun bir arama kararının bulunmadığı halde, anılan yerde yapılan arama ve elkoyma işlemlerinin hukuka aykırı olduğu, ele geçirilen suç eşyasının hukuka aykırı yöntemle elde edilmiş delil olmasından dolayı hükme esas alınamayacağı gözetilmeden, sanık hakkında atılı suçtan yazılı şekilde mahkumiyet hükmü kurulması,</p>
+
+<p>SONUÇ : Yasaya aykırı, sanık müdafinin temyiz itirazları bu itibarla yerinde görülmüş olduğundan hükmün bu sebeplerden dolayı 5320 Sayılı Kanun’un 8/1. maddesi uyarınca uygulanması gereken 1412 Sayılı CMUK.nun 321. maddesi gereğince BOZULMASINA, 19.01.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 19. CEZA DAİRESİ
+Esas: 2016/10337 Karar: 2017/149</strong> Tarih: 11.01.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 119. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Arama Kararı</strong></p>
+  </li>
+</ul>
+
+<p>KARAR : Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Ceza Muhakemesinin amacı; sosyal düzenin korunması ile kişilerin hak ve özgürlüklerine saygı arasında bir denge kurulması suretiyle hukuken geçerli kanıtlarla hiçbir duraksamaya yer vermeden maddi gerçeğin ortaya çıkarılmasıdır.</p>
+
+<p>Ceza Muhakemesi hukukumuz ‘‘delil serbestliği’’ ilkesini benimsemiş, delilleri değerlendirmede de hakime tam bir serbestlik tanınmıştır. Delillerin hukuka uygun yöntemlerle toplanması zorunludur.</p>
+
+<p>Delillerin bir ya da bir kaçının hukuka aykırı yöntemlerle elde edilmesi hukuka uygun yöntemle elde edilen diğer delillerin yok sayılmasını gerektirecek midir?</p>
+
+<p>Avrupa İnsan Hakları Sözleşmesinde sunulan kanıtların kabul edilebilir olup olmadığına karar verme usulünü gösteren ve hangi kanıtların kabul edilebilir olduğunu, hangilerinin kabul edilemez olduğunu belirleyen bir kural olmadığı gibi, Avrupa İnsan Hakları Mahkemesi de “ İç hukukta yeterli hukuki temeli bulunmadan veya hukuka aykırı vasıtalar kullanılarak elde edilmiş materyallerin yargılamada kanıt olarak kullanılması kural olarak, başvurucuya gerekli usulü güvencelerin sağlanmış olması ve materyelin baskı, zorlama ve tuzak gibi yargılamayı lekeleyebilecek nitelikli ve kaynaklı olmaması şartıyla, sözleşmenin (1) numaralı fıkrasındaki adil yargılanma standartlarına aykırılık oluşturmaz “ ( Chalkley/ Birleşik Krallık [kk] B.No: 26.09.2002)</p>
+
+<p>Bir delilin, diğer yan delillerle desteklenmemiş olması, mutlak suretle adil yargılanma hakkı bakımından sorun oluşturmaz. Mahkemece hükme esas alınan bir delilin çok kuvvetli olması ve güvenilirliği konusunda herhangi bir risk bulunmaması, destekleyici delillere olan ihtiyacın yoğunluğunu azaltır. Buna karşılık gücü ve güvenilirliği konusunda birtakım şüpheler bulunan bir delilin, suçun sübutu konusunda ulaşılan vicdani kanaat bakımından belirleyici olması halinde, bu durum hakkaniyete uygun yargılanma hakkı bakımından sorun oluşturabilir “ (Güllüzar Erman, B. No: 2012/542 04.11.2014) şeklinde kararlar vermiştir.</p>
+
+<p>5271 Sayılı Ceza Muhakemesi Kanununun 230. madde5271 Sayılı Ceza Muhakemesi Kanununun 230. madde 1. fıkra (b) bendinde ‘‘mahkumiyet hükmünün gerekçesinde dosya içerisinde bulunan ve hukuka aykırı yöntemlerle elde edilen deliller ayrıca ve açıkça’’ gösterilir denilmek suretiyle hukuka uygun yöntemlerle elde edilen diğer delillerin geçerliliğini koruyacağı benimsenmiştir.</p>
+
+<p>Temyiz davasına konu olayda her ne kadar 16.12.2008 tarihinde yapılan aramada CMK’nın 119/4. maddesi uyarınca o yer ihtiyar heyetinden veya komşulardan iki kişi hazır bulundurulmamış ise de; sanığın arama işleminin içeriğine herhangi bir itirazının bulunmaması, mahkeme huzurundaki beyanı ve hükmün münhasıran arama sonucu elde edilen delile dayanmaması karşısında suçun sübutuna dair yerel mahkeme kararında bir isabetsizlik görülmemiştir.</p>
+
+<p>Hakkında hükmün açıklanmasının geri bırakılması kararı verilen ve CMK’nın 231/8. maddesinde sayılan denetimli serbestlik tedbirine dair yükümlülükleri yerine getiremeyen sanıkların durumunun değerlendirilip, aynı maddenin 11. fıkrasına göre cezanın bir kısmının infaz edilmemesine, hapis cezasının ertelenmesine veya seçenek yaptırımlara çevrilmesine dair yeni bir hüküm kurulması mümkün ise de, denetim süresi içinde kasten yeni bir suç işleyen sanık hakkında, açıklanması geri bırakılan hükümde herhangi bir değişiklik yapılma imkanının bulunmadığı, hükmün ilk şekliyle açıklanması gerektiğinin gözetilmemesi aleyhe temyiz bulunmadığından bozma nedeni yapılmamıştır.</p>
+
+<p>Usulüne uygun şikayet bulunduğu halde sanık hakkında 5846 Sayılı Kanun’un 71/1, 81/13. maddelerinin uygulanmamış ise de aleyhe temyiz bulunmadığından bozma nedeni yapılmamıştır.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar belgeler ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>Yükletilen suçun sanık tarafından işlendiğinin kanuna uygun olarak yürütülen duruşma sonucu saptandığı, bütün kanıtlarla aşamalarda ileri sürülen iddia ve savunmaların temyiz denetimini sağlayacak biçimde ve eksiksiz sergilendiği, özleri değiştirilmeksizin tartışıldığı, vicdani kanının kesin, tutarlı ve çelişmeyen verilere dayandırıldığı,</p>
+
+<p>Eylemin doğru olarak nitelendirildiği ve Kanun’da öngörülen suç tiplerine uyduğu,</p>
+
+<p>Cezanın kanuni bağlamda uygulandığı,</p>
+
+<p>SONUÇ : Anlaşıldığından, sanığın temyiz nedenleri yerinde görülmemiş olmakla, tebliğnameye uygun olarak, TEMYİZ DAVASININ ESASTAN REDDİYLE HÜKMÜN ONANMASINA, 11.01.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 21. CEZA DAİRESİ
+Esas: 2016/8076 Karar: 2016/4991</strong> Tarih: 07.06.2016</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 119. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Arama Kararı</strong></p>
+  </li>
+</ul>
+
+<p>Sanık … hakkında 6136 Sayılı Kanununa muhalefet ve resmi belgede sahtecilik, sanık hakkında 6136 Sayılı Kanununa muhalefet suçundan yapılan yargılama sonucunda; sanıkların mahkumiyetlerine dair Bingöl 2. Asliye Ceza Mahkemesince verilen 21.10.2008 gün, 2007/205 Esas, 2008/403 Karar sayılı hükmün sanıklar müdafii tarafından temyizi üzerine,</p>
+
+<p>Dairemizin 09.03.2016 gün ve 2015/5742 Esas, 2016/2217 Karar sayılı bozma kararı ile; “Cumhuriyet savcısı hazır bulunmaksızın konutta yapılan arama sırasında, CMK’nın 119/4. maddesindeki, “o yer ihtiyar heyetinden veya komşulardan iki kişi bulundurulur” hükmünün ihlal edilmesi sebebiyle aramanın hukuka aykırı hale geldiği, bu durumda hukuka aykırı olarak elde edildiği anlaşılan, tabanca, şarjör ve fişeklerle, sanık …‘in, hukuka aykırı olarak yapılan aramada ele geçirilen … yazılı, … seri numaralı tabancanın ruhsatlı olduğunu düşünerek cüzdanından çıkartıp kolluk kuvvetlerince ibraz ettiği sahte silah taşıma ruhsatının mahkumiyet hükmüne esas alınamayacağı” kabul edilerek sanık …‘in üzerine atılı 6136 Sayılı Kanununa muhalefet ve resmi belgede sahtecilik, sanık …‘in, üzerine atılı 6136 Sayılı Kanuna muhalefet suçlarını işlediklerine dair her türlü kuşkudan uzak, kesin ve yeterli delil bulunmadığından beraatleri yerine, mahkumiyetlerine hükmedilmiş olması sebebiyle verilen bozma kararına karşı,</p>
+
+<p>Yargıtay Cumhuriyet Başsavcılığınca “Uyuşmazlığa konu olayda, aramaya dört kolluk görevlisi ile sanığın katıldığı, bununla birlikte Kanun’un arama sırasında bulunmasını istediği diğer kişilerin katılmadığı, bunun da şeklen hukuka aykırı olduğu ve 5271 Sayılı CYY’nın 217. maddesinin 2. fıkras 2. fıkrasında; “Yüklenen suç, hukuka uygun bir şekilde elde edilmiş her türlü delille ispat edilebilir” şeklindeki hüküm uyarınca, arama sonucu elde edilen delilin hukuka uygun biçimde elde edilen delil niteliğinde bulunmadığı ileri sürülebilir ise de; usulüne göre alınmış bir arama kararı bulunan somut olayda, bu karara ve kararın infazı sırasında yapılan işlemlere yönelik bir itiraz vaki olmadığı gibi, arama işlemine ve arama yapılırken bir takım haklarının ihlal edildiğine yönelik olarak sanıktan gelen herhangi bir yakınma da bulunmadığı, sırf arama sırasında şekle dair bir koşulun ihlal edilmesine dayanılarak aramanın hukuka aykırı sayılamacağı ve ele geçen delillerin “hukuka aykırı biçimde elde edilmiş delil” olarak nitelenemeyeceğinin kabulü gerektiğinden” bahisle yapılan itiraz üzerine dosya Dairemize gönderilmekle,</p>
+
+<p>İncelenerek gereği görüşüldü:</p>
+
+<p>KARAR : Dosya içeriği ve Dairemizin kararındaki gerekçeye göre;</p>
+
+<p>Yargıtay Cumhuriyet Başsavcılığı’nın itirazları yerinde görülmediğinden KARARIN DÜZELTİLMESİNE YER OLMADIĞINA,</p>
+
+<p>SONUÇ : 6352 Sayılı Kanun ile değişik 5271 Sayılı CMK’nun 308/3. maddesi uyarınca itiraz konusunda karar verilmek üzere dosyanın Yargıtay Ceza Genel Kurulu’na gönderilmek üzere Yargıtay Cumhuriyet Başsavcılığına TEVDİİNE, 07.06.2016 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 7. CEZA DAİRESİ
+Esas: 2014/26034 Karar: 2016/6920</strong> Tarih: 04.05.2016</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 119. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Arama Kararı</strong></p>
+  </li>
+</ul>
+
+<p>KARAR : … Bağcılar İlçe Emniyet Müdürlüğü’ne yapılan ihbar sonucu olay tarihinde … Hopa Şubesi’nden … Taşocağı Şubesi’ne gönderilen ve göndericisi…, alıcısı …olarak görünen JD 836652 numaralı kargonun alıcısının kargoyu almaya gelmediği, kargoda toplam 970 paket kaçak sigaranın ele geçirildiği, yapılan araştırmalara rağmen adı geçen şahısların kim olduklarının tespit edilemediği, bu şekilde … Hopa Şubesi yetkilisi olan sanığın 5607 Sayılı Yasa’ya muhalefet suçunu işlediği iddiası ile açılan davanın yargılaması sonucunda 4733 Sayılı Kanun hükümleri uygulanmak suretiyle sanığın cezalandırılmasına karar verilmiş ise de,</p>
+
+<p>5271 Sayılı CMK’nun 116/1. maddesinde5271 Sayılı CMK’nun 116/1. maddesinde “Yakalanabileceği veya suç delillerinin elde edilebileceği hususunda makul şüphe varsa; şüphelinin veya sanığın üstü, eşyası, konutu, işyeri veya ona ait diğer yerler aranabilir.”; 117/1. maddesinde “Şüphelinin veya sanığın yakalanabilmesi veya suç delillerinin elde edilebilmesi amacıyla, diğer bir kişinin de üstü, eşyası, konutu, işyeri veya ona ait diğer yerler aranabilir.”; 117/2. maddesinde “Bu hâllerde aramanın yapılması, aranılan kişinin veya suçun delillerinin belirtilen yerlerde bulunduğunun kabul edilebilmesine olanak sağlayan olayların varlığına bağlıdır.”; 119/1. maddesinde “Hâkim kararı üzerine veya gecikmesinde sakınca bulunan hâllerde Cumhuriyet savcısının, Cumhuriyet savcısına ulaşılamadığı hallerde ise kolluk amirinin yazılı emri ile kolluk görevlileri arama yapabilirler. Ancak, konutta, işyerinde ve kamuya açık olmayan kapalı alanlarda arama, hâkim kararı veya gecikmesinde sakınca bulunan hallerde Cumhuriyet savcısının yazılı emri ile yapılabilir. Kolluk amirinin yazılı emri ile yapılan arama sonuçları Cumhuriyet Başsavcılığına derhal bildirilir.”; 119/4. maddesinde “Cumhuriyet savcısı hazır olmaksızın konut, işyeri veya diğer kapalı yerlerde arama yapabilmek için o yer ihtiyar heyetinden veya komşulardan iki kişi bulundurulur.” şeklinde düzenlemeler yer almaktadır.</p>
+
+<p>Yine, 5271 Sayılı CMK’nun 206/2-a. maddesinde ortaya konulmak istenen delilin kanuna aykırı olarak elde edilmiş olması durumunda reddolunacağı; 217/2. maddesinde yüklenen suçun hukuka uygun bir şekilde elde edilmiş her türlü delille ispat edilebileceği; 230/1-b. maddesinde mahkûmiyet hükmünün gerekçesinde delillerin tartışılması ve değerlendirilmesi, hükme esas alınan ve reddedilen delillerin belirtilmesi, bu kapsamda dosya içerisinde bulunan ve hukuka aykırı yöntemlerle elde edilen delillerin ayrıca ve açıkça gösterilmesi gerektiği hususları hüküm altına alınmıştır.</p>
+
+<p>Somut olayda, ihbar üzerine, … Taşocağı Şubesi’nde kolluk görevlileri tarafından yapılan arama sonucunda davaya konu bandrolsüz ve kaçak sigaralar ele geçirilmiş ise de, hâkim kararı veya gecikmesinde sakınca bulunan hal sebebiyle Cumhuriyet savcısı tarafından verilmiş yazılı arama emri bulunmadığı gibi, o yer ihtiyar heyetinden veya komşulardan iki kişinin de arama sırasında hazır bulundurulmadığı anlaşılmakla, yapılan arama işleminin hukuka aykırı olduğunun, arama sonucuda ele geçen davaya konu eşyanın da hukuka aykırı yöntemle elde edilmiş delil olduğunun ve ele geçen eşyanın delil olarak hükme esas alınamayacağının kabulü gerekmektedir.</p>
+
+<p>Sanığın aşamalarda inkara yönelik savunmada bulunduğu ve dosyadaki hukuka aykırı yöntemlerle elde edilmiş delillerin değerlendirme dışı bırakılması halinde ise, sanığın cezalandırılmasına yeterli şüpheden uzak delilin bulunmadığı gözetilerek, sanığın beraati yerine, delillerin takdirinde yanılgıya düşülmek suretiyle yazılı şekilde hüküm kurulması,</p>
+
+<p>SONUÇ : Yasaya aykırı, sanığın temyiz itirazları bu itibarla yerinde görüldüğünden, hükmün 5320 Sayılı Kanun’un 8/1. maddesi gereğince yürürlükte bulunan 1412 Sayılı CMUK’nun 321. maddesi uyarınca BOZULMASINA, 04.05.2016 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 20. CEZA DAİRESİ
+Esas: 2016/844 Karar: 2016/2525</strong> Tarih: 27.04.2016</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 119. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Arama Kararı</strong></p>
+  </li>
+</ul>
+
+<p>KARAR : Temyiz incelemesi sanık hakkında duruşmalı olarak yapılmıştır.</p>
+
+<p>Yargılama sürecindeki işlemlerin kanuna uygun olarak yapıldığı, delillerin gerekçeli kararda gösterilip tartışıldığı, vicdanî kanının dosya içindeki belge ve bilgilerle uyumlu olarak kesin verilere dayandırıldığı, eylemin sanık tarafından gerçekleştirildiğinin saptandığı, eyleme uyan suç tipi ile yaptırımların aşağıda belirtilenler dışında doğru biçimde belirlendiği anlaşıldığından; yerinde görülmeyen sair temyiz itirazlarının reddine, ancak;</p>
+
+<p>1-)Yargıtay Ceza Genel Kurulu’nun 2013/610 - 2013/841 - 2014/166 - 514 Sayılı kararlarında da belirtildiği üzere; adli arama kararı gerektiren bir olayda önleme araması kararına dayanılarak ya da koşullarına uygun olmayan arama kararı üzerine yapılan arama hukuka aykırıdır. Böyle bir arama sonucu bulunan deliller ya da suçun maddi konusu “hukuka aykırı yöntemlerle elde edilmiş” olacağından, Anayasa’nın 38. maddesinin 6. fıkras 6. fıkrası ile CMK’nın 206. maddesinin 2. fıkras 2. fıkrasının (a) bendi, 217. maddesinin 2. fıkras 2. fıkrası, 230. maddesinin 1. fıkras 1. fıkrasının (b) bendi ve 289. maddesinin 1. fıkras 1. fıkrasının (i) bendi uyarınca hükme esas alınamaz.</p>
+
+<p>Somut olayda 34 … plakalı araçta uyuşturucu madde ticareti yapıldığına dair alınan ihbar üzerine, bahse konu araç tespit edilip bir müddet takip edildikten sonra durdurularak CMK’nın 116,, 117, 119. maddelerine uygun şekilde “adli arama kararı” veya “yazılı adli arama emri” alınmadan, “Şişli Kaymakamlığının önleme araması kararına” dayanılarak araçta yapılan arama sonucu suç konusu uyuşturucu madde ele geçirilmiştir. Bu arama sonucu bulunan uyuşturucu madde hem “suçun maddi konusu” hem de “suçun delili” olup hukuka aykırı yöntemle elde edildiğinden hükme esas alınamayacağı gözetilerek, olayla ilgili adli arama kararı ya da yazılı adli arama emri olup olmadığının araştırılması, varsa aslı veya onaylı örneğinin getirtilmesi, sonucuna göre sanığın hukuki durumunun belirlenmesi gerekirken, eksik araştırma ile hüküm kurulması,</p>
+
+<p>2-)Anayasa Mahkemesi’nin 08.10.2015 tarih ve E.2014/140; K.2015/85 Sayılı kararının 24.11.2015 tarih ve 29542 Sayılı Resmi Gazete’de yayımlanarak yürürlüğe girmiş olması sebebiyle TCK’nın 53. maddesiyle ilgili olarak yeniden değerlendirme yapılmasında zorunluluk bulunması,</p>
+
+<p>SONUÇ : Bozmayı gerektirmiş, sanık müdafiinin temyiz itirazları ile duruşmadaki sözlü savunmaları bu sebeplerle yerinde olduğundan, hükmün BOZULMASINA, tutuklama koşullarında bir değişiklik bulunmamasına ve tutuklu kaldığı süreye göre sanık müdafiinin tahliye talebinin reddine, 27.04.2016 tarihinde üye …‘nun karşı oyu ve oyçokluğuyla karar verildi.</p>
+
+<p>KARŞI OY :</p>
+
+<p>… plakalı araçta uyuşturucu madde ticareti yapıldığına dair alınan ihbar üzerine kolluk görevlilerince bahse konu aracın tespit edilerek takibe alındığı trafiğin durduğu anda aracı kontrol için aracın yanına giden kolluk görevlilerinin polis olduğunu anlayan sanığın aracı önce kolluk görevlilerinin üzerine sürerek kaçmaya çalıştığı, sağında ve solunda bulunan araçlara çarptığı, daha sonra aracın kapılarını da açık bırakarak araçtan inip yaya olarak kaçmaya başladığı kovalamaca sonucu yakalandığı, aracın ön sağ koltuk üzerinde bulunan poşetin incelenmesinde poşetin içinde iki parça halinde 5016 adet uyuşturucu madde içeren hapların ele geçirildiği,</p>
+
+<p>Aramada amaç gizli ve saklı tutulan bir suç unsurunun ortaya çıkarılmasıdır. Kişinin gizlemediği ve kendi istemi ile alenileştirdiği eşyalar için bir aramadan söz edilemeyeceği için bir arama kararı alınmasına da gerek yoktur. Çünkü birisine ait korunması gereken özel bir gizlilik alanı söz konusu olmadığından terk edilen eşya üzerinde yapılan inceleme bir arama değildir.</p>
+
+<p>Suça konu uyuşturucu maddelerin ele geçirildiği araç nitelik itibariyle eşya kavramına dahildir bir kişinin mülkiyetinde veya zilyetliliğinde olan bir araçta kolluk görevlilerinin delil elde etmek için inceleme yapmaları aramadır. Ancak aracı kullanan kişi aracı, kolluk görevlilerinin müdahale edilebileceğini öngörebilecek şekilde terk etmiş ise bu halde aracın içerisinde yapılacak inceleme arama sayılmayacağı için çoğunluğun görüşüne katılmıyorum.</p>
+
+<hr>
+
+<p><strong>YARGITAY 9. CEZA DAİRESİ
+Esas: 2015/1397 Karar: 2016/2404</strong> Tarih: 14.03.2016</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 119. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Arama Kararı</strong></p>
+  </li>
+</ul>
+
+<p>KARAR : 1- Sanıklar …, …, …, … hakkında kullanmak için uyuşturucu madde suçundan kurulan hükümlere yönelik yapılan temyiz incelemesinde;</p>
+
+<p>Sanıklar hakkında kullanmak için uyuşturucu veya uyarıcı madde bulundurma suçundan dolayı başka dava olup olmadığı, varsa sanıkların bu suçu diğer davaya konu olan suç nedeniyle verilen tedavi ve/veya denetimli serbestlik tedbirinin infazı sırasında işleyip işlemedikleri belirlendikten sonra;</p>
+
+<p>a) Sanıklar hakkında aynı suçtan açılmış başka dava yoksa veya sanıklar bu suçu daha önce işlediği suçtan dolayı verilen tedavi ve/veya denetimli serbestlik tedbirinin infazı sırasında işlemiş değilse, bu suç nedeniyle tedavi ve/veya denetimli serbestlik tedbiri uygulanmamış olan sanıklar hakkında, hükümden sonra 28.06.2014 tarihli Resmi Gazete’de yayımlanarak yürürlüğe giren 6545 sayılı Kanun’un 68. maddesi ile değiştirilen TCK’nın 191. maddesi ve aynı Kanun’un 85. maddesi ile 5320 sayılı Kanun’a eklenen geçici 7. maddenin 2. fıkras 2. fıkrası uyarınca, 191. madde hükümleri çerçevesinde “hükmün açıklanmasının geri bırakılmasına”,</p>
+
+<p>b) Sanıklar bu suçu, daha önce işlediği suçtan dolayı yapılan kovuşturma aşamasında hükmolunan tedavi ve/veya denetimli serbestlik tedbirinin infazı sırasında işlemiş ise, 6545 sayılı Kanun’un 68. maddesi ile değiştirilen TCK’nın 191. maddesinin 5. fıkras 5. fıkrasında öngörülen “Erteleme süresi zarfında kişinin kullanmak için tekrar uyuşturucu veya uyarıcı madde satın alması, kabul etmesi veya bulundurması ya da uyuşturucu veya uyarıcı madde kullanması, dördüncü fıkra uyarınca ihlâl nedeni sayılır ve ayrı bir soruşturma ve kovuşturma konusu yapılmaz” hükmü uyarınca, ikinci suçtan açılan bu davanın kovuşturma şartının ortadan kalkması nedeniyle, CMK’nın 223. maddesinin 8. fıkras 8. fıkrası uyarınca “davanın düşmesine” karar verilmesinde zorunluluk bulunması,</p>
+
+<p>2- Sanık … hakkında uyuşturucu madde temin etme suçundan kurulan hükme yönelik temyize gelince;</p>
+
+<p>Olay, yakalama ve muhafaza altına alma tutanağına göre; sanığın içinde bulunduğu … … plaka sayılı araç durdurularak herhangi bir arama kararı bulunmadan yapılan aramasında aracın torpido gözünde yeşil renkli poşet içerisinde suça konu esrar maddesinin ele geçirildiği, yapılan aramanın CMK’nın 119/4. maddesine aykırı olarak yapıldığı, Anayasanın 38/6. maddesinin “Kanuna aykırı olarak elde edilmiş bulgular, delil olarak kabul edilemez”, CMK’nın 217/2. maddesinin “yüklenen suç, hukuka uygun bir şekilde elde edilmiş her türlü delille ispat edilebilir.”, 206/2-a maddesinin “ortaya konulması istenilen bir delil kanuna aykırı olarak elde edilmişse reddolunur” hükümlerine aykırı olarak gerçekleştirilen hukuka uygun olmayan arama işlemleri sonucunda elde edilen maddi delillerin hükme esas alınamayacağı, sanığın tüm aşamalarda uyuşturucu madde temin etmediği yönündeki suçu inkara yönelik savunmaları ve kullanmak için uyuşturucu madde bulundurma suçundan mahkumiyetlerine karar verilen sanıklar …, …, …, …‘in suç tarihinden çok sonra hastahaneye sevk edilip uyuşturucu kullandıklarının tespit edilmiş olması karşısında; hukuka aykırı yöntemlerle elde edilen delillerin değerlendirme dışı tutulması halinde, sanığın yüklenen suçtan cezalandırılmasına yeterli delil bulunmadığı gözetilmeden, beraati yerine mahkumiyetine karar verilmesi,</p>
+
+<p>SONUÇ : Bozmayı gerektirmiş, sanıklar …, …, …, … ile sanık … müdafiinin temyiz itirazları bu itibarla yerinde görüldüğünden hükümlerin bu sebeplerden dolayı BOZULMASINA, 14.03.2016 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 9. CEZA DAİRESİ
+Esas: 2016/11 Karar: 2016/918</strong> Tarih: 09.02.2016</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 119. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Arama Kararı</strong></p>
+  </li>
+</ul>
+
+<p>KARAR : 1- )Sanık hakkında kullanmak için uyuşturucu madde bulundurma suçundan verilen kararın incelenmesinde;</p>
+
+<p>TCK’nın 191. maddesindeTCK’nın 191. maddesinde değişiklik yapan 6545 Sayılı Kanun’un yürürlüğe girdiği 28.06.2014 tarihine kadar verilen kararlarla ilgili olarak;</p>
+
+<p>Kullanmak için uyuşturucu veya uyarıcı madde satın alma, kabul etme veya bulundurma suçundan dolayı, TCK’nın 191. maddesinin 2. fıkras 2. fıkrası gereğince verilen “tedavi ve denetimli serbestlik tedbiri uygulanmasına” dair kararın, sözü edilen fıkraya 14.04.2011 tarihinde yürürlüğe giren 6217 Sayılı Kanun ile eklenen son cümleye göre, durma kararı niteliğinde olup itiraz kanun yoluna tabi olması nedeniyle, inceleme yapılmasına yer olmadığına, gereğinin merciince yerine getirilmesine,</p>
+
+<p>2- )Sanık hakkında kenevir ekme suçundan kurulan hükmün incelenmesinde;</p>
+
+<p>Hükümden sonra 24.11.2015 tarih ve 29542 Sayılı Resmi Gazetede yayımlanarak yürürlüğe giren ve TCK’nın 53. maddesinin bazı hükümlerini iptal eden Anayasa Mahkemesi’nin 08.10.2015 tarih ve 2014/140-2015/85 Sayılı kararının infaz aşamasında dikkate alınması mümkün görülmüştür.</p>
+
+<p>Yapılan yargılama sonunda aşamalarda ileri sürülen iddia ve savunmaların toplanan tüm delillerle birlikte gerekçeli kararda tartışılıp sanığın suçunun sübutu kabul, olay niteliğine ve kovuşturma sonuçlarına uygun şekilde vasfı tayin edilmiş, cezayı azaltıcı sebebin niteliği takdir kılınmış, incelenen dosyaya göre verilen hükümde aşağıdaki husus dışında bir isabetsizlik görülmemiş olduğundan, sanığın yerinde görülmeyen diğer temyiz itirazlarının reddine, ancak;</p>
+
+<p>İstanbul Kriminal Polis Laboratuvarı’nca suça konu kenevir ve uyuşturucu maddelerden alınan numunelerin de müsaderesine karar verilmesi gerektiğinin gözetilmemesi,</p>
+
+<p>Kanuna aykırı olup, hükmün bu sebeple BOZULMASINA, bu hususun yeniden yargılama yapılmaksızın CMUK’nın 322. maddesine göre düzeltilmesi mümkün bulunduğundan; hüküm fıkrasının müsadereye dair bölümünün “7,36 gr kurutulmuş kubar esrar” ibaresinden sonra gelmek üzere “ile İstanbul Kriminal Polis Laboratuvarı’nca suça konu kenevir ve uyuşturucu maddelerden alınan numunelerin” ibaresinin eklenmesi suretiyle diğer yönleri usul ve kanuna uygun olan hükmün DÜZELTİLEREK ONANMASINA,</p>
+
+<p>3- )Sanık hakkında 6136 Sayılı Kanuna muhalefet suçundan kurulan hükmün incelenmesine gelince;</p>
+
+<p>Kolluk tarafından sanığın kaldığı ikamette yapılan aramada suça konu bıçaklar bulunmuş ise de, söz konusu aramanın Cumhuriyet savcısının sözlü talimatına dayanılarak yapılması sebebiyle aramanın CMK’nın 119/1. maddesine aykırı olduğu, Anayasanın 38/6. maddesinin “Kanuna aykırı olarak elde edilmiş bulgular, delil olarak kabul edilemez”, CMK’nın 217/2. maddesinin “yüklenen suç, hukuka uygun bir şekilde elde edilmiş her türlü delille ispat edilebilir.”, aynı Kanunun 206/2-a maddesinin “ortaya konulması istenilen bir delil kanuna aykırı olarak elde edilmişse reddolunur” hükümleri nazara alındığında bahsedilen hukuka uygun olmayan arama işlemleri sonucunda elde edilen maddi delillerin hükme esas alınamayacağı, tüm dosya kapsamına göre hukuka aykırı yöntemlerle elde edilen delillerin değerlendirme dışı tutulması halinde, sanığa yüklenen suçtan cezalandırılmasına yeterli delil bulunmadığı gözetilmeden, beraati yerine mahkumiyetine karar verilmesi,</p>
+
+<p>SONUÇ : Kanuna aykırı, sanığın temyiz itirazları bu itibarla yerinde görüldüğünden, hükmün bu sebepten dolayı BOZULMASINA, 08.02.2016 tarihinde oybirliğiyle karar verildi.Dosya incelenerek gereği düşünüldü:</p>
+
+<p>KARAR : 1- )Sanık … hakkında kurulan hükme dair temyiz incelemesinde;</p>
+
+<p>Yapılan yargılama sonunda aşamalarda ileri sürülen iddia ve savunmaların toplanan tüm delillerle birlikte gerekçeli kararda tartışılıp sanığın suçunun sübutu kabul, olay niteliğine ve kovuşturma sonuçlarına uygun şekilde vasfı tayin edilmiş, incelenen dosyaya göre verilen hükümde bir isabetsizlik görülmemiş olduğundan, sanık müdafiinin yerinde görülmeyen temyiz itirazlarının reddiyle hükmün ONANMASINA,</p>
+
+<p>2- ) Sanıklar …, …, … hakkında kurulan hükümlere dair temyize gelince;</p>
+
+<p>Hükümden sonra 24.11.2015 tarih ve 29542 Sayılı Resmi Gazetede yayımlanarak yürürlüğe giren ve TCK’nın 53. maddesinin bazı hükümlerini iptal eden Anayasa Mahkemesi’nin 08.10.2015 tarih ve 2014/140-2015/85 Sayılı kararının infaz aşamasında dikkate alınması mümkün görülmüştür.</p>
+
+<p>Yapılan yargılama sonunda aşamalarda ileri sürülen iddia ve savunmaların toplanan tüm delillerle birlikte gerekçeli kararda tartışılıp, sanıkların suçunun sübutu kabul, olay niteliğine ve kovuşturma sonuçlarına uygun şekilde vasfı tayin edilmiş, cezayı azaltıcı sebebin niteliği takdir kılınmış, incelenen dosyaya göre verilen hükümlerde aşağıdaki husus dışında bir isabetsizlik görülmemiş olduğundan sanıklar ile müdafilerinin yerinde görülmeyen diğer temyiz itirazlarının reddine,</p>
+
+<p>Ancak;</p>
+
+<p>Adli para cezalarının ödenmemesi halinde 6545 Sayılı Kanun’un 81. maddesiyle değişik 5275 Sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanunun 106. maddesinin 3. fıkras 3. fıkrasının sanıklar hakkında uygulanacağının belirtilmesiyle yetinilmesi gerekirken, infazı kısıtlar biçimde ödenmeyen adli para cezasının kamuya yararlı bir işte çalışma cezasına, bunun ihlal edilmesi halinde açık ceza infaz kurumunda çektirilmek üzere hapse çevrileceğinin sanığa ihtarına karar verilmesi,</p>
+
+<p>Kanuna aykırı olup, hükümlerin bu sebeple BOZULMASINA; ancak bu aykırılığın yeniden yargılama yapılmaksızın CMUK’nın 322. maddesi uyarınca düzeltilmesi mümkün bulunduğundan; sanıklar hakkında kurulan hükümlerden ilgili bölümlerin çıkartılması ve yerine ‘’ Adli para cezasının ödenmemesi halinde 6545 Sayılı Kanun’un 81. maddesiyle değişik 5275 Sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanunun 106. maddesinin 3. fıkras 3. fıkrasının uygulanacağının ihtarına ‘’ cümlesinin eklenmesi suretiyle, diğer yönleri usul ve kanuna uygun olan hükümlerin DÜZELTİLEREK ONANMASINA,</p>
+
+<p>3- ) Sanık … hakkında kurulan hükme dair temyize gelince;</p>
+
+<p>Olay, yakalama, muhafaza altına alma tutanağı, diğer tutanaklar, tanık beyanları; sanık savunması ile diğer sanıkların beyanları ve tüm dosya kapsamından sanığın sübuta eren ve unsurları yönünden oluşan uyuşturucu madde ticareti yapma suçundan mahkumiyeti yerine, yazılı gerekçe ile beraatine karar verilmesi,</p>
+
+<p>SONUÇ : Kanuna aykırı, Cumhuriyet savcısının temyiz itirazları bu sebeple yerinde görülmüş olduğundan, hükmün bu sebepten dolayı BOZULMASINA, 09.02.2016 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 20. CEZA DAİRESİ
+Esas: 2015/13910 Karar: 2015/4822</strong> Tarih: 25.11.2015</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 119. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Arama Kararı</strong></p>
+  </li>
+</ul>
+
+<p>Olay tutanağının içeriğine göre, ihbar üzerine olay yerine giden emniyet güçlerince fiziki takip sonucu sanığın yakalandığı, araçta yapılan aramada 3 gram kokain ele geçirildiği anlaşılmaktadır.</p>
+
+<p>CMK’nın 116, 119. maddelerineCMK’nın 116 ve 119. maddelerine göre “adli arama”, şüphelinin veya sanığın yakalanması ya da suç delillerinin elde edilmesi için yapılan aramadır. Somut bir suçun işlendiği şüphesi varsa adli arama yapılabilir.</p>
+
+<p>Yargıtay Ceza Genel Kurulu’nun 2013/610- 2014/512,, 2013/841-, 2014/513 ve 2014/166-514 sayılı kararlarında da belirtildiği üzere; adli arama kararı gerektiren olayda arama kararı alınmadan arama yapılması hukuka aykırıdır. Böyle bir arama sonucu bulunan deliller ya da suçun maddi konusu “hukuka aykırı yöntemlerle elde edilmiş” olacağından, Anayasa’nın 38. maddesinin 6. fıkras 6. fıkrası ile CMK’nın 206. maddesinin 2. fıkras 2. fıkrasının (a) bendi, 217. maddesinin 2. fıkras 2. fıkrası, 230. maddesinin 1. fıkras 1. fıkrasının (b) bendi ve 289. maddesinin 1. fıkras 1. fıkrasının (i) bendi uyarınca hükme esas alınamaz.</p>
+
+<p>Somut olayda, sanığın, ihbar üzerine fiziki takip sonucu yakalanması nedeniyle faili belli olan bir suçun işlendiği konusunda şüphe oluşmuştur. CMK’nın 116,, 117, 119. maddelerine uygun şekilde “adli arama kararı” alınmadan, sanığın içinde bulunduğu araçta arama yapılması hukuka aykırıdır. Bu arama sonucu bulunan uyuşturucu madde ise hem “suçun maddi konusu” hem de “suçun delili” olup “hukuka aykırı yöntemle elde edildiğinden hükme esas alınamaz.”</p>
+
+<p>İsnat olunan suçun maddi konusu olan uyuşturucu maddenin hukuka aykırı yöntemle elde edilmesi nedeniyle hükme esas alınamayacağı ve buna bağlı olarak suçun unsurunun oluşmadığı gözetilmeden, sanık hakkında beraat yerine mahkûmiyet hükmü kurulması,</p>
+
+<p>Kanuna aykırı, sanık müdafiinin temyiz itirazları bu nedenlerle yerinde olduğundan CMUK’nın 321. maddesi gereğince hükmün BOZULMASINA, bozmanın niteliğine göre sanığın TAHLİYESİNE, başka bir suçtan hükümlü ya da tutuklu bulunmadığı takdirde salıverilmesinin sağlanması için ilgili Cumhuriyet Başsavcılığına yazı yazılmasına, 25.11.2015 tarihinde oybirliği ile, karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 9. CEZA DAİRESİ
+Esas: 2015/9590 Karar: 2015/6316</strong> Tarih: 01.10.2015</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 119. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Arama Kararı</strong></p>
+  </li>
+</ul>
+
+<p>Sanık Alaattin hakkında duruşmalı, diğer sanıklar hakkında duruşmasız olarak yapılan inceleme sonucunda gereği düşünüldü:</p>
+
+<p>Sanık Cüneyt hakkında kurulan beraat hükmüne yönelik temyiz talebi bulunmadığı anlaşıldığından; adı geçen sanık yönünden inceleme yapılmamıştır.</p>
+
+<p>Sanıklar Alaattin, Murat, Vedat, Orhan ve İdris hakkındaki hükümlerin incelenmesinde:</p>
+
+<p>Yapılan yargılama sonunda aşamalarda ileri sürülen iddia ve savunmaların toplanan tüm delillerle birlikte gerekçeli kararda tartışılıp, sanıkların suçlarının sübutu kabul, olay niteliğine ve kovuşturma sonuçlarına uygun şekilde vasfı tayin edilmiş, incelenen dosyaya göre verilen hükümde bir isabetsizlik görülmemiş olduğundan, sanıklar ve sanık Alaattin müdafiinin yerinde görülmeyen temyiz dilekçeleri ile duruşmalı inceleme sırasında sanık Alaattin müdafiinin ileri sürdüğü temyiz itirazlarının reddiyle hükümlerin (ONANMASINA), Üye Şuayip Şen’in karşı oyu ve oyçokluğuyla 01.10.2015 tarihinde karar verildi.</p>
+
+<p>KARŞI OY</p>
+
+<p>Olay tarihinde Bismil İlçe Emniyet Müdürlüğü görevlileri, gece saat 04:00’da Silvan-Bismil karayolunda 47 … 34 … 35 plakalı araçları durdurarak, 47 … 631 plakalı araçtaki Alaattin, Cüneyt, Orhan ile 34 … 35 plakalı araçtaki sürücü Vedat ve Murat’ın kimliklerini tespit etmişler, 34 … 35 plakalı araçta yaptıkları aramada ise arka koltuklar ve bagajda net 576.5 gr gelen esrar maddesi ele geçirmişlerdir.</p>
+
+<p>Sanıklar hakkında Diyarbakır 7. Ağır Ceza Mahkemesine TCK’nın 37/1,, 188/3,, 53,, 54,, 58. maddeleri uyarınca cezalandırılmaları için kamu davası açılmış, yargılama sonunda sanıklar suçlu bulunarak cezalandırılmışlardır.</p>
+
+<p>Temyiz üzerine Dairemiz sayın çoğunluğu arama kararı olmamasına rağmen, yapılan aramayı ve elde edilen delilleri; suçüstü halinin varlığını ileri sürerek hukuka uygun bulmuş ve verilen hükümleri onamışlardır.</p>
+
+<p>Suçüstü halinde arama kararı alınmaksızın yapılan aramanın hukuka uygun olup olmadığı hususu ile arama neticesinde elde edilen delillerin ispat aracı olarak kullanılıp kullanılamayacağı hususları önem taşımaktadır.</p>
+
+<p>Öncelikle suçüstü kavramının açıklanması gerekmektedir.</p>
+
+<p>Suçüstü hali 5271 sayılı CMK’nın 2. maddesinin l/j. fıkrasında tanımlanmaktadır.</p>
+
+<p>Bu tanımlamaya göre; suçüstü; işlenmekte olan suça, henüz işlenmiş olan fiil ile fiilin işlenmesinden hemen sonra kolluk, suçtan zarar gören veya başkaları tarafından takip edilerek yakalanan kişinin işlediği suça ya da fiilin pek az önce işlendiğini gösteren eşya veya delille yakalanan kimsenin işlediği suça denilmektedir. Suçüstü kavramına 5271 sayılı CMK’nın dışında Adli ve Önleme Arama Yönetmeliğinin 4. maddesinde de yer verilmiş, bu düzenlemede de CMK’nın 2/1-j fıkrasındaki tanım aynen tekrarlanmıştır.</p>
+
+<p>Bu yasa maddesinden de açıkça anlaşılacağı üzere, suçüstü ile ilgili düzenlemenin temel amacı failin yakalanmasıdır. Nitekim 5271 sayılı CMK’nın 90/1. fıkrasında suçüstü halinde herkesin faili yakalayabileceği belirtilmiş, 4. fıkrasında ise “kolluk, yakalandığı sırada kaçmasını, kendisine veya başkalarına zarar vermesini önleyecek tedbirler aldıktan sonra, yakalanan kişiye kanuni haklarını derhal bildirir” diyerek kolluk kuvvetlerine, sadece yakalanan kişinin kaçmasını, kendisine veya başkalarına zarar vermesini önleyecek tedbirler alabilmesi için yetki vermiştir. Bu yetki çerçevesinde yakalanan kişinin kaba üst araması yapılabilir ise de, bu aramanın amacı CMK’nın aradığı anlamda ceza yargılaması için delil elde etmek değil, yukarıda da tekrarladığımız gibi yakalanan kişinin kaçmasını, kendisine ve başkalarına zarar vermesini önlemektir.</p>
+
+<p>CMK’nın 90/4. maddesiCMK’nın 90/4. maddesi “kolluk… yakalanan kişiye kanuni haklarını derhal bildirir” demektedir.</p>
+
+<p>Anayasanın 20. maddesiAnayasanın 20. maddesi ve Avrupa İnsan Hakları Sözleşmesinin 8. maddesine göre özel hayatın gizliliği bir haktır. Arama tedbiri de temel ve vazgeçilmez haklardan olan özel hayatın gizliliği hakkına sınırlama getiren ağır bir müdahaledir. Bu nedenle sözkonusu hakka yapılacak müdahalelerin şartları ve sınırları Anayasanın 20, Avrupa İnsan Hakları Sözleşmesinin 8 ve CMK’nın 119/1. maddesinde açıkça gösterilmiştir.</p>
+
+<p>Anayasanın 20. maddesiAnayasanın 20. maddesi:</p>
+
+<p>“Herkes özel hayatına ve aile hayatına saygı gösterilmesini ist akkına sahiptir. Özel hayatın ve aile hayatının gizliliğine dokunulamaz.</p>
+
+<p>Milli güvenlik, kamu düzeni, suç işlenmesinin önlenmesi, genel sağlık ve genel ahlakın korunması veya başkalarının hak ve özgürlüklerinin korunması sebeplerinden biri veya birkaçına bağlı olarak usulüne göre verilmiş hakim kararı olmadıkça; yine bu sebeplere bağlı olarak gecikmesinde sakınca bulunan hallerde de kanunla yetkili kılınmış mercinin yazılı emri bulunmadıkça; kimsenin üstü, özel kağıtları ve eşyası aranamaz ve bunlara el konulamaz. Yetkili mercinin kararı yirmidört saat içinde görevli hakimin onayına sunulur. Hakim, kararını el koymadan itibaren kırksekiz saat içinde açıklar; aksi halde el koyma kendiliğinden kalkar.”</p>
+
+<p>AİHS’in 8. maddesi</p>
+
+<p>1- “Herkes özel ve aile hayatına, konutuna ve haberleşmesine saygı gösterilmesi hakkına sahiptir.</p>
+
+<p>2- Bu hakkın kullanılmasına bir kamu otoritesinin müdahalesi ancak ulusal güvenlik, kamu emniyeti, ülkenin ekonomik refahı, dirlik ve düzeninin korunması, suç işlenmesinin önlenmesi, sağlığın veya ahlakın veya başkalarının hak ve özgürlüklerinin korunması için demokratik bir toplumda zorunlu olan ölçüde ve yasayla öngörülmüş olmak koşuluyla söz konusu olabilir.”</p>
+
+<p>5271 sayılı CMK’nın 119/1. maddesi5271 sayılı CMK’nın 119/1. maddesi;</p>
+
+<p>“Hakim kararı üzerine veya gecikmesinde sakınca bulunan hallerde Cumhuriyet savcısının, Cumhuriyet savcısına ulaşılamadığı hallerde ise kolluk amirinin yazılı emri ile kolluk görevlileri arama yapabilir. Ancak konutta, iş yerinde veya kamuya açık olmayan kapalı alanlarda arama, hakim kararı veya gecikmesinde sakınca bulunan hallerde Cumhuriyet savcısının yazılı emriyle yapılabilir. Kolluk amirinin yazılı emriyle yapılan arama sonuçları Cumhuriyet Başsavcılığına derhal bildirilir.”</p>
+
+<p>Demektedir.</p>
+
+<p>Bu düzenlemelerden de açıkça anlaşılacağı üzere, kişinin üstü ve eşyaları hakim kararı, gecikmesinde sakınca bulunan hallerde Cumhuriyet savcısının yazılı emri, veya CMK’nın 119/1. maddesine göre Cumhuriyet savcısına ulaşılamayan durumlarda kolluk amirinin yazılı emri ile ancak aranabilecektir.</p>
+
+<p>Bu açıklamalardan sonra somut olaya geldiğimizde güvenlik kuvvetlerinin sanıkların kimliklerini tespit ettikleri, zor kullanmak suretiyle de olsa kontrol altına aldıkları, 34 … 35 plakalı araçtaki sanıkların beyanları ve araç içerisinden gelen yoğun koku üzerine araçta bulunan esrar maddesini belirledikleri anlaşılmaktadır.</p>
+
+<p>Bu aşamada sanıkların kaçmaları kendileri ya da başkaları açısından tehlike oluşturmaları söz konusu değildir. Güvenlik kuvvetleri bu aşamadan sonra ilgili düzenlemeler uyarınca önce hakimden, gecikmesinde sakınca görülüyorsa Cumhuriyet savcısından, Cumhuriyet savcısına ulaşılamıyorsa kolluk amirinin yazılı emri ile arama yaparak delilleri toplaması gerekirken, hiç birisine başvurmadan ve arama kararı alma ihtiyacı hissetmeden doğrudan arama yapması hukuka aykırıdır. Bu şekilde ele geçirilen deliller de hukuka aykırı delil niteliğindedir.</p>
+
+<p>Yukarıda belirtilen Anayasa ve CMK’nın hükümlerine nazaran usulsüz arama ile ele geçen delillerin hükme esas alınması, hukuk devleti ilkesini zedeleyeceği, kişilerin Anayasa ile teminat altına alınmış temel hak ve özgürlüklerini korumasız bırakacağı aşikardır.</p>
+
+<p>Bu tespitlere göre yasanın emredici hükümlerine uyulmadan yapılan arama sonucu elde edilen deliller ve bu kapsamda el konulan uyuşturucunun hukuka aykırı olarak elde edilmiş delil niteliğinde olması nedeniyle hükme esas alınamayacağı ve dosya içerisinde başkaca sanıkların cezalandırılmasına yeterli delillerin bulunmadığı gözetilerek, atılı suçtan sanıkların beraati yerine yazılı şekilde hüküm kurulması yasaya aykırı olduğundan, sayın çoğunluğun hükmün onanmasına ilişkin kararına katılmıyorum. 01.10.2015</p>
+
+<hr>
+
+<p><strong>YARGITAY 20. CEZA DAİRESİ
+Esas: 2015/1184 Karar: 2015/1066</strong> Tarih: 27.05.2015</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 119. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Arama Kararı</strong></p>
+  </li>
+</ul>
+
+<p>Olay tutanağının içeriğine göre, kolluk görevlilerince otobüs terminalinde şüphe üzerine sanığın yapılan üst aramasında ve çantasında net 9 gram esrar ele geçirildiği anlaşılmaktadır.</p>
+
+<p>CMK’nın 116, 119. maddelerineCMK’nın 116 ve 119. maddelerine göre “adli arama”, şüphelinin veya sanığın yakalanması ya da suç delillerinin elde edilmesi için yapılan aramadır. Somut bir suçun işlendiği şüphesi varsa adli arama yapılabilir.</p>
+
+<p>Yargıtay Ceza Genel Kurulu’nun 2013/610-2014/512,, 2013/841-, 2014/513 ve 2014/166-514 sayılı kararlarında da belirtildiği üzere; adli arama kararı alınmasını gerektiren olayda arama kararı alınmadan arama yapılması hukuka aykırıdır. Böyle bir arama sonucu bulunan ve suçun maddi konusunu oluşturan deliller ya da suçun maddi konusu “hukuka aykırı yöntemlerle elde edilmiş” olacağından, ikrar bulunsa bile Anayasa’nın 38. maddesinin 6. fıkras 6. fıkrası ile CMK’nın 206. maddesinin 2. fıkras 2. fıkrasının (a) bendi, 217. maddesinin 2. fıkras 2. fıkrası, 230. maddesinin 1. fıkras 1. fıkrasının (b) bendi uyarınca hükme esas alınamaz.</p>
+
+<p>Somut olayda, otobüs terminalinde şüphe üzerine yapılan takip nedeniyle faili belli olan bir suçun işlendiği konusunda şüphe oluşmuştur. CMK’nın 116,, 117, 119. maddelerine uygun şekilde “adli arama kararı” alınmadan, sanığın üzerinde arama yapılması hukuka aykırıdır. Bu arama sonucu bulunan uyuşturucu madde ise hem “suçun maddi konusu” hem de “suçun delili” olup “hukuka aykırı yöntemle elde edildiğinden hükme esas alınamaz.”</p>
+
+<p>Sanık açısından hukuka uygun olarak elde edilmiş bir uyuşturucu veya uyarıcı madde olmadığından, suçun maddi konusunun da bulunmadığı kabul edilmelidir. Bu durumlara bağlı olarak, isnat olunan suçun unsurları oluşmadığından, sanık hakkında beraat yerine mahkumiyet hükmü kurulması kanuna aykırıdır.</p>
+
+<p>İsnat olunan suçun maddi konusu olan uyuşturucu maddenin hukuka aykırı yöntemle elde edilmesi nedeniyle hükme esas alınamayacağı ve buna bağlı olarak suçun unsurunun oluşmadığı gözetilmeden, sanık hakkında beraat yerine mahkumiyet hükmü kurulması,</p>
+
+<p>Sonuç: Kanuna aykırı, Cumhuriyet savcısının ve sanığın temyiz itirazları bu nedenle yerinde olduğundan, hükmün BOZULMASINA, 27.05.2015 tarihinde oybirliği ile, karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 7. CEZA DAİRESİ
+Esas: 2014/17847 Karar: 2015/15564</strong> Tarih: 05.05.2015</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 119. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Arama Kararı</strong></p>
+  </li>
+</ul>
+
+<p>1- Dava konusu edilen ve ele geçirilen kaçak sigaraların miktarı nazara alındığında, cezaların şahsiliği ve uygulama birliğinin sağlanması bakımından daha çok miktarda bandrolsüz sigara satışı yapanla suça konu miktardaki bandrolsüz sigara satışı yapan arasında asgari ve azami had aralığında hakça oranda bir temel ceza belirlenmesi gerekirken, asgari hadden uzaklaşılarak fazla miktarda ceza tayini,</p>
+
+<p>2- Atılı suçun niteliğine göre suçtan zarar görmediği halde davaya katılmasına karar verilen Gümrük İdaresi lehine vekalet ücretine hükmedilmesi,</p>
+
+<p>Yasaya aykırı, sanığın temyiz itirazları bu itibarla yerinde görüldüğünden, hükmün 5320 sayılı Yasa’nın 8/1 inci maddesi gereğince yürürlükte bulunan 1412 sayılı CMUK’nun 321 inci maddesi gereğince hükmün BOZULMASINA, 05.05.2015 tarihinde oyçokluğu ile, karar verildi.</p>
+
+<p>KARŞI OY</p>
+
+<p>5271 sayılı CMK’nın 116-119 uncu maddelerinde5271 sayılı CMK’nın 116-119 uncu maddelerinde arama kararının hangi hallerde ve ne şekilde alınacağı kanun koyucu tarafından açıkça düzenlenmiş olup, sanık ve dava konusu kaçak eşya hakkında mahkemece verilmiş bir arama kararı olmadığı gibi, gecikmesinde sakınca olduğu gerekçesiyle Cumhuriyet Savcısı tarafından da verilmiş bir yazılı arama izni ya da Cumhuriyet Savcısına ulaşılamaması nedeniyle kolluk amirince verilmiş yazılı arama emri de bulunmaması karşısında; hukuka aykırı arama sonucu ele geçen eşyanın yasak delil niteliğinde olduğu, sanığın da aşamalardaki savunmasında içmek için aldığını ifade ettiği anlaşılmakla, Anayasa’nın 38/2, 5271 sayılı CMK’nın 206/2-a,, 217/2,, 230/1 madde ve fıkralarına göre, hukuka aykırı surette elde edilen delillere dayanılarak mahkumiyet hükmü kurulamayacağı hususları gözetilerek sanığın beraati yerine mahkumiyetine karar verilmesinin, usul ve yasaya aykırı olması nedeniyle hükmün bu yönüyle bozulması gerektiği düşüncesindeyiz.</p>
+
+<hr>
+
+<p><strong>YARGITAY 9. CEZA DAİRESİ
+Esas: 2015/2329 Karar: 2015/4847</strong> Tarih: 30.04.2015</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 119. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Arama Kararı</strong></p>
+  </li>
+</ul>
+
+<p>Dosya incelenerek gereği düşünüldü:</p>
+
+<p>CMK’nın 119/1. maddesiCMK’nın 119/1. maddesi uyarınca verilmiş bir arama karan olmaksızın, kolluk tarafından sanık Bayram Tan’ın üzerinde ve yakalandıkları yere yakın demir yaya köprüsünün ayağında yapılan aramada suça konu esrar maddelerinin bulunduğunun 09.10.2009 tarihli tutanakta belirtildiği, üst aramalarının CMK’nın 119/1. maddesine aykırı olarak yapıldığı ve anılan kanunun 217/2, maddesinin “yüklenen suç, hukuka uygun bir şekilde elde edilmiş her türlü delille ispat edilebilir.”, 206/2-a maddesinin “ortaya konulması istenilen bir delil kanuna aykırı olarak elde edilmişse reddolunur” hükümlerine aykırı olarak gerçekleştirilen hukuka uygun olmayan arama işlemleri sonucunda elde edilen maddi delillerin hükme esas alınamayacağı, sanıkların tüm aşamalarda uyuşturucuların kendilerinin üzerinden çıkmadığı, uyuşturucu ticareti yapmadıkları yönündeki suçu inkara yönelik savunmaları ile tüm dosya kapsamı karşısında, hukuka aykırı yöntemlerle elde edilen delillerin değerlendirme dışı tutulması halinde, sanıkların yüklenen suçtan cezalandırılmalarına yeterli her türlü şüpheden uzak delil bulunmadığı gözetilmeden, beraatleri yerine mahkumiyetlerine karar verilmesi.</p>
+
+<p>Sonuç: Kanuna aykırı olup, sanıkların temyiz itirazları bu itibarla yerinde görüldüğünden hükümlerin bu sebeplerden dolayı BOZULMASINA, 30.04.2015 tarihinde oybirliği ile, karar verildi.</p>
+
+<hr>
+
+</div></div></main>
+</div>
+
+<footer>
+<section>
+<div class="contact-info">
+
+<div class="adres">
+
+<div class="telefon-wrapper">
+
+
+</div>
+</div>
+</section>
+
+</div>
+
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+"vars": {
+"account": "UA-58342443-1"
+},
+"triggers": {
+"trackPageview": {
+"on": "visible",
+"request": "pageview"
+}
+}
+}
+</script>
+</amp-analytics>
+
+</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="../../index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="../../dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="../../ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="../../knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="../../search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/slideToggle.min.js"></script>
+    <script src="../js/internet-status.js"></script>
+    <script src="../js/tiny-slider.js"></script>
+    <script src="../js/baguetteBox.min.js"></script>
+    <script src="../js/countdown.js"></script>
+    <script src="../js/rangeslider.min.js"></script>
+    <script src="../js/vanilla-dataTables.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/magic-grid.min.js"></script>
+    <script src="../js/dark-rtl.js"></script>
+    <script src="../js/active.js"></script>
+    <!-- PWA -->
+    <script src="../js/pwa.js"></script>
+  </body>
+</html>

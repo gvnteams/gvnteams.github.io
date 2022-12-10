@@ -1,0 +1,1777 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tiny-slider.css">
+    <link rel="stylesheet" href="../css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="../css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="tck-search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+               <div class="page-content-wrapper py-0">
+        </div>
+      </div>
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<h2 id="kanun-yollarına-başvurma-hakkı">Kanun Yollarına Başvurma Hakkı</h2>
+
+<h2 id="cmk-madde-260">CMK Madde 260</h2>
+
+<p>(1) Hâkim ve mahkeme kararlarına karşı Cumhuriyet savcısı, şüpheli, sanık ve bu Kanuna göre katılan sıfatını almış olanlar ile katılma isteği karara bağlanmamış, reddedilmiş veya katılan sıfatını alabilecek surette suçtan zarar görmüş bulunanlar için kanun yolları açıktır.</p>
+
+<p>(2) (Değişik: 18/6/2014-6545/73 md.) Ağır ceza mahkemelerinde bulunan Cumhuriyet savcıları, ağır ceza mahkemesinin yargı çevresindeki asliye ceza mahkemelerinin; bölge adliye mahkemesinde bulunan Cumhuriyet savcıları, bölge adliye mahkemelerinin kararlarına karşı kanun yollarına başvurabilirler.</p>
+
+<p>(3) Cumhuriyet savcısı, sanık lehine olarak da kanun yollarına başvurabilir.</p>
+
+<hr>
+
+<ul>
+  <li><a href="../5271-sayili-ceza-muhakemesi-kanunu-cmk.html"><strong>5271 sayılı CMK (Ceza Muhakemesi Kanunu) Tam Metin</strong></a></li>
+</ul>
+
+<hr>
+
+<amp-img src="../tokmak-yargitay-kararlari-1280x720.png" alt="CMK Madde 260  Kanun Yollarına Başvurma Hakkı" width="1280" height="720" layout="responsive">
+            </amp-img>
+
+<h2 id="cmk-madde-260-gerekçesi">CMK Madde 260 Gerekçesi</h2>
+
+<p>Madde, birinci fıkrasında, insan hakları ve adil yargılama ilkesi bakımından büyük önem taşıyan bir hususu kural olarak açıklamaktadır: Hâkim ve mahkeme kararlarına karşı kanun yolları açık olup, bu konudaki başvurular ayrı bir hâkim veya mahkeme tarafından incelenecektir. Böylece, varsa, hukuka aykırılık veya yanlışlıkların giderilmesi, doğru ve adalete uygun kararlarla, taraflarda ve toplumda güven duygusunun güçlendirilmesi amaçlanmıştır.</p>
+
+<p>Kanun yolunun kapalı olduğu hâller ile incelemenin kararı veren hâkim veya mahkemece yapılabileceği istisnalar, yerinde ve açık hükümlerle belirtilmiştir.
+Madde gereğince Cumhuriyet savcısı, şüpheli, sanık ve bu Kanuna göre davaya katılan sıfatını almış olanlar ile bu konudaki istekleri mahkemece reddedilmiş veya 249 uncu madde kapsamında bulunup duruşmadan haberdar edilmemiş suçtan zarar görmüş kişiler de kanun yollarına başvuru hakkına sahiptirler. Cumhuriyet savcısı sanık lehine olarak da kanun yoluna başvurabilir.</p>
+
+<p>Şüpheli, sanık ve davaya katılan ile katılma istemi reddedilmiş veya duruşmadan haberdar edilmemiş olan suçtan zarar görenler ancak hukukî çıkarlarını ihlâl etmiş olan karara karşı kanun yoluna başvurabilirler; aksi hâlde yetkileri yoktur.</p>
+
+<p>Ayrıca ikinci fıkrayla, asliye ceza mahkemesi Cumhuriyet savcılarının, mahkemelerinin yargı çevresindeki sulh ceza mahkemelerinin; ağır ceza mahkemeleri Cumhuriyet savcılarının ağır ceza mahkemesinin yargı alanı çevresindeki asliye ve sulh ceza mahkemelerinin; bölge adliye mahkemesi Cumhuriyet savcılarının da bölge adliye mahkemelerinin kararlarına karşı kanun yollarına başvurabilecekleri kabul edilmiştir.</p>
+
+<hr>
+
+<h2 id="cmk-260-kanun-yollarına-başvurma-hakkı-yargıtay-kararları">CMK 260 Kanun Yollarına Başvurma Hakkı Yargıtay Kararları</h2>
+
+<hr>
+
+<p><strong>Yargıtay 12. Ceza Dairesi        <br>
+2021/1847 E.  ,  2021/4321 K.</strong></p>
+
+<ul>
+  <li><strong>CMK 260. Madde</strong></li>
+  <li><strong>Kanun Yollarına Başvurma Hakkı</strong></li>
+  <li><strong>Ayırt Etme Gücü Olmayanın Davaya Katılma ve Temyiz Hakkı</strong></li>
+</ul>
+
+<p>Ceza Genel Kurulunun 24.10.2017 tarih ve 2014/14-599 Esas - 2017/431 sayılı kararında belirtildiği üzere, suçun mağduru olan kişi ayırt etme gücüne sahip değil ise katılma ile ilgili kendisinin iradesinin önemi bulunmayıp böyle bir hâlde, katılma konusundaki haklarını onun yerine kanuni temsilcisinin kullanabileceği, mağdurun şikayet hakkını kullanacak fiil ehliyetine sahip olmadığı durumlarda, mağdura karşı işlenen suçlarda, şikayet hakkının şahsa sıkı sıkıya bağlı haklardan olması nedeniyle, mağdurun bu hakkını yasal temsilcisi olan velisi ya da vasisi aracılığıyla kullanabileceği, baroca atanan vekilin kanun yoluna başvurma yetkisi kazanmasının, mağdurun kanuni temsilcisinin katılma yönündeki iradesine bağlıdır.</p>
+
+<p>Katılan sıfatı bulunmayan mağdur … vekilinin hükmü temyiz etme hakkı bulunmadığı, vekili ile mağdurun kanuni temsilcisinin iradelerinin çelişmesi halinde mağdurun kanuni temsilcisinin iradesine üstünlük tanınması gerektiğinden, mağdur vekilinin temyize hak ve yetkisi bulunmadığı anlaşılmakla, temyiz isteminin reddine karar verildi.</p>
+
+<hr>
+
+<p><strong>Ceza Genel Kurulu - Karar: 2019/22</strong></p>
+
+<ul>
+  <li><strong>CMK 260</strong></li>
+  <li><strong>Katılma hakkına sahip kişinin davadan haberdar edilip katılma hakkını kullanması sağlanmalıdır.</strong></li>
+</ul>
+
+<p>Özel Daire çoğunluğu ile Yargıtay Cumhuriyet Başsavcılığı arasında oluşan ve Ceza Genel Kurulunca
+çözümlenmesi gereken uyuşmazlıklar;</p>
+
+<p>1-Sanığın eyleminin resmî belgede sahtecilik suçunu mu, yoksa resmî belgeyi bozma suçunu mu
+oluşturduğunun,</p>
+
+<p>2- Resmî belgede sahtecilik suçunu oluşturduğunun kabulü hâlinde; atılı suçun sabit olup olmadığının
+belirlenmesine ilişkin ise de, Yargıtay İç Yönetmeliği’nin 27. maddesi uyarınca öncelikle; sanığın, fotoğrafını
+değiştirerek kullandığı nüfus cüzdanının sahibi olan İ.Ç. katılan sıfatını alabilecek şekilde suçtan zarar
+gören olarak davadan haberdar edilmemesi ve yokluğunda hüküm kurulması hâlinde, gerekçeli kararın
+tebliği sağlanmadan temyiz incelemesi yapılmasının mümkün olup olmadığının değerlendirilmesi
+gerekmektedir.</p>
+
+<p>Sanığın, fotoğrafını değiştirerek kullandığı nüfus cüzdanının sahibi olan İ.Ç. katılan sıfatını alabilecek
+şekilde suçtan zarar gören olarak davadan haberdar edilmemesi ve yokluğunda hüküm kurulması hâlinde,
+İ.Ç. gerekçeli kararın tebliği sağlanmadan temyiz incelemesi yapılmasının mümkün olup olmadığı,
+Mağdur; Türk Dil Kurumu Büyük Türkçe Sözlüğünde, “haksızlığa uğramış kişi” olarak tanımlanmaktadır.
+Ceza hukukunda ise mağdur kavramı, suçun konusunun ait olduğu kişi ya da kişilerdir. TCK’nın
+hazırlanmasında esas alınan suç teorisinde suçun maddi unsurları arasında yer alan mağdur, ancak gerçek
+bir kişi olabilecek, tüzel kişilerin suçtan zarar görmeleri mümkün ise de bunlar mağdur olamayacaklardır.
+Mağdurun belirlenmesi, suçun unsurlarının veya nitelikli hâllerinin gerçekleşip gerçekleşmediğinin
+tespiti ile özellikle TCK yönüyle zincirleme suç hükümlerinin uygulanıp uygulanmayacağının çözümü
+konusu başta olmak üzere birçok ceza hukuku hükmünün doğru ve isabetli uygulanabilmesi açısından
+önemli olmasına rağmen, TCK’da ve diğer kanunlarımızda mağdurun bir tanımı yapılmamıştır. Öğretide de
+kabul olunduğu üzere kanun koyucunun bu tercihi öncelikle kapsayıcı bir tanım yapmanın zorluğundan
+kaynaklanmakta, diğer taraftan kavramın bazen dar bazen de geniş yorumlanmasına duyulan ihtiyaç bu
+yönde bir tercihi zorunlu kılmaktadır.</p>
+
+<p>Mağdur kavramı gibi kanunda açıkça tanımlanmamış olan “suçtan zarar görme” kavramı ise, gerek
+Ceza Genel Kurulu, gerekse Özel Dairelerin yerleşmiş kararlarında; “suçtan doğrudan doğruya zarar
+görmüş bulunma hâli” olarak anlaşılıp uygulanmış, buna bağlı olarak da dolaylı veya muhtemel zararların,
+davaya katılma hakkı vermeyeceği kabul edilmiştir. Nitekim bu husus, Ceza Genel Kurulunun 08.11.2016
+tarihli ve 830-412, 03.05.2011 tarihli ve 155–80, 04.07.2006 tarihli ve 127–180, 22.10.2002 tarihli ve 234–
+366 ile 11.04.2000 tarihli ve 65–69 sayılı kararlarında; “dolaylı veya muhtemel zarar, davaya katılma hakkı
+vermez” şeklinde açıkça belirtilmiştir.</p>
+
+<p>Mağdur ile suçtan zarar gören kavramları aynı şeyi ifade etmemektedir. Mağdur suçun işlenmesiyle
+her zaman zarar görmekte ise de, suçtan zarar gören kişi her zaman suçun mağduru olmayabilecektir. Bazı
+suçlarda mağdur belirli bir kişi olmayıp; toplumu oluşturan herkes (geniş anlamda mağdur) olabilecektir.
+(Mehmet Emin Artuk-Ahmet Gökcen-A. Caner Yenidünya, Ceza Hukuku Genel Hükümler, 9. Baskı,
+Adalet Yayınevi, Ankara, 2015, s.289; İzzet Özgenç, Türk Ceza Hukuku Genel Hükümler, 11. Baskı, Seçkin
+Yayıncılık, Ankara, 2015, s. 214-217; Mahmut Koca-İlhan Üzülmez, Türk Ceza Hukuku Genel Hükümler, 8.
+Baskı, Seçkin Yayıncılık, Ankara, 2015, s.106 - 107)</p>
+
+<p>Mağdurun kim olduğunun belirlenmesinde öncelikle madde metnine bakılmalı, madde metninin
+yeterli olmadığı durumlarda hükmün konuluş amacı, suçun düzenlendiği yer gibi hususlar birlikte
+değerlendirilerek sonuca ulaşılmaya çalışılmalıdır.</p>
+
+<p>5237 sayılı TCK’nın belgede sahtecilik suçlarının düzenlendiği madde metinlerinde suçun
+mağdurunun kim olduğuna ilişkin bir düzenlemeye yer verilmemesi, belgede sahtecilik suçlarının hukuki
+konusunun kamunun güveni olması ve bu suçların kamu güvenine karşı suçlar bölümünde düzenlenmiş
+bulunması hususları birlikte değerlendirildiğinde, bu suçların mağdurunun toplumu oluşturan bireylerin
+tamamının, diğer bir ifadeyle kamunun olduğunun, eylemin belirli bir kişinin zararına olarak işlenmesi
+hâlinde bu kişinin mağdur değil, suçtan zarar gören olacağının kabulü gerekmektedir. Aksinin kabulü
+hâlinde, birden fazla kişiye karşı işlenmiş olan sahtecilik suçlarında hükmolunacak sonuç ceza miktarları
+göz önünde bulundurulduğunda, 5237 sayılı TCK’nın “Adalet ve kanun önünde eşitlik ilkesi” başlıklı 3.
+maddesinin gerekçesinde, “Suç işlenmesiyle bozulan toplum düzeninde adaletin sağlanması için suç işleyen
+kimseye uygulanacak ceza hukuku yaptırımlarının haklı ve ölçülü olması gerekir. Çünkü ancak haklı ve suçun
+ağırlığıyla orantılı bir yaptırım ile suç işleyen kişinin bu fiilinden pişmanlık duyması sağlanabilir ve yeniden
+topluma kazandırılması söz konusu olabilir” şeklinde açıklanmış olan ölçülülük ilkesine aykırı davranılmış
+olunacaktır.</p>
+
+<p>Öğretide, belgede sahtecilik fiilinin belirli bir kişinin zararına olarak işlenmesi hâlinde ilgili kişinin de
+mağdur sayılacağı yönünde bir kısım görüşler (Nevzat Toroslu, Ceza Hukuku Özel Kısım, Savaş Yayınevi,
+Ankara 2007, s.205-206) olmakla birlikte, çoğunluk itibarıyla, bu suçların mağdurunun kamu olduğuna
+ilişkin bir kabul vardır. (Veli Özer Özbek, Mehmet Nihat Kanbur, Koray Doğan, Pınar Bacaksız, İlker Tepe,
+Türk Ceza Hukuku Özel Hükümler, Seçkin Yayınevi, 4. Baskı, 2012, s. 759).</p>
+
+<p>Yargıtay Ceza Genel Kurulunun 22.04.2014 tarihli ve 397-202 sayılı kararında da; belgede sahtecilik
+suçlarının mağdurunun kamu olduğu, eylemin belirli bir kişinin zararına olarak işlenmesi hâlinde bu
+kişinin mağdur değil suçtan zarar gören konumunda bulunduğu belirtilmiştir.</p>
+
+<p>Bu bağlamda kimliği ele geçirilip tahrif edilen kimlik sahibinin, bir daha o kimliği kullanamayacak
+olması, kendi kimlik bilgilerine göre düzenlenmiş kimliğin başkası tarafından kullanılarak birtakım
+işlemler yapılması ve bu şekilde sürekli mesuliyeti doğacağı tehdidi altında bulunması nedeniyle kimliği
+fail tarafından ele geçirilip tahrif edilen kişinin gerçekleştirilen eylem ve sonuçlarından doğrudan doğruya
+zarar gördüğü kabul edilmelidir.</p>
+
+<p>Öte yandan, temyiz mahkemesince bir temyiz davasının görülebilmesi için, temyiz kanun yoluna
+başvuru hakkı bulunanların tamamının kararı tefhim veya tebliğ yoluyla öğrenmelerinin sağlanması
+kanuni bir zorunluluktur. Nitekim 5271 sayılı CMK’nın “Kararların açıklanması ve tebliği” başlıklı 35.
+maddesinin 2. fıkrasında; “Koruma tedbirlerine ilişkin olanlar hariç, aleyhine kanun yoluna başvurulabilecek
+hâkim veya mahkeme kararları, hazır bulunamayan ilgilisine tebliğ olunur” hükmü yer almaktadır.
+Mağdur, şikâyetçi ve suçtan zarar görenin yargılama aşamasında öncelikle duruşmadan haberdar
+edilmesi gerekmektedir. CMK’nın 234. maddesinde düzenlenen bu hakkın kullandırılmaması kanuna
+aykırıdır. Kanun koyucu, CMK’nın 234. maddesine aykırı davranılması durumunda anılan hukuka
+aykırılığın telafisine imkân sağlayacak şekilde bir düzenlemeye yer vermiş ve “katılan sıfatını alabilecek
+surette suçtan zarar görmüş olanlara” kanun yoluna başvurma hakkı tanımıştır. Bu hakkın kullanılabilmesi
+için de yargılama sonucunda verilen kararın aynı Kanun’un 35. maddesi uyarınca mağdur, şikâyetçi veya
+suçtan zarar görene tebliği gerekmektedir. Gerekçeli kararın tebliğ edilmesiyle suçtan zarar gören geç de
+olsa davadan haberdar olarak kararı temyiz etme imkânı bulmuş olacaktır. Gerekçeli kararın tebliğinden
+itibaren mağdur, şikâyetçi veya suçtan zarar görenin hükmü temyiz edip etmemesine göre de temyizin
+kapsamı belirlenecektir.</p>
+
+<p>Yerel Mahkemece duruşmadan haberdar olmayan mağdur, şikâyetçi veya suçtan zarar görene
+gerekçeli karar tebliğ olunmamış ise temyiz aşamasında bu eksikliğin Özel Dairece 2797 sayılı Yargıtay
+Kanunu’nun 40. maddesi uyarınca verilecek, uygulamada “tevdi kararı” adı verilen kararla mahallinde
+mahkemesince giderilmesinin istenilmesi gerekir.</p>
+
+<p>Duruşmadan haberdar olmayan mağdura, şikâyetçiye veya suçtan zarar görene gerekçeli kararın
+tebliğinden sonra, hükmün temyiz edilmesi durumunda CMK’nın 260. maddesi uyarınca “katılan
+sıfatını alabilecek surette suçtan zarar gören” sıfatı ile temyizi incelenecektir. Tebliğe rağmen hükmün
+temyiz edilmemesi durumunda ise Özel Dairece diğer temyiz talepleri kapsamında dosya incelenecek,
+ancak CMK’nın 233 ve 234. maddelerine aykırı davranılması gerekçesiyle hükmün bozulmasına karar
+verilemeyecektir.</p>
+
+<p>Bu açıklamalar ışığında ön soruna ilişkin uyuşmazlık konusu değerlendirildiğinde;</p>
+
+<p>Kesinleşmiş mahkûmiyet hükmü nedeniyle hakkında yakalama kararı bulunan sanığın, yapılan
+ihbar sonucu 08.08.2010 tarihinde kolluk görevlilerince ikametinde yakalandığında, kimliğini ibraz
+etmesinin istenilmesi üzerine, üzerinde kendi fotoğrafı bulunan ancak, İ.Ç. adına düzenlenmiş nüfus
+cüzdanını görevlilere ibraz etmesi nedeniyle açılan kamu davasında, İ.Ç. sanık tarafından ele geçirilerek
+üzerinde fotoğraf değişikliği yapılan nüfus cüzdanını kullanma ihtimali kalmaması ve bu kimlikle
+birtakım işlemler yapılarak sürekli mesuliyeti doğacağı tehdidi altında bulunması nedeniyle katılan
+sıfatını alabilecek şekilde suçtan doğrudan doğruya zarar gördüğü ve bu sebeple davadan haberdar
+edilmesi zorunluluğunun bulunduğu, bu zorunluluğun hüküm verilinceye kadar yerine getirilmemesi
+durumunda ise, CMK’nın 260. maddesi uyarınca kanun yollarına başvurma hakkı bulunan adı geçen
+şahsa Aynı Kanun’un 35. maddesinin 2. fıkrası gereğince gerekçeli kararın tebliğ edilmesi gerektiği, ancak
+somut olayda sözü edilen kanuni imkânların tanınmadığı anlaşıldığından, yargılamanın başında davadan
+haberdar edilmesi gereken, temyiz aşamasına kadar bu hakkı kullandırılmayan ve haklarını korumanın
+başka bir yolu da bulunmayan adı geçen şahsın, kanundan kaynaklanan hakkını kullanabilmesi amacıyla
+Özel Dairece öncelikle tevdi kararı verilmek suretiyle, gerekçeli kararın kendisine tebliği sağlanarak
+temyiz süresinin başlatılması, kararın adı geçen şahıs tarafından temyiz edilmemesi durumunda temyiz
+davasının sadece Cumhuriyet savcısının temyiziyle sınırlı olarak sonuçlandırılması; İ.Ç. tarafından temyiz
+edilmesi durumunda ise Yargıtay Cumhuriyet Başsavcılığınca ek tebliğname düzenlenmesi sağlanıp
+temyiz istemlerinin birlikte ve tek seferde incelenerek temyiz davasının sonuçlandırılması gerekmektedir.
+Ancak bu aşamada İ.Ç. sanık hakkında açılan kamu davasından haberdar edilmemesi suretiyle katılma
+ve diğer haklarını kullanma imkânının kısıtlandığı gerekçesiyle bozulmasına karar verilmesi mümkün
+görülmemiştir.</p>
+
+<p>Bu itibarla, Yargıtay Cumhuriyet Başsavcılığı itirazının değişik gerekçe ile kabulüne, Özel Daire bozma
+kararının kaldırılmasına, B. Asliye Ceza Mahkemesinin 23.11.2011 tarihli ve sayılı hükmünün, davadan
+haberdar edilmeyen ve suçtan zarar gören İ.Ç. tebliğinin sağlanması için tevdi kararı verilmesi amacıyla
+Yargıtay Birinci Başkanlık Kurulunun 22.12.2016 tarihli ve 398 sayılı kararı ile Yargıtay 21. Ceza Dairesinin
+kapatılması nedeniyle aynı karar uyarınca bu Daireye ait işlerin devredildiği Yargıtay 11. Ceza Dairesine
+gönderilmek üzere dosyanın Yargıtay Cumhuriyet Başsavcılığına tevdi edilmesine karar verilmelidir.</p>
+
+<hr>
+
+<p><strong>Ceza Genel Kurulu - Karar: 2017/480</strong></p>
+
+<ul>
+  <li><strong>CMK 260</strong></li>
+  <li><strong>Katılma talebi reddedilen derneğin CMK 260. madde gereği kanun yollarına başvurabilmesi için gerekçeli kararın derneğe tebliği gerekir.</strong></li>
+</ul>
+
+<p>Kadın Cinayetlerini Durduracağız Platformu Derneğinin 03.09.2013 günlü oturumda vekili aracılığı ile yaptığı katılma talebinin yerel mahkemece aynı oturumda reddedilmesi karşısında; 5271 sayılı CMK’nun 260. maddesi uyarınca kanun yollarına başvurma hakkının bulunduğu hususunda kuşku bulunmayan dernek vekiline, aynı Kanunun 35. maddesi gereğince gerekçeli kararın tebliğ edilmesi gerektiğinden, yerel mahkeme hükmünün katılma istemi reddedilen Kadın Cinayetlerini Durduracağız Platformu Derneği vekiline tebliği için Özel Daire tarafından tevdi kararı verilmesinde bir isabetsizlik bulunmamaktadı</p>
+
+<hr>
+
+<p><strong>Ceza Genel Kurulu - Karar: 2018/384</strong></p>
+
+<ul>
+  <li><strong>CMK 260</strong></li>
+  <li><strong>Sanık hakkında zimmet suçundan açılan kamu davasına katılma hakkı bulunan Hazine
+ve Maliye Bakanlığının davadan haberdar edilmesi zorunluluğunun bulunduğu, bu zorunluluğun
+hüküm verilinceye kadar yerine getirilmemesi durumunda ise CMK’nın 260. maddesi uyarınca kanun
+yollarına başvurma hakkı bulunan Hazine ve Maliye Bakanlığı’na gerekçeli kararın tebliğ edilmesi
+gerekmektedir.</strong></li>
+</ul>
+
+<p>5271 sayılı CMK’nın “Suçun mağduru ile şikâyetçinin çağırılması” başlıklı 233. maddesinin 1. fıkrası;
+“Mağdur ile şikâyetçi, Cumhuriyet savcısı veya mahkeme başkanı veya hâkim tarafından çağrı kâğıdı ile
+çağırılıp dinlenir” şeklinde düzenlenmiş olup, bu hüküm uyarınca mağdur ve şikâyetçinin, soruşturma
+aşamasında Cumhuriyet savcısı, kovuşturma aşamasında ise mahkeme başkanı veya hâkim tarafından
+usulüne uygun olarak çağrılıp dinlenmesi gerekmektedir. Katılma hakkı olan gerçek veya tüzel kişinin
+şikâyet hakkının da olduğu, diğer bir deyişle katılma hakkının şikâyet hakkını da içerdiği hususunda hiçbir
+kuşku yoktur.</p>
+
+<p>5271 sayılı CMK’nın mağdur ve şikâyetçinin haklarını düzenleyen «Mağdur ile şikâyetçinin hakları»
+başlıklı 234. maddesinin birinci fıkrasının (b) bendi;</p>
+
+<p>“Kovuşturma evresinde;</p>
+
+<ol>
+  <li>
+    <p>Duruşmadan haberdar edilme,</p>
+  </li>
+  <li>
+    <p>Kamu davasına katılma,</p>
+  </li>
+  <li>
+    <p>Tutanak ve belgelerden örnek isteme,</p>
+  </li>
+  <li>
+    <p>Tanıkların davetini isteme,</p>
+  </li>
+  <li>
+    <p>Vekili bulunmaması hâlinde, cinsel saldırı suçu ile alt sınırı beş yıldan fazla hapis cezasını gerektiren
+suçlarda, baro tarafından kendisine avukat görevlendirilmesini isteme,</p>
+  </li>
+  <li>
+    <p>Davaya katılmış olma koşuluyla davayı sonuçlandıran kararlara karşı kanun yollarına başvurma”
+şeklinde olup, buna göre mağdur ile şikâyetçinin kovuşturma evresinde; duruşmadan haberdar
+edilme, kamu davasına katılma, tutanak ve belgelerden örnek isteme, tanıkların davetini isteme, vekili
+bulunmaması hâlinde, cinsel saldırı suçu ile alt sınırı beş yıldan fazla hapis cezasını gerektiren suçlarda,
+baro tarafından kendisine avukat görevlendirilmesini isteme ve davaya katılmış olmak şartıyla davayı
+sonuçlandıran kararlara karşı kanun yollarına başvurma haklarının bulunduğu hüküm altına alınmıştır.
+Anılan maddenin birinci fıkrasının (b) bendinin açık düzenlemesinden de anlaşılacağı üzere,
+duruşmadan haberdar edilme kanun koyucu tarafından, mağdur ve şikâyetçi için kovuşturma aşamasında
+kullanılabilecek bir hak olarak düzenlenmiştir. Buna göre, mağdur ve şikâyetçiye veya vekillerine usulüne
+uygun tebliğ işlemi yapılmadan “duruşmadan haberdar edilme” hakkının kullandırıldığından bahsetmek
+mümkün değildir. CMK’nın 234. maddesi uyarınca bu hakkın kullandırılmaması kanuna aykırılık
+oluşturacaktır.</p>
+  </li>
+</ol>
+
+<p>5271 sayılı CMK’nın kanun yollarına başvurma hakkını düzenleyen 260. maddesinin birinci fıkrası ise;</p>
+
+<p>“(1) Hâkim ve mahkeme kararlarına karşı Cumhuriyet savcısı, şüpheli, sanık ve bu Kanuna göre katılan
+sıfatını almış olanlar ile katılma isteği karara bağlanmamış, reddedilmiş veya katılan sıfatını alabilecek surette
+suçtan zarar görmüş bulunanlar için kanun yolları açıktır” şeklinde olup, buna göre; duruşmadan haberdar
+olmayan mağdura, şikâyetçiye veya suçtan zarar görene gerekçeli kararın tebliğ edilmesinden sonra,
+hükmün temyiz edilmesi durumunda CMK’nın 260. maddesi uyarınca “katılan sıfatını alabilecek surette
+suçtan zarar gören” sıfatı ile temyizi incelenecek, ancak katılma hakkının kanundan doğmuş olması
+hâlinde CMK’nın 233 ve 234. maddelerine aykırı davranılması gerekçesiyle hükmün bozulmasına karar
+verilmeyebilecektir.</p>
+
+<p>Konumuzla ilgisi bakımından temyiz talebi ve süresi üzerinde de durulmasında fayda bulunmaktadır.
+5320 sayılı Kanun’un 8. maddesi uyarınca karar tarihi itibarıyla uygulanması gereken 1412 sayılı
+CMUK’un 310. maddesi; “Temyiz talebi, hükmün tefhiminden bir hafta içinde hükmü veren mahkemeye bir
+dilekçe verilmesi veya zabıt katibine yapılacak beyanla olur. Beyan tutanağa geçirilir ve tutanak hakime tasdik
+ettirilir” şeklindedir.</p>
+
+<p>Olağan kanun yollarından olan temyiz incelemesinin yapılabilmesi için bir temyiz davasının açılmış
+olması gerekir. Temyiz davasının açılabilmesi için de aranan iki şartın birlikte gerçekleşmiş olması gerekir.
+Bunlardan ilki süre, ikincisi ise istek şartıdır.</p>
+
+<p>Anılan maddede temyiz süresinin yüze karşı verilen kararlarda hükmün tefhimi ile, yoklukta
+verilen kararlarda ise tebliğle başlayacağı, bir hafta içinde hükmü veren mahkemeye veya bir başka
+yer mahkemesine verilecek dilekçe ile ya da zabıt kâtibine yapılacak beyanla temyiz talebinin
+gerçekleştirilebileceği, bu takdirde beyanın tutanağa geçirilerek hâkime onaylatılacağı belirtilmiştir.
+Görüldüğü gibi temyiz incelemesinin yapılabilmesi için, temyiz kanun yoluna başvuru hakkı
+bulunanların kararı tefhim veya tebliğ yoluyla öğrenmelerinin sağlanması kanuni bir mecburiyet olup,
+5271 sayılı Ceza Muhakemesi Kanunu’nun “Kararların Açıklanması ve Tebliği” başlıklı 35. maddesinin 2.
+fıkrasında; “Koruma tedbirlerine ilişkin olanlar hariç, aleyhine kanun yoluna başvurulabilecek hâkim veya
+mahkeme kararları, hazır bulunamayan ilgilisine tebliğ olunur” hükmüne yer verilmiştir.</p>
+
+<p>Yargıtay Ceza Genel Kurulu ve Ceza Dairelerince tereddüte mahal bırakmayacak şekilde sürdürülen
+uygulamalara göre; yoklukta kurulan hükmün temyiz hakkı olanlara usulüne uygun tebliğ edilmediği
+hâllerde temyiz süresi işlemeye başlamayacağından, öğrenme üzerine verilen temyiz dilekçelerinin
+süresinde olduğu kabul edilmektedir. Temyiz etme ihtimali tüketilmeden temyiz incelemesi
+yapılamayacağı, inceleme yapılıp onama kararı verilmesi hâlinde temyiz edilme ihtimali bulunduğundan
+hükmün kesinleşmesinden söz edilemeyeceği, onama kararının kendisine bağlanan hukuki sonucu
+doğuramayacağı, bu hâliyle de hukuki değer ifade etmeyeceği gözetilmelidir.</p>
+
+<p>Bu bilgiler ışığında uyuşmazlık konusu değerlendirildiğinde;</p>
+
+<p>Anayasa ile güvence altına alınan hak arama hürriyetinin sağlanması amacına uygun olarak 3628
+sayılı Kanun’un 17 ve 18. maddelerindeki açık düzenleme ve CMK’nın 234. maddesinin birinci fıkrası
+uyarınca, sanık hakkında açılan kamu davasına katılma hakkı bulunan Hazine ve Maliye Bakanlığı’nın
+davadan haberdar edilmesi zorunluluğunun bulunduğu, bu zorunluluğun hüküm verilinceye kadar
+yerine getirilmemesi durumunda ise CMK’nın 260. maddesi uyarınca kanun yollarına başvurma hakkı
+bulunan Hazine ve Maliye Bakanlığı’na gerekçeli kararın tebliğ edilmesi gerektiği, ancak somut olayda
+sözü edilen kanuni imkânların tanınmadığı anlaşıldığından, yargılamanın başında davadan haberdar
+edilmesi gereken, temyiz aşamasına kadar bu hakkı kullandırılmayan ve haklarını korumanın başka bir
+yolu da bulunmayan Hazine ve Maliye Bakanlığı’nın kanundan kaynaklanan kamu davasına katılma
+konusundaki takdir hakkını kullanabilmesi amacıyla Özel Dairece öncelikle tevdi kararı verilmek suretiyle,
+gerekçeli kararın Bakanlığa tebliğinin sağlanarak temyiz süresinin başlatılması, kararın Bakanlık tarafından
+temyiz edilmemesi durumunda temyiz davasının sadece sanık müdafisi ve vekâlet ücretiyle sınırlı olarak
+katılan PTT Genel Müdürlüğü vekilinin temyiziyle sınırlı olarak sonuçlandırılması; Bakanlık tarafından
+temyiz edilmesi durumunda ise Yargıtay Cumhuriyet Başsavcılığınca ek tebliğname düzenlenmesi
+sağlanıp, CMK’nın 260. maddesi uyarınca Bakanlığın davaya katılan olarak kabulüne karar verildikten
+sonra temyiz istemlerinin birlikte ve tek seferde değerlendirilmesi gerekmektedir. Ancak bu aşamada
+Hazine ve Maliye Bakanlığı’nın sanık hakkında açılan kamu davasından haberdar edilmemesi suretiyle
+katılma ve diğer haklarını kullanma imkânının kısıtlandığı gerekçesiyle bozulmasına karar verilmesi
+mümkün görülmemiştir.</p>
+
+<hr>
+
+<p><strong>Ceza Genel Kurulu - Karar: 2019/216</strong></p>
+
+<ul>
+  <li><strong>CMK 260</strong></li>
+  <li><strong>Temyiz yoluna posta marifetiyle gönderilen bir dilekçe ile başvurulması hâlinde temyiz tarihinin
+dilekçenin postaya verildiği tarih değil, mahkemeye ulaştığı tarihtir.</strong></li>
+</ul>
+
+<p>Olağan kanun yollarından olan temyiz incelemesinin yapılabilmesi için bir temyiz davası açılmış
+olmalıdır. Temyiz davasının açılabilmesi için de, işlem ve karar tarihi itibarıyla yürürlükte bulunan 1412
+sayılı CMUK’un 5320 sayılı Kanun’un 8. maddesinin 310. maddesine göre iki şartın varlığı gereklidir.
+Bunlardan ilki istek, ikincisi ise süre şartıdır.</p>
+
+<p>Uyuşmazlık konusu olayda istek şartının gerçekleştiği konusunda bir tereddüt bulunmadığından
+süre şartının gerçekleşip gerçekleşmediği üzerinde durulmalıdır.</p>
+
+<p>CMUK’un 310. maddesinde, genel kural olarak tarafların temyiz isteğinde bulunabilecekleri süre
+hükmün tefhiminden, tefhim edilmemişse tebliğinden başlamak üzere bir hafta olarak belirlenmiştir.
+Temyiz süresi 310. maddesinin üçüncü fıkrasındaki farklı durum hariç olmak üzere, hükmün açıklanması
+sırasında hazır bulunanlar yönünden bu tarihte, yokluklarında hüküm verilenler yönünden ise gerekçeli
+kararın tebliği tarihinde başlayacaktır.</p>
+
+<p>Diğer taraftan, 2709 sayılı Türkiye Cumhuriyeti Anayasası’nın 40/2. maddesininde; “Devlet, işlemlerinde,
+ilgili kişilerin hangi kanun yolları ve mercilere başvuracağını ve sürelerini belirtmek zorundadır.” hükmüne yer
+verilmiş,</p>
+
+<p>Bu düzenlemeye paralel olarak 5271 sayılı CMK’nın 34/2. maddesinde; “Kararlarda, başvurulabilecek
+kanun yolu, süresi, mercii ve şekilleri belirtilir.”,</p>
+
+<p>Aynı Kanun’un 232/6. maddesinde ise; “Hüküm fıkrasında, 223 üncü maddeye göre verilen kararın ne
+olduğunun, uygulanan kanun maddelerinin, verilen ceza miktarının, kanun yollarına başvurma ve tazminat
+isteme olanağının bulunup bulunmadığının, başvuru olanağı varsa süresi ve mercinin tereddüde yer
+vermeyecek şekilde açıkça gösterilmesi gerekir.”,</p>
+
+<p>Şeklindeki emredici düzenlemeler yer almıştır.</p>
+
+<p>5271 sayılı CMK’nın 40. maddesinin birinci fıkrasında da, kusuru olmaksızın bir süreyi geçirmiş olan
+kişinin, eski hâle getirme isteminde bulunabileceği, ikinci fıkrasında ise, kanun yoluna başvuru hakkının
+kendisine bildirilmemesi hâlinde, kişinin kusursuz sayılacağı belirtilmiştir.</p>
+
+<p>Anılan düzenlemelerden, hüküm ve kararlardaki kanun yolu bildiriminin; kanun yolu, mercii, şekli
+ve süresini de kapsaması zorunluluğu yanında, açıkça anlaşılabilir ve her türlü yanıltıcı ifadeden uzak
+olması gerektiği sonucuna varılmaktadır. Bu bildirimlerdeki temel amaç tarafların başvuru haklarını etkin
+bir biçimde kullanmalarının sağlanması ve bu eksiklik nedeniyle hak kayıplarına yol açılmamasıdır. Ancak
+burada dikkat edilmesi gereken husus eksik veya yanılgılı bildirim nedeniyle bir hakkın kullanılmasının
+engellenip engellenmediğinin belirlenmesidir. Bildirimdeki eksikliğin yol açtığı bir hak kaybı
+bulunmamakta ise, bu durum eski hâle getirme nedeni oluşturmayacaktır.</p>
+
+<p>5271 sayılı CMK’nın 264. maddesinde ise kabul edilebilir bir kanun yolu başvurusunda kanun yolunun
+veya mercide yanılgının, başvuranın haklarını ortadan kaldırmayacağı, bu hâlde başvurunun yapıldığı
+merciince, başvurunun derhâl görevli ve yetkili mercie gönderilmesi gerektiği hükmüne yer verilmiştir.
+Bu hükümler birlikte değerlendirildiğinde, kural olarak temyiz talebi süresinde verilen dilekçe veya
+zabıt kâtibine yapılacak beyanla hükmü veren mahkemeye yapılacaktır. Ancak, süresinde olması şartıyla
+dilekçenin hükmü veren mahkeme dışındaki bir mahkemeye verilmesi veya istemde bulunulması ya da
+haklı nedenlerin varlığı hâlinde Cumhuriyet savcılığına ya da bir başka merciye talepte bulunulması temyiz
+talebini geçersiz kılmayacak, bu durum mercide hata kapsamında değerlendirilebilecek, dilekçenin
+verildiği veya talebin yapıldığı mercii tarafından talep veya dilekçe mahkemesine gönderilecektir. Yine
+aynı şekilde istemin temyiz yerine itiraz olarak belirtilmiş olması da bu kapsamda değerlendirilerek,
+başvuru sahibinin hakları korunacak, sürenin bildirilmemesi veya yanlış gösterilmesi hâlinde bunun
+ilgili taraf açısından bir yanılgı oluşturarak bir hakkın kullanılmasını engellemesi durumunda açıklamalı
+davetiye ile bu hususun tebliğinden sonra süreler işlemeye başlayacak, böylece olası hak kayıpları
+önlenecektir.</p>
+
+<p>Yargıtay Ceza Genel Kurulunun 08.06.2010 tarihli ve 120-137 sayılı, 26.04.2016 tarihli ve 363-218
+sayılı kararlarında, temyiz yoluna posta marifetiyle gönderilen bir dilekçe ile başvurulması hâlinde temyiz
+tarihinin dilekçenin postaya verildiği tarih değil, mahkemeye ulaştığı tarih olduğu; 05.10.2010 tarihli ve
+169-188 sayılı, 10.04.2012 tarihli ve 485-146 sayılı, 14.02.2012 tarihli ve 401-39 sayılı kararları başta olmak
+üzere bir çok kararında da, kanun yolu bildiriminde sadece başvuru şeklinin gösterilmemiş olmasının
+“Kanun yolu süresinin” işlemeye başlamasını engellemeyeceği, bu durumda, başvuru şekli gösterilmemiş
+veya yanlış gösterilmiş olsa dahi temyiz süresinin işleyeceği ve süreden sonra yapılan temyiz başvurusunun
+kabul edilmeyeceği, zira belirtilen sürede yanlış merciye yanlış şekilde bir başvuruda bulunulması
+hâlinde, bu yanılmanın 5271 sayılı CMK’nın 264. maddesi kapsamında değerlendirileceğinden başvuranın
+haklarının ortadan kalkmayacağı sonuçlarına ulaşılmıştır.</p>
+
+<p>Bu açıklamalar ışığında somut olay değerlendirildiğinde;</p>
+
+<p>Sanığın yokluğunda verilen hükümde başvurulacak yasa yoluna ilişkin bildirimin “…Tebliğinden
+itibaren bir hafta içinde mahkeme kalemine tevdii edilecek bir temyiz dilekçesi ile yada mahkeme kalemine
+sözlü beyanda bulunarak bu beyanın tutanağa geçirilmesi suretiyle Yargıtay temyiz yasa yolu açık olmak
+üzere; belirtilen şekilde ve sürede temyiz yoluna başvurulmaması halinde kararın kesinleşeceği belirtilmek
+üzere” şeklinde yapıldığı, Yerel Mahkeme hükmünün 31.03.2014 tarihinde usulüne uygun olarak sanığa
+tebliğ edildiği, sanığın temyiz dilekçesini herhangi bir mahkemeye havale ettirmeksizin hükmü veren Yerel
+Mahkeme’ye gönderilmek üzere 04.04.2014 tarihinde postaya verdiği, temyiz dilekçesinin mahkemeye
+08.04.2014 tarihinde ulaşıp, bu tarihte havale edilerek temyiz defterine kaydedildiği anlaşılmaktadır.
+Temyiz yoluna posta marifetiyle gönderilen bir dilekçe ile başvurulması hâlinde temyiz tarihinin
+dilekçenin postaya verildiği tarih değil, mahkemeye ulaştığı tarih olduğu, buna göre sanığın yokluğunda
+27.02.2016 tarihinde verilen, yasal düzenlemelere göre kanun yolu bildiriminde eksiklik bulunmayan ve
+niteliği itibarıyla resen de temyize tabi olmayan Yerel Mahkeme hükmünün, 31.03.2014 tarihinde usulüne
+uygun olarak sanığa tebliğ edildiği, kararın 07.04.2014 tarihinde mesai bitimine kadar temyiz edilebilmesi
+mümkün iken, sanık tarafından 08.04.2014 tarihinde temyiz edildiği sabit olup temyiz isteğinin yasal
+süresinde olmadığı kabul edilmelidir.</p>
+
+<p>Ayrıca, her ne kadar kararda, başka bir yer mahkemesine de temyiz başvurusunda bulunulacağının
+belirtilmemiş olması nedeniyle kanun yolu bildiriminin eksik olduğu ve bu durumun eski hâle getirme
+nedeni olarak kabulü ile temyiz başvurusunun süresinde yapıldığı ileri sürülmüş ise de, Yargıtay’ın
+yerleşmiş içtihatlarına göre sadece başvuru şeklinin gösterilmemiş olması “kanun yolu süresinin” işlemeye
+başlamasını engellemeyecek, başvuru şekli gösterilmemiş veya yanlış gösterilmiş olsa dahi temyiz süreleri
+işleyecek ve süreden sonra yapılan temyiz başvurusu kabul edilmeyecektir. Zira, belirtilen sürede yanlış
+mercie yanlış şekilde bir başvuruda bulunulması hâlinde, bu yanılma 5271 sayılı CMK’nın 264. maddesi
+kapsamında değerlendirileceğinden başvuranın hakları ortadan kalkmayacaktır.</p>
+
+<hr>
+
+<p><strong>YARGITAY 1. CEZA DAİRESİ
+Esas : 2018/1284 Karar : 2018/3092</strong> Tarih : 27.06.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Sanıktan tahsiline karar verilen yargılama gideri miktarının hükme esas teşkil eden kısa kararda gösterilmemesi sonradan tamamlanabilir eksiklik olarak görülmüştür.</p>
+
+<p>Mahalli mahkemece verilen hükmün 5271 sayılı CMK`nun 35/2, 260, 6284 sayılı Kanunun 2/1-d ve 20/2. maddeleri gözetilerek Aile ve Sosyal Politikalar Bakanlığına tebliği üzerine anılan kurum tarafından da temyiz edildiği anlaşılmakla, dosya incelenerek gereği düşünüldü.</p>
+
+<p>Sanık … hakkında; maktul …’a yönelik nitelikli kasten öldürme ve nitelikli yağma suçlarından açılan kamu davalarında, 6284 sayılı Kanunun 2/1-d ve 20/2. maddeleri uyarınca Aile ve Sosyal Politikalar Bakanlığının bu suçun zarar göreni olduğu, bu sıfatının gereği olarak CMK’nun 233 ve 234. maddeleri gereğince kovuşturma evresinde sahip olduğu davaya katılma ve diğer haklarını kullanabilmesi için duruşmadan haberdar edilmesi gerektiği halde, usulen dava ve duruşmalar bildirilmeden, davaya katılma ve CMK`nun mağdur ve katılanlar için öngördüğü haklardan yararlanma olanağı sağlanmadan yargılamaya devam edilerek yazılı şekilde hüküm kurulması,</p>
+
+<p>Bozmayı gerektirmiş olup, sanık müdafii, katılanlar vekili ve suçtan zarar gören Aile ve Sosyal Politikalar Bakanlığı vekilinin temyiz itirazları bu nedenle yerinde görüldüğünden, sair yönleri incelenmeyen hükmün öncelikle bu nedenle tebliğnamedeki düşünce gibi BOZULMASINA, 27/06/2018 gününde oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY CEZA GENEL KURULU
+Esas : 2015/91 Karar : 2018/249</strong> Tarih : 29.05.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Özel Daire ile Yargıtay Cumhuriyet Başsavcılığı arasında oluşan ve Ceza Genel Kurulunca çözümlenmesi gereken uyuşmazlık; hakaret suçunun unsurlarının oluşup oluşmadığının belirlenmesine ilişkin ise de; öncelikle, kurul halinde çalışan kamu görevlilerine karşı görevinden dolayı hakaret suçundan açılan davada, kendilerine hakaret edildiği iddia edilen görevlilerin, suçun mağduru olup katılan sıfatını alabilecek durumda olmalarına rağmen davadan haberdar edilmemeleri ve yokluklarında hüküm kurulması hâlinde, gerekçeli kararın bu kişilere tebliği sağlanmadan temyiz incelemesi yapılmasının mümkün olup olmadığının değerlendirilmesi gerekmektedir.</p>
+
+<p>İncelenen dosya kapsamından;</p>
+
+<p>Sivas Cumhuriyet Başsavcılığınca düzenlenen iddianame ile; olay tarihinde Ünye M Tipi Kapalı Ceza İnfaz Kurumunda hükümlü olarak bulunan sanığın, Sivas E Tipi Kapalı Ceza İnfaz Kurumu Disiplin Kurulu Başkanlığınca hakkında verilen on gün süreyle ziyaretçi kabulünden men kararına yönelik itirazının reddedilmesi üzerine, ret kararını veren Sivas 2. Ağır Ceza Mahkemesine hitaben yazdığı dilekçe ile mahkeme heyetine hakaret ettiği iddiasıyla hakkında kamu davası açıldığı, yapılan yargılama sırasında bahse konu kararı veren mahkeme başkanı ve üyeleri olan Bekir Akkale, Hasan Ulaş ve Hakan Mavi`nin davadan haberdar edilmedikleri, yokluklarında hüküm kurulduğu ve gerekçeli kararın bu kişilere tebliğ edilmediği,</p>
+
+<p>Anlaşılmaktadır.</p>
+
+<p>Uyuşmazlık konusunun isabetli bir şekilde çözümlenebilmesi için hakaret suçu, Anayasanın “Hak Arama Hürriyeti” başlıklı 36. maddesi ve “Temel Hak ve Hürriyetlerin Korunması” başlıklı 40. maddesi ile 5271 sayılı CMK`nun “Kamu davasına katılma” başlıklı 237. maddesi ayrı ayrı değerlendirilmelidir.</p>
+
+<p>5237 sayılı Türk Ceza Kanununun “Hakaret” başlıklı 125. maddesi;</p>
+
+<p>“1- Bir kimseye onur, şeref ve saygınlığını rencide edebilecek nitelikte somut bir fiil veya olgu isnat eden veya sövmek suretiyle bir kimsenin onur, şeref ve saygınlığına saldıran kişi, üç aydan iki yıla kadar hapis veya adli para cezası ile cezalandırılır. Mağdurun gıyabında hakaretin cezalandırılabilmesi için fiilin en az üç kişiyle ihtilat ederek işlenmesi gerekir.</p>
+
+<p>2- Fiilin, mağduru muhatap alan sesli, yazılı veya görüntülü bir iletiyle işlenmesi hâlinde, yukarıdaki fıkrada belirtilen cezaya hükmolunur.</p>
+
+<p>3- Hakaret suçunun;</p>
+
+<p>a) Kamu görevlisine karşı görevinden dolayı,</p>
+
+<p>b) Dini, siyasi, sosyal, felsefi inanç, düşünce ve kanaatlerini açıklamasından, değiştirmesinden, yaymaya çalışmasından, mensup olduğu dinin emir ve yasaklarına uygun davranmasından dolayı,</p>
+
+<p>c) Kişinin mensup bulunduğu dine göre kutsal sayılan değerlerden bahisle,</p>
+
+<p>İşlenmesi halinde, cezanın alt sınırı bir yıldan az olamaz.</p>
+
+<p>(4) Hakaretin alenen işlenmesi halinde ceza altıda biri oranında artırılır.</p>
+
+<p>(5) Kurul hâlinde çalışan kamu görevlilerine görevlerinden dolayı hakaret edilmesi hâlinde suç, kurulu oluşturan üyelere karşı işlenmiş sayılır. Ancak, bu durumda zincirleme suça ilişkin madde hükümleri uygulanır” şeklinde düzenlenmiştir. Bu suçun mağduru kendisine karşı hakaret eylemi gerçekleştirilen kişi veya kişilerdir.</p>
+
+<p>Anayasanın “Hak Arama Hürriyeti” başlıklı 36. maddesi; “Herkes, meşru vasıta ve yollardan faydalanmak suretiyle yargı mercileri önünde davacı ve davalı olarak iddia ve savunma ile adil yargılanma hakkına sahiptir”; “Temel hak ve hürriyetlerin korunması” başlıklı 40. maddesine 4709 sayılı Kanunun 16. maddesiyle eklenen ikinci fıkrasında da, “Devlet, işlemlerinde, ilgili kişilerin hangi kanun yolları ve mercilere başvuracağını ve sürelerini belirtmek zorundadır” şeklinde hükümlere yer verilmiş, 40. maddenin ikinci fıkrasının gerekçesinde bireylerin yargı ya da idari makamlar önünde sonuna kadar haklarını arayabilmelerine kolaylık ve imkân sağlanmasının amaçlandığı, son derece dağınık mevzuat karşısında kanun yolu, mercii ve sürelerin belirtilmesinin hak arama, hak ve hürriyetlerin korunması açısından zorunluluk hâline geldiği belirtilmiştir.</p>
+
+<p>Genel olarak pozitif hukukça tanınmış hakların ön koşulu ve usuli güvencesi olarak anlaşılması gereken ve yargıya başvurma olanağını her olayda ve aşamada gerekli kılan hak arama özgürlüğü, Anayasa Mahkemesinin 19.09.1991 tarih ve 2-30 sayılı kararında belirtildiği üzere sav ve savunma hakkı şeklinde birbirini tamamlayan iki unsurdan oluşmakta, hukuksal olanakları kapsamlı biçimde sağlama ve bu konuda tüm yollardan yararlanma haklarını içermektedir. (Mesut Aydın, Anayasa Mahkemesi Kararlarında Hak Arama Özgürlüğü, Ankara Üniversitesi SBF Dergisi, Yıl: 2006, S. 3, s. 4-10) Bu bakımdan içerdiği sav unsuru nedeniyle davaya katılma hakkı, hak arama hürriyeti ile yakından ilgilidir.</p>
+
+<p>5271 sayılı CMK’nun “Kamu davasına katılma” başlıklı 237. maddesi;</p>
+
+<p>1)Mağdur, suçtan zarar gören gerçek ve tüzel kişiler ile malen sorumlu olanlar, ilk derece mahkemesindeki kovuşturma evresinin her aşamasında hüküm verilinceye kadar şikâyetçi olduklarını bildirerek kamu davasına katılabilirler.</p>
+
+<p>2)Kanun yolu muhakemesinde davaya katılma isteğinde bulunulamaz. Ancak, ilk derece mahkemesinde ileri sürülüp reddolunan veya karara bağlanmayan katılma istekleri, kanun yolu başvurusunda açıkça belirtilmişse incelenip karara bağlanır”,</p>
+
+<p>“Katılma usulü” başlıklı 238. maddesi ise;</p>
+
+<p>1)Katılma, kamu davasının açılmasından sonra mahkemeye dilekçe verilmesi veya katılma istemini içeren sözlü başvurunun duruşma tutanağına geçirilmesi suretiyle olur.</p>
+
+<p>2)Duruşma sırasında şikâyeti belirten ifade üzerine, suçtan zarar görenden davaya katılmak isteyip istemediği sorulur.</p>
+
+<p>3)Cumhuriyet savcısının, sanık ve varsa müdafiinin dinlenmesinden sonra davaya katılma isteminin uygun olup olmadığına karar verilir” şeklinde düzenlenmiştir.</p>
+
+<p>5271 sayılı CMK`nun 237. maddesinde, mağdur, suçtan zarar gören gerçek ve tüzel kişiler ile malen sorumlu olanların, ilk derece mahkemesindeki kovuşturma evresinin her aşamasında hüküm verilinceye kadar şikâyetçi olduklarını bildirerek davaya katılabilecekleri hüküm altına alınmış, ancak kanun yolu muhakemesinde bu hakkın kullanılamayacağı esası benimsenmiştir. Bununla birlikte, istisnai olarak ilk derece mahkemesinde ileri sürülüp reddolunan veya karara bağlanmayan katılma isteklerinin, kanun yolu başvurusunda açıkça belirtilmesi hâlinde inceleme merciince incelenip karara bağlanacağı kabul edilmiştir.</p>
+
+<p>5271 sayılı CMK`nun “Suçun mağduru ile şikâyetçinin çağırılması” başlıklı 233. maddesinin 1. fıkrası; “Mağdur ile şikâyetçi, Cumhuriyet savcısı veya mahkeme başkanı veya hâkim tarafından çağrı kâğıdı ile çağırılıp dinlenir” şeklinde düzenlenmiş olup, bu hüküm uyarınca mağdur ve şikâyetçinin, soruşturma aşamasında Cumhuriyet savcısı, kovuşturma aşamasında ise mahkeme başkanı veya hâkim tarafından usulüne uygun olarak çağrılıp dinlenmesi gerekmektedir. Katılma hakkı olan gerçek veya tüzel kişinin şikâyet hakkının da olduğu, diğer bir deyişle katılma hakkının şikâyet hakkını da içerdiği hususunda hiçbir kuşku yoktur.</p>
+
+<p>5271 sayılı CMK`nun mağdur ve şikâyetçinin haklarını düzenleyen “Mağdur ile şikâyetçinin hakları” başlıklı 234. maddesinin birinci fıkrasının (b) bendi;</p>
+
+<p>“Kovuşturma evresinde;</p>
+
+<p>1.Duruşmadan haberdar edilme,</p>
+
+<p>2.Kamu davasına katılma,</p>
+
+<p>3.Tutanak ve belgelerden örnek isteme,</p>
+
+<p>4.Tanıkların davetini isteme,</p>
+
+<p>5.Vekili bulunmaması halinde, cinsel saldırı suçu ile alt sınırı beş yıldan fazla hapis cezasını gerektiren suçlarda, baro tarafından kendisine avukat görevlendirilmesini isteme,</p>
+
+<p>6.Davaya katılmış olma koşuluyla davayı sonuçlandıran kararlara karşı kanun yollarına başvurma” şeklinde olup, buna göre mağdur ile şikâyetçinin kovuşturma evresinde; duruşmadan haberdar edilme, kamu davasına katılma, tutanak ve belgelerden örnek isteme, tanıkların davetini isteme, vekili bulunmaması hâlinde, cinsel saldırı suçu ile alt sınırı beş yıldan fazla hapis cezasını gerektiren suçlarda, baro tarafından kendisine avukat görevlendirilmesini isteme ve davaya katılmış olmak şartıyla davayı sonuçlandıran kararlara karşı kanun yollarına başvurma haklarının bulunduğu hüküm altına alınmıştır.</p>
+
+<p>Anılan maddenin birinci fıkrasının (b) bendinin açık düzenlemesinden de anlaşılacağı üzere, duruşmadan haberdar edilme kanun koyucu tarafından, mağdur ve şikâyetçi için kovuşturma aşamasında kullanılabilecek bir hak olarak düzenlenmiştir. Buna göre, mağdur ve şikâyetçiye veya vekillerine usulüne uygun tebliğ işlemi yapılmadan “duruşmadan haberdar edilme” hakkının kullandırıldığından bahsetmek mümkün değildir. CMK`nun 234. maddesi uyarınca bu hakkın kullandırılmaması kanuna aykırılık oluşturacaktır.</p>
+
+<p>5271 sayılı CMK`nun kanun yollarına başvurma hakkını düzenleyen 260. maddesinin birinci fıkrası ise;</p>
+
+<p>“(1) Hâkim ve mahkeme kararlarına karşı Cumhuriyet savcısı, şüpheli, sanık ve bu Kanuna göre katılan sıfatını almış olanlar ile katılma isteği karara bağlanmamış, reddedilmiş veya katılan sıfatını alabilecek surette suçtan zarar görmüş bulunanlar için kanun yolları açıktır” şeklinde olup, buna göre; duruşmadan haberdar olmayan mağdura, şikâyetçiye veya suçtan zarar görene gerekçeli kararın tebliğ edilmesinden sonra, hükmün temyiz edilmesi durumunda CMK’nun 260. maddesi uyarınca “katılan sıfatını alabilecek surette suçtan zarar gören” sıfatı ile temyizi incelenecek, ancak katılma hakkının kanundan doğmuş olması halinde CMK`nun 233 ve 234. maddelerine aykırı davranılması gerekçesiyle hükmün bozulmasına karar verilemeyebilecektir.</p>
+
+<p>Konumuzla ilgisi bakımından temyiz talebi ve süresi üzerinde de durulmasında fayda bulunmaktadır.</p>
+
+<p>5320 sayılı Kanunun 8. maddesi uyarınca karar tarihi itibarıyla uygulanması gereken 1412 sayılı CMUK`nun 310. maddesi; “Temyiz talebi, hükmün tefhiminden bir hafta içinde hükmü veren mahkemeye bir dilekçe verilmesi veya zabıt katibine yapılacak beyanla olur. Beyan tutanağa geçirilir ve tutanak hakime tasdik ettirilir” şeklindedir.</p>
+
+<p>Olağan kanun yollarından olan temyiz incelemesinin yapılabilmesi için bir temyiz davasının açılmış olması gerekir. Temyiz davasının açılabilmesi için de aranan iki şartın birlikte gerçekleşmiş olması gerekir. Bunlardan ilki süre, ikincisi ise istek şartıdır.</p>
+
+<p>Anılan maddede temyiz süresinin yüze karşı verilen kararlarda hükmün tefhimi ile, yoklukta verilen kararlarda ise tebliğle başlayacağı, bir hafta içinde hükmü veren mahkemeye veya bir başka yer mahkemesine verilecek dilekçe ile ya da zabıt kâtibine yapılacak beyanla temyiz talebinin gerçekleştirilebileceği, bu takdirde beyanın tutanağa geçirilerek hâkime onaylatılacağı belirtilmiştir.</p>
+
+<p>Görüldüğü gibi temyiz incelemesinin yapılabilmesi için, temyiz kanun yoluna başvuru hakkı bulunanların kararı tefhim veya tebliğ yoluyla öğrenmelerinin sağlanması kanuni bir mecburiyet olup, 5271 sayılı Ceza Muhakemesi Kanununun “Kararların Açıklanması ve Tebliği” başlıklı 35. maddesinin 2. fıkrasında; “koruma tedbirlerine ilişkin olanlar hariç, aleyhine kanun yoluna başvurulabilecek hâkim veya mahkeme kararları, hazır bulunamayan ilgilisine tebliğ olunur” hükmüne yer verilmiştir.</p>
+
+<p>Yargıtay Ceza Genel Kurulu ve Ceza Dairelerince tereddüte mahal bırakmayacak şekilde sürdürülen uygulamalara göre; yoklukta kurulan hükmün temyiz hakkı olanlara usulüne uygun tebliğ edilmediği hallerde temyiz süresi işlemeye başlamayacağından, öğrenme üzerine verilen temyiz dilekçelerinin süresinde olduğu kabul edilmektedir. Temyiz etme ihtimali tüketilmeden temyiz incelemesi yapılamayacağı, inceleme yapılıp onama kararı verilmesi halinde temyiz edilme ihtimali bulunduğundan hükmün kesinleşmesinden söz edilemeyeceği, onama kararının kendisine bağlanan hukuki sonucu doğuramayacağı, bu haliyle de hukuki değer ifade etmeyeceği gözetilmelidir.</p>
+
+<p>Bu bilgiler ışığında uyuşmazlık konusu değerlendirildiğinde;</p>
+
+<p>Olay tarihinde Ünye M Tipi Kapalı Ceza İnfaz Kurumunda hükümlü olarak bulunan sanığın, Sivas E Tipi Kapalı Ceza İnfaz Kurumu Disiplin Kurulu Başkanlığınca hakkında verilen on gün süreyle ziyaretçi kabulünden men kararına yönelik itirazının Sivas 2. Ağır Ceza Mahkemesince 25.12.2008 gün ve 2008/705 sayı ile reddedilmesi üzerine kararı veren mahkeme heyetine yönelik kamu görevlisine karşı görevinden dolayı hakaret suçunu işlediğinin iddia edildiği, mahkeme başkan ve üyeleri olan Bekir Akkale, Hasan Ulaş ve Hakan Mavi’nin davadan haberdar edilmedikleri, yokluklarında hüküm kurulduğu ve gerekçeli kararın kendilerine tebliğ edilmediği anlaşılmakla; Anayasa ile güvence altına alınan hak arama hürriyetinin sağlanması amacına uygun olarak CMK’nun 234/1. maddesi uyarınca, sanık hakkında açılan kamu davasına katılma hakkı bulunan mahkeme başkan ve üyelerinin mağdur olarak davadan haberdar edilmeleri zorunluluğunun bulunduğu, bu zorunluluğun hüküm verilinceye kadar yerine getirilmemesi durumunda ise CMK’nun 260. maddesi uyarınca kanun yollarına başvurma hakkı bulunan mağdurlara gerekçeli kararın tebliğ edilmesi gerektiği, ancak somut olayda adı geçen mağdurlara bu kanuni imkânların tanınmadığı anlaşıldığından, yargılamanın başında davadan haberdar edilmesi gereken, temyiz aşamasına kadar bu hakları kullandırılmayan ve haklarını korumanın başka bir yolu da bulunmayan mağdurların kamu davasına katılma imkânını kullanabilmeleri amacıyla Özel Dairece öncelikle tevdi kararı verilmek suretiyle, gerekçeli kararın mağdurlara tebliğinin sağlanarak yedi günlük temyiz süresinin başlatılması, kararın mağdurlar tarafından temyiz edilmemesi durumunda temyiz davasının sadece sanığın temyiziyle sınırlı olarak sonuçlandırılması; mağdur veya mağdurlarlar tarafından temyiz edilmesi durumunda ise Yargıtay Cumhuriyet Başsavcılığınca ek tebliğname düzenlenmesi sağlanıp, CMK`nun 260. maddesi uyarınca mağdur veya mağdurların davaya katılan olarak kabulüne karar verildikten sonra temyiz istemlerinin birlikte ve tek seferde incelenerek temyiz davasının sonuçlandırılması gerekmektedir. Ancak bu aşamada mağdurların sanık hakkında açılan kamu davasından haberdar edilmemeleri suretiyle katılma ve diğer haklarını kullanma imkânının kısıtlandığı gerekçesiyle, hükmün bozulmasına karar verilmesi mümkün görülmemiştir.</p>
+
+<p>Bu nedenle, Yargıtay Cumhuriyet Başsavcılığı itirazının değişik gerekçeyle kabulüne karar verilmelidir.</p>
+
+<p>SONUÇ:</p>
+
+<p>Açıklanan nedenlerle;</p>
+
+<p>1- Yargıtay Cumhuriyet Başsavcılığı itirazının değişik gerekçeyle KABULÜNE,</p>
+
+<p>2- Yargıtay 4. Ceza Dairesinin 06.05.2014 gün ve 3989-15318 sayılı bozma kararının KALDIRILMASINA,</p>
+
+<p>3- Dosyanın, Sivas (Kapatılan) 2. Sulh Ceza Mahkemesinin 27.01.2011 gün ve 24-84 sayılı kararının, mahkeme başkan ve üyeleri olan mağdurlar Bekir Akkale, Hasan Ulaş ve Hakan Mavi’ye tebliğinin sağlanması için tevdi kararı verilmesi amacıyla Yargıtay 4. Ceza Dairesine gönderilmek üzere Yargıtay Cumhuriyet Başsavcılığına TEVDİİNE, 29.05.2018 tarihinde yapılan müzakerede oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. CEZA DAİRESİ
+Esas : 2016/472 Karar : 2018/6303</strong> Tarih : 16.05.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Dosya incelenerek gereği düşünüldü;</p>
+
+<p>Katılan …‘in yokluğunda verilen hükmün katılanın ifadesinde bildirdiği son bilinen adresine tebliğ yapılamaması üzerine katılan …‘in tebligat tarihi itibariyle güncel mernis adresi yerine katılanın eski mernis adresine 7201 sayılı Tebligat Kanunu’nun 21/2. maddesi uyarınca yapılan karar tebliği işleminin geçersiz olduğu; katılan sıfatını alabilecek surette suçtan zarar gördüğü anlaşılan şikayetçi …‘un 5271 sayılı CMK’nın 260/1. maddesi uyarınca yasa yollarına başvurma hakkının bulunduğu, şikayetçinin sanık hakkında açılan davadan usulüne uygun olarak haberdar edilmediği ve davaya katılabilmesi için olanak tanınmadığının anlaşılması karşısında; yokluğunda verilen kararın, şikayetçi …‘a da tebliğinin gerektiği halde, kendisine hükmün tebliğ edildiğine dair dosya içerisinde bilgi ve belgeye rastlanmadığından; gerekçeli kararın katılan …‘in güncel mernis adresine olmak üzere usulüne uygun olarak tebliğ edilmesi ve şikayetçi …‘a ise öncelikle soruşturma aşamasındaki ifadesinde bildirdiği son bilinen adresine tebliğ yapılması, bu adrese tebligat yapılamaması halinde güncel mernis adresine tebliğ yapılmak suretiyle usulüne uygun olarak tebliği ile, tebligat belgeleri ve sunmaları halinde temyiz dilekçeleri de eklenerek ve ek tebliğname de düzenlenerek incelenmek üzere iadesinin mahallince sağlanması için dosyanın Yargıtay Cumhuriyet Başsavcılığına GÖNDERİLMESİNE, 16/05/2018 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 6. CEZA DAİRESİ
+Esas : 2015/3799 Karar : 2018/1215</strong> Tarih : 20.02.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Yerel Mahkemece verilen hüküm temyiz edilmekle; başvurunun nitelik, ceza türü, süresi ve suç tarihine göre dosya görüşüldü:</p>
+
+<p>Müşteki …‘ın aşamalarda şikayetçi olup sanıkların cezalandırılmasını istediği ve 21/01/2014 tarihli celsede katılma talebinde bulunduğu halde mahkeme tarafından açıkça bir katılma kararı verilmemişse de, 5271 sayılı CMK’nın 260/1. maddesine göre, katılan sıfatını alabilecek surette suçtan zarar görmüş olan yakınan …‘ın kanun yoluna başvurma hakkının bulunması karşısında; müştekinin CMK`nın 237/2. maddesi uyarınca katılan olarak kabul edilerek, yapılan incelemede;</p>
+
+<p>Oluş ve dosya içeriğine göre, olay tarihinde sanıklar … ve …‘ün inşaat halinde olan evlerinin ikinci katından yapılan hırsızlık eyleminden, evlerinde o dönem bir süre kartonpiyerci olarak çalışan katılan …‘ı sorumlu tutarak silah zoruyla çalınan eşyaların değeri ile orantılı 7.000.-TL’lik senet imzalattıkları olayda; 
+sanıkların alacaklı oldukları inancıyla katılana zorla senet imzalatmaları şeklindeki eylemlerinin 5237 sayılı TCK`nın 150/1. maddesi yollamasıyla aynı Yasanın 106/2-a,c maddesinde düzenlenen tehdit suçunu oluşturduğu gözetilmeden, suçun vasfında ve delillerin takdirinde yanılgıya düşülerek yerinde ve yeterli olmayan gerekçeyle yazılı şekilde hüküm kurulması,</p>
+
+<p>Bozmayı gerektirmiş, katılan sanık …`ın temyiz itirazları bu bakımdan yerinde görülmüş olduğundan, hükmün açıklanan nedenlerle tebliğnameye aykırı olarak BOZULMASINA, 20/02/2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 16. CEZA DAİRESİ
+Esas : 2017/3857 Karar : 2018/297</strong> Tarih : 15.02.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Dosya incelenerek gereği düşünüldü:</p>
+
+<p>CMK’nın 260. maddesi uyarınca katılan sıfatını alabilecek surette suçtan zarar gören sıfatıyla temyiz hakkının bulunduğu kabul edilerek, hükmü temyiz etmek suretiyle katılma iradesini ortaya koyan suçtan zarar gören maliye hazinesinin kamu malına zarar verme suçu bakımından, CMK’nın 237/2. maddesi uyarınca davaya katılmasına karar verilerek yapılan incelemede;</p>
+
+<p>Sanığın görüntülerdeki kişinin kendisi olmadığını savunması karşısında; sanık hakkında iddianamede belirtilen suç tarihinde gerçekleşen olayda çekilmiş fotoğraf, video görüntülerinin, mukayeseye elverişli fotoğrafları ve el konulan sanığa ait giyisiler ile birlikte Adli Tıp, TÜBİTAK veya TRT gibi uzman kuruluşlara mensup bilirkişilere gönderilip görüntü ve fotoğraf analizleri yaptırılarak; sanığın fotoğraf ve görüntülerde yer alan kişi olup olmadığı, yasadışı eylemler sırasında iddianamede yüklenen fiilleri bizzat gerçekleştirip gerçekleştirmediğinin kuşkuya yer vermeyecek biçimde kesin olarak saptanmasından sonra tüm deliller birlikte değerlendirilerek sanığın hukuki durumunun takdir ve tayin edilmesi gerektiği gözetilmeden, eksik inceleme ile yazılı şekilde hüküm kurulması,</p>
+
+<p>Kanuna aykırı, o yer Cumhuriyet savcısı ve katılan vekillerinin temyiz itirazları bu itibarla yerinde görülmüş olduğundan hükümlerin bu sebepten dolayı BOZULMASINA, 15.02.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 16. CEZA DAİRESİ 
+Esas : 2017/2944 Karar : 2018/253</strong> Tarih : 14.02.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Dosya incelenerek gereği düşünüldü:</p>
+
+<p>Sanık … müdafiinin süresinden sonra yaptığı duruşmalı inceleme isteminin CMUK’nın 318. maddesi uyarınca REDDİNE,</p>
+
+<p>Duruşmalı inceleme talebi reddedilen sanık … yönünden duruşmasız; sanıklar …, … ve … yönünden duruşmalı olarak yapılan inceleme sonunda gereği düşünüldü: ;</p>
+
+<p>27.06.2012 tarihli olayda … ve … sicil numaralı polis memurları ile 30.09.2011 tarihli olayda …, … ve …‘ın kasten öldürmeye teşebbüs suçlarından zarar gören sıfatıyla davaya katılma hakkı bulduğu, CMK’nın 234 ve 260. maddesi gereğince kovuşturma evresinde usulüne uygun şekilde duruşmalardan haberdar edilmediklerinin ve davaya katılma imkanından yoksun kaldıklarının anlaşılması karşısında; gerekçeli kararın anılanlara tebliği ile hükmü temyiz etmeleri halinde dilekçelerinin eklenmesinden ve bu hususta ek tebliğname düzenlenmesinden sonra gönderilmesinin temini için dosyanın Yargıtay Cumhuriyet Başsavcılığına TEVDİİNE, 14.02.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<p>TEFHİM ŞERHİ:</p>
+
+<p>14.02.2018 tarihinde verilen iş bu karar, Yargıtay Cumhuriyet savcısı …‘nun huzurunda, duruşmada savunma yapmış bulunan sanık … müdafii Av. …, sanık … müdafii Av. … ve sanık … müdafileri Av. … ve Av. …‘nın yokluklarında, 21.02.2018 tarihinde usulen ve açık olarak tefhim olundu.</p>
+
+<hr>
+
+<p><strong>YARGITAY 6. CEZA DAİRESİ
+Esas : 2014/15011 Karar : 2018/451</strong> Tarih : 29.01.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Yerel Mahkemece verilen hüküm temyiz edilmekle; başvurunun nitelik, ceza türü, süresi ve suç tarihine göre dosya görüşüldü:</p>
+
+<p>I-) Sanıklar … ve …‘ya atılı tefecilik suçu yönünden 5271 sayılı CMK’nın 260/1. maddesine göre, katılan sıfatını alabilecek surette suçtan zarar görmüş olan Hazine’nin kanun yoluna başvurma hakkının bulunması ve sanıklar hakkındaki beraat kararının Hazine vekili tarafından temyiz edilmesi karşısında; Aynı Yasanın 237/2. maddesi uyarınca Hazine’nin katılma talebinin kabulüne karar verilerek yapılan incelemede;</p>
+
+<p>Sanıklara yüklenen ve 5237 sayılı TCK’nın 241/1. maddesine uyan suçun gerektirdiği cezanın türü ve üst sınırına göre, beraat kararının verildiği 13/02/2009 tarihi ile inceleme tarihi arasında aynı Kanun’un 66/1-e maddesinde öngörülen 8 yıllık sürenin zamanaşımını kesen bir neden olmaksızın geçmiş bulunması,</p>
+
+<p>Bozmayı gerektirmiş, katılanlar Hazine vekili ile….. vekilinin temyiz itirazları bu itibarla yerinde görülmüş olduğundan, hükmün açıklanan nedenle BOZULMASINA, bozma nedeni yeniden yargılama yapılmasını gerektirmediğinden, 5320 sayılı Kanun’un 8/1. maddesi aracılığıyla 1412 sayılı CMUK’nun 322. maddesinin verdiği yetkiye dayanılarak sanıklar hakkında açılan kamu davasının zamanaşımı nedeniyle DÜŞMESİNE,</p>
+
+<p>II-) Sanıklar … ve … hakkında katılan …..ye yönelik yağma suçundan verilen beraat kararının incelenmesinde;</p>
+
+<p>Dosya ve duruşma tutanakları içeriğine, kararın dayandığı gerekçeye ve Hakimler Kurulunun takdirine göre, katılan Serdar Ünlü vekili ile sanık … savunmanının temyiz itirazları yerinde görülmemiş olduğundan reddiyle, usul ve kanuna uygun bulunan hükmün kısmen istem gibi ONANMASINA, 29.01.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 4. CEZA DAİRESİ
+Esas : 2016/12728 Karar : 2018/1463</strong> Tarih : 24.01.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Yerel Mahkemece verilen hükümler temyiz edilmekle, başvurunun süresi ve kararın niteliği ile suç tarihine göre katılan sıfatını alabilecek surette suçtan zarar gören ve davaya katılmak istediğini belirten müşteki …‘ın CMK’nın 260/1. maddesi uyarınca kanun yoluna başvuru hakkının bulunduğunun saptanması ve temyiz dilekçesinin kapsamı karşısında, CMK’nın 237/2. maddesi uyarınca müşteki …`ın davaya katılmasına karar verilerek dosya görüşüldü:</p>
+
+<p>1-Hakaret suçuna ilişkin kararda öngörülen cezanın nitelik ve niceliğine göre, verildiği tarih itibariyle hükmün temyiz edilemez olduğu anlaşıldığından, 5320 sayılı Kanunun 8/1 ve 1412 sayılı CMUK’nın 317. maddeleri uyarınca sanık …`ın tebliğnameye uygun olarak, TEMYİZ İSTEĞİNİN REDDİNE,</p>
+
+<p>2-Sanık … hakkında yaralama, sanık … hakkında hakaret ve tehdit suçlarından kurulan hükümlerin temyizinde;</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede:</p>
+
+<p>Eylemlere ve yükletilen suçlara yönelik katılan …`ın temyiz iddiaları yerinde görülmediğinden tebliğnameye uygun olarak, TEMYİZ DAVASININ ESASTAN REDDİYLE HÜKÜMLERİN ONANMASINA, 24.01.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 1. CEZA DAİRESİ
+Esas : 2017/1783 Karar : 2018/239</strong> Tarih : 24.01.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Mahkemece verilen hükmün 5271 sayılı CMK`nun 35/2, 260, 6284 sayılı Yasanın 2/1-d ve 20/2. maddeleri gözetilerek Aile ve Sosyal Politikalar Bakanlığına tebliği üzerine anılan Kurum vekili tarafından süresinde temyiz dilekçesi verildiği anlaşılmakla,</p>
+
+<p>1-) Aile ve Sosyal Politikalar Bakanlığının, sanık … tarafından maktul …‘a yönelik nitelikli hırsızlık suçundan açılan kamu davasına katılma ve bu suçtan kurulan hükmü temyize yetkisi bulunmadığından, anılan kurum vekilinin bu suçtan kurulan hükme yönelik temyiz isteminin CMUK`nun 317. maddesi uyarınca REDDİNE karar verilmiştir.</p>
+
+<p>2-A-) Sanık … hakkında maktul …‘a yönelik kasten öldürme suçundan açılan kamu davasında ise; 6284 sayılı Yasanın 2/1-d ve 20/2. maddeleri uyarınca Aile ve Sosyal Politikalar Bakanlığının bu suçun zarar göreni olduğu, bu sıfatının gereği olarak CMK’nun 233 ve 234. maddeleri uyarınca kovuşturma evresinde sahip olduğu davaya katılma ve öteki haklarını kullanabilmesi için duruşmadan haberdar edilmesi gerektiği halde, usulen dava ve duruşmalar bildirilmeden, davaya katılma, CMUK`nun mağdur … katılanlar için öngördüğü haklardan yararlanma olanağı sağlanmadan yargılamaya devam edilerek yazılı biçimde hüküm kurulması,</p>
+
+<p>B-) Maktulün, tanık beyanları ile İzmir Atatürk Eğitim ve Araştırma Hastanesinin 02/11/2011 tarihli raporuna göre; depresif bozukluk, romatoid artrit, sağ sensorinevral, sol mixt tip işitme kaybı nedeniyle % 51 özürlü olduğu, Katip Çelebi Üniversitesi Atatürk Eğitim ve Araştırma Hastanesi’nin 14/12/2012 tarihli raporuna göre ise, distimik bozukluk nedeniyle % 10 özürlü olduğu, 5237 sayılı TCK`nun 82/1-e bendi kapsamında beden veya ruh bakımından kendisini savunamayacak durumda olup olmadığı hususunda Adli Tıp Kurumu ilgili İhtisas Dairesinden rapor alınmasından sonra sonucuna göre sanığın hukuki durumunun tayin ve takdir edilmesi gerektiği gözetilmeden, eksik inceleme ile yazılı şekilde hüküm kurulması,</p>
+
+<p>Bozmayı gerektirmiş olup, sanık müdafii, katılan vekili ve suçtan zarar gören … vekilinin temyiz itirazları bu itibarla yerinde görüldüğünden, sair yönleri incelenmeyen kasten öldürme suçundan verilen hükmün öncelikle bu nedenle, nitelikli hırsızlık suçundan verilen hükmün ise bağlantı nedeniyle tebliğnamedeki düşünce gibi BOZULMASINA, 24/01/2018 günü oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 11. CEZA DAİRESİ 
+Esas : 2017/17620 Karar : 2018/447</strong> Tarih : 18.01.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Kamu davasına katılma hakkı bulunan şikayetçi kuruma davaya katılma talebinin bulunup bulunmadığı sorulmadan dava sonuçlandırılmış ise de; katılma iradesini gösterdiği dikkate alınarak, katılan sıfatını alabilecek surette suçtan zarar gören ve 5271 sayılı CMK’nın 260/1. maddesi gereğince hükmü temyiz yetkisi bulunan şikayetçi kurumun aynı Kanunun 237/2. maddesi uyarınca davaya katılan, Av. …‘ın da katılan vekili olarak davaya kabullerine karar verilerek yapılan incelemede;</p>
+
+<p>Bozmaya uyularak yapılan yargılamada, sanığa yüklenen ‘‘2005 takvim yılında sahte fatura düzenlemek’’ suçunun, suç tarihinde yürürlükte bulunan 213 sayılı VUK’nun 359/b-1. maddesinde öngörülen cezasının üst sınırı itibariyle tabi olduğu, 5237 sayılı TCK’nın 66/1-e ve 67/4. maddelerinde öngörülen dava zamanaşımının, en son faturanın düzenlendiği 22.06.2005 tarihinden, hüküm tarihine kadar gerçekleştiği gözetilmeden yargılamaya devamla yazılı şekilde hüküm kurulması,</p>
+
+<p>Yasaya aykırı, katılan vekilinin temyiz itirazları bu nedenle yerinde görülmüş olduğundan, sair yönleri incelenmeyen hükmün bu sebepten dolayı 5320 sayılı Kanunun 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca BOZULMASINA; ancak yeniden yargılama yapılmasını gerektirmeyen bu hususta aynı Yasanın 322. maddesindeki yetkiye dayanılarak sanık hakkındaki kamu davasının gerçekleşen zamanaşımı nedeniyle 5237 sayılı TCK’nın 66/1-e ve 5271 sayılı CMK’nın 223/8 maddeleri gereğince DÜŞÜRÜLMESİNE, 18.01.2018 tarihinde oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 5. CEZA DAİRESİ
+Esas : 2014/10108 Karar : 2018/208</strong> Tarih : 18.01.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Mahalli mahkemece verilen hükümler temyiz edilmekle dosya incelendi;</p>
+
+<p>CMK’nın 260/1. maddesine göre;
+bu Kanuna göre katılan sıfatını almış olanlar ile katılma isteği karara bağlanmamış, reddedilmemiş veya katılan sıfatını alabilecek surette suçtan zarar görmüş bulunanlar için kanun yollarının açık olduğu anlaşılmakla, 
+yargılama aşamasındaki katılma isteği 18/02/2010 tarihli celsede reddedilen ancak sanıklara isnat edilen tefecilik suçundan zarar gördüğü anlaşılan şikayetçi Salih Salgıncı’nın öğrenme üzerine gerçekleşen temyiz isteminin süresinde yapıldığı ve dilekçe içeriğine göre davaya katılma iradesini ortaya koyduğu da gözetilerek katılma isteminin CMK`nın 237/2, 260. maddelerinin verdiği yetkiye dayanılarak kabulüne karar verildikten sonra gereği düşünüldü:</p>
+
+<p>İddianame ve dosya içeriğindeki beyan dilekçelerinden, sanıkların iştirak iradesi ile kazanç elde etme amacıyla borç para verdikleri ve mağdur …‘i tehdit ederek mağdura ait taşınmaz üzerine ipotek konulmasını sağlayarak taşınmazın sanık …`a ihale edilmesini sağladıkları iddiası karşısında, 
+iddianamede tehdit olarak nitelenen eylemlerin sübutu halinde yağma suçunu oluşturabileceği anlaşılmakla,</p>
+
+<p>5235 sayılı Adli Yargı İlk Derece Mahkemeleri ile Bölge Adliye Mahkemelerinin Kuruluş, Görev ve Yetkileri Hakkında Kanunun 12. maddesi uyarınca eylemleri nitelendirme ve kanıtları değerlendirme görevinin Ağır Ceza Mahkemesine ait olduğu, delillerin birlikte takdir edilmesi bakımından tefecilik suçundan açılan davanın da birlikte görülmesinde zorunluluk bulunduğu cihetle, görevsizlik kararı verilmesi gerektiği gözetilmeden,</p>
+
+<p>Ayrıca sanıklar hakkında tefecilik suçundan kamu davası açıldığı, CMK’nın 260/1. maddesine göre katılan sıfatını alabilecek surette suçun mağduru olan Hazinenin kanun yoluna başvurma hakkının bulunduğu ve bu sıfatının gereği olarak CMK’nın 233 ve 234. maddeleri gereğince kovuşturma evresinde sahip olduğu davaya katılma ve öteki haklarını kullanabilmesi için duruşmadan haberdar edilmesi gerektiği halde, usulen dava ve duruşmalar bildirilmeden, davaya katılma ve CMK`nın mağdur ve katılanlar için öngördüğü haklardan yararlanma olanağı sağlanmadan yargılamaya devam edilerek yazılı biçimde hüküm kurulması,</p>
+
+<p>Kanuna aykırı, müşteki Hazine vekili ile katılanlar… Salgıncı ve … vekilinin temyiz itirazları bu nedenle yerinde görülmüş olduğundan esası incelenmeyen hükümlerin 5320 sayılı Kanunun 8/11. maddesi de gözetilerek CMUK`nın 321. maddesi uyarınca BOZULMASINA, 18/01/2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 8. CEZA DAİRESİ 
+Esas : 2017/21641 Karar : 2018/535</strong> Tarih : 17.01.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Gereği görüşülüp düşünüldü:</p>
+
+<p>I- 6136 sayılı Yasaya aykırılık ve mağdur …‘e yönelik kasten yaralama suçlarından zarar görme olasılığı bulunmayan Aile ve Sosyal Politikalar Bakanlığı’nın bu suçlardan açılan davalara katılma ve hükmü temyiz etme hakkı bulunmadığından vekilinin temyiz isteminin 5320 sayılı Yasanın 8/1. maddesi uyarınca uygulanması gereken CMUK.nun 317. maddesi uyarınca oybirliğiyle REDDİNE,</p>
+
+<p>II- Sanık hakkında 6136 sayılı Yasaya muhalefet ve mağdur …‘e yönelik kasten yaralama suçlarından kurulan hükümlere yönelik sanığın temyizine ilişkin yapılan incelemede;</p>
+
+<p>Yapılan yargılamaya, dosya içeriğine, toplanıp karar yerinde gösterilen ve değerlendirilen delillere, oluşa ve mahkemenin soruşturma sonucunda oluşan inanç ve takdirine, suçun oluşumuna ve niteliğine uygun kabul ve uygulamasına, hukuka uygun, yasal ve yeterli olarak açıklanan gerekçeye göre, sanığın ceza ehliyetine ve suçun sübutuna yönelik ve yerinde görülmeyen temyiz itirazlarının reddiyle hükümlerin ONANMASINA,</p>
+
+<p>1- Sanık hakkında mağdurlar … ve …‘ye yönelik kasten yaralama suçlarından kurulan hükümlere yönelik Aile ve Sosyal Politikalar Bakanlığı ile sanığın temyizine gelince;</p>
+
+<p>Duruşmadan usulüne uygun haberdar edilmeyen şikayetçi Aile ve Sosyal Politikalar Bakanlığı’nın gerekçeli kararın tebliği üzerine hükmü temyiz ettiği anlaşıldığından, şikayetçi kurumun 5271 sayılı CMK.nun 260/1. madde ve fıkrası uyarınca yasa yollarına başvurma hakkı bulunduğu belirlenerek yapılan incelemede;</p>
+
+<p>Şikayetçi kurumun duruşmadan haberdar edilip iddia ve delillerini sunma ve davaya katılma olanağı sağlanarak sanığın hukuki durumunun değerlendirilmesi gerektiği gözetilmeden, iddia hakkı kısıtlanmak suretiyle CMK.nun 233 ve 234. maddelerine aykırı davranılması,</p>
+
+<p>Yasaya aykırı, şikayetçi kurum vekilinin ve sanığın temyiz itirazları bu itibarla yerinde görülmüş olduğundan sair yönleri incelenmeyen hükümlerin bu sebepten dolayı 5320 sayılı Yasanın 8/1. maddesi gereğince uygulanması gereken CMUK.nun 321. maddesi uyarınca BOZULMASINA, 17.01.2018 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 11. CEZA DAİRESİ 
+Esas : 2017/15360 Karar : 2018/341</strong> Tarih : 16.01.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>A) Sanık … hakkında sahte resmi belge düzenleme suçundan verilen mahkumiyet hükmüne yönelik temyiz itirazlarının incelenmesinde;</p>
+
+<p>1- Olay tarihinde, suça konu inşaattan sorumlu yapı denetim firması yetkilisi olan sanık hakkında; dairenin, inşaat sözleşmesindeki teknik şartnameye uygun olup olmadığını denetlemeden, suça konu iş bitirme tutanağını düzenlediği iddiasıyla açılan kamu davasında; iş bitirme tutanağının tamamlanması için sanığın belgeyi düzenlemesinin tek başına yeterli olmayıp, Yapı Denetim Yönetmeliği’nin 4/6. maddesi uyarınca, idarece de bina mahallinin incelenip tespit edilmesi gerektiği ve idarece onaylandıktan sonra belgenin hukuki nitelik kazanacağı dikkate alınarak; dosya kapsamına göre, yapı denetim firması yetkilisi sanığın inşaat alanında yeterli denetim yapmadan iş bitirme tutanağını düzenlemesi eyleminin 4708 Sayılı Kanunun 9/1. maddesinde düzenlenen görevi kötüye kullanma suçunu oluşturacağı gözetilmeden yazılı şekilde resmi belgede sahtecilik suçundan mahkumiyet hükmü kurulması,</p>
+
+<p>2- Kabule göre;</p>
+
+<p>a- Mahkum olduğu uzun süreli hapis cezası ertelenen sanık hakkında 5237 sayılı TCK’nın 53. maddesinin 3. fıkrası uyarınca aynı maddenin 1. fıkrasındaki yazılı hak yoksunluklarına hükmedilmesi gerektiğinin gözetilmemesi,</p>
+
+<p>b- Gerekçeli karar başlığında, 30.12.2011 olan suç tarihinin 29.12.2011 olarak yanlış yazılması,</p>
+
+<p>Yasaya aykırı, sanık müdafiinin temyiz itirazları bu itibarla yerinde görülmüş olduğundan, hükmün bu sebeplerden dolayı 5320 sayılı Yasanın 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca BOZULMASINA,</p>
+
+<p>B) Sanıklar … ve … hakkında 4708 Sayılı Kanuna aykırılık suçundan verilen beraat hükümlerine yönelik temyiz itirazlarının incelenmesine gelince;</p>
+
+<p>5271 sayılı CMK’nın 260/1. maddesi gereğince yasa yoluna başvurma hakkı bulunup yüklenen suçtan doğrudan zarar gördüğü anlaşılan, usulüne uygun şekilde dava ve duruşmadan haberdar edilmediği için davaya katılma talebinde bulunamayan şikayetçi …’nın CMK’nın 260/1 maddesi uyarınca hükümleri temyiz etme hakkının bulunduğu kabul edilerek yapılan incelemede;</p>
+
+<p>1- Kovuşturmanın her aşamasında kamu davasına katılma hakkı bulunan şikayetçi …’na duruşma gününün usulen bildirilip şikayet ve delillerini bildirme ve kamu davasına katılma olanağı sağlanmadan, duruşmaya devamla yazılı şekilde karar verilmesi suretiyle 5271 sayılı CMK’nın 234/1-b maddesine aykırı davranılması,</p>
+
+<p>2- Kabule göre, gerekçeli karar başlığında, 30.12.2011 olan suç tarihinin 29.12.2011 olarak yanlış yazılması,</p>
+
+<p>Yasaya aykırı, katılan … vekili ile şikayetçi … vekilinin temyiz itirazları bu itibarla yerinde görülmüş olduğundan, sair yönleri incelenmeyen hükümlerin bu sebeplerden dolayı 5320 sayılı Yasanın 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca BOZULMASINA, 16.01.2018 tarihinde oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 11. CEZA DAİRESİ 
+Esas : 2017/5593 Karar : 2018/203</strong> Tarih : 11.01.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>5271 sayılı CMK’nın kanun yollarına başvurma başlıklı 260/1. maddesindeki “hakim ve mahkeme kararlarına karşı Cumhuriyet savcısı, şüpheli ve bu kanuna göre katılan sıfatını almış olanlar ile katılma isteği karara bağlanmamış, reddedilmiş veya katılan sıfatını alabilecek surette suçtan zarar görmüş bulunanlar için kanun yolları açıktır” hükmü karşısında; katılan sıfatını alabilecek surette suçtan zarar görmüş olan ve kovuşturma evresinde usulüne uygun olarak duruşmadan haberdar edilmediği için davaya katılma talebinde bulunamayan şikayetçi kurumun yokluğunda verilen hükmü, vekilinin 14.03.2014 tarihinde temyiz ettiği görülmekle, yasa yollarına başvurma hakkı bulunduğu belirlenerek yapılan incelemede;</p>
+
+<p>Kovuşturmanın her aşamasında kamu davasına katılma hakkı bulunan şikayetçi kuruma, duruşma gününün usulen bildirilip, davaya katılma, iddia ve delillerini sunma olanağı tanınması gerektiği gözetilmeden, yazılı şekilde karar verilmek suretiyle iddia hakkının kısıtlanması,</p>
+
+<p>Yasaya aykırı, şikayetçi vekilinin temyiz itirazları bu itibarla yerinde görülmüş olduğundan, sair yönleri incelenmeyen hükmün bu sebepten dolayı, 5320 sayılı yasanın 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca BOZULMASINA, 11.01.2018 tarihinde oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 5. CEZA DAİRESİ
+Esas : 2017/1704 Karar : 2018/115</strong> Tarih : 11.01.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>CMK’nın 260/1. maddesine göre zimmet suçundan katılan sıfatını alabilecek surette zarar görmüş olan ve davadan haberdar edilmeyen Hazinenin kanun yoluna başvurma hakkının bulunması ve hükmün vekili tarafından süresinde temyiz edilmesi karşısında, 3628 sayılı Yasanın 18. maddesi ile CMK’nın 237/2. maddesinin verdiği yetkiye dayanılarak Hazine’nin katılma isteminin kabulüne karar verildikten sonra gereği düşünüldü:</p>
+
+<p>Sanık … hakkında zimmet suçundan verilen beraat hükmünün yapılan incelemesinde;</p>
+
+<p>Dosya içerisinde soruşturma başlamadan önce, soruşturma başladıktan sonra ve kovuşturma evrelerinde aldırılan dokuz adet bilirkişi raporunun bulunduğu; 22/05/2009 tarihli raporda sanık …‘nin tahsil ettiği paraları sanık …‘e teslim ettiği, bu nedenle sanık …‘nin uhdesinde para kalmadığı ve 24/05/2011 tarihli raporda belediye ekmek fırını gelirinden 30.946,89 TL’nin sanık …‘in uhdesinde kaldığı yönünde görüş bildirilmiş ise de diğer raporlarda sanık …‘in uhdesinde para kaldığına dair bir tespite yer verilmemiş olup mevcut raporlar arasındaki çelişkinin giderilmesi amacıyla aldırılan 21/11/2012 tarihli rapor ve aynı heyetçe düzenlenen 20/06/2013 tarihli ek rapora göre sanık …‘in uhdesinde para kaldığı sonucuna ulaşan iki raporda bilgisayar uzmanı tarafından düzenlenen 23/03/2009 tarihli rapora ekli üç grup halinde hesaplanan tahsilat makbuzlarının tamamı esas alınmak suretiyle hesaplama yapıldığı ancak bu raporlardaki makbuzlardan 53.482,15 TL’lik kısmın fırın gelirleriyle ilgisi bulunmayan belediyenin kira, işgaliye vb. gelirlerine ilişkin olduğu bu nedenle söz konusu raporlardaki hesaplamaların hatalı şekilde yapıldığı, sanık …‘in uhdesinde kalan belediye parasının bulunmadığı tespitine yer verildiği, 23/03/2009 tarihli rapora ekli makbuz dökümlerinden 53.482,15 TL’lik makbuzların fırın gelirleriyle ilgisinin bulunmadığı, bu</p>
+
+<p>nedenle bu meblağı sanık … tarafından teslim edilen fırın gelirine dahil ederek hesaplama yapan bilirkişi raporlarının hatalı olduğu, tüm dosya kapsamından sanığın uhdesinde kalan belediye parasının bulunmadığı anlaşılmakla tebliğnamede yer alan bozma isteyen düşünceye iştirak edilmemiştir.</p>
+
+<p>Delilleri takdir ve gerekçesi gösterilmek suretiyle verilen beraat hükmü usul ve kanuna uygun olduğundan yerinde görülmeyen katılanlar Belediye ve Hazine vekillerinin temyiz itirazlarının reddiyle hükmün ONANMASINA,</p>
+
+<p>Sanık … hakkında hizmet nedeniyle güveni kötüye kullanma suçundan verilen mahkumiyet hükmünün incelenmesinde ise;</p>
+
+<p>TCK’nın 53. maddesinin uygulanması ile ilgili olarak Anayasa Mahkemesinin 08/10/2015 tarih ve E. 2014/140; K. 2015/85 sayılı kararının infaz aşamasında gözetilmesi mümkün bulunmuş, yapılan yargılamaya, toplanıp karar yerinde gösterilen delillere, mahkemenin soruşturma sonuçlarına uygun olarak oluşan kanaat ve takdirine, incelenen dosya içeriğine göre sair temyiz itirazları da yerinde görülmemiştir.</p>
+
+<p>Ancak;</p>
+
+<p>5237 sayılı TCK’nın 53/1-a maddesindeki hak ve yetkiyi kötüye kullanmak suretiyle atılı suçu işleyen sanık hakkında aynı Kanunun 53/5. madde ve fıkrası gereğince, cezanın infazından sonra başlamak üzere, hükmolunan cezanın yarısından bir katına kadar bu hak ve yetkinin kullanılmasının yasaklanmasına karar verilmesi gerektiğinin gözetilmemesi,</p>
+
+<p>Kanuna aykırı, sanık müdafiin ve katılanlar Hazine ve Belediye vekillerinin temyiz itirazları bu itibarla yerinde görüldüğünden hükmün 5320 sayılı Kanunun 8/1. maddesi gözetilerek CMUK’nın 321. maddesi uyarınca BOZULMASINA, ancak bu cihetin yeniden duruşma yapılmaksızın aynı Kanunun 322. maddesine göre düzeltilmesi mümkün bulunduğundan, hüküm fıkrasına, “TCK’nın 53/1-a maddesindeki hak ve yetkiyi kötüye kullanmak suretiyle atılı suçu işleyen sanığın aynı Yasanın 53/5. maddesi gereğince cezanın infazından sonra başlamak üzere takdiren verilen cezasının yarısı olan 11 ay 7 gün süre ile bu hak ve yetkileri kullanmaktan yasaklanmasına” ibaresinin eklenmesi suretiyle, sair yönleri usul ve kanuna uygun olan hükmün DÜZELTİLEREK ONANMASINA, 11/01/2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 16. CEZA DAİRESİ
+Esas : 2017/2078 Karar : 2017/5472</strong> Tarih : 1.12.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>OLAY:</p>
+
+<p>Ankara Batı 4. Asliye Ceza Mahkemesinin 2016/762 esas 2016/831 karar sayılı 19.12.2016 tarihli Cumhurbaşkanına hakaret suçundan sanık … hakkında beraat kararı verilen dosyanın incelenmesinde;</p>
+
+<p>Ankara Batı Cumhuriyet Başsavcılığı’nın 28.09.2016 tarihli 2016/8181 esas, 2016/6904 numaralı iddianamesi ile Türkiye Cumhuriyeti Türkiye Kamu Hastaneleri Kurumu Ankara İli 3. Bölge Kamu Hastaneleri Birliği Genel Sekreterliği Dr. Nafiz Körez Sincan Devlet Hastanesi’nde 10.05.2016 tarihinde saat 01.40 sıralarında Fatih Merkez Bina Acil Servis Polikliniğinde nöbet tutmakta olan personellerin acil muayene poliklinik 2 odasında otururken acil bilgi işlem personeli …‘ın geldiği, “Burda yemek yemişsiniz biz adam değil miyiz, bizi niye çağırmadınız” dediği, memurun da “benim böyle bir şeyden haberim yok ben de davet üzerine geldim” dediği, …‘ın “İşte siz Ak Partililer böylesiniz, …‘i sikeyim” dediği, memurun da düzgün konuş diyerek Nöbetçi Memur …`a bildirdiği, Cumhurbaşkanına küfrün suç olduğunu beyan ederken, “… Abi sana saygım var! Kimseden korkum yok! Yine söverim!” dediği ve memura dönerek “sana da söverim” dediği düzenlenen tutanaktan anlaşıldığı;</p>
+
+<p>Tanık Serkan Tekgümüş 14.06.2016 tarihinde alınan beyanında, Sincan Dr. Nafiz Körez Sincan Devlet Hastanesinde Bilgi İşlem Şefi olarak görev yaptığını, Bilgi İşlem Personeli Kaan …ile … arasında 10.05.2016 günü Saat 01.40 sıralarında meydana gelen olayla ilgili olarak saat 03.00 sıralarında Kaan’ın telefonla arayarak bilgi verdiğini ve ertesi gün Nöbetçi Memur … Albayrak’a sorduğunu, kendisinin de olayı doğruladığını beyan ettiği,
+Tanık Kaan …14.06.2016 tarihinde alınan beyanında, Sincan Dr. Nafiz Körez Devlet Hastanesinde Bilgi İşlem Personeli olarak görev yaptığını, 10.05.2016 tarihinde saat 01.40 sıralarında Acil Muayene Poliklinik 2 odasında otururken Bilgi İşlem Personeli … gelerek hastanede yapılan yemek organizasyonunu kastederek “niye bizi çağırmadınız biz adam değil miyiz” dediğini, daveti doktor beyin yaptığını söylediğini ve böyle birşeyden haberi olmadığını, davet üzerine geldim dediğini ve Köksal’ın direk kendisine yönelik olarak “işte siz Ak Partililer böylesiniz, …i si…m” şekilde küfür ettiğini ve kendisinin de düzgün konuş diyerek Nöbetçi Memur … …‘a durumu bildirdiğini, daha sonra onunla birlikte Köksal’ın çalıştığı Acil Bilgi İşleme gittiğini ancak Köksal, …`a hitaben de “… abi sana saygım var, kimseden korkum yok, yine söylerim” diyerek sonra da kendisine dönerek “sana da söverim” dediğini ve kendisinin Köksal ile konuşmayı yaparken hastane temizlik görevlisi Hicran isimli bayanın da olduğunu, ancak kendisi ile konuştuğunda tartışmanın içeriğini duymadığını söylediğini beyan ettiği,</p>
+
+<p>Şüpheli … 15.06.2016 alınan ifadesinde, 10.05.2016 günü saat 01.40 sıralarında acil girişinde Bilgi İşlemde görevli iken Gökhan Naneci isimli arkadaşının kendisine hastanede poliklinik 2 de yemek yemişler sana söylediler mi dediğini, haberinin olmadığını söylediğini, nöbet vardiyası için imza atmaya giderken yoğun bir döner kokusu aldığını, temizlik görevlisi Hicran Hanıma sorduğunu, onun da yemişler benim de haberim yoktu dediğini ve arkasından Kaan Yusuf Yurteri’nin geldiğini, niye bana haber vermediniz yemek yediniz dediğini ve sen Ak Partili değil misin, hastanede siyaset yapıyordun, niye bize söylemediniz, 2 tane dış bilgi işlem görevlisi, 2 tane temizlik görevlisi, 5-6 tane de güvenlik görevlisi var, bunlar yemedi ise kim yedi, şerefsizsin dediğini, ancak kesinlikle Cumhurbaşkanına hakaret etmediğini, aynı gece Nöbetçi Memur … … ile geldiklerini ve niye böyle yapıyorsun sen bayrağa Cumhurbaşkanına hakaret etmişsin dediğini, … abi böyle birşey yok niye böyle şeyler soruyorsun dediğini, onun kendisine gerçekten dedin mi dediğini ve kendisinin de neyi dediğini, küfür ettin mi demesi üzerine kendisinin de kime dediğini, ben yine söverim şeklinde birşey söylemediğini ve … Abi sana saygım var kimseden korkum yok, küfür etmiş olsam söylerim dediğini ancak Yusuf`a da sana da söverim demediğini ve üzerine atılı suçlamayı kabul etmediğini beyan ettiği,</p>
+
+<p>Tanık … … 16.06.2016 tarihinde alınan beyanında, 10.05.2016 tarihinde Sincan Dr. Nafiz Körez Hastanesinde Nöbetçi olarak bulunurken yanına Kaan …geldiğini, Kaan bana …‘ın kendi aralarındaki konuşmada Cumhurbaşkanımıza yönelik küfür ettiğini söylediğini ve kendisinin de bunun üzerine Kaan ile birlikte Köksal’ın yanma gittiklerini ve kendisine niye küfür ettiğini sorduğunu, onun da Kaan’a dönerek … Abi sana saygım var kimseden korkum yok söyleyeceğimi söylediğini, söveceğime söverim dediğini, olay sırasında orada olmadığını ancak Köksal’a durumu sorduğunda elektriklenme olunca Kaan`ın kolundan tutarak uzaklaştırdığını beyan ettiği,</p>
+
+<p>Tanık … 17.06.2016 tarihinde alınan beyanında, Sincan Nafiz Körez Devlet Hastanesinde temizlik görevlisi olarak çalıştığını, olay günü 01.40 sıralarında acil muayene poliklinik 2’de temizlik yaparken … ve Kaan …arasında geceleyin doktorların yemek ısmarlaması nedeniyle tartışma olduğunu ve Köksal`ın kendisinin neden çağrılmadığını sorduğunu ve tartıştıklarını, ancak ben işte siz Ak partililer böylesiniz. …i sinkaf edeyim şeklinde bir küfür duymadığım, … sadece siz Ak Partilisiniz neden fakiri fukarayı gözetmiyorsunuz dediğini beyan ettiği,</p>
+
+<p>Şüphelinin eyleminin TCK 299/1 maddesi kapsamında kaldığı ancak TCK 299/3 maddesi gereğince bu suçtan dolayı kovuşturma yapılmasının Adalet Bakanının iznine bağlı olması nedeniyle Adalet Bakanının izninin alındığı ve şüpheli hakkında Türkiye Cumhuriyet Cumhurbaşkanı olarak görev yapan …`a yönelik olarak hakaret niteliğinde sözler söylemesi nedeniyle hakkında kamu davasının açılması için yeterli delilin bulunduğu anlaşılmakla; şüphelinin yargılamasının yapılarak; eylemine uyan yukarıda yazılı sevk maddesi uyarınca cezalandırılması ve TCK 53/1-2 maddesi uyarınca belli hakları kullanmaktan yoksun bırakılmasına karar verilmesi kamu adına iddia ve talep edildiği görülmüştür.</p>
+
+<p>Soruşturma aşamasında yer alan evraklar incelendiğinde Ankara ili 3. Bölge Kamu Hastaneleri Birliği Genel Sekreterliği Dr. Nafiz Körez Sincan Devlet Hastanesinin 24.05.2016 tarihli yazısı ile 10.05.2016 tarihinde meydana gelen olay ile ilgili olarak suç duyurusunda bulunulduğu, ayrıca idari yönden muhakkik görevlendirilmesinin yapıldığı ve incelemenin devam ettiğinin bildirildiği, 24.05.2015 tarihinde ilgili Cumhuriyet Başsavcı vekilince tevzinin yapıldığı, 2016/15819 soruşturmaya dosyanın kaydedildiği, 26.05.2016 tarihli Adalet Bakanlığı Ceza İşleri Genel Müdürlüğüne sunulmak üzere 2016/79 sayı ile TCK 299/3 maddesi gereğince soruşturma izni alınması istemi ile fezleke tanzim edildiği, 27.05.2016 tarihli Başsavcı vekilinin yazısı ile ilgili madde kapsamında soruşturmanın yapılması gerektiği, gerekli durumun yapılacak soruşturma sonrasında kovuşturmayı gerektirmesi halinde kovuşturma izninin ancak talep edilebileceği hususununda yazısı üzerine soruşturmaya devam edildiği, tanıkların dinlenip sanığın sorgusunun yapılmasına müteakip 2016/86 fezleke numarası ile Adalet Bakanlığı Ceza İşleri genel Müdürlüğünden kovuşturma izninin istendiği, fezleke tarihinin 26.05.2016 tarihi olarak yazılmasına rağmen üzerinin çizilerek 20.06.2016 tarihi olarak düzeltme yapıldığı ve paraflandığı, Cumhuriyet Başsavcılığı Bakanlık Muhabere Bürosunun 20.06.2016 tarih 2016/6074 sayılı yazısı ile Adalet Bakanlığı Ceza İşleri Genel Müdürlüğüne gönderildiği, ilgili devlet hastanesi yönetimince yapılan idari soruşturma sonucunda tanzim edilen inceleme raporunun 22.06.2016 tarihinde Cumhuriyet Başsavcılığına gönderildiği, ayrıca sanık tarafından 12.08.2016 tarihinde soruşturma aşamasında sunduğu dilekçelerin fezlekeye eklenmesi için 16.08.2016 tarih 2016/15819 sayılı yazı ile Adalet Bakanlığı Ceza İşleri Genel Müdürlüğüne gönderilmesi için Bakanlık muhabere bürosuna sunulduğu ve aynı tarihte gönderildiği, Adalet Bakanlığı Ceza İşleri Genel Müdürlüğünün 2016 E-10311 sayılı izin talebi konulu, Bakanlık makamına yazılan yazısı ile sanık hakkında TCK`nın 299/3 maddesi gereğince kovuşturma izni verilmesi hususunun 29.08.2016 tarihinde bakanlık makamına arz edildiği, 06.09.2016 tarihinde verilen Bakan oluru ile birlikte dosyanın 20.09.2016 tarih ve 2016-E 10796/56712 sayılı … konu yazı ile gereği için dosyanın Ankara Batı Cumhuriyet Başsavcılığına gönderildiği, 26.09.2016 tarihinde Cumhuriyet Başsavcısınca ilgili savcıya dosyanın gönderildiği ve 27.09.2016 tarihinde ilgili savcı tarafından teslim alınarak 28.09.2016 tarihinde iddianamenin tanzim edildiği görülmüştür.</p>
+
+<p>10.10.2016 tarihinde mahkemesince 2016/762 esasa kaydedilen dosya hakkında aynı tarihte tensip yapıldığı, mağdur/müşteki sıfatı ile tensipte Cumhurbaşkanlığına yapılan bir bildirimin olmadığı, 14.12.2016 tarihinde duruşmanın yapıldığı, duruşma tutanağından anlaşılacağı üzere sanığın sorgusunun yapıldığı, tanıkların dinlenildiği ve yapılan yargılama sonucunda sanığın üzerine atılı suçun yasal unsurları oluşmadığından atılan suçtan CMK 223/2-a maddesi gereğince beraatine karar verildiği görülmüştür.</p>
+
+<p>19.12.2016 tarihinde yazılan gerekçeli kararda “Mahkememizce yapılan yargılama sonucunda; T.C. Türkiye Kamu Hastaneleri Kurumu Ankara İli 3. Bölge Kamu Hastaneleri Birliği Genel Sekreterliği Dr. Nafiz Körez Sincan Devlet Hastanesinde 10.05.2016 tarihinde saat 01.40 sıralarında Fatih Merkez Bina Acil Servis Polikliniğinde nöbet tutmakta olan personellerin acil muayene poliklinik 2 odasında otururken acil bilgi işlem personeli …‘ın geldiği, “Burda yemek yemişsiniz biz adam değil miyiz, bizi niye çağırmadınız” dediği, memurun da “benim böyle bir şeyden haberim yok ben de davet üzerine geldim” dediği, …‘ın “İşte siz Ak Partililer böylesiniz, …‘i ….” dediği, memurun da düzgün konuş diyerek nöbetçi Memur …`a bildirdiği, Cumhurbaşkanına küfrün suç olduğunu beyan ederken, “… Abi sana saygım var! Kimseden korkum yok! Yine söverim!” dediği ve memura dönerek “sana da söverim” dediği düzenlenen tutanaktan anlaşıldığı iddia edilerek sanığın cezalandırılması için mahkememizde kamu davası açılmış ise de; Hakaret suçu mağdurun olmadığı veya mağdurun doğrudan vakıf olamayacağı bir şekilde işlendiğinde gıyapta hakaret suçu oluşmaktadır. Ancak gıyapta hakaret suçunun cezalandırılması için, failin mağdur dışında toplu veya dağınık en az üç kişiyle ihtilat ederek bu suçu işlemesi gerekmektedir. Suçun faili ihtilatı bilerek ve isteyerek gerçekleştirmelidir. İhtilat kişilerle birebir görüşerek gerçekleşebileceği gibi, üç veya daha fazla kişiye mektup göndermek, telefon etmek, SMS veya e-mail göndermek suretiyle de gerçekleştirilebilir. Ancak ihtilat unsurunun gerçekleşmesi için, failin sözleri en az üç kişinin duyabileceği bir ortamda ve şekilde söylemesi yeterli olmayıp, muhatapların bizzat anlamaları ve vakıf olmaları lazımdır. Somut olayda ise sanığın söylediği sözlerin sadece tanık Kaan Yusuf tarafından duyulduğu, bu hali ile ihtilat unsurunun gerçekleşmediği ve sanığın üzerine atılı suçun yasal unsurları oluşmadığı anlaşılmakla anılan suçtan sanığın CMK 223/2-a maddesi gereğince beraatine karar verildiği”nin belirtildiği, kararın 28.12.2016 tarinde Cumhuriyet savcısınca görüldüsünün yapıldığı, taraflarca temyiz edilmeyen kararın 05.01.2017 tarihinde kesinleştiğine dair kesinleşme şerhinin 05.01.2017 tarihinde yapıldığı anlaşılmıştır.</p>
+
+<p>07.04.2017 tarihinde Cumhurbaşkanlığı Genel Sekreterliği 45360 sayılı yazısı ile Adalet Bakanlığı Ceza işleri genel Müdürlüğünden kesinleşen karar kapsamında CMK 309. maddesi uyarınca kanun yararına bozma kanun yoluna başvuru yapılması isteminde bulunulduğu, Adalet Bakanlığı Ceza İşleri Genel Müdürlüğü 13.04.2017 tarihli yazısı ile Ankara Batı Cumhuriyet Başsavcılığından dosya kapsamındaki görüş ile birlikte dosyanın gönderilmesinin istenildiği, 13.04.2017 tarihinde Başsavcı vekilince ilgili savcıdan görüş ile birlikte dosyanın gönderilmesinin istenildiği, 01.06.2017 tarihinde ilgili savcı tarafından dosyanın istenildiği görülmüştür.</p>
+
+<p>KANUN YARARINA BOZMA İSTEMİNE İLİŞKİN UYUŞMAZLIĞIN KAPSAMI:</p>
+
+<p>Kanun Yararına bozma istemlerinde istemle bağlı olunduğu hususu nazara alınarak yapılan incelemede; uyuşmazlığın sanığın atılı eyleminin Cumhurbaşkanına hakaret suçunu oluşturup oluşturmayacağı ile; davaya katılma hakkı bulunan Cumhurbaşkanına kovuşturma evresinde duruşmadan haber verilip yargılamaya katılması imkanı sağlanılmadan hüküm kurulmasında isabet bulunup bulunmadığı hususuna yönelik olduğu anlaşılmıştır.</p>
+
+<p>HUKUKSAL DEĞERLENDİRME:</p>
+
+<p>Kanun yararına bozma yoluna başvuru konusu yapılan kararın, 19.12.2016 tarih 2016/762 esas ve 2016/831 karar sayılı Ankara Batı 4. Asliye Ceza Mahkemesinin beraat kararı olduğu ve belirtilen kararın 05.01.2017 tarihinde kesinleştiği dikkate alınarak, hükme etkili olan ve temyiz nedeni olabilecek olan bir hukuka aykırılığın kanun yolunda bozma nedeni olarak ileri sürülebileceği, hukuka aykırılığın sanıkların hukuki durumunu etkileme veya değiştirme olasılığına sahip olması gerektiği, ciddi boyuta ulaşmayan davanın özüne ve cezaya esaslı bir şekilde etkili olan hatanın bulunmaması durumunda, ayrıca delillerin takdir ve değerlendirmesinde yanılgıya düşülmesi nedeni ile bu yasa yoluna başvurulamayacağı nazara alınarak;</p>
+
+<p>İşin mahiyeti gereği öncelikli olarak 2 numaralı kanun yararına bozma sebebi sayılan, “sanığa yüklenen suçtan dolayı zarar gören ve davaya katılma hakkı bulunan Cumhurbaşkanı sayın …`ın 5271 sayılı Ceza Muhakemesi Kanununun 234 ve 260. maddeleri gereğince kovuşturma evresinde duruşmadan haberdar edilerek, davaya katılma ve delil ibraz etme hakkını kullanma imkanı sağlanmadan yargılamaya devamla hüküm kurulmasında isabet görülmemiştir” şeklindeki sebep kapsamında yapılan incelemede;</p>
+
+<p>Ankara Batı Cumhuriyet Başsavcılığının 2016/6904 numaralı 28.09.2016 tarihli iddianamesinde suçtan zarar gören Cumhurbaşkanı …‘ın taraf olarak gösterilmediği, Ankara Batı 4. Asliye Ceza Mahkemesinin gerekçeli karar başlığı ile dosya kapsamında yer alan duruşma tutanağı ve tensip zaptından anlaşılacağı üzere suçtan zarar gören Cumhurbaşkanı …‘ın taraf olarak kaydının yapılmadığı, gerekçeli kararın katılan sıfatını alabilecek surette suçtan zarar gören ve kanun yoluna başvurma hakkı olup davadan haberdar edilmeyen mağdura usulüne uygun olarak tebliğ edilmediği anlaşılmakla, kanun yararına bozma isteminin hakim veya mahkemelerce gerekli işlemler veya yargılama yapılarak verilen ve Yargıtay`dan geçmeksizin kesinleşen karar ve hükümlere karşı başvurulabilecek olağanüstü bir kanun yolu olduğu, bu kapsamda usule uygun olarak yapılan bir kesinleşmeden bahsedilemeyeceğinden ve kesinleşmemiş kararlara karşı kanun yararına bozma isteminde bulunulamayacağı, mağdura gerekçeli kararın tebliğ edildikten sonra kanuni süresi içinde mağdur veya vekili tarafından karar aleyhine olağan kanun yoluna başvurulmadan kesinleşmesi halinde yeniden kanun yararına bozma isteminde bulunulması mümkün olmakla bozma isteminin bu nedenle reddine;</p>
+
+<p>1 numaralı kanun yararına bozma sebebi olarak belirtilen “sanığa isnad edilen eylemin 5237 sayılı Türk Ceza Kanununun 299. maddesinde düzenlenen Cumhurbaşkanına hakaret suçunu oluşturduğu, bu suçun kovuşturulmasının ise aynı maddenin 3. fıkrası gereğince Adalet Bakanının iznine tabi olduğu, bahse konu suçla ilgili olarak şikayet veya başkaca bir soruşturma veya kovuşturma şartının aranmadığı, Adalet Bakanlığının 06.09.2016 tarihli oluru ile de sanığın 10.05.2016 tarihinde sarf etmiş olduğu, “İşte siz Ak Partililer böylesiniz, …`i s..yim” şeklindeki sözlerinin hakaret suçunu oluşturduğu gözetilmeksizin sanığın mahkumiyeti yerine yazılı şekilde beraatine karar verilmesi” sebebinin ise kararın usule uygun şekilde mağdura tebliğ edilmesi durumunda kanun yolu aşamasında incelenebileceği, yukarıda belirtilen ret nedeni ile bu madde kapsamında bir inceleme yapılmasının hukuk metodolojisi açısından fayda arz etmeyeceği, kanun yararına bozma isteminin konusuz kalabileceği, mahkeme ve hakimin takdirine ait bulunan hususlar ile kanıtların değerlendirilmesinde yanılgı ve noksan kovuşturma yapılmasının da bozma istemine konu edilemeyeceği nazara alınarak bozma isteminin bu aşamada reddine karar verilmesi gerektiğinden;</p>
+
+<p>SONUÇ:</p>
+
+<p>Yukarıda açıklanan nedenlerle;</p>
+
+<p>Yargıtay Cumhuriyet Başsavcılığının 23.05.2017 tarih ve 2017/30884 sayılı Kanun Yararına Bozma talebinin 5271 sayılı CMK. 309 maddesi gereğince (REDDİNE); Dosyada diğer işlemlerinin yapılması için mahkemesine gönderilmek üzere Yargıtay Cumhuriyet Başsavcılığına ( TEVDİİNE ), oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 19. CEZA DAİRESİ
+Esas : 2017/3166 Karar : 2017/6676</strong> Tarih : 12.09.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Yerel Mahkemece verilen hüküm temyiz edilmekle; başvurunun süresi, kararın niteliği ve suç tarihine göre dosya incelendi, gereği görüşülüp düşünüldü:</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Kısa süreli hapis cezası adli para cezasına çevrilirken uygulama maddesi olan TCK.nun 50/1-a maddesinin gösterilmemesi sonuca etkili olmayıp mahallinde tamamlanması mümkün görülmüştür.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre, suçtan zarar gören … Bodrum Mal Müdürlüğü davaya katılmamış ise de; 5271 sayılı CMK`nın 260. maddesi gereğince, katılan sıfatını alabilecek surette suçtan zarar görmüş bulunanlar için yasa yollarının açık olduğu gözetilip şikayetçi kurumun suçtan zarar görme olasılığına göre sanık hakkında kurulan hükmü temyize hakkı bulunduğu belirlenerek yapılan incelemede;</p>
+
+<p>Yükletilen suçun sanık tarafından işlendiğinin kanuna uygun olarak yürütülen duruşma sonucu saptandığı, bütün kanıtlarla aşamalarda ileri sürülen iddia ve savunmaların temyiz denetimini sağlayacak biçimde ve eksiksiz sergilendiği, özleri değiştirilmeksizin tartışıldığı, vicdani kanının kesin, tutarlı ve çelişmeyen verilere dayandırıldığı,</p>
+
+<p>Eylemin doğru olarak nitelendirildiği ve Kanun`da öngörülen suç tiplerine uyduğu,</p>
+
+<p>Cezanın kanuni bağlamda uygulandığı,</p>
+
+<p>Anlaşıldığından, suçtan zarar gören … Bodrum Mal Müdürlüğü vekilinin ve sanık müdafiinin temyiz nedenleri yerinde görülmemiş olmakla, tebliğnameye aykırı olarak, TEMYİZ DAVASININ ESASTAN REDDİYLE HÜKMÜN ONANMASINA, 12/09/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 17. CEZA DAİRESİ
+Esas : 2016/9921 Karar : 2017/9353</strong> Tarih : 12.07.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Yerel mahkemece verilen hüküm temyiz edilmekle, başvurunun süresi ve kararın niteliği ile suç tarihine göre dosya görüşüldü:</p>
+
+<p>5271 sayılı CMK’nın 242/1 ve 260/1. maddelerinde, katılan sıfatını almış olanlar ile katılma isteği karara bağlanmamış, reddedilmiş veya katılan sıfatını alabilecek surette suçtan zarar görmüş bulunanların temyiz yoluna başvurabileceği düzenlenmiş ise de; aynı Kanun’un 233/1. maddesine göre duruşmaya çağrı kağıdı ile çağrılan şikayetçinin CMK’nın 234/1-b maddesine göre kovuşturma evresinde kamu davasına katılma hakkının bulunduğu, kovuşturma evresinin iddianamenin kabulüyle başlayıp, hükmün kesinleşmesine kadar geçen evreyi ifade etmiş olmasına rağmen, CMK’nın 237/1. maddesine göre kovuşturma evresinin her aşamasında ancak hüküm verilinceye kadar kamu davasına katılmanın mümkün olduğu, kanun yolu muhakemesinde davaya katılma isteğinde bulunulamayacağı, ancak, ilk derece mahkemesinde ileri sürülüp reddolunan veya karara bağlanmayan katılma isteklerinin, kanun yolu başvurusunda inceleneceği ve karara bağlanacağı, açıklanan yasal düzenlemeler gözönüne alınarak somut olay incelendiğinde, usulüne uygun davatiyeye rağmen müşteki vekilinin duruşmaya katılmadığı ve katılma talebine dair beyanı ve dilekçesi bulunmadığı görülmüş, belirtilen tarihte yapılan duruşmada sanık hakkında karar verildikten sonra 16.03.2016 tarihinde temyiz dilekçesi verdiğinin anlaşılması karşısında; kamu davası açıldıktan sonra 5271 sayılı CMK’nın 237/1 ve 238/1. maddelerine göre yöntemince mahkemeye başvurarak davaya katılmamış ve katılan sıfatı ile temyiz yetkisini kazanmamış müşteki vekilinin temyiz isteğinin 5320 sayılı Yasa’nın 8/1. maddesi yollamasıyla 1412 sayılı CMUK’nun 317. maddesi uyarınca REDDİNE, 12.07.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 19. CEZA DAİRESİ 
+Esas : 2016/5179 Karar : 2017/5971</strong> Tarih : 21.06.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Yerel Mahkemece verilen hüküm temyiz edilmekle; başvurunun süresi, kararın niteliği ve suç tarihine göre dosya incelendi, gereği görüşülüp düşünüldü:</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre, suçtan zarar gören …. davaya katılmamış ise de; 5271 sayılı CMK’nın 260. maddesi gereğince, katılan sıfatını alabilecek surette suçtan zarar görmüş bulunanlar için yasa yollarının açık olduğu gözetilip şikayetçi kurumun suçtan zarar görme olasılığına göre sanıklar hakkında kurulan hükmü temyize hakkı bulunduğu belirlenerek yapılan incelemede;</p>
+
+<p>Suçtan doğrudan doğruya zarar gören ….’nin CMK’nın 234. maddesi uyarınca dava ve duruşmadan haberdar edilip, aynı Kanun’un 237. maddesi gereğince davaya katılma imkanı sağlanmadan yargılamaya devam edilip yazılı şekilde hüküm tesisi,</p>
+
+<p>Kanuna aykırı ve suçtan zarar gören …. vekilinin temyiz nedenleri bu itibarla yerinde görüldüğünden, 5320 sayılı Kanun’un 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca HÜKÜMLERİN, sair yönleri incelenmeksizin, tebliğnameye kısmen uygun olarak, BOZULMASINA, yargılamanın bozma öncesi aşamadan başlayarak sürdürülüp sonuçlandırılmak üzere dosyanın mahkemesine gönderilmesine, 21/06/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 12. CEZA DAİRESİ
+Esas : 2016/1309 Karar : 2017/5294</strong> Tarih : 16.06.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Taksirle yaralama suçundan sanığın beraatine ilişkin hüküm, şikayetçi vekili tarafından temyiz edilmekle, dosya incelenerek gereği düşünüldü:</p>
+
+<p>Vekili aracılığıyla katılma isteminde bulunmasına rağmen, bu konuda herhangi bir karar verilmeyen şikayetçi …’nun 5271 sayılı CMK’nın 260. maddesi uyarınca katılma istemi hakkında karar verilmeyenler sıfatıyla hükmü temyiz hakkının bulunduğu anlaşılmakla, suçtan doğrudan zarar gören ve hükmü temyiz etmek suretiyle katılma iradesini ortaya koyan şikayetçinin 5271 sayılı CMK’nın 237/2. maddesi uyarınca davaya katılmasına karar verilerek yapılan incelemede;</p>
+
+<p>Yapılan yargılamaya, toplanıp karar yerinde gösterilen delillere, mahkemenin kovuşturma sonuçlarına uygun olarak oluşan kanaat ve takdirine, incelenen dosya kapsamına göre, şikayetçi vekilinin sair temyiz itirazlarının reddine, ancak;</p>
+
+<p>İnşaat işçisi olduğunu beyan eden sanığın, olayın meydana geldiği dört katlı inşaatta aynı zamanda daire sahibi olduğu, inşaatın dış sıva ve kalıp işi için, kalıp işçisi müşteki ile anlaştığı, müştekinin kalıp iskelesini sökmek istediği sırada, ikinci kattan düşerek, kemik kırığı oluşacak şekilde yaralandığı olayda; inşaatın müteahhidi olduğu iddia edilen … hakkında mahkemece, hükümle birlikte suç duyurusunda bulunulduğu görülmekle,… hakkında dava açılmış ise açılan davanın incelemeye konu dosya ile birleştirilmesi, dava açılmamış ise dava açılması sağlanıp açılan davanın incelenen dosya ile birleştirilerek sanıkların inşaattaki görev ve sorumlulukları belirlenip, iş güvenliği uzmanlarından alınacak bilirkişi heyetinden rapor alınması suretiyle sanıkların hukuki durumlarının buna göre takdir ve tayin edilmesi gerekirken, yazılı şekilde eksik inceleme sonucu sanığın beraatine karar verilmesi,</p>
+
+<p>Kanuna aykırı olup, katılan vekilinin temyiz itirazları bu itibarla yerinde görüldüğünden, hükmün bu sebeplerden dolayı 5320 sayılı Kanunun 8. maddesi uyarınca halen uygulanmakta olan 1412 sayılı CMUK’un 321. maddesi gereğince isteme uygun olarak BOZULMASINA, 16.06.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 19. CEZA DAİRESİ 
+Esas : 2015/35597 Karar : 2017/5828</strong> Tarih : 15.06.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Yerel Mahkemece verilen hükümler temyiz edilmekle; başvurunun süresi, kararın niteliği ve suç tarihine göre dosya görüşüldü:</p>
+
+<p>Suç tarihine göre, katılan sıfatını alabilecek surette suçtan zarar görmüş bulunan, CMK’nın 260/1. maddesi uyarınca hükmü temyize hakkı bulunduğu belirlenen ve duruşmadan haberdar edilmeyen orman idaresi vekilinin temyiz dilekçesinin kapsamı gözetilerek, CMK’nın 237/2. maddesi uyarınca davaya katılmasına karar verilerek,</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede,</p>
+
+<p>Sanığın, 18.07.2013 tarihli sanık tarafından imzalanan suç tutanağı ile tespit edilen devrikten ağaç kesme şeklindeki eyleminin, 6831 sayılı Kanun’un 95/1. maddesi kapsamında kabahat niteliğinde olduğunun ve suçun işlendiği 18.07.2013 tarihi ile inceleme tarihi arasında 5326 sayılı Kanun’un 20/2-c maddesinde öngörülen 3 yıllık zamanaşımı süresinin gerçekleşmiş bulunduğunun anlaşılması,</p>
+
+<p>Bozmayı gerektirmiş; katılan vekilinin temyiz nedenleri bu itibarla yerinde görülmüş olduğundan, tebliğnameye aykırı olarak, hükmün bu sebepten dolayı 5320 sayılı Kanun’un 8/1. maddesi ile yürürlükte bulunan 1412 sayılı CMUK’nın 321. maddesi uyarınca BOZULMASINA ve gerçekleşen zamanaşımı nedeniyle 5236 sayılı Kanun’un 20. maddesi gereğince kabahatli hakkında İDARİ PARA CEZASI VERİLMESİNE YER OLMADIĞINA, yediemine alınan kaçak emvalin mülkiyetinin kamuya geçirilmesine, nakilde kullanılan aracın sahibine iadesine 15.06.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 12. CEZA DAİRESİ
+Esas : 2016/2128 Karar : 2017/5121</strong> Tarih : 14.06.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Özel hayatın gizliliğini ihlal suçundan sanığın beraatine ilişkin hüküm, şikayetçi tarafından temyiz edilmekle, dosya incelenerek gereği düşünüldü:</p>
+
+<p>Katılma isteminde bulunmasına rağmen bu konuda herhangi bir karar verilmeyen şikayetçinin, CMK’nın 260. maddesi uyarınca katılma istemi hakkında karar verilmeyenler sıfatıyla hükmü temyiz hakkı bulunması nedeniyle suçtan doğrudan zarar gördüğü anlaşılan ve hükmü temyiz etmek suretiyle katılma iradesini devam ettiren şikayetçinin, CMK’nın 237/2. maddesi uyarınca davaya katılmasına karar verilerek yapılan incelemede:</p>
+
+<p>Katılanın sair temyiz itirazlarının reddine, ancak;</p>
+
+<p>Sanığa isnat edilen özel hayatın gizliliğini ihlal suçu, TCK’nın dokuzuncu bölümündeki özel hayata ve hayatın gizli alanına karşı suçlardan olup, salt gazetecilik mesleğini icra etmek, kişilerin özel hayatlarına koşulsuz ve sınırsız şekilde müdahalede bulunma hakkı vermez. Bilinmesinde kamu yararı olan bir bilgiye ulaşmak saikiyle hareket edilmesi ya da tesadüfen böyle bir bilginin öğrenilmiş olması halinde dahi bu sonuç değişmez. Aynı şekilde; Cumhurbaşkanı, Başbakan, bakanlar, milletvekilleri, politikacılar, bürokratlar, diplomatlar, bilim adamları, sanatçılar, sporcular, gazeteciler gibi içinde bulundukları konum, mesleki faaliyetleri veya görevleri nedeniyle kamuoyu tarafından tanınan kişilerin, özel hayatlarının dokunulmaz ve gizli alanlarının, toplumda yer alan diğer kişilere oranla, daha sınırlı olması, bu kişilerin özel hayatlarına, ağır, ölçüsüz ve haksız müdahalede bulunulabileceği anlamına gelmez. Aksinin kabulü, kişilerin özel hayatlarını, Anayasal ve yasal korumadan yoksun bırakır. Basın ve yayın organları; bilgi edinme, bilgiyi yayma, eleştirme, yorumlama ve eser yaratma haklarını kullanırken ve habere ulaşmada, kamu yararını gözetmek zorunda oldukları gibi, haber içeriğinin görünür gerçeğe uygun ve güncel olup olmadığını özenle irdelemek, haberin verilişinde tahkir edici bir dil kullanmayıp, ölçülülük ilkesine de uygun davranmak mecburiyetindedirler.</p>
+
+<p>İncelenen dosyada; … isimli haftalık haber aktüel mecmuasının imtiyaz sahibi ve sorumlu yazı işleri müdürü olan sanık …‘in, kendisi gibi yerel düzeyde gazetecilik mesleğini icra eden ve adliyeye yansıyan çok sayıda uyuşmazlıktan dolayı aralarında husumet bulunan katılan …‘ı hedef alarak hazırladığı anılan mecmuanın 20.11.2013 tarihli, 1. yıl ve 16 numaralı sayısının ilk sayfasındaki “Yine… İkilisi, Yine Skandal” başlıklı yazısında, açıklanmasında kamu yararı bulunmadığı ve hiç gerekmediği halde, adını ve soyadını açıkça yazdığı katılan hakkında, “…Evli ve 2 çocuğu bulunan …‘ın, gayriresmi yollarla yaşadığı ilişkinin meyvesi olacak çocuk birkaç ay sonra dünyaya gelecektir. Doğacak olan çocuğun böyle çarpık olaylarla anılan bir ortamda dünyaya gözlerini açması, ne Türk örf ve ananeleri ile uyuşmaktadır, ne de yasalarımızla…” biçiminde ibarelere yer vererek, katılanın, Songül isimli kadınla yaşadığı gayriresmi birlikteliğin boyutunu tüm ayrıntıları ile okuyucunun bilgisine sunması karşısında, ölçülülük ilkesine uygun davranarak basının haber verme hakkı sınırları içerisinde hareket ettiği ve hukuka uygun çerçevenin dışına çıkmadığı kabul edilemeyeceğinden, katılanın özel hayatına, ağır, ölçüsüz ve haksız müdahalede bulunan sanık hakkında TCK’nın 134/1-1. madde, fıkra ve cümlesinde tanımı yapılan özel hayatın gizliliğini ihlal suçundan dolayı mahkumiyet hükmü kurulması gerekirken, katılanın yerel basında tanınmakta olup, yayımlanan yazının magazin haberi niteliğinde olması nedeniyle sanığa yüklenen suçun yasal unsurlarının oluşmadığına dair yasal ve yeterli olmayan gerekçelerle CMK’nın 223/2-a madde, fıkra ve bendi gereğince sanığın beraatine karar verilmesi,</p>
+
+<p>Kanuna aykırı olup, katılanın temyiz itirazları bu itibarla yerinde görüldüğünden, hükmün bu nedenle 5320 sayılı Kanunun 8. maddesi uyarınca halen uygulanmakta olan 1412 sayılı CMUK’un 321. maddesi gereğince isteme uygun olarak BOZULMASINA, 14.06.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 12. CEZA DAİRESİ
+Esas : 2017/3143 Karar : 2017/5129</strong> Tarih : 14.06.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Özel hayatın gizliliğini ihlal ve cinsel taciz suçlarından suça sürüklenen çocuğun beraatine ilişkin hükümler, katılan vekili tarafından temyiz edilmekle, dosya incelenerek gereği düşünüldü:</p>
+
+<p>Yargıtay Ceza Genel Kurulunun 20.05.2014 tarihli, 2013/287 esas ve 2014/273 sayılı kararında vurgulandığı üzere; kayden 06.11.1999 doğumlu olup, suç tarihi ve duruşmada beyanının alındığı 11.04.2013 tarihi itibariyle 15 yaşından küçük olan mağdur … adına şikayet hakkının ve kamu davasına katılma yetkisinin, mağdura ve mağdurun ağabeyi olan …‘a ait olmayıp, mağdurun velayeti kendilerinde bulunan babası… ve annesi Fethiye’ye ait olduğu, aşamalarda suça sürüklenen çocuktan şikayetçi olduklarına dair beyanları olmayan mağdurun kanuni temsilcilerinin, Dairemizin 02.11.2016 tarihli tevdi kararı uyarınca yokluklarında verilen karar usulüne uygun olarak kendilerine tebliğ edildiği halde temyiz isteminde bulunmadıkları gibi davaya katılma yönünde de bir irade ortaya koymadıkları anlaşılmakla, mağdur, mağdurun ağabeyi olan … ile mağdura CMK’nın 234/2. maddesi uyarınca zorunlu olarak atanan vekilin talebi üzerine verilen katılma kararı da hükümsüz olup mağdura katılan sıfatını kazandırmayacağından, katılan sıfatı almayan mağdurun CMK’nın 260. maddesi uyarınca kanun yoluna başvuru hakkı bulunmamasından dolayı mağdur vekilinin temyiz isteminin 5320 sayılı Kanun’un 8. maddesi uyarınca halen uygulanmakta olan 1412 sayılı CMUK’un 317. maddesi uyarınca isteme aykırı olarak REDDİNE, 14.06.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 4. CEZA DAİRESİ
+Esas : 2016/17712 Karar : 2017/16053</strong> Tarih : 30.05.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Yerel Mahkemece verilen hüküm temyiz edilmekle, başvurunun süresi ve kararın niteliği ile suç tarihine göre, katılan sıfatını alabilecek surette suçtan zarar görmüş bulunan ve CMK’nın 260/1. maddesi uyarınca hükmü temyize hakkı bulunduğu ve şikayetçi olduğu belirlenen müşteki …‘ın kovuşturma sırasında katılma isteğinin sorulmadığı anlaşılmakla, müştekinin temyiz dilekçesinin içeriği gözetilip, CMK’nın 237/2. maddesi uyarınca davaya katılmasına karar verilerek ve katılan ile sanığın temyiz isteklerinin tehdit suçundan kurulan hükme yönelik olduğu ve sanığın tehdit eylemini aynı zamanda TCK’nın 86/3-a, 35. maddeleri kapsamındaki yaralamaya teşebbüs eylemleriyle birlikte gerçekleştirdiği anlaşıldığından, uzlaştırma hükümlerinin uygulanamayacağı belirlenerek dosya görüşüldü:</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>Sanığa yükletilen tehdit eylemiyle ulaşılan çözümü haklı kılıcı zorunlu öğelerinin ve bu eylemin sanık tarafından işlendiğinin Kanuna uygun olarak yürütülen duruşma sonucu saptandığı, bütün kanıtlarla aşamalarda ileri sürülen iddia ve savunmaların temyiz denetimini sağlayacak biçimde ve eksiksiz sergilendiği, özleri değiştirilmeksizin tartışıldığı, vicdani kanının kesin, tutarlı ve çelişmeyen verilere dayandırıldığı,</p>
+
+<p>Eylemin doğru olarak nitelendirildiği ve Kanunda öngörülen suç tipine uyduğu,</p>
+
+<p>Cezanın kanuni bağlamda uygulandığı,</p>
+
+<p>Anlaşıldığından, katılan … ve sanık …‘ın ileri sürdüğü nedenler yerinde görülmemiş olmakla, tebliğnameye uygun olarak, TEMYİZ DAVASININ ESASTAN REDDİYLE HÜKMÜN ONANMASINA, 30/05/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 5. CEZA DAİRESİ 
+Esas : 2016/11209 Karar : 2017/2310</strong> Tarih : 25.05.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Mahalli mahkemece verilen hükümler ve ek karar temyiz edilmekle dosya incelendi;</p>
+
+<p>CMK’nın 260/1. maddesine göre ihaleye fesat karıştırma, rüşvet alma ve verme suçlarından katılan sıfatını alabilecek surette zarar görmüş olan Hazinenin kanun yoluna başvurma hakkının bulunması ve hükmün vekili tarafından temyiz edilmesi karşısında 3628 sayılı Kanunun 18. maddesinin verdiği yetkiye dayanılarak sadece bu suçlar yönünden katılma talebinin KABULÜNE, CMK’nın 260/1. maddesi uyarınca kamu davasından haberdar edilmemiş olup da ihaleye fesat karıştırma, kamu malı aleyhine hırsızlık, rüşvet alma ve verme, resmi belgede sahtecilik ve görevi kötüye kullanma suçlarından katılan sıfatını alabilecek surette suçtan zarar görmüş olan müşteki … vekilinin kanun yollarına başvurma hakkının bulunduğu gözetilerek ve kamu malı aleyhine hırsızlık, suç işlemek amacıyla örgüt kurma ve örgüte üye olma, şantaj (tehdit), icrai davranışla görevi kötüye kullanmak ve resmi belgede sahtecilik suçlarının mahiyetine göre doğrudan zarar görmesi söz konusu olmayan, bu nedenle hükümleri temyiz etme hakkı bulunmadığı anlaşılan Hazinenin bu suçlardan kurulan hükümlere ilişkin temyiz itirazları ile şikayetçi …‘in 28/04/2010 tarihli duruşmada sadece sanıklar …, …, … ve … hakkında şikayetçi olduğunu ve davaya katılmak istemediğini beyan etmesi karşısında temyiz hakkı bulunmadığı ve şikayetçinin verilen hükümleri temyiz etmesi mümkün olmadığından temyiz isteminin reddine dair talebin reddine ilişkin Ek kararın kaldırılmasına ve temyiz isteminin CMUK’nın 317. maddesi uyarınca REDDİNE, icrai davranışla görevi kötüye kullanma suçundan sanıklar …, … ve … haklarında verilen hükmün açıklanmasının geri bırakılmasına dair kararların 5271 sayılı CMK’nın 231/12. maddesi karşısında itiraza tabi olup temyiz yeteneği bulunmadığı, aynı Kanunun 264. maddesi de gözetilerek sanık … müdafiin ve müşteki İl Özel İdare Müdürlüğü vekilinin buna yönelik temyiz istemi itiraz mahiyetinde kabul edilerek mahallinde merciince değerlendirilip gerekli kararın verilmesi mümkün görüldüğünden ve her ne kadar tebliğnamede sanık … adına da yer verilmiş ise de sanığın temyiz talebinin bulunmadığı anlaşıldığından; incelemenin ihaleye fesat karıştırma, rüşvet alma ve verme suçundan verilen beraat hükümleri yönünden katılan Hazine vekili; ihaleye fesat karıştırma, rüşvet alma ve verme, kamu malı aleyhine hırsızlık ve resmi belgede sahtecilik, görevi kötüye kullanma suçlarından verilen beraat hükümleri yönünden müşteki İl Özel İdare Müdürlüğü vekili; ihaleye fesat karıştırma, kamu malı aleyhine hırsızlık, suç işlemek amacıyla örgüt kurma ve örgüte üye olma, rüşvet alma ve verme, şantaj (tehdit) ve resmi belgede sahtecilik suçlarından verilen beraat hükümleri yönünden ise O yer Cumhuriyet Savcısının; temyiz itirazlarıyla sınırlı yapılmasına karar verildikten sonra gereği düşünüldü:</p>
+
+<p>Delilleri takdir ve gerekçesi gösterilmek suretiyle verilen beraat hükümleri usul ve kanuna uygun olduğundan yerinde görülmeyen … vekili, katılan Hazine vekili ve O yer Cumhuriyet Savcısının temyiz itirazlarının reddiyle hükümlerin ONANMASINA, 25/05/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 7. CEZA DAİRESİ
+Esas : 2017/895 Karar : 2017/4429</strong> Tarih : 23.05.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Yerel mahkemece verilen hüküm temyiz edilmekle; başvurunun nitelik, ceza türü, süresi ve suç tarihine göre dosya okunduktan sonra Türk Milleti adına gereği görüşülüp düşünüldü;</p>
+
+<p>Hükmün açıklanmasının geri bırakılması kararına yönelik itirazın kabulünden sonra yapılan yargılamada müşteki Gümrük İdaresi vekilinin kamu davasına katılma talebinde bulunduğu halde talep hakkında olumlu veya olumsuz bir karar verilmemiş ise de, 5271 sayılı CMK.nun 260. maddesi gereğince, katılan sıfatını alabilecek surette suçtan zarar görmüş bulunanlar için yasa yollarının açık olduğu ve sanık hakkında kurulan hükmü temyize hakkı bulunduğu belirlenerek müşteki Gümrük İdaresi vekilinin temyiz istemine göre hükmün incelenmesinde,</p>
+
+<p>1- Mahkemece hükmün açıklanmasının geri bırakılmasına karar verilmeden önce Gümrük İdaresi’ne usulüne uygun duruşma günü bildirildiği halde Gümrük İdaresi adına katılma isteminde bulunmadığı ve Gümrük İdaresi’nin katılan sıfatını almadığı, sanık hakkında 16/02/2011 tarih ve 2010/406 Esas, 2011/30 Karar sayılı karar ile, hükmün açıklanmasının geri bırakılmasına karar verildiği, bu kez Gümrük İdaresi vekilinin itirazı üzerine, hükmün açıklanmasının geri bırakılmasına ilişkin kararın, davaya katılmamış Gümrük İdaresi’nin karara itiraz hakkı bulunmadığı halde, Iğdır Ağır Ceza Mahkemesi’nin 01/06/2011 tarih ve 281 Değişik İş sayılı kararı ile kaldırıldığı, Iğdır Ağır Ceza Mahkemesi’nin kararının yok hükmünde olduğu, dolayısıyla bu karara dayanılarak, sanık hakkında verilmiş ve açıklanması geri bırakılmış olan hükmün açıklanamayacağı gözetilmeden, yazılı şekilde sanık hakkında mahkumiyet kararı verilmesi,</p>
+
+<p>Kabule göre ise;</p>
+
+<p>2- 5237 sayılı TCK.nun 51/7. maddesi gereğince sanığın denetim süresi içinde kasıtlı bir suç işlemesi halinde; ertelenen cezanın kısmen veya tamamen infaz kurumunda çektirilmesine karar verilmesi gerektiği halde, infazı kısıtlayacak şekilde sanığın denetim süresi içerisinde kasıtlı bir suç işlemesi halinde ertelenen cezanın tamamen infaz kurumunda çektirilmesine karar verilmesi,</p>
+
+<p>3- 01/03/2008 tarihinde yürürlüğe giren 5739 sayılı Yasanın 5. maddesi ile yapılan değişiklikle 5237 sayılı TCK.nun 50/6. madde ve fıkrasında yer alan “yaptırım” ibaresinin “tedbir” olarak değiştirilip, 5275 sayılı Yasanın 106. maddesinin 4. ve 9. yine 18/06/2014 tarihli 6545 sayılı Yasanın 81. maddesi ile 3. ve 8. fıkralarındaki değişiklikler göz önüne alındığında, ayrıca 10. fıkrasının da yürürlükten kaldırılması karşısında, infaz yetkisini kısıtlayacak şekilde adli para cezasının ödenmemesi halinde, ödenmeyen adli para cezasının hapse çevrilmesine karar verilmesi,</p>
+
+<p>4- Suçtan zarar gören Gümrük İdaresi adına vekilinin katılma talebi hakkında karar verilip, kabulü halinde Gümrük İdaresi lehine maktu vekalet ücretine hükmedilmesi gerekirken, katılma istemi hakkında karar verilmediği halde katılan kurum lehine dilekçe yazım ücretine hükmedilmesi,</p>
+
+<p>Yasaya aykırı, müşteki Gümrük İdaresi vekilinin temyiz itirazları bu itibarla yerinde görülmüş olduğundan hükmün 5320 sayılı Yasanın 8/1. maddesi gereğince yürürlükte bulunan 1412 sayılı CMUK.nun 321. maddesi uyarınca BOZULMASINA, 23/05/2017 günü oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 12. CEZA DAİRESİ
+Esas : 2016/459 Karar : 2017/4070</strong> Tarih : 17.05.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Görevi kötüye kullanmak suçundan sanıkların beraatine ilişkin hükümler, müşteki vekili tarafından temyiz edilmekle, dosya incelendi gereği düşünüldü;</p>
+
+<p>Müşteki …‘nın 24.03.2011 tarihli celsedeki davaya katılma talebi hakkında usulüne uygun şekilde bir karar verilmemiş ise de, CMK’nın 260/1.maddesi uyarınca müşteki vekilinin hükmü temyize hak ve yetkisi olduğu, suçtan doğrudan zarar gördüğü anlaşılan ve hükmü temyiz etmek suretiyle katılma iradesini ortaya koyan müştekinin CMK’nın 237/2. maddesi uyarınca davaya katılmasına karar verilerek yapılan incelemede;</p>
+
+<p>Beraat eden ve kendilerini vekaletname ile tayin ettikleri ayrı ayrı vekillerle temsil ettiren sanıklar Halenur Bozdağ ve … lehine Avukatlık Asgari Ücret Tarifesinin 13/5. maddesi gereğince hazine aleyhine maktu vekalet ücretine hükmedilmesi gerektiğinin gözetilmemesi temyiz edenin sıfatına göre bozma nedeni yapılmamıştır.</p>
+
+<p>Yapılan yargılama sonunda, yüklenen suç açısından sanıkların suç işleme kastının bulunmadığı gerekçe gösterilerek mahkemece kabul ve takdir kılınmış olduğundan, katılan vekilinin, eksik incelemeye, Yüksek Sağlık Şurası raporunun yetersiz olduğuna ve beraat kararlarının kanuna aykırı olduğuna ilişkin temyiz itirazlarının reddiyle, beraate ilişkin hükümlerin isteme uygun olarak ONANMASINA, 17.05.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 18. CEZA DAİRESİ
+Esas : 2017/3280 Karar : 2017/6006</strong> Tarih : 17.05.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Göçmen kaçakçılığı ve resmi belgede sahtecilik suçlarından sanıklar …, …, …, …, … ile … hakkında yapılan yargılama sonunda mahkumiyetlerine dair İstanbul 44. Asliye Ceza Mahkemesi tarafından verilen 02/04/2013 tarih ve 2008/422-2013/322 E-K sayılı kararın, sanıklar …, …, …, sanıklar …, …, …, …, …, …, …, müdafileri ile müşteki… tarafından tarafından temyizi üzerine,</p>
+
+<p>Dairemizin 09/11/2016 tarih ve 2015/162-2016/17395 E-K sayılı kararıyla;</p>
+
+<p>“Yerel Mahkemece verilen hükümler temyiz edilmekle, başvurunun süresi, kararın niteliği ile suç tarihine göre ve CMK’nın 260/1. maddesi uyarınca katılma isteği kovuşturma aşamasında reddedilen müşteki …‘ın kararı temyiz etme yetkisi bulunduğu anlaşılmakla, hükmolunan cezaların süreleri itibariyle de koşulları bulunmadığından sanıklar …, … müdafileriyle sanıklar … ve …‘in duruşmalı inceleme isteminin CMUK’nın 318. maddesi uyarınca REDDİNE karar verilerek dosya görüşüldü.</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre ve isnad edilen suçları örgüt kaspamında işleyen sanıklar …, …, …, …, … ile … hakkında İstanbul Cumhuriyet Başsavcılığının 08.04.2008 ile 23.05.2008 tarihli iddianameleriyle suç işlemek amacıyla örgüt kurmak suçundan sanıklar hakkında TCK’nın 220. maddesi uyarınca açılmış bir kamu davasının bulunmaması karşısında, dava zamanaşımı süresi içinde bu suça yönelik suç duyurusunda bulunulabileceği öngörülerek, dosya görüşüldü.</p>
+
+<p>1- Sanıklar …, …, …, …, …, …, …, …, …, …, …, … ile …‘ya yükletilen göçmen kaçakçılığı ile resmi belgede sahtecilik eylemleriyle ulaşılan çözümü haklı kılıcı zorunlu öğelerin ve bu eylemlerin sanıklar tarafından işlendiğinin Kanuna uygun olarak yürütülen duruşma sonucu saptandığı, bütün kanıtlarla aşamalarda ileri sürülen iddia ve savunmaların temyiz denetimini sağlayacak biçimde ve eksiksiz sergilendiği, özleri değiştirilmeksizin tartışıldığı, vicdani kanının kesin, tutarlı ve çelişmeyen verilere dayandırıldığı,</p>
+
+<p>Eylemlerin doğru olarak nitelendirildiği ve Kanunda öngörülen suç tiplerine uyduğu,</p>
+
+<p>Cezaların kanuni bağlamda uygulandığı,</p>
+
+<p>Anlaşıldığından, sanıklar …, …, …, …, …, …, …, …, sanıklar …, …, …, …, …, …, … ile … müdafileriyle müşteki Şeyhmuz Çaktır’ın ileri sürdüğü nedenler yerinde görülmediğinden tebliğnameye uygun olarak, TEMYİZ DAVASININ ESASTAN REDDİYLE HÜKÜMLERİN ONANMASINA, oy birliğiyle karar verilmiştir.</p>
+
+<p>I- İTİRAZ NEDENLERİ</p>
+
+<p>Yargıtay Cumhuriyet Başsavcılığının 23/04/2017 gün ve 2017/20195 sayılı yazısıyla;</p>
+
+<p>“Sanıklar hakkındaki 08/04/2008-21/04/2008 tarihli iddianamelerde, sanıkların eylemleri örgütlü şekilde işlediğinin delilleriyle birlikte anlatılmasına rağmen sevk maddelerinde TCK’nın 220. maddesinden cezalandırma istenmediği, yine İstanbul 44. Asliye Ceza Mahkemesinin itiraza konu edilen gerekçeli kararında da, sanıklar hakkında örgüt anlatımı ve kabulü bulunmasına rağmen açılan bir dava bulunmadığından sanıklara ceza verilemediği ancak göçmen kaçakçılığı suçundan sanıklar hakkında hüküm kurulurken TCK’nın 79/1.b maddesinden sonra suçun örgüt faaliyeti kapsamında işlendiği kabul edilerek, 3. fıkra uyarınca temel cezanın 1/2 oranında artırılmasına karar verildiği, Yargıtayın yerleşik uygulamalarına göre; suçun bir örgüt faaliyeti kapsamında işlendiğinin kabulü için öncelikle, TCK’nın 220. maddesinden sanıklar hakkında bir mahkumiyetin bulunması gerekli olduğu, bu yönde kabulün artırım için yeterli olmadığı yönündedir. (Örnek Yargıtay 8. CD. 19/02/2009 günlü ve 2008/12560 E.- 2009/2405 K.)</p>
+
+<p>Daireniz tarafından sanıklar hakkında TCK’nın 220. maddesinden zamanaşımı süresince dava açılmasına yönelik suç duyurusunda bulunulması ile yetinilerek göçmen kaçakçılığından verilen hüküm ve yine örgütün varlığı kabul edilerek sanıklar hakkında hükmedilen resmi evrakta sahtecilik suçundan mahkumiyet hükümlerinin onanmasına karar verilmiştir.</p>
+
+<p>Sanıklar hakkında hüküm kurulmadan önce TCK’nın 220. maddesinden suç örgütü üyeliği yada yöneticiliğinden kamu davasının açılması sağlanarak bu dosya ile birleştirilmesine karar verilmesi ve örgütün varlığının kabulü halinde, hükmün onanmasına, örgütün varlığının kanıtlanamaması halinde ise, TCK’nın 79/3 maddesinden artırım yapılmamasına karar verilmesi gerektiği belirtilerek, itirazın KABULÜNE, Dairenizin 09/11/2016 gün ve 2015/162 Esas - 2016/17395 sayılı kararının KALDIRILMASINA, sanıklar …, …, …, …, …, …, …, …, …, …, …, … ile …‘ya yükletilen göçmen kaçakçılığı ile resmi belgede sahtecilik suçlarından verilen hükümlerin, sanıklar hakkında suç işlemek amacıyla örgüt kurmak suçundan açılmış bir dava bulunup bulunmadığı araştırılıp, açılmış ise davaların birleştirilmesi, açılmış bir davanın olmaması halinde haklarında TCK’nın 220. maddesi uyarınca suç işlemek için örgüt kurmak suçundan dava açılması sağlanarak, dava konusu suçlarla birlikte değerlendirildikten sonra hüküm kurulması gerektiği gözetilmeden, sanıklar hakkında suç örgütünün faaliyeti kapsamında göçmen kaçakçılığı yapmak suçundan cezanın artırılmasına ve evrakta sahtecilik suçlarından mahkumiyetlerine karar verilmesi gerekçeleriyle hükümlerin BOZULMASI, itirazın yerinde görülmemesi durumunda ise, dosyanın Yargıtay Ceza Genel Kuruluna GÖNDERİLMESİ, talep edilmiştir.</p>
+
+<p>II- İTİRAZIN KAPSAMI</p>
+
+<p>CMK’nın 308/1. maddesinin son cümlesi uyarınca yapıldığı kabul edilen itiraz, sanıklar …, …, …, …, …, …, …, …, …, …, …, … ile …‘ya yükletilen göçmen kaçakçılığı ile resmi belgede sahtecilik suçlarından verilen mahkumiyet hükümlerinin onanmasına dair, Dairemizin 09/11/2016 gün ve 2015/162-2016/17395 E-K sayılı kararına ilişkindir.</p>
+
+<p>III- Yargıtay Cumhuriyet Başsavcılığı’nın itiraz gerekçeleri yerinde görülmekle, 6352 sayılı Kanunun 99. maddesiyle eklenen CMK’nın 308. maddesinin 3. fıkrası uyarınca İTİRAZIN KABULÜNE,</p>
+
+<p>Dairemizce, …, …, …, …, …, …, …, …, …, …, …, … ile …‘ya yükletilen göçmen kaçakçılığı ile resmi belgede sahtecilik suçlarından verilen 09/11/2016 gün ve 2015/162-2016/17395 E-K sayılı ONAMA KARARININ KALDIRILMASINA,</p>
+
+<p>İstanbul 44. Asliye Ceza Mahkemesince verilen 02/04/2013 tarih ve 2008/422-2013/322 E-K sayılı mahkumiyet hükümlerini içeren dosya yeniden görüşüldü:</p>
+
+<p>Temyiz isteğinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>TCK’nın 79/3. maddesi uyarınca cezanın artırılabilmesinin ilk koşulu, TCK’nın 220. maddesinde belirtilen anlamda, bir örgütün varlığının kesin olarak tespit edilmiş olması, başka bir deyişle öncelikle TCK’nın 220. maddesi uyarınca sanıklar hakkında suç işlemek amacıyla örgüt kurma suçundan kurulan bir mahkumiyet hükmünün bulunması gerektiğinden, sanıklar …, …, …, …, …, …, …, …, …, …, …, … ile … hakkında, suç işlemek amacıyla örgüt kurmak suçundan açılmış bir davasının bulunmaması ve bu suçtan hüküm kurulmamış olması karşısında sanıkların, suç örgütünün faaliyeti kapsamında göçmen kaçakçılığı yapmak suçundan TCK’nın 79/3. maddesi uyarınca cezalarında artırım yapılamayacağının gözetilmemesi,</p>
+
+<p>Örgütsel faaliyet kapsamında eylemlerde bulundukları kabul edilerek TCK’nın 220. maddesindeki düzenlemeler de dikkate alınarak resmi belgede sahtecilik suçundan mahkumiyet kararı verilen sanıklar hakkında ise, TCK’nın 220. maddesi uyarınca kesinleşmiş bir mahkumiyet kararı bulunmaması nedeniyle, sanıkların sahtecilik suçuna iştiraklerinin ne şekilde gerçekleştiği, yüklenen suçun unsurlarını oluşturan fiillerin nelerden ibaret olduğu, kararın dayandığı tüm verilerin ve bu veriler konusunda mahkemenin ulaştığı sonuçların, iddia, savunma ile mağdur ve tanık anlatımlarıyla dosya kapsamına göre yeniden değerlendirilmesi hususunda bir zorunluluk bulunması,</p>
+
+<p>Kanuna aykırı ve sanıklar …, …, …, …, …, …, …, …, sanıklar …, …, …, …, …, …, …, … müdafileri ile müşteki …‘ın temyiz nedenleri yerinde görüldüğünden tebliğnameye aykırı olarak HÜKÜMLERİN BOZULMASINA, yargılamanın bozma öncesi aşamadan başlayarak sürdürülüp sonuçlandırılmak üzere dosyanın esas/hüküm mahkemesine gönderilmesine, 17/05/2017 tarihinde oy birliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 5. CEZA DAİRESİ
+Esas : 2016/8858 Karar : 2017/2041</strong> Tarih : 9.05.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Müşteki Hazine vekilinin görevi kötüye kullanma suçundan katılan sıfatını alabilecek biçimde doğrudan zarar görmemesi nedeniyle hükümleri temyiz etme yetkisi bulunmadığından vekilinin bu suçtan verilen hükümlere yönelik temyiz isteminin 5320 sayılı Yasanın 8/1. maddesi de gözetilerek CMUK’nın 317. maddesi uyarınca REDDİNE, Hazinenin katılma talebinin zimmet suçuyla sınırlı olarak 3628 sayılı Kanunun 17 ve 18. maddeleri ile CMK’nın 237/2 ve 260. maddelerinin verdiği yetkiye dayanılarak KABULÜNE, incelemenin Hazine vekilinin ve O yer Cumhuriyet Savcısının zimmet suçundan kurulan beraat hükümlerine, müşteki Çevre ve Şehircilik Bakanlığı adına Hazine vekilinin zimmet ve görevi kötüye kullanma suçlarından kurulan beraat ve mahkumiyet hükümlerine, sanıklar müdafiilerinin ise sanıklar hakkında görevi kötüye kullanma suçundan kurulan mahkumiyet hükümlerine yönelik temyiz itirazlarıyla sınırlı olarak yapılmasına karar verildikten sonra gereği düşünüldü:</p>
+
+<p>Kooperatif yöneticisi olan sanıklar hakkında zimmet ve görevi kötüye kullanma suçundan kamu davası açıldığı, 1163 sayılı Kooperatifler Kanununun Ek 2/son maddesine göre Çevre ve Şehircilik Bakanlığının yapı kooperatifleri ve üst kuruluşlarının yönetim ve denetim kurulu üyeleri ile memurları hakkında görevlerine ilişkin olarak işledikleri suçlardan dolayı açılan kamu davalarına katılma hakkı olduğu, bu sıfatının gereği olarak CMK’nın 233 ve 234. maddeleri gereğince kovuşturma evresinde sahip olduğu davaya katılma ve diğer haklarını kullanabilmesi için duruşmadan haberdar edilmesi gerektiği halde, usulen dava ve duruşmalar bildirilmeden, davaya katılma ve Ceza Muhakemesi Kanununun mağdur ve katılanlar için öngördüğü haklardan yararlanma olanağı sağlanmadan yargılamaya devam edilerek yazılı biçimde hükümler kurulması,</p>
+
+<p>Kabule göre de,</p>
+
+<p>Sanık …. tarafından mahkemeye ibraz edilen 26/06/2005 günlü, tanık…. imzalı, “Makbuz” başlıklı adi yazılı belgede, anılan tanığın bahse konu kooperatife ait inşaatlarda ustabaşı olarak temin ettiği işçilerle birlikte yevmiyeli ve sigortalı çalışmak suretiyle temelden çatıya kadar 13 bloktan ibaret 78 dairenin her türlü inşaat işini yapması karşılığında oluşan 6.700 TL alacağının kooperatif başkanı sanık …. tarafından nakit ve peşin olarak kendisine ödendiğini, kooperatiften hiç bir hak ve alacağı kalmadığını ve kooperatifi ibra ettiğini belirtmesine ve mahkemede tanık olarak alınan beyanında da bu hususu teyit etmesine göre, bahse konu dönem itibariyle …. ile birlikte kooperatif inşaatlarında çalıştığı belirtilen şahısların tespiti ile bu konuda tanık olarak dinlenmesi, ilgili kurumdan tanık …. ve yanında çalışan işçilerin varsa sigorta işlemlerine ilişkin belgelerin temini cihetine gidilmesi, ibraz edilen “Makbuz” başlıklı belgenin kooperatif kayıtlarında yeralıp almadığına ilişkin bilirkişi incelemesi yaptırılması ve sanıklar aleyhine anılan kooperatif yetkilileri tarafından Edremit 1. Asliye Hukuk Mahkemesi’nin 2016/714 Esas numarasında kayıtlı tazminat davasının akıbetinin araştırılması, bundan sonra hasıl olacak sonuca göre suç niteliği ile sanıkların hukuki durumlarının tayin ve takdiri gerekirken eksik araştırma ile yazılı şekilde hüküm kurulması,</p>
+
+<p>TCK’nın 53/1-d maddesindeki hak ve yetkiyi kötüye kullanmak suretiyle atılı görevi kötüye kullanma suçunu işlediği kabul edilen sanıklar hakkında aynı Kanunun 53/5. madde ve fıkrası gereğince, cezanın infazından sonra başlamak üzere, hükmolunan adli para cezasının gün sayısının yarısından bir katına kadar bu hak ve yetkinin kullanılmasının yasaklanmasına karar verilmesi gerektiğinin gözetilmemesi,</p>
+
+<p>Hüküm fıkrasında sanıklardan…..’in adının sehven “….” yazılması,</p>
+
+<p>Kanuna aykırı, katılan Hazine vekili, sanıklar müdafiileri, Müşteki Çevre ve Şehircilik Bakanlığı adına…. vekili ve O yer Cumhuriyet Savcısının temyiz itirazları bu itibarla yerinde görüldüğünden hükümlerin 5320 sayılı Kanunun 8/1. maddesi gözetilerek CMUK’nın 321. maddesi uyarınca BOZULMASINA, 09/05/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 7. CEZA DAİRESİ 
+Esas : 2016/5315 Karar : 2017/3702</strong> Tarih : 4.05.2017</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 260. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kanun Yollarına Başvurma Hakkı</strong></p>
+  </li>
+</ul>
+
+<p>Üst Cumhuriyet Savcısının temyiz istemine ilişkin yapılan incelemede;</p>
+
+<p>29/02/2012 tarihinde verilen hükmü yasal süresinden sonra 20/04/2012 tarihinde temyiz etmiş bulunan üst Cumhuriyet Savcısının temyiz talebinin 5320 sayılı Yasa’nın 8/1 maddesi gereğince yürürlükte bulunan 1412 sayılı CMUK’nin 317. maddesi uyarınca REDDİNE,</p>
+
+<p>Müşteki … vekilinin ve sanık …’ın temyiz istemlerine ilişkin yapılan incelemede;</p>
+
+<p>Müşteki … davaya katılmamış ise de 5271 sayılı CMK’nun 260. maddesi gereğince, katılan sıfatını alabilecek surette suçtan zarar görmüş bulunanlar için yasa yollarının açık olduğu gözetilip şikayetçi kurumun suçtan zarar görme olasılığına göre sanıklar hakkında kurulan hükmü temyize hakkı bulunduğu belirlenerek yapılan incelemede;</p>
+
+<p>Suça konu kaçak eşyanın, … kapısından veya sınırdan yurda sokulmak istenirken … da hemen sonrasında veya bu eylemlerin kesintiye uğramadan devamı sırasında yakalanması halinde, eylemin 5607 sayılı Kaçakçılıkla Mücadele Kanunu’nun kapsamında kalacağı cihetle; 15/12/2008 tarihli olay tutanağına göre sanıkların, hudut komutanlığı tarafından yapılan gözetleme faaliyeti sırasında, İran sınırından beraberlerindeki kaçak eşyalar ve bunların taşınmasında kullanılan atlarla yurda yasa dışı giriş yaparken yakalandıklarının anlaşılması karşısında, sanıklara atılı eylemin kül halinde 5607 sayılı Kaçakçılıkla Mücadele Kanunu’nun 3/1-2. cümlesi kapsamında kaldığı ve sanıkların anılan hükme göre cezalandırılması gerektiği gözetilmeden yazılı şekilde 5015 sayılı Yasa’… muhalefetten mahkumiyet hükmü kurulması,</p>
+
+<p>Kabule göre de;</p>
+
+<p>1- Suçtan doğrudan zarar gören ve davaya katılma hakkı bulunan …, yargılamadan haberdar edilmeden ve davaya katılma imkanı tanınmadan gıyapta karar verilmesi,</p>
+
+<p>2- Sanık … hakkında UYAP kayıtlarının incelenmesi sonucunda Dairemizde aynı gün incelenen 2014/11486 esas sırasına kayıtlı, Başkale 2. Asliye Ceza Mahkemesi’nin 2009/123 Esas ve 2011/2 Karar sayılı dosyasında suç tarihinin 15/12/2008, iddianame düzenleme tarihinin ise 01/04/2009 olduğu gözetilerek sanığın eylemlerinin aynı suç işleme kararının icrası kapsamında kalıp kalmadığı, aralarında hukuki kesinti olup olmadığı ve TCK’nun 43/1 maddesinin uygulanıp uygulanmayacağının belirlenmesi bakımından, anılan dosyanın temyiz incelemesine konu bu dosya ile gerektiğinde birleştirildikten sonra tüm deliller birlikte değerlendirilerek sonucuna göre hüküm kurulması gerektiğinin gözetilmemesi,</p>
+
+<p>3- Sanıkların, hükmün açıklanmasının geri bırakılması hükümlerinin uygulanmasına engel hallerinin bulunmaması hususu nazara alınarak her bir sanık açısından kabullendikleri akaryakıt miktarı göz önüne alınarak ayrı ayrı düzenlenecek kemt varakasındaki … vergileri ve diğer eş etkili vergiler ile mali yükler toplamından oluşan … vergilerinin kamu zararı olduğunun sanıklara bildirilmesi ve sonucuna göre gerektiğinde 5271 sayılı CMK’nun 231/9 maddesi hükümleri gözetilerek bir karar verilmesi gerekirken ele geçen tüm akaryakıt için kemt varakası düzenlenmek suretiyle zararın giderilmediğinden bahisle sanıklar hakkında hükmün açıklanmasının geri bırakılmasına yer olmadığına karar verilmesi,</p>
+
+<p>4- 24/11/2015 günlü 29542 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren Anayasa Mahkemesi’nin 08/10/2015 tarih ve 2014/140 Esas, 2015/85 sayılı iptal Kararı ile 5237 sayılı TCK’nun 53.maddesinin bazı bölümlerinin iptal edilmesi nedeniyle anılan maddenin yeniden değerlendirilmesinde zorunluluk bulunması, TCK’nin 53. maddesinin 3. fıkrası uyarınca, mahkum olduğu kısa süreli olmayan hapis cezası ertelenen sanık … hakkında anılan maddenin 1.fıkrasının (c) bendinde yazılı hak yoksunluğunun, sanığın sadece kendi altsoyu üzerindeki velayet, vesayet veya kayyımlık yetkileri açısından uygulanmasına yer olmadığına, altsoyu dışında kalanlarla ilgili bu hak ve yetkilerden ise cezanın infazı tamamlanıncaya kadar yoksun bırakılmasına karar verilmesi gerektiği gözetilmeden yazılı şekilde hüküm tesisi,</p>
+
+<p>5- 24.11.2015 günlü 29542 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren Anayasa Mahkemesi’nin 08.10.2015 tarih ve 2014/140 esas, 2015/85 sayılı iptal kararı ile 5237 sayılı TCK’nun 53.maddesinin bazı bölümlerinin iptal edilmesi nedeniyle anılan maddenin yeniden değerlendirilmesinde zorunluluk bulunması, 5237 sayılı TCK’nun 53. maddesinin 3. fıkrası uyarınca, aynı maddenin 1.fıkrasının (c) bendinde yazılı sanıklar … ve …’ın kendi altsoyları üzerindeki velayet hakları ile vesayet veya kayyımlığa ait bir hizmette bulunmaktan koşullu salıverilmelerine, altsoyları dışında kalanlarla ilgili bu hak ve yetkilerden ise cezanın infazı tamamlanıncaya kadar yoksun bırakılmalarına karar verilmesi gerektiği gözetilmeden, yazılı şekilde hüküm tesisi,</p>
+
+<p>6- Suçtan doğrudan zarar görmeyen ve katılma hakkı bulunmayan EPDK’nun davaya katılan olarak kabul edilip lehine dilekçe yazım ücretine hükmedilmesi,</p>
+
+<p>Yasaya aykırı, müşteki … vekilinin ve sanık …’ın temyiz itirazları bu itibarla yerinde görüldüğünden hükmün, 5320 sayılı Yasa’nın 8/1. maddesi gereğince yürürlükte bulunan 1412 sayılı CMUK’nun 321.maddesi uyarınca BOZULMASINA, 04/05/2017 günü oybirliğiyle karar verildi.</p>
+
+<hr>
+
+</div></div></main>
+</div>
+
+<footer>
+<section>
+  <div class="contact-info">
+
+    <div class="adres">
+
+    <div class="telefon-wrapper">
+
+
+    </div>
+  </div>
+</section>
+
+</div>
+
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+"vars": {
+"account": "UA-58342443-1"
+},
+"triggers": {
+"trackPageview": {
+  "on": "visible",
+  "request": "pageview"
+}
+}
+}
+</script>
+</amp-analytics>
+
+</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="../../index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="../../dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="../../ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="../../knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="../../search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/slideToggle.min.js"></script>
+    <script src="../js/internet-status.js"></script>
+    <script src="../js/tiny-slider.js"></script>
+    <script src="../js/baguetteBox.min.js"></script>
+    <script src="../js/countdown.js"></script>
+    <script src="../js/rangeslider.min.js"></script>
+    <script src="../js/vanilla-dataTables.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/magic-grid.min.js"></script>
+    <script src="../js/dark-rtl.js"></script>
+    <script src="../js/active.js"></script>
+    <!-- PWA -->
+    <script src="../js/pwa.js"></script>
+  </body>
+</html>

@@ -1,0 +1,1067 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tiny-slider.css">
+    <link rel="stylesheet" href="../css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="../css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="tck-search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+               <div class="page-content-wrapper py-0">
+        </div>
+      </div>
+
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<h2 id="hâkimin-davayı-aydınlatma-ödevi">Hâkimin Davayı Aydınlatma Ödevi</h2>
+
+<h2 id="hmk-madde-31">HMK MADDE 31</h2>
+
+<p>(1) Hâkim, uyuşmazlığın aydınlatılmasının zorunlu kıldığı durumlarda, maddi veya hukuki açıdan belirsiz yahut çelişkili gördüğü hususlar hakkında, taraflara açıklama yaptırabilir; soru sorabilir; delil gösterilmesini isteyebilir</p>
+
+<hr>
+
+<ul>
+  <li><a href="../6100-sayili-hukuk-muhakemeleri-kanunu-(hmk).html"><strong>6100 sayılı HMK (Hukuk Muhakameleri Kanunu) Tam Metin</strong></a></li>
+</ul>
+
+<hr>
+
+<amp-img src="../tokmak-yargitay-kararlari-1280x720.png" alt="HMK Madde 31  Hâkimin Davayı Aydınlatma Ödevi" width="1280" height="720" layout="responsive">
+            </amp-img>
+<h2 id="hmk-madde-31-gerekçesi">HMK Madde 31 Gerekçesi</h2>
+
+<p>Hâkimin, uyuşmazlığın aydınlatılması bakımından neler yapabileceğinin hüküm altına alındığı bu madde, 1086 sayılı Kanunun 75 inci maddesinin ikinci ve üçüncü fıkralarını karşılamaktadır.</p>
+
+<p>75 inci maddede, “iki tarafın iddiaları hududu dahilinde olmak üzere” şeklinde ifade edilen husus “uyuşmazlığın aydınlatılmasının zorunlu kıldığı durumlarda” ibaresi kullanılarak ifade edilmiştir.</p>
+
+<p>Bu düzenlemeye göre, hâkimin ancak bu hâllerde, taraflardan açıklama isteme, soru sorma ve delil göstermelerini isteme yetkisi vardır.</p>
+
+<p>Maddede, hâkimin maddî anlamda davayı sevk yetkisi düzenlenmektedir. Mukayeseli hukuktaki gelişim sonucu, günümüzde, bununla hâkimin taraflara sorular sorma, işaret ve müzakere etme ödevi anlaşılmaktadır. Bununla hâkim, olayın ve hukukî uyuşmazlığın olgusal ve hukukî boyutlarını gerekli olduğu ölçüde taraflarla birlikte ele alabilecek, tarafların zamanında uyuşmazlığın çözümü için önemli vakıaların tamamı hakkında açıklama yapmalarını, özellikle ileri sürülen vakıalardaki eksiklikleri tamamlamalarını, delilleri ikame etmelerini ve gerekli talepleri ileri sürmelerini sağlayabilecektir.</p>
+
+<hr>
+
+<h2 id="hmk-31-hâkimin-davayı-aydınlatma-ödevi-emsal-yargıtay-kararları">HMK 31 (Hâkimin Davayı Aydınlatma Ödevi) Emsal Yargıtay Kararları</h2>
+
+<hr>
+
+<p><strong>YARGITAY 13. HUKUK DAİRESİ
+Esas : 2015/43240 Karar : 2018/7752</strong> Tarih : 5.07.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 31. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Hâkimin Davayı Aydınlatma Ödevi</strong></p>
+  </li>
+</ul>
+
+<p>Davacı, davalılar ile imzalanan 15.12.2005 tarihli sözleşme ile davalılardan daire satın aldığını, 40.000 USD peşin ödediğini ve bakiyesinin banka kredisi ile ödenmesinin kararlaştırıldığını, davalıların sonradan projenin mevcut hali ile yapı ruhsatı alınamadığı için yapı ruhsatı alacak şekle göre yeniden düzenlendiği ve dairenin metrekaresinin arttırıldığı gerekçesi ile 35.000 USD fark istediklerini, bunun üzerine ek bir sözleşme yapılarak bu hususların düzenlendiğini, satış bedelinin davalılara tamamen ödenmesine rağmen sözleşme uyarınca dairenin 31.12.2007 tarihinde teslimi gerekirken inşaatın tamamlanamadığını ve teslim edilemediğini, ek sözleşme ile dairenin 40 metrekare daha büyük olacağı taahhüt edilmesine karşın ancak 16 metrekare büyüme yapıldığını, ayrıca bina dışı donanımda ve dairede eksiklikler bulunduğunu ileri sürerek ve fazlaya ilişkin hakları saklı kalmak kaydı ile eksik ve ayıplı işler nedeni ile ayıp oranında indirim tutarının ihtar tarihinden işleyecek en yüksek faiziyle ve 31/12/2007 tarihinden itibaren dava tarihine kadar hesaplanacak kira alacağının uygulanacak en yüksek faizi ile birlikte davalılardan müştereken ve müteselsilen tahsiline karar verilmesini istemiştir.</p>
+
+<p>davalılar, davanın reddini dilemiştir.</p>
+
+<p>Mahkemece, davanın kısmen kabulü ile 10.000,00 TL maddi tazminatın dava tarihinden itibaren değişken yasal faiz oranı uygulanmak sureti ile hesaplanacak işlemiş faizi ile birlikte davalılardan müteselsilen tahsiline, fazlaya yönelik istemin reddine karar verilmiş; hüküm, taraflarca temyiz edilmiştir.</p>
+
+<p>1-Davacı eldeki dava ile davalılardan satın aldığı dairenin ayıplı ve geç teslim edildiğini ileri sürerek ayıp oranında bedelde indirim ve kira tazminatı talep etmiştir. davalılar davanın reddini dilemiş; Mahkemece, davanın kısmen kabulüne karar verilmiştir. Ne var ki; dava dilekçesinde dava değeri 10.000,00 TL olarak gösterilmesine rağmen ne kadarının kira tazminatı ne kadarının ayıp oranında bedel indirimi karşılığı olarak istenildiği gösterilmediği gibi mahkemece, davacıya bu yönde bir açıklama da yaptırılmamıştır. HMK’nın 26/1. maddesinde “Hakim, tarafların talep sonuçlarıyla bağlıdır; ondan fazlasına veya başka bir şeye karar veremez. Duruma göre, talep sonucundan daha azına karar verebilir.” ve yine Hakimin davayı aydınlatma ödevi başlıklı HMK’nın 31/1. maddesinde “Hakim, uyuşmazlığın aydınlatılmasının zorunlu kıldığı durumlarda, maddi veya hukuki açıdan belirsiz yahut çelişkili gördüğü hususlar hakkında, taraflara açıklama yaptırabilir; soru sorabilir; delil gösterilmesini isteyebilir.” düzenlemesi mevcuttur. HMK 119/ğ. maddesinde de talep sonucunun açık bir şekilde yazılması gerektiğine değinilmiştir. Söz konusu düzenlemelere göre, hakim tarafından öncelikle davacının talep sonucu açıklattırılmalıdır. Mahkemece, 10.000,00 TL’lik dava değerinin hangi talep için ne miktarda olduğu açıklatılmaksızın hüküm kurulması usul ve yasaya aykırı olup, bozmayı gerektirir.</p>
+
+<p>2-Yargıtay Hukuk Genel Kurulu’nun 2009/19-109 Esas ve 2009/123 Karar sayılı ilamında değinildiği üzere, 10.04.1992 tarih, 1991-7 Esas 1992-4 Karar Sayılı İçtihadı Birleştirme Kararı, hakimin tefhim etmiş olduğu kısa kararla gerekçeli kararın uyum içinde olması gerektiğini öngörmektedir. Yargı erkinin görev ve yetkisi, Anayasa ile yasaları amaçlarına uygun olarak yorumlayıp uygulamak, keza İçtihadı Birleştirme Kararlarının bağlayıcılığını gözetmekten ibarettir. Kısa kararla gerekçeli karar arasındaki çelişkiye cevaz verilmemesinin amacı, kamunun mahkemelere olan güveninin sarsılmamasına yöneliktir. Tefhim edilen hüküm başka, gerekçeli karardaki hüküm başka ise bu durumun mahkemelere olan güveni sarsacağı tartışmasızdır.</p>
+
+<p>Öyle ki, İçtihadı Birleştirme Kararında bu konuya çok büyük bir önem verilmiş, çelişkinin varlığı tespit edildiği takdirde, başka hiçbir incelemeye gerek görülmeksizin ve tarafların bu konuyu temyiz sebebi yapıp yapmadıklarına bakılmaksızın kararın salt bu nedenle bozulması gerektiğine işaret edilmiştir. Ayrıca 01.10.2011 tarihinde yürürlüğe giren 6100 sayılı Hukuk Muhakemeleri Kanunu’ nun 297. maddesinde hüküm fıkrasında nelerin yer alacağı açıklanmış; 297. maddenin 2. fıkrası ile “Hükmün sonuç kısmında gerekçeye ait herhangi bir söz tekrar edilmeksizin, taleplerden her biri hakkında verilen hükümle, taraflara yüklenen borç ve tanınan hakların, sıra numarası altında; açık, şüphe ve tereddüt uyandırmayacak şekilde gösterilmesi gereklidir” hükmü getirilmiştir.</p>
+
+<p>Somut uyuşmazlıkta, davacı kira tazminatı ve ayıp oranında bedel indirimi talep etmiş, bilahare talebini 39.242,00 TL olarak ıslah etmiştir. Mahkemece, gerekçe kısmında davacının kira tazminatının reddine, davacının mahkemece tayin edilen 2 haftalık kesin süreden sonra ıslah dilekçesi sunduğundan ıslah işlemi yapma hakkının ortadan kalktığı, dava dilekçesinde gösterilen değer üzerinden ve istemle bağlı kalınarak 10.000,00 TL maddi tazminatın faizi ile davalılardan müteselsilen davalılardan tahsiline karar verildiği belirtilmesine rağmen hüküm fıkrasında davanın kısmen kabulü ile 10.000,00 TL maddi tazminatın faizi ile davalardan müteselsilen tahsiline, davacının fazlaya ilişkin isteminin reddine karar verilerek gerekçe ile hüküm fırkası arasında çelişki oluşturulmuştur. Mahkemece, açıklanan yasal düzenleme gözetilmeyerek gerekçe ile hüküm fıkrası arasında çelişki oluşturulması usul ve yasaya aykırı olup, bozmayı gerektirir.</p>
+
+<p>3-Bozma nedenine göre tarafların sair temyiz itirazlarının bu aşamada incelenmesine gerek görülmemiştir.</p>
+
+<p>SONUÇ: Yukarıda 1 ve 2 nolu bentte açıklanan nedenlerle kararın BOZULMASINA, 3 nolu bentte açıklanan nedenlerle tarafların temyiz itirazlarının bu aşamada incelenmesine yer olmadığına, peşin alınan 170,78 TL harcın istek halinde davalı … Tekstil San. Tic. Ltd. Şti’ne, 171,00 TL harcın davalı … … Teks. Tic. Ltd. Şti’ne, 170,78 TL harcın davalı …-…Teşebbüsü’ne, 171,00 TL harcın davalı … İnş. Yat. San. Tic. A.Ş.’ye iadesine, HUMK’nun 440/I maddesi uyarınca tebliğden itibaren 15 gün içerisinde karar düzeltme yolu açık olmak üzere, 05/07/2018 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 1. HUKUK DAİRESİ
+Esas : 2018/978 Karar : 2018/11734</strong> Tarih : 3.07.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 31. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Hâkimin Davayı Aydınlatma Ödevi</strong></p>
+  </li>
+</ul>
+
+<p>Dava, muris muvazaası hukuksal nedenine dayalı tapu iptali ve tescil, olmazsa tenkis isteğine ilişkindir.</p>
+
+<p>Davacılar, ortak mirasbırakanları … ’ın maliki olduğu taşınmazlarını kız çocuklarından mal kaçırmak amacıyla davalı çocuklarına satış göstererek devir ettiğini, onlardan da bir kısmının diğer davalılara geçtiğini, devirlerin bedelsiz ve muvazaalı olduğunu ileri sürerek, çekişmeli taşınmazların tapu kayıtlarının iptali ile miras payları oranında adlarına tescilini istemişlerdir.</p>
+
+<p>Davalılar, iddiaların yersiz olduğunu, mirasbırakana ait olmayan taşınmazların da dava edildiğini, dava tarihinde malik olmayan davalıların bulunduğunu bildirip davanın reddini savunmuştur.</p>
+
+<p>Mahkemece, dava konusu 2480, 2478, 1792, 1364, 985, 2498, 319, 2479, 2477, 3309, 3311, 3382, 2904, 3768, 3770, 2900, 3384, 2630, 3690, 3692, 3726, 3687, 3689 parsel sayılı taşınmazların davalılar adına olan tapusunun iptali ile davacılardan … , … ve … ‘ın miras payları oranında adlarına tesciline, feragat nedeniyle diğer davacılar … , … ve … ’nın açmış olduğu davanın reddine karar verilmiştir.</p>
+
+<p>Hemen belirtilmelidir ki, davacılar … , … ve … ’nın 25.08.2014 tarihli ayrı ayrı verdikleri dilekçeler ile davadan feragat ettiklerini bildirdikleri, ne var ki anılan davacı asillerin dilekçelerini ibraz sırasında kimlik tespitlerinin yapılmadığı, 6100 sayılı HMK’nun 311. maddesi uyarınca feragatin kesin hükmün hukuki sonuçlarını doğuracağı düzenlemesi dikkate alınarak anılan davacıların dilekçelerini ibrazı sırasında kimlik tespitlerinin yapılması gerekirken bu hususun gözardı edilerek sonuca gidilmiş olması doğru değildir.</p>
+
+<p>Bilindiği üzere, 6100 sayılı HMK’nun 31. maddesinde ‘’ Hakimin davayı aydınlatma ödevi ‘’ başlığı altında; ‘’ Hâkim, uyuşmazlığın aydınlatılmasının zorunlu kıldığı durumlarda, maddi veya hukuki açıdan belirsiz yahut çelişkili gördüğü hususlar hakkında, taraflara açıklama yaptırabilir; soru sorabilir; delil gösterilmesini isteyebilir. ‘’ düzenlemesine yer verilmiştir.</p>
+
+<p>Yukarıda anılan yasal düzenleme karşısında somut olaya bakıldığında, mahkemece; mirasbırakanın hangi dava konusu taşınmazı kime ya da kimlere devrettiğinin, ara malik olup olmadığının, hangi taşınmazlar yönünden ne istendiğinin tam ve şüpheye mahal bırakmayacak şekilde açıklattırılmadığı, maddi gerçeğe ulaşılması ve sağlıklı bir yargılama yapılabilmesi için davacı talepleri tespit edilmeden karar verildiği görülmüştür.</p>
+
+<p>Öte yandan, eldeki davanın ilk olarak … Asliye Hukuk Mahkemesi’nin 2009/129 E sayılı dosyası üzerinden 44 parça taşınmaz hakkında ( eldeki davaya konu taşınmazlar dahil ) açıldığı, anılan dosya üzerinden yargılama sürerken davacılar tarafından bir kısım taşınmazların üçüncü kişilere emaneten devredildiği iddiası ile … Asliye Hukuk Mahkemesi’nin 2010/137 E sayılı dosyası üzerinden iptal ve tescil, olmazsa tenkis istemli dava açıldığı, dosyaların birleştirilmesine karar verildiği, yargılama sürerken eldeki davaya konu taşınmazlar yönünden davanın tefrik edilerek 2012/493 esas sayısını aldığı ve sonuca gidildiği anlaşılmıştır.</p>
+
+<p>Muris muvazaası istekli davalarda mirasbırakan … ’ın gerçek irade ve amacının tespiti bakımından devrettiği taşınmazlar yönünden muris muvazaası hukuksal nedenine dayalı açılan davaların birlikte değerlendirilmesi gerekeceği kuşkusuzdur.</p>
+
+<p>Hal böyle olunca; feragat eden davacılar yönünden kimlik tespiti eksikliğinin giderilmesi, feragat beyanlarının şüpheye mahal vermeyecek şekilde saptanması, miras bırakan … ’ın süregelen iradesinin tespiti, muris ile çocukları ya da diğer davalılar arasındaki beşeri ilişki, murisin davalıları tercih nedeni ve bir dava hakkında verilecek hükmün diğer davayı etkileyecek nitelikte bulunması ( tenkis isteği de bulunduğu dikkate alındığında ) hususları göz önüne alınarak, HMK’nin 166. maddesi gereğince davalar arasında bağlantı bulunduğundan, … Asliye Hukuk Mahkemesi’nin 2009/129 E sayılı davası ile eldeki davanın birleştirilerek görülmesi ve hasıl olacak sonuca göre bir karar verilmesi gerekirken yazılı olduğu üzere hüküm kurulmuş olması doğru değildir.</p>
+
+<p>Kabule göre de; haklarındaki dava kabul edilen dava konusu taşınmazların tapu kayıtları yeterince incelenmeden, mirasbırakan tarafından devredilen taşınmazlar kuşkuya yer vermeyecek şekilde saptanmadan sonuca gidilmiş olması da isabetsizdir. Bu kapsamda dosya arasına alınan tapu kayıtlarının incelenmesinde;</p>
+
+<p>1- Kök 2607 sayılı parselin 27.02.1990 tarihinde Maliye Hazinesi adına hükmen tescil edildiği, davalı … ’ın anılan taşınmazı 06.09.2001 tarihinde Hazine’den satın aldığı, 2607 sayılı parselin 16.07.2003 tarihinde ifraz edilerek dava konusu 3687 ve 3689 ile 3688 sayılı parsellere ayrıldığı, anılan taşınmazlarda mirasbırakan tarafından yapılan kayda dayalı bir temlik olmadığından iptal ve tescil isteğinin dinlenmeyeceği, mümkün ise tenkis isteğinin dinlenebileceğinin gözetilmemesi hatalıdır.</p>
+
+<p>2- Kaydı kapanan dava konusu 3726 parsel sayılı taşınmazda davalı … ’ın ½ payı 09.02.2004 tarihinde üçüncü kişi … ’den satış suretiyle edindiği, anılan taşınmazda mirasbırakan tarafından yapılan kayda dayalı bir temlik olmadığından iptal ve tescil isteğinin dinlenmeyeceği, mümkün ise tenkis isteğinin dinlenebileceğinin gözetilmemesi hatalıdır. Öte yandan doğru sicil oluşturma ilkesi gereği kaydı kapanan 3726 sayılı parsel üzerinden hüküm kurulması da doğru değildir.</p>
+
+<p>3- Kök 942 sayılı parselin 22.05.1987 tarihinde kesinleşen kadastro tespiti sırasında mirasbırakan … ’ın yaptığı bağış ve verdiği muvafakatname ile davalılar … , … ve … adına 1/3’er oranda tespit ve tescil edildiği gözetildiğinde anılan taşınmaz yönünden 1.4.1974 tarih 1/2 sayılı İçtihadı Birleştirme Kararının uygulama yeri bulunmadığının, mümkün ise tenkis isteğinin dinlenebileceğinin gözetilmemesi hatalı olduğu gibi, 942 sayılı parselin ifraz ile iki parçaya ayrıldığı ve yeni oluşan 2630 sayılı parselin de ifraz ile dava konusu 3690 ve 3692 ile 3691 sayılı parsellere ayrıldığı, ne var ki mahkemece kaydı kapanan 2630 sayılı parsel hakkında hüküm kurulduktan sonra yeni oluşan 3690 ve 3692 sayılı parseller hakkında da hüküm kurulması yerinde değildir.</p>
+
+<p>4- Kök 1400 sayılı parselin 22.05.1987 tarihinde kesinleşen kadastro tespiti sırasında mirasbırakan … ’ın yaptığı bağış ve verdiği muvafakatname ile davalılar … , … ve … adına 1/3’er oranda tespit ve tescil edildiği gözetildiğinde anılan taşınmaz yönünden 1.4.1974 tarih 1/2 sayılı İçtihadı Birleştirme Kararının uygulama yeri bulunmadığı, mümkün ise tenkis isteğinin dinlenebileceği, ne var ki mahkemece kök 1400 sayılı parselin ifraz ile gittisi olan dava konusu 3384 sayılı parsel yönünden hatalı olarak iptal ve tescil isteğinin kabul edildiği görülmüştür.</p>
+
+<p>5- Kök 1352 sayılı parselin 22.05.1987 tarihinde kesinleşen kadastro tespiti sırasında mirasbırakan … ’ın yaptığı bağış ve verdiği muvafakatname ile davalılar … , … ve … adına 1/3’er oranda tespit ve tescil edildiği gözetildiğinde anılan taşınmaz yönünden 1.4.1974 tarih 1/2 sayılı İçtihadı Birleştirme Kararının uygulama yeri bulunmadığı, mümkün ise tenkis isteğinin dinlenebileceği, ne var ki mahkemece kök 1352 sayılı parselin ifraz ile gittisi olan dava konusu 2900 sayılı parsel yönünden hatalı olarak iptal ve tescil isteğinin kabul edildiği görülmüştür.</p>
+
+<p>6- Kök 1355 sayılı parselin 22.05.1987 tarihinde kesinleşen kadastro tespiti sırasında mirasbırakan … ’ın yaptığı bağış ve verdiği muvafakatname ile davalılar … , … ve … adına 1/3’er oranda tespit ve tescil edildiği gözetildiğinde anılan taşınmaz yönünden 1.4.1974 tarih 1/2 sayılı İçtihadı Birleştirme Kararının uygulama yeri bulunmadığı, mümkün ise tenkis isteğinin dinlenebileceği gözetilmeden karar verilmiştir. Öte yandan, kök 1355 sayılı parsel ifraz ile iki parçaya ayrılmış, yeni oluşan dava konusu 2904 sayılı parsel de ifraz ile dava konusu 3768 ve 3770 ile 3769 sayılı parsellere ayrılmıştır. Mahkemece hatalı olarak kaydı kapanan 2904 sayılı parsel hakkında karar verildiği gibi, yeni oluşan 3768 ve 3770 sayılı parseller hakkında da hüküm kurulmuştur.</p>
+
+<p>7- Kök 1399 sayılı parselin 22.05.1987 tarihinde kesinleşen kadastro tespiti ile davalılar … , … ve … adına 1/3’er oranda tescil edildiği, ne var ki kadastro tespitinde uygulanan 23.02.1979 tarih ve 3 sıra no’lu eski tapu kaydı üzerinden mirasbırakan tarafından yapılan bir temlik olup olmadığı saptanmadan sonuca gidildiği anlaşılmıştır. Eğer anılan eski tapu kaydı üzerinden mirasbırakan … tarafından yapılan bir temlik var ise, 1.4.1974 tarih 1/2 sayılı İçtihadı Birleştirme Kararının uygulanabileceği muhakkaktır. Aksi halde, 1.4.1974 tarih 1/2 sayılı İçtihadı Birleştirme Kararının uygulama yeri yoktur.</p>
+
+<p>8- Kök 984 sayılı parselin 22.05.1987 tarihinde kesinleşen kadastro tespiti sırasında mirasbırakan … ’ın yaptığı bağış ve verdiği muvafakatname ile davalılar … , … ve … adına 1/3’er oranda tespit ve tescil edildiği gözetildiğinde anılan taşınmaz yönünden 1.4.1974 tarih 1/2 sayılı İçtihadı Birleştirme Kararının uygulama yeri bulunmadığı, mümkün ise tenkis isteğinin dinlenebileceği gözetilmeden ifraz ile oluşan dava konusu 3309 ve 3311 sayılı parseller hakkında iptal ve tescile karar verilmesi hatalıdır.</p>
+
+<p>9- Dava konusu 2477, 2478, 2479 ve 2480 sayılı parsellerin evvelinde bir bütün iken 22.05.1987 tarihinde kesinleşen kadastro tespiti sırasında mirasbırakan … ’ın yaptığı bağış ve verdiği muvafakatname ile davalılar … , … ve … ile dava dışı … adına ayrı ayrı tespit ve tescil edildikleri gözetildiğinde anılan taşınmazlar yönünden 1.4.1974 tarih 1/2 sayılı İçtihadı Birleştirme Kararının uygulama yeri bulunmadığı, mümkün ise tenkis isteğinin dinlenebileceği gözetilmeden haklarında iptal ve tescile karar verilmesi doğru değildir.</p>
+
+<p>10- Dava konusu 319 sayılı parselin mirasbırakan … ile bir ilgisinin bulunmadığı, eşi … ’ın ceddinden intikalen gelen bir taşınmaz olduğu, mirasçılara yapılan bir temlik bulunmadığı, davalı … tarafından satın alma suretiyle edinildiği gözetilmeden hakkındaki davanın kabul edilmesi yerinde değildir.</p>
+
+<p>11- Dava konusu 1792 sayılı parselin 22.05.1987 tarihinde kesinleşen kadastro tespiti sırasında mirasbırakan … ’ın yaptığı bağış ile davalılar … , … ve … adına 1/3’er oranda tespit ve tescil edildiği gözetildiğinde anılan taşınmaz yönünden 1.4.1974 tarih 1/2 sayılı İçtihadı Birleştirme Kararının uygulama yeri bulunmadığı, mümkün ise tenkis isteğinin dinlenebileceği gözetilmeden iptal ve tescile karar verilmesi doğru değildir.</p>
+
+<p>12- Dava konusu 1364 sayılı parselin mirasbırakan … ile bir ilgisinin bulunmadığı, 3. kişi … adına kadastro ile tescil edildiği ve halihazırda davalı dahi olmayan … adına kayıtlı olduğu, anılan parsel yönünden davanın reddine karar verilmesi gerekirken hakkındaki davanın kabul edilmesi yerinde değildir.</p>
+
+<p>13- Dava konusu 985 sayılı parselin kadastro komisyon kararı ile mirasbırakanın eşi … adına tescil edildiği, … tarafından da 05.12.1990 tarihinde davalı … ’a satıldığı, mirasbırakan … ile bir ilgisinin bulunmadığı anlaşılmıştır. O halde, anılan taşınmaz hakkındaki davanın reddine karar verilmesi gerekirken kabul kapsamına alınması hatalıdır.</p>
+
+<p>14- Dava konusu 2498 sayılı parsel yönünden; mirasbırakan … tarafından davalılara yapılan bir temlik bulunmadığı, anılan taşınmazın kadastro komisyon kararı ile davalı … adına 01.02.1988 tarihinde tescil edildiği, … tarafından da diğer davalı … ’a satış yoluyla devredildiği gözetildiğinde anılan taşınmaz yönünden davanın reddine karar verilmesi gerekirken iptal ve tescile karar verilmesi doğru değildir.</p>
+
+<p>Yukarıda bentler halinde yazılı tespitler bakımından yeterli inceleme yapılmadan yazılı şekilde karar verilmesi hatalıdır.</p>
+
+<p>Davalıların yerinde bulunan temyiz itirazlarının kabulü ile, hükmün (6100 sayılı Yasanın geçici 3.maddesi yollaması ile) 1086 sayılı HUMK’un 428.maddesi gereğince BOZULMASINA, 30.12.2017 tarihinde yürürlüğe giren Avukatlık Ücret Tarifesi gereğince gelen temyiz edenler vekili için 1.630.00.-TL. duruşma vekâlet ücretinin temyiz edilenden alınmasına, alınan peşin harcın temyiz edene geri verilmesine, 03.07.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. HUKUK DAİRESİ
+Esas : 2018/2136 Karar : 2018/7219</strong> Tarih : 4.06.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 31. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Hâkimin Davayı Aydınlatma Ödevi</strong></p>
+  </li>
+</ul>
+
+<p>1-Dosyadaki yazılara, kararın dayandığı delillerle kanuni gerektirici sebeplere ve özellikle mahkemece davacı-davalı erkeğe kusur olarak yüklenen fiziksel şiddet vakıasının dava tarihinden sonra gerçekleştiği, bu nedenle kusur olarak bu vakıanın davacı-davalı erkeğe yüklenemeyeceğinin anlaşılmasına göre tarafların aşağıdaki bentler kapsamı dışında kalan temyiz itirazları yersizdir.</p>
+
+<p>2-Mahkemece tarafların karşılıklı olarak birbirlerine fiziksel ve sözel şiddet uyguladıkları gerekçesiyle davacı-davalı erkeğin boşanma davası kabul edilmişse de davalı-davacı kadının bu eylemlerinden sonra tarafların bir arada yaşamaya devam ettikleri, davacı-davalı erkeğin kadının bu davranışlarını affetmiş en azından hoşgörü ile karşılamış olduğu, bu sebeple bu vakıaların davalı-davacı kadına kusur olarak yüklenemeyeceği anlaşılmaktadır. Gerçekleşen bu durum karşısında, davacı-davalı erkeğin boşanma davasının reddi gerekirken kabulü hatalı olup bozmayı gerektirmiştir.</p>
+
+<p>3-Tarafların tespit edilen ekonomik ve sosyal durumlarına, paranın alım gücüne, kişilik haklarına, özellikle aile bütünlüğüne yapılan saldırının ağırlığına, manevi tazminat isteyenin boşanmaya yol açan olaylarda ağır ya da eşit kusurlu olmadığı anlaşılmasına nazaran davalı-davacı kadın yararına hükmolunan manevi tazminat azdır. Türk Medeni Kanununun 4. maddesindeki hakkaniyet ilkesi ile Türk Borçlar Kanununun 50 ve 51. maddeleri nazara alınarak daha uygun miktarda manevi tazminat (TMK m. 174/2) takdiri gerekirken, yazılı şekilde hüküm kurulması bozmayı gerektirmiştir.</p>
+
+<p>4-Davalı-davacı kadının dava dilekçesinde yer alan maddi tazminat talebi Türk Medeni Kanunu 174/1. maddesi kapsamında olup boşanma davasının eki niteliğindedir. Bu nedenle mahkemece davalı-davacı kadının maddi tazminat talebi ile ilgili olumlu olumsuz bir karar verilmesi gerekirken yazılı şekilde maddi tazminat talebi ile ilgili usulüne uygun bir davası olmadığı gerekçesiyle karar verilmesine yer olmadığı kararı verilmesi hatalı olup, bozmayı gerektirmiştir.</p>
+
+<p>5-Davacı-davalı erkek dava dilekçesinde faiziyle 40.000 TL maddi tazminat talebinde bulunmuş, dilekçenin içeriğinde ise davalı-davacı eşinin ortak malvarlığını israf etmesinden dolayı istediğini belirtmiştir. Davacı-davalı erkeğin maddi tazminat talebinin Türk Medeni Kanununun 174/1. maddesi kapsamında olup olmadığı açıklattırılarak (HMK m.31) tüm delillerin bu çerçevede değerlendirilip sonucuna göre hüküm kurulması gerekirken, yazılı şekilde maddi tazminat talebi ile ilgili usulüne uygun bir davası bulunmadığından karar verilmesine yer olmadığına karar vermek hatalı olup, bozmayı gerektirmiştir.</p>
+
+<p>SONUÇ: Temyiz edilen hükmün yukarıda 2., 3., 4. ve 5. bentlerde gösterilen sebeplerle BOZULMASINA, bozma kapsamı dışında kalan temyize konu bölümlerin yukarıda 1. bentte gösterilen sebeple ONANMASINA, temyiz peşin harcının istek halinde yatıranlara geri verilmesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere oybirliğiyle karar verildi. 04.06.2018(Pzt.)</p>
+
+<hr>
+
+<p><strong>YARGITAY 16. HUKUK DAİRESİ
+Esas : 2015/17578 Karar : 2018/311</strong> Tarih : 29.01.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 31. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Hâkimin Davayı Aydınlatma Ödevi</strong></p>
+  </li>
+</ul>
+
+<p>Kadastro sonucu … Köyü çalışma alanında bulunan 116 ada 3 parsel sayılı 157,01 metrekare yüzölçümündeki taşınmaz irsen intikal, taksim ve kazandırıcı zamanaşımı zilyetliği nedeniyle ahşap ev ve tarla vasfıyla davalı … adına tespit ve tescil edilmiştir. Davacı …, çekişmeli taşınmazın müşterek murisleri …‘dan intikal ettiği ve mirasçılar arasında terekenin taksim edilmediği iddiasına dayanarak taşınmazın tapu kaydının miras hissesi oranında iptali ile adına tescili istemiyle dava açmış, 01.07.2015 tarihinde ise tapu iptali ve tescil isteminin yerinde görülmemesi halinde mirasta iade, muvazaa, tenkis ve mirasta denkleştirme taleplerini havi ıslah dilekçesi vermiştir. Mahkemece yapılan yargılama sonunda davanın reddine karar verilmiş; hüküm, davacı … vekili ile davalı … vekili tarafından temyiz edilmiştir.</p>
+
+<p>Davacı …, dava dilekçesinde çekişmeli taşınmazın müşterek muristen geldiğini ileri sürerek miras payı oranında tapu iptali tescil ve taşınmazın üzerinde bulunan kargir evin murise ait olduğu hususunda tapu kaydının beyanlar hanesine şerh verilmesi istemiyle dava açmış, keşif sonucunda da dava dilekçesindeki taleplerinin öncelikli olup, bu talepleri mahkemece yerinde görülmezse mirasta iade, muvazaa, tenkis ve mirasta denkleştirme hukuki nedenlerine de dayandıklarını belirterek harç yatırmaksızın davasını ıslah ettiğini bildirmiştir. Mahkemece, ıslah sonucunda davacı tarafın hangi dava sebebine dayandığının net olarak ortaya konulamadığı gerekçesiyle yazılı şekilde karar verilmiştir. 6100 sayılı Hukuk Muhakemeleri Kanunu’nun 31. maddesinde; “Hâkim, uyuşmazlığın aydınlatılmasının zorunlu kıldığı durumlarda, maddi veya hukuki açıdan belirsiz yahut çelişkili gördüğü hususlar hakkında, taraflara açıklama yaptırabilir; soru sorabilir; delil gösterilmesini isteyebilir.” düzenlemesi bulunmaktadır. Ne var ki; mahkemece, ıslah harcının ikmal edilmesi için davacı tarafa süre verilmediği gibi, gerekçede davacı tarafın hangi dava sebebine dayandığının net olarak ortaya konulamadığı belirtilmesine, bir diğer ifade ile bu husus belirsiz olarak kabul edilmesine karşın yukarıda sözü edilen madde uyarınca davacı tarafa bu hususun açıklanması yönünde soru sorulmadığı gibi süre verilerek açıklama da istenilmemiştir. Hal böyle olunca, öncelikle, ıslah harcının ikmal edilmesi için davacı tarafa süre verilmeli, ıslah harcının ikmal edilmesi halinde davacı taraf ıslah dilekçesinde dava dilekçesindeki taleplerini saklı tutup bu taleplerini de devam ettirdiğine göre öncelikli olarak davacı tarafın kadastro öncesi nedene dayalı tapu iptali ve tescil talebi ile muhdesat iddiasına yönelik talebi hakkında, bu talepleri yerinde görülmez ise ıslah dilekçesinde davacı tarafın öne sürdüğü diğer hukuki nedenlere dayalı talepleri hakkında; ıslah harcının ikmal edilmemesi halinde ise davacı tarafın dava dilekçesinde öne sürdüğü kadastro öncesi nedene dayalı tapu iptali ve tescil talebi ile muhdesat iddiasına yönelik talebi hakkında bir karar verilmesi gerektiği düşünülmeli, belirsiz görülen hususlar bulunması halinde 6100 sayılı HMK’nın 31. maddesi uyarınca hakimin davayı aydınlatma yükümlülüğü kapsamında bu hususlar açıklığa kavuşturulmalı, bundan sonra tüm deliller birlikte değerlendirilerek sonucuna göre bir karar verilmelidir. Mahkemece, bu yönler göz ardı edilerek yazılı şekilde karar verilmesi isabetsiz olup, davacı vekilinin temyiz itirazları açıklanan nedenlerle yerinde görüldüğünden kabulü ile hükmün BOZULMASINA, bozma sebebine göre davalı vekilinin temyiz itirazlarının incelenmesine şimdilik yer olmadığına, peşin yatırılan temyiz karar harcının talep halinde temyiz eden davacıya iadesine, 29.01.2018 günü oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 16. HUKUK DAİRESİ
+Esas : 2015/7354 Karar : 2017/3264</strong> Tarih : 9.05.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 31. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Hâkimin Davayı Aydınlatma Ödevi</strong></p>
+  </li>
+</ul>
+
+<p>Yargıtay bozma ilamında özetle; “mahkemenin 1971/397 Esas, 1972/505 Karar sayılı dosyası getirtilerek kesinleşip kesinleşmediği, bu dosyanın tarafları ile eldeki dosyanın tarafları arasında akdi veya ırsi ilişki olup olmadığı hususunun araştırılması ve kesinleşip taraflar arasında da bağlayıcı olduğu saptandığı takdirde bu kararın eldeki uyuşmazlığın çözümü bakımından değerlendirilmesi, gerektiğinde HMK`nın 31.maddesinde düzenlenen hakimin ihtilafı aydınlatma görevi de gözetilerek mahkemece taraflardan yeni tanık göstermelerinin istenmesi, kadim yol açısından taşınmaz başında yerel bilirkişi ve taraf tanıkları hazır olduğu halde yeniden keşif yapılarak, yerel bilirkişiler ve tanıklardan yolun kadim yol olup olmadığı konusunda ayrıntılı bilgi alınması, tüm deliller birlikte değerlendirilerek sonucuna göre karar verilmesi” gereğine değinilmiştir.</p>
+
+<p>Mahkemece bozma ilamına uyularak yapılan yargılama sonunda; davanın derdestlik nedeni ile dava şartı yokluğundan usulden reddine karar verilmiş; hüküm, davacılar vekili tarafından temyiz edilmiştir.</p>
+
+<p>Dosya içeriğine, mahkemece hükmüne uyulan bozma kararında açıklandığı gibi işlem yapılıp sonucuna göre hüküm verilmiş olmasına, delillerin takdirinde bir isabetsizlik bulunmamasına göre yerinde bulunmayan temyiz itirazlarının reddi ile usul ve yasaya uygun olan hükmün ONANMASINA, aşağıda yazılı bakiye temyiz karar harcının temyiz edenlerden alınmasına, 09.05.2017 gününde oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 22. HUKUK DAİRESİ 
+Esas : 2017/9163 Karar : 2017/5545</strong> Tarih : 20.03.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 31. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Hâkimin Davayı Aydınlatma Ödevi</strong></p>
+  </li>
+</ul>
+
+<p>Davacı İsteminin Özeti:</p>
+
+<p>Davacı, iş sözleşmesinin hukuka aykırı olarak feshedildiğini ileri sürerek, kıdem ve ihbar tazminatı ile izin ücreti, fazla çalışma ücreti ve genel tatil ücreti alacaklarını istemiştir.</p>
+
+<p>Davalı Cevabının Özeti:</p>
+
+<p>Davalı, davanın reddini istemiştir.</p>
+
+<p>Mahkeme Kararının Özeti:</p>
+
+<p>Mahkemece, toplanan kanıtlar ve bilirkişi raporuna dayanılarak, davacının iş akdinin haklı nedenle sona erdirildiğinin kanıtlanamadığı gerekçesiyle davanın kabulüne karar verilmiştir.</p>
+
+<p>Temyiz:</p>
+
+<p>Kararı davalı vekili temyiz etmiştir.</p>
+
+<p>Gerekçe:</p>
+
+<p>…-Dosyadaki yazılara toplanan delillerle kararın dayandığı kanuni gerektirici sebeplere göre davalının aşağıdaki bendin kapsamı dışında kalan temyiz itirazları yerinde değildir.</p>
+
+<p>…-Taraflar arasındaki uyuşmazlık konusu ise davacının hak kazandığı yıllık ücretli izin süresi ve ücretinin doğru olarak hesaplanıp hesaplanmadığıdır.</p>
+
+<p>4857 sayılı İş Kanunu’nun 59. maddesinde, iş sözleşmesinin herhangi bir nedenle sona ermesi halinde, işçiye kullandırılmayan yıllık izin sürelerine ait ücretlerin son ücret üzerinden ödeneceği hükme bağlanmıştır. Yıllık izin hakkının ücrete dönüşmesi için iş sözleşmesinin feshi şarttır. Bu noktada, sözleşmenin sona erme şeklinin ve haklı nedene dayanıp dayanmadığının önemi bulunmamaktadır.</p>
+
+<p>İşçinin işe iade davası açması durumunda, izin ücretinin talep edilip edilemeyeceği davanın sonucuna göre belirlenmelidir. Gerçekten işçinin dava sonucu işe başlatılması durumunda, önceki fesih ortadan kalkmış olmakla ve iş ilişkisi devam ettiğinde 4857 sayılı Yasanın 59. maddesi uyarınca izin ücreti istenemez. İşçinin işe başvurusuna rağmen yasal bir aylık işe başlatma süresi içinde işe alınmaması halinde ise, işe başlatmama anı fesih tarihi olarak kabul edildiğinden, izin alacağı bu tarihte muaccel olur.</p>
+
+<p>Yıllık izinlerin kullandırıldığı noktasında ispat yükü işverene aittir. İşveren yıllık izinlerin kullandırıldığını imzalı izin defteri veya eşdeğer bir belge ile kanıtlamalıdır. Bu konuda ispat yükü üzerinde olan işveren, işçiye yemin teklif edebilir.</p>
+
+<p>Aktin feshi halinde kullanılmayan yıllık izin sürelerine ait ücret, işçinin kendisine veya hak sahiplerine ödenir. Böylece, iş sözleşmesinin feshinde kullanılmayan yıllık ücretli izin hakkı izin alacağına dönüşür. Bu nedenle zamanaşımı da iş sözleşmesinin feshinden itibaren işlemeye başlar.</p>
+
+<p>4857 sayılı Kanun’un 54. maddesinde, yıllık ücretli izine hak kazanmak için gerekli sürenin hesabında, işçinin aynı işverenin bir veya çeşitli işyerlerinde çalıştığı sürelerin birleştirilerek göz önüne alınacağı hükme bağlanmıştır. Bu durumda, işçinin daha önce aynı işverenin bir ya da değişik işyerlerinde geçen hizmetlerinin yıllık izne hak kazanma ve izin süreleri hesabı yönlerinden dikkate alınması gerekir. Kamu kurum ve kuruluşlarında geçen hizmetlerin de aynı gerekçeyle izin hesabı yönünden birleştirilmesi zorunludur. Bununla birlikte, işçiye önceki feshe bağlı olarak kullanmadığı izin ücretleri tam olarak ödenmişse, bu dönemin sonraki çalışma sürelerine eklenerek izin hesabı mümkün değildir. Önceki çalışma döneminde izin kullandırılmak veya fesihte karşılığı ödenmek suretiyle tasfiye edilmeyen çalışma süreleri, aynı işverenin bir ya da değişik işyerlerindeki çalışmalara eklenir. İşçinin aralıklı olarak aynı işverene ait işyerinde çalışması halinde, önceki dönemin kıdem tazminatı ödenerek feshedilmiş olması, izin yönünden sürelerin birleştirilmesine engel oluşturmaz. Yine, önceki çalışılan sürede bir yılı doldurmadığı için izne hak kazanılmayan süreler de, işçinin aynı işverene ait işyeri ya da işyerlerindeki sonraki çalışmalarına eklenerek yıllık izin hakkı belirlenmelidir. Yıllık izin, özde bir dinlenme hakkı olup, aralıklı çalışmalarda önceki dönem zamanaşımına uğramaz.</p>
+
+<p>İş sözleşmesinin işverence feshedilmesi halinde, 4857 sayılı Kanun’un …. maddesinde belirtilen yasal ya da arttırılmış bildirim önelleri ile 27. madde uyarınca işçiye verilmesi gereken iş arama izinleri, yıllık ücretli izin süreleri ile iç içe giremez. Kanundaki bu düzenleme karşısında, işçi tarafından ihbar önelli fesih halinde bildirim öneli ile yıllık izin süresinin iç içe girebileceği kabul edilmelidir.</p>
+
+<p>Kanunda, iş sözleşmesinin feshinde ödenmesi gereken izin ücreti için kesin bir ödeme günü belirlenmiş değildir. Yasada, sözleşmenin feshi anı yıllık ücretli izin hakkının ücrete dönüşmesi, bir başka anlatımla izin ücretine hak kazanma zamanı olarak kabul edilmiştir. İş sözleşmesinin feshedildiği tarihte izin ücreti muaccel olur, ancak faiz başlangıcı bakımından işverenin ayrıca temerrüde düşürülmesi gerekir.</p>
+
+<p>Dairemizce, iş sözleşmesinin feshinde ödenmesi gereken izin ücreti, geniş anlamda ücret içinde değerlendirilmemiş ve İş Kanunu’nun 34. maddesinde sözü edilen bankalarca mevduata uygulanan en yüksek faize karar verilemeyeceği kabul edilmiştir (Yargıtay …. HD. 24…..2008 gün 2007/30158 E, 2008/28418 K. aynı görüşte). Bu itibarla, izin ücreti için yasal faiz uygulanmalıdır.</p>
+
+<p>Sözleşmenin feshi üzerine ödenmesi gereken izin ücretinden taktiri indirim yapılması doğru değildir.</p>
+
+<p>İşe iade davası sonunda işçinin işe başlatılmadığı tarihte iş sözleşmesi feshedilmiş sayıldığından, izin ücreti hesabında işçinin işe başlatılmadığı tarihte alması gereken ücret dikkate alınmalıdır.</p>
+
+<p>İşverenin işçiyi işe başlatması durumunda, iş ilişkisi kesintisiz devam ettiğinden, kullandırılmayan izin ücretine de hak kazanılması söz konusu olmaz. Daha önce işçiye kullandırılmayan izinler karşılığı olarak ödenmiş olan izin ücretleri de işverence geri istenebilir. 4857 sayılı Yasanın 53. maddesinde işçinin yıllık ücretli izin hakkından vazgeçemeyeceği kurala bağlandığına göre, işçinin daha önce ödenen izin ücretinin, işe iade sonunda işçinin işe başlaması halinde işçinin kullanmadığı izin hakkına sayılması da doğru olmaz.</p>
+
+<p>Yıllık izin hakkı Anayasal temeli olan bir dinlenme hakkı olup, işçinin iş sözleşmesinin devamı sırasında ücrete dönüşmez ve bu haktan vazgeçilemez. İşçinin iş sözleşmesinin devamı süresinde kullanmadığı yıllık izinlere ait ücreti istemesi mümkün değildir. Bu nedenle, işçinin iş sözleşmesinin devamı sırasında izin hakkının bulunduğunun tespitini istemesinde hukuki menfaati vardır.</p>
+
+<p>Somut olayda, davacı dava dilekçesinde davacının çalıştığı sürede iş kanununda öngörülen ve kullandırılmayan yıllık izin ücretlerinin ödenmediğini iddia etmiştir. Davacıdan … yıl sonra işbaşı yapan davacı tanığı … ….; “davacı yıllık izne doğru dürüst çıkmazdı” şeklinde beyanda bulunmuştur.</p>
+
+<p>Davacının çalıştığı toplam süre … yıl olup bu kadar uzun süre hiç yıllık izin kullanmadan çalışması hayatın olağan akışına uygun düşmemektedir. Ancak mahkeme tarafından hükme esas alınan bilirkişi raporunda, davacının hizmet süresi boyunca hiç yıllık izin kullanmadığı varsayılarak, tüm hizmet süresi üzerinden (324 gün) yıllık izin ücreti hesabı yapılmıştır.</p>
+
+<p>Mahkemece yapılması gereken Hukuk Muhakemeleri Kanunu 31. madde gereği hakimin davayı aydınlatma yükümü gereği davacıdan hiç yıllık izin kullanıp kullanmadığı, kullanmışsa hangi yıllarda ve hangi yıllara ait kaç gün izin kullandığının sorulması ve varsa izin kullanımına ilişkin belgelerin taraflardan istenmesi ve sonucuna göre kalan izin süresinin ücretinin hesaplanmasıdır. Belirtilen hususlar yerine getirilmeden yazılı şekilde davacının tüm hizmet süresi nazara alınarak izin ücreti hesaplanması bozmayı gerektirmiştir.</p>
+
+<p>Ayrıca davacı beyanı sonucuna göre etkilenen alacakların da yeniden hesaplanması gerekmektedir.</p>
+
+<p>Sonuç:</p>
+
+<p>Temyiz olunan kararın, yukarıda yazılı sebeplerden dolayı BOZULMASINA, ….03.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 21. HUKUK DAİRESİ 
+Esas : 2015/18583 Karar : 2017/588</strong> Tarih : 6.02.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 31. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Hâkimin Davayı Aydınlatma Ödevi</strong></p>
+  </li>
+</ul>
+
+<p>Davacı, iş kazası sonucu maluliyetinden doğan maddi ve manevi tazminatın ödetilmesine karar verilmesini istemiştir.</p>
+
+<p>Mahkeme ilamında belirtildiği şekilde, isteğin kısmen kabulüne karar vermiştir.</p>
+
+<p>Hükmün davalı … vekili tarafından temyiz edilmesi üzerine temyiz isteğinin süresinde olduğu anlaşıldıktan ve Tetkik Hakimi … tarafından düzenlenen raporla dosyadaki kağıtlar okunduktan sonra işin gereği düşünüldü ve aşağıdaki karar tespit edildi.</p>
+
+<p>Dava, zararlandırıcı sigorta olayı sonucu sürekli iş göremezliğe uğrayan sigortalının maddi ve manevi zararlarının giderilmesi istemine ilişkindir.</p>
+
+<p>Mahkemece, davalı … hakkında davanın konusuz kaldığından bahisle karar verilmesine yer olmadığına, diğer davalı açısından istemlerin kısmen kabulüne karar verilmiştir.</p>
+
+<p>Dosya kapsamından, 24/06/2015 tarihli celsede davacı vekilinin davalılardan … ile uzlaşmaya vardıklarını, bu davalı yönünden kendisine isabet eden kusur oranında davanın konusuz kaldığını, diğer davalı yönünden ıslah dilekçesi doğrultusunda davanın kabulüne karar verilmesini istediği, davalı … vekilinin ise davacı tarafla kendilerine isabet eden kusur oranında maddi manevi zararların giderilmesi ve yargılama giderleri noktasında haricen ve sulhen anlaştıklarını, ödemelerini yaptıklarını beyan ettiği, diğer davalı vekilinin talepte bulunmasına karşın uzlaşmaya varan tarafların hangi miktarlar üzerinde uzlaştıklarının taraflardan sorulmadığı, talebin gerekçesi açıklanmaksızın reddedildiği anlaşılmaktadır.</p>
+
+<p>Bir borç ilişkisinde, borçlu yada alacaklı birer kişi olabileceği gibi aynı borç ilişkisinde birden çok borçlu veya birden çok alacaklı da söz konusu olabilir. Birden çok borçlunun varlığı halinde borçlulardan her biri borcun tamamından alacaklıya karşı sorumlu ise ve fakat alacaklı edimi bir defa elde edebiliyorsa “müteselsil borç ilişkisinden” söz edilir. Borç ilişkisinde birden çok borçlunun bulunması her zaman “müteselsil borç ilişkisini” doğurmaz. Borçlular arasındaki teselsül(müteselsil borç ilişkisi) sözleşmeden veya yasadan doğar. Sözleşme yada yasa gereğince borçlular arasında teselsül söz konusu değilse, bir borç ilişkisinden doğan bölünebilir bir edimde, borçlulardan her biri ancak edimden kendi payına düşen kısmı ifa ile yükümlüdür. Böyle bir durumda aynı hukuki işlemden doğan fakat birbirinden bağımsız “kısmi borçlar” söz konusudur. Müteselsil borçluluk, borçlulardan her birinin sözleşme veya yasa gereğince alacaklıya karşı borcun tamamından sorumlu olduğu fakat borçlulardan birinin borcu ifa etmesi ile diğer borçluların da borçtan kurtulduğu bir birlikte borçluluk durumudur. Bu durumda yani borçlular arasında teselsülün varlığı halinde alacaklı borçlulardan her birine karşı bağımsız alacak haklarına sahiptir. Ancak borç bir defa ifa edileceğiden ve borcun bir defa ifasıyla bütün borçlar sona ereceğinden bu alacak hakları alacaklının mal varlığında tek alacak olarak yer alır. BK.md. 142’ye(Yeni BK. 163’e) göre “Alacaklı, borcun tümünün veya bir bölümünün ödenmesini, dilerse müteselsil borçluların hepsinden birden, dilerse yalnız birinden isteyebilir. Borcun tümü ödeninceye kadar bütün borçluların sorumluluğu devam eder”. Bu madde metninden açıkça anlaşıldığı üzere alacaklı, alacağının tamamını, müteselsil borçluların herhangi birinden isteyebilir. Bu durumda müteselsil borçlu, sadece kendi payına düşeni ödeyeceğini ileri süremez, borcun tamamı ödemekten kaçınamaz. Alacağın müteselsil borçluların birinden istenmesi, alacak fiilen elde edilmedikçe diğer borçluların sorumluluğunu ortadan kaldırmaz, Buna karşılık müteselsil borçlulardan birisi borcun tamamı veya bir bölümünü sona erdirmişse sona eren borç oranında öteki müteselsil borçlularda kendiliğinden borçtan kurtulur.(BK.145/1; Yeni BK.166/1). Müteselsil borçlulardan biri, kendi davaranışıyla diğerinin durumunu ağırlaştıramaz (BK 165.)</p>
+
+<p>Öte yandan, mahkemenin hüküm vermesi için, kendisine yöneltilen talebin formüle edilmesi ve ileri sürülmesi tarafların görevi ise de, bunları anlamlandırmak veya gerektiğinde açıklattırmak hâkimin görevidir. Ancak bu durum, hâkimin tarafların ileri sürmediği vakıaları ileri sürmelerine imkan vermesi veya hatırlatması anlamını taşımaz. Burada mevcut olmayanın talep edilmeyenin ortaya çıkartılması değil, talep edilenin netleştirilmesi, aydınlatılması, belirlenmesi söz konusudur.</p>
+
+<p>6100 sayılı Hukuk Muhakemeleri Kanunu’nun “Hâkimin davayı aydınlatma görevi” başlıklı 31.maddesine göre, “Hâkim, uyuşmazlığın aydınlatılmasının zorunlu olduğu durumlarda, maddi veya hukuki açıdan belirsiz yahut çelişkili gördüğü hususlar hakkında, taraflara açıklama yaptırabilir; soru sorabilir; delil gösterilmesini isteyebilir.”</p>
+
+<p>Hâkimin davayı aydınlatma ödevi olarak ifade edilen bu düzenleme ile doğru hüküm verebilmesi ve maddi gerçeğin bulunabilmesi amaçlanmıştır. Düzenlemede her ne kadar “açıklama yaptırabilir” denilmişse de, bunun, hâkimin davayı aydınlatması için bir “ödev” olduğunu kabul etmek gerekir. Çünkü davayı aydınlatma ödevi sayesinde hâkim, iddia ve savunmanın doğru ve tam olarak anlaşılmasını sağlayacak ve bu şekilde doğru olmayan bir kararın verilmesini önleyecektir (Pekcanıtez H., Atalay O., Özekes M., age, s. 248 vd).</p>
+
+<p>Ayrıca, 6100 sayılı Hukuk Muhakemeleri Kanunu’nun “Dürüst davranma ve doğruyu söyleme yükümlülüğü” başlıklı 29. maddesine göre, “Taraflar, dürüstlük kuralına uygun davranmak zorundadırlar. Taraflar, davanın dayanağı olan vakıalara ilişkin açıklamalarını gerçeğe uygun bir biçimde yapmakla yükümlüdürler.”; 4721 sayılı Türk Medeni Kanunu’nun “Dürüst davranma” başlıklı 2. maddesinde de, “Herkes, haklarını kullanırken ve borçlarını yerine getirirken dürüstlük kurallarına uymak zorundadır. Bir hakkın açıkça kötüye kullanılmasını hukuk düzeni korumaz.” denilmiştir. Dürüstlük ilkesi Türk Borçlar Kanunu’nun çeşitli maddelerinde yer alan önemli bir kavramdır.</p>
+
+<p>Türk Medeni Kanunu’nda yer alan dürüstlük ilkesi genel bir hukuk ilkesi olup medeni usul hukuku ve iş hukukunda da geçerli olan bir kavramdır. Dürüstlük kuralı, hakların kullanılması ve borçların yerine getirilmesinde ahlaka, örf ve adet kurallarına uygun davranmadır. Adil bir yargılamanın yapılabilmesi ve maddi gerçeğe ulaşılabilmesi dürüstlük kurallarına uyulması ile mümkündür.</p>
+
+<p>Doğruyu söyleme ödevi tarafların yargılamadaki yükümlülüklerinden biridir. Hukukun temel ilkelerinden biri olan dürüstlük kuralına yargılama sırasında da riayet edilmelidir. Yükümlülüğün ana noktaları vakıalar ve delillerdir. Yargılamada taraflar bir mücadele içinde olsalar da bu mücadelede her şeyin geçerli sayılacağı kabul edilemez. Muhakeme sürecine ilişkin değişik maddelerde de dürüstlük kuralına aykırı kötü niyetli davranışların önüne geçmek için bazı yaptırımlar öngörülmüştür. Tüm bu hükümlerin temelinde dürüstlük kuralına uygun davranmayı sağlama amacı yatmaktadır. Taraflar yargılamada kendi menfaatlerine uygun olarak neleri ileri sürüp sürmeyecekleri konusunda serbesttir. Ancak ileri sürdükleri hususların doğru olması, beyan ve açıklamalarının gerçeğe aykırı olmaması gerekir. Taraflardan aleyhlerine olan hususları da beyan etmeleri beklenemez. Ancak gerek kendilerine, gerek karşı tarafa ilişkin hususlarda yaptıkları açıklamalarda mahkemeyi yanıltmamaları gerekir. Doğruyu söyleme ödevi, hem yazılı hem de sözlü beyan ve açıklamalar için geçerlidir. Bu ödeve aykırılık hâlinde beyanlar mahkemece dikkate alınmamalı ve değerlendirilmemelidir.</p>
+
+<p>Doğruluk, dürüstlük ve iyi niyet kuralları sadece yargılamanın tarafları için değil, yargılama ve inceleme yapan hâkimler için de getirilmiş evrensel bir hukuk kuralıdır. Yargılamanın ve yargılama sonucunda verilen hükmün adil olabilmesi için dürüstlük ve hakkaniyet kurallarına uyulması, hükmün yeterli, tutarlı ve tatmin edici makul gerekçeler içermesi zorunludur. Dürüstlük kuralı, işlemlerin yorumlanması, tamamlanması, yeniden gözden geçirilmesi ve değerlendirilmesinde göz önünde tutulması gereken bir ilkedir.</p>
+
+<p>Tüm bu yukarıda yapılan açıklamalara göre somut olayda, sonucu davalı …‘nin durumunu doğrudan etkileyeceğinden, uzlaştıklarını beyan eden davacı taraf ve davalı …‘nden hangi kalemler üzerinde, hangi miktarlarda anlaştıkları açıklattırılmaksızın yazılı şekilde karar verilmesi isabetsiz olmuştur.</p>
+
+<p>Yapılacak iş, davacı taraf ve davalı …‘nden maddi ve manevi tazminatlar açısından hangi miktarlarda anlaştıklarının ayrı ayrı sorulmasından sonra oluşacak sonuca göre bir karar vermekten ibarettir.</p>
+
+<p>Mahkemece bu maddi ve hukuki olgular nazara alınmaksızın yazılı şekilde karar verilmesi usul ve yasaya aykırı olup bozma nedenidir.</p>
+
+<p>O halde, davalı …‘nin bu yönleri amaçlayan temyiz itirazları kabul edilmeli ve hüküm bozulmalıdır.</p>
+
+<p>SONUÇ:Hükmün yukarıda açıklanan nedenlerle BOZULMASINA, sair yönlerin incelenmesine şimdilik yer olmadığına,temyiz harcının istek halinde davalılardan …‘ne iadesine</p>
+
+<p>06/02/2017 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 16. HUKUK DAİRESİ 
+Esas : 2016/13493 Karar : 2017/93</strong> Tarih : 23.01.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 31. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Hâkimin Davayı Aydınlatma Ödevi</strong></p>
+  </li>
+</ul>
+
+<p>Kadastro sonucu … … Köyü çalışma alanında bulunan temyize konu … ada …, …, … ada …, …, … ve … ada … parsel sayılı 20.406.13, 23.579.01, 8.403.64, 22.440.40, 11.015.56, 7.481,37 metrekare yüzölçümündeki taşınmazlardan … ada … parsel sayılı taşınmaz satın alma ve kazandırıcı zamanaşımı zilyetliği nedeniyle, … ada … parsel sayılı taşınmaz vergi kaydı, satın alma ve kazandırıcı zamanaşımı zilyetliği nedeniyle ve … ada … parsel sayılı taşınmaz kazandırıcı zamanaşımı zilyetliği nedeniyle davalı … adına, … ada … parsel sayılı taşınmaz satın alma ve kazandırıcı zamanaşımı zilyetliği nedeniyle davalı … adına tespit ve tescil edilmiş, … ada … parsel sayılı taşınmaz irsen intikal, taksim ve kazandırıcı zamanaşımı zilyetliği nedeniyle … ve … adına tespit ve tescil edildikten sonra … hissesi intikal ile … ve müşterekleri adına tescil edilmiş, … ada … parsel sayılı taşınmaz ise irsen intikal, taksim ve kazandırıcı zamanaşımı zilyetliği nedeniyle … adına tespit ve tescil edildikten sonra … ve müşterekleri adlarına tescil edilmiştir. Davacı …, çekişmeli taşınmazların müşterek muris …‘dan intikal ettiği ve mirasçılar arasında terekenin taksim edilmediği iddiasına dayanarak dava açmıştır. Mahkemece yapılan yargılama sonunda davanın kabulüne, çekişmeli … ada …, …, … ada …, …, … ve … ada … parsel sayılı taşınmazların davalılar adına olan tapu kayıtlarının iptali ile kök muris … mirasçıları adına miras payları oranında tesciline karar verilmiş; hüküm, davalılar … ve … vekili tarafından temyiz edilmiştir.</p>
+
+<p>1- Tapu iptali ve tescil istemiyle açılan davalarda tapuda malik olarak görünen tüm kişilerin davada taraf olması zorunludur. Somut olayda; çekişmeli … ada … parsel sayılı taşınmaz tapuda paylı olarak …, …, …, …, … ve … adına kayıtlı olduğu halde davacı tarafından dava dilekçesinde yalnızca kayıt maliklerinden …, … ve … davalı olarak gösterilmiş; diğer kayıt maliklerine dava yöneltilmemiştir. Taraf teşkili dava şartlarından olup, bu şart sağlanmadan davanın esasına girilemez. O halde;</p>
+
+<p>çekişmeli … ada … parsel sayılı taşınmazın tapu kaydında malik olarak görünen ve dava dilekçesinde davalı olarak gösterilmeyen yukarıda sözü edilen kişilerin davaya dahil etmesi için davacı tarafa süre verilmeli, dava dilekçesi ve duruşma günü tebliğ edilip taraf teşkili sağlandıktan sonra tarafların iddia ve savunmalarına ilişkin tüm deliller toplanıp değerlendirilerek sonucuna göre hüküm kurulmalıdır. Mahkemece bu yön göz ardı edilerek esasa girilip hüküm kurulması isabetsiz olup, temyiz itirazları açıklanan nedenlerle yerinde görüldüğünden kabulüyle … ada … sayılı parsele ilişkin hükmün BOZULMASINA,</p>
+
+<p>2- … ada …, … ada …, … ada …, … ada …, … ada … parsel sayılı taşınmazlara yönelik temyiz itirazlarına gelince; davacı …, çekişmeli taşınmazların ortak murisleri …‘dan kaldığını, kök murisin ölümünden sonra mirasçıları arasında terekenin taksim edilmediğini ileri sürerek taşınmazların kök muris … mirasçıları adına miras payları oranında tescilini talep etmiştir. Davalılardan …, taşınmazlardan bir kısmının kök muristen intikal etmediğini, 3. kişiden satın alındığını, kök muristen intikal eden taşınmazlar yönünden ise davacının miras payını aldığını belirterek davanın reddini savunmuştur. Bu durumda taraflar arasındaki uyuşmazlık dava konusu taşınmazların kök muristen intikal edip etmediği, kök muristen intikal ettiğinin anlaşılması halinde yöntemince taksim edilip edilmediği, taksim edilmişse taşınmazların kime düştüğü noktasında toplanmaktadır. Mahkemece taşınmazların müşterek muristen intikal ettiği ve terekenin taksim edilmediği gerekçe gösterilmek suretiyle yazılı şekilde karar verilmiştir. Ne var ki, keşifte tarafların kök murisi … terekesine temsilci olarak tayin edilen … mahalli bilirkişi olarak dinlenilmiş, her bir taşınmazın ayrı ayrı kimden geldiği, kimden kime intikal ettiği, kök muris terekesine ait olup olmadığı, müşterek muristen intikal etmesi halinde taksim edilip edilmediği hususlarında mahalli bilirkişilerden ayrı ayrı bilgi alınması gerekirken farklı adalarda bulunan taşınmazlar hakkında toplu olarak beyan alınmış, gayrimenkulün aynına ilişkin uyuşmazlıklarda bilirkişi ve taraf tanıklarının taşınmaz başında dinlenilmesi zorunlu olduğu halde mahkemece tanıklar duruşmada dinlenilmiştir. Diğer taraftan davalı …‘ın satın alma iddiası üzerinde durulmamış, çekişmeli taşınmazların tespit tutanaklarının bir kısmında da tespit malikleri tarafından 3. kişilerden satın alındığı belirtilerek tespit yapıldığı ve tespite aykırı sonuca varıldığı halde bu hususta irdelenmemiş olması nedeniyle yapılan araştırma ve inceleme hüküm vermeye yeterli bulunmamaktadır.</p>
+
+<p>Hal böyle olunca, sağlıklı sonuca ulaşabilmek için, mahallinde yaşlı, tarafsız, yöreyi iyi bilen, davada yararı bulunmayan şahıslar arasından seçilecek yerel bilirkişiler ve taraf tanıkları huzuruyla yeniden keşif yapılmalı; yapılacak keşifte, dinlenecek yerel bilirkişi ve taraf tanıklarından, taşınmazların kime ait olduğu, kimden kime kaldığı, kimin tarafından ne zamandan beri ve ne suretle kullanıldığı, tarafların ortak miras bırakanından intikal edip etmediği, müşterek muristen kaldığı anlaşılan taşınmazların yöntemince taksim edilip edilmediği, taksim edilmiş ise her bir mirasçıya miras payına karşılık taşınır ya da taşınmaz mal verilip verilmediği maddi olaylara dayalı olarak açıklattırılmalı, davalı …‘ın satın alma iddiası yönünden beyan alınmalı, hakimin davayı aydınlatma görevi çerçevesinde HMK’nın 31. maddesi uyarınca gerektiğinde kadastro tespit bilirkişileri dinlenilmeli, bilirkişi ve tanık sözleri, dosyaya getirtilecek parsel tutanaklarının içerikleri ile denetlenmeli, beyanlar arasındaki çelişkiler gerektiğinde yüzleştirme yapılmak suretiyle giderilmeli, bundan sonra toplanan ve toplanacak tüm deliller birlikte değerlendirilerek sonucuna göre bir karar verilmelidir. Mahkemece bu yönler göz ardı edilerek yazılı şekilde hüküm kurulması isabetsiz olduğu gibi, kabule ve iddianın ileri sürülüş şekline göre, taraflar arasında miras ilişkisi bulunması ve mirasçılar arasında pay devrinin mümkün olması nedeniyle, açılan davanın paya yönelik olduğunun kabulü</p>
+
+<p>gerekirken tüm mirasçılara pay verilmesi dahi isabetsiz olup, temyiz itirazları açıklanan nedenlerle yerinde görüldüğünden kabulüyle hükmün BOZULMASINA, peşin yatırılan temyiz karar harcının talep halinde temyiz edenlere iadesine, 23.01.2017 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 7. HUKUK DAİRESİ 
+Esas : 2015/431 Karar : 2015/21084</strong> Tarih : 2.11.2015</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 31. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Hâkimin Davayı Aydınlatma Ödevi</strong></p>
+  </li>
+</ul>
+
+<p>Dosyadaki yazılara, hükmün Dairemizce de benimsenmiş bulunan yasal ve hukuksal gerekçeleriyle dayandığı maddi delillere ve özellikle bu delillerin takdirinde bir isabetsizlik görülmemesine göre, davacı vekilinin yerinde bulunmayan tüm temyiz itirazlarının reddiyle usul ve kanuna uygun olan hükmün ( ONANMASINA ) ,  oyçokluğuyla karar verildi.</p>
+
+<p>KARŞI OY</p>
+
+<p>4857 sayılı İş Kanunu`nun 2/6 maddesi uyarınca, 
+“Bir işverenden, işyerinde yürüttüğü mal veya hizmet üretimine ilişkin yardımcı işlerinde veya asıl işin bir bölümünde işletmenin ve işin gereği ile teknolojik nedenlerle uzmanlık gerektiren işlerde iş alan ve bu iş için görevlendirdiği işçilerini sadece bu işyerinde aldığı işte çalıştıran diğer işveren ile iş aldığı işveren arasında kurulan ilişkiye asıl işveren-alt işveren ilişkisi denir.  ….”</p>
+
+<p>Alt işveren uygulaması bir işletmesel karardır. Alt işverene devrin işletme gereklerine dayanan geçerli fesih nedeni olması, İş Kanunu’nun 2’nci maddesinin 6 ve 7’nci fıkraları uyarınca geçerli ve muvazaaya dayanmayan asıl işveren-alt işveren ilişkisinin kurulması şartına bağlıdır.</p>
+
+<p>Muvazaa Borçlar Kanununda düzenlenmiş olup, tarafların üçüncü kişileri aldatmak amacıyla ve kendi gerçek iradelerine uymayan ve aralarında hüküm ve sonuç meydana getirmesi arzu etmedikleri görünüşte bir anlaşma olarak tanımlanabilir. Üçüncü kişileri aldatmak kastı vardır ve sözleşmedeki gerçek amaç gizlenmektedir. 
+Muvazaanın ispatı genel ispat kurallarına tabidir. İşverenler arasında muvazaalı biçimde asıl işveren alt işveren ilişkisi kurulmasının önüne geçilmek istenmiş ve 4857 sayılı İş Kanununun 2/7 maddesinde bu konuda bazı muvazaa kriterlerine yer verilmiştir. Bu kriterler, asıl işveren işçilerinin alt işveren tarafından işe alınarak çalıştırılmaya devam ettirilmesi sureti ile haklarının kısıtlanması veya daha önce o işyerinde çalıştırılan kimse ile alt işveren ilişkisinin kurulması olarak belirtilmiştir.</p>
+
+<p>4857 sayılı İş Kanunu’nun 2’nci maddesinde belirtilen unsurları taşımayan alt işveren uygulaması, fesih için geçerli neden kabul edilemez. 
+İş Kanunu’nda yardımcı işlerin alt işverene verilmesinin herhangi bir koşula bağlanmaması nedeniyle, bu nevi işlerin muvazaa olmaması kaydıyla alt işverene devri sebebiyle iş sözleşmesinin feshedilmesi hâlinde, feshin geçerli nedene dayandığı kabul edilebilir.</p>
+
+<p>Buna karşılık, 6’ncı fıkra gereğince, asıl işin bir bölümünde işletme ve işin gereği ile teknolojik nedenlerle uzmanlık gerektiren işler alt işverene devredilebilecektir. Anılan düzenlemede baskın öğe, “teknolojik nedenlerle uzmanlık gerektiren” işlerdir.</p>
+
+<p>Başka bir anlatımla işletmenin ve işin gereği ancak teknolojik nedenler var ise göz önünde tutulur. Dolayısıyla, söz konusu hükümdeki şartlar gerçekleşmeden asıl işin bölünerek alt işverene verilmesi hâlinde, asıl işveren-alt işveren ilişkisi geçersiz olacağından iş sözleşmesinin feshi de geçersiz olacaktır.</p>
+
+<p>5393 sayılı Belediyeler Kanunu’nun 67. maddesi ile Belediyeler ve bağlı kuruluşların asıl işlerini de 6. fıkradaki sınırlamalar olmaksızın alt işverenlere verebileceği düzenlenmiştir.</p>
+
+<p>Keza 4857 sayılı İş Kanunu’nun 2. maddesine 5538 sayılı yasa ile eklenen 7 ve 8. fıkralara göre, Kanuna veya kanunun verdiği yetkiye dayanılarak kurulan kamu kurum ve kuruluşları ile bunların doğrudan veya dolaylı olarak sermayesinin en az yüzde ellisine sahip oldukları ortaklıklar, 4734 sayılı Kamu İhale Kanunu veya diğer kanun hükümleri çerçevesinde, hizmet alımı amacıyla sözleşme yapabilirler. 67. maddedeki hüküm uyarınca temizlik işleri, park bahçe işleri, toplu taşıma ve ulaşım hizmetleri, bakım ve onarım işleri belediyenin asli işlerinden olmasına rağmen, işletmenin veya işin gereği teknolojik nedenlerle uzmanlık gerektiren iş olup olmadığına bakılmaksızın üçüncü kişilere gördürülmesi mümkün kılınarak İş Kanunu’nun 2’nci maddesine istisna getirilmiştir. 
+Ancak Belediyeler Kanunu’nun 67 ve 4857 sayılı İş Kanunu’nun 2/8 maddeleri uyarınca bir işin veya hizmetin belediye tarafından alt işverene verilmesi, muvazaa iddialarının araştırılmasına engel teşkil etmez. Söz konusu hükümde sayılan işlerin veya hizmetlerin alt işverene verilmesine dayanılarak iş sözleşmesinin feshi, muvazaa iddiasının ispatı hâlinde geçersiz olacaktır. Madde de alt işverene verilmesi gereken Belediye’nin sayılan iş ve hizmetleri olduğu, ancak hizmet alımı yapılacağı, bu hizmetlerin yerine getirilmesi veya işlerin yapılması için eleman temin edilmesi halinde, hizmetin alınmadığı, işçilik temini için ihale yapıldığı iddialarının araştırılması gerekir.</p>
+
+<p>Burada dikkat edilmesi gereken nokta, asıl işin hizmet alımı yolu ile ihale edilmesidir. Yapılan ihalede, ihale yapan kurum veya kuruma ait bağlı kuruluş tarafından araç temini sağlanır, asıl işte alt taşeron işçileri ile hizmeti alan işveren işçileri birlikte çalışıyorlar, yönetim hakkı hizmeti alana ait ise, kısaca ihale işçi teminine yönelik ise, ihaleye veren ile ihaleyi alan kişi arasında alt işveren-asıl işveren ilişkisinden sözedilemeyecektir. Hizmet alımı yapma ile bu hizmetin yürütülmesi için personel (işçi) temini farklı olgulardır. Hizmet alımı ve hizmetin yaptırılması ibarelerinin, iş mevzuatının yasakladığı ticari amaçlı işçi teminine olanak tanıdığı şeklinde yorumlanarak, sonuca ulaşılması hukuken mümkün değildir. Bunda kamu yararı da yoktur. Bu yönde yapılan ihale sözleşmeleri geçersizdir.</p>
+
+<p>Diğer taraftan, bir alt işveren, bir asıl işverenden sözleşme ile üstlendiği mal veya hizmet üretimi için belirli bir organizasyona, uzmanlığa ve hukuksal bağımsızlığa sahip değilse, kısaca üretim ya da hizmet sunumuna ilişkin ekonomik faaliyetin bağımsız yönetimini üstlenmemişse asıl işveren alt işveren ilişkisinden çok olayda, asıl işverene işçi temini söz konusu olacaktır.</p>
+
+<p>Somut uyuşmazlıkta davacı işçi, davalı Üniversite`nin hizmet alımı yaptığı şirketler aracılığı ile bağlı hastanelerde çalıştırıldığını, alt işveren şirketlerle Üniversite arasındaki ilişkinin muvazaalı olduğunu ve bu nedenle başlangıçtan itibaren gerçek işvereninin, davalı Üniversite olduğunu ileri sürerek alacak talebinde bulunmuştur.</p>
+
+<p>Davalı işverenin 2008-2010 yıllarını kapsayan hizmet alım sözleşmeleri hakkında kesinleşmiş bir muvazaa kararının varlığı emsal nitelikteki dosyalarda verilen bozma kararlarına göre sayın çoğunluğun da kabulündedir. 
+Gerek yardımcı işlerde ve gerekse 657 sayılı yasanın 4924 sayılı yasa ile değişik 36. maddesi uyarınca sağlık ve yardımcı sağlık hizmetlerinin hizmet alımı yolu ile gördürülebileceği düzenlemesi doğrultusunda alt işveren işçisi olarak çalıştırılan işçilerin muvazaalı alt işverenlik iddiasına bağlı taleplerinin her olayın özellikleri göz önünde tutularak araştırılması ve HMK.nun 31. maddesinde öngörülen hakimin davayı aydınlatma ödevi doğrultusunda çözümlenmesi gerekir.</p>
+
+<p>Salt muvazaa olgusunun kesinleştiği 2008-2010 dönemi sonrası veya 657 sayılı yasanın 36. maddesi uyarınca yapılan hizmet alımı sözleşmesi ile çalışma olgusu, muvazaa varlığının bulunmadığına gerekçe olamaz.</p>
+
+<p>Mahkemece yapılacak iş yukarıdaki açıklamalar doğrultusunda yürütülecek araştırma ile deliller toplanıp, gerekirse mahallinde uzman bilirkişi marifeti ile inceleme yaparak elde edilecek verilere göre bir karar vermekten ibarettir. İlk derece mahkemesince, yukarıda açıklanan hususlarda araştırma yapılmaksızın davanın reddine yönelik olarak verilen kararın onanması yolundaki Sayın Çoğunluğun görüşüne katılmıyorum. 02/11/2015</p>
+
+<hr>
+
+<p><strong>YARGITAY 11. HUKUK DAİRESİ 
+Esas : 2013/15167 Karar : 2014/17695</strong> Tarih : 14.11.2014</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 31. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Hâkimin Davayı Aydınlatma Ödevi</strong></p>
+  </li>
+</ul>
+
+<p>Davacı vekili, müvekkilinin davalı şirketin ortağı olduğunu, cari hesaptan kaynaklanan alacak nedeniyle icra takibi yaptıklarını, davalının haksız olarak itirazda bulunduğunu ileri sürerek, itirazın iptalini, icra inkar tazminatının tahsilini talep ve dava etmiştir.</p>
+
+<p>Davalı vekili, şirketin davacıya borcu bulunmadığını, ilgili dönemde davacının yönetim kurulu başkanı olarak münferit temsil ve ilzama yetkili olduğunu, alacağın belgeye dayandırılması gerektiğini ticari kayıtlar üzerinde tek taraflı olarak işlem yapılabileceğini savunarak, davanın reddini istemiştir.</p>
+
+<p>Mahkemece, iddia, savunma, bilirkişi, raporu ve dosya kapsamına göre davacının alacağının şirket defterlerinde, dava öncesi düzenlenen özel denetçi raporunda ve 2011 yılı şirket denetim raporunda kayıtlı bulunduğu, denetim Kurulu’nun genel kurulda ibra edildiği, davacının yatırdığını iddia ettiği dekontlarda U.B.`nin isminin geçtiği, davacının bu kişinin şirket çalışanı olduğunu iddia ettiği, davalının ise bu kişinin şirket çalışanı olduğu hususuna karşı çıkmaksızın parayı yatıranın davacı olmadığını belirttiği, üçüncü kişi tarafından yatırılan parayla ilgili olarak davacı iddiasını geçersiz kılacak açıklama yapılmadığı, alacağın likit olduğu gerekçesiyle, davanın kabulüne, itirazın kısmen iptaline, icra inkar tazminatının tahsiline karar verilmiştir.</p>
+
+<p>Kararı, davalı vekili temyiz etmiştir.</p>
+
+<p>1-Dava, davalı ortağın şirkete verdiği borçtan kaynaklanan itirazın iptali istemine ilişkin olup, kural olarak şirket kayıtları davacının münferit yetkili yönetim kurulu başkanı olduğu dönemde tutulmakla tek başına ispat vasıtası olarak kabul edilemez. Davanın ispatı yönünden şirket kayıtları yanında diğer belgelerin de bir arada değerlendirilmesi gerekir.</p>
+
+<p>Davacı bu kapsamda şirkete verdiği borca yönelik olarak banka dekontu ibraz etmiş, söz konusu belgede ismi geçen U…B…`nin grup şirketlerinin finans bölümünde çalıştığını, parayı kendisi adına yatırdığını iddia etmiş, mahkemece anılan kişinin şirket çalışanı olmadığı hususuna davalının karşı çıkmadığı, üçüncü kişi tarafından yatırılan parayla ilgili olarak davacı iddiasını geçersiz kılacak açıklama yapılmadığı gerekçesiyle davanın kabulüne karar verilmiştir. Oysa ispat yükü kendisine düşmeyen davalının U.B. isimli kişinin şirket çalışanı olduğu iddiasına karşı çıkmaması aleyhine değerlendirilemez.</p>
+
+<p>HMK’nın 31.maddesi “hakimin uyuşmazlığın aydınlatılmasının zorunlu kıldığı durumlarda maddi veya hukuki açıdan belirsiz yahut çelişkili gördüğü hususlar hakkında, taraflara açıklama yaptırabilir, soru sorabilir, delil gösterilmesini isteyebilir” hükmünü haiz olup, mahkemece bu kapsamda HMK’nın 27, 29 ve 31.maddeleri uyarınca taraflar dağılıp dinlenerek, dosyaya usulüne uygun olarak ibraz edilmiş belgelerde adı geçen kişiler de mahkemece dinlenebileceğinden, gerektiğinde para yatırma belgesinde ismi geçen U…B…`nin tanık sıfatıyla beyanı alınarak tüm kanıtlar bu çerçevede bir arada değerlendirilerek, neticesine göre bir karar vermek gerekirken, yazılı şekilde hüküm tesis edilmesi doğru olmamış, kararın bu nedenle bozulması gerekmiştir.</p>
+
+<p>2-Bozma neden ve şekline göre davalı vekilinin icra inkar tazminatına yönelik temyiz itirazının bu aşamada incelenmesine gerek görülmemiştir.</p>
+
+<p>Yukarıda 1 numaralı bentte açıklanan nedenlerle davalı vekilinin temyiz itirazlarının kabulü ile hükmün davalı yararına ( BOZULMASINA ), 2 numaralı bentte açıklanan nedenlerle davalı vekilinin icra inkar tazminatına yönelik temyiz itirazlarının şimdilik incelenmesine yer olmadığına, takdir olunan 1.100 TL. duruşma vekalet ücretinin davacıdan alınarak davalıya verilmesine, ödediği temyiz peşin harcın isteği halinde temyiz edene iadesine, oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY HUKUK GENEL KURULU
+Esas: 2015/22-1060 Karar: 2017/865</strong> Tarih: 26.04.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 31. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Hâkimin Davayı Aydınlatma Ödevi</strong></p>
+  </li>
+</ul>
+
+<p>Taraflar arasındaki “işçilik alacağı” davasından dolayı yapılan yargılama sonunda; İstanbul 4. İş Mahkemesince davanın kısmen kabulüne dair verilen 12.04.2012 gün ve 2010/1181 E.- 2012/310 K. sayılı kararın temyizen incelenmesi taraf vekillerince istenilmesi üzerine Yargıtay 22. Hukuk Dairesinin 03.06.2013 gün ve 2012/24180 E.- 2013/13188 K. sayılı kararı ile;</p>
+
+<p>(… Davacı vekili, müvekkilinin davalı şirketin yurtdışı şantiyelerinde kalıpçı-güvenlik görevlisi olarak çalıştığını, haksız olarak işten çıkarıldığını ileri sürerek ihbar ve kıdem tazminatı ile yıllık izin, fazla mesai, hafta tatili ve bayram-genel tatil ücreti alacaklarının hüküm altına alınması isteğinde bulunmuştur.</p>
+
+<p>Davalı vekili, davacının belirli projeler için belirli zamanlarda saat ücreti ile çalıştığını ve istifa ederek ayrıldığını ayrıca taleplerin zaman aşımına uğradığını belirterek davanın reddine karar verilmesi gerektiğini savunmuştur.</p>
+
+<p>Mahkemece iş sözleşmesinin davalı işverence haklı bir neden olmadan feshedildiği gerekçesiyle davacının ihbar ve kıdem tazminatı ile genel tatil alacağının kabulüne, diğer taleplerinin ise reddine karar verilmiştir.</p>
+
+<p>Karar taraflarca temyiz edilmiştir.</p>
+
+<p>1.Taraflar arasında işçiye ödenen aylık ücretin miktarı konusunda uyuşmazlık bulunmaktadır.</p>
+
+<p>İş sözleşmesinin tarafları, asgarî ücretin altında kalmamak kaydıyla sözleşme özgürlüğü çerçevesinde ücretin miktarını serbestçe kararlaştırabilirler. İş sözleşmesinde ücretin miktarının açıkça belirtilmemiş olması, taraflar arasında iş sözleşmesinin bulunmadığı anlamına gelmez. Böyle bir durumda dahi ücret, Borçlar Kanunu’nun ikinci fıkrasına göre tespit olunmalıdır. İş sözleşmesinde ücretin kararlaştırılmadığı hallerde ücretin miktarı, işçinin kişisel özellikleri, işyerindeki ya da meslekteki kıdemi, meslek unvanı, yapılan işin niteliği, iş sözleşmesinin türü, işyerinin özellikleri, emsal işçilere o işyerinde ya da başka işyerlerinde ödenen ücretler, örf ve adetler göz önünde tutularak belirlenir.</p>
+
+<p>Çalışma yaşamında daha az vergi ya da sigorta pirimi ödenmesi amacıyla zaman zaman, iş sözleşmesi veya ücret bordrolarında gösterilen ücretlerin gerçeği yansıtmadığı görülmektedir. Bu durumda gerçek ücretin tespiti önem kazanır. İşçinin kıdemi, meslek unvanı, fiilen yaptığı iş, işyerinin özellikleri ve emsal işçilere ödenen ücretler gibi hususlar dikkate alındığında imzalı bordrolarda yer alan ücretin gerçeği yansıtmadığı şüphesi ortaya çıktığında, bu konuda tanık beyanları gözetilmeli ve işçinin meslekte geçirdiği süre, işyerinde çalıştığı tarihler, meslek unvanı ve fiilen yaptığı iş bildirilerek sendikalarla, ilgili işçi ve işveren kuruluşlarından emsal ücretin ne olabileceği araştırılmalı ve tüm deliller birlikte değerlendirilerek bir sonuca gidilmelidir.</p>
+
+<p>Somut olayda, tarafların ücret miktarı konusundaki beyanları arasında önemli bir fark bulunmaktadır. Bu durumda salt tanık anlatımlarıyla sonuca gidilmesi doğru olmaz. Bu sebeple davacının kalıpçı-güvenlik görevlisi olduğu, kıdemi ve yurtdışında çalıştığı belirtilmek suretiyle emsal ücret araştırması yapılmalı, dosya içeriğiyle birlikte değerlendirme yapılarak davacının aylık ücreti belirlenmeli ve belirlenen bu ücret üzerinden davacının hüküm altına alınan tazminat ve alacakları gerekirse yeniden hesaplanarak hüküm altına alınmalıdır.</p>
+
+<p>2.Fazla mesai alacağı konusunda da taraflar arasında uyuşmazlık bulunmaktadır. imzalı ücret bordrolarında fazla çalışma ücreti ödendiği anlaşılıyorsa, işçi tarafından gerçekte daha fazla çalışma yaptığını ancak eşdeğer yazılı bir belge ile kanıtlayabilir. İşçinin fazla çalışma alacağının daha fazla olduğu yönündeki ihtirazi kaydının bulunması halinde, bordroda görünenden daha fazla çalışmanın ispatı her türlü delille yapılabilir. Bordroların imzalı ve ihtirazi kayıtsız olması durumunda, işçinin bordroda belirtilenden daha fazla çalışmayı yazılı belge ile kanıtlaması gerekir. İşçiye bordro imzalatılmadığı halde, fazla çalışma ücreti tahakkuklarını da içeren her ay değişik miktarlarda ücret ödemelerinin banka kanalıyla yapılması durumunda, ihtirazi kayıt ileri sürülmemiş olması, ödenenin üzerinde fazla çalışma yapıldığının yazılı delille ispatlanması gerektiği sonucunu doğurmaktadır.</p>
+
+<p>Somut olayda ücret bordrolarında fazla mesai tahakkukukun bulunup bulunmadığı, davacı tarafından ihtirazi kayıtsız imzalanıp imzalanmadığı belirlenmeli, davacının imzasını taşıyan bordrolarda fazla mesai tahakkuku mevcut ve bordrolar davacı tarafından ihtirazi kayıtsız imzalanmış ise bu dönem dışlanmak suretiyle fazla mesai alacağı hesaplanmalıdır…),</p>
+
+<p>Gerekçesiyle karar bozularak dosya yerine geri çevrilmekle yeniden yapılan yargılama sonunda mahkemece önceki kararda direnilmiştir.</p>
+
+<p>Hukuk Genel Kurulunca incelenerek direnme kararının süresinde temyiz edildiği anlaşıldıktan ve dosyadaki kağıtlar okunduktan sonra gereği görüşüldü:</p>
+
+<p>KARAR : Dava işçilik alacaklarının tahsili istemine ilişkindir.</p>
+
+<p>Davacı vekili müvekkilinin davalı şirkete ait Rusya’daki inşaat şantiyelerinde güvenlik görevlisi olarak çalıştığını, iş sözleşmesinin haklı sebep olmaksızın feshedildiğini, fesih tarihindeki ücretinin aylık net 1.350 Dolar olduğunu, haftanın yedi günü 20:00-08:00 saatleri arasında çalıştığını, fazla çalışma, hafta tatili ve genel tatil alacakları ile yıllık izin ücreti alacaklarının da ödenmediğini ileri sürerek işçilik alacaklarının tahsiline karar verilmesini istemiştir.</p>
+
+<p>Davalı vekili davacının ilk dönem çalışmasının istifa ile sona erdiğini, ikinci dönem çalışmasının ise bir yıldan az sürdüğünü, tazminatlara hak kazanmadığını, davacının saat ücreti ile çalıştığını, son saat ücretinin 75 USD olduğunu, fazla mesai çalışmaları karşılığı saat ücretinin zamlı olarak ücret bordrosuna yansıtıldığını, hafta tatili ve genel tatil alacaklarının da ödendiğini belirterek davanın reddini savunmuştur.</p>
+
+<p>Yerel Mahkemece davacının iki dönem çalışmasının da tazminat ödenmesini gerektirmeyecek şekilde sona erdiği davalı tarafça ispat edilemediğinden kıdem ve ihbar tazminatlarına hak kazandığı, davacının genel tatillerde çalıştığı ve bilirkişi raporunun 1. şıkkında yapılan hesaba göre belirtilen taleplerin kısmen kabulünün gerektiği, fazla çalışma, hafta tatili ve yıllık izin alacaklarının ise ödendiğinden bu taleplerinin reddinin gerektiği gerekçesiyle davanın kısmen kabulüne karar verilmiştir.</p>
+
+<p>Taraf vekillerinin temyizi üzerine hüküm Özel Dairece yukarıda açıklanan gerekçelerle bozulmuştur.</p>
+
+<p>Mahkemece hukuk yargılamasında hakimin tarafların talepleri ile bağlı olduğu ve taraflarca hazırlama ilkesinin geçerli olduğu, tarafların talep etmediği konuda mahkemenin kendiliğinden delil araştıramayacağı, davacı vekilinin dava dilekçesinde veya delil listesinde emsal ücret araştırılması talebinin bulunmadığı, dosyanın bilirkişiye verilmesinden önce davacı vekilinin 11.01.2012 havale tarihli dilekçesinde dosyada herhangi bir eksiklik kalmadığını bildirerek dosyanın bilirkişiye verilmesini talep ettiği, davacı vekilinin bilirkişi raporuna karşı itirazlarını içeren beyan dilekçesinde ve hatta temyiz dilekçesinde dahi emsal ücret araştırılmasına dair bir talebinin bulunmadığı, HMK’nın 31. maddesinde düzenlenen hakimin davayı aydınlatma görevinin taraflarca hazırlama ilkesinin geçerli olduğu davalarda uygulanmayacağı, bu maddenin ancak kamu düzenini ilgilendiren ve re’sen araştırma ilkesinin uygulandığı davalarda geçerli olduğu gerekçesiyle ve önceki gerekçeler de eklenmek suretiyle direnme kararı verilmiştir.</p>
+
+<p>Direnme kararını davacı vekili temyiz etmiştir.</p>
+
+<p>Direnme yoluyla Hukuk Genel Kurulu önüne gelen uyuşmazlık, davacının aylık ücret miktarının belirlenmesi için emsal ücret araştırması yapılmasının gerekip gerekmediği ve davacının fazla çalışma alacağının bulunup bulunmadığı noktalarında toplanmaktadır.</p>
+
+<p>I-) Bozma kararının (1) numaralı bendinde yer alan ve emsal ücret araştırması yapılmasına dair direnme kararının incelenmesinde;</p>
+
+<p>4857 Sayılı İş Kanununun 32. maddesinin4857 Sayılı İş Kanununun 32. maddesinin birinci fıkrasında, genel anlamda ücret, bir kimseye bir iş karşılığında işveren veya üçüncü kişiler tarafından sağlanan ve para ile ödenen tutar olarak tanımlanmıştır.</p>
+
+<p>Ücret kural olarak dönemsel (periyodik) bir ödemedir. Kanunun kabul ettiği sınırlar içinde tarafların sözleşme ile tespit ettiği belirli ve sabit aralıklı zaman dilimlerine, dönemlere uyularak ödenmelidir. Yukarıda değinilen Yasa maddesinde bu süre en çok bir ay olarak belirtilmiştir.</p>
+
+<p>İş sözleşmesinin tarafları, asgarî ücretin altında kalmamak kaydıyla sözleşme özgürlüğü çerçevesinde ücretin miktarını serbestçe kararlaştırabilirler. İş sözleşmesinde ücretin miktarının açıkça belirtilmemiş olması, taraflar arasında iş sözleşmesinin bulunmadığı anlamına gelmez. Böyle bir durumda dahi ücret, 6098 Sayılı Türk Borçlar Kanununun 401. maddesine (818 Sayılı Kanun döneminde Borçlar Kanunun 323. maddesinin ikinci fıkrası) göre tespit olunmalıdır. İş sözleşmesinde ücretin kararlaştırılmadığı hallerde ücretin miktarı, işçinin kişisel özellikleri, işyerindeki ya da meslekteki kıdemi, meslek unvanı, yapılan işin niteliği, iş sözleşmesinin türü, işyerinin özellikleri, emsal işçilere o işyerinde ya da başka işyerlerinde ödenen ücretler, örf ve adetler göz önünde tutularak belirlenir.</p>
+
+<p>İş sözleşmesinin işverence haksız feshi sebebiyle işçinin alacak miktarı belirlenirken, bu hesabı doğrudan etkileyecek olan işçinin gerçek ücretinin saptanması gerekmektedir. Gerçek ücret; işçinin kıdemi, yaptığı işin özelliği ve niteliğine göre işçiye ödenmesi gereken ücrettir.</p>
+
+<p>İş sözleşmesinin tarafları görünüşte bir ücret belirlemiş olabilirler, ancak bu ücret tarafların aralarında kararlaştırdıkları gerçek ücret olmayabilir. Uygulamada bazen taraflar arasında kararlaştırılmış olan gerçek ücret (örneğin SGK primlerini daha az ödemek amacıyla) bordroya yansıtılmamakta, daha düşük (örneğin asgari ücret) gösterilmektedir. Bu gibi durumlarda hâkim tarafından gerçek ücretin saptanması yoluna gidilmelidir (Süzek S.: İş Hukuku, 11. Baskı, İstanbul 2015, s:394, 395).</p>
+
+<p>İş sözleşmesinin tarafları arasında ücret miktarı konusunda çıkabilecek ihtilaflarda gerçek ücretin her türlü delille ispatı mümkündür. Aylık ücreti gösteren para makbuzları, banka kayıtları, ticari defter kayıtları, tanık beyanları gibi delillerle işçinin imzasını taşıyan ücret bordroları veya hizmet sözleşmesinde yazılı olan ücretin gerçek olmadığı kanıtlanabilir. Ücretin mevcut delillerle şüpheye yer bırakmayacak şekilde belirlenmesi mümkün bulunmayan kimi durumlarda, yapılacak iş, hizmet süresi ve diğer belirleyici özellikler göz önünde tutularak ve ayrıca ilgili meslek örgütlerinden sorulmak suretiyle de belirlenebilir. Meslek örgütlerince bildirilen ücret miktarları tarafları ve mahkemeyi bağlayıcı nitelikte olmayıp, diğer bilgi ve belgelerle de desteklenmelidir.</p>
+
+<p>Yapılan bu açıklamalar karşısında somut olay değerlendirildiğinde, davacı işçi aylık net ücretinin 1.350 USD olduğunu iddia etmiş, davalı işveren ise davacının saat ücretinin 2,75 USD olduğunu belirtmiştir. Dosya içerisinde bulunan bilirkişi raporunda davalı iddiası gibi saat ücreti 2,75 USD olmak üzere aylık 240 saat esası ile 660 USD üzerinden ve davacının iddiası gibi 1.350 USD üzerinden olmak üzere iki seçenekli hesaplama yapılmış, mahkemece 660 USD üzerinden yapılan hesaplama hükme esas alınmıştır.</p>
+
+<p>Davacının ücretinin miktarı konusunda taraf beyanları arasında ciddi farklılık bulunmaktadır. Bu itibarla, yukarıda belirtilen ilkeler doğrultusunda bozma kararında değinildiği şekilde emsal ücret araştırması yapılmalıdır. Diğer taraftan, mahkemece davacıya ait hesap özeti için bankaya müzekkere yazılmış, bankadan gelen yazıda maliyet tutarının yatırılmasından sonra kayıtların inceleneceği belirtilmiş ancak mahkemece bankaya yeniden müzekkere yazılmamıştır. Davacıya ait imzasız bordrolardaki ücret miktarları ile bankaya yatırılan miktarın uyumlu olup olmadığının belirlenmesi açısından kayıtların yeniden istenilmesi gerekmektedir.</p>
+
+<p>Hâl böyle olunca, emsal ücret araştırması yapılmaksızın ve banka kayıtları getirtilmeden sonuca gidilmesi isabetsizdir.</p>
+
+<p>II- Bozma kararının (2) numaralı bendinde yer alan ve fazla çalışma talebine dair direnme kararının incelenmesinde;</p>
+
+<p>Fazla çalışma yaptığını iddia eden işçi bu iddiasını ispatla yükümlüdür. İşçinin imzasını taşıyan bordro sahteliği ispat edilinceye kadar kesin delil niteliğindedir. Bir başka anlatımla bordronun sahteliği ileri sürülüp ispatlanmadıkça, imzalı bordroda görünen fazla çalışma alacağının ödendiği varsayılır.</p>
+
+<p>Fazla çalışmanın ispatı konusunda iş yeri kayıtları, özellikle işyerine giriş çıkışı gösteren belgeler, iş yeri iç yazışmaları delil niteliğindedir. Ancak, fazla çalışmanın bu tür yazılı belgelerle ispatlanamaması durumunda tarafların dinletmiş oldukları şahit beyanları ile sonuca gidilmesi gerekir. Bunun dışında herkesçe bilinen genel bazı vakıalar da bu noktada gözönüne alınabilir. İşçinin fiilen yaptığı işin niteliği ve yoğunluğuna göre de fazla çalışma olup olmadığı araştırılmalıdır.</p>
+
+<p>İmzalı ücret bordrolarında fazla çalışma ücreti ödendiği anlaşılıyorsa, işçi tarafından gerçekte daha fazla çalışma yaptığının ileri sürülmesi mümkün değildir. Ancak, işçinin fazla çalışma alacağının daha fazla olduğu yönündeki ihtirazi kaydının bulunması halinde, bordroda görünenden daha fazla çalışmanın ispatı her türlü delille söz konusu olabilir. Buna karşın, bordroların imzalı ve ihtirazi kayıtsız olması durumunda dahi işçinin geçerli bir yazılı belge ile bordroda yazılı olandan daha fazla çalışmayı yazılı delille ispatlaması gerekir. Bordrolarda tahakkuk bulunmasına rağmen bordroların imzasız olması halinde ise varsa ilgili dönem banka ve tüm ödeme kayıtları celp edilmeli ve ödendiği tespit edilen miktarlar yapılan hesaplamadan mahsup edilmelidir.</p>
+
+<p>Yapılan açıklamalar karşısında somut olay incelendiğinde, her ne kadar bozma kararında “davacının imzasını taşıyan bordrolarda fazla mesai tahakkuku mevcut ve bordrolar davacı tarafından ihtirazi kayıtsız imzalanmış ise bu dönem dışlanmak suretiyle fazla mesai alacağı hesaplanması” şeklindeki ifadeye yer verilmiş ise de, dosya içeriğinden bulunan bordroların imzasız olduğu ve bu halde tahakkuk ettirilen tutarlarının ödendiğinin ispatlanması durumunda ödenen miktarların hesaplanan tutardan mahsup edilmesi gerekeceğinden bozma kararının bu yönüyle hatalı olduğu anlaşılmaktadır.</p>
+
+<p>Açıklanan nedenlerle, direnme kararı yukarıda belirtilen bu değişik gerekçe ile bozulmalıdır.</p>
+
+<p>SONUÇ : Davacı vekilinin temyiz itirazlarının kabulüyle direnme kararının yukarıda gösterilen bu değişik nedenlerden dolayı BOZULMASINA, istenmesi halinde temyiz peşin harcının yatırana iadesine, karar düzeltme yolu kapalı olmak üzere, 26.04.2017 tarihinde oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY HUKUK GENEL KURULU
+Esas: 2015/22-1732 Karar: 2017/623</strong> Tarih: 05.04.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 31. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Hâkimin Davayı Aydınlatma Ödevi</strong></p>
+  </li>
+</ul>
+
+<p>Taraflar arasındaki “işçilik alacağı” davasından dolayı yapılan yargılama sonunda; Bursa 5. İş Mahkemesince davanın kısmen kabulüne dair verilen 18.04.2012 gün ve 2010/888 E.-2012/310 K. sayılı kararın temyizen incelenmesi davalı işveren vekili tarafından istenilmesi üzerine Yargıtay 22. Hukuk Dairesi’nin 27.09.2012 gün ve 2012/15272 E.- 2012/19864 K. sayılı kararı ile;</p>
+
+<p>( … 1-Dosyadaki yazılara toplanan delillerle kararın dayandığı kanuni gerektirici sebeplere göre, davalının aşağıdaki bendin kapsamı dışında kalan temyiz itirazları yerinde değildir.</p>
+
+<p>2- )Davacı vekili, müvekkilinin, davalı şirkette otobüs şoförü olarak çalıştığını, iş sözleşmesine işvereni tarafından haksız olarak son verildiğini belirterek ihbar ve kıdem tazminatlarının ödenmesine karar verilmesini istemiştir.</p>
+
+<p>Davalı vekili, davacının mazeret bildirmeksizin işe devamsızlık yaptığını, bu durumun tutanak altına alındığını, işçinin devamsızlıkla ilgili herhangi bir açıklamada bulunmadığını, 12.02.2010 tarihinde iş sözleşmesinin yapmış olduğu bu devamsızlıklar sebebiyle haklı olarak feshedildiğini savunarak davanın reddini istemiştir.</p>
+
+<p>Mahkemece, iş sözleşmesinin tazminat gerektirmeyecek şekilde son bulduğunu ispat yükünün işverenin üzerinde olduğu, bu yükümlülüğün davalı tarafından yerine getirilemediği gerekçesiyle söz konusu alacaklar hüküm altına alınmıştır.</p>
+
+<p>Hüküm, davalı vekili tarafından temyiz edilmiştir.</p>
+
+<p>Taraflar arasındaki uyuşmazlık, iş sözleşmesinin sona eriş şekli ve buna göre davacının ihbar ve kıdem tazminatı hak edip etmediği noktasında toplanmaktadır.</p>
+
+<p>Davacı vekili, işçinin sebep gösterilmeden iş sözleşmesine işverence son verildiğini iddia etmiştir. Buna karşılık davalı vekili, davacının mazeretsiz devamsızlığı sebebiyle sözleşmenin haklı olarak feshedildiğini savunmuştur.</p>
+
+<p>Seri halde Dairemize yansıyan dosyaların bir kısmında işverenin devamsızlık tutanakları ve fesih yazıları bulunmakta, bazılarında ise sunulduğu ifade edildiği halde yer almamaktadır. Mahkemece öncelikle tüm dosyalarda devamsızlık tutanakları ve fesih yazıları getirtilmeli, her dosyanın davacısı ayrı ayrı isticvap edilerek, iş sözleşmesinin ne şekilde son bulduğu, ayrıca işverenin tutmuş olduğu bu tutanaklara karşı diyecekleri net olarak belirlenmelidir. Ardından hakimin olayı re’sen aydınlatma yükümlülüğü çerçevesinde, devamsızlık tutanaklarında imzası bulunan kişiler tanık olarak dinlenerek feshin ne şekilde gerçekleştiği, buna bağlı olarak da işçinin ihbar ve kıdem tazminatını hak edip etmediği somut bir biçimde belirlenmelidir. Yazılı şekilde eksik inceleme ile hüküm kurulması hatalı olup bozmayı gerektirmiştir… ),</p>
+
+<p>Gerekçesiyle oyçokluğu ile bozularak dosya yerine geri çevrilmekle yeniden yapılan yargılama sonunda mahkemece önceki kararda direnilmiştir.</p>
+
+<p>Hukuk Genel Kurulunca incelenerek direnme kararının süresinde temyiz edildiği anlaşıldıktan ve dosyadaki kağıtlar okunduktan sonra gereği görüşüldü:</p>
+
+<p>KARAR : Dava kıdem ve ihbar tazminatı, yıllık izin, fazla çalışma, hafta tatili, ulusal bayram ve genel ücretlerinin tahsili istemine ilişkindir.</p>
+
+<p>Davacı vekili müvekkilinin davalı şirkete ait işyerinde otobüs şoförü olarak çalıştığını, iş sözleşmesinin haksız olarak feshedildiğini, çalıştığı süre içinde fazla çalışma yapıp hafta tatilleri ile ulusal bayram ve genel tatil günlerinde çalıştığını, yıllık izin kullanmadığını ileri sürerek kıdem ve ihbar tazminatı ile yıllık izin, fazla çalışma, hafta tatili, ulusal bayram ve genel tatil çalışma ücretlerinin davalıdan tahsiline karar verilmesini istemiştir.</p>
+
+<p>Davalı vekili davacı devamsızlık yaptığından usulüne uygun tutulan tutanaklar doğrultusunda iş sözleşmesine haklı sebeple son verildiğini, ulusal bayram ve genel tatil günlerinde çalıştığında zamlı ücret ödendiğini, işyerinde fazla çalışma yapılmadığını, yıllık izin alacağı bulunmadığını belirterek davanın reddini istemiştir.</p>
+
+<p>Mahkemece davacı tanıklarının davacının işten çıkarıldığını beyan ettikleri, davalı tanığının ise davacının işten çıkarıldığını ancak nedenini bilmediğini söylediği, iş sözleşmesinin tazminata hak kazanmayacak şekilde sona erdiğini ispat külfetinin davalıda olduğu, davacının fazla çalışma yapıp hafta tatili günlerinde çalıştığı, yıllık izin ücretinin bulunduğu gerekçesi ile kıdem ve ihbar tazminatı ile fazla çalışma, hafta tatili ve yıllık izin ücreti taleplerinin kabulüne, ulusal bayram ve genel tatil çalışma ücreti talebinin reddine karar verilmiştir.</p>
+
+<p>Davalı işveren vekilinin temyizi üzerine hüküm Özel Dairece yukarıda açıklanan gerekçelerle bozulmuştur.</p>
+
+<p>Mahkemece, taraf vekillerine delillerini bildirmeleri için süre verildiği, davalının delil listesi ve devamsızlık tutanağı sunmadığı, celse sırasında tanık …‘in hazır edilmesi nedeni ile dinlendiği, bu tanığın devamsızlığa dair beyanda bulunmadığı, bozma kararının 6100 Sayılı HMK’nun 25. maddesindeki “taraflarca getirilme” ilkesine aykırı olduğu, somut olayda aynı Kanunun 31. maddesinin uygulanmasını gerektirir şekilde belirsiz ve çelişkili bir husus bulunmadığı gerekçesi ile önceki kararda direnilmiştir.</p>
+
+<p>Direnme kararı, davalı işveren vekili tarafından temyiz edilmiştir.</p>
+
+<p>Direnme yolu ile Hukuk Genel Kurulu önüne gelen uyuşmazlık, davalı vekilince sunulmayan devamsızlık tutanaklarının sunulması için süre verilerek ibraz edildiğinde devamsızlık tutanakları altında imzası bulunan çalışanların resen tanık olarak dinlenmesinin ve feshe dair davacının isticvabının gerekip gerekmediği ve burada varılacak sonuca göre davacının kıdem ve ihbar tazminatlarına hak kazanıp kazanmadığı noktasında toplanmaktadır.</p>
+
+<p>Uyuşmazlığın çözümü için, hâkimin davayı aydınlatma yükümü ile davanın dayanağını oluşturan ve davacının kıdem ve ihbar tazminatı hak edip etmediğinin tespiti açısından taraf delilleri arasında yer almayan devamsızlık tutanaklarının sunulmasının sağlanıp sağlanamayacağı ve tutanaklar altında imzası bulunan çalışanların tanık olarak dinlenip dinlenemeyeceği, davacının isticvabının gerekip gerekmediği konuları üzerinde durulması gerekmektedir.</p>
+
+<p>Bilindiği üzere, ispat yükü kural olarak davacıya düşer; yani davacı davasını dayandırdığı olguları ispat etmelidir.</p>
+
+<p>Yine kural olarak herkes iddiasını kanıtlamakla yükümlüdür. Kendisine ispat yükü düşen taraf iddiasını ispat edemezse, kendisine ispat yükü düşmeyen diğer tarafın onun iddiasının aksini ispat etmesine gerek yoktur; o olgu ispat edilmemiş sayılır.</p>
+
+<p>Fakat kendisine ispat yükü düşmeyen taraf, ispat yükü kendisinde olan diğer tarafın iddiasını ispat etmesini beklemeden onun iddiasının aksini ispat için delil gösterebilir. İşte bu delile, karşı ( mukabil ) delil denir.</p>
+
+<p>6100 Sayılı Hukuk Muhakemeleri Kanununun konuya dair ve “Somutlaştırma yükü ve delillerin gösterilmesi” başlıklı 194. maddesi uyarınca;</p>
+
+<p>” ( 1 )Taraflar, dayandıkları vakıaları, ispata elverişli şekilde somutlaştırmalıdırlar.</p>
+
+<p>( 2 )Tarafların, dayandıkları delilleri ve hangi delilin hangi vakıanın ispatı için gösterildiğini açıkça belirtmeleri zorunludur.”</p>
+
+<p>Ancak iki hali birbirinden ayırt etmek gerekmektedir:</p>
+
+<p>a- )Kendiliğinden araştırma ilkesinin uygulandığı davalarda, hâkim davanın ispatı için gereken bütün delillere kendiliğinden başvurur; taraflar da duruşma bitinceye kadar delil gösterebilirler. Dava ile ilgili olguların hazırlanmasında, tarafların yanında, hakimin de görevli olmasına, kendiliğinden araştırma ilkesi denir. Bu ilke kamu düzenini ilgilendiren çekişmeli davalarda ve çekişmesiz yargı işlerinde önem gösterir.</p>
+
+<p>b- )Taraflarca getirilme ( hazırlama ) ilkesinin uygulandığı davalarda deliller kural olarak taraflarca gösterilir; hâkim delillere kendiliğinden başvuramaz.</p>
+
+<p>Dava malzemesinin taraflarca getirilme ilkesi, dava malzemelerinin mahkemeye kimin tarafından getirileceğiyle ilgili bir ilkedir. Buna göre, hâkim kendiliğinden, taraflarca ileri sürülmemiş vakıaları araştıramaz, hükmüne esas alamaz. Mahkeme sadece tarafların getirdiği vakıalara göre talep sonucunu inceleyip karar verir.</p>
+
+<p>Taraflarca getirilme ilkesi Hukuk Muhakemeleri Kanununun 25. maddesinde şu şekilde ifade edilmiştir:</p>
+
+<p>” ( 1 ) Kanunda öngörülen istisnalar dışında, hâkim, iki taraftan birinin söylemediği şeyi veya vakıaları kendiliğinden dikkate alamaz ve onları hatırlatabilecek davranışlarda dahi bulunamaz.</p>
+
+<p>( 2 ) Kanunda belirtilen durumlar dışında, hâkim, kendiliğinden delil toplayamaz.”</p>
+
+<p>Bu ilkenin bir sonucu olarak mahkeme, sadece taraflarca ileri sürülen vakıaları inceleyebilir. Buna kural olarak deliller de dahildir ( m. 25/2 ).</p>
+
+<p>Fakat hâkim bilirkişi ve keşif delillerine kendiliğinden de başvurabilir ( m. 266 ve m. 288 ). Hâkim isticvaba da kendiliğinden karar verebilir ( m. 169/1 ). Bundan başka hâkim, davanın her safhasında iki tarafın iddiaları sınırı içinde olmak üzere tarafları dinleyebilir ve gerekli olan delillerin gösterilmesini ve verilmesini emredebilir ( m. 31 ) ( Kuru, B./ Arslan, R. / Yılmaz, E.: Medeni Usul Hukuku Ders Kitabı, Ankara 2011, 22. Baskı, s.377, 378 ).</p>
+
+<p>Belirtilmelidir ki, hâkim, olayın aydınlatılması için tarafların delil ikamesini isteyebilir ancak tarafa belli bir delili hatırlatamaz.</p>
+
+<p>Mahkemenin hüküm vermesi için kendisine yöneltilen talebin formüle edilmesi ve ileri sürülmesi tarafların görevi ise de, bunları anlamlandırmak veya gerektiğinde açıklattırmak hâkimin görevidir. Ancak bu durum, hâkimin tarafların ileri sürmediği vakıaları ileri sürmelerine imkan vermesi veya hatırlatması anlamını taşımaz. Burada mevcut olmayanın talep edilmeyenin ortaya çıkartılması değil, talep edilenin netleştirilmesi, aydınlatılması, belirlenmesi sözkonusudur.</p>
+
+<p>Taraflarca getirilme ilkesi, hâkimin soru sorma ve davayı aydınlatma ödevi ( m. 31 ) çerçevesinde yumuşatılmıştır ( Pekcanıtez, H./ Atalay, O. / Özekes, M.: Medeni Usul Hukuku, 2011, 11.Bası, s. 248 vd ).</p>
+
+<p>6100 Sayılı Hukuk Muhakemeleri Kanununun “Hâkimin davayı aydınlatma görevi” başlıklı 31. maddesine6100 Sayılı Hukuk Muhakemeleri Kanununun “Hâkimin davayı aydınlatma görevi” başlıklı 31. maddesine göre, “Hâkim, uyuşmazlığın aydınlatılmasının zorunlu olduğu durumlarda, maddi veya hukuki açıdan belirsiz yahut çelişkili gördüğü hususlar hakkında, taraflara açıklama yaptırabilir; soru sorabilir; delil gösterilmesini isteyebilir.”</p>
+
+<p>Hâkimin davayı aydınlatma ödevi olarak ifade edilen bu düzenleme ile doğru hüküm verebilmesi ve maddi gerçeğin bulunabilmesi amaçlanmıştır. Düzenlemede her ne kadar “açıklama yaptırabilir” denilmişse de, bunun, hâkimin davayı aydınlatması için bir “ödev” olduğunu kabul etmek gerekir. Çünkü davayı aydınlatma ödevi sayesinde hâkim, iddia ve savunmanın doğru ve tam olarak anlaşılmasını sağlayacak ve bu şekilde doğru olmayan bir kararın verilmesini önleyecektir ( Pekcanıtez/Atalay/Özekes, age, s. 248 vd ).</p>
+
+<p>Görüldüğü üzere, hakimin davayı aydınlatma ödevine dair 31. maddede, hakimin, uyuşmazlığın aydınlatılmasının zorunlu kıldığı durumlarda, maddi veya hukuki açıdan belirsiz ya da çelişkili gördüğü konular hakkında taraflara açıklama yaptırabileceği, soru sorabileceği, kanıt gösterilmesini isteyebileceği belirtilmiştir.</p>
+
+<p>İsticvap ise, bir tarafın kendi aleyhine olan belli bir veya bir kaç vakıa hakkında mahkeme tarafından dinlenilmesi demektir. Bu anlamda isticvap teknik bir terim olup bir tarafın ancak 6100 Sayılı Hukuk Muhakemeleri Kanununun 169-175 ( 1086 Sayılı Hukuk Usulü Muhakemeleri Kanunu m. 230- 235 ) maddelerindeki usule göre dinlenilmesine verilen bir isimdir.</p>
+
+<p>Bununla, tarafların hâkim tarafından her dinlenilmesinin teknik anlamda bir isticvap olmadığını belirtmek gerekir. İsticvap, bir tarafın ancak adı geçen Kanunun m. l69- 175’e göre dinlenilmesi halinde söz konusu olur. Bunun dışındaki tarafların hâkim tarafından dinlenmesi, teknik anlamda bir isticvap değil, sadece tarafların dinlenmesidir ( m. 140, 144 gibi, ( HUMK. m. 213 ).</p>
+
+<p>Yukarıda da görüldüğü gibi, hâkim, davanın her halinde, tarafları veya vekillerini davet ederek davaya konu vakıalar hakkında tarafları dinleyebilir ( m. 140, 144; HUMK. m. 213 ). Böylece, davacının davasının veya davalının savunmasının açıklanmasına çalışılır.</p>
+
+<p>Bunun gibi, hâkim açıklama ( aydınlatma ) ödevi gereğince, müphem veya çelişik gördüğü iddia ve sebepler ( vakıalar ) hakkında taraflardan açıklama isteyebilir ( m. 31; HUMK. m. 75 ); yani tarafları dinleyebilir.</p>
+
+<p>Tarafların ( m. 140, 144’e göre; HUMK. m. 213 ) sadece dinlenilmesi ile ( m. 169- 175’e göre, HUMK. m. 230- 235 ) isticvabı arasında önemli nitelik farkları vardır. Fakat taraf çağrıldığı oturuma gelerek sorulanlara cevap verirse, sonuç bakımından hangi usule göre çağrılmış olduğunun bir önemi yoktur. Buna karşılık, taraf çağrıldığı oturuma gelmezse, o zaman m. 171’deki ( HUMK. m. 234 ) yaptırımın ( ikrar etmiş sayılma yaptırımının ) uygulanabilmesi için, tarafın m. l69-175’e göre isticvap için çağrılmış olması gerekir.</p>
+
+<p>İsticvabın konusu dava ile ilgili belli ( davanın temelini oluşturan ) vakıalar ve onunla ilişkisi bulunun hususlardır ( m. 169/2; HUMK. m. 230/2 ). İsticvap, isticvap edilecek tarafı bir ikrarda ( HMK. m. 188; HUMK. m. 236 ) bulunmaya götürebileceğinden ve tarafın gelmemesi halinde taraf isticvap konusu vakıayı ikrar etmiş sayılacağından ( HMK. m. 171; HUMK. m. 234 ) bir taraf, ancak kendi aleyhine olan vakıalar hakkında isticvap edilebilir; yoksa, kendi lehine olan vakıalar için isticvap edilemez. Bir taraf, kendi lehine olan vakıalar hakkında ancak m. l44’e ( veya m. 31’e ) göre dinlenebilir ( HUMK. m. 213 veya 75 ) ( Kuru, B./ Arslan, R./ Yılmaz, E. : Medenî Usul Hukuku, 22. Bası, Ankara 2011, s. 363, 364 )</p>
+
+<p>Tüm bu açıklamalar ışığında somut olay ele alındığında; davacı vekili müvekkilinin iş sözleşmesinin haksız olarak feshedildiğini ileri sürerken, davalı vekili davacının devamsızlık yaptığından dolayı tutulan devamsızlık tutanaklarına göre iş sözleşmesinin haklı sebeple feshedildiğini savunmuştur.</p>
+
+<p>Mahkemece her iki taraf vekilinin hazır olduğu 06.12.2010 tarihli duruşmada taraf vekillerine delillerini ve tanıklarını yazılı olarak bildirmeleri için 10 günlük kesin süre verilmiştir. Davacı vekili 18.12.2010 havale tarihli delil listesini sunmuş ve delillerini bildirmiştir.</p>
+
+<p>Davalı vekili ise 10.02.2011 havale tarihli delil listesinde davacı işçiye ait özlük dosyası ile tanık beyanlarına dayanmış, tanık olarak … ve Tamer Y.’ın isimlerini bildirmiştir. Sunulan özlük dosya içinde ise izin formu ve bordrolar bulunmaktadır.</p>
+
+<p>Dinlenen davacı tanıkları davacının işten çıkarıldığını duyduklarını beyan etmişler; süresinde verilmeyen delil listesinde ismi yazılı olan ve duruşma günü hazır edildiği için dinlenen davalı tanığı … ise davacının işten çıkartıldığını ancak nedenini bilmediğini belirtmiştir.</p>
+
+<p>Bu durumda iş sözleşmesinin haklı sebeple feshedildiği konusunda ispat külfeti altında bulunan davalının, iş sözleşmesinin kıdem ve ihbar tazminatı ödenmesini gerektirmeyecek şekilde feshedildiğini ispat ettiğinden sözedilemez.</p>
+
+<p>Bununla birlikte delil olarak dayanılmayan ve sunulmayan devamsızlık tutanaklarının mahkemece sunulması sağlanarak, tutanaklar altında imzası bulunan çalışanların resen tanık olarak dinlenmesi; davacının isticvabı veya 6100 Sayılı HMK’nun 31. maddesine göre bu hususta bilgisine başvurulması ya da beyanının alınması da mümkün değildir.</p>
+
+<p>O halde açıklanan bu sebeplerle yerel mahkeme kararı usul ve yasaya uygun olup direnme kararı yerindedir.</p>
+
+<p>Ne var ki, kıdem ve ihbar tazminatlarının miktarına dair temyiz incelemesi yapılmadığından dosyanın Özel Daireye gönderilmesi gerekir.</p>
+
+<p>SONUÇ : Yukarıda açıklanan sebeplerle direnme uygun olup; kıdem ve ihbar tazminatlarının miktarına dair temyiz incelemesi yapılmak üzere dosyanın 22. HUKUK DAİRESİNE GÖNDERİLMESİNE, karar düzeltme yolu kapalı olmak üzere, 05.04.2017 tarihinde oybirliği ile karar verildi.</p>
+
+<hr>
+
+</div></div></main>
+</div>
+
+<footer>
+<section>
+<div class="contact-info">
+
+<div class="adres">
+
+<div class="telefon-wrapper">
+
+
+</div>
+</div>
+</section>
+
+</div>
+
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+"vars": {
+"account": "UA-58342443-1"
+},
+"triggers": {
+"trackPageview": {
+"on": "visible",
+"request": "pageview"
+}
+}
+}
+</script>
+</amp-analytics>
+
+</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="../../index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="../../dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="../../ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="../../knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="../../search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/slideToggle.min.js"></script>
+    <script src="../js/internet-status.js"></script>
+    <script src="../js/tiny-slider.js"></script>
+    <script src="../js/baguetteBox.min.js"></script>
+    <script src="../js/countdown.js"></script>
+    <script src="../js/rangeslider.min.js"></script>
+    <script src="../js/vanilla-dataTables.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/magic-grid.min.js"></script>
+    <script src="../js/dark-rtl.js"></script>
+    <script src="../js/active.js"></script>
+    <!-- PWA -->
+    <script src="../js/pwa.js"></script>
+  </body>
+</html>

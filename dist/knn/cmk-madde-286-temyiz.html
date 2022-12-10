@@ -1,0 +1,1345 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tiny-slider.css">
+    <link rel="stylesheet" href="../css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="../css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="tck-search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+               <div class="page-content-wrapper py-0">
+        </div>
+      </div>
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+
+
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<h2 id="temyiz">Temyiz</h2>
+
+<h2 id="cmk-madde-286">CMK Madde 286</h2>
+
+<p>(1) Bölge adliye mahkemesi ceza dairelerinin bozma dışında kalan hükümleri temyiz edilebilir.</p>
+
+<p>(2) Ancak;</p>
+
+<p>a) İlk derece mahkemelerinden verilen beş yıl veya daha az hapis cezaları ile miktarı ne olursa olsun adlî para cezalarına karşı istinaf başvurusunun esastan reddine dair bölge adliye mahkemesi kararları,</p>
+
+<p>b) İlk derece mahkemelerinden verilen beş yıl veya daha az hapis cezalarını artırmayan bölge adliye mahkemesi kararları,</p>
+
+<p>c) (Ek: 20/7/2017-7035/20 md.) Hapis cezasından çevrilen seçenek yaptırımlara ilişkin ilk derece mahkemesi kararları ile ilgili olarak bölge adliye mahkemesince verilen; seçenek yaptırımlara ilişkin her türlü kararlar ve istinaf başvurusunun esastan reddine dair kararlar,</p>
+
+<p>d) (Yeniden Düzenleme -7165 s.k. m.7 - 28.02.2018) İlk defa bölge adliye mahkemesince verilen ve 272 nci maddenin üçüncü fıkrası kapsamı dışında kalan mahkûmiyet kararları hariç olmak üzere, ilk derece mahkemelerinin görevine giren ve kanunda üst sınırı iki yıla kadar (iki yıl dâhil) hapis cezasını gerektiren suçlar ve bunlara bağlı adlî para cezalarına ilişkin her türlü bölge adliye mahkemesi kararları,</p>
+
+<p>e) Adlî para cezasını gerektiren suçlarda ilk derece mahkemelerinden verilen hükümlere ilişkin her türlü bölge adliye mahkemesi kararları,</p>
+
+<p>f) (Değişik: 18/6/2014-6545/78 md.) Sadece eşya veya kazanç müsaderesine veya bunlara yer olmadığına ilişkin ilk derece mahkemesi kararları ile ilgili olarak istinaf başvurusunun esastan reddine dair kararları,</p>
+
+<p>g) On yıl veya daha az hapis cezasını veya adlî para cezasını gerektiren suçlardan, ilk derece mahkemesince verilen beraat kararları ile ilgili olarak (…)istinaf başvurusunun esastan reddine dair kararları,</p>
+
+<p>h) (Değişik: 18/6/2014-6545/78 md.) Davanın düşmesine, ceza verilmesine yer olmadığına, güvenlik tedbirine ilişkin ilk derece mahkemesi kararları ile ilgili olarak bölge adliye mahkemesince verilen bu tür kararlar veya istinaf başvurusunun esastan reddine dair kararlar,</p>
+
+<p>ı) Yukarıdaki bentlerde yer alan sınırlar içinde kalmak koşuluyla aynı hükümde, cezalardan ve kararlardan birden fazlasını içeren bölge adliye mahkemesi kararları, temyiz edilemez.</p>
+
+<p>(3) (Ek:17/10/2019-7188/29 md.) İkinci fıkrada belirtilen temyiz edilemeyecek kararlar kapsamında olsa bile aşağıda sayılan suçlar nedeniyle verilen bölge adliye mahkemesi ceza dairelerinin kararları temyiz edilebilir:</p>
+
+<p>a) Türk Ceza Kanununda yer alan;</p>
+
+<ol>
+  <li>
+    <p>Hakaret (madde 125, üçüncü fıkra),</p>
+  </li>
+  <li>
+    <p>Halk arasında korku ve panik yaratmak amacıyla tehdit (madde 213),</p>
+  </li>
+  <li>
+    <p>Suç işlemeye tahrik (madde 214),</p>
+  </li>
+  <li>
+    <p>Suçu ve suçluyu övme (madde 215),</p>
+  </li>
+  <li>
+    <p>Halkı kin ve düşmanlığa tahrik veya aşağılama (madde 216),</p>
+  </li>
+  <li>
+    <p>Kanunlara uymamaya tahrik (madde 217),</p>
+  </li>
+  <li>
+    <p>(Ek:13/10/2022-7418/30 md.) Halkı yanıltıcı bilgiyi alenen yayma (madde 217/A),</p>
+  </li>
+  <li>
+    <p>Cumhurbaşkanına hakaret (madde 299),</p>
+  </li>
+  <li>
+    <p>Devletin egemenlik alametlerini aşağılama (madde 300),</p>
+  </li>
+  <li>
+    <p>Türk Milletini, Türkiye Cumhuriyeti Devletini, Devletin kurum ve organlarını
+aşağılama (madde 301),</p>
+  </li>
+  <li>
+    <p>Silâhlı örgüt (madde 314),</p>
+  </li>
+  <li>
+    <p>Halkı askerlikten soğutma (madde 318),</p>
+  </li>
+</ol>
+
+<p>suçları.</p>
+
+<p>b) Terörle Mücadele Kanununun 6 ncı maddesinin ikinci ve dördüncü fıkrası ile 7 nci maddesinin ikinci fıkrasında yer alan suçlar.</p>
+
+<p>c) Toplantı ve Gösteri Yürüyüşleri Kanununun 28 inci maddesinin birinci fıkrası, 31 inci maddesi ve 32 nci maddesinde yer alan suçlar.</p>
+
+<hr>
+
+<ul>
+  <li>
+    <p><a href="../5271-sayili-ceza-muhakemesi-kanunu-cmk.html"><strong>5271 sayılı CMK (Ceza Muhakemesi Kanunu) Tam Metin</strong></a></p>
+  </li>
+  <li>
+    <p><a href="../yargitay-temyiz-basvurusu.html">Temyiz Sebepleri ve Temyiz Başvurusu</a></p>
+  </li>
+</ul>
+
+<hr>
+
+<amp-img src="../tokmak-yargitay-kararlari-1280x720.png" alt="CMK Madde 286  Temyiz" width="1280" height="720" layout="responsive">
+            </amp-img>
+
+<h2 id="cmk-madde-286-gerekçesi">CMK Madde 286 Gerekçesi</h2>
+
+<p>303 üncü maddede ve gerekçesinde açıklandığı üzere; ilk derece mahkemelerinden verilen, anılan maddenin üçüncü fıkrasında belirtilenler dışında kalan ve davayı sona erdiren beraat, mahkûmiyet, davanın reddi, davanın ortadan kaldırılması veya düşmesi, adlî yargı dışındaki bir yargı yerine yönelik görevsizlik, ceza ehliyetsizliği nedeniyle ceza verilmesine yer olmadığı, tedbir, evlenme nedeniyle dava veya cezanın ertelenmesi hükümlerine karşı yalnızca istinaf yoluna başvurma olanağı sağlanmıştır.</p>
+
+<p>Maddenin ikinci fıkrasında sekiz bent olarak sayılan hâllerde, ilk derece mahkemesi hükümleri de bölge adliye mahkemesi kararıyla kesinlik kazanacağından ve 315 inci maddenin açık hükmü nedeniyle bölge adliye mahkemesinin bozma kararlarına direnilemeyeceğinden, bölge adliye mahkemesi ceza dairelerinin belirtilenler dışındaki diğer hükümleri temyiz edilebilecektir.</p>
+
+<hr>
+
+<h2 id="cmk-286-temyiz--emsal-yargıtay-kararları">CMK 286 (Temyiz)  Emsal Yargıtay Kararları</h2>
+
+<hr>
+
+<p><strong>Yargıtay 5. Ceza Dairesi         2021/12527 E.  ,  2021/7035 K.</strong></p>
+
+<ul>
+  <li><strong>CMK 286</strong></li>
+  <li><strong>Yerel mahkeme tarafından hükmedilen hapis cezasına istinaf aşamasında ek olarak BAM tarafından TCK’nin 53/1-a maddesindeki hak ve yetkinin kullanılmasından yasaklanmasına karar verilmesi halinde, bu BAM kararı temyize tabidir.</strong></li>
+</ul>
+
+<p>Sanık hakkındaki sonuç cezayı artırmamakla birlikte TCK’nin 53/5. maddesinde düzenlenen hak yoksunluğu yönünden ilk derece mahkemesince hükmedilmeyen ve ilk kez Bölge Adliye Mahkemesince verilen TCK’nin 53/1-a maddesindeki hak ve yetkiyi kötüye kullanmak suretiyle atılı suçu işlediği kabul edilen sanık hakkında aynı Kanun’un 53/5. madde ve fıkrası gereğince takdiren 150 gün süreyle bu hak ve yetkinin kullanılmasından yasaklanması şeklinde sanık aleyhine uygulama yapılan 11/11/2020 tarihli düzeltilerek istinaf başvurusunun esastan reddine dair kararın temyiz yasa yoluna tabi olduğu kabul edilerek bu karara yönelik sanık müdafin süresinde yapılan temyiz başvurusunun reddine dair 07/04/2021 tarihli Ek Kararın KALDIRILMASINA ve esasın incelenmesine karar verildikten sonra gereği düşünüldü:</p>
+
+<p>Bölge Adliye Mahkemesince CMK’nin 280/1-d maddesi gereğince duruşma açılmaksızın, sanığın görevi kötüye kullanma suçundan cezalandırılmasına dair mahkumiyet hükmüne TCK’nin 53/1-a ve 53/5. maddeleri uyarınca hak yoksunluğu uygulanmasına ilişkin ibarenin 6. bent olarak eklenmesi suretiyle düzeltilerek istinaf başvurusunun esastan reddine karar verilmiş ise de; TCK’nin 53/5. maddesi uyarınca sanık aleyhine hak yoksunluğu uygulanmasına karar verilebilmesi için CMK’nin 280/1-g maddesi uyarınca duruşma açılarak, delillerin değerlendirilmesi yapıldıktan sonra hüküm kurulması gerektiği gözetilmeyerek, CMK’nin 280/1-d maddesi kapsamına girmediği halde duruşma açılmaksızın dosya üzerinden yapılan inceleme sonucunda düzeltilerek istinaf başvurusunun esastan reddine karar verilmesi, bozma nedenidir.</p>
+
+<hr>
+
+<p><strong>Yargıtay 16. Ceza Dairesi  2017/3415 E.  ,  2018/495 K. , Tarih: 16.01.2018</strong></p>
+
+<ul>
+  <li>
+    <p><strong>Temyiz edilebilirlik sınırı nasıl belirlenir?</strong></p>
+  </li>
+  <li>
+    <p><strong>Özet : Ceza adalet sistemimizde ‘bir suçun temel şekli ile daha ağır veya daha az cezayı gerektiren nitelikli şekillerinin aynı suç sayılacağı’ ilkesini benimsemiştir (TCK md. 43/1, 3. cümle). Bu itibarla, aynı suç sayılan bir suçun nitelikli halinin ve benzer şekilde fiilin ağırlaştırıcı neden altında işlenen şeklinin temyiz edilebilirlik sınırının belirlenmesinde esas alınması gerektiği kuşkusuzdur.</strong></p>
+  </li>
+</ul>
+
+<p>Silahlı terör örgütüne üye olma suçundan kurulan hükme yönelik temyize gelince; Öncelikle somut olayımızda, silahlı terör örgütü üyesi olmak suçundan verilen beraat hükmünün temyizi kabil bulunup bulunmadığı hususunun değerlendirilmesi gerekmektedir.
+İncelenen dosya kapsamından;</p>
+
+<p>Samsun Cumhuriyet Başsavcılığının 15.06.2016 tarih ve 2016/5703 esas sayılı iddianamesiyle sanık hakkında “FETÖ/PDY silahlı terör örgütü üyesi olmak” suçunu işlediğinden bahisle 5237 sayılı TCK’nın 314/2, 53, 58/9 ve 3713 sayılı TMK’nın 5. maddeleri uyarınca cezalandırılması istemiyle kamu davası açıldığı, kamu davasının yapılan yargılaması sonucunda “atılı suçu işlediğine dair cezalandırılmasına yeterli her türlü şüpheden arınmış, kesin, somut ve tam inandırıcı delil elde edilemediğinden” gerekçesiyle sanık hakkında 5271 sayılı CMK’nın 223/2-e maddesi uyarınca Beraat hükmü kurulduğu, bu kararın yerel Cumhuriyet savcısı tarafından sanık aleyhine istinaf edilmesi üzerine Samsun Bölge Adliye Mahkemesi 2. Ceza Dairesinin 13.07.2017 tarih ve 2017/1088 E- 2017/1082 K. sayılı kararıyla “istinaf başvurusunun esastan reddine” dair karar verildiği, Bölge Adliye Mahkemesi Cumhuriyet savcısının adı geçen karara yönelik temyiz başvurusunda bulunması üzerine bu kez de Samsun Bölge Adliye Mahkemesi 2. Ceza Dairesi 18.07.2017 tarih ve 2017/1088 E- 207/1082 K. sayılı Ek Kararıyla “temyiz talebinin 5271 sayılı CMK’nın 286/2-a maddesi uyarınca reddine” yönelik hüküm kurduğu anlaşılmaktadır.</p>
+
+<p>İnsan Haklarına dayanan hukuk devletinde, hukukun üstünlüğü ilkesini hakim kılmak için gereken her türlü yapısal ve kurumsal hukuki reformların hayata geçirilmesi önem arz etmektedir. Hukukun üstünlüğünü sağlamanın önemli unsurlarından birisi, adil yargılanma ve adalete erişim hakkının tüm güvenceleriyle yaşama geçirilmesidir. Adil yargılanma hakkı, bağımsız ve tarafsız yargı merciileri önünde hakkını aramak, davacı veya davalı olabilmek, yargılama sırasında usuli güvencelere sahip olmak, yargılamanın makul sürede yapılması, mahkeme kararlarına karşı etkin hukuki denetim mekanizmalarının sağlanması gibi temel güvenceleri bünyesinde barındırmaktadır.
+Mahkeme kararlarına karşı etkin hukuki denetim mekanizmalarından biri olan Temyiz; bölge adliye (istinaf) mahkemelerinin kesin olmayan kararlarının Yargıtay tarafından denetlenmesi amacıyla düzenlenmiş kanun yoludur.</p>
+
+<p>Temyiz CMK sistematiği içinde olağan kanun yolları arasında düzenlenmiştir. Bir yargılama organı tarafından verilen kararların başka bir merci tarafından denetlenmesi son derece önemlidir. Temyiz yoluyla bir ülkedeki hukuk kurallarının istikrarlı, aynı bir biçimde yorumlanması ve uygulanması sağlanmaktadır. Temyiz yoluyla daha önce bir yargı merci tarafından verilmiş olan kararların hukuka uygunluğu kontrol edilmektedir.</p>
+
+<p>Hükümlerin temyiz edilebilmeleri kural, temyiz edilememeleri ise istisnadır. Anılan istisna, hukuk devletinde kabulü mümkün ve meşru bir amaçla, Anayasanın 36. maddesinde düzenlenen “hak arama hürriyeti” ile Avrupa İnsan Hakları Sözleşmesinin altıncı maddesinde hüküm altına alınan mahkemelere erişim hakkının özüne zarar vermeyecek şekilde ve orantılı olmalı, ayrıca kanunda açıkça düzenlenmiş bulunmalıdır.</p>
+
+<p>Hukukumuzda istinaf kanun yolundan önce ilk derece mahkeme kararlarına karşı sadece Yargıtay nezdinde temyiz yoluna başvurulabilmekteydi. Ancak temyiz incelemesindeki iş yükünün fazla olması karşısında Yargıtay, temyiz kanun yolu mercii olması yanında, modem ülkelerde olduğu gibi ülkede hukukun yeksenak şekilde uygulamasını temin etmek, bu amaçla dinamik tahlil metoduyla içtihat üreterek hukukun ilerlemesine ve gelişmesine katkı sağlamak görevini ise gereğince yerine getirememekteydi. Bu amaçlarla, 26.09.2004 tarihli ve 5235 sayılı Adli Yargı İlk Derece Mahkemeleri ile Bölge Adliye Mahkemelerinin Kuruluş, Görev ve Yetkileri Hakkında Kanunun yürürlüğe girmesiyle “Bölge Adliye Mahkemeleri İstinaf Kanun Yolu” mercii olarak hukukumuza dahil edilmiş oldu.</p>
+
+<p>CMK’nın altıncı kitap başlıklı bölümünde yer alan Temyiz kanun yolu CMK m. 286-307 arasında düzenlenmiştir. 5320 sayılı CMK’nın yürürlük kanunu m. 8/1 göre, Bölge adliye mahkemeleri kurulup görev başlayıncaya kadar CMK’nın temyize ilişkin hükümleri değil mülga CMUK’nın 322/4-6 maddesi dışında temyize ilişkin hükümleri aynen uygulamaya devam edecektir.</p>
+
+<p>CMK’nın “Özel kanunların temyize ilişkin hükümleri” başlıklı 285/1 maddesine göre; “Türk Ceza Kanunu’nun l8’inci maddesinin dördüncü fıkra hükmü hariç; diğer kanunlarda temyiz edilebileceği veya haklarında Yargıtay’a başvurulabileceği belirtilmiş olup da bölge adliye mahkemelerinin görev alanına giren dava ve işlere ilişkin ilk derece mahkemelerinin karar ve hükümlerine karşı istinaf yoluna başvurulur.</p>
+
+<p>Bölge Adliye Mahkemeleri tarafından verilen kararlarının hangilerinin temyize tabi olduğu hususu da 5271 sayılı CMK m. 286’da düzenlenmiştir.
+Maddenin birinci fıkrasında; bölge adliye ceza mahkemelerinin bozma kararları dışında kalan hükümlerinin temyiz edilebileceği belirtilmiş, ikinci fıkrasında ise; Bölge Adliye Mahkemeleri ceza daireleri tarafından verilen kararların hangilerinin temyiz edilemeyeceği ve kesin olarak olarak verildiği açıklanmıştır.</p>
+
+<p>Buna göre;</p>
+
+<p>a)İlk derece mahkemelerinden verilen beş yıl veya daha az hapis cezaları ile miktarı ne olursa olsun adli para cezalarına karşı istinaf başvurusunun esastan reddine dair BAM kararları,</p>
+
+<p>b)İlk derece mahkemelerinden verilen beş yıl veya daha az hapis cezalarını artırmayan bölge adliye mahkemesi kararları,</p>
+
+<p>c)İlk derece mahkemelerinin görevine giren ve kanunda üst sınırı iki yıla kadar (iki yıl dahil) hapis cezasını gerektiren suçlar ve bunlara bağlı adli para cezalarına ilişkin her türlü bölge adliye mahkemesi kararları,</p>
+
+<p>d)Adli para cezasını gerektiren suçlarda ilk derece mahkemelerinden verilen hükümlere ilişkin her türlü bölge adliye mahkemesi kararları,</p>
+
+<p>e)Sadece eşya veya kazanç müsaderesine veya bunlara yer olmadığına ilişkin ilk derece mahkemesi kararları ile ilgili olarak istinaf başvurusunun esastan reddine dair kararları,</p>
+
+<p>f)On yıl veya daha az hapis cezasını veya adli para cezasını gerektiren suçlardan, ilk derece mahkemesince verilen beraat kararları ile ilgili olarak istinaf başvurusunun esastan reddine dair kararları,</p>
+
+<p>g)Davanın düşmesine, ceza verilmesine yer olmadığına, güvenlik tedbirine ilişkin ilk derece mahkemesi kararları ile ilgili olarak bölge adliye mahkemesince verilen bu tür kararlar veya istinaf başvurusunun esastan reddine dair kararlar,</p>
+
+<p>h)Yukarıdaki bentlerde yer alan sınırlar içinde kalmak koşuluyla aynı hükümde, cezalardan ve kararlardan birden fazlasını içeren bölge adliye mahkemesi kararları,
+Temyiz edilemez.</p>
+
+<p>5271 sayılı CMK’nın 286/2-f. maddesinde “On yıl veya daha az hapis cezasını veya adlî para cezasını gerektiren suçlardan, ilk derece mahkemesince verilen beraat kararları ile ilgili olarak istinaf başvurusunun esastan reddine dair kararların” temyiz edilemeyeceği açıkça düzenlenmiştir.</p>
+
+<p>Somut uyuşmazlığı oluşturan tartışmanın konusu; “On yıl veya daha az hapis cezasını veya adlî para cezasını gerektiren” kavramının kapsamının belirlenmesine ilişkindir. Bir diğer anlatımla on yıllık ceza süresinin belirlenmesinde suçun temel şekli için kanunda öngörülen ceza mı dikkate alınacaktır? Yoksa, suçun nitelikli halleri ve ağırlaştırıcı nedenleri de on yıllık cezanın dolayısıyla temyiz edilebilirliğinin belirlenmesinde dikkate alınacak mıdır?</p>
+
+<p>Suç genel teorisinde suça etki eden nedenler, suçun temel şeklini düzenleyen suç tipindeki kanuni unsurların dışında kalan ve ona eklenen özel fiili nedenler veya şahsi nedenlerdir. Bu bağlamda suça etki eden nedenler, doktrinde çeşitli ayrımlara tabi tutulmaktadır: Ağırlatıcı-hafıfletici nedenler, genel-özel nedenler, kanuni-takdiri nedenler, fıili-şahsi nedenler gibi. Suça etki eden nedenlerden cezanın artırılmasını gerektiren nedenler ağırlatıcı nedenler iken; indirilmesini gerektirenler hafifletici nedenlerdir.
+Ceza adalet sistemimizde ‘bir suçun temel şekli ile daha ağır veya daha az cezayı gerektiren nitelikli şekillerinin aynı suç sayılacağı’ ilkesini benimsemiştir (TCK md. 43/1, 3. cümle). Bu itibarla, aynı suç sayılan bir suçun nitelikli halinin ve benzer şekilde fiilin ağırlaştırıcı neden altında işlenen şeklinin temyiz edilebilirlik sınırının belirlenmesinde esas alınması gerektiği kuşkusuzdur.</p>
+
+<p>Bu açıklamalar ışığında; Hükümlerin temyiz edilebilmelerinin kural, temyiz edilememelerinin ise istisna olması, özellikle bölge adliye mahkemelerinin hangi kararlarının temyize tabi olduğu veya kesin olduğunu gösteren 5271 sayılı CMK’nın 286. maddesinin 2/a-b bentlerinde “temyiz edilebilirlik sınırı belirlenirken suçun temel şeklinde istenilen cezanın değil hükümde verilen sonuç cezanın esas alınması, gerçekten de pratik olarak bakıldığında, suç isnadı altında olan bir birey için önemli olan hususun; hakkında istenen hapis cezasının alt veya üst sınırının uzunluğu olması olup bu alt ve üst sınırın uzunluğunun ister cezanın temel şeklinden kaynaklansın isterse suçun nitelikli hali veya ağırlaştırıcı nedeninden kaynaklansın belirtilen sonucun değişmeyeceği, aksi durumun kabulü yani, temyiz edilebilirlik sınırının belirlenmesinde ağırlaştırıcı neden veya nitelikli hal uygulanması sebebiyle üst sınırın on yılın üstüne çıkması durumunda hükmün temyiz edilemeyeceğinin kabul etmenin sanıkların “mahkeme kararlarına karşı etkin hukuki denetim mekanizmalarının sağlanması” hakkından mahrum edeceği, bunun da adalete erişim hakkını sınırlayacağı apaçık ortadadır.</p>
+
+<p>Bu nedenlerle, silahlı terör örgütü üyesi olmak suçlarının 3713 sayılı TMK’nın 3. maddesinde düzenlenen mutlak terör suçlarından olması, aynı yasanın 5. maddesi kapsamında mutlak terör suçlarında her halükarda 3713 sayılı TMK’nın 5. maddesinin herhangi bir takdir hakkı olmaksızın uygulanmasının zorunlu olduğu, bu kapsamda “silahlı terör örgütü üyesi olmak suçlarında cezanın üst haddinin 10 yıldan fazla olduğu” nazara alındığında, sanık hakkında, “silahlı terör örgütü üyesi olmak suçundan ilk derece mahkemesince verilen beraat kararına karşı istinaf başvurusunun esastan reddine dair kararına” karşı temyiz kanun yolunun açık olduğu kabul edilerek “verilen kararın kesin olup temyiz isteminin reddine ilişkin ek kararın onanması” gerektiği yönündeki Yargıtay Cumhuriyet Başsavcılığının tebliğnamedeki görüşüne iştirak edilmemiştir.
+Temyiz talebinin reddi nedenleri bulunmadığından işin esasına geçildi.</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede; Yargılama sürecindeki usuli işlemlerin kanuna uygun olarak yapıldığı, hükme esas alınan tüm delillerin hukuka uygun olarak elde edildiğinin belirlendiği aşamalarda ileri sürülen iddia ve savunmaların temyiz denetimini sağlayacak biçimde eksiksiz olarak sergilendiği, özleri değiştirmeksizin tartışıldığı, vicdani kanının kesin, tutarlı ve çelişmeyen verilere dayandırıldığı, eylemlerin doğru olarak nitelendirildiği anlaşılmakla; Cumhuriyet savcısının temyiz dilekçesinde ileri sürdüğü nedenler yerinde görülmediğinden CMK’nın 302/1. maddesi gereğince temyiz davasının esastan reddiyle hükmün ONANMASINA, 16.01.2018 tarihinde Üye …’ın sanığa atılı silahlı terör örgütüne üye olma suçunun sübut bulduğuna dair muhalefet düşünceleriyle ve oyçokluğuyla karar verildi.</p>
+
+<hr>
+
+<p><strong>Yargıtay 8. Ceza Dairesi         2021/14692 E.  ,  2021/19553 K.</strong></p>
+
+<ul>
+  <li><strong>Birden fazla suçun temyiz incelemesinde görevli Yargıtay dairesi nasıl belirlenir?</strong></li>
+</ul>
+
+<p>SUÇLAR : Kamu malına zarar verme, görevi yaptırmamak için direnme, hakaret, hükümlünün kaçmasına imkan sağlama, genel güvenliğin kasten tehlikeye sokulması</p>
+
+<p>2797 Yargıtay Kanunu’nun 6545 sayılı Kanun’la değişik 14. ve eklenen geçici 13. maddeleri uyarınca; mahkumiyet kararlarındaki nitelendirmeye, tebliğname tarihi ve temyizin kapsamına göre, birden fazla suçun yer aldığı hükümlerin temyiz incelemesinde incelemeye konu suçlardan yaptırımı en ağır olanına bakmakla görevli dairece yapılacağı, ve Yargıtay Birinci Başkanlık Kurulu’nun 02.07.2021 gün ve 2021/211 sayılı kararının Ceza Daireleri İşbölümüne ilişkin ortak hükümlerin 6. ve 8. fıkrası uyarınca, temyiz inceleme görevi Yargıtay Yüksek (2.) Ceza Dairesine ait olmakla Dairemizin GÖREVSİZLİĞİNE, dosyanın görevli Daireye gönderilmesine 22.10.2021 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>Ceza Genel Kurulu - Karar: 2018/113</strong></p>
+
+<ul>
+  <li><strong>CMK 286</strong></li>
+  <li><strong>Sanıklar hakkında özel belgede sahtecilik suçundan ilk derece mahkemesince verilen
+mahkûmiyet hükmüne karşı istinaf kanun yoluna başvurulması üzerine davayı beraatle sonuçlandıran
+bölge adliye mahkemesi ceza dairesi kararına karşı temyiz kanun yolu açıktır.</strong></li>
+</ul>
+
+<p>Bölge adliye mahkemelerinin faaliyete geçmesiyle birlikte, ilk derece mahkemelerinden verilen
+hükümlere karşı olağan kanun yolu olarak CMK’nın 272. maddesi uyarınca istinaf kanun yoluna, istinaf
+üzerine verilen bölge adliyesi mahkemesi hükümlerine karşı olağan kanun yolu olarak da CMK’nın
+286.maddesi uyarınca temyiz kanun yoluna başvurulabilecektir. Kural bu olmakla birlikte, ilk derece
+mahkemelerinden verilen hükümlerden hangilerine karşı istinaf yoluna başvurulamayacağı CMK’nın
+272.maddesinin üçüncü fıkrasında, istinaf üzerine bölge adliye mahkemesi ceza dairelerince verilen
+hükümlerden hangilerine karşı temyiz kanun yoluna başvurulamayacağı da CMK’nın 286. maddesinin
+birinci ve ikinci fıkralarında sayılmak suretiyle kuralın istisnaları gösterilmiştir.</p>
+
+<p>Uyuşmazlık konusunu oluşturan, CMK’nın 286. maddesinin ikinci fıkrasının (b) bendinde “İlk
+derece mahkemelerinden verilen beş yıl veya daha az hapis cezalarını artırmayan bölge adliye mahkemesi
+kararları”nın temyiz edilemeyeceği belirtilmiştir.</p>
+
+<p>Bölge adliye mahkemesi ceza dairelerince verilen kararların, CMK’nın 286. maddesinin ikinci fıkrasının
+(b) bendi kapsamında değerlendirilebilmesi için birinci koşul; ilk derece mahkemesinden verilen bir
+“mahkûmiyet” hükmünün bulunması ve bu hükmün de “beş yıl veya daha az hapis cezalarına” ilişkin
+olmasıdır. İkinci koşul ise; bölge adliye mahkemesi ceza dairesince verilen, ilk derece mahkemelerince
+hükmolunan beş yıl veya daha az hapis cezalarını artırmayan bir kararın varlığıdır. Birinci koşul yönünden
+uygulamada tereddüde yol açacak bir durum görülmemekle beraber, ikinci koşul olan bölge adliye
+mahkemesi ceza dairesince verilen ve “hapis cezalarını artırmayan” kararın niteliğinin belirlenmesi
+yönünden, kanun koyucunun düzenlemeyi yapmaktaki amacı, kanunun sistematiği, kıyas ve yorumun
+mümkün olup olmadığının değerlendirmesi gerekmektedir.</p>
+
+<p>Bir karar veya hükme ilişkin kanun yolunun belirlenmesi sırasında öncelikle kanunun sistematiği
+ve normları dikkate alınacak, bu belirleme yapılırken kıyas ve yorum yoluna başvurulabilecektir. Ceza
+muhakemesinde kıyas ve her türlü yorum mümkün olmakla birlikte, temel hak ve özgürlükleri daraltan
+normlar ile istisnai normlarda kıyas yasağı mevcuttur. Kanun koyucunun düzenlediğinin aksine sonuçlara
+ulaşmaya izin verecek şekilde, kıyas veya yorum yoluyla temel hak ve özgürlüklere ilişkin normları
+daraltıcı, istisnai normları genişletici şekilde hareket etmek mümkün değildir. CMK’nın 286. maddesinin
+ikinci fıkrasının (b) bendinin hem uluslararası sözleşmeler ve Anayasa’nın 36. maddesinde düzenlenen
+“hak arama özgürlüğü”ne ilişkin temel hak ve özgürlükler kapsamında kalması, hem de istisnai bir
+norm olma özelliği taşıması karşısında, bir bölge adliye mahkemesi kararının bu bent kapsamında kalıp
+kalmadığına ilişkin yorum yapılırken, hak arama özgürlüğünü daraltıcı nitelikte kıyas yapılamayacağı
+gibi bu düzenlemenin istisnai nitelikte olması nedeniyle kapsamını genişletici şekilde yorum da
+yapılamayacağı gözetilmelidir.</p>
+
+<p>Bu noktadan hareketle; CMK’nın 286. maddesinin ikinci fıkrasının (b) bendinde geçen “hapis
+cezalarını artırmayan” ibaresinden anlaşılması gerekenin; “cezayı aynı tutan” ya da “cezayı eksilten”
+kararlar olduğunun, bölge adliye mahkemesi ceza dairesince verilecek olan kararın da yine bir “hapis
+cezası” olacağının, ancak bu kararın ilk derece mahkemesince verilen hapis cezasını artırmamakla
+birlikte, aynı miktarda veya daha az bir ceza olması gerektiğinin kabulünde zorunluluk bulunmaktadır.
+Dolayısıyla bölge adliye mahkemesi ceza dairesi tarafından verilecek “hapis cezasını artırmayan” kararın,
+yine hapis cezasına ilişkin bir “mahkûmiyet” kararı olması gerekmektedir. İlk derece mahkemesi ve bölge
+adliye mahkemesi ceza dairesi arasında “mahkûmiyet” hükmü yönüyle bir uyuşmazlık bulunmaması
+ve ilk derece mahkemesince verilen beş yıl veya daha az hapis cezasına ilişkin mahkûmiyet hükmünün
+bölge adliye mahkemesi ceza dairesince artırılmaması durumunda bu kararın “temyiz edilemez” nitelikte
+bir karar olmasını amaçlayan kanun koyucunun, bu düzenleme ile usul ekonomisini de gözettiğini
+söylemek yanlış bir yorum olmayacaktır. Buna karşın, “beraat”, “düşme”, “ret” ve “ceza verilmesine yer
+olmadığına” gibi kararlar bu bent kapsamında değerlendirilemeyeceklerdir. Bölge adliye mahkemesi
+ceza daireleri tarafından verilen mahkûmiyet kararı dışındaki “beraat”, “düşme”, “ret” ve “ceza verilmesine
+yer olmadığına” ilişkin kararların”ilk derece mahkemelerinden verilen beş yıl veya daha az hapis cezalarını
+artırmayan” kararlar kapsamında oldukları, bu nedenle CMK’nın 286. maddesinin ikinci fıkrasının (b)
+bendi kapsamında kalmaları nedeniyle temyiz edilemeyecekleri kabul edildiği takdirde, temel hak ve
+özgürlüklerden biri olan “hak arama özgürlüğü”nü daraltıcı, istisnai nitelikteki bir normu ise genişletici
+şekilde bir yorum yapmış olunur ki, bu durum ceza muhakemesi ilkelerine aykırılık teşkil edecektir.</p>
+
+<p>Öte yandan, yapılan bu tespitler üzerine varılan sonucun kanunun sistematiğine uygun olup
+olmadığının irdelenmesine gelince;</p>
+
+<p>5271 sayılı CMK’nın 286. maddesinin ikinci fıkrasının (d) bendinde “İlk derece mahkemelerinin görevine
+giren ve kanunda üst sınırı iki yıla kadar (iki yıl dâhil) hapis cezasını gerektiren suçlar ve bunlara bağlı adli para
+cezalarına ilişkin her türlü bölge adliye mahkemesi kararları”, aynı fıkranın (e) bendinde “Adlî para cezasını
+gerektiren suçlarda ilk derece mahkemelerinden verilen hükümlere ilişkin her türlü bölge adliye mahkemesi
+kararları” ile karar tarihinden sonra 7035 sayılı Kanunla maddeye eklenen (c) bendinde “Hapis cezasından
+çevrilen seçenek yaptırımlara ilişkin ilk derece mahkemesi kararları ile ilgili olarak bölge adliye mahkemesince
+verilen; seçenek yaptırımlara ilişkin her türlü kararlar ve istinaf başvurusunun esastan reddine dair kararlar”ın
+temyizinin mümkün olmadığı hükme bağlanmıştır. Kanun koyucu bu bentlerde “her türlü” kararlardan
+bahsetmekteyken, CMK’nın 286. maddesinin ikinci fıkrasının (b) bendinde, aynı fıkranın (c), (d) ve (e)
+bentlerinde olduğu gibi “her türlü” ibaresine yer vermemiştir. Bölge adliye mahkemesi ceza dairelerinin
+“temyiz edilemeyecek” nitelikteki kararlarını, CMK’nın 286. maddesinin ikinci fıkrasında ayrı ayrı bentler
+halinde ve her ihtimali tek tek sıralayarak düzenleyen kanun koyucunun, kanunun sistematiği de
+gözetildiğinde bu konuyu öngörmediğini, yani “her türlü” ibaresine yer vermeyi unuttuğunu düşünmek
+mümkün değildir. Bu nedenle CMK’nın 286. maddesinin ikinci fıkrasının (c), (d) ve (e) bentlerinin
+aksine, aynı fıkranın (b) bendinde yer alan “…bölge adliye mahkemesi kararları” ibaresinden önce “her
+türlü” ibaresine yer vermeyen kanun koyucunun, ilk derece mahkemesince verilen beş yıl veya daha
+az hapis cezaları içeren hükümler hakkında, bölge adliye mahkemesi ceza dairesince verilebilecek olan
+mahkûmiyet dışında kalan “beraat”, “düşme”, “ret” veya “ceza verilmesine yer olmadığına” ilişkin kararların
+“hapis cezasını artırmayan” kararlardan olduğunu kabul ettiği söylenemeyecektir.</p>
+
+<p>Yine, CMK’nın 286. maddesinin ikinci fıkrasının (g) bendinde “On yıl veya daha az hapis cezasını .
+gerektiren suçlardan, ilk derece mahkemesince verilen beraat kararları ile ilgili olarak istinaf başvurusunun
+esastan reddine dair kararları”nın temyiz edilemeyeceği düzenlenmiştir. Buna göre, ilk derece
+mahkemesinin üst sınırı itibarıyla on yıl veya daha az hapis cezasını gerektiren bir suçtan yaptığı yargılama
+sonucunda beraat kararı vermesi ve bölge adliye mahkemesi ceza dairesinin bu kararı doğru bularak
+“istinaf başvurusunun esastan reddine” karar vermesi durumunda bu karar temyiz edilemeyecektir. Fakat
+ilk derece mahkemesinin, üst sınırı itibarıyla on yıldan fazla hapis cezasını gerektiren, örneğin TCK’nun
+247.maddesinin birinci fıkrasında düzenlenen ve üst sınırı itibarıyla 12 yıl hapis cezası öngören zimmet
+suçuna ilişkin olarak beş yıl veya daha az hapis cezasına hükmettiği, bölge adliye mahkemesi ceza
+dairesinin ise beraat kararı verdiği durumda, beraat kararının temyize tabi olmadığı söylenemeyecektir.
+Zira, kanunda üst sınırı on yıldan fazla hapis cezasını gerektiren bir suçta ilk derece mahkemesince verilen
+beraat hükmü ile ilgili olarak bölge adliye mahkemesi ceza dairesince istinaf başvurusunun esastan
+reddine karar verildiğinde bu karara karşı temyiz kanun yolu açıktır. Diğer bir deyişle, aynı suça ilişkin ilk
+derece mahkemesinin beraat, bölge adliye mahkemesi ceza dairesinin ise istinaf başvurusunun esastan
+reddine karar vermesi halinde dahi temyiz yolu açık iken, ilk derece mahkemesinin beş yıl veya daha az
+hapis cezasına ilişkin “mahkûmiyet”, bölge adliye mahkemesi ceza dairesinin ise “beraat” kararı verdiği
+hallerde, bu kararın temyize tabi olmayacağını söylemek mümkün değildir.</p>
+
+<p>Üç dereceli yargı sistemi içerisinde, kesin olduğu belirtilenler dışında kalan kararlar bakımından
+kanun koyucunun en azından bir denetim yolu öngördüğü de gözetildiğinde, ilk derece mahkemelerince
+verilen «mahkûmiyet» hükmünü değiştiren ve birbirlerinden tamamen ayrı nitelikte olan bölge adliye
+mahkemesi ceza dairelerinin verebileceği «beraat», «ret», «düşme» ve «ceza verilmesine yer olmadığına»
+ilişkin kararlar yönünden bir denetim yolu öngörülmediği düşünülemez. Aksi düşüncenin kabulü,
+kanunlarımızda yer alan ve ceza miktarları itibarıyla ağır nitelikte olan bir çok suça yönelik olarak, bölge
+adliye mahkemesi ceza dairesinin vereceği mahkûmiyet dışında kalan “beraat”,»ret»,“düşme” veya “ceza
+verilmesine yer olmadığına” ilişkin kararlara karşı herhangi bir kanun yolu öngörülmediği anlamına
+gelecektir.</p>
+
+<p>İlk derece mahkemelerinden verilen beş yıl veya daha az hapis cezaları hakkında, bölge adliye
+mahkemesi ceza dairesinin mahkûmiyet dışında kalan “beraat”, «ret»,“düşme” veya “ceza verilmesine
+yer olmadığına” ilişkin vereceği kararların temyize tabi olması kuralının tek istisnasını, «ilk derece
+mahkemelerinin görevine giren ve kanunda üst sınırı iki yıla kadar (iki yıl dâhil) hapis cezasını gerektiren
+suçlar ve bunlara bağlı adli para cezalarına ilişkin her türlü bölge adliye mahkemesi kararları»nın temyiz
+edilemeyeceğini düzenleyen CMK’nın 286. maddesinin ikinci fıkrasının (d) bendi oluşturmaktadır. İlk
+derece mahkemelerinin görevine giren ve kanunda üst sınırı iki yıla kadar (iki yıl dahil) hapis cezasını
+gerektiren bir suç söz konusu ise bu suç ve suça bağlı olarak verilen cezalara ilişkin «her türlü» bölge
+adliye mahkemesi kararları temyiz edilemeyecektir.</p>
+
+<p>Bu bağlamda; CMK’nın 286. maddesinin ikinci fıkrasında “temyiz edilemeyecek” kararları açıkça ve
+ayrı ayrı sayan kanun koyucunun amacının, bu sayılanlar dışında kalan kararların “temyiz” kanun yoluna
+tabi olacaklarını, diğer bir anlatımla sınırlayıcı hükümler kapsamında yer almayan karar ve hükümlerin
+temyize tabi olduklarını düzenlediğini kabul etmek, kanun koyucunun amacına ve kanunun sistematiğine
+uygun olup, ilk derece mahkemelerinden verilen beş yıl veya daha az hapis cezalarına dair kararlara ilişkin
+suçun, CMK’nın 286. maddesinin ikinci fıkrasının (d) bendi kapsamında kalmaması durumunda, kararı
+inceleyen bölge adliye mahkemesi ceza dairesinin verebileceği mahkûmiyet dışında kalan “beraat”, “ret”,
+“düşme” veya “ceza verilmesine yer olmadığına” ilişkin kararlar, CMK’nın 286. maddesinin ikinci fıkrasının
+(b) bendi kapsamında değerlendirilemeyecek ve bu kararlara karşı temyiz kanun yolu açık olacaktır.</p>
+
+<p>Bu açıklamalar ışığında uyuşmazlık konusu değerlendirildiğinde;</p>
+
+<p>Özel belgede sahtecilik suçundan açılan kamu davasında yapılan yargılama sonucunda, ilk derece
+mahkemesince 1 yıl 3 ay hapis cezası ile cezalandırılmalarına karar verilen sanıkların, istinaf kanun yolu
+incelemesi sonucunda beraatlarına karar verilmesi karşısında; söz konusu beraat kararının CMK’nın 286.
+maddesinin ikinci fıkrasının (b) ve diğer bentlerinde sınırlı şekilde sayılan “temyiz edilemez” nitelikteki
+kararlardan olmaması, sanıklara atılı suçun CMK’nın 286. maddesinin ikinci fıkrasının (d) bendi kapsamında
+kalmaması, uluslararası sözleşmeler ve Anayasa ile güvence altına alınan hak arama özgürlüğünün bir
+uzantısı olarak hüküm ve kararlara karşı başvurulabilecek bir kanun yolunun açık olmasının kural, kapalı
+olmasının ise istisna olması hususları birlikte değerlendirildiğinde, sanıklar hakkında özel belgede
+sahtecilik suçundan ilk derece mahkemesince verilen mahkûmiyet kararına karşı istinaf kanun yoluna
+başvurulması üzerine, davayı beraatla sonuçlandıran bölge adliye mahkemesi ceza dairesi kararına karşı
+temyiz kanun yolunun açık olduğunun kabulünde zorunluluk bulunmaktadır.</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. CEZA DAİRESİ
+Esas : 2018/1959 Karar : 2018/6157</strong> Tarih : 14.05.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 286. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Temyiz</strong></p>
+  </li>
+</ul>
+
+<p>Dosya incelenerek gereği düşünüldü;</p>
+
+<p>1- Sanık … hakkında katılan …’a yönelik konut dokunulmazlığının ihlali ve mala zarar verme suçlarından ve katılan …’a yönelik yönelik konut dokunulmazlığının ihlali suçundan temyiz isteminin reddine dair verilen ek karara ilişkin temyiz isteminin incelenmesinde;</p>
+
+<p>Katılan …‘ye yönelik konut dokunulmazlığının ihlali ve mala zarar verme suçlarından hükmolunan cezaların miktar ve türü ile katılan …‘a yönelik konut dokunulmazlığının ihlali suçundan verilen bozma hükmü gözetildiğinde, 5271 sayılı CMK’nın 286/1 maddesine göre bölge adliye mahkemesi ceza dairelerinin bozma ilamlarının ve aynı Kanun’un 286/2-a maddesi uyarınca, ilk derece mahkemelerinden verilen beş yıl veya daha az hapis cezaları ile miktarı ne olursa olsun adli para cezalarına karşı istinaf başvurusunun esastan reddine dair bölge adliye mahkemesi kararlarının temyizinin mümkün olmaması karşısında; temyiz isteminin reddine dair, 25.12.2017 tarih ve 2017/1897-2106 Karar sayılı ek kararda bir isabetsizlik görülmediğinden, bu karara yönelik temyiz itirazlarının reddiyle, temyiz isteminin reddine dair ek kararın ONANMASINA,</p>
+
+<p>2- Sanık … hakkında katılanlara yönelik hırsızlık suçundan kurulan hükümlere ilişkin temyiz isteminin incelenmesinde;</p>
+
+<p>5271 sayılı CMK’nın 288. maddesinin ‘‘Temyiz, ancak hükmün hukuka aykırı olması nedenine dayanır. Bir hukuk kuralının uygulanmaması veya yanlış uygulanması hukuka aykırılıktır.’’ ve aynı Kanun’un 294. maddesinin ise; ‘‘Temyiz eden, hükmün neden dolayı bozulmasını istediğini temyiz başvurusunda göstermek zorundadır. Temyiz sebebi ancak hükmün hukuki yönüne ilişkin olabilir.’’ şeklinde düzenlendiği de gözetilerek sanığın 19/12/2017 tarihli temyiz dilekçesinde sebep göstermediğinin anlaşılması karşısında, sanığın temyiz isteminin 5271 sayılı CMK’nın 298. maddesi uyarınca REDDİNE,</p>
+
+<p>3- Sanık … hakkında katılanlara yönelik hırsızlık suçundan kurulan hükümlere ilişkin temyiz isteminin incelenmesinde;</p>
+
+<p>5271 sayılı CMK’nın 288. maddesinin ‘‘Temyiz, ancak hükmün hukuka aykırı olması nedenine dayanır. Bir hukuk kuralının uygulanmaması veya yanlış uygulanması hukuka aykırılıktır.’’ ve aynı Kanunun 294. maddesinin ise; ‘‘Temyiz eden, hükmün neden dolayı bozulmasını istediğini temyiz başvurusunda göstermek zorundadır. Temyiz sebebi ancak hükmün hukuki yönüne ilişkin olabilir.’’ şeklinde düzenlendiği de gözetilerek sanığın temyiz isteminin katılan …’e yönelik atılı suçu işlemediğine ve katılan …’ye yönelik suç bakımından ise samimi itirafta bulunup etkin pişmanlıktan faydalanmak istemesine karşın mahkemenin bunu dikkate almadığına yönelik olduğu belirlenerek anılan sebeplere yönelik yapılan incelemede;</p>
+
+<p>Sanık hakkında katılanlara yönelik eylemleri sebebiyle hırsızlık suçundan kurulan hükümlerde herhangi bir isabetsizlik bulunmadığı anlaşılmakla sanığın mahkumiyetine dair karar hukuka uygun bulunduğundan, sanığın yerinde görülmeyen temyiz itirazlarının reddiyle, 5271 sayılı CMK’nın 302/1. maddesi uyarınca, usul ve yasaya uygun olan Samsun Bölge Adliye Mahkemesi 4. Ceza Dairesinin kararına yönelik TEMYİZ İSTEMİNİN ESASTAN REDDİ ile HÜKÜMLERİN ONANMASINA, 14/05/2018 gününde oybirliğiyle karar verildi</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. CEZA DAİRESİ
+Esas : 2018/2274 Karar : 2018/5522</strong> Tarih : 3.05.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 286. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Temyiz</strong></p>
+  </li>
+</ul>
+
+<p>Dosya incelenerek gereği düşünüldü;</p>
+
+<p>1-Sanık hakkında müştekiler … ve …‘e yönelik hırsızlık suçundan kurulan hükümler ile ilgili temyiz isteminin incelenmesinde;</p>
+
+<p>Hükmolunan cezanın miktar ve türü gözetildiğinde, 5271 sayılı CMK’nın 286/2-a maddesi uyarınca, ilk derece mahkemelerinden verilen beş yıl veya daha az hapis cezaları ile miktarı ne olursa olsun adli para cezalarına ilişkin istinaf başvurusunun esastan reddine dair bölge adliye mahkemesi kararlarının temyizi mümkün olmadığından, sanık müdafiinin temyiz isteminin 5271 sayılı CMK’nın 298. maddesi uyarınca istem gibi REDDİNE,</p>
+
+<p>2-Sanık hakkında müşteki …‘a yönelik hırsızlık suçundan kurulan hüküm ile ilgili temyiz isteminin incelenmesinde;</p>
+
+<p>5271 sayılı CMK’nın 288. maddesinin ‘‘Temyiz, ancak hükmün hukuka aykırı olması nedenine dayanır. Bir hukuk kuralının uygulanmaması veya yanlış uygulanması hukuka aykırılıktır.’’ ve aynı Kanunun 294. maddesinin ise; ‘‘Temyiz eden, hükmün neden dolayı bozulmasını istediğini temyiz başvurusunda göstermek zorundadır. Temyiz sebebi ancak hükmün hukuki yönüne ilişkin olabilir.’’ şeklinde düzenlendiği de gözetilerek sanık müdafiinin temyiz isteminin somut olayda, sanığın hırsızlık kastıyla hareket etmediğine, teşebbüs koşullarının oluştuğuna, 5237 sayılı TCK’nın 25/2. maddesinde düzenlenen zorunluluk halinin şartlarının oluştuğuna, sanığın cezasından değer azlığı nedeniyle ve TCK’nın 145. maddesi uyarınca indirim yapılması gerektiğine, TCK’nın 43. maddesi uyarınca zincirleme suç hükümlerinin oluştuğuna, sanık hakkında fazla ve ölçüsüz ceza verildiğine, suçun sübut bulmadığına ve yabancı uyruklu olan sanığın nüfus ve adli sicil kaydı getirtilmeden hüküm kurulduğuna yönelik olduğu belirlenerek anılan sebeplere yönelik yapılan incelemede;</p>
+
+<p>Sanığın müştekinin çalıştığı … mağazasından gece vakti sayılan saat 21.26 sıralarında 392,80 TL değerindeki kıyafetleri çalması ve bu mağazadan önce Flo mağazasından gerçekleşen hırsızlık olayı nedeniyle ve eşkal tarifi üzerine elindeki çantada suça konu kıyafetler ile birlikte kolluk tarafından yakalanması şeklinde gerçekleşen olayda, sanık hakkında TCK’nın 25/2. maddesinde düzenlenen zorunluluk halinin, müştekinin çalıştığı mağazadan gerçekleşen hırsızlık olayından sonra sanığın kesintisiz takip olmaksızın kolluk görevlileri tarafından suça konu eşyalarla birlikte yakalanması karşısında TCK’nın 35. maddesinde düzenlenen teşebbüs koşullarının, suça konu eşyaların değerleri itibariyle TCK’nın 145. maddesi gereğince indirim yapılması koşullarının, 3 ayrı mağazadan gerekleşen hırsızlık nedeniyle zincirleme suç hükümlerinin uygulanma koşullarının oluşmadığı, suçun sanık tarafından gece vakti işlendiğinin sabit olduğu ve mahkemece alt hadden uzaklaşılmayarak hüküm kurulduğu anlaşılmıştır. Ancak;</p>
+
+<p>Yabancı uyruklu sanığa ait nüfus kaydı ya da pasaportunun onaylı bir suretinin ve adli sicil kaydının İnterpol Daire Başkanlığı aracılığı ile getirtilip bu kimlik bilgileri ve adli sicil kaydına göre hüküm kurulması gerekirken eksik araştırma ile yazılı şekilde hüküm kurulması,</p>
+
+<p>Bozmayı gerektirmiş, sanık müdafiinin temyiz nedeni bu itibarla yerinde görülmüş olduğundan hükmün açıklanan nedenle isteme aykırı olarak BOZULMASINA, 03/05/2018 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. CEZA DAİRESİ
+Esas : 2017/5765 Karar : 2018/3179</strong> Tarih : 22.03.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 286. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Temyiz</strong></p>
+  </li>
+</ul>
+
+<p>Dosya incelenerek gereği düşünüldü;</p>
+
+<p>Bölge Adliye Mahkemesince sanık hakkında verilen beraat kararının duruşma açılarak verildiği, bahse konu kararın 5271 sayılı CMK’nın 286/2. maddesinde sayılan istisnalar arasında yer almadığı ve aynı Kanun’un 286/1. maddesi uyarınca temyiz yasa yoluna tabi olduğu, Bölge Adliye Mahkemesi’nin 29/09/2017 tarihli temyiz isteminin reddine ilişkin ek kararı kaldırılarak yapılan incelemede;</p>
+
+<p>5271 sayılı CMK’nın 288. maddesinin ‘‘Temyiz, ancak hükmün hukuka aykırı olması nedenine dayanır. Bir hukuk kuralının uygulanmaması veya yanlış uygulanması hukuka aykırılıktır.’’ ve aynı Kanunun 294. maddesinin ise; ‘‘Temyiz eden, hükmün neden dolayı bozulmasını istediğini temyiz başvurusunda göstermek zorundadır. Temyiz sebebi ancak hükmün hukuki yönüne ilişkin olabilir.’’ şeklinde düzenlendiği de gözetilerek Bölge Adliye Mahkemesi Cumhuriyet savcısının temyiz isteminin somut olayda, dosya kapsamındaki deliller itibariyle suçun sübut bulduğuna yönelik olduğu belirlenerek anılan sebeplere yönelik yapılan incelemede;</p>
+
+<p>Tüm dosya içeriğine göre; sanığın müştekiye ait aracın camını kırarak oto teybini çaldığının iddia edildiği olayda, suçların sanık tarafından işlendiğinin sabit olmadığı anlaşılmakla; beraat kararı hukuka uygun bulunduğundan, Bölge Adliye Mahkemesi Cumhuriyet savcısının yerinde görülmeyen temyiz itirazlarının reddiyle, 5271 sayılı CMK’nın 302/1. maddesi uyarınca, usul ve yasaya uygun olan bölge adliye mahkemesi kararına yönelik TEMYİZ İSTEMİNİN ESASTAN REDDİ ile HÜKMÜN ONANMASINA, 22/03/2018 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. CEZA DAİRESİ
+Esas : 2017/4879 Karar : 2018/2984</strong> Tarih : 20.03.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 286. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Temyiz</strong></p>
+  </li>
+</ul>
+
+<p>Dosya incelenerek gereği düşünüldü;</p>
+
+<p>I-Suça sürüklenen çocuk hakkında iş yeri dokunulmazlığını bozma suçundan kurulan hükme yönelik temyiz isteminin incelenmesinde;</p>
+
+<p>Hükmolunan cezanın miktar ve türü gözetildiğinde, 5271 sayılı CMK’nın 286/2-d maddesi uyarınca, ilk derece mahkemelerinin görevine giren ve kanunda üst sınırı iki yıla kadar (iki yıl dahil) hapis cezasının gerektiren suçlar ve bunlara bağlı adli para cezalarına ilişkin her türlü Bölge Adliye Mahkemesi kararlarının temyizi mümkün olmaması karşısında; bu karara yönelik suça sürüklenen çocuk müdafiinin temyiz isteminin REDDİNE,</p>
+
+<p>II-Suça sürüklenen çocuk hakkında hırsızlık ve mala zarar verme suçlarından kurulan hükümlere yönelik temyiz itirazlarına gelince;</p>
+
+<p>5271 sayılı CMK’nın 288. maddesinin ‘‘Temyiz, ancak hükmün hukuka aykırı olması nedenine dayanır. Bir hukuk kuralının uygulanmaması veya yanlış uygulanması hukuka aykırılıktır.’’ ve aynı Kanun’un 294. maddesinin ise; ‘‘Temyiz eden, hükmün neden dolayı bozulmasını istediğini temyiz başvurusunda göstermek zorundadır. Temyiz sebebi ancak hükmün hukuki yönüne ilişkin olabilir.’’ şeklinde düzenlendiği de gözetilerek suça sürüklenen çocuk müdafiinin temyiz isteminin, şüpheden sanık yararlanır ilkesinin ihlal edildiği, delil olmadığı halde mahkumiyet kararı verilmesine yönelik olduğu belirlenerek yapılan incelemede;</p>
+
+<p>UYAP’tan alınan 05/03/2018 tarihli nüfus kayıt örneğine göre, suça sürüklenen çocuğun hükümden sonra 07/05/2017 tarihinde öldüğünün anlaşılması karşısında, 5237 sayılı TCK’nın 64/1. ve 5271 sayılı CMK’nın 223/8. maddeleri uyarınca suça sürüklenen çocuk hakkında açılan kamu davalarının düşürülmesine karar verilmesinde zorunluluk bulunması,</p>
+
+<p>Bozmayı gerektirmiş, suça sürüklenen çocuk müdafiinin temyiz itirazları bu itibarla yerinde görülmüş olduğundan diğer yönleri incelenmeyen hükümlerin 1412 sayılı CMUK’nın 321. maddesi uyarınca bu sebepten dolayı istem gibi BOZULMASINA, 20/03/2018 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY CEZA GENEL KURULU 
+Esas : 2018/38 Karar : 2018/113</strong> Tarih : 20.03.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 286. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Temyiz</strong></p>
+  </li>
+</ul>
+
+<p>Özel belgede sahtecilik suçundan sanıklar … ve …‘nin TCK`nun 207/1, 43/1 ve 51. maddeleri uyarınca 1 yıl 3 ay hapis cezası ile cezalandırılmalarına ve ertelemeye ilişkin Ankara 34. Asliye Ceza Mahkemesince verilen 27.09.2016 gün ve 942-777 sayılı hükümlere yönelik sanıklar müdafii ve katılan vekili tarafından istinaf başvurusunda bulunulması üzerine Ankara Bölge Adliye Mahkemesi 11. Ceza Dairesince 21.02.2017 gün ve 14-253 sayı ile;</p>
+
+<p>“…Yapılan yargılama, mağdur …‘nın çelişkili beyanları, sanıkların savunmaları, imza ve yazı incelemelerine dair bilirkişi raporları ile tüm dosya kapsamı dikkate alındığında; sanıkların üzerlerine atılı özel belgede sahtecilik suçunu işlediklerine ilişkin mahkumiyetlerine yeterli kanıt bulunmadığı gibi, Dairemizce yapılan duruşmada incelenen suça konu 17.02.2011 tarihli abonelik sözleşmesinde, abone adı … olarak belirtildiği halde, sözleşmenin son kısmında abone adının Hakan Pekol` olarak gösterilip imzalanmış olması hususu dikkate alındığında, sözleşmeleri kabul ile görevli olanlar tarafından yapılacak basit bir incelemede sahteciliğin ilk bakışta anlaşılacağı, bu durumda söz konusu suçta aranan kandırıcılık öğesinin de mevcut olmaması nedeniyle suçun yasal unsurları itibariyle oluşmadığı anlaşıldığından, ilk derece mahkemesinin 27.09.2016 gün 2015/942 esas, 2016/777 karar sayılı hükmünün kaldırılarak, sanıkların CMK’nın 223/2-a,e maddeleri uyarınca ayrı ayrı beraatlerine” karar verilmiştir.</p>
+
+<p>Bu hükümlerin de katılan vekili tarafından temyiz edilmesi üzerine dosyayı inceleyen Yargıtay 11. Ceza Dairesince 20.11.2017 gün ve 14828-7937 sayı ile;</p>
+
+<p>“5271 sayılı CMK’nun 286/2-b maddesi uyarınca, ilk derece mahkemelerinden verilen beş yıl veya daha az hapis cezalarını artırmayan bölge adliye mahkemesi kararlarının temyizi mümkün olmadığından, katılan vekilinin temyiz isteminin 5271 sayılı CMK`nun 298. maddesi uyarınca reddine” oy çokluğuyla karar verilmiş,</p>
+
+<p>Daire Üyeleri A. İhsan Öztekin ve B. Savtok;</p>
+
+<p>“5271 sayılı CMK’nın 286/1. fıkrasında bölge adliye mahkemesi ceza dairelerinin bozma dışında kalan hükümlerinin kural olarak temyizinin mümkün olduğu belirtildikten sonra, aynı maddenin 2. fıkrasında bunun istisnaları 10 bend halinde tahdidi olarak sıralanmıştır. Bu bentlerde temyizi mümkün olmayan bölge adliye mahkemesi kararlarının neler olduğu konusunda gerek doktrinde gerekse uygulamada bir görüş ayrılığı bulunmamakla birlikte, özellikle bölge adliye mahkemelerinin CMK’nun 280/1-e maddesi uyarınca davanın yeniden görülmesine karar vererek duruşma açmak suretiyle beraat kararı vermesi durumunda bu kararın temyizinin olanaklı olup olmadığı konusunda görüş birliği bulunmamakta ise de; aşağıda izah ettiğimiz nedenlerle CMK’nun 286/2-b maddesi gereğince verilen beraat kararlarının temyizinin mümkün olduğu düşüncesiyle sayın çoğunluğun görüşüne iştirak olunmamıştır.</p>
+
+<p>Şöyle ki; bu konuyu düzenleyen CMK’nun 286/2-b maddesi: İlk derece mahkemelerinden verilen beş yıl veya daha az hapis cezalarını artırmayan bölge adliye mahkemesi kararlarının temyiz edilemeyeceği şeklindedir. Madde içeriğinden de anlaşılacağı üzere, 5 yıl veya daha az hapis cezası içeren (CMK’nın 286/2-d maddesindeki istisnai hal hariç) bir ilk derece mahkemesinin kararının istinaf incelemesini yapan bölge adliye mahkemesi ceza dairesi duruşma açarak mahkemenin kararındaki cezadan daha hafif bir cezaya hükmedebilecek ve bu karar temyiz edilemeyecektir. Bu sonuç, madde metninden çok açık anlaşılabilmekle birlikte, istinaf incelemesini yapan ceza dairesinin beraat yönünde bir karar tesis etmesi halinde, bu kararın kesin mi yoksa temyizi kabil mi olduğu konusunda madde metninde bir açıklık bulunmamaktadır. CMK’nun 286. maddesinde her ihtimali tek tek sıralayan kanun koyucunun böyle bir konuyu öngörmemiş olmasını düşünmek kanaatimizce mümkün değildir. Bizi bu düşünceye iten neden ise, kanunun sistematiği kadar aynı zamanda CMK’nun 286/2-d maddesindeki düzenlemedir. Kanun koyucu burada ilk derece mahkemelerinin görevine giren ve kanunda üst sınırı iki yıla kadar (iki yıl dâhil) hapis cezasını gerektiren suçlar ve bunlara bağlı adli para cezalarına ilişkin her türlü bölge adliye mahkemesi kararlarının temyizinin mümkün olmadığını ifade etmiştir. Dikkat edilecek olursa burada her türlü karardan bahsedilmektedir. Bu halde, ilk derece mahkemesinin yerine geçen bölge adliye mahkemesi ceza dairesi, 5271 sayılı CMK’nın 223/1. maddesindeki beraat kararı da dahil tüm kararları verebilecek ve bu kararlar temyiz edilemeyecektir. Oysa CMK’nun 286/2-b fıkrasında ise kanun koyucu her türlü karardan değil sadece hapis cezalarını artırmayan bölge adliye mahkemesi kararları’ndan bahsetmiştir. Eğer kanun koyucu CMK’nun 286/2-b fıkrasındaki her türlü kararın temyizinin önünü kapatacak olsa, anılan maddenin 2-d bendinde olduğu gibi her türlü karar ibaresine yer vermek suretiyle maddeyi düzenlerdi. Oysa burada bilinçli olarak sadece cezayı artırmayan kararlara` gönderme yapmıştır. Kanaatimizce, 5271 sayılı CMK’nun 286/2-b maddesinin mevcut düzenleniş şekliyle, bölge adliye mahkemeleri ceza dairelerinin ilk derece mahkemelerinden verilen mahkumiyet kararlarını bütün sonuçlarıyla ortadan kaldıracak şekilde verdikleri beraat kararlarının (CMK’nın 286/2-d fıkrasındaki istisnai düzenleme hariç) temyizinin mümkün olduğu” düşüncesiyle karşı oy kullanmışlardır.</p>
+
+<p>Yargıtay Cumhuriyet Başsavcılığı ise 08.12.2017 gün ve 30591 sayı ile;</p>
+
+<p>“İlk derece mahkemesince verilen mahkumiyet hükmünün istinaf edilmesi üzerine bölge adliye mahkemelerinin duruşma açarak beraat kararı vermesi durumunda bu kararların temyizinin olanaklı olup olmadığı hususu itirazımızın özünü oluşturmaktadır.</p>
+
+<p>İncelenen dosya içeriğine göre;</p>
+
+<p>Sanıklar … ve … hakkında itirazımıza konu özel belgede sahtecilik suçundan Ankara 34. Asliye Ceza Mahkemesinin 27.09.2016 gün ve 942-777 karar sayılı ilamı ile eylemlerine uyan TCK’nun 207/1, 43/1, 51 maddeleri uyarınca erteli 1 yıl 3 ay hapis cezası ile cezalandırılmalarına karar verildiği, hükümlerin süresi içerisinde sanıklar müdafii ve katılan vekili tarafından istinaf edildiği, Ankara Bölge Adliye Mahkemesi 11. Ceza Dairesinin 21.02.2017 gün ve 14-253 sayı ile yapılan duruşma sonucunda; sanıkların özel belgede sahtecilik suçundan beraatlerine karar verildiği, bu hükmün katılan vekili tarafından temyiz edilmesi üzerine, Yüksek Yargıtay 11. Ceza Dairesince 20.11.2017 gün ve 14828-7937 sayı ile ..5271 sayılı CMK’nun 286/2-b maddesi uyarınca, ilk derece mahkemelerinden verilen beş yıl veya daha az hapis cezalarını artırmayan bölge adliye mahkemesi kararlarının temyizi mümkün olmadığından, katılan vekilinin temyiz isteminin 5271 sayılı CMK.nın 298. maddesi uyarınca reddine` karar verildiği anlaşılmıştır.</p>
+
+<p>Temyiz yasa yolu CMK`nun 286 ve devamı maddelerinde düzenlenmiştir.</p>
+
+<p>CMK`nun 286. maddesine göre kural, bölge adliye mahkemesi ceza dairelerinin bozma dışında kalan hükümlerinin temyize tabi olmasıdır.</p>
+
+<p>Temyiz edilemeyecek hükümler ise CMK`nun 286/2. fıkrasında tek tek sayılmıştır.</p>
+
+<p>Buna göre;</p>
+
+<p>a) İlk derece mahkemelerinden verilen beş yıl veya daha az hapis cezaları ile miktarı ne olursa olsun adlî para cezalarına karşı istinaf başvurusunun esastan reddine dair bölge adliye mahkemesi kararları,</p>
+
+<p>b) İlk derece mahkemelerinden verilen beş yıl veya daha az hapis cezalarını artırmayan bölge adliye mahkemesi kararları,</p>
+
+<p>c) (Ek: 20/7/2017-7035/20 md.) Hapis cezasından çevrilen seçenek yaptırımlara ilişkin ilk derece mahkemesi kararları ile ilgili olarak bölge adliye mahkemesince verilen; seçenek yaptırımlara ilişkin her türlü kararlar ve istinaf başvurusunun esastan reddine dair kararlar,</p>
+
+<p>d) (Değişik: 18/6/2014-6545/78 md.) İlk derece mahkemelerinin görevine giren ve kanunda üst sınırı iki yıla kadar (iki yıl dâhil) hapis cezasını gerektiren suçlar ve bunlara bağlı adli para cezalarına ilişkin her türlü bölge adliye mahkemesi kararları,</p>
+
+<p>e) Adlî para cezasını gerektiren suçlarda ilk derece mahkemelerinden verilen hükümlere ilişkin her türlü bölge adliye mahkemesi kararları,</p>
+
+<p>f) (Değişik: 18/6/2014-6545/78 md.) Sadece eşya veya kazanç müsaderesine veya bunlara yer olmadığına ilişkin ilk derece mahkemesi kararları ile ilgili olarak istinaf başvurusunun esastan reddine dair kararları,</p>
+
+<p>g) On yıl veya daha az hapis cezasını veya adlî para cezasını gerektiren suçlardan, ilk derece mahkemesince verilen beraat kararları ile ilgili olarak istinaf başvurusunun esastan reddine dair kararları,</p>
+
+<p>h) (Değişik: 18/6/2014-6545/78 md.) Davanın düşmesine, ceza verilmesine yer olmadığına, güvenlik tedbirine ilişkin ilk derece mahkemesi kararları ile ilgili olarak bölge adliye mahkemesince verilen bu tür kararlar veya istinaf başvurusunun esastan reddine dair kararlar,</p>
+
+<p>ı) Yukarıdaki bentlerde yer alan sınırlar içinde kalmak koşuluyla aynı hükümde, cezalardan ve kararlardan birden fazlasını içeren bölge adliye mahkemesi kararları,</p>
+
+<p>Temyiz edilemez.</p>
+
+<p>20/7/2017 tarihli ve 7035 sayılı Kanunun 20 nci maddesiyle, bu maddenin ikinci fıkrasına (b) bendinden sonra gelmek üzere (c) bendi eklenmiş ve diğer bentler buna göre teselsül ettirilmiştir.</p>
+
+<p>18/6/2014 tarihli ve 6545 sayılı Kanunun 78 inci maddesiyle bu maddenin ikinci fıkrasının (d) bendinde yer alan suç niteliğini değiştirmeyen ibaresi her türlü şeklinde değiştirilmiş; (f) bendinde yer alan bölge adliye mahkemesince verilen beraat kararları ile` ibaresi madde metninden çıkarılmıştır.</p>
+
+<p>Konumuz açısından; CMK’nun 286/2-b maddesi incelendiğinde, 5 yıl veya daha az hapis cezasını içeren ilk derece mahkemesi kararının istinaf edilmesi üzerine bölge adliye mahkemesi tarafından duruşma açılarak daha hafif bir cezaya indirilmesi durumunda bu hükmün temyiz edilemeyeceği açıktır. Somut olayımızda bölge adliye mahkemesi 1 yıl 3 aylık cezayı 1 yıla indirseydi bunun temyiz edilemeyeceği CMK’nun 286/2-b maddesi uyarınca gayet açıktı. Ancak somut olayımızda olduğu gibi bölge adliye mahkemesi tarafından duruşma sonunda beraat kararı verilmesi durumunda, artık bu hükmün temyiz edilebileceğini düşünmekteyiz. Zira yasa koyucu temyiz edilemeyecek hükümleri CMK’nun 286/2. maddede tek tek saymıştır. Sayılanlar arasında ilk derece mahkemeleri tarafından verilen mahkumiyet hükümlerinin duruşma açılarak beraatle sonuçlandırılmasına yer verilmemiştir. Öte yandan CMK’nun 286/2-c maddesinde; hapis cezasından çevrilen seçenek yaptırımlara ilişkin ilk derece mahkemesi kararları ile ilgili olarak bölge adliye mahkemesince verilen seçenek yaptırımlara ilişkin her türlü kararlar ve istinaf başvurusunun esastan reddine dair kararlar, CMK’nun 286/2-d maddesinde; ilk derece mahkemesinin görevine giren kanunda üst sınırı iki yıla kadar hapis cezasını gerektiren suçlar ve bunlara bağlı adli para cezasına ilişkin her türlü bölge adliye mahkemesi kararlarının, CMK’nun 286/2-e maddesinde; adlî para cezasını gerektiren suçlarda ilk derece mahkemelerinden verilen hükümlere ilişkin her türlü bölge adliye mahkemesi kararlarının, temyizinin mümkün olmadığını hükme bağlamıştır. Bu fıkralarda yasa koyucu her türlü karardan bahsetmektedir. Buradan hareketle bölge adliye mahkemesi duruşma açtıktan sonra CMK’nun 223/1. maddesinde sayılı beraat kararı dahil tüm kararları verebilecek ve bu kararlar temyiz edilemeyecektir. Yasa koyucu CMK’nun 286/2-b maddesinde her türlü ibaresine yer vermediği için bölge adliye mahkemesi tarafından beraat kararı verilmesi durumunda buna karşı temyiz yasa yolunun açık olduğunu düşünmekteyiz. Yine beraat kararlarıyla ilgili olarak CMK’nun 286/2-g maddesinde; on yıl veya daha az hapis cezasını veya adlî para cezasını gerektiren suçlardan, ilk derece mahkemesince verilen beraat kararları ile ilgili olarak istinaf başvurusunun esastan reddine dair kararlarının temyiz edilemeyeceği hükme bağlanmıştır. Değişiklikten önce ilk derece mahkemesince verilen beraat kararları ile ilgili olarak bölge adliye mahkemesince verilen beraat kararları temyiz edilemeyecek iken 18.06.2014 tarihli ve 6545 sayılı Kanunun 78 inci maddesiyle bu maddenin ikinci fıkrasının (f) bendinde yer alan bölge adliye mahkemesince verilen beraat kararları ile` ibaresi madde metninden çıkarılmıştır. Böylece bölge adliye mahkemesi tarafından duruşma açılarak verilen beraat kararlarına karşı temyiz yasa yolu açılmıştır.</p>
+
+<p>Tüm bu hususlar birlikte değerlendirildiğinde; sanıklar hakkında özel belgede sahtecilik suçundan ilk derece mahkemesince verilen mahkumiyet kararının istinaf edilmesi üzerine duruşma açarak beraatle sonuçlandıran bölge adliye mahkemesi kararına karşı temyiz yasa yolunun açık olduğu” görüşüyle itiraz kanun yoluna başvurmuştur.</p>
+
+<p>CMK`nun 308. maddesi uyarınca inceleme yapan Yargıtay 11. Ceza Dairesince 18.12.2017 gün, 16906-8992 sayı ve oy çokluğuyla itiraz nedeninin yerinde görülmediğinden bahisle Yargıtay Birinci Başkanlığına gönderilen dosya, Ceza Genel Kurulunca değerlendirilmiş ve açıklanan gerekçelerle karara bağlanmıştır.</p>
+
+<p>TÜRK MİLLETİ ADINA</p>
+
+<p>CEZA GENEL KURULU KARARI</p>
+
+<p>Sanıklar … ve … hakkında kamu kurum ve kuruluşlarının zararına dolandırıcılık suçundan kurulan beraat hükümleri Yargıtay 11. Ceza Dairesince temyiz isteminin reddine karar verilmek suretiyle kesinleşmiş olup itirazın kapsamına göre inceleme, sanıklar hakkında özel belgede sahtecilik suçundan kurulan beraat hükümleri ile sınırlı olarak yapılmıştır.</p>
+
+<p>Özel Daire çoğunluğu ile Yargıtay Cumhuriyet Başsavcılığı arasında oluşan ve Ceza Genel Kurulunca çözümlenmesi gereken uyuşmazlık; ilk derece mahkemesince verilen mahkûmiyet hükmüne karşı istinaf kanun yoluna başvurulması üzerine, bölge adliye mahkemesi ceza dairesinin beraat hükmü vermesi durumunda, bu hükmün temyizinin mümkün olup olmadığının belirlenmesine ilişkindir.</p>
+
+<p>07.10.2004 tarihli Resmi Gazetede yayımlanarak yürürlüğe giren 5235 sayılı Adlî Yargı İlk Derece Mahkemeleri ile Bölge Adliye Mahkemelerinin Kuruluş, Görev ve Yetkileri Hakkında Kanunun 25 ve geçici 2. maddeleri uyarınca kurulan bölge adliye mahkemeleri, 07.11.2015 tarih ve 29525 sayılı Resmi Gazetede ilan edildiği üzere 20.07.2016 tarihinde tüm yurtta göreve başlamıştır. Bölge adliye mahkemelerinin faaliyete geçmesiyle birlikte istinaf kanun yolu uygulamaya girmiş, böylece ülkemizde fiilen üç dereceli bir yargı sistemine geçilmiştir.</p>
+
+<p>Uyuşmazlığın isabetli bir hukuki çözüme kavuşturulabilmesi için, bölge adliye mahkemeleri ceza dairelerinin dosyayı ve dosyayla birlikte sunulmuş olan delilleri inceledikten sonra verebileceği kararları düzenleyen CMK`nun 280 ile bu kararlara karşı temyiz kanun yolunu düzenleyen aynı Kanunun 286. maddelerinin birlikte değerlendirilerek, kanun koyucunun bu düzenlemelerle neyi amaçladığının ve ceza yargılamasında kıyas ve yorumun hangi hallerde mümkün olduğunun irdelenmesi gerekmektedir.</p>
+
+<p>5271 sayılı CMK`nun, Ankara Bölge Adliye Mahkemesi 11. Ceza Dairesinin inceleme tarihinde yürürlükte olan “Bölge adliye mahkemesinde inceleme ve kovuşturma” başlıklı 280. maddesi;</p>
+
+<p>“(1) Bölge adliye mahkemesi, dosyayı ve dosyayla birlikte sunulmuş olan delilleri inceledikten sonra;</p>
+
+<p>a) İlk derece mahkemesinin kararında usule veya esasa ilişkin herhangi bir hukuka aykırılığın bulunmadığını, delillerde veya işlemlerde herhangi bir eksiklik olmadığını, ispat bakımından değerlendirmenin yerinde olduğunu saptadığında istinaf başvurusunun esastan reddine, 303 üncü maddenin birinci fıkrasının (c), (e), (f), (g) ve (h) bentlerinde yer alan ihlallerin varlığı hâlinde hukuka aykırılığın düzeltilerek istinaf başvurusunun esastan reddine,</p>
+
+<p>b) İlk derece mahkemesinin kararında 289 uncu maddede belirtilen bir hukuka aykırılık nedeninin bulunması hâlinde hükmün bozulmasına ve dosyanın yeniden incelenmek ve hükmolunmak üzere hükmü bozulan ilk derece mahkemesine veya kendi yargı çevresinde uygun göreceği diğer bir ilk derece mahkemesine gönderilmesine,</p>
+
+<p>c) Diğer hâllerde, gerekli tedbirleri aldıktan sonra davanın yeniden görülmesine ve duruşma hazırlığı işlemlerine başlanmasına,</p>
+
+<p>Karar verir.</p>
+
+<p>(2) (Ek: 18/6/2014-6545/77 md.) Duruşma sonunda bölge adliye mahkemesi istinaf başvurusunu esastan reddeder veya ilk derece mahkemesi hükmünü kaldırarak yeniden hüküm kurar” şeklinde iken; 05.08.2017 tarihinde yürürlüğe giren 7035 sayılı Kanunun 15. maddesiyle, birinci fıkranın (a) bendinde yer alan “(c)” ibaresi “(a), (c), (d)” şeklinde değiştirilmiş, fıkraya (a) bendinden sonra gelmek üzere aşağıdaki bentler eklenmiş, mevcut (b) ve (c) bentleri (d) ve (e) bentleri olarak teselsül ettirilmiş ve maddeye aşağıdaki fıkra eklenmiştir.</p>
+
+<p>“b) Cumhuriyet savcısının istinaf yoluna başvurma nedenine uygun olarak mahkumiyete konu suç için kanunda yazılı cezanın en alt derecesinin uygulanmasını uygun görmesi hâlinde, hukuka aykırılığın düzeltilerek istinaf başvurusunun esastan reddine,</p>
+
+<p>c) Olayın daha fazla araştırılmasına ihtiyaç duyulmadan davanın reddine karar verilmesi veya güvenlik tedbirlerine ilişkin hatalı kararın düzeltilmesi gereken hâllerde hukuka aykırılığın düzeltilerek istinaf başvurusunun esastan reddine,”</p>
+
+<p>“(3) Birinci ve ikinci fıkra uyarınca verilen kararların sanık lehine olması hâlinde, bu hususların istinaf isteminde bulunmamış olan diğer sanıklara da uygulanma olanağı varsa bu sanıklar da istinaf isteminde bulunmuşçasına verilen kararlardan yararlanırlar”</p>
+
+<p>08.03.2018 tarihinde yürürlüğe giren 7079 sayılı Kanunun 92. maddesiyle maddenin birinci fıkrasının (d) bendinde yer alan “maddede” ibaresi “maddenin birinci fıkrasının (g) ve (h) bentleri hariç diğer bentlerinde” şeklinde değiştirilerek madde son halini almıştır.</p>
+
+<p>Görüldüğü üzere; 5271 sayılı CMK`nun 280. maddesinin birinci ve ikinci fıkralarında, bölge adliye mahkemesi ceza dairelerinin dosyayı ve dosyayla birlikte sunulmuş olan delilleri inceledikten sonra verebileceği kararlar “istinaf başvurusunun esastan reddine”, “düzeltilerek istinaf başvurusunun esastan reddine”, “hükmün bozulmasına” ve “davanın yeniden görülmesine” olarak sayılmış, davanın yeniden görülmesi kararını veren bölge adliye mahkemesi ceza dairesinin duruşma sonunda ya istinaf başvurusunu esastan reddedeceği ya da ilk derece mahkemesi hükmünü kaldırarak yeniden hüküm kuracağı belirtilmiştir. Bu kararlardan hangilerinin temyiz edilemeyecekleri, hangilerinin ise temyiz kanun yoluna tabi oldukları aynı Kanunun 286. maddesinin birinci ve ikinci fıkralarında ayrı ayrı sayılmıştır.</p>
+
+<p>5271 sayılı CMK`nun “Temyiz” başlıklı 286. maddesi;</p>
+
+<p>“(1) Bölge adliye mahkemesi ceza dairelerinin bozma dışında kalan hükümleri temyiz edilebilir.</p>
+
+<p>(2) Ancak;</p>
+
+<p>a) İlk derece mahkemelerinden verilen beş yıl veya daha az hapis cezaları ile miktarı ne olursa olsun adlî para cezalarına karşı istinaf başvurusunun esastan reddine dair bölge adliye mahkemesi kararları,</p>
+
+<p>b) İlk derece mahkemelerinden verilen beş yıl veya daha az hapis cezalarını artırmayan bölge adliye mahkemesi kararları,</p>
+
+<p>c) Sulh ceza mahkemesinin görevine giren suçlarla ilgili olarak ilk derece mahkemelerinden verilen hükümlere ilişkin her türlü bölge adliye mahkemesi kararları,</p>
+
+<p>d) Adlî para cezasını gerektiren suçlarda ilk derece mahkemelerinden verilen hükümlere ilişkin suç niteliğini değiştirmeyen bölge adliye mahkemesi kararları,</p>
+
+<p>e) Sadece eşya veya kazanç müsaderesine veya bunlara yer olmadığına ilişkin ilk derece mahkemesi kararlarını değiştirmeyen bölge adliye mahkemesi kararları,</p>
+
+<p>f) On yıl veya daha az hapis cezasını veya adlî para cezasını gerektiren suçlardan, ilk derece mahkemesince verilen beraat kararları ile ilgili olarak bölge adliye mahkemesince verilen beraat kararları ile istinaf başvurusunun esastan reddine dair kararları,</p>
+
+<p>g) Davanın düşmesine, ceza verilmesine yer olmadığına, güvenlik tedbirine ilişkin ilk derece mahkemesi kararları ile ilgili olarak bölge adliye mahkemesince verilen davanın düşmesine, ceza verilmesine yer olmadığına, güvenlik tedbirine veya istinaf başvurusunun reddine dair kararlar,</p>
+
+<p>h) Yukarıdaki bentlerde yer alan sınırlar içinde kalmak koşuluyla aynı hükümde, cezalardan ve kararlardan birden fazlasını içeren bölge adliye mahkemesi kararları,</p>
+
+<p>Temyiz edilemez.” şeklinde düzenlenmiş iken;</p>
+
+<p>28.06.2014 tarihli Resmi Gazetede yayımlanarak yürürlüğe giren 6545 sayılı Kanunun 78. maddesiyle ikinci fıkranın (d) bendinde yer alan “suç niteliğini değiştirmeyen” ibaresi “her türlü” şeklinde değiştirilmiş; (f) bendinde yer alan “bölge adliye mahkemesince verilen beraat kararları ile” ibaresi metinden çıkarılmış, aynı fıkranın (c), (e) ve (g) bentleri ise;</p>
+
+<p>“c) İlk derece mahkemelerinin görevine giren ve kanunda üst sınırı iki yıla kadar (iki yıl dâhil) hapis cezasını gerektiren suçlar ve bunlara bağlı adli para cezalarına ilişkin her türlü bölge adliye mahkemesi kararları”</p>
+
+<p>“e) Sadece eşya veya kazanç müsaderesine veya bunlara yer olmadığına ilişkin ilk derece mahkemesi kararları ile ilgili olarak istinaf başvurusunun esastan reddine dair kararları”</p>
+
+<p>“g) Davanın düşmesine, ceza verilmesine yer olmadığına, güvenlik tedbirine ilişkin ilk derece mahkemesi kararları ile ilgili olarak bölge adliye mahkemesince verilen bu tür kararlar veya istinaf başvurusunun esastan reddine dair kararlar” şeklinde değiştirilmiştir.</p>
+
+<p>Bu değişiklikler sonrasında, CMK`nun 286. maddesinin ikinci fıkrasının (d) bendi “Adlî para cezasını gerektiren suçlarda ilk derece mahkemelerinden verilen hükümlere ilişkin her türlü bölge adliye mahkemesi kararları”, aynı fıkranın (f) bendi ise “On yıl veya daha az hapis cezasını veya adlî para cezasını gerektiren suçlardan, ilk derece mahkemesince verilen beraat kararları ile ilgili olarak istinaf başvurusunun esastan reddine dair kararları” hâlini almıştır.</p>
+
+<p>05.08.2017 tarihli Resmi Gazetede yayımlanarak yürürlüğe giren 7035 sayılı Kanunun 20. maddesiyle, CMK’nun 286. maddesinin ikinci fıkrasına (b) bendinden sonra gelmek üzere “c) Hapis cezasından çevrilen seçenek yaptırımlara ilişkin ilk derece mahkemesi kararları ile ilgili olarak bölge adliye mahkemesince verilen; seçenek yaptırımlara ilişkin her türlü kararlar ve istinaf başvurusunun esastan reddine dair kararlar,” bendi eklenmiş, diğer bentlerin buna göre teselsül ettirilmesi sonucunda CMK`nun 286. maddesi;</p>
+
+<p>“(1) Bölge adliye mahkemesi ceza dairelerinin bozma dışında kalan hükümleri temyiz edilebilir.</p>
+
+<p>(2) Ancak;</p>
+
+<p>a) İlk derece mahkemelerinden verilen beş yıl veya daha az hapis cezaları ile miktarı ne olursa olsun adlî para cezalarına karşı istinaf başvurusunun esastan reddine dair bölge adliye mahkemesi kararları,</p>
+
+<p>b) İlk derece mahkemelerinden verilen beş yıl veya daha az hapis cezalarını artırmayan bölge adliye mahkemesi kararları,</p>
+
+<p>c) (Ek: 20/7/2017 - 7035/20 md) Hapis cezasından çevrilen seçenek yaptırımlara ilişkin ilk derece mahkemesi kararları ile ilgili olarak bölge adliye mahkemesince verilen; seçenek yaptırımlara ilişkin her türlü kararlar ve istinaf başvurusunun esastan reddine dair kararlar,</p>
+
+<p>d) (Değişik: 18/6/2014 - 6545/78 md.) İlk derece mahkemelerinin görevine giren ve kanunda üst sınırı iki yıla kadar (iki yıl dâhil) hapis cezasını gerektiren suçlar ve bunlara bağlı adli para cezalarına ilişkin her türlü bölge adliye mahkemesi kararları,</p>
+
+<p>e) Adlî para cezasını gerektiren suçlarda ilk derece mahkemelerinden verilen hükümlere ilişkin her türlü bölge adliye mahkemesi kararları,</p>
+
+<p>f) (Değişik: 18/6/2014 - 6545/78 md) Sadece eşya veya kazanç müsaderesine veya bunlara yer olmadığına ilişkin ilk derece mahkemesi kararları ile ilgili olarak istinaf başvurusunun esastan reddine dair kararları,</p>
+
+<p>g) On yıl veya daha az hapis cezasını veya adlî para cezasını gerektiren suçlardan, ilk derece mahkemesince verilen beraat kararları ile ilgili olarak istinaf başvurusunun esastan reddine dair kararları,</p>
+
+<p>h) (Değişik: 18/6/2014 - 6545/78 md.) Davanın düşmesine, ceza verilmesine yer olmadığına, güvenlik tedbirine ilişkin ilk derece mahkemesi kararları ile ilgili olarak bölge adliye mahkemesince verilen bu tür kararlar veya istinaf başvurusunun esastan reddine dair kararlar,</p>
+
+<p>ı) Yukarıdaki bentlerde yer alan sınırlar içinde kalmak koşuluyla aynı hükümde, cezalardan ve kararlardan birden fazlasını içeren bölge adliye mahkemesi kararları,</p>
+
+<p>Temyiz edilemez.” şeklinde son hâlini almıştır.</p>
+
+<p>Bölge adliye mahkemelerinin faaliyete geçmesiyle birlikte, ilk derece mahkemelerinden verilen hükümlere karşı olağan kanun yolu olarak CMK’nun 272. maddesi uyarınca istinaf kanun yoluna, istinaf üzerine verilen bölge adliyesi mahkemesi hükümlerine karşı olağan kanun yolu olarak da CMK’nun 286. maddesi uyarınca temyiz kanun yoluna başvurulabilecektir. Kural bu olmakla birlikte, ilk derece mahkemelerinden verilen hükümlerden hangilerine karşı istinaf yoluna başvurulamayacağı CMK’nun 272. maddesinin üçüncü fıkrasında, istinaf üzerine bölge adliye mahkemesi ceza dairelerince verilen hükümlerden hangilerine karşı temyiz kanun yoluna başvurulamayacağı da CMK`nun 286. maddesinin birinci ve ikinci fıkralarında sayılmak suretiyle kuralın istisnaları gösterilmiştir.</p>
+
+<p>Uyuşmazlık konusunu oluşturan, CMK`nun 286. maddesinin ikinci fıkrasının (b) bendinde “İlk derece mahkemelerinden verilen beş yıl veya daha az hapis cezalarını artırmayan bölge adliye mahkemesi kararları”nın temyiz edilemeyeceği belirtilmiştir.</p>
+
+<p>Bölge adliye mahkemesi ceza dairelerince verilen kararların, CMK`nun 286. maddesinin ikinci fıkrasının (b) bendi kapsamında değerlendirilebilmesi için birinci koşul; ilk derece mahkemesinden verilen bir “mahkûmiyet” hükmünün bulunması ve bu hükmün de “beş yıl veya daha az hapis cezalarına” ilişkin olmasıdır. İkinci koşul ise; bölge adliye mahkemesi ceza dairesince verilen, ilk derece mahkemelerince hükmolunan beş yıl veya daha az hapis cezalarını artırmayan bir kararın varlığıdır. Birinci koşul yönünden uygulamada tereddüde yol açacak bir durum görülmemekle beraber, ikinci koşul olan bölge adliye mahkemesi ceza dairesince verilen ve “hapis cezalarını artırmayan” kararın niteliğinin belirlenmesi yönünden, kanun koyucunun düzenlemeyi yapmaktaki amacı, kanunun sistematiği, kıyas ve yorumun mümkün olup olmadığının değerlendirmesi gerekmektedir.</p>
+
+<p>Bir karar veya hükme ilişkin kanun yolunun belirlenmesi sırasında öncelikle kanunun sistematiği ve normları dikkate alınacak, bu belirleme yapılırken kıyas ve yorum yoluna başvurulabilecektir. Ceza muhakemesinde kıyas ve her türlü yorum mümkün olmakla birlikte, temel hak ve özgürlükleri daraltan normlar ile istisnai normlarda kıyas yasağı mevcuttur. Kanun koyucunun düzenlediğinin aksine sonuçlara ulaşmaya izin verecek şekilde, kıyas veya yorum yoluyla temel hak ve özgürlüklere ilişkin normları daraltıcı, istisnai normları genişletici şekilde hareket etmek mümkün değildir. CMK’nun 286. maddesinin ikinci fıkrasının (b) bendinin hem uluslararası sözleşmeler ve Anayasa`nın 36. maddesinde düzenlenen “hak arama özgürlüğü”ne ilişkin temel hak ve özgürlükler kapsamında kalması, hem de istisnai bir norm olma özelliği taşıması karşısında, bir bölge adliye mahkemesi kararının bu bent kapsamında kalıp kalmadığına ilişkin yorum yapılırken, hak arama özgürlüğünü daraltıcı nitelikte kıyas yapılamayacağı gibi bu düzenlemenin istisnai nitelikte olması nedeniyle kapsamını genişletici şekilde yorum da yapılamayacağı gözetilmelidir.</p>
+
+<p>Bu noktadan hareketle; CMK’nun 286. maddesinin ikinci fıkrasının (b) bendinde geçen “hapis cezalarını artırmayan” ibaresinden anlaşılması gerekenin; “cezayı aynı tutan” ya da “cezayı eksilten” kararlar olduğunun, bölge adliye mahkemesi ceza dairesince verilecek olan kararın da yine bir “hapis cezası” olacağının, ancak bu kararın ilk derece mahkemesince verilen hapis cezasını artırmamakla birlikte, aynı miktarda veya daha az bir ceza olması gerektiğinin kabulünde zorunluluk bulunmaktadır. Dolayısıyla bölge adliye mahkemesi ceza dairesi tarafından verilecek “hapis cezasını artırmayan” kararın, yine hapis cezasına ilişkin bir “mahkûmiyet” kararı olması gerekmektedir. İlk derece mahkemesi ve bölge adliye mahkemesi ceza dairesi arasında “mahkûmiyet” hükmü yönüyle bir uyuşmazlık bulunmaması ve ilk derece mahkemesince verilen beş yıl veya daha az hapis cezasına ilişkin mahkûmiyet hükmünün bölge adliye mahkemesi ceza dairesince artırılmaması durumunda bu kararın “temyiz edilemez” nitelikte bir karar olmasını amaçlayan kanun koyucunun, bu düzenleme ile usul ekonomisini de gözettiğini söylemek yanlış bir yorum olmayacaktır. Buna karşın, “beraat”, “düşme”, “ret” ve “ceza verilmesine yer olmadığına” gibi kararlar bu bent kapsamında değerlendirilemeyeceklerdir. Bölge adliye mahkemesi ceza daireleri tarafından verilen mahkûmiyet kararı dışındaki “beraat”, “düşme”, “ret” ve “ceza verilmesine yer olmadığına” ilişkin kararların “ilk derece mahkemelerinden verilen beş yıl veya daha az hapis cezalarını artırmayan” kararlar kapsamında oldukları, bu nedenle CMK`nun 286. maddesinin ikinci fıkrasının (b) bendi kapsamında kalmaları nedeniyle temyiz edilemeyecekleri kabul edildiği takdirde, temel hak ve özgürlüklerden biri olan “hak arama özgürlüğü”nü daraltıcı, istisnai nitelikteki bir normu ise genişletici şekilde bir yorum yapmış olunur ki, bu durum ceza muhakemesi ilkelerine aykırılık teşkil edecektir.</p>
+
+<p>Öte yandan, yapılan bu tespitler üzerine varılan sonucun kanunun sistematiğine uygun olup olmadığının irdelenmesine gelince;</p>
+
+<p>5271 sayılı CMK’nun 286. maddesinin ikinci fıkrasının (d) bendinde “İlk derece mahkemelerinin görevine giren ve kanunda üst sınırı iki yıla kadar (iki yıl dâhil) hapis cezasını gerektiren suçlar ve bunlara bağlı adli para cezalarına ilişkin her türlü bölge adliye mahkemesi kararları”, aynı fıkranın (e) bendinde “Adlî para cezasını gerektiren suçlarda ilk derece mahkemelerinden verilen hükümlere ilişkin her türlü bölge adliye mahkemesi kararları” ile karar tarihinden sonra 7035 sayılı Kanunla maddeye eklenen (c) bendinde “Hapis cezasından çevrilen seçenek yaptırımlara ilişkin ilk derece mahkemesi kararları ile ilgili olarak bölge adliye mahkemesince verilen; seçenek yaptırımlara ilişkin her türlü kararlar ve istinaf başvurusunun esastan reddine dair kararlar”ın temyizinin mümkün olmadığı hükme bağlanmıştır. Kanun koyucu bu bentlerde “her türlü” kararlardan bahsetmekteyken, CMK’nun 286. maddesinin ikinci fıkrasının (b) bendinde, aynı fıkranın (c), (d) ve (e) bentlerinde olduğu gibi “her türlü” ibaresine yer vermemiştir. Bölge adliye mahkemesi ceza dairelerinin “temyiz edilemeyecek” nitelikteki kararlarını, CMK’nun 286. maddesinin ikinci fıkrasında ayrı ayrı bentler halinde ve her ihtimali tek tek sıralayarak düzenleyen kanun koyucunun, kanunun sistematiği de gözetildiğinde bu konuyu öngörmediğini, yani “her türlü” ibaresine yer vermeyi unuttuğunu düşünmek mümkün değildir. Bu nedenle CMK`nun 286. maddesinin ikinci fıkrasının (c), (d) ve (e) bentlerinin aksine, aynı fıkranın (b) bendinde yer alan “…bölge adliye mahkemesi kararları” ibaresinden önce “her türlü” ibaresine yer vermeyen kanun koyucunun, ilk derece mahkemesince verilen beş yıl veya daha az hapis cezaları içeren hükümler hakkında, bölge adliye mahkemesi ceza dairesince verilebilecek olan mahkûmiyet dışında kalan “beraat”, “düşme”, “ret” veya “ceza verilmesine yer olmadığına” ilişkin kararların “hapis cezasını artırmayan” kararlardan olduğunu kabul ettiği söylenemeyecektir.</p>
+
+<p>Yine, CMK’nun 286. maddesinin ikinci fıkrasının (g) bendinde “On yıl veya daha az hapis cezasını …. gerektiren suçlardan, ilk derece mahkemesince verilen beraat kararları ile ilgili olarak istinaf başvurusunun esastan reddine dair kararları”nın temyiz edilemeyeceği düzenlenmiştir. Buna göre, ilk derece mahkemesinin üst sınırı itibarıyla on yıl veya daha az hapis cezasını gerektiren bir suçtan yaptığı yargılama sonucunda beraat kararı vermesi ve bölge adliye mahkemesi ceza dairesinin bu kararı doğru bularak “istinaf başvurusunun esastan reddine” karar vermesi durumunda bu karar temyiz edilemeyecektir. Fakat ilk derece mahkemesinin, üst sınırı itibarıyla on yıldan fazla hapis cezasını gerektiren, örneğin TCK`nun 247. maddesinin birinci fıkrasında düzenlenen ve üst sınırı itibarıyla 12 yıl hapis cezası öngören zimmet suçuna ilişkin olarak beş yıl veya daha az hapis cezasına hükmettiği, bölge adliye mahkemesi ceza dairesinin ise beraat kararı verdiği durumda, beraat kararının temyize tabi olmadığı söylenemeyecektir. Zira, kanunda üst sınırı on yıldan fazla hapis cezasını gerektiren bir suçta ilk derece mahkemesince verilen beraat hükmü ile ilgili olarak bölge adliye mahkemesi ceza dairesince istinaf başvurusunun esastan reddine karar verildiğinde bu karara karşı temyiz kanun yolu açıktır. Diğer bir deyişle, aynı suça ilişkin ilk derece mahkemesinin beraat, bölge adliye mahkemesi ceza dairesinin ise istinaf başvurusunun esastan reddine karar vermesi halinde dahi temyiz yolu açık iken, ilk derece mahkemesinin beş yıl veya daha az hapis cezasına ilişkin “mahkûmiyet”, bölge adliye mahkemesi ceza dairesinin ise “beraat” kararı verdiği hallerde, bu kararın temyize tabi olmayacağını söylemek mümkün değildir.</p>
+
+<p>Üç dereceli yargı sistemi içerisinde, kesin olduğu belirtilenler dışında kalan kararlar bakımından kanun koyucunun en azından bir denetim yolu öngördüğü de gözetildiğinde, ilk derece mahkemelerince verilen “mahkûmiyet” hükmünü değiştiren ve birbirlerinden tamamen ayrı nitelikte olan bölge adliye mahkemesi ceza dairelerinin verebileceği “beraat”, “ret”, “düşme” ve “ceza verilmesine yer olmadığına” ilişkin kararlar yönünden bir denetim yolu öngörülmediği düşünülemez. Aksi düşüncenin kabulü, kanunlarımızda yer alan ve ceza miktarları itibarıyla ağır nitelikte olan bir çok suça yönelik olarak, bölge adliye mahkemesi ceza dairesinin vereceği mahkûmiyet dışında kalan “beraat”, “ret”,“düşme” veya “ceza verilmesine yer olmadığına” ilişkin kararlara karşı herhangi bir kanun yolu öngörülmediği anlamına gelecektir.</p>
+
+<p>İlk derece mahkemelerinden verilen beş yıl veya daha az hapis cezaları hakkında, bölge adliye mahkemesi ceza dairesinin mahkûmiyet dışında kalan “beraat”, “ret”,“düşme” veya “ceza verilmesine yer olmadığına” ilişkin vereceği kararların temyize tabi olması kuralının tek istisnasını, “ilk derece mahkemelerinin görevine giren ve kanunda üst sınırı iki yıla kadar (iki yıl dâhil) hapis cezasını gerektiren suçlar ve bunlara bağlı adli para cezalarına ilişkin her türlü bölge adliye mahkemesi kararları”nın temyiz edilemeyeceğini düzenleyen CMK`nun 286. maddesinin ikinci fıkrasının (d) bendi oluşturmaktadır. İlk derece mahkemelerinin görevine giren ve kanunda üst sınırı iki yıla kadar (iki yıl dahil) hapis cezasını gerektiren bir suç söz konusu ise bu suç ve suça bağlı olarak verilen cezalara ilişkin “her türlü” bölge adliye mahkemesi kararları temyiz edilemeyecektir.</p>
+
+<p>Bu bağlamda; CMK’nun 286. maddesinin ikinci fıkrasında “temyiz edilemeyecek” kararları açıkça ve ayrı ayrı sayan kanun koyucunun amacının, bu sayılanlar dışında kalan kararların “temyiz” kanun yoluna tabi olacaklarını, diğer bir anlatımla sınırlayıcı hükümler kapsamında yer almayan karar ve hükümlerin temyize tabi olduklarını düzenlediğini kabul etmek, kanun koyucunun amacına ve kanunun sistematiğine uygun olup, ilk derece mahkemelerinden verilen beş yıl veya daha az hapis cezalarına dair kararlara ilişkin suçun, CMK’nun 286. maddesinin ikinci fıkrasının (d) bendi kapsamında kalmaması durumunda, kararı inceleyen bölge adliye mahkemesi ceza dairesinin verebileceği mahkûmiyet dışında kalan “beraat”, “ret”, “düşme” veya “ceza verilmesine yer olmadığına” ilişkin kararlar, CMK`nun 286. maddesinin ikinci fıkrasının (b) bendi kapsamında değerlendirilemeyecek ve bu kararlara karşı temyiz kanun yolu açık olacaktır.</p>
+
+<p>Bu açıklamalar ışığında uyuşmazlık konusu değerlendirildiğinde;</p>
+
+<p>Özel belgede sahtecilik suçundan açılan kamu davasında yapılan yargılama sonucunda, ilk derece mahkemesince 1 yıl 3 ay hapis cezası ile cezalandırılmalarına karar verilen sanıkların, istinaf kanun yolu incelemesi sonucunda beraatlarına karar verilmesi karşısında; söz konusu beraat kararının CMK’nun 286. maddesinin ikinci fıkrasının (b) ve diğer bentlerinde sınırlı şekilde sayılan “temyiz edilemez” nitelikteki kararlardan olmaması, sanıklara atılı suçun CMK`nun 286. maddesinin ikinci fıkrasının (d) bendi kapsamında kalmaması, uluslararası sözleşmeler ve Anayasa ile güvence altına alınan hak arama özgürlüğünün bir uzantısı olarak hüküm ve kararlara karşı başvurulabilecek bir kanun yolunun açık olmasının kural, kapalı olmasının ise istisna olması hususları birlikte değerlendirildiğinde, sanıklar hakkında özel belgede sahtecilik suçundan ilk derece mahkemesince verilen mahkûmiyet kararına karşı istinaf kanun yoluna başvurulması üzerine, davayı beraatla sonuçlandıran bölge adliye mahkemesi ceza dairesi kararına karşı temyiz kanun yolunun açık olduğunun kabulünde zorunluluk bulunmaktadır.</p>
+
+<p>Bu itibarla, Yargıtay Cumhuriyet Başsavcılığı itirazının kabulüne, Özel Dairenin temyiz isteğinin reddine dair kararının kaldırılmasına, temyiz incelemesi için dosyanın Yargıtay 11. Ceza Dairesine gönderilmesine karar verilmelidir.</p>
+
+<p>Çoğunluk görüşüne katılmayan iki Ceza Genel Kurulu Üyesi; “itirazın reddine karar verilmesi gerektiği” düşüncesiyle karşı oy kullanmışlardır.</p>
+
+<p>SONUÇ:</p>
+
+<p>Açıklanan nedenlerle;</p>
+
+<p>1- Yargıtay Cumhuriyet Başsavcılığı itirazının KABULÜNE,</p>
+
+<p>2- Yargıtay 11. Ceza Dairesinin 20.11.2017 gün ve 14828-7937 sayılı temyiz isteğinin reddi kararının KALDIRILMASINA,</p>
+
+<p>3- Dosyanın, temyiz incelemesi yapılabilmesi amacıyla Yargıtay 11. Ceza Dairesine gönderilmek üzere Yargıtay Cumhuriyet Başsavcılığına TEVDİİNE, 20.03.2018 tarihinde yapılan müzakerede oy çokluğuyla karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 16. CEZA DAİRESİ<br>
+Esas : 2017/2100 Karar : 2018/572</strong> Tarih : 26.02.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 286. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Temyiz</strong></p>
+  </li>
+</ul>
+
+<p>Sanık …‘a atılı suçun gerektirdiği cezanın üst sınırı itibariyle CMK`nın 286/2-f maddesi hükmü gözetilerek Cumhuriyet savcısının temyiz isteminin reddine dair ek karar kaldırılmakla;</p>
+
+<p>Temyiz edenlerin sıfatı, başvurunun süresi, kararın niteliği ve temyiz sebebine göre dosya incelendi, gereği düşünüldü;</p>
+
+<p>Temyiz talebinin reddi nedenleri bulunmadığından işin esasına geçildi;</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>1-Silahlı terör örgütüne üye olma suçu temadi eden suçlardan olup yakalanma ile temadi kesileceğinden, suç tarihinin gerekçeli karar başlığında “16.02.2016” yerine “23.09.2014, 03.10.2014, 15.10.2014, 16.10.2014, 01.11.2014, 26.11.2014, 27.11.2014 ve 15.12.2014” olarak yazılması,</p>
+
+<p>2-Haklarında silahlı terör örgütüne üye olma suçundan dava açılan sanıklar … ve …‘ın ifadelerinde sanığın … kod ismini kullandığını, 
+YDG-H’ın Yalım köyü sorumlusu olduğunu, PKK/KCK terör örgütü tarafından Mardin`deki YDG-H yapılanmasını organize etmesi için görevlendirildiğini, molotof kokteyli ve bomba yapmasını bildiğini, 
+YDG-H asayiş birimi olarak devriye görevi yapma konusunda kendilerine talimat verdiğini, YDG-H ibareli t-shirtler dağıttığını ve giymelerini söylediğini, molotof kokteyli, havai fişek ve el yapımı patlayıcı getirdiğini bunlarla polislere saldırdıklarını, 
+eylemleri organize ettiğini bildirmeleri nazara alındığında sanığın silahlı terör örgütünün hiyerarşik yapısına dahil olarak faaliyet yürüttüğünün kabulü gerektiği gözetilip;</p>
+
+<p>Uyap üzerinden yapılan incelemede sanık hakkında silahlı terör örgütüne üye olma suçundan açılan Bakırköy 1. Çocuk Ağır Ceza Mahkemesinin 2014/194 E. sayılı dava dosyasının derdest olduğu anlaşılmış ise de 02.12.2009 tarihli yakalama ile temadinin kesildiği tespit edilmiş;</p>
+
+<p>Dairemizin 2017/3936 E. sayılı dosyasının incelenmesinde ise 16.02.2016 tarihinde yakalanan sanık hakkında silahlı terör örgütüne üye olma suçundan Diyarbakır Cumhuriyet Başsavcılığının 29.02.2016 tarih ve 2016/2311 E. sayılı iddianamesi ile açılan davada, 
+Diyarbakır 4. Ağır Ceza Mahkemesinin 16.05.2017 tarih ve 2016/135 E – 2017/314 K sayılı ilamı ile mahkumiyet kararı verildiği, 
+karara ilişkin istinaf başvurusunu inceleyen Gaziantep Bölge Adliye Mahkemesi 3. Ceza Dairesinin 06.10.2017 tarih ve 2017/1243 E – 2017/1203 K. sayılı istinaf başvurusunun esastan reddine dair kararının temyiz edilmesi üzerine 
+Dairemizin 2017/3936 E. sırasına kaydının yapıldığı anlaşılmış olup; 
+iş bu dava dosyasının ise sanık henüz yakalanmadan Mardin Cumhuriyet Başsavcılığının 18.01.2015 tarih ve 2015/135 E sayılı iddianamesi ile açıldığı ve dosya arasındaki yakalama evrakının da 16.02.2016 tarihli olduğu; Mardin Cumhuriyet Başsavcılığının iddianamesi ile hukuki kesintinin gerçekleştiği ancak temadinin kesilmesi için hukuki kesinti ile birlikte fiili kesintinin de gerçekleşmesi gerektiği,</p>
+
+<p>silahlı terör örgütüne üye olma suçunun temadi eden suçlardan olması ve temadinin yakalanma ile kesileceği dikkate alınarak;</p>
+
+<p>mükerrer yargılanmanın ve cezalandırılmanın önlenmesi bakımından dairemizin 2017/3936 Esas sayılı dosyasında kayıtlı olan Diyarbakır 4. Ağır Ceza Mahkemesinin 16.05.2017 tarih ve 2016/135 E – 2017/314 K sayılı dosyası ile iş bu dava dosyası birleştirilip deliller bir bütün halinde değerlendirildikten sonra hukuki durumun buna göre tayin ve takdiri gerektiği gözetilmeden eksik inceleme ile yazılı şekilde hüküm kurulması,</p>
+
+<p>Kanun aykırı, İstinaf Cumhuriyet savcısının temyiz itirazları bu itibarla yerinde görülmüş olduğundan, bu sebeplerden dolayı hükmün CMK`nın 302/2. maddesi uyarınca BOZULMASINA, 26.02.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. CEZA DAİRESİ
+Esas : 2018/133 Karar : 2018/871</strong> Tarih : 7.02.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 286. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Temyiz</strong></p>
+  </li>
+</ul>
+
+<p>Dosya incelenerek gereği düşünüldü;</p>
+
+<p>I- Sanık hakkında konut dokunulmazlığını bozma ve mala zarar verme suçlarından kurulan hükümler ile ilgili temyiz isteminin incelenmesinde;</p>
+
+<p>Hükmolunan cezaların miktar ve türü gözetildiğinde, 5271 sayılı CMK’nın 286/2-a maddesi uyarınca, ilk derece mahkemelerinden verilen beş yıl veya daha az hapis cezaları ile miktarı ne olursa olsun adli para cezalarına ilişkin istinaf başvurusunun esastan reddine dair bölge adliye mahkemesi kararlarının temyizi mümkün olmadığından, sanık müdafiinin temyiz isteminin 5271 sayılı CMK’nın 298. maddesi uyarınca REDDİNE,</p>
+
+<p>II- Sanık hakkında hırsızlık suçundan kurulan hüküm ile ilgili temyiz isteminin incelenmesinde;</p>
+
+<p>5271 sayılı CMK’nın 288. maddesinin ‘‘Temyiz, ancak hükmün hukuka aykırı olması nedenine dayanır. Bir hukuk kuralının uygulanmaması veya yanlış uygulanması hukuka aykırılıktır.’’ ve aynı Kanun’un 294. maddesinin ise; ‘‘Temyiz eden, hükmün neden dolayı bozulmasını istediğini temyiz başvurusunda göstermek zorundadır. Temyiz sebebi ancak hükmün hukuki yönüne ilişkin olabilir.’’ şeklinde düzenlendiği de gözetilerek sanık müdafiinin temyiz isteminin, sanığın hırsızlık suçunu işlemediği, mağdurun şikayeti olmamasına rağmen üst sınırdan cezalar tayin edildiği, sanık lehine hiçbir indirim yapılmadığına yönelik olduğu belirlenerek anılan sebeplere yönelik yapılan incelemede;</p>
+
+<p>Sanık hakkında mağdura yönelik eylemi sebebiyle hırsızlık suçundan kurulan hükümde herhangi bir isabetsizlik bulunmadığı anlaşılmakla istinaf isteminin esastan reddine dair karar hukuka uygun bulunduğundan, sanık müdafiinin yerinde görülmeyen temyiz itirazının reddiyle, 5271 sayılı CMK’nın 302/1. maddesi uyarınca, usul ve yasaya uygun olan İstanbul Bölge Adliye Mahkemesi 9. Ceza Dairesinin kararına yönelik TEMYİZ İSTEMİNİN ESASTAN REDDİ ile HÜKMÜN ONANMASINA, 07/02/2018 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 5. CEZA DAİRESİ
+Esas : 2017/6924 Karar : 2018/137</strong> Tarih : 15.01.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 286. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Temyiz</strong></p>
+  </li>
+</ul>
+
+<p>Suç işlemek amacıyla örgüt kurma ve üye olma suçlarından sanık … ve suç ortakları hakkında yapılan yargılama sırasında; … 12. Asliye Ceza Mahkemesiyle … Bölge Adliye Mahkemesi 2. Ceza Dairesi arasında oluşan olumsuz görev uyuşmazlığının giderilmesi ve yargı yerinin belirlenmesi istemiyle gönderilen dosya Yargıtay C.Başsavcılığından tebliğname ile daireye verilmekle incelenerek gereği düşünüldü:</p>
+
+<p>5235 sayılı Adli Yargı İlk Derece Mahkemeleriyle Bölge Adliye Mahkemelerinin Kuruluş Görev ve Yetkileri Hakkında Kanunun 25 ve geçici 2. maddeleri uyarınca kurulan ve yargı çevreleri belirlenen bölge adliye mahkemelerinin tüm yurtta 20/07/2016 tarihinde göreve başladıkları, aynı Kanunun “Bölge adliye mahkemelerinin görevleri” başlıklı 33/1. maddesi uyarınca, bölge adliye mahkemelerinin, adli yargı ilk derece mahkemelerince verilen ve kesin olmayan hüküm ve kararlara karşı yapılacak başvuruları inceleyip karara bağlamak ile görevli oldukları, yine “Ceza dairelerinin görevleri” başlıklı 37/1. maddesi gereğince bölge adliye mahkemesi ceza dairelerinin, adli yargı ilk derece ceza mahkemelerince verilen ve kesin olmayan hüküm ve kararlara karşı yapılacak başvuruları inceleyip karara bağlamak ile görevli olduğu,</p>
+
+<p>Öte yandan, istinaf kanun yolunun 5271 sayılı CMK’nın Altıncı kitap ikinci bölümde düzenlendiği, üçüncü bölümde ise temyiz yasa yolunun düzenlendiği, CMK’nın 286/1. maddesindeki düzenlemeye göre, Bölge adliye mahkemesi ceza dairelerinin bozma dışında kalan hükümlerinin temyiz edilebileceği, bunun istisnalarının da maddenin devamında düzenlendiği,</p>
+
+<p>Somut uyuşmazlıkta; … 12. Asliye Ceza Mahkemesinin 10/05/2017 tarihli, 2010/91 E. 2017/302 K. sayılı kararı ile sanıklar hakkında verilen mahkumiyet hükümlerine karşı istinaf yasa yoluna başvurulması üzerine, … Bölge Adliye Mahkemesi 2. Ceza Dairesinin 20/10/2017 tarih, 2017/2500 E. ve 2017/2527 K. sayılı ilamıyla hükmün bozulmasına karar verilerek dava dosyasının yerel mahkemeye gönderildiği,</p>
+
+<p>… 12. Asliye Ceza Mahkemesinin 30/11/2017 tarih ve 2010/91 Esas ve 2017/302 Ek Karar sayılı ilamı ile … Bölge Adliye Mahkemesi 2. Ceza Dairesinin bozma ilamının görevsizlik kararı vasfında olduğundan bahisle görevsizlik kararı verilerek uyuşmazlığın çözümü için dava dosyası Yargıtaya gönderilmiş ise de, hukuki manada bu kararın … Bölge Adliye Mahkemesi 2. Ceza Dairesinin bozma kararına karşı direnme hükmü niteliğinde olduğu, ceza yargılamasında kıyas mümkün ise de, mer’i kanunlarda ilk derece mahkemesi ile bölge adliye mahkemesi arasında görev ihtilafı çıkabilecek bir hususun bulunmadığı, kaldı ki CMK’nın “Direnme yasağı” başlıklı 284. maddesi uyarınca,</p>
+
+<p>itiraz ve temyize ilişkin hükümler saklı kalmak üzere bölge adliye mahkemesi karar ve hükümlerine karşı direnilemeyeceği; bunlara karşı herhangi bir kanun yoluna gidilemeyeceği, bu itibarla … Bölge Adliye Mahkemesi 2. Ceza Dairesinin bozma ilamının kesin ve bağlayıcı nitelikte, … 12. Asliye Ceza Mahkemesinin 30/11/2017 günlü görevsizlik kararının da yok hükmünde olduğu anlaşılmakla, ortada Yargıtay tarafından çözümü gereken bir görev uyuşmazlığı bulunmadığından incelenmeyen dosyanın mahalline gönderilmesi için Yargıtay C.Başsavcılığına TEVDİİNE, 15/01/2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 4. CEZA DAİRESİ
+Esas : 2017/21809 Karar : 2018/456</strong> Tarih : 11.01.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 286. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Temyiz</strong></p>
+  </li>
+</ul>
+
+<p>Bölge Adliye Mahkemesince verilen hükümler temyiz edilmekle, kararın nitelik, ceza türü, süresi ve suç tarihine göre, temyiz isteğinin, hakaret ve tehdit suçlarından Yerel Mahkemece kurulan beraat hükümlerine ilişkin, Bölge Adliye Mahkemesi 1. Ceza Dairesi tarafından verilen istinaf başvurusunun esastan reddine dair karara karşı, katılan vekili tarafından yapılan temyiz isteğinin reddine dair ek karara yönelik olduğu belirlenerek dosya görüşüldü:</p>
+
+<p>Sanık hakkında tehdit ve hakaret suçlarından CMK’nın 223/2-e maddesi uyarınca beraat hükümleri kurulması, karar tarihinde yürürlükte bulunan 5271 sayılı CMK’nın 286. maddesinin ikinci fıkrasının f bendinde, on yıl veya daha az hapis cezasını veya adlî para cezasını gerektiren suçlardan, ilk derece mahkemesince verilen beraat kararları ile ilgili olarak bölge adliye mahkemesince verilen istinaf başvurusunun esastan reddine dair kararlarının temyiz edilemeyeceğinin belirtilmesi karşısında; bölge adliye mahkemesince verilen istinaf başvurusunun esastan reddine ilişkin karara karşı yapılan temyiz isteminin reddine dair kararının yerinde olduğu anlaşıldığından,</p>
+
+<p>Temyiz isteminin reddine ilişkin Erzurum Bölge Adliye Mahkemesi 1. Ceza Dairesinin 25/09/2017 gün ve 2017/1305 esas, 2017/1246 sayılı ek kararında bir isabetsizlik görülmediğinden, bu karara yönelik katılan … vekilinin temyiz itirazlarının reddiyle, temyiz isteminin reddine dair ek kararın istem gibi ONANMASINA, 11/01/2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 4. CEZA DAİRESİ
+Esas : 2017/21215 Karar : 2018/462</strong> Tarih : 11.01.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 286. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Temyiz</strong></p>
+  </li>
+</ul>
+
+<p>Bölge Adliye Mahkemesince verilen hüküm temyiz edilmekle, kararın nitelik, ceza türü, süresi ve suç tarihine göre dosya görüşüldü:</p>
+
+<p>Sanık hakkında tehdit suçundan TCK’nın 107/1 ve 62. maddesi uyarınca hükmolunan 10 ay hapis ve 3000 Türk lirası adli para cezasına dair hükmün bölge adliye mahkemesince 10 ay hapis ve 80 Türk adli para cezası şeklinde düzeltilerek istinaf başvurusunun esastan reddine karar verilmesi, 5271 sayılı CMK’nın 286. maddesinin ikinci fıkrasının b bendinde, ilk derece mahkemelerinden verilen beş yıl veya daha az hapis cezalarını artırmayan bölge adliye mahkemesi kararlarının temyiz edilemeyeceğinin belirtilmesi karşısında; bölge adliye mahkemesince verilen istinaf başvurusunun esastan reddine ilişkin karara karşı yapılan temyiz isteminin reddine dair kararının yerinde olduğu anlaşıldığından,</p>
+
+<p>Temyiz isteminin reddine ilişkin İzmir Bölge Adliye Mahkemesi 9. Ceza Dairesinin 03/07/2017 gün ve 2017/1769 esas, 2017/1764 sayılı ek kararında bir isabetsizlik görülmediğinden, bu karara yönelik Cumhuriyet Savcısının temyiz itirazlarının reddiyle, temyiz isteminin reddine dair ek kararın istem gibi ONANMASINA, 11/01/2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 6. CEZA DAİRESİ
+Esas: 2017/3278 Karar: 2018/270</strong> Tarih: 24.01.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 286. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Temyiz</strong></p>
+  </li>
+</ul>
+
+<p>I-Sanık hakkında genel güvenliğin kasten tehlikeye sokulması suçundan kurulan hükmün temyiz incelenmesinde;</p>
+
+<p>Hükmün niteliği, tayin olunan cezanın miktarı itibariyle 5271 sayılı CMK’nın 286/2. maddesi uyarınca hükmün kesin olduğu ve temyiz edilemez olduğu anlaşılmakla; sanık … savunmanının temyiz isteminin CMK’nın 298. maddesi gereğince REDDİNE,</p>
+
+<p>II-Sanık hakkında nitelikli yağmaya kalkışma suçundan kurulan hükmün temyiz incelenmesinde;</p>
+
+<p>Tarsus 1. Ağır Ceza Mahkemesinin 16/12/2016 tarih, 2016/117 Esas ve 2016/334 Karar sayılı ilamı ile nitelikli yağmaya kalkışma suçundan verilen mahkumiyet hükmüne karşı, sanık … savunmanının, CMK.nın 272 ve müteakip maddeleri uyarınca istinaf kanun yoluna başvurması üzerine; Antalya Bölge Adliye Mahkemesi 6. Ceza Dairesince dosya üzerinden yapılan inceleme sonucu verilen 07/03/2017 gün ve 2017/348 Esas ve 2017/343 Karar sayılı “esastan red” kararına karşı, sanıklar savunmanlarınca usulüne uygun olarak açılan temyiz davası üzerine, temyiz dilekçesinde ileri sürülen hukuka aykırılıklar CMK’nın 288., 289. maddeleri kapsamında incelenip görüşüldü;</p>
+
+<p>Dosya ve duruşma tutanakları içeriğine, toplanıp karar yerinde incelenerek tartışılan elverişli kanıtlara, gerekçeye ve Hakimler Kurulunun takdirine göre; sanık … hakkında kurulan hükmün usul ve mevzuata uygun olduğu gerekçesiyle, istinaf isteminin esastan reddine dair verilen kararda hukuka aykırılık bulunmadığından, sanık savunmanının temyiz itirazlarının CMK’nın 302/1. maddesi gereğince reddiyle, Antalya Bölge Adliye Mahkemesi 6. Ceza Dairesi’nin 07/03/2017 gün ve 2017/348 Esas ve 2017/343 Karar sayılı esastan red hükmünün tebliğnameye uygun olarak ONANMASINA, 24/01/2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. CEZA DAİRESİ
+Esas: 2017/4876 Karar: 2018/19</strong> Tarih: 22.01.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 286. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Temyiz</strong></p>
+  </li>
+</ul>
+
+<p>Dosya incelenerek gereği düşünüldü;</p>
+
+<p>Hükmolunan cezanın türü ve süresine göre sanık … müdafiinin duruşmalı inceleme isteminin 5320 sayılı Kanunun 8/1. maddesi yollaması ile 1412 sayılı CMUK’nın 318. maddesi uyarınca REDDİNE karar verilerek yapılan incelemede;</p>
+
+<p>1- Sanıklar hakkında mala zarar verme suçundan kurulan hükümlerin incelenmesinde;</p>
+
+<p>Hükmolunan cezaların miktar ve türü gözetildiğinde, 5271 sayılı CMK’nın 286/2-a maddesi uyarınca, ilk derece mahkemelerinden verilen beş yıl veya daha az hapis cezaları ile miktarı ne olursa olsun adli para cezalarına ilişkin istinaf başvurusunun esastan reddine dair bölge adliye mahkemesi kararlarının temyizi mümkün olmadığından, sanıklar müdafiilerinin temyiz istemlerinin 5271 sayılı CMK’nın 298. maddesi uyarınca REDDİNE,</p>
+
+<p>2- Sanıklar hakkında hırsızlık suçundan kurulan hükümlerin incelenmesinde;</p>
+
+<p>5271 sayılı CMK’nın 288. maddesinin5271 sayılı CMK’nın 288. maddesinin ‘‘Temyiz, ancak hükmün hukuka aykırı olması nedenine dayanır. Bir hukuk kuralının uygulanmaması veya yanlış uygulanması hukuka aykırılıktır.’’ ve aynı Kanun’un 294. maddesinin ise; ‘‘Temyiz eden, hükmün neden dolayı bozulmasını istediğini temyiz başvurusunda göstermek zorundadır. Temyiz sebebi ancak hükmün hukuki yönüne ilişkin olabilir.’’ şeklinde düzenlendiği de gözetilerek sanık … müdafiinin temyiz isteminin, sanığın atılı suçu işlediğine dair her türlü şüpheden uzak deliller bulunmamasına karşın ‘şüpheden sanık yararlanır’ ve ‘masumiyet karinesi’ ilkeleri de gözetilmeden mahkumiyetine karar verildiğine yönelik olduğu belirlenerek anılan sebeplere yönelik yapılan incelemede;</p>
+
+<p>a) Elektronik ortamda UYAP-MERNİS’ten alınan 08/01/2018 tarihli nüfus kayıt örneğine göre, sanık …‘nun hükümden sonra 01/03/2017 tarihinde öldüğünün anlaşılması karşısında, 5237 sayılı TCK’nın 64/1. ve 5271 sayılı CMK’nın 223/8. maddeleri uyarınca sanık … hakkında açılan kamu davasının düşürülmesine karar verilmesinde zorunluluk bulunması,</p>
+
+<p>b) Sanık …‘ın üzerine atılı suçu işlemediği yönündeki savunmasının aksini gösterir, diğer sanık …‘nun sanık … ile olay gecesi aynı araçta olduklarına, bu araç ile olay yerine yakın bir yere birlikte geldiklerine dair ve suç atma niteliğinde dahi olmayan ifadelerinden başka mahkumiyetine yeterli her türlü şüpheden uzak, kesin, yeterli ve inandırıcı delillerin neler olduğu tartışılıp denetime olanak sağlayacak şekilde karar yerinde gösterilmeden yeterli olmayan gerekçeyle yazılı şekilde mahkumiyetine karar verilmesi,</p>
+
+<p>Bozmayı gerektirmiş, sanıklar müdafiilerinin temyiz itirazları bu itibarla yerinde görülmüş olduğundan hükmün 1412 sayılı CMUK’nın 321. maddesi uyarınca bu sebepten dolayı BOZULMASINA, 22/01/2018 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 6. CEZA DAİRESİ
+Esas: 2017/3370 Karar: 2018/227</strong> Tarih: 22.01.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 286. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Temyiz</strong></p>
+  </li>
+</ul>
+
+<p>Bakırköy 10. Ağır Ceza Mahkemesinin 2016/334 E ve 2016/478 K sayılı ilamı ile yağma, mala zarar verme, iftira suçlarından verilen mahkumiyet hükmüne karşı, sanık … ve savunmanının CMK’nın 272. ve müteakip maddeleri uyarınca İstinaf kanun yoluna başvurmaları üzerine; İstanbul Bölge Adliye Mahkemesi 14. Ceza Dairesince dosya üzerinden yapılan inceleme sonucu verilen 18.04.2017 gün, 2017/547 E. 2017/551 K. sayılı “esastan red” kararına karşı, sanık ve savunmanı tarafından usulüne uygun olarak açılan temyiz davası üzerine, sanık hakkında verilen cezaların sürelerine göre mala zarar verme, iftira suçlarından kurulan mahkumiyet hükümlerinin, 5271 sayılı CMK’nın 286/2. maddesi uyarınca temyiz edilemez olduğu anlaşılmakla inceleme dışında tutularak sanık ve savunmanınca yağma suçundan kurulan mahkumiyet hükmüne yönelik temyiz dilekçelerinde hukuka aykırı olduğu ileri sürülen hususlar ile re’sen incelenmesi gereken konular CMK’nın 288., 289. maddeleri kapsamında incelenip görüşüldü;</p>
+
+<p>24.11.2015 tarihli Resmi Gazete’de yayımlanarak aynı tarihte yürürlüğe giren Anayasa Mahkemesi’nin 08.10.2015 gün, 2014/140-2015/85 Esas ve Karar sayılı kararına göre TCK’nın 53. madde uygulamasının infazda gözetilmesi olanaklı görülmüştür.</p>
+
+<p>Dosya ve duruşma tutanakları içeriğine, toplanıp karar yerinde incelenerek tartışılan elverişli kanıtlara, gerekçeye ve Hakimler Kurulunun takdirine göre, sanık … hakkında kurulan hükmün usul ve mevzuata uygun olduğu gerekçesiyle, istinaf isteminin esastan reddine dair verilen kararda hukuka aykırılık</p>
+
+<p>bulunmadığından, sanık … ve savunmanının temyiz itirazlarının CMK’nın 302/1. maddesi gereğince reddiyle, İstanbul Bölge Adliye Mahkemesi 14. Ceza Dairesinin 2017/547 E. 2017/551 K. sayılı esastan red hükmünün tebliğnameye uygun olarak, ONANMASINA, 22.01.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 14. CEZA DAİRESİ
+Esas: 2017/7343 Karar: 2018/285</strong> Tarih: 15.01.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 286. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Temyiz</strong></p>
+  </li>
+</ul>
+
+<p>Suça sürüklenen çocuk hakkında kişiyi hürriyetinden yoksun kılma suçundan kurulan hükmün incelenmesinde;</p>
+
+<p>Hükmedilen cezanın tür ve miktarı gözetildiğinde 5271 sayılı CMK’nın 286/2-a. maddesi uyarınca ilk derece mahkemelerinden verilen beş yıl veya daha az hapis cezaları ile miktarı ne olursa olsun adli para cezalarına ilişkin istinaf başvurusunun esastan reddine dair Bölge Adliye Mahkemesi kararlarının temyizi mümkün olmadığından, suça sürüklenen çocuk müdafii ile katılan Bakanlık vekilinin anılan hükme ilişkin temyiz istemlerinin aynı Kanunun 298/1. maddesi uyarınca REDDİNE,</p>
+
+<p>Suça sürüklenen çocuk hakkında çocuğun nitelikli cinsel istismarı suçundan kurulan hükmün temyiz incelemesine gelince;</p>
+
+<p>5271 sayılı CMK’nın 288, 294. maddelerinde5271 sayılı CMK’nın 288 ve 294. maddelerinde yer alan düzenlemeler nazara alınıp aynı Kanunun 289. maddesinde sayılan kesin hukuka aykırılık halleri ile suça sürüklenen çocuk müdafii ve katılan Bakanlık vekilinin temyiz dilekçelerinde belirttikleri nedenler de gözetilerek yapılan değerlendirmede, Bölge Adliye Mahkemesi tarafından gerçekleştirilen inceleme neticesinde vaki istinaf başvurusunun düzeltilerek esastan reddine dair kurulan hükme yönelik temyiz sebepleri yerinde görülmediğinden, suça sürüklenen çocuk müdafii ile katılan Bakanlık vekilinin temyiz istemlerinin 5271 sayılı CMK’nın 302/1. madde ve fıkrası gereğince esastan reddiyle hükmün ONANMASINA, 15.01.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 14. CEZA DAİRESİ
+Esas: 2017/7700 Karar: 2018/271</strong> Tarih: 15.01.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 286. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Temyiz</strong></p>
+  </li>
+</ul>
+
+<p>Sanığın kişiyi hürriyetinden kılma suçundan beraatine dair Karabük Ağır Ceza Mahkemesinden verilen 27.12.2016 gün ve 2016/99 Esas, 2016/201 Karar sayılı hükme yönelik istinaf başvurusunun esastan reddine, nitelikli cinsel saldırı suçundan beraatine dair hükme ilişkin istinaf başvurusunun kabulü ile hükmün kaldırılarak müsnet suçtan mahkumiyetine</p>
+
+<p>Bölge Adliye Mahkemesince verilen hükümler temyiz edilmekle dosya incelendi.</p>
+
+<p>Sanığa isnat edilen kişiyi hürriyetinden yoksun kılma suçunun üst sınırının on yıldan az olması itibariyle ilk derece mahkemesince verilen beraat hükmü ile ilgili olarak 5271 sayılı CMK’nın 286/1-f. maddesi uyarınca Bölge Adliye Mahkemesince istinaf başvurusunun esastan reddine dair karar kesin olup temyizi mümkün bulunmadığından, katılan Bakanlık vekilinin anılan hükme ilişkin temyiz isteminin aynı Kanunun 298. maddesi uyarınca Reddiyle, incelemenin nitelikli cinsel saldırı suçundan kurulan hükümle sınırlı olarak ve bu yöndeki talep uygun görülmediğinden duruşmasız yapılmasına karar verildikten sonra gereği düşünüldü:</p>
+
+<p>5271 sayılı CMK’nın 288, 294. maddelerinde5271 sayılı CMK’nın 288 ve 294. maddelerinde yer alan düzenlemeler nazara alınıp aynı Kanunun 289. maddesinde sayılan kesin hukuka aykırılık halleri ile sanık ile müdafii ve katılan Bakanlık vekilinin temyiz dilekçesinde belirttiği nedenler de gözetilerek yapılan değerlendirmede, Bölge Adliye Mahkemesi tarafından gerçekleştirilen inceleme neticesinde istinaf başvurusunun kabulü ile hükmün kaldırılarak sanığın mahkumiyetine dair kurulan hükme yönelik temyiz sebepleri yerinde görülmediğinden, sanık ile müdafii ve katılan bakanlık vekilinin temyiz isteminin 5271 sayılı CMK’nın 302/1. madde ve fıkrası gereğince esastan reddiyle hükmün ONANMASINA, 15.01.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+</div></div></main>
+</div>
+
+<footer>
+<section>
+<div class="contact-info">
+
+<div class="adres">
+
+<div class="telefon-wrapper">
+
+
+</div>
+</div>
+</section>
+
+</div>
+
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+"vars": {
+"account": "UA-58342443-1"
+},
+"triggers": {
+"trackPageview": {
+"on": "visible",
+"request": "pageview"
+}
+}
+}
+</script>
+</amp-analytics>
+
+</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="../../index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="../../dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="../../ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="../../knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="../../search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/slideToggle.min.js"></script>
+    <script src="../js/internet-status.js"></script>
+    <script src="../js/tiny-slider.js"></script>
+    <script src="../js/baguetteBox.min.js"></script>
+    <script src="../js/countdown.js"></script>
+    <script src="../js/rangeslider.min.js"></script>
+    <script src="../js/vanilla-dataTables.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/magic-grid.min.js"></script>
+    <script src="../js/dark-rtl.js"></script>
+    <script src="../js/active.js"></script>
+    <!-- PWA -->
+    <script src="../js/pwa.js"></script>
+  </body>
+</html>

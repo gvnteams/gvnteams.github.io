@@ -1,0 +1,1102 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tiny-slider.css">
+    <link rel="stylesheet" href="../css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="../css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="tck-search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+               <div class="page-content-wrapper py-0">
+        </div>
+      </div>
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<h2 id="koşullu-salıverilme">Koşullu Salıverilme</h2>
+
+<h2 id="i̇nfaz-kanunu-madde-107">İnfaz Kanunu Madde 107</h2>
+
+<p>(1) Koşullu salıverilmeden yararlanabilmek için mahkûmun kurumdaki infaz süresini iyi hâlli olarak geçirmesi gerekir.</p>
+
+<p>(2) Ağırlaştırılmış müebbet hapis cezasına mahkûm edilmiş olanlar otuz yılını, müebbet hapis cezasına mahkûm edilmiş olanlar yirmidört yılını, diğer süreli hapis cezalarına mahkûm edilmiş olanlar cezalarının yarısını infaz kurumunda çektikleri takdirde, koşullu salıverilmeden yararlanabilirler. (Ek cümleler:14/4/2020-7242/48 md.) Ancak, Türk Ceza Kanununun;</p>
+
+<p>a) Kasten öldürme suçlarından (madde 81, 82 ve 83) süreli hapis cezasına mahkûm olanlar,</p>
+
+<p>b) Neticesi sebebiyle ağırlaşmış yaralama suçundan (madde 87, fıkra iki, bent
+d) süreli hapis cezasına mahkûm olanlar,</p>
+
+<p>c) İşkence suçundan (madde 94 ve 95) ve eziyet suçundan (madde 96) süreli hapis cezasına mahkûm olanlar,</p>
+
+<p>d) Cinsel saldırı (madde 102, ikinci fıkra hariç), reşit olmayanla cinsel ilişki (madde 104, ikinci ve üçüncü fıkra hariç) ve cinsel taciz (madde 105) suçlarından süreli hapis cezasına mahkûm olanlar,</p>
+
+<p>e) Cinsel dokunulmazlığa karşı işlenen suçlardan (madde 102, 103, 104 ve 105) hapis cezasına mahkûm olan çocuklar,</p>
+
+<p>f) Özel hayata ve hayatın gizli alanına karşı suçlardan (madde 132, 133, 134, 135, 136, 137 ve 138) süreli hapis cezasına mahkûm olanlar,</p>
+
+<p>g) Uyuşturucu veya uyarıcı madde imal ve ticareti suçundan (madde 188) hapis cezasına mahkûm olan çocuklar,</p>
+
+<p>h) Devlet sırlarına karşı suçlar ve casusluk suçlarından (madde 326 ilâ 339) süreli hapis cezasına mahkûm olanlar, cezalarının üçte ikisini infaz kurumunda çektikleri takdirde, koşullu salıverilmeden yararlanabilirler. Ayrıca, suç işlemek için örgüt kurmak veya yönetmek ya da örgütün faaliyeti çerçevesinde işlenen suçlar ile Terörle Mücadele Kanunu kapsamına giren suçlardan mahkûm olan çocuklar ile 1/1/1983 tarihli ve 2937 sayılı Devlet İstihbarat Hizmetleri ve Milli İstihbarat Teşkilatı Kanunu kapsamına giren suçlardan mahkûm olanlar hakkında koşullu salıverilme oranı üçte iki olarak uygulanır.</p>
+
+<p>(3) Koşullu salıverilme için infaz kurumunda geçirilmesi gereken süre;</p>
+
+<p>a) Birden fazla ağırlaştırılmış müebbet hapis cezasına veya ağırlaştırılmış müebbet hapis cezası ile müebbet hapis cezasına mahkûmiyet hâlinde otuzaltı,</p>
+
+<p>b) Birden fazla müebbet hapis cezasına mahkûmiyet hâlinde otuz,</p>
+
+<p>c) Bir ağırlaştırılmış müebbet hapis cezası ile süreli hapis cezasına mahkûmiyet hâlinde en fazla otuzaltı,</p>
+
+<p>d) Bir müebbet hapis cezası ile süreli hapis cezasına mahkûmiyet hâlinde en fazla otuz,</p>
+
+<p>e) Birden fazla süreli hapis cezasına mahkûmiyet hâlinde en fazla yirmisekiz, Yıldır.</p>
+
+<p>(4) Suç işlemek için örgüt kurmak veya yönetmek ya da örgütün faaliyeti çerçevesinde işlenen suçtan dolayı mahkûmiyet hâlinde; ağırlaştırılmış müebbet hapis cezasına mahkûm edilmiş olanlar otuzaltı yılını, müebbet hapis cezasına mahkûm edilmiş olanlar otuz yılını, süreli hapis cezasına mahkûm edilmiş olanlar cezalarının üçte ikisini infaz kurumunda çektikleri takdirde, koşullu salıverilmeden yararlanabilirler. (Ek cümle:14/4/2020 7242/48 md.) Koşullu salıverilme oranı üçte ikiden fazla olan suçlar bakımından ise tabi oldukları koşullu salıverilme oranı uygulanır. Ancak, bu süreler;</p>
+
+<p>a) Birden fazla ağırlaştırılmış müebbet hapis cezasına veya ağırlaştırılmış müebbet hapis cezası ile müebbet hapis cezasına mahkûmiyet hâlinde kırk,</p>
+
+<p>b) Birden fazla müebbet hapis cezasına mahkûmiyet hâlinde otuzdört,</p>
+
+<p>c) Bir ağırlaştırılmış müebbet hapis cezası ile süreli hapis cezasına mahkûmiyet hâlinde en fazla kırk,</p>
+
+<p>d) Bir müebbet hapis cezası ile süreli hapis cezasına mahkûmiyet hâlinde en fazla otuzdört,</p>
+
+<p>e) Birden fazla süreli hapis cezasına mahkûmiyet hâlinde en fazla otuziki, Yıldır. (Ek cümle:22/7/2010 - 6008/9 md.) Bu fıkra hükümleri çocuklar hakkında uygulanmaz.</p>
+
+<p>(5) Koşullu salıverilme süresinin hesaplanmasında, hükümlünün onbeş yaşını dolduruncaya kadar infaz kurumunda geçirdiği bir gün, iki gün olarak dikkate alınır.</p>
+
+<p>(6) Koşullu salıverilen hükümlünün tâbi tutulacağı denetim süresi, yukarıdaki fıkralara göre infaz kurumunda geçirilmesi gereken süre kadardır. Ancak süreli hapislerde hakederek tahliye tarihini geçemez.</p>
+
+<p>(7) Hükümlü, denetim süresinde, infaz kurumunda öğrendiği meslek veya sanatı icra etmek üzere, bir kamu kurumunda veya özel olarak aynı meslek veya sanatı icra eden bir başkasının gözetimi altında, ücret karşılığında çalıştırılabilir.</p>
+
+<p>(8) Onsekiz yaşından küçük olan hükümlüler, denetim süresinde eğitimlerine, gerektiğinde barınma imkânı da bulunan bir kurumda devam ederler.</p>
+
+<p>(9) İnfaz hâkimi, denetim süresinde hükümlüye rehberlik edecek bir uzman kişiyi görevlendirebilir. Bu kişi, kötü alışkanlıklar edinebileceği çevrelerden uzak kalması ve sorumluluk bilinciyle iyi bir hayat sürmesini temin hususunda hükümlüye öğütte bulunur; eğitim gördüğü kurum yetkilileri veya yanında çalıştığı kişilerle görüşerek, istişarelerde bulunur; hükümlünün davranışları, sosyal uyumu ve sorumluluk bilincindeki gelişme hakkında üçer aylık sürelerle rapor düzenleyerek infaz hâkimine verir. (Ek cümleler:14/4/2020 7242/48 md.) İnfaz hâkimi ayrıca, iki yılı geçmemek üzere denetim süresi içinde hükümlünün denetimli serbestlik müdürlüğünce belirlenecek yükümlülüklere tabi tutulmasına karar verebilir. Bu karar gereğince denetimli serbestlik müdürlüğü, risk ve ihtiyaçlarını dikkate alarak hükümlüyü;</p>
+
+<p>a) Belirli bir bölgede denetim ve gözetim altında bulundurma,</p>
+
+<p>b) Belirlenen yer veya bölgelere gitmeme,</p>
+
+<p>c) Belirlenen programlara katılma, yükümlülüklerinden bir veya birden fazlasına tabi tutar. Denetimli serbestlik müdürlüğü hükümlünün risk ve ihtiyaçlarını dikkate alarak yükümlülükleri değiştirebilir.</p>
+
+<p>(10) İnfaz hâkimi, koşullu salıverilen hükümlünün kişiliğini ve topluma uyumdaki başarısını göz önünde bulundurarak; denetim süresinin, denetimli serbestlik tedbiri uygulanmadan veya herhangi bir yükümlülük belirlemeden geçirilmesine karar verebileceği gibi, denetimli serbestlik tedbiri uygulanmasını veya belirlenen yükümlülükleri denetim süresi içinde kaldırabilir.</p>
+
+<p>(11) (Değişik:14/4/2020-7242/48 md.) Hükümlünün koşullu salıverilmesi hakkında ceza infaz kurumu idaresi tarafından hazırlanan gerekçeli rapor, infaz işlemlerinin yapıldığı yer infaz hâkimliğine verilir. İnfaz hâkimi, bu raporu uygun bulursa hükümlünün koşullu salıverilmesine dosya üzerinden karar verir; raporu uygun bulmadığı takdirde gerekçesini kararında gösterir. Bu kararlara karşı itiraz yoluna gidilebilir.</p>
+
+<p>(12) Koşullu salıverilen hükümlünün, denetim süresinde hapis cezasını gerektiren kasıtlı bir suç işlemesi veya kendisine yüklenen yükümlülüklere, infaz hâkiminin uyarısına rağmen, uymamakta ısrar etmesi hâlinde koşullu salıverilme kararı geri alınır.</p>
+
+<p>(13) Koşullu salıverilme kararının geri alınması hâlinde hükümlünün;</p>
+
+<p>a) Sonraki suçu işlediği tarihten itibaren başlamak ve hak ederek tahliye tarihini geçmemek koşuluyla sonraki işlediği her bir suç için verilen hapis cezasının iki katı sürenin,</p>
+
+<p>b) (Değişik: 25/5/2005-5351/8 md.) Yükümlülüklerine aykırı davranması hâlinde, bu yükümlülüklere uymama tarihi ile hak ederek salıverilme tarihi arasındaki süreyi geçmemek koşuluyla ihlalin niteliğine göre takdir edilecek bir sürenin, Ceza infaz kurumunda aynen çektirilmesine karar verilir. Koşullu salıverilme kararının geri alınmasından sonra aynı hükmün infazı ile ilgili bir daha koşullu salıverilme kararı verilmez.</p>
+
+<p>(14) Denetim süresi yükümlülüklere uygun ve iyi hâlli olarak geçirildiği takdirde, ceza infaz edilmiş sayılır.</p>
+
+<p>(15) (Değişik: 20/7/2017-7035/25 md.) Hükümlü, geri kalan süre içinde işlediği kasıtlı bir suçtan dolayı hapis cezasına mahkûm edilirse ya da bağlı tutulduğu yükümlülükleri yerine getirmezse hükmü veren ilk derece mahkemesinin bulunduğu yer infaz hâkimliği, cezaların toplandığı hâller ile hükmün bölge adliye mahkemesi veya Yargıtay tarafından verilmiş olması hâlinde ise 101 inci maddenin ikinci fıkrasına göre belirlenen infaz hâkimliği tarafından koşullu salıverilme kararının geri alınmasına dosya üzerinden karar verilir. Bu kararlara karşı itiraz yolu açıktır.</p>
+
+<p>(16) 5237 sayılı Türk Ceza Kanununun İkinci Kitap, Dördüncü Kısım, “Devletin Güvenliğine Karşı Suçlar” başlıklı Dördüncü Bölüm, “Anayasal Düzene ve Bu Düzenin İşleyişine Karşı Suçlar” başlıklı Beşinci Bölüm, “Milli Savunmaya Karşı Suçlar” başlıklı Altıncı Bölüm altında yer alan suçlardan birinin bir örgütün faaliyeti çerçevesinde işlenmesi dolayısıyla ağırlaştırılmış müebbet hapis cezasına mahkûmiyet hâlinde, koşullu salıverilme hükümleri uygulanmaz.</p>
+
+<hr>
+
+<ul>
+  <li><a href="../5275-sayili-ceza-ve-guvenlik-tedbirlerinin-infazi-hakkinda-kanun-1.html"><strong>5275 Sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun Tam Metin</strong></a></li>
+</ul>
+
+<hr>
+
+<amp-img src="../tokmak-yargitay-kararlari-1280x720.png" alt="İnfaz Kanunu Madde 107  Koşullu Salıverilme" width="1280" height="720" layout="responsive">
+            </amp-img>
+<h2 id="i̇nfaz-kanunu-madde-107-gerekçesi">İnfaz Kanunu Madde 107 Gerekçesi</h2>
+
+<p>Maddede, şartla salıverilme kurumu düzenlenmektedir. Söz konusu kurum bakımından madde esaslı bir takım yenilikler getirmiştir. Bu hususta çağdaş ceza hukuku eğilimlerinden yararlanılmıştır.</p>
+
+<p>Maddenin birinci fıkrasında yer alan düzenlemeyle, ağırlaştırılmış müebbet hapis cezasına mahkûm edilenler otuzaltı yılını, müebbet hapis cezasına mahkûm edilmiş olanlar otuz yılını, diğer mahkûmlar cezalarının üçte ikisini infaz kurumunda çektikleri takdirde şartla salıverilmeden yararlanabilirler. Ancak, bunun için mahkûmun kurumdaki infaz süresini iyi halli olarak geçirmesi gerekmektedir. Şartla salıverilme süresinin hesabında onsekiz yaşından küçük hükümlünün, onsekiz yaşını dolduruncaya kadarki geçirdiği bir gün iki gün olarak dikkate alınacaktır.</p>
+
+<p>Bunun dışında suç işlemek için örgüt kurmak veya yönetmek ya da örgütün faaliyeti çerçevesinde işlenen suçtan dolayı mahkûmiyet halinde; hükümlü, mahkûm olduğu ağırlaştırılmış müebbet hapis cezasının otuzdokuz yılını, müebbet hapis cezasının otuzdört yılını, süreli hapis cezasının ise dörtte üçünü infaz kurumunda iyi halli olarak çektiği halde şartla salıverilebilecektir. Devletin güvenliğine ve anayasal düzene karşı işlenen suçlardan dolayı ağırlaştırılmış müebbet hapis cezasına mahkûmiyet halinde şartla salıverilme hükümleri uygulanmayacaktır.</p>
+
+<p>Birden çok ağırlaştırılmış müebbet hapis cezasına veya ağırlaştırılmış müebbet hapis cezası ile birlikte müebbet hapis cezasına ya da birden fazla müebbet hapis cezasına mahkûmiyet halinde şartla salıverilmeden yararlanabilmek için infaz kurumunda geçirilmesi gereken süre kırk yıldır. Aynı şekilde ağırlaştırılmış müebbet hapis cezası veya müebbet hapis cezası ile süreli hapis cezasına ya da birden fazla süreli hapis cezasına mahkûmiyet halinde bu süre en fazla kırk yıldır. Şartla salıverilen hükümlünün tabi tutulacağı denetim süresi infaz kurumunda geçirdiği sürenin yarısı kadar olacaktır. Hükümlü denetim süresi içinde infaz kurumlarında öğrendiği meslek veya sanatı sürdürmek için bir kamu kurumunda veya özel olarak aynı meslek veya sanatı icra eden bir başka kişinin gözetimi altında ücret karşılığında çalıştırılabilir. Onsekiz yaşından küçük hükümlüler denetim süresinde eğitimlerine gerektiğinde barınma imkanı bulunan bir kurumda da devam etme imkanına sahiptirler.</p>
+
+<p>Denetim süresi içinde hükümlüye rehberlik edecek bir uzman kişi görevlendirilebilir ve bu uzman hükümlünün sorumluluk bilinci altında iyi bir yaşam sürmesini temin konusunda ve kötü alışkanlıklardan uzak durması yönünde öğütte bulunup, eğitim gördüğü kurum görevlileri veya nezdinde çalıştığı kişilerle görüşerek istişarelerde bulunabilir, hükümlünün davranışları, sosyal gelişimi ve sorumluluk bilincindeki gelişme konusunda rapor düzenleyecektir.</p>
+
+<p>Hakim, şartla salıverilen hükümlünün kişiliğini ve topluma uyumdaki başarısını dikkate alarak; denetim süresinin, denetimli serbestlik tedbiri uygulanmadan veya herhangi bir yükümlülük belirlemeden geçirilmesine karar verebileceği gibi; denetimli serbestlik tedbiri uygulanmasını veya belirlenen yükümlülükleri, denetim süresi içinde kaldırma yetkisine sahiptir.</p>
+
+<p>Şartla salıverilen hükümlünün, denetim süresinde hapis cezasını gerektiren kasıtlı bir suç işlemesi veya kendisine yüklenen yükümlülüklere, hakimin uyarısına rağmen, uymamakta ısrar etmesi durumunda; şartla salıverilme kararı geri alınır ve şartla salıverilme tarihi itibarıyla kalan cezasının tamamen veya kısmen infaz kurumunda aynen çektirilmesi yoluna gidilir. Hükümlü, söz konusu bu ceza ile ilgili olarak bir daha şartla salıvermeden yararlanamaz. Ancak, aynen çektirilmesine karar verilen kısmı, sonraki suçun işlendiği tarih itibarıyla kalan cezasından az olamaz.</p>
+
+<p>Denetim süresinin hükümlü tarafından yükümlülüklere uygun veya iyi halli olarak geçirilmesi durumunda, cezası infaz edilmiş sayılacaktır.</p>
+
+<p>Şartla salıverme kararının geri alınmasında ilk hüküm veren mahkeme bu konuda karar vermeye yetkilidir.</p>
+
+<hr>
+
+<h2 id="i̇nfaz-kanunu-107-madde-emsal-yargıtay-kararları">İnfaz Kanunu 107. Madde Emsal Yargıtay Kararları</h2>
+
+<hr>
+
+<p><strong>YARGITAY 16. CEZA DAİRESİ 
+Esas : 2017/2707 Karar : 2018/295</strong> Tarih : 13.02.2018</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 107. Madde</strong></li>
+</ul>
+
+<p>Temyiz talebinin reddi nedenleri bulunmadığından işin esasına geçildi;</p>
+
+<p>Vicdani kanının oluştuğu duruşma sürecini yansıtan tutanaklar, belgeler ve gerekçe içeriğine göre yapılan incelemede;</p>
+
+<p>Yargılama sürecindeki usuli işlemlerin kanuna uygun olarak yapıldığı, hükme esas alınan tüm delillerin hukuka uygun olarak elde edildiğinin belirlendiği, aşamalarda ileri sürülen iddia ve savunmaların temyiz denetimini sağlayacak biçimde eksiksiz olarak sergilendiği, özleri değiştirmeksizin tartışıldığı, vicdani kanının kesin, tutarlı ve çelişmeyen verilere dayandırıldığı, eylemlerin doğru olarak nitelendirildiği ve kanunda öngörülen suç tipine uyduğu, yaptırımların kanuni bağlamda şahsileştirilmek suretiyle uygulandığı anlaşılmakla; sanık müdafilerinin temyiz dilekçelerinde ileri sürdükleri nedenler yerinde görülmediğinden CMK’nın 302/1. maddesi gereğince temyiz davasının esastan reddine, ancak;</p>
+
+<p>TCK’nın 314. maddesinde tanımlanan bir örgüte, faaliyetlerinde kullanmak üzere silah temin etme eylemi, silahlı örgüte yardımın özel bir şekli olup</p>
+
+<p>TCK’nın 315. maddesi gereğince özel bir yaptırıma bağlanmış olmakla, söz konusu eylemi gerçekleştiren sanıklar hakkında 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanunun 107. maddesinin dördüncü fıkrası ile 108. maddesi hükümleri uygulanma olanağı bulunmasına rağmen sadece örgüt mensupları hakkında uygulama imkanı bulunan TCK’nın 58/9. maddesinin uygulanması,</p>
+
+<p>Bozmayı gerektirmiş, hükümlerin bu nedenlerle BOZULMASINA, bu hususun yeniden yargılama yapılmaksızın CMUK’nın 322. maddesine göre düzeltilmesi mümkün bulunduğundan hükümlerden TCK’nın 58/9. maddesinin uygulanmasına ilişkin kısımların çıkarılması suretiyle sair yönleri usul ve kanuna uygun bulunan hükümlerin DÜZELTİLEREK ONANMASINA, 13.02.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<p>TEFHİM ŞERHİ:</p>
+
+<p>13.02.2018 tarihinde verilen iş bu karar, Yargıtay Cumhuriyet savcısı …’nun huzurunda, duruşmada sanık …’ın savunmasını yapmış bulunan Av. …‘in yokluğunda, 21.02.2018 tarihinde usulen ve açık olarak tefhim olundu.</p>
+
+<hr>
+
+<p><strong>YARGITAY 13. CEZA DAİRESİ 
+Esas : 2016/7219 Karar : 2017/5838</strong> Tarih : 29.12.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 107. Madde</strong></li>
+</ul>
+
+<p>Suç işlemek amacıyla kurulan örgüte üye olma suçundan İstanbul 14. Ağır Ceza Mahkemesinin 04.12.2009 tarihli ve 2009/76 esas, 2009/310 sayılı kararı ile 10 ay hapis cezasına hükümlü … hakkında, İzmir Cumhuriyet Başsavcılığı tarafından düzenlenen 01.07.2015 tarihli müddetnameye karşı yapılan itirazın kabulüne ve hükümlü hakkındaki infaz rejiminin 5275 sayılı Kanunun 107/2. maddesine göre belirlenmesine dair İstanbul 14. Ağır Ceza Mahkemesinin 10.07.2015 tarihli ve 2009/76 esas, 2009/310 değişik iş sayılı kararına karşı yapılan itirazın reddine ilişkin İstanbul 15. Ağır Ceza Mahkemesinin 22.07.2015 tarihli ve 2015/439 değişik iş sayılı kapsayan infaz dosyası incelendi:</p>
+
+<p>Dosya kapsamına göre, 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanunun 107/4. maddesinde yer alan hükmün “Suç işlemek için örgüt kurmak veya yönetmek ya da örgütün faaliyeti çerçevesinde işlenen suçtan dolayı mahkûmiyet halinde, ağırlaştırılmış müebbet hapis cezasına mahkûm edilmiş olanlar otuzaltı yılını, müebbet hapis cezasına mahkûm edilmiş olanlar otuz yılını, süreli hapis cezasına mahkûm edilmiş olanlar cezalarının dörtte üçünü infaz kurumunda çektikleri takdirde, koşullu salıverilmeden yararlanabilirler.” şeklindeki düzenlemesi karşısında, hükümlü hakkında suç işlemek amacıyla kurulan örgüte üye olma suçundan 5237 sayılı Kanunun 220/2. maddesi uyarınca verilen mahkûmiyet hükmünün infazının 5275 sayılı Kanunun 107/4. maddesi gereğince yapılması gerektiği gözetilmeden, itirazın kabulü yerine, yazılı şekilde reddine karar verilmesinde isabet görülmemiştir.</p>
+
+<p>5271 sayılı Ceza Muhakemesi Kanununun 309. maddesi uyarınca anılan kararın bozulması lüzumu Yüksek Adalet Bakanlığı Ceza İşleri Genel Müdürlüğünün 07.11.2016 gün ve 94660652-105-34-11016-2016-Kyb sayılı yazılı istemlerine müsteniden ihbar ve mevcut evrak tebliğ olunmuştur.</p>
+
+<p>TÜRK MİLLETİ ADINA</p>
+
+<p>I- Olay:</p>
+
+<p>Suç işlemek amacıyla kurulan örgüte üye olmak suçundan hükümlü … Fodiyatis’in eylemine uyan 5237 sayılı TCK’nın 220/2, 62 maddeleri gereğince 10 ay hapis cezası ile cezalandırılmasına ve hak yoksunluğuna dair İstanbul 14. Ağır Ceza Mahkemesince 04.12.2009 tarihinde verilen ve Yargıtay 10. Ceza Dairesinin 05.05.2014 tarih 3549-3507 sayılı ilamı ile onanarak kesinleşen cezanın, 5275 sayılı Kanunun 108/1-c maddesi gereğince infazına dair İzmir C. Başsavcılığınca düzenlenen 01.07.2015 tarihli müddetname ile ilgili olarak, hükümlü müdafiinin talebi üzerine İstanbul 14. Ağır Ceza Mahkemesinin 10.07.2015 tarih, 2009/76-310 sayılı ek kararı ile özetle; sanık hakkında kesinleşen ilamda, verilen cezanın TCK’nın 58/9 maddesi gereğince mükerrirlere özgü infaz rejimine göre çektirileceği hususunda bir tesbit bulunmadığından hükümlü lehine 1412 sayılı CMUK`nın 326/son maddesi gereğince müktesep hak oluşması nedeniyle cezanın 5275 sayılı Kanunun 108/1-c maddesi gereğince çektirilemeyeceği gerekçesiyle itirazın kabulüne karar verilmiş, Cumhuriyet savcılığının itirazı üzerine İstanbul 15. Ağır Ceza Mahkemesinin 22.07.2015 tarih 439 sayılı kararı ile vaki itiraz reddedilmiştir.</p>
+
+<p>II- Kanun yararına bozma istemine ilişkin uyuşmazlığın kapsamı:</p>
+
+<p>Dairece çözülmesi gereken uyuşmazlık; suç işlemek üzere kurulan örgüte üye olmak suçundan 5237 sayılı TCK’nın 220/2. maddesi gereğince hükümlü …‘in cezalandırılmasına dair temyiz incelemesinden geçerek kesinleşen hükümde, işbu cezanın 5237 sayılı TCK’nın 58/9. maddesi gereğince mükerrirlere özgü infaz rejimine göre çektirilmesine karar verilmediğinden, 1412 sayılı CMUK`nın 326/son maddesi bağlamında infazın 5275 sayılı Kanunun 108/1-c maddesi gereğince yapılıp yapılamayacağına ilişkindir.</p>
+
+<p>III- Hukuki Değerlendirme:</p>
+
+<p>Konuyla ilgili yasal düzenlemeler şöyledir:</p>
+
+<p>Suçta tekerrür ve özel tehlikeli suçlular
+Madde 58- (1) Önceden işlenen suçtan dolayı verilen hüküm kesinleştikten sonra yeni bir suçun işlenmesi halinde,tekerrür hükümleri uygulanır. Bunun için cezanın infaz edilmiş olması gerekmez.
+(2) Tekerrür hükümleri, önceden işlenen suçtan dolayı;
+a) Beş yıldan fazla süreyle hapis cezasına mahkûmiyet halinde, bu cezanın infaz edildiği tarihten itibaren beş yıl,
+b) Beş yıl veya daha az süreli hapis ya da adlî para cezasına mahkûmiyet halinde, bu cezanın infaz edildiği tarihten itibaren üç yıl,
+Geçtikten sonra işlenen suçlar dolayısıyla uygulanmaz.
+(3) Tekerrür halinde, sonraki suça ilişkin kanun maddesinde seçimlik olarak hapis cezası ile adlî para cezası öngörülmüşse, hapis cezasına hükmolunur.
+(4) Kasıtlı suçlarla taksirli suçlar ve sırf askerî suçlarla diğer suçlar arasında tekerrür hükümleri uygulanmaz. Kasten öldürme, kasten yaralama, yağma, dolandırıcılık, uyuşturucu veya uyarıcı madde imal ve ticareti ile parada veya kıymetli damgada sahtecilik suçları hariç olmak üzere; yabancı ülke mahkemelerinden verilen hükümler tekerrüre esas olmaz.
+(5) Fiili işlediği sırada onsekiz yaşını doldurmamış olan kişilerin işlediği suçlar dolayısıyla tekerrür hükümleri uygulanmaz.
+(6) Tekerrür halinde hükmolunan ceza, mükerrirlere özgü infaz rejimine göre çektirilir. Ayrıca, mükerrir hakkında cezanın infazından sonra denetimli serbestlik tedbiri uygulanır.
+(7) Mahkûmiyet kararında, hükümlü hakkında mükerrirlere özgü infaz rejiminin ve cezanın infazından sonra denetimli serbestlik tedbirinin uygulanacağı belirtilir.
+(8) Mükerrirlerin mahkûm olduğu cezanın infazı ile denetimli serbestlik tedbirinin uygulanması, kanunda gösterilen şekilde yapılır.
+(9) Mükerrirlere özgü infaz rejiminin ve cezanın infazından sonra denetimli serbestlik tedbirinin, itiyadi suçlu, suçu meslek edinen kişi veya örgüt mensubu suçlu hakkında da uygulanmasına hükmedilir.</p>
+
+<p>Koşullu salıverilme 
+Madde 107- (1) Koşullu salıverilmeden yararlanabilmek için mahkûmun kurumdaki infaz süresini iyi hâlli olarak geçirmesi gerekir.
+(2) Ağırlaştırılmış müebbet hapis cezasına mahkûm edilmiş olanlar otuz yılını, müebbet hapis cezasına mahkûm edilmiş olanlar yirmidört yılını, diğer süreli hapis cezalarına mahkûm edilmiş olanlar cezalarının üçte ikisini infaz kurumunda çektikleri takdirde, koşullu salıverilmeden yararlanabilirler.
+(3) Koşullu salıverilme için infaz kurumunda geçirilmesi gereken süre;
+a) Birden fazla ağırlaştırılmış müebbet hapis cezasına veya ağırlaştırılmış müebbet hapis cezası ile müebbet hapis cezasına mahkûmiyet hâlinde otuzaltı,
+b) Birden fazla müebbet hapis cezasına mahkûmiyet hâlinde otuz,
+c) Bir ağırlaştırılmış müebbet hapis cezası ile süreli hapis cezasına mahkûmiyet hâlinde en fazla otuzaltı,
+d) Bir müebbet hapis cezası ile süreli hapis cezasına mahkûmiyet hâlinde en fazla otuz,
+e) Birden fazla süreli hapis cezasına mahkûmiyet hâlinde en fazla yirmisekiz,
+Yıldır.
+(4) Suç işlemek için örgüt kurmak veya yönetmek ya da örgütün faaliyeti çerçevesinde işlenen suçtan dolayı mahkûmiyet hâlinde; ağırlaştırılmış müebbet hapis cezasına mahkûm edilmiş olanlar otuzaltı yılını, müebbet hapis cezasına mahkûm edilmiş olanlar otuz yılını, süreli hapis cezasına mahkûm edilmiş olanlar cezalarının dörtte üçünü infaz kurumunda çektikleri takdirde, koşullu salıverilmeden yararlanabilirler. Ancak, bu süreler;
+a) Birden fazla ağırlaştırılmış müebbet hapis cezasına veya ağırlaştırılmış müebbet hapis cezası ile müebbet hapis cezasına mahkûmiyet hâlinde kırk,
+b) Birden fazla müebbet hapis cezasına mahkûmiyet hâlinde otuzdört,
+c) Bir ağırlaştırılmış müebbet hapis cezası ile süreli hapis cezasına mahkûmiyet hâlinde en fazla kırk,
+d) Bir müebbet hapis cezası ile süreli hapis cezasına mahkûmiyet hâlinde en fazla otuzdört,
+e) Birden fazla süreli hapis cezasına mahkûmiyet hâlinde en fazla otuziki,
+Yıldır. (Ek cümle: 22/7/2010 - 6008/9 md.) Bu fıkra hükümleri çocuklar hakkında uygulanmaz.
+(5) Koşullu salıverilme süresinin hesaplanmasında, hükümlünün onbeş yaşını dolduruncaya kadar infaz kurumunda geçirdiği bir gün, iki gün olarak dikkate alınır. 
+(6) Koşullu salıverilen hükümlünün tâbi tutulacağı denetim süresi, yukarıdaki fıkralara göre infaz kurumunda geçirilmesi gereken sürenin yarısı kadardır. Ancak süreli hapislerde hakederek tahliye tarihini geçemez.
+(7) Hükümlü, denetim süresinde, infaz kurumunda öğrendiği meslek veya sanatı icra etmek üzere, bir kamu kurumunda veya özel olarak aynı meslek veya sanatı icra eden bir başkasının gözetimi altında, ücret karşılığında çalıştırılabilir.
+(8) Onsekiz yaşından küçük olan hükümlüler, denetim süresinde eğitimlerine, gerektiğinde barınma imkânı da bulunan bir kurumda devam ederler.
+(9) Hâkim, denetim süresinde hükümlüye rehberlik edecek bir uzman kişiyi görevlendirebilir. Bu kişi, kötü alışkanlıklar edinebileceği çevrelerden uzak kalması ve sorumluluk bilinciyle iyi bir hayat sürmesini temin hususunda hükümlüye öğütte bulunur; eğitim gördüğü kurum yetkilileri veya yanında çalıştığı kişilerle görüşerek, istişarelerde bulunur; hükümlünün davranışları, sosyal uyumu ve sorumluluk bilincindeki gelişme hakkında üçer aylık sürelerle rapor düzenleyerek hâkime verir.
+(10) Hâkim, koşullu salıverilen hükümlünün kişiliğini ve topluma uyumdaki başarısını göz önünde bulundurarak; denetim süresinin, denetimli serbestlik tedbiri uygulanmadan veya herhangi bir yükümlülük belirlemeden geçirilmesine karar verebileceği gibi, denetimli serbestlik tedbiri uygulanmasını veya belirlenen yükümlülükleri denetim süresi içinde kaldırabilir.
+(11) Bir hükümlünün koşullu salıverilmesi hakkında ceza infaz kurumu idaresi tarafından hazırlanan gerekçeli rapor, hükmü veren mahkemeye; hükümlü başka bir yerde bulunuyorsa o yerde bulunan aynı derecedeki mahkemeye verilir.
+Mahkeme, bu raporu uygun bulursa hükümlünün koşullu salıverilmesine dosya üzerinden karar verir. Mahkeme, raporu uygun bulmadığı takdirde gerekçesini kararında gösterir. Bu kararlara karşı itiraz yoluna gidilebilir.
+(12) Koşullu salıverilen hükümlünün, denetim süresinde hapis cezasını gerektiren kasıtlı bir suç işlemesi veya kendisine yüklenen yükümlülüklere, hâkimin uyarısına rağmen, uymamakta ısrar etmesi hâlinde koşullu salıverilme kararı geri alınır.
+(13) Koşullu salıverilme kararının geri alınması hâlinde hükümlünün;
+a) Sonraki suçu işlediği tarihten itibaren kalan cezasının aynen,
+b) (Değişik: 25/5/2005-5351/8 md.) Yükümlülüklerine aykırı davranması hâlinde, bu yükümlülüklere uymama tarihi ile hak ederek salıverilme tarihi arasındaki süreyi geçmemek koşuluyla takdir edilecek bir sürenin,
+Ceza infaz kurumunda çektirilmesine karar verilir. Koşullu salıverilme kararının geri alınmasından sonra aynı hükmün infazı ile ilgili bir daha koşullu salıverilme kararı verilmez.
+(14) Denetim süresi yükümlülüklere uygun ve iyi hâlli olarak geçirildiği takdirde, ceza infaz edilmiş sayılır.
+(15) Koşullu salıverilme kararının geri alınmasına;
+a) Hükümlü geri kalan süre içinde işlediği kasıtlı bir suçtan dolayı hapis cezasına mahkûm edilirse, hükmü veren ilk derece mahkemesi veya bölge adliye mahkemesi tarafından,
+b) Hükümlünün bağlı tutulduğu yükümlülükleri yerine getirmemesi hâlinde koşullu salıverilme kararına esas teşkil eden hükmü veren ilk derece mahkemesi veya bölge adliye mahkemesi veya koşullu salıverilme kararını vermiş olan mahkeme tarafından,
+Dosya üzerinden karar verilir. Bu kararlara karşı itiraz yolu açıktır.
+(16) 5237 sayılı Türk Ceza Kanununun İkinci Kitap, Dördüncü Kısım, “Devletin Güvenliğine Karşı Suçlar” başlıklı Dördüncü Bölüm, “Anayasal Düzene ve Bu Düzenin İşleyişine Karşı Suçlar” başlıklı Beşinci Bölüm, “Milli Savunmaya Karşı Suçlar” başlıklı Altıncı Bölüm altında yer alan suçlardan birinin bir örgütün faaliyeti çerçevesinde işlenmesi dolayısıyla ağırlaştırılmış müebbet hapis cezasına mahkûmiyet hâlinde, koşullu salıverilme hükümleri uygulanmaz.</p>
+
+<p>Mükerrirlere ve bazı suç faillerine özgü infaz rejimi ve denetimli serbestlik tedbiri
+Madde 108- (1) Tekerrür hâlinde işlenen suçtan dolayı mahkûm olunan;
+a) Ağırlaştırılmış müebbet hapis cezasının otuzdokuz yılının,
+b) Müebbet hapis cezasının otuzüç yılının,
+c) Süreli hapis cezasının dörtte üçünün,
+İnfaz kurumunda iyi hâlli olarak çekilmesi durumunda, koşullu salıverilmeden yararlanılabilir.
+(2) Tekerrür nedeniyle koşullu salıverme süresine eklenecek miktar, tekerrüre esas alınan cezanın en ağırından fazla olamaz.
+(3) İkinci defa tekerrür hükümlerinin uygulanması durumunda, hükümlü koşullu salıverilmez.
+(4) Hâkim, mükerrir hakkında cezanın infazının tamamlanmasından sonra başlamak ve bir yıldan az olmamak üzere denetim süresi belirler.
+(5) Tekerrür dolayısıyla belirlenen denetim süresinde, koşullu salıverilmeye ilişkin hükümler uygulanır.
+(6) Hâkim, mükerrir hakkında denetim süresinin uzatılmasına karar verebilir. Denetim süresi en fazla beş yıla kadar uzatılabilir.
+(7) (Ek: 18/6/2014-6545/82 md.) Cezanın infazı tamamlandıktan sonra devam eden denetim süresi içinde, bu madde hükümlerine göre kendilerine yüklenen yükümlülüklere ve yasaklara aykırı hareket eden mükerrirler, infaz hâkimi kararı ile disiplin hapsine tabi tutulur. Disiplin hapsinin süresi on beş günden az ve üç aydan fazla olamaz.
+(8) (Ek: 18/6/2014-6545/82 md.) Çocuğa karşı işlenen bir suçtan dolayı ağırlaştırılmış müebbet hapis cezasına veya müebbet hapis cezasına mahkûmiyet hâlinde birinci fıkradaki koşullu salıverilme süreleri uygulanır.
+(9) (Ek: 18/6/2014-6545/82 md.) Birinci fıkradaki koşullu salıverme süreleri, 26.09.2004 tarihli ve 5237 sayılı Türk Ceza Kanununun 102’nci maddesinin ikinci fıkrasında tanımlanan cinsel saldırı suçundan, 103’üncü maddesinde tanımlanan çocukların cinsel istismarı suçundan, 104’üncü maddesinin ikinci ve üçüncü fıkrasında tanımlanan reşit olmayanla cinsel ilişki suçundan, 188’inci maddesinde tanımlanan uyuşturucu veya uyarıcı madde imal ve ticareti suçundan dolayı hapis cezasına mahkûm olanlar hakkında da uygulanır. 188’inci madde hariç olmak üzere bu suçlardan dolayı hapis cezasına mahkûm olanlar hakkında, cezanın infazı sırasında ve koşullu salıverildikleri takdirde denetim süresi içinde, aşağıdaki tedavi veya yükümlülüklerden bir veya birkaçına infaz hâkimi tarafından karar verilir:
+a) Tıbbi tedaviye tabi tutulmak
+b) Tedavi amaçlı programlara katılmak
+c) Suçun mağdurunun oturduğu ve çalıştığı yerleşim bölgesinde ikamet etmekten yasaklanmak
+d) Mağdurun bulunduğu yerlere yaklaşmaktan yasaklanmak
+e) Çocuklarla bir arada olmayı gerektiren bir ortamda çalışmaktan yasaklanmak
+f) Çocuklar hakkında bakım ve gözetim yükümlülüğünü gerektiren faaliyet icra etmekten yasaklanmak
+(10) (Ek: 18/6/2014-6545/82 md.) Dokuzuncu fıkra hükümleri çocuklar hakkında uygulanmaz.
+(11) (Ek: 18/6/2014-6545/82 md.) Bu maddenin dokuzuncu fıkrasının uygulanmasına ilişkin usul ve esaslar, Sağlık Bakanlığının görüşü alınmak suretiyle Adalet Bakanlığı tarafından hazırlanan yönetmelikle düzenlenir.
+(1421 sy.CMUK`UN)</p>
+
+<p>Davaya yeniden bakacak mahkemenin hak ve mecburiyetleri:
+Madde 326 – (Değişik: 21/5/1985 - 3206/66 md.)</p>
+
+<p>Yargıtaydan verilen bozma kararı üzerine davaya yeniden bakacak mahkeme, ilgililere bozmaya karşı diyeceklerini sorar.</p>
+
+<p>Sanık veya müdahil ve vekillerine davetiye tebliğ olunamaması veya davetiye tebliğ olunmasına rağmen duruşmaya gelmemeleri nedeniyle bozmaya karşı beyanları tespit edilmemiş olsa dahi duruşmaya devam edilerek dava gıyapta bitirilebilir. Ancak sanık hakkında verilecek ceza, bozmaya konu olan cezadan daha ağır ise herhalde dinlenilmesi gerekir.</p>
+
+<p>Yargıtaydan verilen bozma kararına mahkemelerin ısrar hakkı vardır. Israr üzerine Yargıtay Ceza Genel Kurulunca verilen kararlara uymak mecburidir.
+Hüküm yalnız sanık tarafından veya onun lehine Cumhuriyet savcısı veya 291`inci maddede gösterilen kimseler tarafından temyiz edilmişse yeniden verilen hüküm, evvelki hükümle tayin edilmiş olan cezadan daha ağır olamaz.</p>
+
+<p>(5271 sy.CMK`NIN)</p>
+
+<p>Davaya yeniden bakacak mahkemenin işlemleri
+Madde 307 – (1) Yargıtaydan verilen bozma kararı üzerine davaya yeniden bakacak bölge adliye veya ilk derece mahkemesi, ilgililere bozmaya karşı diyeceklerini sorar.
+(2) Sanık, müdafii, katılan ve vekilinin dosyada varolan adreslerine de davetiye tebliğ olunamaması veya davetiye tebliğ olunmasına rağmen duruşmaya gelmemeleri nedeniyle bozmaya karşı beyanları saptanmamış olsa da duruşmaya devam edilerek dava yokluklarında bitirilebilir. Ancak, sanık hakkında verilecek ceza, bozmaya konu olan cezadan daha ağır ise, her hâlde dinlenmesi gerekir.
+(3) Yargıtaydan verilen bozma kararına bölge adliye veya ilk derece mahkemesinin direnme hakkı vardır. (Değişik ikinci cümle: 24.11.2016-6763/36 md.) Direnme kararları, kararına direnilen daireye gönderilir. (Ek iki cümle: 24.11.2016-6763/36 md.) Daire, mümkün olan en kısa sürede direnme kararını inceler ve yerinde görürse kararını düzeltir; görmezse dosyayı Yargıtay Ceza Genel Kuruluna gönderir. Direnme üzerine Yargıtay Ceza Genel Kurulunca verilen kararlara karşı direnilemez.
+(4) Hüküm yalnız sanık tarafından veya onun lehine Cumhuriyet savcısı veya 262 nci maddede gösterilen kimselerce temyiz edilmişse, yeniden verilen hüküm, önceki hükümle belirlenmiş olan cezadan daha ağır olamaz.
+Bu düzenlemeler ışığında,suçta tekerrür ve özel tehlikeli suçlular kurumlarının hukuki nitelikleri ile usulü kazanılmış hak kavramının birlikte değerlendirilmesi gerekmektedir.</p>
+
+<p>A- Tekerrür yönünden:</p>
+
+<p>5237 sayılı TCK’nın “güvenlik tedbirleri” bölümünde düzenlenen ve aynı Kanunun, 7/3 maddesinin gerek sarahati gerekse madde gerekçesinde nitelik olarak “infaz rejimine ilişkin bir norm” olarak vasfı tayin edilen TCK’nın 58. maddesinin, hüküm fıkrasında anılan kanun maddesinin 7. bendindeki emredici düzenleme nedeniyle gösterilmesi zorunlu olup, kural olarak mahkumiyet hükmünde hiç belirtilmemesi halinde 1412 sayılı CMUK’nın 326/son maddesi gereğince aleyhe temyiz bulunmayan durumlarda usulü kazanılmış hak kapsamında kalacağı kabul edilmekte ise de; hükümde sadece TCK’nın 58. maddesinin uygulanmasına karar verilmesi ile yetinilmesi ancak tekerrüre esas alınan mahkeme ilamı ve/veya 5275 sayılı Kanunun 108/3 maddesinde yer alan ikinci defa tekerrür hükümlerinin tatbik edilmesi tesbiti yapılmamış bile olsa, zikredilen normun gerek güvenlik tedbiri (CGK’nın 12.12.2006 tarih 11-301-296 sy.ilamı), gerek infaz rejimi kuralı (CGK’nın 20.05.2014 tarih 2013/6-353, 2014/277 sy, 3. Ceza Dairesinin 25.02.2015 tarih, 4294-7344 sy. ilamları) olması gerekse 1412 sayılı CMUK’nın 326/son maddesindeki düzenlemenin koruma kapsamının “ceza tür ve miktarı” ile sınırlı bulunması (CGK’nın 11.02.2014 tarih, 70-57 sy., Dairemizin 12.01.2016 tarih, 2015/1213-2016/124 sy. kararları) karşısında, aleyhe temyiz bulunmayan hükümde verilen hapis cezasının kanuni sonucu olarak uygulanmasında zorunluluk bulunan TCK’nın 58/9. maddesinin infaz aşamasında re`sen nazara alınması mümkün olduğundan ayrıca hükümde gösterilmemesinin 1412 sayılı CMUK’nın 326/son maddesi kapsamında kazanılmış hak oluşturmayacağı gözetilmelidir.</p>
+
+<p>B- Özel tehlikeli suçlular yönünden:</p>
+
+<p>5237 sayılı TCK`nın 58/9. maddesinde, itiyadi suçlu, suçu meslek edinen kişi veya örgüt mensubu suçluların özel tehlikeli suçlu olarak kabul edildiği ve bunlar hakkında da mükerrirlere özgü infaz rejiminin ve cezanın infazından sonra denetimli serbestlik tedbirinin uygulanmasına hükmedileceği öngörülmektedir.</p>
+
+<p>Örgüt mensubu suçlu kavramı, 5237 sayılı TCK`nın 6/1-j maddesinde;”Örgüt mensubu suçlu deyiminden; bir suç örgütünü kuran, yöneten, örgüte katılan veya örgüt adına diğerleriyle birlikte veya tek başına suç işleyen kişi,” olarak tanımlanmıştır.Suç işleme eğilimleri ve kişilik özellikleri itibariyle diğer suçlulara nazaran tehlikelilik hallerinin daha yoğun olduğunu kabul eden kanun koyucu hem toplumu bu tehlikeden korumak hem de bu kişileri ıslah ve topluma yeniden kazandırmak amacıyla bunlara özel bir infaz rejimi belirlemiştir.</p>
+
+<p>Yargıtay Ceza Genel Kurulu ve Dairemizin yerleşik uygulamalarına göre, TCK’nın 58/9. maddesi bir ceza değil, cezaya bağlı olarak uygulanacak infaz rejimi olduğundan CMUK`nın 326/son maddesi kapsamında kazanılmış hak oluşturmaz.</p>
+
+<p>Diğer taraftan, örgüt mensubu suçlularla ilgili özel düzenleme olan 5275 sayılı Kanunun 107/4 maddesi de nazara alındığında özellikle süreli hapis cezalarının infazı yönünden, hükümde dayanak yasa maddesi gösterilsin ya da gösterilmesin kazanılmış haktan bahsetme imkanı bulunmamaktadır.
+Açıklanan nedenlerle yerinde olan itirazın kabulüne karar vermek gerekmiştir.</p>
+
+<p>IV- Sonuç ve Karar:</p>
+
+<p>Yargıtay Cumhuriyet Başsavcılığının 21.11.2016 tarih 2016/388953 sayılı itirazının ( KABULÜNE ), İstanbul 14. Ağır Ceza Mahkemesinin 10.07.2015 tarihli ve 2009/76 esas, 2009/310 değişik iş sayılı kararına karşı yapılan itirazın reddine ilişkin İstanbul 15. Ağır Ceza Mahkemesinin 22.07.2015 tarihli ve 2015/439 değişik iş sayılı kararlarının 5271 sayılı CMK`nın 309/4-a maddesi gereğince ( BOZULMASINA ),</p>
+
+<p>Dosyanın gerekli işlemler yapılmak üzere mahalline gönderilmesi için Yargıtay Cumhuriyet Başsavcılığını ( TEVDİİNE ), oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 1. CEZA DAİRESİ 
+Esas : 2017/147 Karar : 2017/2607</strong> Tarih : 10.07.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 107. Madde</strong></li>
+</ul>
+
+<p>Kasten adam öldürmek suçundan Tekirdağ 1. Ağır Ceza Mahkemesinin 05/11/2009 tarihli ve 2009/131 esas, 2009/191 sayılı uyarlama Kararı ile 15 yıl hapis cezasına hükümlü …’ın, bu cezasını infaz ederek 31/05/2002 tarihinde şartla tahliye edilmesini müteakip, bihakkın tahliye tarihi dolmadan 27/11/2002 tarihinde işlediği suça ilişkin Çorlu 3. Asliye Ceza Mahkemesinin 31/01/2007 tarih ve 2006/387 esas, 2007/26 sayılı Kararının kesinleşmesi üzerine, ikinci suçunu işlediği 27/11/2002 tarihi ile içtimalı cezasına ilişkin bihakkın tahliye tarihi olan 29/08/2018 tarihleri arasındaki sürenin aynen infazına dair Tekirdağ 2. Ağır Ceza Mahkemesinin 13/02/2013 tarihli ve 2013/231 değişik iş sayılı Kararını müteakip, hükümlü hakkında şartla tahliyenin 4616 sayılı Kanun kapsamında yapıldığı ve ikinci suçun aynı neviden yahut daha ağır nitelikte bulunmadığından bahisle 2013/231 değişik iş sayılı Kararın kaldırılmasına dair Tekirdağ 2. Ağır Ceza Mahkemesinin 07/10/2013 tarihli ve 2013/1353 değişik iş sayılı Kararı ile aynı şartla tahliye kararına ilişkin olarak bihakkın tahliye tarihi dolmadan 08/12/2012 tarihinde işlediği suça ilişkin Çorlu Asliye Ceza Mahkemesinin 03/03/2013 tarih ve 2002/1423 esas, 2003/202 sayılı Kararının kesinleşmesi üzerine, ikinci suçun işlendiği 08/12/2002 tarihi ile içtimalı cezasına ilişkin bihakkın tahliye tarihi olan 27/08/2020 tarihleri arasındaki sürenin aynen infazına dair Tekirdağ Ağır Ceza Mahkemesinin 27/04/2004 tarihli ve 2004/189 müteferrik iş sayılı Kararını müteakip, hükümlü hakkında şartla tahliyenin 4616 sayılı Kanun kapsamında yapıldığı ve ikinci suçun aynı neviden yahut daha ağır nitelikte bulunmadığından bahisle Tekirdağ Ağır Ceza Mahkemesinin 27/04/2004 tarihli ve 2004/189 müteferrik iş sayılı Kararının kaldırılmasına, hükümlü hakkındaki infazın durdurulmasına dair Tekirdağ 1. Ağır Ceza Mahkemesinin 04/10/2013 tarihli ve 2013/711 değişik iş sayılı Kararı ile ilgili olarak;</p>
+
+<p>4616 sayılı 23 Nisan 1999 tarihine Kadar İşlenen Suçlardan Dolayı Şartla Salıvermeye, Dava ve Cezaların Ertelenmesine Dair Kanunun 1/1-(4/2-3). maddesinde tanımlanan “aynı cins veya daha ağır şahsi hürriyeti bağlayıcı cezayı gerektiren bir suç” kavramının aynı maddede tanımlanan “davanın açılması veya kesin hükme bağlanmasının ertelenmesi” kararının geri alınmasına ilişkin bir düzenleme olduğu, şahsi hürriyeti bağlayıcı cezanın kesinleşmesinden sonra anılan Kanunun 1/1-(3/b). maddesi uyarıca verilen şartla salıverilme kararının uygulanması ve geri alınması yönünden uygulama olanağının bulunmadığı, şartla tahliye tarihinin belirlenmesine esas olmak üzere “çekilmesi gereken toplam cezadan on yıllık indirim” yapılması düzenlemesini getiren anılan Kanunun şartla tahliyenin geri alınması koşullarını belirleyen veya değiştiren hükümler içermediği, esasen bu halde genel hükümlere göre (765 sayılı Türk Ceza Kanununun 17. ve 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanunun 107/12. maddeleri) göre uygulama yapılması gerektiği gözetilmeden, denetim süresinde hapis cezasını gerektiren kasıtlı suçlar işleyen hükümlünün koşullu salıverilme kararının geri alınması ve aynen infaza ilişkin kararların kaldırılmasında isabet görülmediğinden bahisle 5271 sayılı Ceza Muhakemesi Kanununun 309. maddesi uyarınca anılan kararın bozulması lüzumu Yüksek Adalet Bakanlığı Ceza İşleri Genel Müdürlüğünün 21/12/2016 gün ve 94660652-105-59-10749-2016-Kyb sayılı yazılı istemlerine müsteniden Yargıtay Cumhuriyet Başsavcılığının tebliğnamesi ile Dairemize ihbar ve dava evrakı gönderilmekle, incelenerek gereği düşünüldü;</p>
+
+<p>TÜRK MİLLETİ ADINA</p>
+
+<p>Kanun yararına bozma talebine dayanılarak Yargıtay Cumhuriyet Başsavcılığınca düzenlenen tebliğnamedeki bozma isteği incelenen dosya kapsamına göre yerinde görüldüğünden, Tekirdağ 2. Ağır Ceza Mahkemesinin 07/10/2013 tarihli ve 2013/1353 değişik iş sayılı Kararı ile Tekirdağ 1. Ağır Ceza Mahkemesinin 04/10/2013 tarihli ve 2013/711 değişik iş sayılı Kararının 5271 sayılı CMK’nun 309. maddesi uyarınca KANUN YARARINA BOZULMASINA, diğer işlemlerin yapılabilmesi için dosyanın Mahkemesine gönderilmek üzere Yargıtay Cumhuriyet Başsavcılığına TEVDİİNE, 10/07/2017 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 16. CEZA DAİRESİ
+Esas : 2015/2153 Karar : 2017/3989</strong> Tarih : 27.04.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 107. Madde</strong></li>
+</ul>
+
+<p>Gerekçeli karar başlığında suç tarihinin 24.07.2009 yerine 05.08.2009 olarak yazılması mahallinde düzeltilebilir maddi hata kabul edilmiştir.</p>
+
+<p>1-Sanıklar …, … ve … hakkında silahlı terör örgütüne yardım etme suçundan kurulan hükümlerin incelenmesinde;</p>
+
+<p>Kesinleşen mahkumiyet hükümlerine yönelik olarak 6352 sayılı Kanunun 05.07.2012 tarihinde yürürlüğe girmesi üzerine yapılan uyarlama yargılaması sonucunda verilen kararlar 5275 sayılı Kanunun 98 ila 101. maddeleri uyarınca itiraz yasa yoluna tabi olduğundan, temyiz incelemesine yer olmadığına, gereği merciince yapılmak üzere dosyanın mahalline İADESİNE,</p>
+
+<p>2-Sanık … hakkında silahlı terör örgütüne yardım etme suçundan kurulan hükmün incelenmesinde;</p>
+
+<p>Sanık hakkında öncelikle temel ceza tayin edilip sonrasında TCK’nın 220/7. maddesinin 2. cümlesi uyarınca gerekli indirim uygulandıktan sonra devamında 3713 sayılı Kanunun 5. maddesi gereğince artırım yapılması gerekirken, yazılı şekilde uygulama yapılması sonuç ceza değişmediğinden bozma nedeni yapılmamıştır.</p>
+
+<p>Bozmaya uyularak yapılan yargılama sonunda toplanan deliller karar yerinde incelenip, sanığın suçunun sübutu kabul, olay niteliğine ve kovuşturma sonuçlarına uygun şekilde vasıfları tayin edilmiş, cezayı azaltıcı sebebin niteliği takdir kılınmış, savunması inandırıcı gerekçelerle reddedilmiş, incelenen dosyaya göre verilen hükümlerde aşağıdaki hususlar dışında bir isabetsizlik görülmemiş olduğundan, sanık müdafiinin yerinde görülmeyen diğer temyiz itirazlarının reddine, ancak;</p>
+
+<p>a)TCK’nın 53. maddesinde düzenlenen hak yoksunluklarının uygulanması bakımından, Anayasa Mahkemesinin 24.11.2015 tarih ve 29542 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren 08.10.2015 tarih, 2014/140 E. 2015/85 K. sayılı iptal kararının gözetilmesi lüzumu,</p>
+
+<p>b)Silahlı terör örgütüne yardım suçundan mahkumiyetine hükmolunan sanığın cezasının 3713 sayılı Kanunun 17. maddesi uyarınca 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanunun 107’nci maddesinin dördüncü fıkrası ile 108’inci maddesi hükümlerine göre infaz edileceği gözetilmeden, sadece örgüt mensubu suçlular hakkında uygulama imkanı bulunan TCK’nın 58/9. maddesinin örgüt mensubu olmayan sanık bakımından tatbikine karar verilmesi,</p>
+
+<p>Bozmayı gerektirmiş, bu itibarla hükmün 5320 sayılı Kanunun 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca BOZULMASINA, ancak yeniden yargılama yapılmasını gerektirmeyen bu hususların aynı Kanunun 322. maddesi uyarınca düzeltilmesi mümkün bulunduğundan, hükümden TCK’nın 53. maddesinin uygulanmasına ilişkin kısımın bütünüyle çıkarılarak yerine “Anayasa Mahkemesinin 24.11.2015 tarih ve 29542 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren 08.10.2015 tarih, 2014/140 E. 2015/85 sayılı iptal kararı doğrultusunda yürürlükte bulunan TCK’nın 53. maddesinin sanık hakkında uygulanmasına” ibaresinin eklenmesi ve TCK’nın 58/9. maddesinin uygulanmasına ilişkin kısımın bütünüyle çıkarılması suretiyle sair yönleri usul ve kanuna uygun bulunan hükmün DÜZELTİLEREK ONANMASINA,</p>
+
+<p>3-Sanık … hakkında silahlı terör örgütüne yardım etme suçundan kurulan hükmün incelenmesinde;</p>
+
+<p>UYAP ortamından alınıp dosya içine konulan nüfus kaydına göre sanığın hükümden sonra, temyiz aşamasında 27.05.2013 tarihinde öldüğüne ilişkin kayıt araştırılarak sonucuna göre bir karar verilmesinde zorunluluk bulunması,</p>
+
+<p>Bozmayı gerektirmiş olup, diğer yönleri incelenmeyen hükmün öncelikle bu sebepten dolayı BOZULMASINA, 27.04.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 5. CEZA DAİRESİ
+Esas : 2017/1117 Karar : 2017/1259</strong> Tarih : 30.03.2017</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 107. Madde</strong></li>
+</ul>
+
+<p>Hırsızlık ve muhtelif suçlardan, … 4. Asliye Ceza Mahkemesinin 18/02/2016 tarihli ve 2016/32 Değişik İş sayılı içtima kararıyla, 10 yıl 53 ay 50 gün hapis cezasına hükümlü …’ın mahsup talepli dilekçesi hakkında karar verilmesine yer olmadığına ve evrakın … Çocuk Mahkemesine gönderilmesine dair … 4. Asliye Ceza Mahkemesince verilen 12/05/2016 tarihli ve 2016/111 Değişik İş sayılı kararı üzerine, … Çocuk Mahkemesince verilen 18/05/2016 tarihli ve 2016/85 Değişik İş sayılı karşı görevsizlik kararı üzerine, … Çocuk Mahkemesinin görevsizlik kararının kaldırılmasına dair … 4. Ağır Ceza Mahkemesinin 24/05/2016 tarihli ve 2016/363 Değişik İş sayılı kararının;</p>
+
+<p>5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun’un “Birden fazla hükümdeki cezaların toplanması” başlıklı 99. maddesinde yer alan “Bir kişi hakkında hükmolunan her bir ceza diğerinden bağımsızdır, varlıklarını ayrı ayrı korurlar. Ancak, bir kişi hakkında başka başka kesinleşmiş hükümler bulunur ise, 107 nci maddenin uygulanabilmesi yönünden mahkemeden bir toplama kararı istenir.” şeklindeki düzenleme karşısında, hükümlü hakkındaki cezaların … 4. Asliye Ceza Mahkemesinin 18/02/2016 tarihli ve 2016/32 Değişik İş sayılı içtima kararı gereği birlikte infazının gerektiği ve infaz edilen kararın artık içtima kararını veren mahkeme kararı olduğundan, hükümlü tarafından yapılan mahsup talebi üzerine değerlendirme yapılırken, ilgili mahkemeden infaza ilişkin bilgileri isteyerek içtima kararını veren mahkeme olan … 4. Asliye Ceza Mahkemesince bir karar verilmesi gerektiği gözetilmeden, yazılı şekilde karar verilmesinde isabet görülmediğinden bahisle 5271 sayılı Ceza Muhakemesi Kanunu’nun 309. maddesi uyarınca bozulması lüzumu Yüksek Adalet Bakanlığı Ceza İşleri Genel Müdürlüğü ifadeli, 14/02/2017 gün ve 94660652-105-20-12754-2016-Kyb sayılı Kanun yararına bozmaya atfen Yargıtay Cumhuriyet Başsavcılığından tebliğname ile Daireye ihbar ve dava evrakı ile birlikte tevdii kılınmakla gereği düşünüldü:</p>
+
+<p>5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanunun 98/1. maddesi uyarınca, mahsup işlemini mahkumiyet kararını veren mahkemenin yapması gerektiği anlaşıldığından, … 4. Ağır Ceza Mahkemesinin 24/05/2016 tarihli ve 2016/363 Değişik İş sayılı Kararına yönelik kanun yararına bozma isteminin REDDİNE, dosyanın mahalline gönderilmesi için Yargıtay C.Başsavcılığına TEVDİİNE, 30/03/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 21. CEZA DAİRESİ 
+Esas : 2016/1738 Karar : 2016/3500</strong> Tarih : 18.04.2016</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 107. Madde</strong></li>
+</ul>
+
+<p>… Bakanlığı Ceza İşleri Genel Müdürlüğü`nün 26.01.2015 gün ve 94660652-105-06-10001-2014-2267/6350 sayılı kanun yararına bozma istemine atfen Yargıtay Cumhuriyet Başsavcılığınca düzenlenen 28.09.2015 gün ve KYB 2015/294336 sayılı ihbarnamesi ile;</p>
+
+<p>Muhtelif suçlardan hükümlü Ayhan Özden’in cezalarının, 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun’un 99 ve 101/2. maddeleri uyarınca, 62 yıl 63 ay 51 gün hapis cezası olarak olarak içtimama ve adlî para cezalarının ise aynı Kanun’un 106/3. maddesi gereğince ayrı infazına dair … 1. Ağır Ceza Mahkemesi’nin 14/07/2014 tarihli ve 2014/648 değişik iş sayılı kararına yönelik itirazın reddi ile adlî para cezasından dönüşme 47 gün hapis cezasının ayrı infazına dair … 2. Ağır Ceza Mahkemesi`nin 04/08/2014 tarihli ve 2014/1147 değişik iş sayılı kararını kapsayan dosyanın incelenmesinde;</p>
+
+<p>Dosya kapsamına göre, hükümlünün adlî para cezasının dışında bulunan hapis cezalarının toplamının 62 yıl 63 ay 51 gün hapis cezası olup; adlî para cezası içtima hesabına dahil edilse dahi 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun`un 107/3-e. maddesine göre iyi halli olunduğu takdirde koşullu salıverme süresi en fazla 28 yıl olduğu gibi, bihakkın tahliye tarihinin de değişmediği, adlî para cezasının ayrı infazı hâlinde ise hükümlünün aleyhine sonuç doğurduğu ve bu nedenle hapis cezası ile birlikte doğrudan verilen adlî para cezasının ayrı ayrı infazı gerektiğinden bahisle yazılı şekilde itirazın reddine reddine karar verilmesinde isabet görülmediğinden bahisle 5271 sayılı Ceza Muhakemesi Kanunu’nun 309. maddesi uyarınca, anılan kararın bozulması istenilmiş olmakla, Dairemize gönderilen dosya incelenerek gereği görüşüldü:</p>
+
+<p>2797 sayılı Yargıtay Yasası`nın 6545 sayılı Yasa ile değişik 14. maddesi uyarınca, Daireler arasındaki iş bölümünün belirlenmesinde mahkumiyet kararındaki nitelendirme esas alınacağından, hükmün konusuna, kanun yararına bozma talebinin kapsamına göre inceleme görevi Yüksek 19. Ceza Dairesine ait olduğundan Dairemizin GÖREVSİZLİĞİNE, dosyanın görevli Daireye gönderilmesine, 18.04.2016 gününde oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 19. CEZA DAİRESİ 
+Esas : 2015/36112 Karar : 2016/701</strong> Tarih : 21.01.2016</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 107. Madde</strong></li>
+</ul>
+
+<p>Nitelikli cinsel istismar suçundan hükümlü …5237 sayılı Türk Ceza Kanunu`nun 103/2, 31/3 ve 62. maddeleri uyarınca 4 yıl 5 ay 10 gün hapis cezası ile cezalandırılmasına dair, Ağır Ceza Mahkemesinin 10/08/2000 tarihli ve … esas, … sayılı kararının infazı sırasında, 
+hükümlünün 14/03/2014 tarihinden geçerli olmak üzere koşullu salıvermesine dair aynı mahkemenin 12/03/2014 tarihli ve …değişik iş sayılı kararını müteakip,</p>
+
+<p>hükümlünün deneme süresi içerisinde 03/11/2014 tarihinde işlemiş olduğu trafik güvenliğini tehlikeye sokmak suçundan dolayı Asliye Ceza Mahkemesinin 17/02/2015 tarihli ve … esas, …sayılı kararı ile 500,00 Türk lirası adlî para cezası ile cezalandırılması sebebiyle, 
+5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun`un 107/12. maddesi gereğince şartla tahliye kararının geri alınarak ikinci suçun işlendiği 03/11/2014 tarihi ile bihakkın tahliye tarihi olan 09/06/2015 tarihi arasındaki sürenin aynen infazına dair, 
+Ağır Ceza Mahkemesinin 02/04/2015 tarihli … esas, …sayılı ek kararına vaki itirazın reddine ilişkin 
+Ağır Ceza Mahkemesinin 18/05/2015 tarihli ve …değişik iş sayılı kararı aleyhine Adalet Bakanlığının 08/09/2015 gün ve … sayılı kanun yararına bozma istemini içeren yazısı ekindeki dava dosyası</p>
+
+<p>Yargıtay Cumhuriyet Başsavcılığının 07/10/2015 gün ve…sayılı ihbarnamesi ile daireye verilmekle okundu.</p>
+
+<p>Anılan ihbarnamede;</p>
+
+<p>5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun`un 107. maddesinin 12. fıkrasındaki 
+“Koşullu salıverilen hükümlünün, denetim süresinde hapis cezasını gerektiren kasıtlı bir suç işlemesi veya kendisine yüklenen yükümlülüklere, hâkimin uyarısına rağmen, uymamakta ısrar etmesi hâlinde koşullu salıverilme kararı geri alınır.”      ve</p>
+
+<p>aynı Kanun’un 107/15.bendinde 
+“ Koşullu salıverilme kararının geri alınmasına;
+a)Hükümlü geri kalan süre içinde işlediği kasıtlı bir suçtan dolayı hapis cezasına mahkûm edilirse, hükmü veren ilk derece mahkemesi veya bölge adliye mahkemesi tarafından,
+b)Hükümlünün bağlı tutulduğu yükümlülükleri yerine getirmemesi hâlinde koşullu salıverilme kararma esas teşkil eden hükmü veren ilk derece mahkemesi veya bölge adliye mahkemesi veya koşullu salıverilme kararını vermiş olan mahkeme tarafından, dosya üzerinden karar verilir. Bu kararlara karşı itiraz yolu açıktır.”                             şeklindeki düzenlemeleri uyarınca,</p>
+
+<p>Koşullu salıvermenin geri alınabilmesi için hapis cezasını gerektiren kasıtlı bir suçun işlenmesi gerektiği, hükümlünün deneme süresi içerisinde işlediği suçlardan dolayı neticeten adlî para cezası ile cezalandırılmasına karar verildiği dolayısıyla koşullu salıvermenin geri alınamayacağı cihetle, itirazın kabulü yerine reddine karar verilmesinde isabet görülmediği gerekçesiyle 5271 sayılı Ceza Muhakemesi Kanununun 309. maddesi uyarınca anılan kararın kanun yararına bozulması isteminde bulunulmakla gereği görüşülüp düşünüldü;</p>
+
+<p>Kanun yararına bozmaya konu ihbarnamede, hükümlünün mahkumiyetine esas mahkeme karar tarihinin “10/08/2010” yerine “10/08/2000” olarak belirtilmesi yazım hatası kabul edilmiştir.</p>
+
+<p>Yargıtay Cumhuriyet Başsavcılığının kanun yararına bozma istemine dayanan ihbarname içeriği yerinde görüldüğünden, Ağır Ceza Mahkemesinin 18/05/2015 tarihli ve …değişik iş sayılı kararının CMK`nın 309/4. maddesi uyarınca BOZULMASINA, müteakip işlemlerin mahallinde mahkemesince yerine getirilmesine, oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 23. CEZA DAİRESİ 
+Esas : 2015/14333 Karar : 2015/6070</strong> Tarih : 4.11.2015</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 107. Madde</strong></li>
+</ul>
+
+<p>Olay günü 2.24 promil alkollü olan sanığın çevreyi rahatsız etmesi nedeniyle şikayet alan görevli polis memurlarının sanığa müdahale ettikleri, polis merkezine getirilen sanığın katılan polis memuruna hitaben “senin ananı sinkaf edeyim, buradan çıkınca görüşeceğiz, benim paramı gasp ettiniz, şikayet edeceğim” dediği, katılan polis memuruna tekme atarak yaşamını tehlikeye sokmayacak ve basit bir tıbbi müdahale ile giderilebilir şekilde kasten yaraladığı, ayrıca karakol içinde bekleme salonunda bulunan sandalyelere tekme atarak birisinin kolçağını kırdığı anlaşıldığından, memura karşı görevinden dolayı hakaret, basit tehdit, kişinin kamu görevi nedeni ile kasten yaralama ve kamu malına zarar verme suçlarının oluştuğuna yönelik kabulde bir isabetsizlik görülmemiştir.</p>
+
+<p>1-Basit tehdit ve kamu görevi nedeniyle yaralama suçlarından kurulan mahkumiyet hükümleri yönünden yapılan incelemede;</p>
+
+<p>Yapılan yargılamaya, toplanıp karar yerinde gösterilen delillere, mahkemenin kovuşturma sonuçlarına uygun olarak oluşan kanaat ve takdirine, incelenen dosya kapsamına göre, sanığın yerinde görülmeyen diğer temyiz itirazlarının reddine, ancak;</p>
+
+<p>5275 sayılı kanunun 107/15-a maddesi gereği, şartla tahliye kararının geri alınmasına, koşullu salıverilmeye esas teşkil eden hükmü veren mahkeme tarafından deneme süresi içinde işlenen suça ilişkin hükmün kesinleşmesinden</p>
+
+<p>sonra karar verilmesi gerektiği yönündeki düzenleme doğrultusunda, kararın kesinleşmesinin akabinde İzmir 7. Ağır Ceza Mahkemesine şartla tahliye kararının geri alınması yönünde ihbarda bulunulmasına karar vermekle yetinilmesi gerektiği gözetilmeden, deneme süresinde işlenen suça ilişkin hükümle birlikte aynı zamanda şartla tahliye kararının geri alınmasına da karar verilmesi,</p>
+
+<p>Bozmayı gerektirmiş,sanığın temyiz itirazları bu itibarla yerinde görülmüş olduğundan hükmün bu sebepten dolayı 5320 sayılı Kanunun 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca( BOZULMASINA ), ancak yeniden yargılama yapılmasını gerektirmeyen bu hususun aynı Kanun’un 322. maddesi uyarınca düzeltilmesi mümkün bulunduğundan, hüküm fıkralarındaki “…koşullu salıverme hükümlerinin geri alınmasına,” dair bölümlerin hükümden çıkarılarak yerlerine “5275 sayılı Kanunun 107/15-a maddesi gereği kararın kesinleşmesinin akabinde İzmir 7.Ağır Ceza Mahkemesi`ne, 29/06/2005 tarih, 2004/81 Esas - 2005/246 Karar sayılı kararına ilişkin verilen şartla tahliye kararının yeniden değerlendirilmek üzere ihbarına” cümlesinin eklenmesi suretiyle sair yönleri usul ve kanuna uygun bulunan hükmün ( DÜZELTİLEREK ONANMASINA ),</p>
+
+<p>2- Kamu görevlisine hakaret suçundan kurulan mahkumiyet hükmü yönünden yapılan incelemede;</p>
+
+<p>Yapılan yargılamaya, toplanıp karar yerinde gösterilen delillere, mahkemenin kovuşturma sonuçlarına uygun olarak oluşan kanaat ve takdirine, incelenen dosya kapsamına göre, sanığın yerinde görülmeyen diğer temyiz itirazlarının reddine, ancak;</p>
+
+<p>Sanığın eylemini, aleni olduğundan şüphe bulunmayan polis merkezinin bekleme salonunda gerçekleştirmesi nedeniyle TCK 125/4 maddesi uyarınca cezada arttırım yapılması gerektiğinin gözetilmeyerek sanık hakkında eksik ceza tayini , aleyhe temyiz olmadığından bozma nedeni yapılmamıştır.</p>
+
+<p>5275 sayılı kanunun 107/15-a maddesi gereği, şartla tahliye kararının geri alınmasına, koşullu salıverilmeye esas teşkil eden hükmü veren mahkeme tarafından deneme süresi içinde işlenen suça ilişkin hükmün kesinleşmesinden sonra karar verilmesi gerektiği yönündeki düzenleme doğrultusunda, kararın kesinleşmesinin akabinde İzmir 7.Ağır Ceza Mahkemesine şartla tahliye kararının geri alınması yönünde ihbarda bulunulmasına karar vermekle yetinilmesi gerektiği gözetilmeden, deneme süresinde işlenen suça ilişkin hükümle birlikte aynı zamanda şartla tahliye kararının geri alınmasına da karar verilmesi,</p>
+
+<p>Bozmayı gerektirmiş,sanığın temyiz itirazları bu itibarla yerinde görülmüş olduğundan hükmün bu sebepten dolayı 5320 sayılı Kanunun 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK’nın 321. maddesi uyarınca( BOZULMASINA ), ancak yeniden yargılama yapılmasını gerektirmeyen bu hususun aynı Kanun’un 322. maddesi uyarınca düzeltilmesi mümkün bulunduğundan, hüküm fıkrasındaki “…koşullu salıverme hükümlerinin geri alınmasına,” dair bölümün hükümden çıkarılarak yerine “5275 sayılı Kanun`un 107/15-a maddesi gereği kararın kesinleşmesinin akabinde İzmir 7. Ağır Ceza Mahkemesine, 29/06/2005 tarih, 2004/81 E. 2005/246 K. sayılı kararına ilişkin verilen şartla tahliye kararının yeniden değerlendirilmek üzere ihbarına” cümlesinin eklenmesi suretiyle sair yönleri usul ve kanuna uygun bulunan hükmün ( DÜZELTİLEREK ONANMASINA ),</p>
+
+<p>3-Kamu malına zarar verme suçundan kurulan mahkumiyet hükmü yönünden yapılan incelemede;</p>
+
+<p>Sanığın yerinde görülmeyen diğer temyiz itirazlarının reddine, ancak;</p>
+
+<p>28/06/2014 tarih ve 29044 sayılı Resmi Gazetede yayımlanarak yürürlüğe giren 6545 sayılı Kanun’un 65. maddesiyle 5237 sayılı TCK`nın 152/1 maddesinde yapılan değişikliğe göre, öngörülecek ceza miktarının üst sınırının altı yıldan dört yıla indirilmesi ve sanık hakkında hüküm kurulurken alt sınırdan uzaklaşılarak ceza tertip edilmesi karşısında söz konusu kanun değişikliğine göre sanığın hukuki durumunun yeniden değerlendirilmesinde zorunluluk bulunması,</p>
+
+<p>Bozmayı gerektirmiş,sanığın temyiz itirazları bu itibarla yerinde görülmüş olduğundan hükmün bu sebeplerden dolayı 5320 sayılı Kanun’un 8/1. maddesi gereğince uygulanması gereken 1412 sayılı CMUK`nın 321. maddesi uyarınca ( BOZULMASINA ), oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 19. CEZA DAİRESİ 
+Esas : 2015/2550 Karar : 2015/1539</strong> Tarih : 14.05.2015</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 107. Madde</strong></li>
+</ul>
+
+<p>Muhtelif suçlardan hükümlü …’ın cezalarının 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun’un 99. maddesi uyarınca 62 yıl 24 ay olarak toplanmasına ve 765 sayılı Türk Ceza Kanunu’nun 77. maddesi uyarınca, infazın 36 yıl hapis cezası olarak yapılmasına dair Ağır Ceza Mahkemesinin 21/11/2013 tarihli ve 2013/742 değişik iş sayılı kararını müteakip,Cumhuriyet Başsavcılığınca düzenlenen 26/11/2013 tarihli müddetnameye yönelik itirazın kabulüne müddetnamedeki infaz oranının 647 sayılı Cezaların İnfazı Hakkında Kanun gereğince, 1/2 ayda 6 gün olarak düzenlenmesine ve infazının bu şekilde devam olunmasına ilişkin aynı Mahkemenin 12/02/2014 tarihli ve 2003/64 esas, 2008/210 sayılı ek kararma yönelik itirazın reddine dair İstanbul 15. Ağır Ceza Mahkemesinin 09/06/2014 tarihli ve 2014/132 değişik iş sayılı kararı aleyhine Yüksek Adalet Bakanlığının 22.01.2015 gün ve 5252 sayılı kanun yararına bozma istemini içeren yazısı ekindeki dava dosyası Yargıtay Cumhuriyet Başsavcılığının 04.02.2015 gün ve KYB. 2015/34339 sayılı ihbarnamesi ile daireye verilmekle okundu.</p>
+
+<p>Anılan ihbarnamede;</p>
+
+<p>Dosya kapsamına göre;</p>
+
+<p>İstanbul 14. Ağır Ceza Mahkemesinin 21/11/2013 tarihli ve 2013/742 değişik iş sayılı kararında aynı Mahkemenin 26/09/2008 tarihli ve 2003/64 esas, 2008/210 sayılı ve 28/10/2011 tarihli ve 2010/171 esas, 2011/164 sayılı ilâmlarına ilişkin cezalar ile Ağır Ceza Mahkemesinin 07/01/2008 tarihli 2008/268 esas, 2008/344 sayılı ilâmına ilişkin cezaların toplandığı ve cezalarının 5275 sayılı Ceza ve Güvenlik Tedbirlerinin infazı Hakkında Kanun’un 99. maddesi uyarınca 62 yıl 24 ay olarak toplanmasına ve 765 sayılı Türk Ceza Kanunu’nun 77. maddesi uyarınca, infazının 36 yıl hapis cezası olarak yapılmasına karar verildiği; Ağır Ceza Mahkemesinin 12/02/2014 tarihli ve 2003/64 esas, 2008/210 sayılı ek kararında hükümlünün örgüt kapsamında olan cezalarının 12 yıl 6 ay olduğundan bahisle müddetnamedeki infaz oranının 647 sayılı Cezaların İnfazı Hakkında Kanun gereğince, 1/2 ayda 6 gün olarak düzenlenmesine karar verildiği ve kararın kesinleştiği anlaşılmakta ise de; İnfaza ilişkin uygulamaların kazanılmış hak oluşturmadığı ve içtimaya ilişkin uygulamalarda lehe oluşan hatalar, kazanılmış hakka konu olmadığından anılan karara yönelik itirazın reddine ilişkinAğır Ceza Mahkemesinin 09/06/2014 tarihli ve 2014/132 değişik iş sayılı kararına yönelik yapılan incelemede,</p>
+
+<p>1- Yargıtay Ceza Genel Kurulunun 17/04/2007 tarihli ve 2007/1-32 esas, 2007/97 sayılı ilâmındaki, 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun’un 107. maddesindeki toplama işleminin koşullu salıverilme süresinin hesaplanması amacına matuf ve matematiksel basit bir toplama işleminden ibaret bulunduğu, norm ile hâkime herhangi bir şekilde takdir ve değerlendirme yetkisinin tanınmadığı, 01 Haziran 2005 tarihinden önce işlenen suçlarda, her suç yönünden ayrı ayrı yapılan değerlendirme sonucu, her suçla ilgili lehe yasa belirlendikten ve buna göre her suçun nihai cezası saptandıktan sonra, cezaların içtimaına 765 sayılı TCY`nın 68 ila 77. maddelerindeki ilkelere göre karar verileceği ve bu uygulamada lehteki yasanın 5237 sayılı Yasa olmasının sonuca etkisi bulunmayacaktır, şeklindeki içtihadı ışığında,</p>
+
+<p>Cezaların toplanmasının bir infaz kurumu ve işlemi olduğu, toplamaya dahil olan suçların hukuken bağımsızlıklarını korudukları, 01/06/2005 tarihinden önce işlenen suçlarda lehe Kanun 5237 sayılı Türk Ceza Kanunu olsa dahi cezaların toplanmasına 765 sayılı Türk Ceza Kanunun`un 68 ila 76. maddeleri gereğince karar verilmesi gerektiğinden; 765 sayılı Türk Ceza Kanunu’nun 77/1-2. maddesine göre, aynı neviden şahsi hürriyeti bağlayıcı muvakkat cezaların birleştirilmesi halinde tatbik edilecek cezanın ağır hapiste 36, hapiste 25, sürgünde 15, hafif hapiste 10 seneyi geçemeyeceği, başka neviden şahsi hürriyeti bağlayıcı muvakkat cezaların mecmuunun otuz seneyi geçemeyeceği, bu haddi aşan ceza miktarının sırası ile sürgün, hafif hapis, hapis ve ağır hapisten tenzil edileceği hükmünün düzenlendiği, Mülga Çıkar Amaçlı 4422 sayılı Çıkar Amaçlı Suç Örgütleriyle Mücadele Kanunu’nun 1. maddesinin 1. fıkrasında ise “Doğrudan veya dolaylı biçimde bir kurumun, kuruluşun veya teşebbüsün yönetim ve denetimini ele geçirmek, kamu hizmetlerinde, basın ve yayın kuruluşları üzerinde, ihale, imtiyaz ve ruhsat işlemlerinde nüfuz ve denetim elde etmek, ekonomik faaliyetlerde kartel ve tröst yaratmak, madde ve eşyanın azalmasını ve darlığını, fiyatların düşmesini veya artmasını temin etmek, kendilerine veya başkalarına haksız çıkar sağlamak, seçimlerde oy elde etmek veya seçimleri engellemek maksadıyla tehdit, baskı, cebir veya şiddet uygulamak suretiyle yıldırma veya korkutma veya sindirme gücünü kullanarak suç işlemek için örgüt kuranlara veya örgütü yönetenlere veya örgüt adına faaliyette bulunanlara veya bilerek hizmet yüklenenlere sadece bu nedenle üç yıldan altı yıla kadar; örgüte üye olanlara iki yıldan dört yıla kadar ağır hapis cezası verilir” ve 6. fıkrasında “Örgüt mensuplarınca veya örgüt adına örgüt üyesi olmayanlar tarafından birinci fıkrada gösterilen amaçları gerçekleştirmek üzere işlenen suçların ve 01/03/1926 tarihli ve 765 sayılı Türk Ceza Kanununun 296 ncı maddesinde öngörülen cürmün cezaları üçte birden yarıya kadar artırılır”, hükümlerinin düzenlendiği, keza 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun’un 107/4-d. maddesinin, “Suç işlemek için örgüt kurmak veya yönetmek ya da örgütün faaliyeti çerçevesinde işlenen suçtan dolayı mahkûmiyet hâlinde; ağırlaştırılmış müebbet hapis cezasına mahkûm edilmiş olanlar otuzaltı yılını, müebbet hapis cezasına mahkûm edilmiş olanlar otuz yılını, süreli hapis cezasına mahkûm edilmiş olanlar cezalarının dörtte üçünü infaz kurumunda çektikleri takdirde, koşullu salıverilmeden yararlanabilirler ancak bu süreler bir müebbet hapis cezası ile süreli hapis cezasına mahkûmiyet hâlinde en fazla otuzdört yıldır”, hükmünü içerdiği; anılan Yasal düzenlemeler nazara alındığında, İstanbul 14. Ağır Ceza Mahkemesinin 21/11/2013 tarihli ve 2013/742 değişik iş sayılı kararında hükümlünün koşullu salıverilmesine yönelik 765 sayılı Türk Ceza Kanunu’nun 77. maddesi uygulanmak sureti ile 36 yıl hapis cezası olarak cezaların toplanmasına karar verildiği ve müddetnamenin de sözkonusu karar gereği 36 yıl üzerinden düzenlenmesi gerektiği hâlde, ayrıca ve bu kez 647 sayılı Cezaların İnfazı Hakkında Kanun gereğince, koşullu salıvermeye ilişkin hesaplanan cezasından önce 1/2 oranında indirim yapılmak ardından ayda 6 gün olarak indirim düzenlenmesine yönelik karar verilerek hükümlü hakkında ard arda üç kez indirim hükümleri uygulanmasında,</p>
+
+<p>2- Kasten öldürme suçlarının terörle ilgili olup şiddet uygulamak sureti ile gerçekleştirildiği, kasten öldürmeye yönelik suçlarının cezalarının 50 yıl 8 ay ve yağma suçlarından aldığı cezaların toplamının ise 14 yıl 12 ay olduğu, 4422 sayılı Çıkar Amaçlı Suç Örgütleriyle Mücadele Kanunu kapsamında olan ve toplam 54 yıl 20 ay hapis cezasına yönelik aynı Kanun’un 13. maddesi uyarınca, 4422 sayılı Kanun kapsamında bulunan suçlardan mahkum olan kişiler hakkında 3713 sayılı Terörle Mücadele Kanunu’nun 16. ve 317. Maddeleri hükümlerinin uygulanacağı, ayrıca suç tarihinde anılan Kanun’a göre, hükümlünün çekmesi gereken ceza miktarının ise aldığı cezasının 3/4 ü kadar olduğu, 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun’un 107. maddesine göre, örgüt kapsamında işlenen suçların cezasının infazında 1/4 oranında indirim yapılması gerektiği ve sadece yağma suçlarından verilen hapis cezalarının 4422 sayılı Çıkar Amaçlı Suç Örgütleriyle Mücadele Kanunu kapsamında olduğunun kabul edilmesi hâlinde dahi bu cezalara ilişkin infazda 1/4 oranında indirim yapılması gerektiği hâlde, yasal indirim oranları gözetilmeksizin toplam hürriyeti bağlayıcı cezalarından infaz etmesi gereken cezanın 36 yıl hapis cezası olarak belirlenmesinden sonra bu kez 36 yıl hapis cezasının tümüne önce 1/2 oranında indirim yapılmak ve sonra ayda 6 gün de indirim uygulamak sureti ile müddetname düzenlenmesine ilişkin usûl ve yasaya aykırı karara yönelik itirazın yazılı şekilde reddine karar verilmesinde,</p>
+
+<p>İsabet görülmediği gerekçesiyle 5271 sayılı Ceza Muhakemesi Kanununun 309. maddesi uyarınca anılan kararın kanun yararına bozulması isteminde bulunulmakla gereği görüşülüp düşünüldü;</p>
+
+<p>5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun, 5237 sayılı Türk Ceza Kanunu ile bunun dışında kalan ve ceza hükmü içeren özel ceza yasalarıyla verilen ceza ve güvenlik tedbirlerinin uygulanmasındaki temel ilke ve amaçlar ile infaz şekilleri, infazın ertelenmesi, infazla ilgili kararlar, denetimli serbestlik, kamuya yararlı bir işte çalıştırma, koşullu salıverme, seçenekli yaptırımların uygulanması, tutuklama kararının yerine getirilmesi, özel infaz hükümleri, mükerrirlere özgü infaz rejimi gibi cezaların infazına ilişkin usul ve esasları düzenleyen, temel bir yasa olup, ceza hükmü içeren yasalar uyarınca verilen ceza ve güvenlik tedbirlerinin uygulama usul ve esaslarını düzenleyen ve içerisinde ceza hükmü içeren bir düzenlemenin de yer almadığı temel yasa niteliğindeki bu yasa özel ceza yasası olarak değerlendirilemez.</p>
+
+<p>Yargıtay Dairelerinin süregelen uygulamalarında; infaz edilmekte olan cezaya ilişkin ortaya çıkan infaz sorunlarına ilişkin ihtilafların kanun yolu incelemeleri, infazı yapılan hükümde uygulanan ceza normunun temyiz incelemesini yapan Daireler tarafından yapılmıştır. 5275 sayılı Yasa’nın yürürlüğünden sonra da; Yargıtay 11. C.D.’nin 20/11/2013 gün ve 2013/20450 esas, 2013/17234 karar sayılı, Yargıtay 1. C.D.’nin 27/01/2014 gün ve 2014/693-234 E.K. sayılı, Yargıtay 8.C.D.’nin 17/03/2014 gün ve 2014/915-6613 E.K. sayılı ve 10/02/2014 gün ve 2014/913-2593 E.K. sayılı, Yargıtay l0.C.D.’nin 17/02/2014 gün ve 2014/904-1059 E.K. sayılı ve 04/03/2013 gün 2012/28685 esas, 2013/2014 karar sayılı, Yargıtay 4.C.D.’nin 16/01/2014 gün ve 2012/36844 esas 2014/992 karar sayılı, Yargıtay 15.C.D.’nin 24/02/2014 gün ve 2014/2207-3249 E.K. sayılı kararlarda olduğu üzere, 5275 sayılı Yasanın infaz sırasında uygulaması ile ilgili ortaya çıkan hususlar yönünden verilen kararlara ilişkin kanun yolu incelemeleri Yargıtay’ın ilgili suça bakmakla görevli Dairesince yapılmakta, aynı şekilde anılan yasanın 111 ve devamı maddelerinde yer alan tutuklama kararının yerine getirilmesi, tutukluların hakları ve kısıtlayıcı önlemlerle ilişkin yerel mahkemelerce verilen ve temyize konu olmayan kararlar yönünden olağanüstü kanun yoluna başvuruları da yargılama konusunu oluşturan suça bakmakta olan ceza Dairelerince karara bağlanmaktadır.</p>
+
+<p>Bu uygulamanın aksi düşünülecek olursa, Yargıtay’ın ceza dairelerinin tamamının bakmakta olduğu her türlü suç ve kabahatin infazı ile ilgili tüm hukuka aykırılıkların çözümünün Dairemizce yapılması sonucu doğacaktır ki bu da Yargıtay Kanunundaki iş bölümüne ilişkin hükümlere aykırılık teşkil edecektir.</p>
+
+<p>Yargıtay Kanunu’nun 6110 sayılı Kanunla değişik 14. maddesine dayanarak Yargıtay Büyük Genel Kurulunca hazırlanan işbölümüne göre, Dairemizin görevi özel ceza yasalarından veya Kabahatler Kanunu`ndan doğan ve başka bir dairenin görev alanına girmeyen suç ve kabahatlere ilişkin temyiz incelemesi görevinden ibaret olup, Kanun Yararına Bozma talebinin konusu olan dosyanın yapılan incelemesinde;</p>
+
+<p>Kanun yararına bozma talebinin hükümlü hakkındaki müddetnameye ilişkin olduğu anlaşılmıştır.</p>
+
+<p>Somut olayda; hükümlü hakkında hükmolunan cezalar, kasten öldürme ve yağma suçlarına ilişkin olup, bu cezaların infazı sırasında uygulanan ve temel yasa özellikleri taşıyan 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanunun, özel ceza yasası kapsamında değerlendirilemeyeceği cihetle, Kanun Yararına Bozma istemine konu hükmün konusu ile ceza miktarlarına ve Yargıtay Kanununun değişik 14.fıkrası ile Yargıtay Büyük Genel Kurulu`nun 19.01.2015 tarih, 2015/8 sayılı kararına göre, işin incelenmesi Yargıtay Yüksek 1. Ceza Dairesinin görevine dahil olduğundan, Dairemizin GÖREVSİZLİĞİNE, dosyanın anılan daireye GÖNDERİLMESİNE, 14.05.2015 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 7. CEZA DAİRESİ 
+Esas : 2014/21345 Karar : 2014/20587</strong> Tarih : 1.12.2014</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 107. Madde</strong></li>
+</ul>
+
+<p>Muhtelif suçlardan hükümlü M… B… hakkındaki Samsun 1.Ağır Ceza Mahkemesinin 23/10/2012 tarihli ve 2012/1114 değişik iş sayılı içtima kararı ile verilen 1 yıl 16 ay 1 gün hapis cezasının infazı sırasında, adı geçen hükümlünün denetimli serbestlik tedbiri ile cezasının infazına karar verilmesi talebinin kabulü ile cezasının koşullu salıverilme tarihine kadar olan kısmının denetimli serbestlik tedbiri uygulanarak infaz edilmesine ilişkin Ünye İnfaz Hakimliğinin 31/01/2013 tarihli ve 2013/34-36 sayılı kararı sonrasında, hükümlünün Ünye Asliye Ceza Mahkemesinin 2008/135 esas, 2009/174 sayılı ilamı ile verilen 2 yıl hapis, 1 yıl 6 ay hapis, 1 yıl hapis ve 3 ay hapis cezalarının infazı için kapalı ceza infaz kurumuna alınmasını müteakip, hükümlü hakkmdaki Samsun 1.Ağır Ceza Mahkemesinin 2012/1114 değişik iş sayılı içtima kararının çözülerek, hükümlü hakkındaki belirtilen ilamlara konu cezaların 5 yıl 25 ay 1 gün hapis cezası olarak toplanmasına dair Ünye Asliye Ceza Mahkemesinin 12/06/2013 tarihli ve 2013/190 değişik iş sayılı kararı sonrasında, hükümlünün ceza süresi ve şartla tahliye tarihi itibariyle denetimli serbestlik tedbiri ile infaz koşullarını taşımadığı gerekçesiyle kapalı ceza infaz kurumuna iadesine ilişkin Ünye İnfaz Hakimliğinin 14/06/2013 tarihli ve 2013/682-683 sayılı kararını müteakip, hükümlünün 24/07/2013 tarihli dilekçesi ile açık ceza infaz kurumuna ayrılma talebinin reddine dair Ünye Cumhuriyet Başsavcılığının 25/07/2013 tarihli ve 2013/2098 sayılı kararına vaki itirazın reddine ilişkin Ünye İnfaz Hakimliğinin 26/07/2013 tarihli ve 2013/858-858 sayılı kararına yapılan itirazın keza reddine dair ÜNYE Ağır Ceza Mahkemesinin 01/08/2013 tarihli ve 2013/389 değişik iş sayılı kararı aleyhine Yüksek Adalet Bakanlığından verilen 11.03.2014 gün ve 17788 sayılı kanun yararına bozma istemini içeren dava dosyası Yargıtay Cumhuriyet Başsavcılığının 21.03.2014 gün ve KYB. 2014-98970 sayılı ihbarnamesi ile daireye verilmekle okundu.</p>
+
+<p>Mezkür ihbarnamede;</p>
+
+<p>Denetimli serbestlik hizmetleri yönetmeliğinin 90/4.maddesinde yeralan “Başka bir mahkûmiyet kararı nedeniyle ceza infaz kurumuna alınan hükümlünün kaydı kapatılarak, 5275 sayılı Kanunun 107 nci maddesinin uygulanabilmesi yönünden toplama kararı alınması ve müteakip infaz işlemlerinin buna göre yapılması amacıyla dosya hükümlünün bulunduğu ceza infaz kurumuna gönderilmek üzere Cumhuriyet başsavcılığına iletilir.” ve Açık Ceza İnfaz Kurumlarına Ayrılma Yönetmeliğinin 12/2.maddesinde yer alan “İnfaz edilen cezası dışında başka bir suçtan haklarında mahkûmiyet kararı verilenlerin cezaları toplandıktan sonra koşullu salıverilmelerine 6 ncı maddede belirtilen sürelerden daha fazla kaldığı tespit edilenler, kurum yönetim kurulu kararı ile kapalı kuruma iade edilir.” şeklindeki düzenlemeler nazara alındığında, denetimli serbestlik tedbiri ile cezası infaz edilmekte iken kesinleşmiş başka mahkumiyet kararları nedeniyle infaz kurumuna alınan hükümlülerin şartlla tahliye sürelerinin tayini açısından toplama kararı alınması gerektiği, hükümlünün daha öncesinde açık ceza infaz kurumunda bulunması hasebiyle denetimli serbestlik tedbiri ile infaz hakkından yararlandığı da gözetilerek açık ceza infaz kurumuna ayrılma şartı açısından sadece açık ceza infaz kurumlarına ayrılma yönetmeliğinin 6.maddesinde yer alan şartla tahliye süresinin esas alınması gerektiği, içtima ettirilen toplam cezanın 1/5`in kapalı ceza infaz kurumunda geçirmesi şartının aranmayacağı gözetilmeden itirazın kabulü yerine yazılı şekilde reddine karar verilmesinde isabet görülmemiş ve 5271 sayılı Ceza Muhakemesi Kanununun 309. maddesi uyarınca anılan kararın bozulması lüzumu kanun yararına bozmaya atfen ihbar olunmuş bulunmakla Türk Milleti adına gereği görüşülüp düşünüldü;</p>
+
+<p>Açık Ceza İnfaz Kurumlarına Ayrılma Yönetmeliği`nin 6/3.fıkrasında “Birden fazla cezanın toplanarak infazı halinde, açık kuruma ayrılmada esas alınacak suç, koşullu salıverilme tarihine en az sürenin arandığı suçtur.” şeklindeki düzenleme karşısında, Yargıtay Cumhuriyet Başsavcılığının kanun yararına bozma istemine dayanan ihbarname içeriği yerinde görüldüğünden,</p>
+
+<p>Ünye Ağır Ceza Mahkemesinin 01/08/2013 tarihli, 2013/389 değişik iş sayılı kararının CMK.nun 309/3 maddesi uyarınca (BOZULMASINA), müteakip işlemlerin mahkemesince yapılmasına, oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 11. CEZA DAİRESİ
+Esas : 2014/7735 Karar : 2014/7852</strong> Tarih : 22.04.2014</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 107. Madde</strong></li>
+</ul>
+
+<p>Adalet Bakanlığı Ceza İşleri Genel Müdürlüğünün 10/02/2014 gün ve 2014/3047/9826 sayılı kanun yararına bozma istemine atfen Yargıtay Cumhuriyet Başsavcılığınca düzenlenen 24/02/2014 gün ve KYB.2014/65845 sayılı ihbarnamesi ile;</p>
+
+<p>Nitelikli dolandırıcılık ve resmi belgede sahtecilik suçlarından hükümlü Hasan C…’in 5237 sayılı Türk Ceza Kanunu’nun 158/1-e, 158/1-son, 204/2, 43 ve 52/2. maddeleri gereğince iki kez 6 yıl hapis ve bir kez 294.450,00 Türk lirası adli para cezası ile cezalandırılmasına dair Denizli 2. Ağır Ceza Mahkemesinin 09/07/2009 tarihli ve 2007/62 esas, 2009/283 sayılı kararının infazı sırasında, Denizli Cumhuriyet Başsavcılığınca düzenlenen 26/11/2013 tarihli, 2010/1-825, 2010/1-826 ve 2010/1-827 sayılı müddetnameye yönelik infazının cezaların toplanmasının usul ve yasaya uygun olmadığı, 6291 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun ile Denetimli Serbestlik ve Yardım Merkezleri ile Koruma Kurulları Kanununda Değişiklik Yapılmasına Dair Kanun hükümlerinden yararlandırılmasına ilişkin müddetnameye yönelik yapılan itirazının kabulüne ve müddetnamenin iptaline dair aynı Mahkemenin 24/12/2013 tarihli ve 2013/1233 Değişik İş sayılı kararına yönelik Denizli Cumhuriyet Başsavcılığı tarafından yapılan itirazın reddine ilişkin Denizli 3. Ağır Ceza Mahkemesinin 27/12/2013 tarihli ve 2013/924 Değişik İş sayılı kararını kapsayan dosyanın incelenmesinde;</p>
+
+<p>Dosya kapsamına göre, 11/04/2012 tarihli Resmi Gazetede yayımlanarak yürürlüğe giren 6291 sayılı Kanun ile 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun’a eklenen 105/A maddesinde. “1) Hükümlülerin dış dünyaya uyumlarını sağlamak, aileleriyle bağlarını sürdürmelerini ve güçlendirmelerini temin etmek amacıyla; a) Açık ceza infaz kurumunda cezasının son altı ayını kesintisiz olarak geçiren, b) Çocuk eğitimevinde toplam cezasının beşte birini tamamlayan, koşullu salıverilmesine bir yıl veya daha az süre kalan iyi halli hükümlülerin talebi hâlinde, cezalarının koşullu salıverilme tarihine kadar olan kısmının denetimli serbestlik tedbiri uygulanmak suretiyle infazına, ceza infaz kurumu idaresince hükümlü hakkında hazırlanan değerlendirme raporu dikkate alınarak, infaz hâkimi tarafından karar verilebilir (2) Açık ceza infaz kurumuna ayrılma şartları oluşmasına karşın, iradesi dışındaki bir nedenle açık ceza infaz kurumuna ayrılamayan veya bu nedenle kapalı ceza infaz kurumuna geri gönderilen iyi halli hükümlüler, açık ceza infaz kurumuna ayrılma şartlarının oluşmasından itibaren en az altı aylık sürenin geçmiş olması durumunda, diğer şartları da taşımaları halinde, birinci fıkrada düzenlenen infaz usulünden yararlanabilirler.” ve aynı Kanun’un geçici 3. maddesindeki, “Bu maddenin yürürlüğe girdiği tarih itibarıyla koşullu salıverilmelerine bir yıldan az süre kalan; a) Açık ceza infaz kurumunda bulunan, b) Kapalı ceza infaz kurumunda bulunup da açık ceza infaz kurumuna ayrılma şartlarını taşıyan, iyi hâlli hükümlülerin talepleri hâlinde, cezalarının koşullu salıverilme tarihine kadar olan kısmının denetimli serbestlik tedbiri uygulanmak suretiyle infazına karar verilebilir. (2) Koşullu salıverilmelerine bir yıl kala açık ceza infaz kurumuna ayrılma hakkını kazanan hükümlüler, bu infaz usulünden en fazla altı ay süreyle yararlanırlar. “ hükümlerine göre, koşulların bulunması hâlinde hükümlünün hapis cezası bakımından koşullu salıverilmesine bir yıl süre kaldığı halde denetimli serbestlikten yararlandırılması gerektiği, Denetimli Serbestlik Hizmetleri Yönetmeliğinin 90/4. maddesinde yer alan “Başka bir mahkûmiyet kararı nedeniyle ceza infaz kurumuna alınan hükümlünün kaydı kapatılarak, 5275 sayılı Kanunun 107 nci maddesinin uygulanabilmesi yönünden toplama kararı alınması ve müteakip infaz işlemlerinin buna göre yapılması amacıyla dosya hükümlünün bulunduğu ceza infaz kurumuna gönderilmek üzere Cumhuriyet başsavcılığına iletilir.” hükmüne uygun şekilde, hakkında denetimli serbestlik tedbiri uygulanan kişinin işlediği tek bir suçtan farklı yaptırımı içeren cezalar da olsa bir kez denetimli serbestlikten yararlanmasına olanak tanıyan usul ve yasaya uygun olan müddetnameyi, hapis cezası ile birlikte doğrudan verilen adli para cezasının ayrı ayrı ve sıraya konularak infazı gerektiğinden bahisle iptal eden karara yönelik yapılan itirazın, hükümlünün bir kez denetimli serbestlikten yararlandırılması gerektiği gerekçesi ile kabulü yerine yazılı şekilde reddine karar verilmesinde isabet görülmediğinden bahisle 5271 sayılı Ceza Muhakemesi Kanunu’nun 309. maddesi uyarınca, anılan kararın bozulması istenilmiş olmakla, Dairemize gönderilen dosya incelenerek gereği görüşüldü:</p>
+
+<p>İncelenen dosya içeriğine göre, kanun yararına bozma istemine atfen düzenlenen ihbarnamedeki düşünce yerinde görüldüğünden, Denizli Cumhuriyet Başsavcılığının 26.11.2013 gün ve 2010/1-825-926-827 sayılı müddetnamesine yönelik itirazın kabulü ile;</p>
+
+<p>Müddetnamenin iptaline dair Denizli 2. Ağır Ceza Mahkemesinin 24.12.2013 gün ve 2013/1233 Değişik İş sayılı kararına yönelik itirazın reddine ilişkin mercii Denizli 3. Ağır Ceza Mahkemesinin 27.12.2013 gün ve 2013/924 Değişik İş sayılı kararının CMK’nun 309. maddesi uyarınca (BOZULMASINA), müteakip işlemlerin mahallinde yapılmasına, dosyanın Yargıtay Cumhuriyet Başsavcılığına iadesine,  oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 8. CEZA DAİRESİ
+Esas : 2014/915 Karar : 2014/6613</strong> Tarih : 17.03.2014</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 107. Madde</strong></li>
+</ul>
+
+<p>Muhtelif suçlardan hükümlü H.`ün, cezalarının 30 ay 10 gün hapis cezası olarak içtimaına ilişkin Kütahya 1. Asliye Ceza Mahkemesinin 05.09.2013 tarihli ve 2013/390 değişik iş sayılı kararını müteakip, B… Cumhuriyet Başsavcılığının 11.09.2013 tarihli, 2013/2-1369 sayılı yazısı ile 6291 sayılı Kanun ile değişik 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında 105/A maddesi gereğince cezasının koşullu salıverilme tarihine kadar olan kısmının denetimli serbestlik olarak infazına karar verilip tahliye edildiği tarih ile içtima kararı ile ceza infaz kurumuna gönderildiği tarih arasındaki sürenin hükümlünün cezasından mahsubuna ilişkin oluşan tereddütün giderilmesi istemine yönelik denetimli serbestlik tedbiri uygulanmak suretiyle infazına ve tahliyesine dair 25.02.2013 tarihi ile yeniden cezaevine girdiği 30.08.2013 tarihi arasındaki sürelerin halen infaz etmekte olduğu cezasından mahsup edilmesine yer olmadığına ilişkin Kütahya 1. Asliye Ceza Mahkemesinin 12.09.2013 tarihli ve 2010/124 esas, 2010/526 sayılı kararına yapılan itirazın reddine ilişkin Kütahya 1. Ağır Ceza Mahkemesinin 31.10.2013 tarihli ve 2013/909 değişik iş sayılı kararını kapsayan dosyası ile ilgili olarak;</p>
+
+<p>Dosya kapsamına göre; ruhsatsız ateşli silah taşıma suçundan hükümlü H.’ün 6136 sayılı Ateşli Silahlar ve Bıçaklar ile Diğer Aletler Hakkında Kanun’un 13/1, 5237 sayılı Türk Ceza Kanunu’nun 62 ve 52. maddeleri gereğince 10 ay hapis ve 500,00 Türk lirası adlî para cezası ile cezalandırılmasına dair Kütahya1. Asliye Ceza Mahkemesinin 24.06.2010 tarihli ve 2010/124 esas, 2010/526 sayılı kararının infazı sırasında, hükümlünün cezasının koşullu salıverilme tarihine kadar olan kısmının denetimli serbestlik tedbirine çevrilmesi talebine yönelik 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun’a 6291 sayılı Kanun ile eklenen 105/A maddesi ve 6411 sayılı Kanun ile değişik 105/A-l-a maddesi gereğince, cezasının koşullu salıverilme tarihine kadar olan kısmının denetimli serbestlik tedbiri uygulanmak suretiyle infazına dair Kütahya İnfaz Hâkimliğinin 25.02.2013 tarihli ve 2013/209 esas, 2013/209 sayılı kararını müteakip, mahkemece Kütahya 1. Asliye Ceza Mahkemesinin 05.09.2013 tarihli ve 2013/390 değişik iş sayılı kararı ile cezaların içtima edildiği, 11.04.2012 tarihli Resmî Gazete ile yayımlanarak yürürlüğe giren 6291 sayılı Kanun’un 105/A/3. maddesi ve 31.01.2013 tarihli ve 28545 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren 6411 sayılı Ceza Muhakemesi Kanunu ile Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanunda Değişiklik Yapılmasına Dair Kanun’un 13 maddesi gereği 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun’a eklenen geçici 4. maddelerindeki hükmü çerçevesinde hükümlünün cezasının koşullu salıverilme tarihine kadar olan kısmının denetimli serbestlik tedbiri uygulanmak suretiyle infazı bakımından tahliye edildiği 25.02.2013 tarihi ile cezanın cezaevinde infazına başlandığı belirtilen 30.08.2013 tarihleri arasındaki denetimli serbestlikte geçirdiği sürelerin; 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun`un 105/A. maddesine göre, hükümlünün cezasının infazına ilişkin ve infaz hükümlerine tâbi olması ve bu sürelerin içtima edilen cezanın içerisinde yer alması nedeni ile hürriyeti bağlayıcı toplam cezadan mahsup edilmesine yönelik istemin ve itirazın kabulü gerekirken yazılı şekilde reddine karar verilmesinde isabet görülmediğinden bahisle 5271 sayılı CMK.nun 309. maddesi uyarınca anılan kararın bozulması lüzumu Yüksek Adalet Bakanlığı Ceza İşleri Genel Müdürlüğünün 10.12.2013 gün ve 75421 sayılı kanun yararına bozma istemine atfen Yargıtay C.Başsavcılığının 23.12.2013 gün ve KYB/2013-394225 sayılı ihbarnamesi ile dairemize tevdii kılınmakla incelendi.</p>
+
+<p>Gereği görüşülüp düşünüldü:</p>
+
+<p>5237 sayılı TCK.nun 63. maddesinde düzenlenen “Hüküm kesinleşmeden önce gerçekleşen ve şahsî hürriyeti sınırlama sonucunu doğuran bütün hâller nedeniyle geçirilmiş süreler, hükmolunan hapis cezasından indirilir. Adlî para cezasına hükmedilmesi durumunda, bir gün yüz Türk Lirası sayılmak üzere, bu cezadan indirim yapılır.” hükmüne göre mahsup işleminin yapılması için şahsi hürriyetin kısıtlanması sonucunu doğuran durumların söz konusu olması gerekmektedir. İncelemeye konu olayda hükümlünün ce- zasının 5275 sayılı yasanın 105/A maddesi uyarınca koşullu salıverme kadar olan kısmı- nın denetimlik serbestlik tedbiri olarak infazına karar verilmiştir ve hükümlüye bu süre içerisinde denetim planı içerisinde yer alan, imza atma, belirli etkinliklere katılma gibi yükümlülükler yüklenmiştir. Hükümlünün denetimli serbestlik tedbiri altında serbest bı- rakılması madde metninden de anlaşılacağı üzere cezanın infazı amacıyla yapılmaktadır. Açıklanan bu nedenlerle 5275 sayılı Yasanın 105/A maddesinin 9. fıkrası yollamasıyla 107/14. maddesi de gözetilerek hükümlünün denetimli serbestlik tedbiri altında geçirdiği sürelerin cezasından mahsup edilmesi gerektiği cihetle itirazın kabulü yerine reddine karar verilmesinde isabet görülmemiştir.</p>
+
+<p>SONUÇ : Açıklanan nedenlerle Adalet Bakanlığı`nın Kanun Yararına Bozma istemine dayalı Yargıtay Cumhuriyet Başsavcılığının ihbarname içeriği bu itibarla yerinde görüldüğünden Kütahya 1. Ağır Ceza Mahkemesinin 31.10.2013 gün, 2013/909 değişik iş nolu itirazın reddine ilişkin kararının CMK.nun 309. maddesi gereğince ( BOZULMASINA ), müteakip işlemlerin mahallinde yapılmasına, dosyanın Adalet Bakanlığına gönderilmek üzere Yargıtay C.Başsavcılığına tevdiine, 17.03.2014 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 3. CEZA DAİRESİ 
+Esas : 2013/24513 Karar : 2013/35057</strong> Tarih : 9.10.2013</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 107. Madde</strong></li>
+</ul>
+
+<p>Kasten yaralama ve ruhsatsız tabanca taşımak suçlarından sanık Nimetullah G…‘ın, 6136 sayılı Ateşli Silahlar ve Bıçaklar ile Diğer Aletler Hakkında Kanun’un 13/1, 5237 sayılı Türk Ceza Kanunu’nun 86/1, 86/3-e ve 52. maddeleri uyarınca 1 yıl 12 ay hapis, 1 yıl hapis ve 600,00 Türk lirası adlî para cezası ile cezalandırılmasına dair Bakırköy 10. Asliye Ceza Mahkemesinin 08/12/2009 tarihli ve 2008/588 esas, 2009/953 sayılı kararının Yargıtay 8. Ceza Dairesinin 05/12/2012 tarihli ve 2011/10960 esas, 2012/36988 sayılı ilamıyla onanarak kesinleşmesini müteakip, Bakırköy Cumhuriyet Başsavcılığınca yapılan toplama talebi üzerine, adlî para cezasına ilişkin mahkumiyetle doğrudan verilen hapis cezalarının toplanması talebinin reddi ile doğrudan verilen hapis cezalarının 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun’un 99. maddesi uyarınca 3 yıl hapis cezası olarak toplanmasına dair aynı Mahkemenin 26/03/2013 tarihli ve 2013/36 değişik iş sayılı kararına yönelik itirazın reddine ilişkin Bakırköy 14. Ağır Ceza Mahkemesinin 30/04/2013 tarihli ve 2013/799 değişik iş sayılı  kararına karşı Adalet Bakanlığı’nın 12.07.2013 tarih ve 2013/11280-45102 sayılı yazısıyla kanun yararına bozma isteminde bulunulduğundan bu işe ait dava dosyası Yargıtay Cumhuriyet Başsavcılığı`nın 10.09.2013 tarih ve 2013/250811 sayılı tebliğnamesiyle Dairemize gönderilmekle incelendi.</p>
+
+<p>Mezkur ihbarnamede;</p>
+
+<p>5275 sayılı Kanun’un 99. maddesinde yer alan “Bir kişi hakkında hükmolunan her bir ceza diğerinden bağımsızdır, varlıklarını ayrı ayrı korurlar. Ancak bir kişi hakkında başka başka kesinleşmiş hükümler bulunur ise 107. maddenin uygulanabilmesi yönünden mahkemeden bir toplama kararı istenir.” biçimindeki düzenleme, anılan Kanun’un 105/A-4. maddesindeki “Adli para cezasının ödenmemesi nedeniyle, cezası hapse çevrilen hükümlülerin yukarıdaki fıkralardaki infaz usulünden yararlanmalarında, hak ederek tahliye tarihi esas alınır.” şeklindeki düzenleme ile aynı Kanun’un 106/9. maddesindeki “Adlî para cezasından çevrilen hapsin infazı ertelenemez ve bunun infazında koşullu salıverilme hükümleri uygulanmaz. Hapse çevrilmiş olmasına rağmen hak yoksunlukları bakımından esas alınacak olan adlî para cezasıdır.” hükümleri birlikte değerlendirildiğinde adlî para cezasının ödenmemesi sonucu hapse çevrilmesi halinde doğrudan verilen hapis cezaları ile toplanamayacağı ancak doğrudan verilen hapis cezalarının 2 yıl 12 ay yerine 3 yıl olarak toplanması halinde ise koşullu salıverme tarihi ile bihakkın tahliye tarihinin hesaplanması bakımından hükümlü aleyhine sonuç doğuracağı gözetilmeden itirazın bu yönden kabulü gerekirken yazılı şekilde reddine karar verilmesinde  isabet görülmediğinden bahisle, 5271 sayılı CMK`nin 309.  maddesi gereğince anılan kararın bozulması lüzumunun ihbar olunduğu anlaşıldı.
+Gereği görüşülüp düşünüldü:</p>
+
+<p>Adalet Bakanlığı`nın kanun yararına bozma isteyen yazısına dayanan tebliğnamede ileri sürülen düşünce yerinde görüldüğünden;</p>
+
+<p>Bakırköy 14.Ağır Ceza Mahkemesinin 30.04.2013 tarih ve 2013/799 değişik iş sayılı kararının 5271 sayılı CMK`nin 309/4. maddesinin (a) bendi gereğince kanun yararına (BOZULMASINA), müteakip işlemlerin mahallinde mahkemesince yerine getirilmesine,dosyanın Yargıtay Cumhuriyet Başsavcılığına (TEVDİİNE),  oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 6. CEZA DAİRESİ 
+Esas : 2009/19640 Karar : 2011/35522</strong> Tarih : 11.07.2011</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 107. Madde</strong></li>
+</ul>
+
+<p>Hükümlünün, gasp suçundan İzmir 9. Ağır Ceza Mahkemesi’nin 27.11.2006 tarihli ve 2006/333 esas, 2006/390 Sayılı kararı ile mahkum olduğu 8 yıl 4 ay hapis cezası ve hırsızlık suçundan İzmir 24. Asliye Ceza Mahkemesi’nin 06.06.2006 tarihli ve 2006/606 esas, 2006/429 Sayılı kararı ile mahkum olduğu 5 yıl 10 ay hapis cezası ile hırsızlık, mala zarar verme suçlarından İzmir 14. Asliye Ceza Mahkemesi’nin 12.12.2007 tarihli ve 2007/281 esas. 2007/599 Sayılı kararı ile mahkum olduğu 2 yıl 4 ay hapis cezasının 5275 Sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun’un 99 ve 101/2. maddeleri uyarınca toplanması talebinin reddine dair İzmir 9. Ağır Ceza Mahkemesi’nin 10.02.2009 tarihli ve 2009/145 değişik iş sayılı kararına yapılan itirazın reddine ilişkin İzmir 11. Ağır Ceza Mahkemesi`nin 20.02.2009 tarihli ve 2009/167 değişik iş sayılı kararına karşı Adalet Bakanlığının 18.08.2009 gün ve 45242 Sayılı kanun yararına bozma istemine dayalı Yargıtay C. Başsavcılığının 10.09.2009 gün ve KYB/2009/199293 Sayılı ihbar yazısı ile infaz dosyası 29.9.2009 tarihinde Dairemize gönderilmekle incelendi:</p>
+
+<p>Anılan Yazıda:</p>
+
+<p>( … Yeni ceza adalet sisteminde, önceki sistemde var olan “cezaların içtimai” hükümlerine yer verilmediği, bununla birlikte verilen cezaların toplanamayacağı veya hangi şartlarda toplanabileceğine ilişkin tek düzenlemenin 5275 Sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun`un 99. maddesinde yer aldığı buna göre: “Bir kişi hakkında hükmolunan her bir ceza diğerinden bağımsızdır, varlıklarını ayrı ayrı korurlar. Ancak bir kişi hakkında başka başka kesinleşmiş hükümler bulunur ise, 107. maddenin uygulanabilmesi yönünden mahkemeden bir toplama kararı istenir.” biçimindeki düzenleme karşısında, birden fazla hükümde yer alan cezalar sadece şartla salıvermenin hesaplanması amacına dönük olarak infaz aşamasında toplanabileceği, cezaların ayrı infaz rejimlerine tabi olmasının da bu duruma engel olmayacağı gözetilmeden itirazın kabulü yerine yazılı şekilde reddine karar verilmesinde isabet görülmemiş olduğundan bahisle 5271 Sayılı C.M.K.nun 309. maddesi uyarınca anılan kararın bozulması… ) Dairemizden istenilmiştir.</p>
+
+<p>Kanun yararına bozma istemine dayanan Yargıtay Cumhuriyet Başsavcılığının ihbar yazısı ve incelenen dosya içeriğine göre:</p>
+
+<p>Hükümlü hakkında: İzmir 14. Asliye Ceza Mahkemesi’nin 2007/281 esas. 2007/599 Sayılı kararı ile 13.03.2005 tarihinde işlemiş olduğu hırsızlık ve mala zarar verme suçlarından 2 yıl ve 4 ay hapis cezası, İzmir 24. Asliye Ceza Mahkemesi’nin 2006/606 esas. 2006/429 Sayılı kararı ile 20.02.2006 tarihinde işlemiş olduğu hırsızlık suçundan 5 yıl 10 ay hapis cezası ve İzmir 9. Ağır Ceza Mahkemesi’nin 2006/333 esas. 2006/390 Sayılı kararı ile 10.01.2006 tarihinde işlemiş olduğu suçundan 8 yıl 4 ay hapis cezası verildiği, tüm kararların kesinleştiği, Eskişehir Cumhuriyet Başsavcılığı infaz Bürosunca 22.01.2009 tarihli yazı ile 5275 Sayılı yasanın 99. ve 107. maddeleri gereğince. İzmir Cumhuriyet Başsavcılığından cezaların içtimasının istendiği, İzmir Cumhuriyet Başsavcılığı İnfaz Bürosunca da. 10.02.2009 tarihli yazı ile İzmir 9. Ağır Ceza Mahkemesinden içtima talebinde bulunulduğu, İzmir 9. Ağır Ceza Mahkemesince de 26.06.2008 tarihli kararı ile mahkemesinin 2006/333 esas 2006/390 Sayılı dosyasına verilen 8 yıl 4 ay hapis cezası ile İzmir 24. Asliye Ceza Mahkemesi’nin 2006/606 esas 2006/429 Sayılı kararı ile 5 yıl 10 ay hapis cezasının 5275 Sayılı CGTİHK 99. ve 107. maddeleri gereğince içtima ettirilerek 13 yıl 14 ay hapis cezası olarak infazına karar verildiği ancak İzmir 14. Asliye Ceza Mahkemesi’nin 2007/281 esas. 2007/599 Sayılı kararı ile verilen 2 yıl 4 ay hapis cezasının suç tarihi itibariyle cezanın infazının 647 Sayılı Kanunun 19. ve ek 2. maddelerinin dikkate alınması gerektiğinden bu ilam açısından ayrıca infazına karar verildiği, karara karşı İzmir Cumhuriyet Başsavcılığınca yapılan itiraz üzerine İzmir 11. Ağır Ceza Mahkemesi`nin 18.02.2009 tarihli 2009/145 değişik iş sayılı kararı ile vaki itirazın reddine kesin olarak karar verildiğinin anlaşılması karşısında:</p>
+
+<p>Hükümlü hakkında tayin olunan hürriyeti bağlayıcı cezaların şartla tahliye süreleri ve infaz rejimlerinin farklı olması anılan yasa maddesinin uygulanmasına engel değildir. Cezaların infazındaki bu farklılık, şartla ve bihakkın tahliye tarihlerinin de farklı olmasını gerektirmeyecek, hükümlünün farklı süre ve rejimlere tabi her bir cezası açısından cezaevinde geçireceği sürelerin C. Başsavcılığı tarafından müddetnamede gösterilmesi yeterli olacak ancak yine toplam ceza süresi üzerinden tahliye tarihleri hesaplanacaktır.</p>
+
+<p>SONUÇ : Bu itibarla, kanun yararına bozma istemine dayanan Yargıtay Cumhuriyet Başsavcılığının ihbar yazısı, incelenen dosya içeriğine göre, yerinde görüldüğünden kabulüyle İzmir 11. Ağır Ceza Mahkemesince verilip, kesinleşen 20.02.2009 tarih ve 2009/167 değişik iş sayılı kararın 5271 Sayılı C.M.K.nun 309. maddesi gereğince BOZULMASINA, 11.07.2011 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 4. CEZA DAİRESİ 
+Esas : 2008/21402 Karar : 2009/291</strong> Tarih : 20.01.2009</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 107. Madde</strong></li>
+</ul>
+
+<p>Tehdit suçundan sanık Yusufun, 5237 sayılı Türk Ceza Kanununun 106/1, 62/1-2, 50. maddeleri gereğince 3.000,00 Yeni Türk Lirası adli para cezası ile cezalandırılmasına, cezasının 5237 sayılı Türk Ceza Kanununun 58/1-2-b-6. maddesine göre mükerrirlere özgü infaz rejimine göre çektirilmesine dair, ( Antalya Birinci Sulh Ceza Mahkemesi )`nin 29.05.2008 tarihli ve 2007/1196 esas 2008/672 sayılı kararının Adalet Bakanlığınca 23.10.2008 gün ve 52580 sayılı yazı ile yasa yararına bozulmasının istenmesi üzerine, Yargıtay Cumhuriyet Başsavcılığının 19.11.2008 gün ve 229292 sayılı tebliğnamesiyle dava dosyası Daireye gönderilmekle incelendi:</p>
+
+<p>Tebliğnamede “5237 sayılı Türk Ceza Kanununun 58/6. maddesine göre, tekerrür halinde hükmolunan cezanın, mükerrirlere özgü infaz rejimine göre çektirilmesi ve aynı maddenin 8. fıkrasında yer alan mükerrirlerin mahkum olduğu cezanın infazı ile denetim ii serbestlik tedbirinin uygulanmasının, kanunda gösterilen şekilde yapılması gerektiği biçimindeki düzenlemeler doğrultusunda, 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanunun 108/1-c maddesinde, tekerrür halinde işlenen suçtan dolayı mahkum olunan süreli hapis cezasını! ) dörtte üçünün infaz kurumunda iyi hali olarak çekilmesi durumunda, koşullu ( salıverilmeden yararlanılabileceği ve ancak aynı maddenin 2. fıkrasına göre, tekerrür nedeniyle koşullu salıverme süresine eklenecek miktarın, tekerrür esas alınan cezanın en ağırından fazla olamayacağına dair hükümler içerdiği, nazara alındığında, mükerrirlere özgü infaz rejiminin uygulanabilmesi için hapis cezasına hükmedilmesi gerektiği cihetle, hakkında para cezasına hükmedilen sanığın cezasının mükerrirlere özgü infaz rejimine göre çektirilmesine karar verilmesinde isabet görülmemiştir” denilmektedir.</p>
+
+<p>Gereği görüşüldü:</p>
+
+<p>( 1 ) 5237 sayılı TCY/nin 58. maddesinin 2. fıkrası “Tekerrür hükümleri, önceden işlenen suçtan dolayı;</p>
+
+<p>a ) Beş yıldan fazla süreyle hapis cezasına mahkumiyet halinde, bu cezanın infaz edildiği tarihten itibaren beş yıl,</p>
+
+<p>b ) Beş yıl veya daha az süreli hapis ya da adli para cezasına mahkumiyet halinde, bu cezanın infaz edildiği tarihten itibaren üç yıl,</p>
+
+<p>Geçtikten sonra işlenen suçlar dolayısıyla uygulanmaz.” ve 6. fıkrası “Tekerrür halinde hükmolunan ceza, mükerrirlere özgü infaz rejimine göre çektirilir.” hükümlerini öngörmektedir.</p>
+
+<p>Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Yasa`nın 108. maddesinde ise,</p>
+
+<p>“Tekerrür halinde işlenen suçtan dolayı mahkum olunan;</p>
+
+<p>a ) Ağırlaştırılmış müebbet hapis cezasının otuzdokuz yılının,</p>
+
+<p>b ) Müebbet hapis cezasının otuzüç yılının,</p>
+
+<p>c ) Süreli hapis cezasının dörtte üçünün,</p>
+
+<p>İnfaz kurumunda iyi halli olarak çekilmesi durumunda, koşullu salıverilmeden yararlanılabilir.</p>
+
+<p>( 2 ) Tekerrür nedeniyle koşullu salıverme süresine eklenecek miktar, tekerrüre esas alınan cezanın en ağırından fazla olamaz.</p>
+
+<p>( 3 ) İkinci defa tekerrür hükümlerinin uygulanması durumunda, hükümlü koşullu salıverilmez.</p>
+
+<p>( 4 ) Hakim, mükerrir hakkında cezanın infazının tamamlanmasından sonra başlamak ve bir yıldan az olmamak üzere denetim süresi belirler.</p>
+
+<p>( 5 ) Tekerrür dolayısıyla belirlenen denetim süresinde, koşullu salıverilmeye ilişkin hükümler uygulanır.</p>
+
+<p>( 6 ) Hakim, mükerrir hakkında denetim süresinin uzatılmasına karar verebilir. Denetim süresi en fazla beş yıla kadar uzatılabilir.” hükmüne yer verilmiştir.</p>
+
+<p>Yasa yararına bozma istenen 2007/1196 esas ve 2008/672 sayılı kararında Antalya Birinci Sulh Ceza Mahkemesi, tehdit suçuna ilişkin belirlediği hapis cezasını adli para cezasına çevirmiş, sanığın önceki adli para cezası nedeniyle de hakkında TCY`nin 58. maddesi uyarınca mükerrirlere özgü infaz rejiminin uygulanmasına karar vermiştir.</p>
+
+<p>CGTİHY’nin 108. maddesinde hükmü incelendiğinde, sanık hakkında tekerrür hükümlerinin uygulanması halinde koşullu salıvermenin hangi koşullarda yapılması gerektiği hükme bağlanmıştır. Koşullu salıverme kurumu ise, hapis cezalarına ilişkin olarak CGTİHY’nin 107. maddesinde düzenlenmiş, adli para cezalarının infazında “koşullu salıverme” uygulamasına yer verilmemiştir. TCY`nin 58. maddesi uyarınca tekerrür hükümlerinin uygulanabilmesi için, önceki cezanın hapis ya da adli para cezası olmasının bir önemi bulunmamakta ise de, tekerrür uygulamasını gerektiren son cezanın hapis olması bir zorunluluktur.</p>
+
+<p>Bu nedenlerle Tebliğnamedeki düşünce bu nedenlerle yerinde bulunduğundan, 5271 sayılı CYY’nin 309. maddesi uyarınca Antalya Birinci Sulh Ceza Mahkemesi`nin 29.05.2008 tarih ve 2007/1196 esas, 2008/672 sayılı kararının ( YASA YARARINA BOZULMASINA ), “mükerrirlere özgü infaz rejiminin uygulanmasına” ilişkin bölümün karardan çıkarılmasına, diğer hususların olduğu gibi bırakılmasına, oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 8. CEZA DAİRESİ 
+Esas : 2006/10342 Karar : 2007/3</strong> Tarih : 9.01.2007</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 107. Madde</strong></li>
+</ul>
+
+<p>Örgüt kurmak ve yönetmek suçlarından sanık, 5237 sayılı Kanun’un 220/1, 62/1. maddeleri gereğince 1 yıl 8 ay hapis cezası ile cezalandırılmasına dair A. 6. Ağır Ceza Mahkemesinin 10.8.2005 tarih, 2001/227 esas, 2003/65 sayılı kararının sanığın 19.9.2005 tarihinde tutuklanarak infazına başlanıldığı, cezaevinde iyi hali ile salıvermeye hak kazandığından 647 sayılı Cezaların İnfazı Hakkında Kanun’un 19 ve 2148 sayılı Kanunla eklenen ek 2. maddeleri uyarınca 15.5.2006 tarihinde geçerli olmak üzere koşullu salıverilmesine ilişkin E. 1. Ağır Ceza Mahkemesinin 8.5.2006 tarihli ve 2006/261 müteferrik sayılı kararında 5237 sayılı Kanun’un 220. maddesi gereğince hüküm kurulmuş olması suç tarihi itibariyle 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun’un 107/4. maddesinin uygulanmasını gerektirmediğinden infaz rejiminde 647 sayılı Kanun`nun daha lehe olduğu ve anılar kararda isabetsizlik bulunmadığından itirazın reddine dair ( E. ) 2. Ağır Ceza Mahkemesinin 12.6.2006 tarih, 2006/435 müteferrik sayılı kararını kapsayan dosya ile ilgili, olarak;</p>
+
+<p>Dosya kapsamına göre suç tarihi itibariyle 4422 sayılı Çıkar Amaçlı Suç Örgütleriyle Mücadele Kanunu’nun 12. maddesinde “Bu Kanunda öngörülen suçlardan dolayı verilen cezalara 13.7.1965 tarihli 647 sayılı Cezaların infazı Hakkında Kanununun 4 ve 6. maddeleri uygulanamaz” şeklindeki düzenleme ile 3713 sayılı Terörle Mücadele Kanunu’nun 17. maddesinde “Bu Kanun kapsamına giren suçlardan mahkum olanlardan müebbet ağır hapis cezasına hükümlüler 30 yıllarını, diğer şahsi hürriyeti bağlayıcı cezalara mahkum edilmiş olanlar hükümlülük süresinin 3/4 ünü çekmiş olup da iyi halli hükümlü niteliğinde bulundukları takdirde talepleri olmaksızın şartla salıverilirler” hususunun öngörülmesi ve 5275 sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkında Kanun’un 107/4. maddesi gereğince “Suç işlemek için örgüt kurmak veya yönetmek yada örgütün faaliyeti çerçevesinde işlenen suçtan dolayı mahkumiyet halinde; ağırlaştırılmış müebbet hapis cezasına mahkum edilmiş olanlar otuz altı yılını, müebbet hapis cezasına mahkum edilmiş olanlar otuz yılını, süreli hapis cezasına mahkum edilmiş olanlar cezalarının dörtte üçünü infaz kurumunda çektikleri takdirde, koşullu salıverilmeden yararlanabilirler.” şeklindeki belirleme karşısında mahkemece suç tarihi gözetilerek, 5237 sayılı Türk Ceza Kanunu’nun 220. maddesinin uygulanmasının 5275 sayılı Kanun’un 107/4. maddesinin uygulanmasını gerektirmediğinden ve 647 sayılı Kanun`un lehe olduğundan bahisle itirazın reddine ilişkin yazılı şekilde karar verilmesinde isabet görülmediğinden bahisle 5271 sayılı CMK.nun 309. maddesi uyarınca anılan kararın bozulması lüzumu Yüksek Adalet Bakanlığı Ceza İşleri Genel Müdürlüğünün 26.9.2006 gün ve 43556 sayılı kanun yararına bozma istemine atfen Yargıtay C.Başsavcılığından 13.10.2006 gün ve KYB/2006- 233220 sayılı ihbarnamesi ile dairemize tevdii kılınmakla incelendi.</p>
+
+<p>Gereği görüşülüp düşünüldü:</p>
+
+<p>Suç tarihinde yürürlükte olan 3713 sayılı Yasanın 17. maddesi “Bu kanun kapsamına giren suçlardan mahkum olanlardan diğer şahsi hürriyeti bağlayıcı cezalara mahkum edilmiş olanla, hükümlülük süresinin 3/4 ünü çekmiş olupta iyi halli hükümlü niteliğinde bulundukları taktirde talepleri olmaksızın şartla salıverilirler” hükmü ve aynı yasanın 113. madde ve fıkrası karşısında; 4422 sayılı Yasa yürürlükten kalkmış olsa bile şartla salıverilmenin atılı suç yönünden 3713 sayılı Yasanın 17. maddesine tabi olduğu ve sonradan 1.6.2005 tarihinde yürürlüğe giren 5237 sayılı Yasanın 220. maddesinde yazılı suç yönünden 5275 sayılı Yasanın 107/4. madde ve fıkrasında aynı düzenlemenin yer aldığı gözetilmeden yazılı şekilde 647 sayılı Yasanın 19 ve 647 sayılı Yasaya 2148 sayılı Yasa ile eklenen Ek 2 maddesi uyarınca şartla salıverilme kararı verilmesi;</p>
+
+<p>Usul ve yasaya aykırı olup Adalet Bakanlığının Kanun Yararına Bozma talebine dayalı ihbarnamesinde ileri sürülen neden bu itibarla yerinde görüldüğünden E. 2. Ağır Ceza Mahkemesinin 12.6.2006 gün ve 2006/435 mut. sayılı kararının ( BOZULMASINA ), müddetnamenin yeniden buna göre düzenlenmesine, dosyanın mahalline gönderilmek üzere Yargıtay C. Başsavcılığına ( TEVDİİNE ), oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 11. CEZA DAİRESİ 
+Esas : 2006/3810 Karar : 2006/7744</strong> Tarih : 4.10.2006</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 107. Madde</strong></li>
+</ul>
+
+<p>Dolandırıcılık ve hırsızlık suçlarından sanık Mehmet Pak’ın yapılan yargılaması sonunda:
+Değişen suç vasfına göre 5237 Sayılı TCK.nun 245/1, 43, 62, 53/1, 142/1-b, 62, 53/1, 63 ve 5275 Sayılı Yasanın 99. maddeleri gereğince 4 yıl 9 ay 15 gün hapis cezasıyla mahkumiyetine dair ANTALYA 1. Ağır Ceza Mahkemesinden verilen 20.12.2005 gün ve 2005/727 Esas, 2005/524 Karar sayılı hükmün süresi içinde Yargıtay`ca incelenmesi sanık müdafii tarafından istenilmiş olduğundan dava evrakı C.Başsavcılığının düzeltilerek onama isteyen 18.05.2006 tarihli tebliğnamesi ile daireye gönderilmekle incelenerek gereği görüşüldü:</p>
+
+<p>Sanığın Yapı Kredi Bankası ve Garanti Bankasına ait kredi kartları ile değişik yer ve zamanlarda birden fazla alışveriş yaptığının kabul edilmesine göre, eylemlerin teselsül eden iki ayrı suçu oluşturduğu gözetilmeden yazılı şekilde hüküm kurulması, karşı temyiz olmadığından bozma nedeni yapılmamış, yapılan duruşmaya, toplanıp karar yerinde gösterilen delillere, mahkemenin soruşturma neticelerine uygun şekilde inanç ve takdirine, incelenen dosya içeriğine göre sanık müdafiinin bir sebebe dayanmayan ve yerinde görülmeyen sair temyiz itirazları yerinde görülmemiştir.
+Ancak;
+1- TCK.nun 145. maddesinin uygulanması sırasında hırsızlık suçuna konu cüzdan ve kredi kartlarının maddi değeri yerine, kredi kartları ile yapılan alışveriş sonucu elde edilen ve banka ve kredi kartlarının kötüye kullanılması suçuna konu haksız menfaatin miktarının esas alınması,
+2- 5275 Sayılı Ceza ve Güvenlik Tedbirlerinin İnfazı Hakkındaki Kanunun 99/1. maddesi uyarınca sanık hakkında hükmolunan her bir cezanın diğerinden bağımsız olup varlıklarını ayrı ayrı koruyacakları ancak bir kişi hakkında başka başka kesinleşmiş hükümler bulunur ise anılan kanun 107. maddesinin uygulanabilmesi yönünden bir toplama kararı isteneceği gözetilmeden dolandırıcılık ve hırsızlık suçlarından verilen cezaların toplanmasına karar verilmesi,</p>
+
+<p>Yasaya aykırı, sanık müdafiinin temyiz itirazları bu itibarla yerinde görülmüş olduğundan hükmün bu sebeplerden dolayı 5320 Sayılı Yasanın 8/1. maddesi gereğince uygulanması gereken 1412 Sayılı CMUK.nun 321. maddesi uyarınca BOZULMASINA, sanığın ceza miktarı itibariyle kazanılmış haklarının saklı tutulmasına, 04.10.2006 gününde oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 5. CEZA DAİRESİ 
+Esas : 2006/211 Karar : 2006/902</strong> Tarih : 16.02.2006</p>
+
+<ul>
+  <li><strong>İnfaz Kanunu 107. Madde</strong></li>
+</ul>
+
+<p>Irza geçmek suçundan sanık Mehmet Yaman`ın 765 sayılı TCK nun 414/1,80.418/2,55/3 ve 59 maddeleri gereğince 4 yıl 7ay 16 gün ağır hapis cezası ile cazalandırılmasına dair Antalya 1.Ağır Ceza Mmahkemesinin 07/11/2001 tarihli ve 1999/364 Esas, 2001/462 sayılı kararının infazı sırasında,hükümlü hakkında şartla tahliye kararı verilmesi konusunda C.Savccılığınca yapılan talebin reddine ilişkin Antalya 1.Ağır Ceza Mahkemesinin 28/09/2005 tarihli ve 2005/1035 müt. sayılı kararına yapılan itirazın kabulü ile hükümlünün şartla tahliyesine dair Antalya 2.Ağır Ceza Mahkemesinin 07/10/2005 tarihli ve 2005/866-866 D.iş sayılı kararında;lehe olan kanun belirlenirken 5252 sayılı yasanın 9/3 ve 5237 sayılı TCK.nun 7/2 maddelerine aykırı olarak karma uygulama yapılmasında isabet görülmediğinden bahisle 5271 sayılı CMK.nun 309.maddesi gereğince bozulması lüzumu,Yüksek Adalet Bakanlığı Ceza İşleri Genel Müdürlüğünün 06/122005 gün ve 51500 sayılı Kanun Yararına Bozma talebine atfen Yargıtay C.Başsavcılığından tebliğname ile daireye ihbar ve dava evrakı ile birlikte tevdii kılınmakla gereği düşünüldü:</p>
+
+<p>Hükümlü Mehmet Yaman`ın 25/01/2005 tarihinde cezaevine girişi yapılarak anılan hükmün infazına başlandığı, 15/08/1983 doğumlu olan ve 18 yaşını tamamlamadan önce yargılama sırasında 16/12/1999 ila 09/08/2000 tarihleri arasında tutuklu olarak bulunduğu ve 01/06/2005 de yürürlüğe giren 5275 sayılı yasanın 107/5.maddesinin “hükümlünün 18 yaşını dolduruncaya kadar infaz kurumunda geçirdiği bir gün, iki gün olarak dikkate alınır,şeklindeki düzenlemesi karşısında,oluşan tereddütün giderilmesi için C.Savcılığınca talepte bulunulması üzerine,Antalya 1.Ağır Ceza Mahkemesi 29/07/2005 gün ve 2005/846 sayı ile infazın hükümlü lehine olan 647 sayılı yasaya göre yapılması karar verdiği, bu karara karşı C.Savcılığının itirazı üzerine 2.Ağır Ceza Mahkemesi ise 12/08/2005 gün 2005/660 sayı ile 5275 sayılı yasa 107/5 maddeye göre hesaplama yapılarak verilmiş olan 1.Ağır Ceza Mahkemesinin 846 sayılı kararı yerindedir bu nedenle itirazın reddine şeklinde karar verdiği, bu defa C.SAvcılığı 2.Ağır Ceza Mahkemesinin karar gerekçesinin hukuki gerçeğe uygun olmadığını ifade ile itiraz etmekle 2.Ağır Ceza Mahkemesi 28/09/2005 gün 2005/854 sayı ile 1.Ağır Ceza Mahkemesinin 2005/846 ve kendi mahkemesine ait 2005/660 sayılı kararlarını kaldırarak, 5275 sayılı yasa 107/5 maddeye göre tutuklulukta geçen bir günü iki gün olarak kabülü ile kalan sürenin de daha lehe olan 647 sayılı yasaya göre infazı gerektiğine dair karma uygulama kararı verdiği, bu karar üzerine C. Savcılığı müddetname tanzimi ile hükümlü hakkında şartlı tahliye talebinde bulunmakla, bu defa 1.Ağır Ceza Mahkemesi 28/09/2005 gün ve 2005/1035 sayı ile mahkememizin 2005/846 sayılı kararı ile kesinleşmiştir ve doğrudur diyerek bu karara aykırı talebin reddine karar verdiği,yine bu karara itiraz üzerine bu defa 2.Ağır Ceza Mahkemesi 07/10/2005 gün ve 2005/866 sayı ile 1.Ağır Ceza MAhkemesinin 2005/1035 sayılı kararının kaldırılmasına hükümlünün derhal serbest bırakılmasına karar verdiği anlaşılmaktadır.</p>
+
+<p>Lehe olan infaz kanununun belirlenmesinde 5252 sayılı yasanın 9/3 maddesine göre her iki kanunun bütün hükümleri olaya uygulanarak ortaya çıkan sonuçları birbiriyle karşılaştırılması suretiyle sonuca varılması gerektiği, buna göre uygulama yapan Antalya 1.Ağır CezaMahkemesinin 29/07/2005 gün 2005/846 müt. sayılı kararının esası itibariyle isabete haiz olduğu, 647 ve 5275 sayılı yasa hükümlerinin karma uygulamısını benimseyen Antalya 2.Ağır Ceza Mahkemesinin 07/10/2005 gün ve 2005/866-866 D.İş sayılı kararının usul ve yasaya uygun bulunmadığı, bu itibarla kanun yararına bozma istemini içeren ihbarname münderecatı yerinde görüldüğünden anılan mahkeme kararının CMK.nun 309.maddesi uyarınca ( BOZULMASINA ),müteakip işlemlerin mahallinde yapılması için dosyanın Yargıtay ÜC.Başsavcılığına ( TEVDİİNE ),16.02.2006 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+			</div></div></main>
+		</div>
+
+  <footer>
+    <section>
+      <div class="contact-info">
+
+        <div class="adres">
+
+        <div class="telefon-wrapper">
+
+
+        </div>
+      </div>
+    </section>
+
+</div>
+
+		<amp-analytics type="googleanalytics" id="analytics1">
+  <script type="application/json">
+  {
+    "vars": {
+    "account": "UA-58342443-1"
+    },
+    "triggers": {
+    "trackPageview": {
+      "on": "visible",
+      "request": "pageview"
+    }
+    }
+  }
+  </script>
+</amp-analytics>
+
+	</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="../../index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="../../dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="../../ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="../../knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="../../search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/slideToggle.min.js"></script>
+    <script src="../js/internet-status.js"></script>
+    <script src="../js/tiny-slider.js"></script>
+    <script src="../js/baguetteBox.min.js"></script>
+    <script src="../js/countdown.js"></script>
+    <script src="../js/rangeslider.min.js"></script>
+    <script src="../js/vanilla-dataTables.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/magic-grid.min.js"></script>
+    <script src="../js/dark-rtl.js"></script>
+    <script src="../js/active.js"></script>
+    <!-- PWA -->
+    <script src="../js/pwa.js"></script>
+  </body>
+</html>

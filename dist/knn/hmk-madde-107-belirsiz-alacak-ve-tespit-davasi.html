@@ -1,0 +1,929 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tiny-slider.css">
+    <link rel="stylesheet" href="../css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="../css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="tck-search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+               <div class="page-content-wrapper py-0">
+        </div>
+      </div>
+
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<h2 id="belirsiz-alacak-davası">Belirsiz Alacak Davası</h2>
+
+<h2 id="hmk-madde-107">HMK Madde 107</h2>
+
+<p>(1) Davanın açıldığı tarihte alacağın miktarını yahut değerini tam ve kesin olarak belirleyebilmesinin kendisinden beklenemeyeceği veya bunun imkânsız olduğu hâllerde, alacaklı, hukuki ilişkiyi ve asgari bir miktar ya da değeri belirtmek suretiyle belirsiz alacak davası açabilir.</p>
+
+<p>(2) (Değişik:22/7/2020-7251/7 md.) Karşı tarafın verdiği bilgi veya tahkikat sonucu alacağın miktarı veya değerinin tam ve kesin olarak belirlenebilmesi mümkün olduğunda, hâkim tarafından tahkikat sona ermeden verilecek iki haftalık kesin süre içinde davacı, iddianın genişletilmesi yasağına tabi olmaksızın talebini tam ve kesin olarak belirleyebilir. Aksi takdirde  dava, talep sonucunda belirtilen miktar veya değer üzerinden görülüp karara bağlanır.</p>
+
+<p>(3) (Mülga:22/7/2020-7251/7 md.)</p>
+
+<hr>
+
+<ul>
+  <li><a href="../6100-sayili-hukuk-muhakemeleri-kanunu-(hmk).html"><strong>6100 sayılı HMK (Hukuk Muhakameleri Kanunu) Tam Metin</strong></a></li>
+</ul>
+
+<hr>
+
+<amp-img src="../tokmak-yargitay-kararlari-1280x720.png" alt="HMK Madde 107  Belirsiz Alacak ve Tespit Davası" width="1280" height="720" layout="responsive">
+            </amp-img>
+
+<h2 id="hmk-madde-107-gerekçesi">HMK Madde 107 Gerekçesi</h2>
+
+<p><strong>Belirsiz alacak davasına ilişkin 22/7/2020 tarihli 7251 sayılı kanunla yapılan son değişikliğin gerekçesi:</strong></p>
+
+<p>Maddeyle, Kanunun 107 nci maddesinde değişiklik yapılmaktadır. Düzenlemeyle, uygulamada belirsiz alacak davasıyla ilgili görülen sorunlara çözüm bulunması amaçlanmaktadır.</p>
+
+<p>Belirsiz alacak davasında alacağın tamamı dava edilmekte, ancak davanın açıldığı tarihte alacağın miktar veya değerinin tam ve kesin olarak belirlenebilmesi davacıdan beklenememekte veya bu belirlemeyi yapmak davacı açısından imkânsız bulunmaktadır. Maddenin mevcut ikinci fıkrasındaki düzenleme gereğince belirsiz alacak davasında davacının, karşı tarafın verdiği bilgi veya tahkikat sonucu alacağın miktar veya değerinin tam ve kesin olarak belirlenebilmesi mümkün olduğu “an”da talebini artırması gerekmektedir. Uygulamada sorun yaşanan ve doktrinde de tartışılan konu, alacağın miktar veya değerinin tam ve kesin olarak belirlenebilmesinin mümkün olduğu “an”ın tespitine yöneliktir, ikinci fıkrada yapılan değişiklikle, bu “an”ın, bir başka ifadeyle alacağın miktar veya değerinin tam ve kesin olarak belirlenebilmesinin mümkün hale geldiğinin tespiti mahkemece yapılacaktır. Hâkim, alacağın miktar veya değerinin tam ve kesin olarak belirlenmesinin “mümkün olduğu anda” talebini tam ve kesin olarak belirlemesi için davacıya iki haftalık kesin süre verecektir. Bu süre verme işlemi tahkikat aşaması sona ermeden yapılacaktır. Bu hüküm bölge adliye mahkemesince tahkikat yapıldığı hallerde de uygulanabilecektir. İsviçre hukukunda da kabul edilen genel görüş, hâkimin davacıya talebini belirlemesi için süre vermesi gerektiği yönündedir. Ayrıca 107 nci maddenin ikinci fıkrasında yer alan ve davacının, davanın başında belirtmiş olduğu talebini “artırabileceğine” ilişkin hüküm, yapılan diğer değişikliğin zorunlu sonucu olarak davacının talebini tam ve kesin olarak “belirleyebileceği” şeklinde değiştirilmektedir. Aynı fıkraya eklenen son bir cümleyle, hâkim tarafından verilen kesin süreye rağmen alacağın miktar veya değerinin tam ve kesin olarak belirlenmemesi durumunda davanın talep sonucunda belirtilen miktar veya değer üzerinden görülüp karara bağlanacağı açıkça hükme bağlanmaktadır.</p>
+
+<p>Maddede yapılan diğer değişiklikle, maddenin üçüncü fıkrası yürürlükten kaldırılmaktadır. Bu fıkra, “Ayrıca, kısmi eda davasının açılabildiği hâllerde, tespit davası da açılabilir ve bu durumda hukuki yararın var olduğu kabul edilir.” şeklindedir. Soyut bir şekilde değerlendirildiğinde fıkra hükmünün kısmi dava veya tespit davasına ilişkin hükümler arasında yer alması gerektiği düşünülebilir. Ancak fıkra, belirsiz alacak davasını düzenleyen 107 nci madde içinde düzenlenmiş ve “Ayrıca” ibaresiyle başlayarak maddenin birinci ve ikinci fıkralarıyla bağlantı kurulmuştur. Bu düzenleme tarzı ve fıkraya ilişkin gerekçe metni sebebiyle fıkrada bahsedilen tespit davasının mahiyeti doktrinde eleştirilmiş ve uygulamada da hangi davaların bu kapsamda kaldığı tereddüde yol açmıştır. Belirsiz alacak davası olarak nitelenebilecek bir davanın kısmi dava şeklinde açılmasının mümkün olup olmadığından, eda davası açılabilecek hallerde tespit davası açılmasında hukuki yararın bulunup bulunmadığına kadar pek çok konu bu kapsamda tartışılmaktadır. Belirsiz alacak davasında, alacak miktarının tam ve kesin olarak belirlenememesi, dava açılırken asgari bir miktar ya da değerin belirtilmesiyle alacağın tamamının talep edilmiş (hukuken himaye görmüş) sayılması ve alacağın tamamı için zamanaşımının kesilmesi karşısında, belirsiz alacak davasının kısmi dava şeklinde açılmasının mümkün olmadığı ifade edilmekte ve alacağın tamamının dava edildiği bu durumda tespit davası açılmasında hukuki yarar bulunmadığı belirtilmektedir. Buna karşılık belirsiz alacak davasına ilişkin talebin, kısmi dava şeklinde de ileri sürülebileceği, çünkü kısmi dava için alacağın bölünebilir olmasının yeterli olduğu da dile getirilmektedir.</p>
+
+<p>Üçüncü fıkranın konumu ve lafzı sebebiyle, kısmi eda davasının açılabileceği her durumda tespit davası da açılabileceği; kısmi eda davası ile birlikte kısmi tespit davası açılabileceği; kısmi eda davası yerine bütünüyle külli tespit davası açılabileceği; kısmi eda davası ile birlikte aynı zamanda kısmi tespit davası açılamayacağı; eda davası açılabilecek her durumda değil, ancak belirsiz alacak davasının koşulları oluşmuşsa kısmi eda davasıyla birlikte külli tespit davası açılabileceği gibi pek çok farklı görüş uygulamada ve doktrinde ileri sürülmektedir. Bütün bu tartışmalar ışığında üçüncü fıkrada düzenlenen tespit davasının tam olarak hangi alanı düzenlediği konusunda netlik olmadığı değerlendirildiğinden, bu fıkranın yürürlükten kaldırılmasında fayda görülmüştür. Fıkra yürürlükten kaldırıldığında bu kapsamda dava açmak isteyenlerin hakları, mevcut düzenlemeler çerçevesinde korunabilecektir. Yapılan değişiklikle 107 nci maddenin üçüncü fıkrası hükmü yürürlükten kaldırıldığından, madde başlığı da buna uygun olarak “Belirsiz alacak davası” şeklinde değiştirilmektedir.</p>
+
+<hr>
+
+<h2 id="hmk-107-belirsiz-alacak-davası-emsal-yargıtay-kararları">HMK 107 (Belirsiz Alacak Davası) Emsal Yargıtay Kararları</h2>
+
+<hr>
+
+<p><strong>Hukuk Genel Kurulu         2021/485 E.  ,  2021/971 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 107</strong></li>
+  <li><strong>Duruşmada beyanda bulunarak kısmi davayı belirsiz alacak davasına çevirmek mümkün değildir.</strong></li>
+</ul>
+
+<p>Kısmi dava açılabilmesi için talep konusunun bölünebilir olması gerekli olup, açılan davanın kısmi dava olduğunun dava dilekçesinde açıkça yazılması gerekmez. Dava dilekçesindeki açıklamalardan davacının alacağının daha fazla olduğu anlaşılıyor ve istem bölümünde “fazlaya ilişkin haklarını saklı tutması” ya da “alacağın şimdilik şu kadarını dava ediyorum” şeklinde bir ifadeye yer verilmiş ise, bu husus, davanın kısmi dava olarak kabulü için yeterli sayılmaktadır. Nitekim aynı ilkeler, Hukuk Genel Kurulunun 16.05.2019 tarihli ve 2016/22-1166 E., 2019/576 K., sayılı kararında da benimsenmiştir.</p>
+
+<p>Mülga 1086 sayılı Hukuk Usulü Muhakemeleri Kanunu’nda açıkça kısmi dava düzenlenmediği hâlde, söz konusu Kanun’un yürürlükte olduğu dönemde de kısmi dava açılması mümkün bulunmaktaydı. Çünkü, alacak hakkının bir bölümünün dava edilip geriye kalan kısmının ikinci bir dava ile istenmesini engelleyen bir hüküm bulunmamaktaydı.</p>
+
+<p>Bu ilke ve açıklamalar ışığında somut olay değerlendirildiğinde; davacı vekili dava dilekçesinde “fazlaya ilişkin haklarımız saklı kalmak üzere” şeklinde beyanda bulunarak 1.000TL ihbar tazminatı, 1.000TL kıdem tazminatı, 100TL fazla çalışma ücreti, 100TL yıllık izin ücreti ve 100TL ulusal … ve genel tatil ücreti talebinde bulunmuştur. Dava dilekçesinde davanın belirsiz alacak davası şeklinde açıldığına dair bir beyan bulunmamaktadır.</p>
+
+<p>Belirsiz alacak davası niteliği gereği istisnai bir dava türü olmakla davasını belirsiz alacak davası olarak açan kişi bunu açıkça dilekçesinde belirtmelidir. Her ne kadar 30.10.2014 tarihli duruşmada davacı vekili “davamız belirsiz alacak davasıdır” şeklinde beyanda bulunmuş ise de; davanın türünün bu şekilde değiştirilmesine imkân bulunmamaktadır. Sonuç itibariyle davanın kısmi dava şeklinde açıldığı sabittir.</p>
+
+<hr>
+
+<p><strong>Yargıtay 9. Hukuk Dairesi         2021/7234 E.  ,  2021/11693 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 107</strong></li>
+  <li><strong>Belirsiz alacak davası açılmasında hukuki yarar yoksa, dava reddedilmelidir.</strong></li>
+  <li><strong>Yargıtay 9. Hukuk Dairesi eski içtihatlarından dönmüş, 22. Hukuk Dairesinin içtihatlarının uygulanmasını benimsemiştir.</strong></li>
+</ul>
+
+<p>Kıdem tazminatı, ihbar tazminatı, yıllık izin ücreti ve ücret alacakları işçi tarafından bilinmekle kural olarak belirsiz alacak davasına konu edilmez. Ancak hesabın unsurları olan sosyal hakların (ayni olarak sağlanan yemek yardımı gibi) miktarının belirlenmesi işveren tarafından sunulacak belgelere göre belirlenecek ise, kıdem ve ihbar tazminatı belirsiz alacak davasına konu edilebilir.</p>
+
+<p>Madde gerekçesinde “Alacaklının bu tür bir dava açması için, dava açacağı miktar ya da değeri tam ve kesin olarak gerçekten belirlemesi mümkün olmamalı ya da bu objektif olarak imkânsız olmalıdır. Açılacak davanın miktarı biliniyor yahut tespit edilebiliyorsa, böyle bir dava açılamaz. Çünkü, her davada arandığı gibi, burada da hukukî yarar aranacaktır, böyle bir durumda hukukî yararın bulunduğundan söz edilemez. Özellikle, kısmî davaya ilişkin yeni hükümler de dikkate alınıp birlikte değerlendirildiğinde, baştan tespiti mümkün olan hâllerde bu yola başvurulması kabul edilemez.” şeklindeki açıklamayla, alacağın belirli veya belirlenebilir nitelikte olması durumunda, belirsiz alacak davası açılarak bu davanın sağladığı imkânlardan yararlanmanın mümkün olmadığına işaret edilmiştir. Şu halde davanın açıldığı tarihte alacağın miktarı yahut değeri belirlenebilir durumda ise, dava şartı yokluğundan davanın usulden reddine karar verilmelidir. Burada hukuki yarar eksikliğinin tamamlanabilir dava şartı olmadığı sonucuna varılmıştır. 7251 sayılı Kanun ile 107’nci maddede yapılan değişiklikler şartları olmadığı halde açılan belirsiz alacak davasında davacıya süre verilerek hukuki yarar eksikliğini tamamlama imkânı tanımamaktadır. Dairemizce sözü edilen düzenleme, şartları mevcut olan belirsiz alacak davasında yapılan yargılama ile alacağın belirli hale gelmesi durumunda hâkimin geçici talep sonucunu kesin talep sonucuna dönüştürmesi için alacaklıya süre vermesi gerektiği yönünde değerlendirilmiştir.
+Hukuk devletinin asli unsurları arasında yer alan hukuki belirlilik veya güvenlik ilkesi, hukuki durumlarda belirli bir istikrarı temin etmekte ve kamunun mahkemelere güvenine katkıda bulunmaktadır. Birbiriyle uyuşmayan mahkeme kararlarının sürüp gitmesi, yargı sistemine güveni azaltarak, yargısal bir belirsizliğe yol açabilir (AİHM, Nejdet Şahin ve Perihan Şahin/Türkiye, B. No: 13279/05, 20.10.2011, § 57).</p>
+
+<p>Kişilerin hukuki güvenliğini sağlamayı amaçlayan hukuki güvenlik ilkesi, hukuk normlarının öngörülebilir olmasını, bireylerin tüm eylem ve işlemlerinde Devlete güven duyabilmesini, Devletin de yasal düzenlemelerinde bu güven duygusunu zedeleyici yöntemlerden kaçınmasını gerekli kılar. Belirlilik ilkesi ise, yalnızca yasal belirliliği değil, daha geniş anlamda hukuki belirliliği ifade etmektedir. Yasal düzenlemeye dayanarak erişilebilir, bilinebilir ve öngörülebilir gibi niteliksel gereklilikleri karşılaması koşuluyla, mahkeme içtihatları ve yürütmenin düzenleyici işlemleri ile de hukuki belirlilik sağlanabilir. Hukuki belirlilik ilkesinde asıl olan, bir hukuk normunun uygulanmasıyla ortaya çıkacak sonuçların o hukuk düzeninde öngörülebilir olmasıdır (AYM, 23.12.2015, 15-118).</p>
+
+<p>Farklı kararların aynı mahkemeden çıkmış olması tek başına, adil yargılanma hakkının ihlali anlamına gelmez Değişik yönlerde kararlar verilmesi ihtimali, Yargıtay ve Danıştay gibi çeşitli yüksek mahkemelerden oluşan yargı sistemimizin kaçınılmaz bir özelliği olarak kabul edilmelidir. Diğer yandan, bireylerin makul güvenlerinin korunması ve hukuki güvenlik ilkesi, içtihadın değişmezliği şeklinde bir hak bahşetmez. Mahkeme içtihatlarındaki değişme yargı organlarının takdir yetkisi kapsamında kalmakta olup, böyle bir değişiklik özü itibarıyla, önceki çözümün tatminkâr bulunmaması anlamına gelir. Ancak, aynı hususta daha önce çıkan kararlardan farklı bir hüküm kurulması halinde, mahkemelerce, bu farklılaşmaya ilişkin makul bir açıklama getirilmesi gerekmektedir. Yüksek mahkemelerin oynaması gereken rol tam da yargı kararlarında doğabilecek içtihat farklılıklarına bir çözüm getirmektir. Bununla birlikte, yeni kabul edilmiş bir yasanın yorumlanmasında olduğu gibi, bazı hallerde içtihadın müstakar hale gelmesinin belirli bir zamana ihtiyaç duyacağı açıktır (AYM, 06.01.2015, B.No: 2013/6932).</p>
+
+<p>İçtihat değişikliğinin sürpriz karar yasağı çerçevesinde de değerlendirilmesi gerekir. Sürpriz karar, ilgilinin yargılamanın o ana kadarki seyrine göre, haklı olarak beklemediği, umulmadık bir kararla karşılaşmasıdır. Sürpriz karar yasağı ise, yargılamanın adil ve hakkaniyete uygun şekilde yürütülmesi durumunda tarafların öngöremedikleri bir kararla karşılaşmamalarını ifade eder. Sürpriz karar yasağı, hukukun gelişimine ve yeni şartlara uyarlanmasına engel olacak mutlak bir yasak olarak anlaşılmamalıdır. Şüphesiz mahkemeler yeni içtihatlar geliştirebilirler, önceki içtihatlardan farklı bir karar verilebilir, hatta yeni ve özelikle somut olayda ortaya çıkan hukuki durum bunu gerekli kılabilir. Ayrıca belirtmek gerekir ki, Hukuk Muhakemeleri Kanunu’nun 33’üncü maddesi gereğince hâkimin hukuku kendiliğinden uygulaması söz konusu olduğunda sürpriz karar yasağının ihlalinden söz edilemez. Bununla birlikte mevcut içtihatlar dışında yeni bir görüş benimsenecekse, öncelikle tarafların bu konuda bilgilendirmesi gerekir (ÖZEKES, Muhammet, Medeni Usul Hukukunda Hukuki Dinlenilme Hakkı, … 2003, s. 185 vd.).</p>
+
+<p>Yargıtay Birinci Başkanlık Kurulu’nun 07.07.2020 tarih ve 173 sayılı kararı ile aynı uyuşmazlıkların temyiz incelemesini yapmakla görevli 22. Hukuk Dairesinin kapatılması ve tüm işlerinin dairemize devredilmesi üzerine, belirsiz alacak davası ile ilgili yeniden yapılan değerlendirmeler sonucunda yukarıda belirtilen ilkeler kabul edilmiştir. Dairemizin daha önce belirsiz alacak davasına ilişkin uygulaması benimsenen yeni ilkelerden farklılık arz etmekteydi. Örneğin, hukuki yararın tamamlanabilir dava şartı olduğu; hukuki yarara ilişkin dava şartının eksik olması halinde davanın hemen reddedilmemesi; davacıya süre verilerek dava şartının tamamlattırılması gerektiği yönünde uygulama yapılmaktaydı. Dairemizin belirsiz alacak davası ile ilgili yukarıda belirtilen yeni ilkelerinin hemen uygulamaya konulması, dairenin önceki görüşüne güvenerek dava açanlar yönünden hukuki güvenlik, hukuki belirlilik, hukuki öngörülebilirlik ve sürpriz karar yasağı ilkelerinin ihlaline yol açacaktır. Bu sebeple, benimsenen yeni görüşün Yargıtay Kararları Dergisi ya da başkaca yollarla duyurulmasından itibaren makul bir süre sonra uygulamaya konulması, dairenin görüşüne güvenilerek açılan davalarda ise, önceki uygulamaya devam edilmesi uygun görülmüştür.</p>
+
+<p>Somut uyuşmazlıkta, davacı tarafça belirsiz alacak davası açılmıştır. Ancak yukarıda açıklandığı üzere Dairemiz tarafından daha önce verilen kararlarda hukuki yarar yokluğu sebebiyle dava şartı yokluğuna bağlı davanın reddi kararları verilmediğinden dairenin önceki görüşüne güvenilerek belirsiz alacak davası şeklinde açılan bu davada belirtilen husus bozma nedeni yapılmamıştır (Yargıtay 9. Hukuk Dairesi - K.2021/12324).</p>
+
+<hr>
+
+<p><strong>Yargıtay 9. Hukuk Dairesi   2021/7816 E.  ,  2021/12378 K.</strong></p>
+
+<ul>
+  <li>
+    <p><strong>HMK 107. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Kıdem tazminatı, ihbar tazminatı, yıllık izin ücreti ve ücret alacakları işçi tarafından bilinmekle kural olarak belirsiz alacak davasına konu edilmez. Ancak hesabın unsurları olan sosyal hakların (ayni olarak sağlanan yemek yardımı gibi) miktarının belirlenmesi işveren tarafından sunulacak belgelere veya yargılama ile belirlenecek ise kıdem ve ihbar tazminatı belirsiz alacak davasına konu edilebilir.</strong></p>
+  </li>
+</ul>
+
+<p>Davanın <strong>belirsiz alacak davası</strong> şeklinde açılabilmesi için, davanın açıldığı tarih itibariyle uyuşmazlığa konu alacağın miktar veya değerinin tam ve kesin olarak davacı tarafça belirlenememesi gereklidir. Belirleyememe hali, davacının gerekli dikkat ve özeni göstermesine rağmen miktar veya değerin belirlenmesinin kendisinden gerçekten beklenilmemesi durumuna ya da objektif olarak imkânsızlığa dayanmalıdır. Davacının alacağının miktar veya değerini belirleyebilmesi için elinde bulunması gerekli bilgi ve belgelere sahip olmaması ve bu belgelere dava açma hazırlığı döneminde ulaşmasının da (gerçekten) mümkün olmaması ve dolayısıyla alacağın miktarının belirlenmesinin karşı tarafın elinde bulunan bilgi ve belgelerin sunulmasıyla mümkün hale geleceği durumlarda alacak belirsiz kabul edilmelidir. Alacağın miktarının belirlenebilmesinin hâkimin takdirine bağlı olduğu durumlarda hukuki imkânsızlık söz konusu olur. Bu durumda davacı alacaklı, hâkimin takdir yetkisini nasıl kullanacağını bilemeyeceği için davanın açıldığı tarihte alacağının miktarını belirleyebilecek durumda değildir.</p>
+
+<p>Sırf taraflar arasında alacak miktarı bakımından uyuşmazlık bulunması, talep sonucunun belirlenmesinin davacıdan beklenemeyecek olması anlamına gelmez. Önemli olan objektif olarak talep sonucunun belirlenmesinin davacıdan beklenemeyecek olmasıdır.</p>
+
+<p>Alacağın hangi hallerde belirsiz, hangi hallerde belirli veya belirlenebilir olduğu hususunda kesin bir sınıflandırma yapılması mümkün olmayıp, her bir davaya konu alacak bakımından somut olayın özelliklerinin nazara alınarak sonuca gidilmesi gereklidir. İş yargılamasında sıklıkla davaların yığılması söz konusu olmakla alacağın belirsiz olma kriterleri her bir talep için ayrı ayrı değerlendirilmelidir. Diğer yandan, aynı dava dilekçesinde talep yığılması şeklinde bazı alacaklar için belirsiz alacak davası bazıları için kısmi dava açılmasına yasal bir engel bulunmamaktadır.</p>
+
+<p><strong>Kıdem tazminatı, ihbar tazminatı, yıllık izin ücreti ve ücret alacakları işçi tarafından bilinmekle kural olarak belirsiz alacak davasına konu edilmez. Ancak hesabın unsurları olan sosyal hakların (ayni olarak sağlanan yemek yardımı gibi) miktarının belirlenmesi işveren tarafından sunulacak belgelere veya yargılama ile belirlenecek ise kıdem ve ihbar tazminatı belirsiz alacak davasına konu edilebilir.</strong></p>
+
+<p>Madde gerekçesinde “Alacaklının bu tür bir dava açması için, dava açacağı miktar ya da değeri tam ve kesin olarak gerçekten belirlemesi mümkün olmamalı ya da bu objektif olarak imkânsız olmalıdır. Açılacak davanın miktarı biliniyor yahut tespit edilebiliyorsa, böyle bir dava açılamaz. Çünkü, her davada arandığı gibi, burada da hukukî yarar aranacaktır, böyle bir durumda hukukî yararın bulunduğundan söz edilemez. Özellikle, kısmî davaya ilişkin yeni hükümler de dikkate alınıp birlikte değerlendirildiğinde, baştan tespiti mümkün olan hâllerde bu yola başvurulması kabul edilemez.” şeklindeki açıklamayla, alacağın belirli veya belirlenebilir nitelikte olması durumunda, belirsiz alacak davası açılarak bu davanın sağladığı imkânlardan yararlanmanın mümkün olmadığına işaret edilmiştir. Şu halde davanın açıldığı tarihte alacağın miktarı yahut değeri belirlenebilir durumda ise, dava şartı yokluğundan davanın usulden reddine karar verilmelidir. Burada hukuki yarar eksikliğinin tamamlanabilir dava şartı olmadığı sonucuna varılmıştır. 7251 sayılı Kanun ile 107. maddede yapılan değişiklikler şartları olmadığı halde açılan belirsiz alacak davasında davacıya süre verilerek hukuki yarar eksikliğini tamamlama imkânı tanımamaktadır. Dairemizce sözü edilen düzenleme, şartları mevcut olan belirsiz alacak davasında yapılan yargılama ile alacağın belirli hale gelmesi durumunda hâkimin geçici talep sonucunu kesin talep sonucuna dönüştürmesi için alacaklıya süre vermesi gerektiği yönünde değerlendirilmiştir.</p>
+
+<p>Yargıtay 9.Hukuk Dairesi tarafından daha önce verilen kararlarda hukuki yarar yokluğu sebebiyle dava şartı yokluğuna bağlı davanın reddi kararları verilmediğinden aynı Dairenin görev alanındaki bölgelerden gelen dosyalarda birleşme öncesi uygulamalarına güven duyularak açılan davalarda aynı Dairenin önceki uygulamalarına devam edilecektir.
+Hukuki belirlilik ve öngörülebilirlik ilkeleri ve sürpriz karar verme yasağı gereği birleşme tarihinden önce yukarıda belirtilen esasları dikkate alan ilk kararın Yargıtay Kararları Dergisi veya başkaca yolla yayını tarihinden sonra açılan davalarda belirtilen ilkeler uygulanacaktır. Başka bir anlatımla açıklanan kararın yayınından önce açılan davalarda her iki Daire görev alanına giren bölgelerde verilen kararlar bakımından Yargıtay 9. Hukuk Dairesi ile Yargıtay (Kapatılan) 22. Hukuk Dairesinin önceki uygulamalarına devam edilecektir.</p>
+
+<p>Somut uyuşmazlıkta, davacı tarafça kıdem tazminatı, yıllık izin ücreti ve ödenmeyen ücret alacaklarının belirsiz alacak davasına konu edildiği anlaşılmaktadır. Davanın açıldığı tarihte bu alacaklar belirlenebilir nitelikte olduğundan, belirsiz alacak davasına konu edilmez. Ancak yukarıda açıklandığı üzere Yargıtay 9.Hukuk Dairesi tarafından daha önce verilen kararlarda hukuki yarar yokluğu sebebiyle dava şartı yokluğuna bağlı davanın reddi kararları verilmediğinden Dairenin görüşüne güvenilerek belirsiz alacak şeklinde açılan bu davada belirtilen husus bozma nedeni yapılmamıştır.</p>
+
+<p>Bu itibarla dosya kapsamının birlikte değerlendirilmesiyle yapılan inceleme sonucunda, uyuşmazlığa uygulanması gereken hukuk kurallarına göre, Bölge Adliye Mahkemesi kararının davalı temyizi yönünden aşağıdaki bendin kapsamı dışında kalan yönleri usul ve kanuna uygun görülmüştür.</p>
+
+<hr>
+
+<p><strong>Hukuk Genel Kurulu         2020/13 E.  ,  2021/431 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 107</strong></li>
+  <li><strong>Kıdem ve ihbar tazminatının belirlenebilmesi; çalışma süresinin belirlenmesi, hesap raporu alınması, işverende bulunan bilgi ve belgelerin verilmesi ile tahkikatı gerektirdiğinden, anılan alacakların belirlenebilir olmadığı ve belirsiz alacak davasına konu edilebilecekleri sonucuna varılmıştır.</strong></li>
+</ul>
+
+<p>Belirsiz alacak davasının getirdiği en önemli etkin koruma, usul ekonomisi ve hak arama özgürlüğüne hizmet etmesi yanında, davacının yüksek yargılama giderlerine katlanma ve dava konusu hakkın zamanaşımına uğrama riskini azaltmasıdır.</p>
+
+<p>Usul hukukunun maddi hukuk içinde gerçekleşen hakkın talep edilebilirliğini, tespitini belirli kurallara bağlayan hukuk dalı olması nedeniyle maddi hukuk için araç olduğu unutulmamalıdır. O nedenle iş yargılaması kuralları ve bu anlamda Hukuk Muhakemeleri Kanunu kurallarının iş ve sosyal güvenlik hukukuna hizmet ederken bu hukukun ilkelerini de göz ardı etmemesi gerekecektir.</p>
+
+<p>İşçilik alacakları bakımından, dava konusu edilen alacağın belirli olup olmadığı ile ilgili olarak davanın açıldığı tarihte alacağın miktarını yahut değerini tam ve kesin olarak belirleyebilmesinin davacıdan beklenememesi kıstası ile açıkça karşı tarafın verdiği bilgi veya tahkikat sonucu alacağın miktar ve değerinin tam ve kesin olarak belirlenebilmesinin mümkün olması kıstasının birlikte değerlendirip sonuca gidilmesi gerekir.</p>
+
+<p>Kural olarak kişinin alacağını belirleyebilmesi için aynı zamanda belgeye bağlama yetkisinin olması veya bu konuda belge düzenlenip kendisine verilmesi gerekir.
+4857 sayılı İş Kanunu’nun (İş Kanunu/Kanun) 8. maddesinin üçüncü fıkrası ile işverene yazılı sözleşme yapılmayan hâllerde en geç iki ay içinde genel ve özel çalışma koşullarını, günlük ya da haftalık çalışma süresini, temel ücreti ve varsa ücret eklerini, ücret ödeme dönemini, süresi belirli ise sözleşmenin süresini, fesih hâlinde tarafların uymak zorunda oldukları hükümleri gösteren yazılı bir belgeyi işçiye verme yükümlülüğü getirilmiştir.</p>
+
+<p>Kanun’un 32. maddesinin ikinci fıkrası ile ücret, prim, ikramiye ve bu nitelikteki her çeşit istihkakın kural olarak Türk parası ile işyerinde veya özel olarak açılan bir banka hesabına ödeneceği, çalıştırdığı işçilerin söz konusu alacaklarını özel olarak açılan banka hesapları vasıtasıyla ödeme zorunluluğuna tabi tutulan işverenler veya üçüncü kişilerin özel olarak açılan banka hesapları dışında bu alacakları ödeyemeyeceği belirtilmiştir.</p>
+
+<p>4857 sayılı İş Kanunu’nun 37. maddesi ile işverene işyerinde veya bankaya yaptığı ödemelerde işçiye ücret hesabını gösterir imzalı veya işyerinin özel işaretini taşıyan bir pusula verme yükümlülüğü hükme bağlanmıştır. Söz konusu pusulada ödemenin günü ve ilişkin olduğu dönem ile fazla çalışma, hafta tatili, bayram ve genel tatil ücretleri gibi asıl ücrete yapılan her çeşit eklemeler tutarının ve vergi, sigorta primi, avans mahsubu, nafaka ve icra gibi her çeşit kesintilerin ayrı ayrı gösterilmesi zorunluluğu hüküm altına alınmıştır.</p>
+
+<p>Kanun’un 67. maddesinde, günlük çalışmanın başlama ve bitiş saatleri ile dinlenme saatlerinin işyerlerinde işçilere duyurulacağı; 75. maddesinde ise işverene çalıştırdığı her işçi için işçinin kimlik bilgilerinin yanında, İş Kanunu’nun ve diğer kanunlar uyarınca düzenlemek zorunda olduğu her türlü belge ve kayıtları saklamak ve bunları istendiği zaman yetkili memur ve mercilere göstermek zorunda olduğu bir özlük dosyası düzenlemesi gerektiği yükümlülükleri getirilmiştir.</p>
+
+<p>İş sözleşmesinde iş görme edimini yerine getiren ve belge düzenleme yetkisi ve yükümlülüğü bulunmayan işçinin, alacaklarını belirleyebilmesi için işveren tarafından düzenlenen kanuna uygun belgelere ihtiyacı vardır. Diğer yandan iş ilişkisindeki alacak kalemlerinin hesaplanmasında çıplak ücret ya da giydirilmiş ücrete göre hesaplanan farklı alacak türleri bulunmaktadır. Örneğin kıdem tazminatı, giydirilmiş ücretten hesaplanırken, diğer işçilik alacakları (fazla çalışma, hafta tatili, yıllık ücretli izin alacakları gibi) çıplak ücretten hesaplanmaktadır.</p>
+
+<p>Yargıtay Hukuk Genel Kurulunun 17.10.2012 tarihli ve 2012/9-838 E., 2012/715 K. sayılı kararında belirtildiği üzere işçilik alacaklarının özelliği dikkate alınarak alacakların belirli olduğunu söylemek mutlak olarak doğru olmadığı gibi aksinin kabulü de doğru değildir. Aynı şekilde bu nedenle talep konusu işçilik alacaklarının belirli olup olmadığının somut olayın özelliğine göre değerlendirilmesi ve sonuca gidilmesi daha doğru olacaktır. Nitekim Yargıtay Hukuk Genel Kurulunun 17.06.2015 tarihli ve 2015/22-1156 E., 2015/1598 K.; 22.06.2016 tarihli ve 2016/22-874 E., 2016/824 K.; 17.01.2018 tarihli ve 2016/22-2181 E., 2018/24; 05.03.2020 tarihli ve 2019/22-12 E., 2020/249 K. sayılı kararlarında da aynı ilkeler kabul edilmiştir.</p>
+
+<p>Öte yandan işçilik alacaklarının belirsiz alacak davasına konu olup olamayacağı konusunda Yargıtay’ın iş davalarına bakan Daireleri olan 7, 9 ve 22. Hukuk Daireleri ile Hukuk Genel Kurulu içtihatları arasında ortaya çıkan farklılığın giderilmesi için Yargıtay İçtihatları Birleştirme Büyük Genel Kurulunca yapılan değerlendirme sonucunda 15.12.2017 tarihli ve 2016/6 E., 2017/5 K. sayılı kararı ile “İşçilik alacaklarının çok çeşitli tür, nitelik ve kapsamda olması, somut olayın özelliklerine göre oldukça değişkenlik göstermesi, hatta aynı tür işçilik alacaklarında dahi somut olayın özellikleri itibariyle işçilik alacaklarının belirsiz alacak davasına konu olup olamayacağı konusunda soyut ve genel nitelikte, her bir olayda geçerli olacak ölçüde bir karar alınamayacağından içtihadı birleştirmeye gerek olup olmadığı ön sorun olarak tartışılmış ve sonuç olarak içtihadı birleştirmeye gerek olmadığı” yönünde karar verilmiştir.</p>
+
+<p>Somut olayda, davacı işçi aylık ücretinin yanında işyerinde yemek ve servis imkânlarından da faydalandığını belirterek kıdem ve ihbar tazminatlarının tahsilini talep etmiştir. Mahkemece yargılama sırasında alınan bilirkişi raporu uyarınca, davacının belirlenen ücretine ayrıca yemek ve yol yardımları da eklenmek suretiyle tespit edilen ve giydirilmiş ücret üzerinden hesaplanan kıdem ve ihbar tazminatları hüküm altına alınmıştır. Kıdem ve ihbar tazminatlarının hesabına esas olan ücret giydirilmiş ücret olup, giydirilmiş ücrete işçinin asıl ücretine ek olarak sağlanan para veya para ile ölçülebilen menfaatler de dâhil edilmektedir. Bu kapsamda davacıya ayni olarak sağlanan yemek ve servis yardımlarının parasal değerinin tazminat hesabında göz önünde tutulacağı kuşkusuzdur.</p>
+
+<p>4857 sayılı İş Kanunu’nun 8/3. maddesinde işveren açıkça işçiye varsa ücret eklerini gösteren yazılı bir belge vermekle yükümlü tutulmuştur. Bu kapsamda işveren tarafından Kanunun kendisine yüklediği yükümlülükleri yerine getirerek gerekli belgeleri işçiye teslim ettiğine dair dosyaya bir delil sunulmadığı anlaşılmıştır. Bu durumda işçinin alacağını belirleyecek verilerin elinde bulunduğundan söz etmek mümkün değildir. O hâlde uyuşmazlık konusu alacaklar olan kıdem ve ihbar tazminatının belirlenebilmesi; çalışma süresinin belirlenmesi, hesap raporu alınması, işverende bulunan bilgi ve belgelerin verilmesi ile tahkikatı gerektirdiğinden, anılan alacakların belirlenebilir olmadığı ve belirsiz alacak davasına konu edilebilecekleri sonucuna varılmıştır.</p>
+
+<hr>
+
+<p><strong>Hukuk Genel Kurulu         2019/853 E.  ,  2020/907 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 108</strong></li>
+  <li><strong>Açılan davanın belirsiz alacak davası mı; yoksa kısmi dava mı olduğu hususunda açıklık bulunmuyorsa hâkim, taleple bağlı olduğu için (HMK m. 26) öncelikle, HMK’nın 119. maddesinin 2. fıkrası uyarınca, davacı tarafa bir haftalık kesin bir süre vermeli ve onun beyanı doğrultusunda açılmış olan davanın belirsiz alacak davası mı, yoksa kısmi dava mı olduğunu belirlemelidir.</strong></li>
+</ul>
+
+<p>Dava çeşitleri HMK’nın 105 vd. maddelerde düzenlenmiştir. Bir davanın hangi dava çeşidini oluşturduğu davacının talep sonucunun hangi dava türü tanımına uyduğuna göre belirlenebilir. Davacı dava dilekçesinde dava türünü inşai dava olarak yazsa bile bir miktar alacağın tahsili talebinde bulunmuş ise bu eda davası olup hâkim bu kapsamda karar vermek zorundadır. Bu nedenle eda davası açılması gerekirken inşai dava açılmasında hukuki yarar bulunmadığı gerekçesiyle davanın usulden reddine karar verilemez. Hukuki yararı belirleyen davacının gösterdiği dava türü değil, karar verilmesi istenen talep sonucudur. Nasıl ki dava dilekçesinde hiç gösterilmemiş veya yanlış gösterilmiş olsa bile HMK’nın 33.maddesi kapsamında doğru hukuki sebebi bulmak ve uygulamak hâkimin görevi ise HMK’nın 32. maddesi çerçevesinde yargılamayı sevk ve idare ile dava türü tanımlarına ve talep sonucuna göre dava türünü doğru belirleyip buna göre yargılamayı sürdürüp davayı sonuçlandırmak da hâkimin görevidir. Bu konuda hâkim, davacının dilekçesinde yaptığı isimlendirmeyle bağlı olmaksızın açılan davanın, eda davası, tespit davası, belirsiz alacak ve tespit davası, inşai dava, kısmi dava, terditli dava, seçimlik dava ve topluluk davası çeşitlerinden hangisi olduğunu belirleyerek yargılamayı sürdürüp davayı sonuçlandıracaktır.</p>
+
+<p>Bir davadaki talep sonucu bazı kısımları itibarıyla birden fazla dava türü tanımıyla ilgili, çakışan yani benzer unsurlar içeriyor olabilir. Bu gibi durumlarda hâkim davayı aydınlatma ödevi kapsamında davacıdan açıklama isteyerek doğru dava türünü belirleyebilecektir. Tüm bu nedenlerle davacı dava dilekçesinde davanın belirsiz alacak davası olduğundan söz etmiş olsa bile belirsiz alacak davası unsurları bulunmuyorsa bu davanın açılmasında hukuki yarar olmadığından söz edilemeyecek alacağın istenmesinde hukuki yarar olduğundan mevcut unsurları itibarıyla kısmi dava açılmış olduğu kabul edilerek davacının talep sonucu hakkında karar verilebilecektir.</p>
+
+<p>Yukarıdaki açıklamalar ışığında alacak belirli olmasına rağmen belirsiz alacak davasına konu edilmesi durumunda ne yapılması gerektiği konusuna dönecek olursak; <strong>şartları bulunmamasına başka bir anlatımla talep edilecek alacak miktarının davanın açıldığı anda tam ve kesin bir biçimde belirlenmesinin mümkün olmasına rağmen belirsiz alacak davası şeklinde açılan dava, hukuki yarar, yani dava şartı yokluğu nedeni ile usulden hemen reddedilmemelidir.</strong> Zira bir miktar belirtilmek sureti ile açılan belirsiz alacak davası da alacak ister belirli ister belirsiz olsun bir eda davasıdır ve eda davalarında hukuki yarar var kabul edilir. Öte yandan davacının dava açmaktan başka bir yolla alacağına kavuşması mümkün olmayıp bir mahkeme kararına muhtaç ise dava açmakta hukuki yararının bulunduğu tartışmasızdır. Başka bir anlatımla alacağın belirli veya belirsiz olması başlangıçta var olan hukuki yararı ortadan kaldırmaz.</p>
+
+<p>Bu durumda dava dilekçesinde talep edilen asgari tutar somut olayın özelliklerine göre talep edilebilecek alacak tutarı konumunda olup kısmi davanın koşulları yoksa davacının tam eda davası açtığı kabul edilmelidir. Ancak dava dilekçesinde talep edilen asgari tutar somut olayın özelliklerine göre talep edilebilecek toplam alacak miktarı kadar değilse ve kısmî davanın koşulları da bulunmuyorsa, bu durumda mahkemece alacak miktarını netleştirmesi ve bildireceği dava değerine göre eksik harcı tamamlaması için davacıya HMK’nın 119. maddesinin 2. fıkrası uyarınca bir haftalık kesin süre verilmeli ve verilen kesin süre içinde belirtilen eksikliğin tamamlanması hâlinde davaya tam eda davası olarak devam edilmeli, aksi durumda ise davanın usulden reddine karar verilmelidir.</p>
+
+<p>Buna karşılık, dava dilekçesinde asgari bir tutar gösterilmiş olup bunun, alacağın belirli bir kesimi olduğu anlaşılmakla birlikte, açılan davanın belirsiz alacak davası mı; yoksa kısmi dava mı olduğu hususunda açıklık bulunmuyorsa hâkim, taleple bağlı olduğu için (HMK m. 26) öncelikle, HMK’nın 119. maddesinin 2. fıkrası uyarınca, davacı tarafa bir haftalık kesin bir süre vermeli ve onun beyanı doğrultusunda açılmış olan davanın belirsiz alacak davası mı, yoksa kısmi dava mı olduğunu belirlemelidir. Bu da esasen hâkimin davayı aydınlatma ödevi kapsamındadır. Davacı verilen bir haftalık kesin süre içinde davanın belirsiz alacak davası olduğunu beyan etmiş ve belirsiz alacak davası açılabilmesi için gerekli koşullar mevcut ise, dava belirsiz alacak davası olarak görülüp sonuçlandırılmalıdır. Belirsiz alacak davası açılabilmesi için gerekli şartlar bulunmakla birlikte davacı açmış olduğu davanın kısmi dava olduğunu belirtmiş ise, bu hâlde mahkeme davayı, kısmi dava olarak kabul edip yargılamayı sürdürmelidir. Üçüncü bir ihtimal olarak davacı davasının belirsiz alacak davası olduğunu mahkemeye bildirmiş olmakla birlikte belirsiz alacak davasının koşulları bulunmuyor ve fakat kısmi dava açılabilmesi mümkün ise, bu durumda, mahkemece, açılmış olan dava, doğrudan bir ara kararıyla bir kısmi dava olarak nitelendirilmek suretiyle görülüp karara bağlanmalıdır.</p>
+
+<p>Somut olayda davacı, dava dilekçesinde davalı sigorta şirketi ile işyeri (eczane paket sigortası) sigortası poliçesi düzenlediklerini, işyerinde hırsızlık olayı olduğunu ve bir kısım mallarının çalındığını, davalı şirketin zararın 44.090,00TL olduğu gerekçesiyle bu miktarı ödediğini, gerçek zararının 565.910,00TL olduğunu, 10.000,00TL harca esas değer üzerinden belirsiz alacak davası açtığını bildirerek talepte bulunmuş, davasını açıkça belirsiz alacak davası olarak nitelendirmiştir. Davanın belirsiz alacak davası olarak açılmasına rağmen alacakların belirli olduğu sonucuna ulaşıldığından somut olayda belirsiz alacak davasının koşulları bulunmamakta ise de, alacaklarının ödenmediğini iddia eden davacının, mevcut yasal düzenlemeler karşısında dava açmaktan başka bir yolla alacağına kavuşma imkânı olmayıp, bir mahkeme kararına ihtiyaç bulunması karşısında eldeki davayı açmakta hukuki yararının bulunmadığını söylemek mümkün değildir. Başka bir anlatımla alacağı olduğunu iddia eden davacının alacağının tahsili amacı ile ister kısmi, ister tam eda veya belirsiz alacak davası açmasında her zaman hukuki yararı vardır. Zira davacı davalıdan olan alacağını istemektedir.</p>
+
+<p>Alacağın tartışmasız veya belirli olması hâlinde kısmi dava açılamayacağına ilişkin HMK’nın 109. maddesinin ikinci fıkrasının yürürlükten kaldırılmış olmasından, yeni düzenleme ile dava açılırken, talep konusunun kalan kısmından açıkça feragat edilmiş olması hâli dışında, kısmi dava açılmasında, talep konusunun geri kalan kısmından feragat edildiği anlamına gelmeyeceğinin belirtilmiş olmasından dolayı belirli alacaklar için de artık kısmi dava açılması mümkün hâle geldiğine ve davacının alacaklarının bir kısmını dava ettiğinin dava dilekçesi içeriğinden anlaşılmasına başka bir anlatımla davanın kısmi dava olarak görülmesi için gerekli koşulların somut olayda bulunmasına göre, mahkemece dava hukuki yarar yokluğundan reddedilmeyerek bir ara kararı ile kısmi dava olarak görülüp sonuçlandırılmalıdır.</p>
+
+<hr>
+
+<p><strong>Yargıtay 9. Hukuk Dairesi  2021/7853 E.  ,  2021/11914 K.</strong></p>
+
+<ul>
+  <li>
+    <p><strong>HMK 107. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Belirsiz alacak davası, hukuki yarar yokluğu nedeniyle hakim tarafından süre verilerek kısmi dava türüne tahvil edilemez.</strong></p>
+  </li>
+</ul>
+
+<p>Kıdem tazminatı, ihbar tazminatı, yıllık izin ücreti ve ücret alacakları işçi tarafından bilinmekle kural olarak belirsiz alacak davasına konu edilemez. Ancak hesabın unsurları olan sosyal hakların (ayni olarak sağlanan yemek yardımı gibi) miktarının belirlenmesi işveren tarafından sunulacak belgelere göre belirlenecek ise, kıdem ve ihbar tazminatı belirsiz alacak davasına konu edilebilir. Bununla birlikte taraflar arasında ücret ve ücret ekleri konusunda olası tartışmanın, kıdem tazminatı tavan sınırlaması nedeniyle sonuca etkili olmaması halinde kıdem tazminatının belirsiz alacak davasına konu edilmesi söz konusu olmayacaktır. (Nuri Çelik/Nurşen Caniklioğlu/ Talat Canpolat: İş Hukuku Dersleri, …, 2017, s. 58.; Uğur Tülü, 4857 Sayılı İş Kanunu Kapsamında Belirsiz Alacak Davası Uygulaması, …, 2021, s. 219.</p>
+
+<p>6100 sayılı Kanunun 107. maddesinin gerekçesinde “Alacaklının bu tür bir dava açması için, dava açacağı miktar ya da değeri tam ve kesin olarak gerçekten belirlemesi mümkün olmamalı ya da bu objektif olarak imkânsız olmalıdır. Açılacak davanın miktarı biliniyor yahut tespit edilebiliyorsa, böyle bir dava açılamaz. Çünkü, her davada arandığı gibi, burada da hukukî yarar aranacaktır, böyle bir durumda hukukî yararın bulunduğundan söz edilemez. Özellikle, kısmî davaya ilişkin yeni hükümler de dikkate alınıp birlikte değerlendirildiğinde, baştan tespiti mümkün olan hâllerde bu yola başvurulması kabul edilemez.” şeklindeki açıklamayla, alacağın belirli veya belirlenebilir nitelikte olması durumunda, belirsiz alacak davası açılarak bu davanın sağladığı imkânlardan yararlanmanın mümkün olmadığına işaret edilmiştir. Şu halde davanın açıldığı tarihte alacağın miktarı yahut değeri belirlenebilir durumda ise, dava şartı yokluğundan davanın usulden reddine karar verilmelidir. Burada hukuki yarar eksikliğinin tamamlanabilir dava şartı olmadığı sonucuna varılmıştır. 7251 sayılı Kanun ile 107. maddede yapılan değişiklikler şartları olmadığı halde açılan belirsiz alacak davasında davacıya süre verilerek hukuki yarar eksikliğini tamamlama imkânı tanımamaktadır. Dairemizce sözü edilen düzenleme, şartları mevcut olan belirsiz alacak davasında yapılan yargılama ile alacağın belirli hale gelmesi durumunda hâkimin geçici talep sonucunu kesin talep sonucuna dönüştürmesi için alacaklıya süre vermesi gerektiği yönünde değerlendirilmiştir.</p>
+
+<p>Somut olayda, dava belirsiz alacak davası olarak açılmıştır. Davanın İlk Derece Mahkemesince kısmen kabulü üzerine taraf vekilleri istinaf yoluna başvurmuş ve Bölge Adliye Mahkemesince taraf vekillerinin istinaf başvurularının kısmen kabulüyle İlk derece Mahkemesinin kararı kaldırılarak yeniden hüküm tesis edilmiştir. Bölge Adliye Mahkemesi, davalı vekilinin dava konusu taleplerin belirsiz alacak davasına konu edilmesinin mümkün olmadığına ilişkin istinaf sebebini incelemiş ve davacının ücretinin 01/03/2017 tarihli iş sözleşmesinde garanti ücret ve ciroya bağlı hak ediş toplamı olarak belirlendiği, fesih tarihi itibariyle garanti ücret kısmının 30.000,00 TL olduğu hususlarının ihtilaf dışı olduğu, her ne kadar ücretin ciroya bağlı değişen oranlardaki hak ediş kısmının belirlenebilmesi için işveren tarafından düzenlenmesi gereken belgelerin sunulması ile tahkikata ihtiyaç duyulacak ise de, kıdem tazminatı talebi yönünden tavan sınırlaması bulunduğundan ücretin ciroya bağlı hak ediş kısmının tespitinin somut olayda neticeye bir etkisinin olmadığı, ücretin tarafların kabulünde olan garanti bölümünün (30.000,00 TL) dahi tek başına, fesih tarihindeki kıdem tazminatı genel tavanını (brüt 4.426,16 TL) aştığı, dolayısıyla kıdem tazminatının hesaplanmasında her halukarda tavan tutarın esas alınması gerektiğini belirtmek suretiyle dava konusu kıdem tazminatının belirsiz alacak olarak nitelendirilemeyeceğini açıklamıştır. Bununla birlikte, davacı tarafça şartları oluşmamasına rağmen belirsiz alacak davasına konu edilen kıdem tazminatı talebinin hukuki yarar yokluğu nedeniyle reddedilmemesi gerektiği ve davanın kısmi dava olarak nitelendirilip görülmesi gerektiği kanaatine varılarak bu yöndeki istinaf talebinin reddine karar vermiştir.</p>
+
+<p>Bölge Adliye Mahkemesi’nin kıdem tazminatı alacağının belirsiz alacak olarak nitelendirilemeyeceği yönündeki gerekçesi kıdem tazminatı tavanını öngören kuralın mutlak emredici nitelikte olduğu ve ücretin tarafların kabulünde olan garanti bölümünün tek başına, fesih tarihindeki kıdem tazminatı genel tavanını aştığı nazara alındığında isabetlidir. Ancak bu hukuki tespite rağmen davanın kısmi dava olarak nitelendirilip görülmesi gerektiği sonucuna varılması yerinde değildir. Şöyle ki, davacının dava açarken kıdem tazminatı miktarını belirleyebilmesi için uhdesinde gerekli veri ve bilgilerin bulunduğunun kabul edilmesi gerekli olup, kıdem tazminatı yönünden belirsiz alacak davası açılmasında hukuki yararı bulunmamaktadır. Buradaki hukuki yarar 6100 sayılı Hukuk Muhakemeleri Kanunu’nun 114’üncü maddesi gereğince dava şartı olup, sonradan hakim tarafından verilecek süre ile davacı tarafından ya da Mahkemece re’sen belirsiz alacak davasının kismi dava türüne tahvil edilmesi suretiyle tamamlanması mümkün olan bir dava şartı değildir. Bu nedenle belirtilen talep yönünden davanın usulden reddine karar verilmesi gerekirken yazılı şekilde hüküm kurulması hatalıdır.</p>
+
+<hr>
+
+<p><strong>Yargıtay 9. Hukuk Dairesi         2021/5121 E.  ,  2021/9537 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 107</strong></li>
+  <li><strong>Tamamen ıslah yoluyla dahi belirsiz alacak davası, kısmi davaya; kısmi dava belirsiz alacak davasına çevrilemez</strong></li>
+</ul>
+
+<p>6100 sayılı Kanun ile birlikte, yukarıda belirtilen çerçevede belirsiz alacak davası açma imkanı tanınarak, belirsiz alacaklar bakımından hak arama özgürlüğü genişletilmiş; bununla bağlantılı olarak da hukuki yarar bulunmadan kısmi dava açma imkanı sınırlandırılmakla birlikte, tamamen kaldırılmamıştır. Kanunun kısmi dava açma imkanını sınırlamakla birlikte tamamen ortadan kaldırmadığı da gözetildiğinde, belirlenebilir alacaklar için, belirsiz alacak davası açılamasa da, şartları oluştuğunda ve hukuki yarar bulunduğunda kısmi dava açılması mümkündür. Aksi halde, sadece ya belirsiz alacak davası açma veya belirli tam alacak davası açma şeklinde iki imkandan söz edilebilir ki, o zaman da kısmi davaya ilişkin 6100 sayılı Kanun’un 109. maddesindeki hükmün fiilen uygulanması söz konusu olamayacaktır. Çünkü, belirsiz alacak davasında zaten belirsiz alacak davasının sağladığı imkanlardan yararlanarak dava açılabilecek; şayet alacak belirli ise de, o zaman sadece tam eda davası açılabilecektir. Oysa kanun koyucunun abesle iştigal etmeyeceği prensibi gereği, anılan maddeyle kısmi davaya ilişkin düzenleme yapıldığı düşünülerek ve Kanundaki sınırlamalara dikkat edilerek <strong>kısmi dava</strong> açılabilecektir.</p>
+
+<p>Bu noktada şu da açıklığa kavuşturulmalıdır ki, şartları bulunmadığı halde dava dilekçesinde davanın belirsiz alacak davası olarak açıldığı durumda davacıya herhangi bir süre verilmeden hukuki yarar yokluğundan davanın reddi yoluna gidilmelidir. Çünkü, alacağın belirlenebilmesi mümkün iken, böyle bir davanın açılmasına Kanun izin vermemiştir. Böyle bir durumda, belirsiz alacak davası açmakta hukuki yarar yokluğundan dava reddedilmeli, ek bir süre verilmemelidir. Zira, burada talep açıktır, bu sebeple 6100 sayılı Kanun’un 119/1-ğ maddesinin uygulanarak süre verilmesi mümkün değildir. Aslında açılmaması gerektiği halde belirsiz alacak davası açılmış olduğundan, bu konudaki eksiklik de süre verilerek tamamlanamayacağından, dava hukuki yarar yokluğundan reddedilmelidir. Buradaki hukuki yarar, sonradan tamamlanacak nitelikte bir hukuki yarar değildir. Çünkü, dava açıldığında o sırada mevcut olmayan hukuki yarar, bunun da açıkça mahkemece bilindiği bir durumda, tamamlanacak bir hukuki yarar değildir. Aksinin kabulü, aslında açık olan talep sonucunun süre verilerek davacı tarafından değiştirilmesi ve bulunmayan hukuki yararın sağlanması için davacıya ek imkan sağlanması anlamına gelecektir ki, buna usûl bakımından imkan yoktur. Böyle bir durum taraflar arasındaki eşitlik ilkesine de aykırı olacaktır (H. Pekcanıtez/O. Atalay/M. Özekes, Medeni Usul Hukuku, 14. Bası, … 2013, s. 454). Bunun yanında, şayet açılan davada asgari bir miktar gösterilmişse ve bunun alacağın bir bölümü olduğu anlaşılmakla birlikte, belirsiz alacak davası mı yoksa belirli alacak olmakla birlikte kısmi dava mı olduğu anlaşılamıyorsa, bu durumda 6100 sayılı Kanun’un 119/1-ğ maddesinin aradığı şekilde açıkça talep sonucu belirtilmemiş olacaktır. Talep, talep türü ve davanın niteliği açıkça anlaşılamıyorsa, talep muğlaksa, aynı Kanun’un 119/2 maddesi gereğince, davacıya bir haftalık kesin süre verilerek talebinin belirsiz alacak davası mı, yoksa kısmi dava mı olduğunun belirtilmesi istenmelidir. Verilen bu süreden sonra, davacının talebini açıklamasına göre bir yol izlenmelidir. Eğer talep, davacı tarafından belirsiz alacak davası şeklinde açıklanmış olmakla birlikte, gerçekte belirsiz alacak davası şartlarını taşımıyorsa, o zaman yukarıdaki şekilde hareket edilmeli, hukuki yarar yokluğundan dava reddedilmelidir. Açıklamadan sonra talep belirsiz alacak davası şartlarını taşıyorsa, bu davanın sonuçlarına göre, talep kısmi davanın şartlarını taşıyorsa da kısmi davanın sonuçlarına göre dava yürütülerek karar verilmelidir (Dairemizin 31.12.2012 tarih 2012/30463 esas 2012/30091 karar sayılı kararı).
+Tüm bu açıklamalar sonucunda şunu belirtmek gerekir ki, iş hukukundan kaynaklanan alacaklar bakımından baştan belirli veya belirsiz alacak davası şeklinde belirleme yapmak kural olarak doğru ve mümkün değildir. Bu sebeple iş hukukunda da belirsiz alacak davasının açılabilmesi, bu davanın açılması için gerekli şartların varlığına bağlıdır. Eğer bu şartlar varsa, iş hukukunda da belirsiz alacak davası açılabilir, yoksa açılamaz (C. Simil, Belirsiz Alacak Davası, I. Bası, … 2013, s. 414). Keza aynı şey kısmi dava için de söz konusudur.</p>
+
+<p>Yukarıda açıklanan maddi ve hukukî olgular ışığında uyuşmazlık ele alınacak olur ise;</p>
+
+<p>Somut olayda; davacı Sendika vekili, dava dilekçesinde davasının türünü 6100 sayılı Kanun kapsamında açılan belirsiz alacak davası olarak açıkça belirtmiştir. Dolayısıyla açılan davanın nitelendirilmesi, tereddüt mahal verebilecek bir şekilde değildir. Kaldı ki, iddianın ispat şekli de dava türünün belirlenmesi noktasında etkili değildir. Yapılan bu açıklama bağlamında İlk Derece Mahkemesince ispat şeklinden kaynaklı olarak eldeki davanın kısmî alacak davası olarak kabulü hukuken isabetsizdir. Öte yandan, dava konusu sendika aidat alacağı tutarı, basit bir araştırma ile belirlenebileceği gibi, bu konuda objektif imkânsızlıktan bahsedebilme imkânı da bulunmamaktadır.</p>
+
+<p>Ayrıca somut olayın özelliğine göre; yargılama safhasında davacı vekilince sunulan 20.03.2015 tarihli ve “davamızın tam eda davası olarak tamamen ıslahı” talebini havi ıslah dilekçesiyle, davanın niteliğinin değiştirilip değiştirilmeyeceği sorunu üzerinde de durulması gereklidir.</p>
+
+<p>Yargıtay 22. Hukuk Dairesi’nin kapatılması sonrasında Başkan ve Üyelerinin Yargıtay 9.Hukuk Dairesinde görevlendirilmesi üzerine her iki Daire kararlarında uyuşmazlık konusu hususlar görüşülmüş ve böylelikle bir çok konuda uygulamanın birleştirilmesine karar verilmiştir.</p>
+
+<p>Bu konular arasında, “ıslahla dava türünün değiştirilip değiştirilemeyeceği” sorunu da ele alınmış ve burada, ıslah yoluyla dava türünün değiştirilemeyeceği yönünde Dairemiz uygulaması belirlenmiştir.</p>
+
+<p>Hülasa, yukarıda yapılan tüm bu açıklama ve tespit bağlamında; şartları bulunmadığından eldeki davanın belirsiz alacak davası olarak ikâme olunamayacağı, Mahkemenin davayı kısmî alacak nitelendirmesinin isabetsiz olduğu ve halihazırdaki Dairemiz uygulamasına göre de davacı vekilince yapılan ıslahında dava türünü değiştirmeye etkili olamayacağının anlaşılması karşısında, davanın hukukî yarar şartı yokluğundan usulden reddine karar verilmesi gerekirken işin esasına girilerek karar verilmesi yerinde olmamıştır. Salt bu nedenlerle de kararın bozulması gerekmiştir.</p>
+
+<hr>
+
+<p><strong>Hukuk Genel Kurulu         2021/485 E.  ,  2021/971 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 107</strong></li>
+  <li><strong>Davacı belirsiz alacak davası açtığını dilekçesinde açıkça yazmak zorundadır, aksi takdirde “fazlaya ilişkin haklarımız saklı kalmak kaydıyla” şeklindeki taleple açılan dava kısmi alacak davasıdır.</strong></li>
+</ul>
+
+<p>Davanın belirsiz alacak davası türünde açılabilmesi için, davanın açıldığı tarih itibariyle uyuşmazlığa konu alacağın miktar veya değerinin tam ve kesin olarak davacı tarafça belirlenememesi gereklidir. Belirleyememe hâli, davacının gerekli dikkat ve özeni göstermesine rağmen, miktar veya değerin belirlenmesinin kendisinden gerçekten beklenilmemesi durumuna ya da objektif olarak imkânsızlığa dayanmalıdır.</p>
+
+<p>Madde gerekçesinde; “Bu davanın kabul edilmesinin artık salt hukukî korumanın ötesine geçilerek “etkin hukukî koruma”nın gündeme gelmiş olmasının da bunu gerektirdiği belirtildiği gibi, hak arama durumunda olan kişi, talepte bulunacağı hukukî ilişkiyi, muhatabını ve bu ilişkiden dolayı talep edeceği miktarı asgarî olarak bilmesine ve tespit edebilmesine rağmen, alacağının tamamını tam olarak tespit edemeyebilecektir. Belirsiz alacak ve tespit davalarına ilişkin hükümlerin mukayeseli hukukta da yer aldığı dikkate alınarak, davanın açıldığı tarihte alacağın miktarını yahut değerini tam ve kesin olarak belirleyebilmesinin kendisinden beklenemeyeceği veya bunun imkânsız olduğu hâllerde, alacaklının, hukukî ilişki ile asgarî bir miktar ya da değer belirterek belirsiz alacak davası açabilmesi kabul edilmiştir. Alacaklının bu tür bir dava açması için, dava açacağı miktar ya da değeri tam ve kesin olarak gerçekten belirlemesi mümkün olmamalı ya da bu objektif olarak imkânsız olmalıdır. Belirsiz alacak veya tespit davası açıldıktan sonra, yargılamanın ilerleyen aşamalarında, karşı tarafın verdiği bilgiler ve sunduğu delillerle ya da delillerin incelenmesi ve tahkikat işlemleri sonucu (örneğin, bilirkişi ya da keşif incelemesi sonrası), baştan belirsiz olan alacak belirli hâle gelmişse, davacının, iddianın genişletilmesi yasağına tabi olmaksızın davanın başında belirtmiş olduğu talebini artırabilmesi benimsenmiştir. Miktarı belirsiz alacaklarda zamanaşımının dolmasına çok kısa sürenin varolduğu hâllerde yalnızca tespit yahut kısmi eda ile birlikte tespit davasının açılabileceği genel olarak kabul edilmektedir. Alacaklı, yalnızca eda davası veya yalnızca tespit davası yahut kısmi eda ile birlikte külli tespit davası açabilme seçeneklerine sahiptir. Hak arama özgürlüğünün (Any.m.36, İHAS.m.6) özünde varolan bu seçenekler, yasa veya içtihat yoluyla yasaklanamaz. Esasen tam veya kısmi olmasına bakılmaksızın her eda davasının temelinde bir külli tespit unsuru vardır. Başka deyimle eda hükmünde tertip olunan her durumun arkasında sorumluluk saptanmasını içeren bir zorunlu ön tespit kabulü mevcuttur” şeklindeki açıklamayla, alacağın belirsiz olup olmadığı ile ilgili olarak bazı kıstaslar kabul edilmiştir.</p>
+
+<p>Bu kıstaslar, davanın açıldığı tarihte alacağın miktarını yahut değerini tam ve kesin olarak belirleyebilmesinin;</p>
+
+<p>i-Davacının kendisinden beklenememesi,</p>
+
+<p>ii-Bunun olanaksız olması,</p>
+
+<p>iii-Açıkça karşı tarafın verdiği bilgi veya tahkikat sonucu alacağın miktarı ve değerinin tam ve kesin olarak belirlenebilmesinin mümkün olması olarak belirtilmektedir.</p>
+
+<p>Alacağın yalnızca bir bölümü için açılan davaya ise kısmi dava denir. Bir davanın kısmi dava olarak nitelendirilebilmesi için, alacağın tümünün aynı hukukî ilişkiden doğmuş olması ve alacağın şimdilik belirli bir kesiminin dava edilmesi gerekir. Diğer bir söyleyişle, bir alacak hakkında daha fazla bir miktar için tam dava açma imkânı bulunmasına rağmen, alacağın bir kesimi için açılan davaya kısmi dava denir.</p>
+
+<p>6100 sayılı Hukuk Muhakemeleri Kanunu’nun 109. maddesinde kısmi dava türü düzenlenmiştir. Bu maddeye göre;</p>
+
+<p>“Kısmi dava</p>
+
+<p>MADDE 109- (1) Talep konusunun niteliği itibarıyla bölünebilir olduğu durumlarda, sadece bir kısmı da dava yoluyla ileri sürülebilir.</p>
+
+<p>(2) (Mülga: 1/4/2015-6644/4 md.)</p>
+
+<p>(3) Dava açılırken, talep konusunun kalan kısmından açıkça feragat edilmiş olması hâli dışında, kısmi dava açılması, talep konusunun geri kalan kısmından feragat edildiği anlamına gelmez”.</p>
+
+<p>Kısmi dava açılabilmesi için talep konusunun bölünebilir olması gerekli olup, açılan davanın kısmi dava olduğunun dava dilekçesinde açıkça yazılması gerekmez. Dava dilekçesindeki açıklamalardan davacının alacağının daha fazla olduğu anlaşılıyor ve istem bölümünde “fazlaya ilişkin haklarını saklı tutması” ya da “alacağın şimdilik şu kadarını dava ediyorum” şeklinde bir ifadeye yer verilmiş ise, bu husus, davanın kısmi dava olarak kabulü için yeterli sayılmaktadır (Hukuk Genel Kurulunun 02.04.2003 tarihli ve 2003/4-260 E., 2003/271 K. sayılı kararı; ayrıca bkz.,.., H.: Medeni Usul Hukuku, C.II, 15. baskı, … 2017, s.1000).</p>
+
+<p>Nitekim aynı ilkeler, Hukuk Genel Kurulunun 16.05.2019 tarihli ve 2016/22-1166 E., 2019/576 K., sayılı kararında da benimsenmiştir.</p>
+
+<p>Mülga 1086 sayılı Hukuk Usulü Muhakemeleri Kanunu’nda açıkça kısmi dava düzenlenmediği hâlde, söz konusu Kanun’un yürürlükte olduğu dönemde de kısmi dava açılması mümkün bulunmaktaydı. Çünkü, alacak hakkının bir bölümünün dava edilip geriye kalan kısmının ikinci bir dava ile istenmesini engelleyen bir hüküm bulunmamaktaydı.</p>
+
+<p>Bu ilke ve açıklamalar ışığında somut olay değerlendirildiğinde; davacı vekili dava dilekçesinde “fazlaya ilişkin haklarımız saklı kalmak üzere” şeklinde beyanda bulunarak 1.000TL ihbar tazminatı, 1.000TL kıdem tazminatı, 100TL fazla çalışma ücreti, 100TL yıllık izin ücreti ve 100TL ulusal … ve genel tatil ücreti talebinde bulunmuştur. <strong>Dava dilekçesinde davanın belirsiz alacak davası şeklinde açıldığına dair bir beyan bulunmamaktadır.</strong></p>
+
+<p><strong>Belirsiz alacak davası niteliği gereği istisnai bir dava türü olmakla davasını belirsiz alacak davası olarak açan kişi bunu açıkça dilekçesinde belirtmelidir.</strong></p>
+
+<p>Her ne kadar 30.10.2014 tarihli duruşmada davacı vekili “davamız belirsiz alacak davasıdır” şeklinde beyanda bulunmuş ise de; davanın türünün bu şekilde değiştirilmesine imkân bulunmamaktadır. Sonuç itibariyle davanın kısmi dava şeklinde açıldığı sabittir.</p>
+
+<hr>
+
+<p><strong>Hukuk Genel Kurulu         2020/1 E.  ,  2021/931 K.</strong></p>
+
+<ul>
+  <li>
+    <p><strong>HMK 107</strong></p>
+  </li>
+  <li>
+    <p><strong>Belirsiz alacak davasında zamanaşımı ve faiz</strong></p>
+  </li>
+</ul>
+
+<p>Dava açılmasının sonuçlarından birisi de zamanaşımının kesilmesidir. Zamanaşımı dava dilekçesinde belirtilen talep sonucu miktar için kesilecektir. Belirsiz alacak davasında zamanaşımının dava dilekçesinde belirtilen geçici talep sonucu için mi yoksa yargılama sonucunda miktarı tam olarak belirlenen kesin talep sonucunun tümü için mi dava tarihinde kesileceği konusunda HMK’da açık bir hüküm bulunmamaktadır.</p>
+
+<p>Belirsiz alacak davasının düzenlenme nedeni, davacının dava açarken alacağının tümü için dava açmak istediği hâlde, alacağının miktarını belirlemesi imkânsız veya kendisinden beklenemeyecek olmasıdır. Davacının belirsiz alacak davası açarken amacı alacağının tümünü dava etmek ve tümü hakkında karar verilmesini sağlamaktır. Kısmî dava açmakta olduğu gibi, alacağının bir kısmını dava etmek değildir. Dava dilekçesinde belirttiği talep sonucu da geçicidir, dava açarken asıl amacı alacağının belirlenir belirlenmez bu miktar üzerinden karara bağlanmasıdır. Belirsiz alacak davasında davacıya alacağını belirlemesinin imkânsız veya kendisinden beklenemeyecek olduğu istisnai bir durumda böyle bir dava açma olanağı tanınmıştır. Kanun koyucu alacağın belirlenmesinin imkânsız veya kendisinden beklenemeyecek durumda olması hâlinde belirsiz alacak davası açma imkânı tanıdığına göre, böyle bir davanın sonuçlarının da amaca uygun olarak değerlendirilmesi gerekir. Bu nedenle talep sonucu hangi tarihte kesin olarak belirtilirse belirtilsin, dava açıldığı tarihte kesin talep sonucu miktarınca zamanaşımı süresi kesilmiş sayılmalıdır (Pekcanıtez, H.: Belirsiz Alacak Davası (HMK m.107), … 2011, s. 59).</p>
+
+<p>Diğer taraftan belirsiz alacak davasını açan davacı, alacağı belirlenebilir hâle geldikten sonra kesin talep sonucunu mahkemeye bildirecektir. Talep sonucunun kesin olarak belirlenmesi genellikle geçici talep sonucunun artırılması şeklinde olacaktır. Kanun talep sonucunun artırılmasına açıkça izin verdiğinden, ayrıca karşı tarafın iznine veya ıslah yoluna başvurmasına gerek bulunmamaktadır. Davacı tarafça talep sonucunun kesinleştirilmesi üzerine geçici talep sonucu değil, kesin talep sonucu esas alınmalıdır (Pekcanıtez, s. 56).</p>
+
+<p>6100 sayılı Hukuk Muhakemeleri Kanunu’nun 107. maddesinin 2. fıkrası ile tahkikatın sona ermesine kadar davanın başında belirtilen talebin artırılabileceği kabul edilmişken, 7251 sayılı Kanun’un 7. maddesi ile HMK’nın 107. maddesinin 2. fıkrasında yapılan değişiklikle talep sonucunun belirlenmesi mümkün olduğunda hâkim tarafından tahkikat sona ermeden verilecek iki haftalık kesin süre içinde davacının talebini artırabileceğine dair düzenleme yapılmıştır.</p>
+
+<p>Yine HMK’nın 107. maddesinin 3. fıkrası “Ayrıca, kısmi eda davasının açılabildiği hâllerde, tespit davası da açılabilir ve bu durumda hukuki yararın var olduğu kabul edilir.” şeklindeki düzenlenmişken, 7251 sayılı Kanun’un 7. maddesi ile bu düzenleme yürürlükten kaldırılmıştır.</p>
+
+<p>Öte yandan yine belirsiz alacak davasının Kanuna konuluş amacı ve davanın niteliği dikkate alındığında, dava tarihinden önce gerçekleşen bir temerrüt olgusunun bulunmadığı durumlarda belirsiz alacak davasında yargılama sonucunda miktarı tam ve kesin olarak belirlenen alacağın tümü için temerrüt, davanın açıldığı tarihte gerçekleşeceğinden faize de dava tarihinden itibaren hükmedilmesi gerekir.</p>
+
+<p>Belirsiz alacak davasında zamanaşımı süresi alacağın tamamı için davanın açıldığı tarihten itibaren kesilmekte yine temerrüd sebebiyle faiz talebi de davanın açıldığı tarihten itibaren istenebilmektedir. Alacağın geri kalan kısmının talep edilebilmesi için ise davalı tarafın iznine veya ıslah yoluna başvurulmasına gerek bulunmamaktadır (Pekcanıtez, H.: İşçilik Alacaklarında Belirsiz Alacak Davası, Prof. Dr. Turhan Esener Armağanı, 1. … Hukuku Uluslarası Kongresi, s. 224).</p>
+
+<p>Somut olayda, dava dilekçesinde dava konusu alacakların miktarlarının belirlenemediği gerekçesiyle asgari miktarlar gösterilmek suretiyle HMK’nın 107. maddesi kapsamında dava açılmış, davacı vekili tarafından 13.01.2014 tarihli bilirkişi raporundan sonra sunulan 16.04.2014 tarihli dilekçe ile de dava konusu talepler artırılmıştır.</p>
+
+<p>Dava dilekçesi ile 16.04.2014 tarihli dilekçeden açıkça anlaşıldığı üzere dava belirsiz alacak davası olarak açılmıştır. Bu durumda dava belirsiz alacak davası olduğuna göre, bu davanın açılması ile doğacak olan maddi ve şekli hukuk sonuçlarının (zamanaşımının kesilmesi ve diğerleri) bu dava için de geçerli olması gerekeceğinden mahkemece talep artırım dilekçesi ile artırılan miktarlar dâhil olmak üzere ihbar tazminatı, ikramiye, fazla çalışma ile ulusal … ve genel tatil ücreti alacakları tutarının tamamına dava tarihinden itibaren faiz işletilmesi doğru bulunmuştur.</p>
+
+<hr>
+
+<p><strong>Yargıtay 9. Hukuk Dairesi         2021/5974 E.  ,  2021/10196 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 107</strong></li>
+  <li><strong>Islah veya talep arttırım halinde belirsiz alacak davasında faiz</strong></li>
+</ul>
+
+<p>Davacı vekili kısmi eda külli tespit istemli belirsiz alacak davası açmış, taleplerini ıslah dilekçesi ile artırmış, ancak ıslah ettiği miktarlara faiz yürütülmesini talep etmemiştir.</p>
+
+<p>Bu dava türünde faiz başlangıcı yönünden Dairemiz uygulaması kısmi dava esasları ile aynı olup kıdem tazminatı dışındaki hüküm altına alınan alacaklar bakımından dava dilekçesi ile istenen miktar için dava, ıslah (talep artırımı) dilekçesiyle artırılan miktar için ise, ıslah (talep artırımı) tarihinden itibaren faize hükmedilmesi gerekmektedir.</p>
+
+<p>Ancak; Mahkemece ıslah ile istenilen miktarlara faiz talep edilmediği gerekçesi ile faiz yürütülmemiştir.</p>
+
+<p>Yargıtay İçtihatları Birleştirme Büyük Genel Kurulunca 24.05.2019 günü yapılan toplantıda: “Bir miktar para alacağının faizi ile birlikte tahsiline karar verilmesinin talep edildiği kısmî davada, dava konusu miktarın kısmî ıslahla faiz talebi belirtilmeksizin arttırılması halinde, arttırılan miktar bakımından dava dilekçesindeki faiz talebine bağlı olarak faize hükmedileceği” yönünde karar verilmiş olup, böylece ıslahta sadece miktarın artırılması yeterli olup, dava dilekçesindeki faiz istemi ıslahı da kapsayacağından, davacının ıslah dilekçesinde faiz talebi olmadığı gerekçesi ile ıslah ile artırılan alacak miktarlarının faizsiz olarak hüküm altına alınması hatalı olup bozma sebebidir.</p>
+
+<hr>
+
+<ul>
+  <li>
+    <p><strong>Yargıtay 10. Hukuk Dairesi         2020/7981 E.  ,  2021/9679 K.</strong></p>
+  </li>
+  <li><strong>HMK 107</strong></li>
+  <li><strong>Belirsiz alacak davasında ilk talep arttırım dilekçesi ile arttırım yapıldıktan sonra verilen ikinci talep arttırım dilekçesi dikkate alınmaz.</strong></li>
+</ul>
+
+<p>6100 sayılı H.M.K.’nun 107. maddesinde düzenlenen belirsiz alacak davası, özellikle zararın baştan belirlenemediği ancak bir incelemeden sonra zararın tam olarak tespitinin mümkün olduğu tazminat taleplerinde söz konusu olur. Alacaklının böylesi bir davayı açabilmesi için alacağının miktarını tam ve kesin olarak belirlemesinin objektif olarak mümkün olmaması gerekir. Alacak miktarı biliniyorsa yada bilinebilecek durumda ise böyle bir dava açılamaz. Çünkü bu durumda her davada arandığı gibi hukuki yarar aranacak olup alacak miktarının biliniyor yada bilinebilecek olması halinde davacının hukuki yararından söz edilemez.</p>
+
+<p>Belirsiz alacak davasında yapılan yargılama sırasında alacağın miktarının tam olarak belirlenmesi ile davacı talebini iddianın genişletilmesi yasağına tabi olmaksızın artırabilecektir. Alacağın belirli hale gelmesi sonrasında ortaya çıkan yeni talep eksik belirtilirse davacının bundan sonraki yeni artırma isteği iddianın genişletilmesi yasağıyla karşılaşacaktır. Çünkü böylesi bir durumda alacağın belirsizliği değil davacının kendi ihmalinden kaynaklanan bir durum söz konusudur.</p>
+
+<p>Somut olayda davacıların maddi tazminat istemini belirsiz alacak davası olarak açtığı,davacıların maddi tazminat alacaklarının 22.09.2018 tarihli rapor ile bilinir hale gelmesi üzerine davacılar vekilinin 08.10.2018 tarihli dilekçesiyle maddi tazminat istemlerini neticeten sigortalının eşi için 181.769,49 TL’ye çocuğu … için 69.384,50 TL’ye ve çocuğu … için 39.067,71 TL’ye artırdığı halde; 27.06.2019 tarihli dilekçesiyle maddi tazminat istemlerini neticeten sigortalının eşi için 219.748, 45 TL’ye, çocuğu … için 79.007,70 TL’ye ve çocuk … için 42.460,06 TL’ye artırdığı anlaşılmakla; davacıların maddi tazminat istemlerinin 22.09.2018 tarihli raporla bilinir hale gelmesi akabinde taleplerini arttırmış olmasına göre davacılar vekilinin ilk talep artırım dilekçesine itibarla karar verilmesi gerekirken ikinci talep artırım dilekçesine itibarla karar verilmesi usul ve yasaya aykırı olmuştur.</p>
+
+<hr>
+
+<p><strong>Yargıtay 4. Hukuk Dairesi         2021/2137 E.  ,  2021/3747 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 107</strong></li>
+  <li><strong>Belirsiz alacak davasında birer kere “talep arttırımı” ve “ıslah” yapılabilmesi.</strong></li>
+</ul>
+
+<p>Belirsiz alacak davasında davacı, alacağının tam ve kesin olarak belirlenmesinden sonra HMK 107.maddesine dayalı olarak <strong>bir kez alacağını artırabilir.</strong> Ayrıca davasını HMK 176. ve devamı maddelerine göre <strong>bir kez de ıslah edebilir.</strong></p>
+
+<hr>
+
+<p><strong>Yargıtay 9. Hukuk Dairesi  2021/5275 E.  ,  2021/11008 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 107</strong></li>
+  <li><strong>Belirsiz alacak davası açıldıktan sonra aynı konuyla ilgili ek dava açılamaz.</strong></li>
+</ul>
+
+<p>Bilindiği üzere 6100 sayılı Hukuk Muhakemeleri Kanunu’nun 107. maddesinin 2. fıkrası ile “karşı tarafın verdiği bilgi ve tahkikat sonucu alacağın miktarı veya değerinin tam ve kesin olarak belirlenebilmesinin mümkün olduğu anda davacı iddianın genişletilmesi yasağına tabi olmaksızın davanın başında belirtmiş olduğu talebinini artırabilir.” hükmü getirilmiştir.</p>
+
+<p>7251 sayılı Kanunla Hukuk Muhakemeleri Kanunu’nda yapılan değişiklik sonrasında 107. maddenin 2. fıkrası “Karşı tarafın verdiği bilgi veya tahkikat sonucu alacağın miktarı veya değerinin tam ve kesin olarak belirlenebilmesi mümkün olduğunda, hâkim tarafından tahkikat sona ermeden verilecek iki haftalık kesin süre içinde davacı, iddianın genişletilmesi yasağına tabi olmaksızın talebini tam ve kesin olarak belirleyebilir. Aksi takdirde dava, talep sonucunda belirtilen miktar veya değer üzerinden görülüp karara bağlanır.” şeklinde düzenlenmiştir.</p>
+
+<p>7251 sayılı Kanun ile 107. maddede yapılan değişiklikler Dairemizce şartları mevcut olan belirsiz alacak davasında yapılan yargılama ile alacağın belirli hale gelmesi durumunda hâkimin geçici talep sonucunu kesin talep sonucuna dönüştürmesi için alacaklıya süre vermesi gerektiği yönünde değerlendirilmiştir.</p>
+
+<p>Belirsiz alacak davası açan davacı, talep artırım yahut ıslah suretiyle neticei talebini artırabilir. Ayrıca belirsiz alacak davası türünde dava açılması durumunda alacağın tamamı dava konusu edildiğinden aynı dava konusu ile ilgili ek dava açılması halinde derdestlik dava şartı söz konusu olur.</p>
+
+<p>Somut uyuşmazlıkta dava belirsiz alacak davası türünde açılmış, 10.07.2018 tarihli celsede davacı vekili tarafından alacak miktarlarını belirlemek amacıyla süre talep edildiği halde mahkemece davacı tarafa geçici talep sonucunu kesin talep sonucuna dönüştürmesi için süre verilmediği anlaşılmış olup, belirsiz alacak davasında alacağın tamamı dava konusu yapıldığı ve belirsiz alacak davasına konu edilen alacaklar bakımından ek dava açılamayacağı düşünüldüğünde, mahkemece HMK. m. 107 uyarınca davacı vekiline kesin talep sonucunu belirtmesi için süre verilmemesi hukuki dinlenilme hakkının kısıtlanmasına yol açar. Davacıya geçici talep sonucunu kesin talep sonucuna dönüştürmesi için süre verilerek sonucuna göre karar verilmelidir. Eksik inceleme ile sonuca gidilmesi hatalı olup bozmayı gerektirmiştir.</p>
+
+<hr>
+
+<p><strong>Yargıtay 9. Hukuk Dairesi         2021/5273 E.  ,  2021/11010 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 107</strong></li>
+  <li><strong>Belirsiz alacak davalarında davacı vekiline kesin talep sonucunu belirtmek üzere süre verilmesi zorunludur.</strong></li>
+</ul>
+
+<p>7251 sayılı Kanun ile 107. maddede yapılan değişiklikler Dairemizce şartları mevcut olan belirsiz alacak davasında yapılan yargılama ile alacağın belirli hale gelmesi durumunda hâkimin geçici talep sonucunu kesin talep sonucuna dönüştürmesi için alacaklıya süre vermesi gerektiği yönünde değerlendirilmiştir.</p>
+
+<p>Belirsiz alacak davası açan davacı, talep artırım yahut ıslah suretiyle neticei talebini artırabilir. Ayrıca belirsiz alacak davası türünde dava açılması durumunda alacağın tamamı dava konusu edildiğinden aynı dava konusu ile ilgili ek dava açılması halinde derdestlik dava şartı söz konusu olur.</p>
+
+<p>Somut uyuşmazlıkta dava belirsiz alacak davası türünde açılmış, 10.07.2018 tarihli celsede davacı vekili tarafından alacak miktarlarını belirlemek amacıyla süre talep edildiği halde mahkemece <strong>davacı tarafa geçici talep sonucunu kesin talep sonucuna dönüştürmesi için süre verilmediği anlaşılmış olup</strong>, belirsiz alacak davasında alacağın tamamı dava konusu yapıldığı ve belirsiz alacak davasına konu edilen alacaklar bakımından ek dava açılamayacağı düşünüldüğünde, mahkemece HMK. m. 107 uyarınca davacı vekiline kesin talep sonucunu belirtmesi için süre verilmemesi hukuki dinlenilme hakkının kısıtlanmasına yol açar. Davacıya geçici talep sonucunu kesin talep sonucuna dönüştürmesi için süre verilerek sonucuna göre karar verilmelidir. Eksik inceleme ile sonuca gidilmesi hatalı olup bozmayı gerektirmiştir.</p>
+
+<hr>
+
+<p><strong>Hukuk Genel Kurulu         2017/2234 E.  ,  2021/830 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 107</strong></li>
+  <li><strong>Tüketici hakem heyetinin görev sınırlarında bir miktar ile açılan belirsiz alacak davası dava şartı yokluğundan reddedilmelidir.</strong></li>
+</ul>
+
+<p>Tüketici gerek dava açarken (HMK, m.119/1-d) gerekse tüketici hakem heyetlerine başvururken (Yön. m. 22) talep sonucunun değerini göstermek zorundadır. Ancak iddia konusu alacak değerinin dava veya başvuru sırasında belirlenmesi mümkün değilse yahut alacaklıdan bunu belirlemesinin beklenemeyeceği bir hâl söz konusu ise dava/başvuru belirlenebilen asgari bir miktar üzerinden yapılacaktır. Tüketicinin belirleyebildiği ve bu suretle dilekçesinde gösterdiği asgari miktar TKHK’nın 68., ilgili Yönetmelik’in 6. maddesinde düzenlenen parasal sınır dâhilindeyse başvurunun kanunun amacına uygun şekilde öncelikle tüketici hakem heyetleri nezdinde yapılması gerekir. Aksi yönde bir kabul, kanun koyucunun belli parasal sınırlar için zorunlu çözüm yeri olarak öngördüğü tüketici hakem heyetlerini işlevsiz hâle getirerek, belirsiz alacak davası olarak açıldığı belirtilen her ihtilâfın mahkemeler önüne getirilmesine ve bu suretle kanun koyucunun amacına aykırı şekilde mahkemelerin iş yükünün artmasına, uyuşmazlıkların daha geç çözümlenmesine yol açacaktır. Nitekim bu husus Kanun’un 72. ve 84. maddelerine dayanılarak tüketici hakem heyetlerinin usul ve esaslarına ilişkin yönetmeliğin hazırlanması sırasında da dikkate alınmış ve 22. maddede açıkça düzenlenmiştir.</p>
+
+<p>Tüm bu açıklamalar ışığında somut olay irdelendiğinde; belirsiz alacak davası şeklinde ileri sürülen alacak isteminde, talep tarihi itibariyle tüketici hakem heyetlerinin zorunlu görev sınırı dâhilinde bir dava değeri gösterilmiş olup bu hâlde öncelikle tüketici hakem heyetine başvuruda bulunulması gereklidir. Nitekim Hukuk Genel Kurulunun 04.03.2020 tarihli, 2017/13-551 E., 2010/239 K. sayılı kararında da aynı hususa işaret edilmiştir.</p>
+
+<p>Mahkemece direnme gerekçesinde bu yöne ilişkin yapılan değerlendirme yerinde ise de mahkeme niteliğini haiz olmayan tüketici hakem heyetleri ile tüketici mahkemeleri arasında görev ilişkisinin varlığından bahsedilemeyeceğinden, davanın görevsizlik nedeniyle değil, tüketici hakem heyetine zorunlu başvurunun sağlanmasına ilişkin dava şartı yokluğundan reddine karar verilmesi gerekir. Bu yanılgı dışında direnme kararı vardığı sonuç itibariyle haklı ve yerindedir.</p>
+
+<p>Hukuk Genel Kurulunda yapılan görüşmeler sırasında HMK’nın 107. maddesine göre açılmış bir davada mahkemenin görevli olup olmadığını dava dilekçesinde gösterilen miktara göre değil, yapacağı tahkikat sonucunda tespit edeceği değere göre belirlemesi gerektiği, bu sebeple doğrudan davanın usul yönünden reddedilmesinin hatalı olduğu, direnme kararının Özel Daire bozma kararında belirtilen işin esasına girilmesi yönündeki gerekçeler ve alacak miktarının yapılacak yargılama neticesinde tespit olunan değerin tüketici hakem heyetlerinin görev sınırında olduğunun anlaşılması hâlinde ise dava şartı noksanlığından davanın reddine karar verilmesi gerektiği yönündeki genişletilmiş gerekçelerle bozulması gerektiği görüşü ileri sürülmüş ise de bu görüş yukarıda açıklanan nedenlerle Kurul çoğunluğunca benimsenmemiştir.</p>
+
+<hr>
+
+<p><strong>Yargıtay 8. Hukuk Dairesi         2021/2638 E.  ,  2021/5272 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 107</strong></li>
+  <li><strong>Belirsiz alacak davasında katılma alacağına ilişkin davada taşınmaz ve araç için belirtilen toplam dava değeri yarı yarıya paylaştırılmalıdır.</strong></li>
+</ul>
+
+<p>Davalı tarafça, tasfiyeye konu edilen araç yönünden kişisel mal savunmasında bulunmuş olup, bu yöndeki savunma mahkemece borcun devam ettiği ya da ne kadarının devam ettiği konusunda dosyada herhangi bir delil ve belge bulunmadığından yerinde görülmeyerek reddine karar verilmiş ise de dosya kapsamındaki bilgi ve belgeden davalı kadın adına aracın 09.01.2013 tarihinde satın alındığı, araç üzerinde 11.01.2013 tarihli rehin kaydı mevcut olduğu, ilgili rehin kaydının davalı savunmasını doğrular şekilde davalının halası dava dışı Vergül’den alınan borca yönelik olduğu sabit olup, davalının halasının boşanma dava dosyasındaki beyan içeriği ve kaydın halen devam etmesi hususları birlikte değerlendirildiğinde söz konusu borç paranın araç alımında kullanıldığının ve halen devam ettiğinin kabulü gerekir. Aracın, değerinin tamamı üzerinden davacının katılma alacağının tespiti hatalı olmuştur.</p>
+
+<p>Mahkemece yapılacak iş, dava konusu araç alımında kullanılan ve halen devam eden 30.000,00 TL para borç olarak gözetilip, Daire’nin yerleşik ilke ve esaslarına göre davacının katılma alacağının hesap edilmesi, hesaplamada davacı tarafın gerek dava dilekçesinde gerekse yargılama aşamasında talep miktarlarını ayrı ayrı belirtmeksizin taşınmaz ve araç için toplam 20.000,00 TL değer üzerinden belirsiz alacak davası açtığı, buna göre taleplerin eşit miktar olduğunun kabulü gerekeceğinin, diğer ifadeyle araçla ilgili talebin 10.000,00 TL olduğunun gözetilerek sonucuna göre bir karar verilmesi olmalıdır.</p>
+
+<hr>
+
+<p><strong>Yargıtay 4. Hukuk Dairesi         2021/2099 E.  ,  2021/3204 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 107</strong></li>
+  <li><strong>Hayat sigortasına ilişkin taleplerde belirsiz alacak davası açılamaz.</strong></li>
+</ul>
+
+<p>6100 sayılı Kanunun 107. maddesine göre, davanın açıldığı tarihte alacağın miktarını yahut değerini tam ve kesin olarak belirleyebilmesinin kendisinden beklenemeyeceği veya bunun imkânsız olduğu hâllerde alacaklı, hukuki ilişkiyi ve asgari bir miktar ya da değeri belirtmek suretiyle belirsiz alacak davası açabilir. Karşı tarafın verdiği bilgi veya tahkikat sonucu alacağın miktarı veya değerinin tam ve kesin olarak belirlenebilmesinin mümkün olduğu anda davacı, iddianın genişletilmesi yasağına tabi olmaksızın davanın başında belirtmiş olduğu talebini artırabilir. Davanın belirsiz alacak davası türünde açılabilmesi için, davanın açıldığı tarih itibariyle uyuşmazlığa konu alacağın miktar veya değerinin tam ve kesin olarak davacı tarafca belirlenememesi gereklidir. Belirleyememe hali, davacının gerekli dikkat ve özeni göstermesine rağmen miktar veya değerin belirlenmesinin kendisinden gerçekten beklenilmemesi durumuna ya da objektif olarak imkansızlığa dayanmalıdır. Madde gerekçesinde “Alacaklının bu tür bir dava açması için, dava açacağı miktar ya da değeri tam ve kesin olarak gerçekten belirlemesi mümkün olmamalı ya da bu objektif olarak imkansız olmalıdır. Açılacak davanın miktarı biliniyor yahut tespit edilebiliyorsa, böyle bir dava açılamaz. Çünkü, her davada arandığı gibi, burada da hukuki yarar aranacaktır, böyle bir durumda hukuki yararın bulunduğundan söz edilemez. Özellikle, kısmi davaya ilişkin yeni hükümler de dikkate alınıp birlikte değerlendirildiğinde, baştan tespiti mümkün olan hallerde bu yola başvurulması kabul edilemez.” şeklindeki açıklamayla, alacağın belirli veya belirlenebilir nitelikte olması durumunda, belirsiz alacak davası açılarak bu davanın sağladığı imkanlardan yararlanmanın mümkün olmadığına işaret edilmiştir.</p>
+
+<p>Taraflar arasında alacak miktarı bakımından uyuşmazlık bulunması, talep sonucunun belirlenmesinin davacıdan beklenemeyecek olması anlamına gelmez. Önemli olan objektif olarak talep sonucunun belirlenmesinin davacıdan beklenemeyecek olmasıdır (H. Pekcanıtez, Belirsiz Alacak Davası, Ankara 2011, s. 45; H. Pekcanıtez/O. Atalay/M. Özekes, Medeni Usul Hukuku, 14. Bası, Ankara 2013, s. 448). Sadece alacak miktarında taraflar arasında uyuşmazlık bulunması ya da miktarın tartışmalı olmasının belirsiz alacak davası açılması için yeterli sayılması halinde, neredeyse tüm davaların belirsiz alacak davası olarak kabulü gerekir ki, bu da kanunun amacına aykırıdır. Çünkü, zaten uyuşmazlık bulunduğu için dava açılmakta ve uyuşmazlık mahkeme önüne gelmektedir. Önemli olan davacının talebini belirli kılacak imkana sahip olup olmadığıdır. Burada, alacağın belirlenebilir olması ile ispat edilebilirliğinin de ayrıca değerlendirilmesi gerektiği unutulmamalıdır. Davacının talep ettiği alacağı belirlemesi objektif olarak mümkün, ancak belirleyebildiği alacağını ispat etmesi, kanunun öngördüğü şekilde (elindeki delillerle) mümkün değilse, burada da belirsiz alacak davası açılacağından söz edilemez. Çünkü, bir alacağın belirlenmesi ile onun ispatı ayrı şeylerdir. Davacı, talep konusu yaptığı alacağını çok net şekilde belirleyebilir; ancak her zaman onu ispat edecek durumda olmayabilir. Aksinin kabulü, her ispat güçlüğü olan alacağı belirsiz alacağa dönüştürmek gibi, hem kanunun amacına hem de genel ilkelere aykırı bir durumu ortaya çıkartabilir. Alacağın miktarının belirlenebilmesinin, tahkikat aşamasında yapılacak delillerin incelenmesi, bilirkişi incelemesi veya keşif gibi sair işlemlerin yapılmasına bağlı olduğu durumlarda da belirsiz alacak davası açılabileceği kabul edilmelidir. Ne var ki, bir davada bilirkişi incelemesine gidilmesi belirsiz alacak davasının açılabilmesi için yeterli değildir. Bir davada bilirkişiye başvurulmasına rağmen davacı dava açarken alacak miktarını belirleyebiliyorsa, belirsiz alacak davası açılamaz, (Yargıtay Hukuk Genel Kurulu 02/11/2016 gün, 2015/22-1078 esas ve 2016/1010 karar sayılı ilamı)</p>
+
+<p>6100 sayılı Hukuk Muhakemeleri Kanunu ile birlikte belirsiz alacak davası ile kısmi davaya ilişkin yeni düzenlemedeki sınırın tam olarak tespit edilemediği, birinin diğeri yerine kullanıldığı sıkça görülmektedir. Oysa bu iki davanın amacı ve niteliği ayrıdır. Alacak, belirli veya belirlenebilir ise, belirsiz alacak davası açılamaz; ancak şartları varsa kısmi dava açılması mümkündür.</p>
+
+<p>Somut olayın özellikleri dikkate alınarak, yukarıda belirtilen açıklamalar ışığında, davanın belirsiz alacak davası olarak açılabilmesi için gerekli şartların bulunup bulunmadığının değerlendirilmesine gelince; davacı davasını 6100 sayılı Hukuk Muhakemeleri Kanununun 107. maddesi uyarınca belirsiz alacak davası olarak açmıştır. Davaya konu sigorta poliçesi hayat sigortasına ilişkindir. Hayat sigortaları niteliği itibari ile meblağ sigortasıdır. Sigortacının sorumluluğu teminat miktarı ile sınırlıdır. Teminat bedeli poliçe ile sabittir. Poliçe bedeli belirlenmiş olup ödenen ödenmeyen kredi taksitleri de belirlenebilir niteliktedir. Dolayısıyla davanın belirsiz alacak davası olarak açılabilmesinin kabul edilmesi doğru değildir.</p>
+
+<p>Dava konusu itibari ile, dava ve ıslah ile istenilen bedel 6012 Sayılı TTK 1420. maddesi ve Hayat Sigortaları Genel Şartları C.13 maddesi uyarınca 2 yıllık zamanaşımına tabidir. Islah ile artırılan bedel zamanaşımına uğramıştır. Bu nedenle ıslah ile artırılan bedelin zamanaşımı nedeniyle reddine karar verilmesi gerekirken davanın belirsiz alacak davası olarak kabul edilerek davanın kabulüne karar verilmesi isabetli olmamıştır.</p>
+
+<p>Yukarıda açıklanan nedenlerle, ıslah ile artırılan kısmın zamanaşımı nedeni ile reddine karar verilmek üzere hükmün bozulmasına karar vermek gerekmiştir.</p>
+
+<hr>
+
+<p><strong>Hukuk Genel Kurulu         2019/467 E.  ,  2021/775 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 107</strong></li>
+  <li><strong>Belirsiz alacak davasında talep arttırımı için iki haftalık kesin süre verilmelidir.</strong></li>
+  <li><strong>Bozmadan sonra da talep arttırım dilekçesi verilebilir.</strong></li>
+</ul>
+
+<p>Belirsiz alacak davasının getirdiği en önemli etkin koruma, usul ekonomisi ve hak arama özgürlüğüne hizmet etmesi yanında, davacının yüksek yargılama giderlerine katlanma ve dava konusu hakkın zamanaşımına uğrama riskini azaltmasıdır. Zira zamanaşımı süresi, belirsiz alacak davası açılması ile tüm alacak için kesildiğinden, davacının belirleyemediği alacağının zamanaşımına uğraması söz konusu olmayacaktır (Pekcanıtez, H.: Belirsiz Alacak Davası, 2011, s. 26-31).</p>
+
+<p>Diğer taraftan belirsiz alacak davasını açan davacı, alacağı belirlenebilir hâle geldikten sonra kesin talep sonucunu mahkemeye bildirecektir. Talep sonucunun kesin olarak belirlenmesi genellikle geçici talep sonucunun artırılması şeklinde olacaktır. Kanun talep sonucunun artırılmasına açıkça izin verdiğinden, ayrıca karşı tarafın iznine veya ıslah yoluna başvurmasına gerek bulunmamaktadır. Davacı tarafça talep sonucunun kesinleştirilmesi üzerine geçici talep sonucu değil, kesin talep sonucu esas alınmalıdır (Pekcanıtez, s. 56).</p>
+
+<p>6100 sayılı Hukuk Muhakemeleri Kanunu’nun 107. maddesinin ikinci fıkrası ile tahkikatın sona ermesine kadar davanın başında belirtilen talebin artırılabileceği kabul edilmişken, 7251 sayılı Kanun’un 7. maddesi ile HMK’nın 107. maddesinin ikinci fıkrasında yapılan değişiklikle talep sonucunun belirlenmesi mümkün olduğunda hâkim tarafından tahkikat sona ermeden verilecek iki haftalık kesin süre içinde davacının talebini artırabileceğine dair düzenleme yapılmıştır.</p>
+
+<p>Diğer taraftan bilindiği üzere, HMK’nın 33. maddesi gereği hâkim, bir davada sadece tarafların ileri sürdüğü maddi vakıalar ve talep sonuçları ile bağlı olup, dayandıkları kanun hükümleriyle ve onların hukukî nitelendirmeleriyle sınırlı olmaksızın, kanunları re’sen uygulayarak iddia ve savunmadaki talepleri karara bağlamakla yükümlüdür. Tabi olacakları kurallar ile etki ve sonuçlarının belirlenmesi yönünden, taraflarca dile getirilen taleplerin hukukî nitelendirmesi büyük önem arz etmektedir.</p>
+
+<p>Somut olayda; davacı vekili, davasını belirsiz alacak davası olarak açmış, dava konusu alacak miktarlarını tam ve kesin olarak belirlenemediğinden şimdilik 100,00 ‘er TL’den toplam 900,00TL kıdem ve ihbar tazminatları ile yıllık izin, fazla çalışma, ulusal bayram ve genel tatil ücreti alacaklarının davalıdan tahsilini talep etmiş, mahkemece Özel Dairenin 13.06.2016 tarihli birinci bozma kararına uyulduktan sonra yapılan yargılama sırasında sunduğu 09.11.2016 tarihli talep artırım dilekçesiyle de talep edilen 900,00TL alacak tutarını bilirkişi raporu doğrultusunda 42.664,85TL daha artırarak 43.564,85TL’ye tamamlamak suretiyle ıslah ettiğini belirterek kıdem tazminatına fesih tarihinden, diğer alacaklara dava tarihinden itibaren işleyecek mevduata uygulanan en yüksek faiz oranıyla birlikte hükmedilmesini istemiştir.</p>
+
+<p>Davacı vekili 03.05.2017 tarihli duruşmada ise, davanın belirsiz alacak davası olduğunu, ıslah dilekçesi olarak nitelendirdikleri dilekçesinin aslında talep artırım dilekçesi olduğunu, 09.11.2016 tarihli dilekçeyi sehven ıslah dilekçesi olarak nitelendirdiklerini açıkça ifade etmiştir.</p>
+
+<p>Görüldüğü üzere, davacı vekili 09.11.2016 tarihli dilekçesinde her ne kadar davanın ıslah edildiğini belirtmiş ise de; davanın belirsiz alacak davası olarak açılması, davacı vekilinin 03.05.2017 tarihli duruşmada 09.11.2016 tarihli dilekçenin, talep artırım dilekçesi niteliğinde olduğunu açıkça beyan etmesi, sözü edilen dilekçede dava konusu kıdem tazminatı dışındaki alacaklara dava tarihinden itibaren faiz uygulanmasının talep edilmesi ve mahkeme tarafından eldeki davanın belirsiz alacak davası olarak kabulü ile bu kapsamda yapılan yargılama sonucunda hüküm kurulması karşısında 09.11.2016 tarihli dilekçenin talep artırım dilekçesi olduğunun kabulü gerekir.</p>
+
+<p>Bu noktada belirtmek gerekir ki; belirsiz alacak davasında dava konusu alacağın tam ve kesin olarak belirlenebilmesi mümkün olduğu anda davacı taraf iddianın genişletilmesi yasağına tabi olmaksızın dava dilekçesinde belirttiği miktarı artırabileceğinden bozma kararı sonrasında da artırım dilekçesi vererek, tamamlama harcı yatırılmak suretiyle talebini artırılabilmesi mümkündür. Zira bunu engelleyen yasal bir düzenleme bulunmamaktadır.</p>
+
+<hr>
+
+<p><strong>Yargıtay 15. Hukuk Dairesi         2020/2618 E.  ,  2021/2642 K.</strong></p>
+
+<ul>
+  <li><strong>Kısmi dava olarak açılması gereken dava belirsiz alacak davası olarak açılırsa dava reddedilmez, davaya kısmi dava olarak devam edilir.</strong></li>
+</ul>
+
+<p>Dava, dilekçede belirsiz alacak davası olarak adlandırılmış ise de; alacağın miktar ve değerinin tam ve kesin olarak belirlenmesi mümkün olduğundan HMK’nın 107. maddesine göre belirsiz alacak davası açılamayacağı, ancak belli bir miktar gösterilerek talepte bulunulduğundan davacının davasının HMK 109. maddesinde ifade edilen kısmi dava niteliğinde olduğu kabul edilmelidir (Yargıtay 15. Hukuk Dairesi’nin 10.07.2013 gün 2012/6728 Esas 2013/4521 Karar sayılı ve Yargıtay Hukuk Genel Kurulunun 02.03.2016 gün 2014/15 Karar 2014/439 Esas, 2016/207 Karar sayılı ilamları).</p>
+
+<hr>
+
+<p><strong>Hukuk Genel Kurulu         2019/742 E.  ,  2021/419 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 107</strong></li>
+  <li><strong>Belirsiz alacak davası olarak açılmayan dava reddedilir.</strong></li>
+</ul>
+
+<p>Yargıtay (Kapatılan) 22. Hukuk Dairesinin 16.06.2015 tarihli ve 2015/8616 E., 2015/20774 K. sayılı kararı ile; davalı vekilinin sair temyiz itirazlarının reddine karar verildikten sonra, Somut uyuşmazlıkta, dava belirsiz alacak davası olarak açılmıştır.</p>
+
+<p>Davacı, çalışma süresini, aylık ücret miktarını, tazminat hesaplamasına esas alınacak aylık ücrete ek para veya parayla ölçülebilen sosyal menfaatleri, eksik ödendiğini iddia ettiği aylık ücret miktarını, kendisine ödenen veya ödenmesi gereken ikramiye miktarını belirleyebilecek durumdadır. Bu halde, dava konusu kıdem tazminatı, ihbar tazminatı, fark aylık ücret ve fark ikramiye alacakları belirsiz değildir.</p>
+
+<p>Taraflar arasında ücret miktarı yönünden uyuşmazlık bulunması, söz konusu alacakları belirsiz hale getirmez. Keza, davacı, mevcut ücretini ve toplu iş sözleşmesine göre kendisine ödenmesi gerektiğini iddia ettiği ücret ve diğer mali hakların miktarını belirleyebilmektedir. İşçinin ne zamandan beri çalıştığını veya ücretinin ne kadar olduğunu bilmemesi hayatın olağan akışına da aykırıdır. İşçinin kendisinin bilmediği bir hususun, tanıkların bildiğini veya bilirkişinin bileceğini farzetmek ispat kurallarına da aykırıdır. Keza tarafın yeterli şekilde somutlaştırıp kendisinin bilgisinde dahi olmadığını belirttiği bir hususun mahkemece bilinmesini beklemek de mümkün değildir.
+İşverenin maddi hukuktan doğan yükümlülüklerini (belge ve bordro düzenleme gibi) yerine getirmemesi, tuttuğu belgelerin gerçeği yansıtmaması, davadan önce işçinin alacaklarını inkar etmesi ya da ikrar etmekle beraber yerine getirmemesi davacıya kural olarak belirsiz alacak davası açma imkanını vermez. İşçi bu durumlarda dahi, alacağının miktarını veya değerini belirleyebiliyorsa, belirsiz alacak davası açamaz(Simil, s. 412).</p>
+
+<p>Anılan sebeplerle, dava konusu kıdem tazminatı, ihbar tazminatı, fark aylık ücret ve fark ikramiye alacaklarının gerçekte belirlenebilir alacaklar olduğu ve dolayısıyla belirsiz alacak davasına konu edilemeyecekleri anlaşılmakla, anılan talepler yönünden hukuki yarar yokluğundan davanın usulden reddi gerekirken yazılı şekilde esasa girilerek karar verilmesi hatalı olmuştur.</p>
+
+<hr>
+
+<p><strong>Yargıtay 4. Hukuk Dairesi         2019/2186 E.  ,  2021/1209 K.</strong></p>
+
+<ul>
+  <li>
+    <p><strong>HMK 107</strong></p>
+  </li>
+  <li>
+    <p><strong>Belirsiz alacak davası ile kısmi dava farkı</strong></p>
+  </li>
+</ul>
+
+<p>Kısmi dava, alacağın yalnızca bir bölümü için açılan dava olarak tanımlanmaktadır. Bir davanın kısmi dava olarak nitelendirilebilmesi için, alacağın tümünün aynı hukuki ilişkiden doğmuş olması ve alacağın şimdilik belirli bir kesiminin dava edilmesi gerekir. Diğer bir söyleyişle, bir alacak hakkında daha fazla bir miktar için tam dava açma imkânı bulunmasına rağmen alacağın bir kesimi için açılan davaya kısmi dava denir. Bir kimsenin kısmi bir dava açıp açmadığı ancak dava dilekçesinden, davacının talep sonucundan anlaşılır. Davacının davasını açıkça kısmi dava olarak nitelendirmesine gerek yoktur, alacağın yalnız bir kesiminin dava edildiğinin anlaşılması yeterlidir. Özellikle davacının “fazlaya ilişkin haklarını saklı tutarak” veya “şimdilik alacağın belirli bir miktarını dava ettiğini” belirterek açtığı davalar kısmi dava niteliğindedir. Kısmi dava açılması halinde davaya konu edilmeyen kısmın ayrı bir davayla talep edilmesi veya aynı davada ıslah yoluyla dava konusuna dahil edilmesi mümkündür.</p>
+
+<p>Belirsiz alacak davasına gelince; davanın açıldığı tarihte alacağın miktarını yahut değerini tam ve kesin olarak belirleyebilmesinin kendisinden beklenemeyeceği veya bunun imkânsız olduğu hâllerde, alacaklının, hukuki ilişki ile asgari bir miktar ya da değer belirterek alacak davası açabilmesi belirsiz alacak davası ile mümkündür. 6100 sayılı Hukuk Muhakemeleri Kanunu’nun 107. maddesinde düzenlenen belirsiz alacak davasında davacının iddianın genişletilmesi yasağı olmadan ve karşı tarafın rızasına ve ıslaha da gerek kalmaksızın talep sonucunu artırabileceği kabul edilmiş, maddenin gerekçesinde de bu dava ile ilk dava tarihinde zamanaşımının kesileceği belirtilmiştir.</p>
+
+<p>6100 sayılı Kanun ile alacak miktarının belirsiz olduğu durumlarda davacıya dilerse belirsiz alacak davası, dilerse de kısmi dava açabilme imkanı getirilmiştir. Belirsiz alacak davası ile kısmi dava konusu, amacı ve sonuçları bakımından birbirinden tamamen farklı iki dava türüdür. Her iki davanın mahkemeden istenen hukuki korumaya göre eda davası olması ve ortak bazı özelliklerinin bulunması bu sonucu değiştirmemektedir. Belirsiz alacak davası açan davacı, kısmi davanın sonuçlarından yararlanamayacağı gibi, kısmi dava açan davacı da belirsiz alacak davasının sonuçlarından yararlanamaz. Hâkim de kısmi dava olarak açılmış bir davayı belirsiz alacak davası olarak nitelendiremeyeceği gibi, belirsiz alacak davası olarak açılan davaya da kısmi dava olarak devam edemez (Yar. HGK, 2014/15-439 E., 2016/207 K. ve 02/03/2016). Kısmi davada zamanaşımı, yalnızca dava edilen kısım için kesilir. Henüz açılmayan (saklı tutulan) ve daha sonra ıslahla artırılan bölüm için zamanaşımı işlemeye devam eder.</p>
+
+<p>Bilindiği gibi 6100 sayılı Kanun’un 24. maddesinde düzenlenen tasarruf ilkesi gereği davacı davasını açarken, talep ettiği hukuki korumanın ne olduğunu açıkça ifade etmek zorundadır (HMK. m.119/1-ğ). Talep sonucu hukuki dinlenilme hakkının kullanılması, davacının hukuki yararının ve açılan davanın niteliğinin tespit edilebilmesi açısından da önemlidir. Davacı, talep konusunun sadece bir kısmı hakkında hüküm elde etmek üzere bir dava açtığında mahkeme, davacının hakkının aslında daha fazla olduğunu tespit etse bile, taleple bağlılık kuralı gereği davada talep sonucu olarak gösterilen miktarı aşacak şekilde karar veremez.</p>
+
+<p>Açıklanan yasal düzenlemeler ışığında eldeki davada iddianın ileri sürülüş biçimi açısından somut olay değerlendirildiğinde; davacı vekili dava dilekçesinin konu ve talep sonucu bölümlerinde haksız haciz sonucu davaya konu aracın yediemin otoparkına çekilmesi nedeniyle “fazlaya ilişkin hakları saklı kalmak kaydıyla” dedikten sonra, 7.800,00 TL otopark ücretinin, şimdilik 1.000,00 TL maddi tazminatın ve 30.000,00 TL manevi tazminatın davalıdan tahsiline karar verilmesini talep etmiştir. Dava dilekçesi bir bütün olarak değerlendirildiğinde, dilekçede yer alan açıklamalar ve talep sonucundan davanın belirsiz alacak davası olarak açıldığı anlaşılmamaktadır. Bu haliyle dava, kısmi dava niteliğindedir.</p>
+
+<hr>
+
+<p><strong>Yargıtay 8. Hukuk Dairesi    2018/15462 E.  ,  2021/2242 K.</strong></p>
+
+<ul>
+  <li><strong>HMK 107</strong></li>
+  <li><strong>İstinaf sınırının altında kalsa bile, ama aslında hesap yapılmayan belirsiz alacak davasının istinaf incelemesi yapılmalıdır.</strong></li>
+</ul>
+
+<p>6100 sayılı HMK ile birlikte, belirsiz alacak davası açma imkanı tanınmak suretiyle belirsiz alacaklar bakımından hak arama özgürlüğü genişletilmiş; bununla bağlantılı olarak da hukuki yarar bulunmadan kısmi dava açma imkanı da sınırlandırılmıştır. Zaman zaman, 6100 sayılı HMK ile birlikte kabul edilen belirsiz alacak davası ile kısmi davaya ilişkin yeni düzenlemedeki sınırın tam olarak tespit edilemediği, birinin diğeri yerine kullanıldığı görülmektedir. Oysa bu iki davanın amacı ve niteliği ayrıdır. Alacak, belirli veya belirlenebilir ise, belirsiz alacak davası açılamaz; ancak şartları varsa kısmi dava açılması mümkündür. Kanunun kısmi dava açma imkanını sınırlamakla birlikte tamamen ortadan kaldırmadığı da gözetildiğinde, belirli alacaklar için, belirsiz alacak davası açılamasa da, şartları oluştuğunda ve hukuki yarar bulunduğunda kısmi dava açılması mümkündür. Aksi halde, sadece ya belirsiz alacak davası açma veya belirli tam alacak davası açma şeklinde iki imkandan söz edilebilir ki, o zaman da kısmi davaya ilişkin 6100 sayılı Kanun’un 109. maddesindeki hükmün fiilen uygulanması söz konusu olamayacaktır. Çünkü belirsiz alacak davası, zaten belirsiz alacak davasının sağladığı imkanlardan yararlanarak açılabilecek; şayet alacak belirli ise de, o zaman sadece tam eda davası açılabilecektir.</p>
+
+<p>Tüm bu açıklamalar doğrultusunda somut olaya gelince; dava dilekçesinde dava değeri 1.000,00 TL olarak belirtilerek belirsiz alacak niteliğindeki ecrimisil alacağının talep edilmiş olduğu ve İlk Derece Mahkemesince, keşif yapılmadan, rapor alınmadan davanın reddine karar verildiği anlaşılmıştır. Bölge Adliye Mahkemesince dava dilekçesindeki talebe bakılarak talep edilen alacak miktarının kesin nitelikte olduğundan bahisle istinaf başvurusunun usulden reddine karar verilmesi hak arama özgürlüğünü kısıtlayacağı gibi yukarıda açıklanan belirsiz alacak davasının özüne de aykırı olacaktır. O halde Bölge Adliye Mahkemesince, ecrimisil talebinin belirsiz alacak niteliğinde olduğu dikkate alınarak, istinaf başvurusu esastan incelenerek bir karar verilmesi gerekirken, yazılı şekilde başvurunun usulden reddine karar verilmesi doğru değildir.</p>
+<hr>
+
+</div></div></main>
+</div>
+
+<footer>
+<section>
+<div class="contact-info">
+
+<div class="adres">
+
+<div class="telefon-wrapper">
+
+
+</div>
+</div>
+</section>
+
+</div>
+
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+"vars": {
+"account": "UA-58342443-1"
+},
+"triggers": {
+"trackPageview": {
+"on": "visible",
+"request": "pageview"
+}
+}
+}
+</script>
+</amp-analytics>
+
+</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="../../index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="../../dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="../../ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="../../knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="../../search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/slideToggle.min.js"></script>
+    <script src="../js/internet-status.js"></script>
+    <script src="../js/tiny-slider.js"></script>
+    <script src="../js/baguetteBox.min.js"></script>
+    <script src="../js/countdown.js"></script>
+    <script src="../js/rangeslider.min.js"></script>
+    <script src="../js/vanilla-dataTables.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/magic-grid.min.js"></script>
+    <script src="../js/dark-rtl.js"></script>
+    <script src="../js/active.js"></script>
+    <!-- PWA -->
+    <script src="../js/pwa.js"></script>
+  </body>
+</html>

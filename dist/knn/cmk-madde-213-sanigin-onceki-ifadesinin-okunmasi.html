@@ -1,0 +1,846 @@
+﻿
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tiny-slider.css">
+    <link rel="stylesheet" href="../css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="../css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="tck-search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+               <div class="page-content-wrapper py-0">
+        </div>
+      </div>
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<h2 id="sanığın-önceki-i̇fadesinin-okunması">Sanığın Önceki İfadesinin Okunması</h2>
+
+<h2 id="cmk-madde-213">CMK Madde 213</h2>
+
+<p>(1) Aralarında çelişki bulunması halinde; sanığın, hâkim veya mahkeme huzurunda yaptığı açıklamalar ile Cumhuriyet savcısı tarafından alınan veya müdafiinin hazır bulunduğu kolluk ifadesine ilişkin tutanaklar duruşmada okunabilir.</p>
+
+<hr>
+
+<ul>
+  <li><a href="../5271-sayili-ceza-muhakemesi-kanunu-cmk.html"><strong>5271 sayılı CMK (Ceza Muhakemesi Kanunu) Tam Metin</strong></a></li>
+</ul>
+
+<hr>
+
+<amp-img src="../tokmak-yargitay-kararlari-1280x720.png" alt="CMK Madde 213  Sanığın Önceki İfadesinin Okunması" width="1280" height="720" layout="responsive">
+            </amp-img>
+<h2 id="cmk-madde-213-gerekçesi">CMK Madde 213 Gerekçesi</h2>
+
+<p>Sanığın, yüklenen suçu işlediğini hâkim huzurunda kabul etmesine ikrar denilmektedir. Böyle bir kabul hâkim huzurunda olmamışsa ikrardan bahsedilemez. Ancak, bunlar ikrar sayılmasalar da “sanık açıklamaları” delili olarak ceza yargılamasında değer taşırlar. Hâkim, tutanakları aynı davanın duruşmasında sanığın ikrarına delil olmak üzere okuyabilir. Buna karşılık, 
+Cumhuriyet savcılığında, kollukta ve diğer soruşturma organlarında yapılan bu tür açıklamalar ikrar sayılamayacağından, bu açıklamalara ilişkin tutanaklar da ikrara delil olmak üzere duruşmada okunamaz. Böyle bir hükmün konulmasının temel nedeni, insan haklarına gösterilen saygıdır; zira ancak hâkim tarafından düzenlenen tutanak tam olarak güvenilir olabilir.
+Sanık açıklamaları sadece ikrardan ibaret değildir. İkrar dışında sanık tarafından yapılan diğer açıklamalar arasında bir çelişkinin bulunması hâlinde, bu açıklamalara ait tutanaklar duruşmada okunabilir.</p>
+
+<hr>
+
+<h2 id="cmk-213-sanığın-önceki-i̇fadesinin-okunması-emsal-yargıtay-kararları">CMK 213 (Sanığın Önceki İfadesinin Okunması) Emsal Yargıtay Kararları</h2>
+
+<hr>
+
+<p><strong>YARGITAY 2. CEZA DAİRESİ 
+Esas : 2018/2184 Karar : 2018/4075</strong> Tarih : 9.04.2018</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 213. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Sanığın Önceki İfadesinin Okunması</strong></p>
+  </li>
+</ul>
+
+<p>Dosya incelenerek gereği düşünüldü;</p>
+
+<p>1- Suça sürüklenen çocuk … hakkında kurulan hükümlere ilişkin suça sürüklenen çocuk müdafiinin temyiz isteminin incelenmesinde;</p>
+
+<p>Suça sürüklenen çocuğun, onsekiz yaşını ikmal ettikten sonra 21.06.2013 tarihinde yapılan sorgusu esnasında müdafii istemediğini beyan ettiği ve mahkemesince suça sürüklenen çocuğun yokluğunda, müdafiinin yüzüne karşı verilen 10.09.2013 tarihli kararın, zorunlu müdafii tarafından temyiz edildiği, gerekçeli kararın suça sürüklenen çocuğa 13.06.2017 tarihinde tebliğ edilmesine rağmen suça sürüklenen çocuk tarafından süresinde temyiz edilmediği anlaşılmakla, suça sürüklenen çocuk müdafiinin verilen hükmü temyize hak ve yetkisi bulunmadığından, suça sürüklenen çocuk müdafiinin temyiz isteminin 1412 sayılı CMUK’nın 317. maddesi uyarınca REDDİNE,</p>
+
+<p>2- Suça sürüklenen çocuk … hakkında kurulan hükümlere ilişkin suça sürüklenen çocuk müdafiinin temyiz isteminin incelenmesinde;</p>
+
+<p>10.09.2013 günü yüzüne karşı verilen hükmü, yasal bir haftalık temyiz süresinden sonra 18/09/2013 günü temyiz eden suça sürüklenen çocuk müdafiinin, süresinde olmayan temyiz isteminin 1412 sayılı CMUK’nın 317. maddesi uyarınca REDDİNE,</p>
+
+<p>3- Suça sürüklenen çocuk … hakkında mala zarar verme suçundan kurulan hükmün incelenmesinde;</p>
+
+<p>Doğrudan hükmolunan adli para cezasının miktar ve türüne göre hükmün; 14/04/2011 tarihinde yürürlüğe giren 6217 sayılı Kanun’un 26. maddesi ile 5320 sayılı Kanun’a eklenen geçici 2. madde uyarınca hüküm tarihi itibariyle temyizi mümkün olmadığından, suça sürüklenen çocuk müdafiinin temyiz isteminin 5320 sayılı Kanun’un 8. maddesi uyarınca yürürlükte bulunan CMUK’nın 317. maddesi uyarınca istem gibi REDDİNE,</p>
+
+<p>4- Suça sürüklenen çocuk … hakkında hırsızlık suçundan kurulan hükmün incelenmesinde;</p>
+
+<p>Dosya içeriğine göre diğer temyiz itirazları yerinde görülmemiştir. Ancak;</p>
+
+<p>a) 5271 sayılı CMK’nın 213. maddesine göre sanığın hakim ya da mahkeme huzurunda yaptığı açıklamalar ile Cumhuriyet savcısı tarafından alınan ifadelerin duruşmada okunabilmesi kabul edilerek Cumhuriyet savcısı tarafından alınan ifadelere de kanıt (delil) olma değeri tanınmıştır. Buna karşılık, şüphelinin kollukça alınan ifadesine ilişkin tutanağın duruşmada okunabilmesi için, kollukta ifade alındığı sırada müdafinin hazır bulunması koşulu aranmaktadır.</p>
+
+<p>Somut olayda suça sürüklenen çocuk, Cumhuriyet savcısı tarafından alınan ifadesinde ve mahkemede atılı hırsızlık ve mala zarar verme suçlarını işlediğini kabul etmemiştir. Kollukta ifadesinin alınması mümkün olmayan suça sürüklenen çocuğun, kolluk görevlilerince yakalanması sırasında kendisi ile yapılan mülakatta suçu ikrar ettiğine dair beyanı olduğuna ilişkin tutanağın hükme esas alınamayacağı gözetilmeden, atılı suçları suça sürüklenen çocuğun işlediğine ilişkin başkaca hangi kanıtların hükme esas alındığı açıklanıp tartışılmadan mahkumiyet kararı verilmesi,</p>
+
+<p>b) Kabule göre de;</p>
+
+<p>Müştekiye ait park halindeki kilitli aracın camının kırılarak aracın teybinin çalınmaya kalkışılması şeklinde gerçekleşen eylemin 5237 sayılı TCK’nın 142/1-b maddesinde düzenlenen suçu oluşturduğu gözetilmeden, aynı Kanun’un 142/1-e maddesi ile uygulama yapılması,</p>
+
+<p>Bozmayı gerektirmiş, suça sürüklenen çocuk müdafiinin temyiz itirazları bu itibarla yerinde görülmüş olduğundan hükmün bu sebeplerden dolayı istem gibi BOZULMASINA, 09/04/2018 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 22. CEZA DAİRESİ 
+Esas : 2015/8994 Karar : 2015/6936</strong> Tarih : 11.11.2015</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 213. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Sanığın Önceki İfadesinin Okunması</strong></p>
+  </li>
+</ul>
+
+<p>Dosya incelenerek gereği düşünüldü:</p>
+
+<p>Suça sürüklenen çocuğun 07.02.2013 tarihli duruşma esnasında 18 yaşını tamamlamadığı gözetilmeden yargılamanın kapalı yerine açık yapılması telafisi mümkün olmadığından bozma nedeni yapılmamıştır.</p>
+
+<p>1-)a-)5395 sayılı Çocuk Koruma Kanununun 15/1. maddesine göre suça sürüklenen çocuklar hakkındaki soruşturmanın Cumhuriyet savcısı tarafından bizzat yürütülmesinin gerektiği nazara alındığında, suça sürüklenen çocuğun aşamalarda istikrarlı şekilde inkar etmiş olduğu 20.04.2011 tarihli tutanağın, düzenlenmesi esnasında Cumhuriyet savcısı ile suça sürüklenen çocuk müdafiinin hazır bulunmaması sebebiyle geçerli olarak kabulünün mümkün olmadığının ve ayrıca soruşturma aşamasında ifade mahiyetinde olup müdafii bulunmaksızın yapılan yer gösterme işleminin CMK’nın 213. maddesi gereğince de hükme esas alınamayacağının gözetilmemesi,</p>
+
+<p>b-)Aynı olay nedeniyle yaşı büyük sanıklar …..,….,…,… ve …hakkında açılan İstanbul 10. Ağır Ceza Mahkemesinin 2011/152 Esas, 2013/175 Karar sayılı dosyasının getirtilip incelenmemesi,</p>
+
+<p>c-)Suça sürüklenen çocuğun dosyadaki iletişim tespitlerinin hangi soruşturma kapsamında yapıldığı tespit edilip söz konusu iletişim tespit tutanaklarının içeriklerinin karar yerinde değerlendirilmemesi,</p>
+
+<p>2-)Kabul ve uygulamaya göre de;</p>
+
+<p>a-)Silahlı terör örgütüne üye olma suçundan temel ceza belirlenirken uygulama maddesinin “TCK’nın 314/2. maddesi” olarak gösterilmesi gerekirken “TCK’nın 314/1-2. maddesi” olarak gösterilmesi,</p>
+
+<p>b-)Tehlikeli maddelerin izinsiz olarak bulundurulması suçundan hükmolunan adli para cezasının TCK’nın 52/2. maddesi uyarınca paraya çevrilmesi esnasında yasal imkanı olmayan hürriyeti bağlayıcı cezanın paraya çevrildiğinin belirtilmesi,</p>
+
+<p>3-)Bozma nedenine göre; hükümden sonra 06.03.2014 tarih ve 28933 sayılı Resmi Gazete’de yayımlanarak yürürlüğe giren 6526 sayılı Kanunun 2. maddesiyle değişik 5235 sayılı Kanunun 12. maddesi ile 5395 sayılı Kanunun 26/2. maddesindeki düzenlemeler ve anılan Kanunun geçici 1/3. maddesinin görev ve usule ilişkin hükümlerin gözetilmesinde zorunluluk bulunması,</p>
+
+<p>Bozmayı gerektirmiş, suça sürüklenen çocuk müdafiinin temyiz itirazları bu itibarla yerinde görülmüş olduğundan, bu sebeplerden dolayı hükümlerin BOZULMASINA, 06.03.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 8. CEZA DAİRESİ 
+Esas : 2004/8008 Karar : 2005/11493</strong> Tarih : 5.12.2005</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 213. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Sanığın Önceki İfadesinin Okunması</strong></p>
+  </li>
+</ul>
+
+<p>6136 Sayılı Kanuna aykırılık ve kavgada silah çekme suçlarından sanık İsmet Ateş’in yapılan yargılanması sonunda; Hükümlülüğüne, ertelemeye ve zoralıma dair ( BORNOVA ) 1. Asliye Ceza Mahkemesinden verilen 21.10.2003 gün ve 1170 esas, 1054 karar sayılı hükmün süresi içinde Yargıtay`ca incelenmesi sanık tarafından istenilmiş olduğundan dava evrakı C.Başsavcılığından tebliğname ile 23.6.2004 günü daireye gönderilmekle incelendi.
+Gereği görüşülüp düşünüldü:</p>
+
+<p>Susma hakkını kullanmayan sanığın sorgusu yapılırken, iddianamede açıklanan olaya ilişkin savunmasının alınması yerine, “bu konuda daha önce poliste ifade vermiştim, o ifademin okunmasını isterim” şeklindeki beyanı alınıp, CMK.nun 213. maddesine de aykırı olarak eski savunmasının okunduğunun tutanağa geçirilmesi suretiyle savunma hakkının kısıtlanması ve olayın aydınlanması bakımından müştekiler ile tanıkların olaya ilişkin ayrıntılı anlatımlarının sorulup tespit edilmesi gerekirken, daha önce poliste verdikleri ifadelerin okunması ile yetinilmesi,</p>
+
+<p>Bozmayı gerektirmiş sanığın temyiz itirazları bu itibarla yerinde görülmüş olduğundan sair yönleri incelenmeksizin hükmün bu sebepden dolayı istem gibi ( BOZULMASINA ), oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY CEZA GENEL KURULU
+Esas: 2014/8-166 Karar: 2014/514</strong> Tarih: 25.11.2014</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 213. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Sanığın Önceki İfadesinin Okunması</strong></p>
+  </li>
+</ul>
+
+<p>6136 s. Kanuna aykırılık suçundan sanık H. G.’ın 5271 sayılı CMK’nun 223/2-e maddesi gereğince beraatine ilişkin, Bozdoğan Sulh Ceza Mahkemesince verilen 17.03.2011 gün ve 387-51 sayılı hükmün o yer Cumhuriyet savcısı tarafından temyiz edilmesi üzerine dosyayı inceleyen Yargıtay 8. Ceza Dairesince 22.01.2013 gün ve 18938-2434 sayı ile;,</p>
+
+<p>“Cumhuriyet Başsavcılığınca gecikmesinde sakınca bulunan hal nedeniyle verilen yazılı emir sonucunda sanığın evinde yapılan aramada adli emanete kayıtlı kurusıkıdan çevrilme tabanca ve mermilerin bulunduğu olayda, arama ve el koyma işleminin aynı gün yetkili hakim tarafından yasal süresinde onaylandığı, kurusıkıdan çevrilme tabanca ve 4 adet ateşli silah fişeğinin alınan ekspertiz raporuyla da 6136 s. Kanunun 4 üncü maddesi kapsamında yasak nitelikte olduğunun bildirilmesi karşısında; sanığın atılı suçtan mahkumiyeti yerine yasal olmayan gerekçeyle beraatine karar verilmesi” isabetsizliğinden bozulmasına karar verilmiştir.</p>
+
+<p>Yerel mahkeme ise 02.04.2013 gün ve 63-124 sayı ile;</p>
+
+<p>“… Anayasa’nın 20. maddesine göre aslolan özel hayatın ve aile hayatının gizliliğidir. istisnai hallerde kişilerin bu gizliliklerine devlet tarafından dokunulabilir. Aksi halde bu alan devlet düzeni dışında ve dokunulamaz alandır.</p>
+
+<p>Cumhuriyet Savcılığı’nın mahkememizden olağan şekilde arama talep etmesinin ve mahkemece suç işlendiğine dair makul şüphe içermediğinden bahisle talebin reddinin ertesi günü bu mahkeme kararı yokmuş gibi, gerekçesi açıklanmadan, sadece gecikmesinde sakınca bulunan hal olduğu kelimeleri kullanılarak istisnai yol olan Cumhuriyet Savcılığı kararıyla arama yapılmıştır. Bu nedenle Anayasayla korunan özel hayata usule uygun olmayan şekilde müdahale edilmiştir.</p>
+
+<p>Öncelikle belirtmek gerekir ki, mahkeme kararlarından hukuken memnun kalınmaması halinde kanun yolları işletilmelidir. Bunun aksi yorumla karara rağmen kararın aksi yönde hiçbir işlem yapılmamalıdır. Aksinin düşünülmesi, mahkeme kararlarının Anayasa’da belirtildiği gibi tüm kişi ve kurumları bağlayıcı olma özelliğini kabul etmemek anlamına gelmektedir. Usulen arama hatalı yapılmıştır. Mahkememizin ret kararı 05.11.2010 tarihinde verilmiş iken karardan sonra dosyaya ne zaman konulduğu belli olmayan aynı gün saat 16.15’te ihbarda bulunulduğunu gösteren ihbar tutanağı ve muhtemelen bundan dolayı yapılan sosyal ve ekonomik durum araştırmasına benzeyen araştırma tutanağı girmiştir. Uyap’tan yapılan incelemede ilk arama talebi savcılık katibince 17.03’te oluşturulmuştur. Mahkememiz demek oluyor ki bu ihbar ve araştırma tutanağına rağmen arama kararı vermemiştir. Ya da ihbar ve araştırma tutanağı mahkemeye sunulmadan sadece 04.11.2010 tarihli İlçe Jandarma Komutanlığı’nın soyut iddiayı içeren yazıyla talepte bulunulmuştur.</p>
+
+<p>Mahkememizin bu ret kararının ardından ertesi gün 06.11.2010’da dosyaya başkaca bir bilgi ve belge girmeden Cumhuriyet Savcılığı’nca gecikmesinde sakınca bulunan hal bulunduğundan bahisle arama kararı verilmiştir. Oysa ki Cumhuriyet Savcılığı’nca yapılması gereken, eğer önceden var olmasına rağmen dosyaya eklenmediği için mahkemenin arama kararı vermemesine neden olan ihbar tutanağı vb. bilgiler sonradan kolluk tarafından Savcılığa teslim edilmiş ise bu belgeleri dosyaya ekleyerek yeniden arama talep etmek, sonucuna göre gerekirse itiraz kanun yoluna başvurmak olmalıdır. Eğer ilk reddedilen talep sırasında bu ihbar tutanağı ve araştırma tutanağı mahkemeye sunulmuş idiyse yine karar hukuken yanlış bulunuyorsa itiraz kanun yoluna başvurulmuş olmadır. Bu yapılması gereken usul işlemleri yapılmayıp, gecikmesinde sakınca bulunmayan hal olduğu mahkemeden talepte bulunulmasından da anlaşılan konuda mahkeme kararı alınamadığından dolayı Cumhuriyet Savcılığı’nın kanunda kendisine tanınan yetkiyi kullanması usule açıkça aykırılık oluşturmaktadır.</p>
+
+<p>Mahkememizin ilk verdiği beraat kararındaki Yargıtay Ceza Genel Kurulu’nun içtihadında gecikmesinde sakınca bulunan hal olduğu açıklamasının gerçekten o halin bulunduğunu açıklamadığı ifade edilmiştir. Daha da hatalısı, mahkeme kararıyla yetinmeyen Cumhuriyet Savcılığı’nın kendi kararıyla mahkemenin kararını yok sayarak arama yapmasıdır.</p>
+
+<p>Arama üzerine ihbar tutanağındaki ayrıntılı ihbara rağmen evde uyuşturucu madde bulunmamıştır. Sanığın eski bir silahı ele geçirilmiştir.</p>
+
+<p>CMK’nun 138 inci madde hükmüne göre arama sırasında başka bir suçun işlendiğine dair şüphe uyandıracak bir delil elde edilirse bu delil muhafaza altına alınır ve bu durum derhal Cumhuriyet Savcısı’na bildirilir. Ardından bu muhafaza altına alınan delil usulüne göre el koymanın onanması talebiyle mahkemeye bildirilir. Mahkeme de bu tesadüfi delilin arama konusundan başka bir suç delili olabileceği şüphesi bulunuyorsa el koyma işlemini onaylar. Bu onama işlemi, eğer bulunan eşyanın varlığı dahi suç ise mahkemece zorunlu olarak yapılmaktadır ve soruşturma işlemidir. Zira bu eşya müsadere edilebilecektir. Bulundurulması suç olan eşyanın şüpheliye iadesi düşünülemez.</p>
+
+<p>Anayasa’da ve Ceza Muhakemesi Kanunu’nda aramanın onaylanması usulü bulunmamaktadır. Cumhuriyet Savcılığı, mahkemedeki kanaate göre usulsüz yaptığı aramayı onaya sunmuştur ve bunun yanında tesadüfen elde edilen bir başka suç şüphesini uyandıran delil hakkında yapılan el koymanın onanmasını istemiştir.</p>
+
+<p>Bu iki talep birbirinden bağımsız taleplerdir. İlki usulümüzde olmamakla birlikte mahkemenin de aramanın onaylanması kararı usule uygun bir karar olmamaktadır. İkincisi ise mahkemelerce, eğer uyuşturucu, silah gibi deliller söz konusu ise gerek müsaderesi için gerekse evi aranılan kişiyle ilgili olmayan bir suç delili olması nedeniyle kabul edilmek zorunda olan taleplerdir. Bu ikinci talebi kabul etmek, o aramanın usule uygun yapıldığı anlamına gelmemektedir.</p>
+
+<p>Soruşturma aşamasında mahkeme tarafından olsa dahi yapılan işlemler o işlemlerin soruşturma işlemi olması sonucunu ortadan kaldırmadığı gibi kolluk, Cumhuriyet savcılığı, mahkemeler de soruşturma aşamasında hatalı işlemler yapabilirler. Bu işlemler kovuşturma yargılama yapan mahkemenin bu işlemleri incelemeyeceği, araştırmayacağı, usule riayet edilip edilmediğini değerlendirmeyeceği anlamına gelemez. Az önce değinildiği gibi iddia makamının verdiği hatalı bir arama kararının, yine hatalı şekilde, usulümüzde olmamasına rağmen, mahkemeye onaya sunulması ve mahkemenin de yanlış değerlendirme ile ya da usulen mecbur kaldığını düşünerek bunu kabul etmesi yapılan bu işlemlerin tamamının ya da bir kısmının usulsüz olmadığı sonucunu doğurmaz.</p>
+
+<p>Usul kanunumuzun ayrıntılarına bakıldığında 4. kısımda koruma tedbirleri bulunmaktadır. Koruma tedbirleri yakalama, gözaltı, tutuklama, adli kontrol, arama, el koyma, iletişimin denetlenmesi, gizli soruşturmacı görevlendirilmesi, teknik araçla izleme olarak bölümlere ayrılmıştır. Bu tedbirler kural olarak ceza muhakemesinin soruşturma aşamasında yapılan işlemlerdir ve hakimin dahil olduğu işlemler de mahkeme tarafından verilen hüküm niteliğinde olmayıp, yani mahkeme kararı olmayıp hakim kararlarıdır. Her ne kadar bu tedbirlerle ilgili hakimin verdiği kararlar mahkeme kararı gibi algılansa da hakim de (Sulh Ceza Mahkemesi Hakimi) C. Savcısı gibi soruşturma süjesi olarak karar vermektedir. Nasıl ki, C. Savcısının verdiği kararlar bazı durumlarda hatalı olabiliyorsa talep üzerine hakimin verdiği kararlar da hatalı olabilir ve kesinleşmiş mahkeme hükmü olmadıklarından doğruluğu soruşturma akabinde dava açılmışsa işte o zaman mahkeme tarafından değerlendirilecektir ve usullere riayet edilmemiş ise mahkemece davadaki ve dosyadaki gerekli yerini alacaktır. Örneğin, C. Savcılığı tarafından yapılan el koyma işlemi kanundaki hakim onayına sunulma süreleri geçtikten sonra onaya sunulması ve hakim kararı ile el koyma işleminin süre yönünden reddedilmesi gerekirken hatalı olarak onaylanması halinde gerek C. Savcılığı, gerekse soruşturma hakimi tarafından hukuka uygun olmayan şekilde delil elde edilmiş olacaktır. Mahkememiz de iddianamenin kabulüyle sonlanan soruşturma aşamasında C. Savcısı ve soruşturma işlemi yapan hakim tarafından verilen kararlar sonucu elde edilen delillerin hukuki yollarla elde edilen deliller olup olmadığını incelemiştir. Bunu yapma görevi mahkemeye Türk Milleti adına Anayasa ve kanunlar tarafından tanınmıştır. Bu nedenlerle beraat kararını bozan Yargıtay Dairesi’nin esasen bu noktada hatalı yorumda bulunduğu kanaati oluşmuştur.</p>
+
+<p>Soruşturma aşamasında yapılan işlemlerin, yargılamasız şekilde hükme aktarılması yargılamadan infaz anlamına geleceği gibi mahkemeyi soruşturma sürecinin bir aracı haline getirir. Bu bağlamda olaya yaklaşıldığında usulsüz olduğu sabit olan arama kararı üzerine yapılan aramada bulunan tesadüfi deliller niteliğindeki eşya hakkındaki (CMK.m.138) elkoyma işleminin onanmasının arama işlemine de şamil kılınması düşünülmemelidir. Zira değinilen nitelikteki arama işlemi usule göre onaylanamayan işlemlerdendir. Bu nedenle bu işlemin akibeti kovuşturma aşamasında mahkemece değerlendirilecektir…” gerekçesi ile ilk hükümde direnilmesine karar vermiştir.</p>
+
+<p>Bu hükmün de o yer Cumhuriyet savcısı tarafından temyiz edilmesi üzerine, Yargıtay Cumhuriyet Başsavcılığının “bozma” istekli 14.03.2014 gün ve 230254 sayılı tebliğnamesiyle Yargıtay Birinci Başkanlığına gönderilen dosya, Ceza Genel Kurulunca değerlendirilmiş ve açıklanan gerekçelerle karara bağlanmıştır.</p>
+
+<p>TÜRK MİLLETİ ADINA</p>
+
+<p>CEZA GENEL KURULU KARARI</p>
+
+<p>Sanığın 6136 s. Kanuna aykırılık suçundan beraatine karar verilen olayda, Özel Daireyle yerel mahkeme arasında oluşan ve Ceza Genel Kurulunca çözümlenmesi gereken uyuşmazlıklar;</p>
+
+<p>1- Cumhuriyet savcısının yazılı arama emri uyarınca sanığın evinde yapılan adli aramanın hukuka uygun olup olmadığı,</p>
+
+<p>2- Hukuka uygun olmadığının belirlenmesi halinde, aramada elde edilen maddi delil dışında dosyada yer alan diğer delillerin somut olayda mahkumiyet için yeterli olup olmadığı,</p>
+
+<p>noktalarında toplanmaktadır.</p>
+
+<p>İncelenen dosya kapsamından;</p>
+
+<p>Bozdoğan Jandarma Komutanlığınca sanık H. G.’ın evinde esrar bulundurduğu yönünde ihbar olduğunun belirtilmesi üzerine Cumhuriyet Savcılığının arama kararı verilmesi yönündeki talebiyle evrakın gönderildiği Bozdoğan Sulh Ceza Mahkemesince 05.11.2010 tarihinde Adli ve Önleme Aramaları Yönetmeliğinin 5,, 6, 7 nci maddelerine göre makul şüpheyi içermediği gerekçesiyle arama, muhafaza altına alma ve elkoyma talebinin reddine karar verildiği,</p>
+
+<p>Cumhuriyet savcısı tarafından bu karara karşı itiraz kanun yoluna başvurulmaksızın, bir gün sonra 06.11.2010 tarihinde uyuşturucu veya uyarıcı madde imal ve ticareti suçları nedeniyle gecikmesinde sakınca bulunduğundan bahisle yazılı arama emri verildiği, arama emrinin ekinde sanıkla ilgili ihbar tutanağıyla ekonomik ve sosyal durum araştırma tutanağının yer aldığı,</p>
+
+<p>05.11.2010 tarihli araştırma tutanağında; sanığın maddi durumunun geçmiş yıllara nazaran zayıf olduğu, kendi halinde fidan satarak ve balıkçılık yaparak geçimini sağladığı, fakat son 6-7 aydır durumunda gözle görülür değişmeler olduğu, oğlu Yılmaz Gülhan isimli şahsa Fort Transit marka kapalı kasa kamyonet aldığı, oğlunun balıkçılık yapmaya başladığı, giyim kuşamının eskisine nazaran daha temiz ve yeni olduğu, ayrıca haftanın 3-4 gecesi alkollü yerlerde içki içip yemek yediği, böylelikle hal ve hareketlerinde değişmeler fark edildiğinin belirtildiği,</p>
+
+<p>İhbar tutanağında; 05.11.2010 günü saat 16.00 sıralarında görevlileri arayan bir erkek şahsın Kemer Köyünden Fidancı Hasan ismindeki şahsın eski evinin girişinde sağ tarafta bulunan döşeme tahtalarının altında çuval içinde ve toprağa gömülü bir şekilde esrar bulundurduğu ve adı geçenden bir şahsın 250 gram esrar aldığını bildirmesi üzerine telefon görüşmesinin sonlandırıldığı bilgilerinin yer aldığı,</p>
+
+<p>Sulh Ceza Mahkemesince bir gün önce arama talebi reddedilmiş olduğu halde, 05.11.2010 tarihli ihbar ve araştırma tutanakları esas alınarak Cumhuriyet savcısınca verilen yazılı arama emri uyarınca sanığın evinde arama yapıldığı,</p>
+
+<p>Olay yeri görgü ve tespit tutanağında, 05.11.2010 günü saat 16.00 sıralarında Jandarma Komutanlığını arayan erkek bir şahsın H. G.’ın evinde kubar esrar olduğu bilgisini vermesi üzerine, 06.11.2010 günü Cumhuriyet Başsavcılığının 2010/990 soruşturma sayılı yazılı arama emrine dayanılarak saat 12.00 de sanığın evine gidildiği, sanığın zeytin toplamaya gitmiş olduğu ve evinde 24 yaşındaki oğlu Yılmaz Gülhan’ın bulunduğu, oğlunun arama yapabileceklerini beyan etmesi üzerine yapılan aramada esrar ya da başka bir uyuşturucu veya uyarıcı maddeye rastlanmadığı, 6136 s. Kanuna göre yasak niteliği haiz kurusıkıdan çevrilme tabanca ve şarjörü ile 25 adet ses fişeği ve 4 adet MKE marka fişeğin ele geçtiği açıklamalarının bulunduğu,</p>
+
+<p>Aynı gün Bozdoğan Sulh Ceza Mahkemesince 2010/169 Değişik iş sayıyla arama ve elkoyma işlemlerinin onaylanmasına karar verildiği,</p>
+
+<p>Sanığın 6136 s. Kanunun 13/3 üncü maddesi uyarınca cezalandırılması talebiyle açılan kamu davasının yargılaması sonucunda, Yerel Mahkemece arama kararının usulüne uygun bulunmadığı kabul edilerek, hukuka uygun delil mevcut olmadığından bahisle beraat kararı verildiği,</p>
+
+<p>Anlaşılmaktadır.</p>
+
+<p>1953 doğumlu ve sabıkasız olan sanık soruşturma aşamasında; arama sonucunda ele geçen tabancanın babasından kaldığını, düğünlerde kullanıldığını ve gerçek olmadığını söylerken, yargılama aşamasında; bir komşusunun aralarındaki husumet nedeniyle kendisiyle ilgili ihbarda bulunmuş olabileceğini, gereksiz yere şikayet edilmesi sonucunda evinde esrar bulundurma iddiasıyla arama yapıldığını, babasından kalma av tüfeğiyle oğlu tarafından satın alınan ve bozuk olan kurusıkıdan çevrilme tabancanın bulunduğunu, hayatı boyunca hiç esrar kullanmadığını ve evinde de bulundurmadığını savunmuştur.</p>
+
+<p>1-) Cumhuriyet savcısının yazılı arama emri uyarınca sanığın evinde yapılan adli aramanın hukuka uygun olup olmadığı:</p>
+
+<p>Esas itibarıyla soruşturma ve kovuşturma işlemleri, gerçekleştirildiği tarihte yürürlükte bulunan usul kurallarına uygun olmalıdır. Bu bakımdan, somut olaydaki aramanın hukuka uygun olup olmadığı hususu, işlemin gerçekleştirildiği tarihte yürürlükte bulunan hükümler gözetilmek suretiyle belirlenmelidir.</p>
+
+<p>Türkiye Cumhuriyeti Anayasası’nın “Cumhuriyetin nitelikleri” başlıklı 2 nci maddesinde; “Türkiye Cumhuriyeti, toplumun huzuru, milli dayanışma ve adalet anlayışı içinde, insan haklarına saygılı, Atatürk milliyetçiliğine bağlı, başlangıçta belirtilen temel ilkelere dayanan, demokratik, laik ve sosyal bir hukuk Devletidir”,</p>
+
+<p>“Temel hak ve hürriyetlerin niteliği” başlıklı 12 nci maddesinde; “Herkes, kişiliğine bağlı, dokunulmaz, devredilmez, vazgeçilmez temel hak ve hürriyetlere sahiptir”,</p>
+
+<p>“Temel hak ve hürriyetlerin sınırlanması” başlıklı 13 üncü maddesinde; “Temel hak ve hürriyetler, özlerine dokunulmaksızın yalnızca Anayasanın ilgili maddelerinde belirtilen sebeplere bağlı olarak ve ancak kanunla sınırlanabilir. Bu sınırlamalar, Anayasanın sözüne ve ruhuna, demokratik toplum düzeninin ve laik Cumhuriyetin gereklerine ve ölçülülük ilkesine aykırı olamaz”,</p>
+
+<p>“Özel Hayatın Gizliliği” başlıklı 20. maddesinde</p>
+
+<p>“Herkes, özel hayatına ve aile hayatına saygı gösterilmesini isteme hakkına sahiptir. Özel hayatın ve aile hayatının gizliliğine dokunulamaz.</p>
+
+<p>Milli güvenlik, kamu düzeni, suç işlenmesinin önlenmesi, genel sağlık ve genel ahlakın korunması veya başkalarının hak ve özgürlüklerinin korunması sebeplerinden biri veya birkaçına bağlı olarak, usulüne göre verilmiş hakim kararı olmadıkça; yine bu sebeplere bağlı olarak gecikmesinde sakınca bulunan hallerde de kanunla yetkili kılınmış merciin yazılı emri bulunmadıkça; kimsenin üstü, özel kağıtları ve eşyası aranamaz ve bunlara el konulamaz. Yetkili merciin kararı yirmidört saat içinde görevli hakimin onayına sunulur. Hakim, kararını el koymadan itibaren kırksekiz saat içinde açıklar; aksi halde, el koyma kendiliğinden kalkar.</p>
+
+<p>Herkes, kendisiyle ilgili kişisel verilerin korunmasını isteme hakkına sahiptir. Bu hak; kişinin kendisiyle ilgili kişisel veriler hakkında bilgilendirilme, bu verilere erişme, bunların düzeltilmesini veya silinmesini talep etme ve amaçları doğrultusunda kullanılıp kullanılmadığını öğrenmeyi de kapsar. Kişisel veriler, ancak kanunda öngörülen hallerde veya kişinin açık rızasıyla işlenebilir. Kişisel verilerin korunmasına ilişkin esas ve usuller kanunla düzenlenir”,</p>
+
+<p>“Konut dokunulmazlığı” başlıklı 21 inci maddesinde de; “Kimsenin konutuna dokunulamaz. Milli güvenlik, kamu düzeni, suç işlenmesinin önlenmesi, genel sağlık ve genel ahlakın korunması veya başkalarının hak ve özgürlüklerinin korunması sebeplerinden biri veya birkaçına bağlı olarak usulüne göre verilmiş hakim kararı olmadıkça; yine bu sebeplere bağlı olarak gecikmesinde sakınca bulunan hallerde de kanunla yetkili kılınmış merciin yazılı emri bulunmadıkça; kimsenin konutuna girilemez, arama yapılamaz ve buradaki eşyaya el konulamaz. Yetkili merciin kararı yirmidört saat içinde görevli hakimin onayına sunulur. Hakim, kararını el koymadan itibaren kırksekiz saat içinde açıklar; aksi halde, el koyma kendiliğinden kalkar”,</p>
+
+<p>“Suç ve cezalara ilişkin esaslar” başlıklı 38 inci maddesinin 6 ncı fıkras 6 ncı fıkrasında ise; “Kanuna aykırı olarak elde edilmiş bulgular, delil olarak kabul edilemez”,</p>
+
+<p>Hükümlerine yer verilmiştir.</p>
+
+<p>Anayasa’nın 90. maddesineAnayasa’nın 90. maddesine 07.5.2004 tarih ve 5170 s. Kanunla yapılan değişiklikle “Usulüne göre yürürlüğe konulmuş temel hak ve özgürlüklere ilişkin milletlerarası antlaşmalarla kanunların aynı konuda farklı hükümler içermesi nedeniyle çıkabilecek uyuşmazlıklarda milletlerarası antlaşma hükümleri esas alınır” cümlesi eklendiğinden, aramaya ilişkin olup ülkemiz yönünden de geçerliliği bulunan uluslararası sözleşmelerin de gözden geçirilmesi gerekmektedir.</p>
+
+<p>Avrupa İnsan Hakları Sözleşmesinin “Özel hayatın ve aile hayatının korunması” başlıklı 8 inci maddesinde</p>
+
+<p>1.Her şahıs hususi ve ailevi hayatına, meskenine ve muhaberatına hürmet edilmesi hakkına maliktir.</p>
+
+<p>2.Bu hakların kullanılmasına resmi bir makamın müdahalesi demokratik bir cemiyette ancak milli güvenlik, amme emniyeti, memleketin iktisadi refahı, nizamın muhafazası, suçların önlenmesi, sağlığın veya ahlakın ve başkasının hak ve hürriyetlerinin korunması için zaruri bulunduğu derecede ve kanunla derpiş edilmesi şartıyla vuku bulabilir”,</p>
+
+<p>Birleşmiş Milletler Medeni ve Siyasi Haklar Sözleşmesinin “Mahremiyet hakkı” başlıklı 17 nci maddesinde</p>
+
+<p>“1. Hiç kimsenin özel ve aile yaşamına, konutuna veya haberleşmesine keyfi veya hukuka aykırı olarak müdahale edilemez; onuru veya itibarı hukuka aykırı saldırılara maruz bırakılamaz.</p>
+
+<p>2.Herkes bu tür saldırılarak veya müdahalelere karşı hukuk tarafından korunma hakkına sahiptir”,</p>
+
+<p>Birleşmiş Milletler İnsan Hakları Evrensel Bildirgesinin 12 nci maddesinde ise;</p>
+
+<p>“Hiç kimse özel hayatı, ailesi meskeni veya yazışması hususlarında keyfi karışmalara şeref ve şöhretine karşı tecavüzlere maruz kalamaz. Herkesin bu karışma ve tecavüzlere karşı kanunla korunmaya hakkı vardır” hükümleri yer almaktadır.</p>
+
+<p>Bu düzenlemelerle herkesin özel - aile hayatı, konutu ve haberleşmesi koruma altına alınarak, bu haklara getirilecek sınırlamaların sebep ve ölçülerinin de kanunla düzenleneceği belirtilmiştir.</p>
+
+<p>Ceza muhakemesi, Anayasa ve sözleşmelerle koruma altına alınan yukarıda yer verilen hak ve hürriyetlere müdahaleyi haklı kılan bir amaç olarak kabul edilmektedir. Ancak ceza muhakemesinde maddi gerçek araştırılırken Anayasa ve Sözleşmedeki ilkeler ışığında öngörülmüş hukuk kurallarına uygun davranılacak, kanunla yapılacak sınırlamalar Anayasanın sözüne ve ruhuna, demokratik toplum düzeninin gereklerine ve ölçülülük ilkesine aykırılık oluşturulmayacaktır.</p>
+
+<p>Bu genel açıklamalardan sonra uyuşmazlık konusu muhakeme işlemi olan arama kavramı üzerinde durulması ve adli aramaya ilişkin hükümlerin gözden geçirilmesinde yarar bulunmaktadır.</p>
+
+<p>Gizli, saklı olan bir şeyin ortaya çıkarılması için yürütülen bir faaliyet olan arama, Türk Dil Kurumu Türkçe Sözlüğünde, “arama işi, taharri” ve “sanığın yakalanması ve suç belgelerinin elde edilmesi için bir kimsenin evinde, işyerinde, üzerinde veya eşyasında yapılan araştırma işlemi” şeklinde tanımlanmıştır. (Türkçe Sözlük, Türk Dil Kurumu Yayınları, Ankara, 2009, s.113)</p>
+
+<p>Hukukumuzda da arama genel olarak; suç delillerinin elde edilmesi, suçların işlenmesinin önüne geçilmesi, şüpheli, sanık ya da hükümlünün yakalanması amacıyla belirli yerlerde, şüpheli, sanık ya da üçüncü kişinin konutunda, işyerinde, ona ait diğer yerlerde, eşyasında ya da üzerinde yapılan araştırma işlemi olarak tanımlanmaktadır.</p>
+
+<p>Amacına göre ise; suçların önlenmesine yönelik yapılan ve suç şüphesi altında olmayan kişilerle ilgili olan önleme araması, ceza muhakemesinin gayesine erişilmesi maksadıyla suç delillerinin elde edilmesi ya da suçlunun tespitine yönelik olarak suç işlediğinden şüphelenilen kişinin ya da üçüncü bir kişinin planlı bir şekilde aranması olan adli arama olmak üzere iki farklı kategoride mütalaa edilmektedir.</p>
+
+<p>5271 sayılı Ceza Muhakemesi Kanununun Birinci Kitap, “Koruma Tedbirleri” başlıklı Dördüncü Kısımda, “Arama ve elkoyma” başlıklı Dördüncü Bölümde düzenlenen “Şüpheli veya sanıkla ilgili arama” başlıklı 116 ncı maddesi arama işleminin yapıldığı tarihte; “Yakalanabileceği veya suç delillerinin elde edilebileceği hususunda makul şüphe varsa; şüphelinin veya sanığın üstü, eşyası, konutu, işyeri veya ona ait diğer yerler aranabilir”,</p>
+
+<p>“Arama kararı” başlıklı 119 uncu maddesi ise; “(1) Hakim kararı üzerine veya gecikmesinde sakınca bulunan hallerde Cumhuriyet savcısının, Cumhuriyet savcısına ulaşılamadığı hallerde ise kolluk amirinin yazılı emriyle kolluk görevlileri arama yapabilirler. Ancak, konutta, işyerinde ve kamuya açık olmayan kapalı alanlarda arama, hakim kararı veya gecikmesinde sakınca bulunan hallerde Cumhuriyet savcısının yazılı emriyle yapılabilir. Kolluk amirinin yazılı emriyle yapılan arama sonuçları Cumhuriyet Başsavcılığına derhal bildirilir.</p>
+
+<p>(2) Arama karar veya emrinde;</p>
+
+<p>a) Aramanın nedenini oluşturan fiil,</p>
+
+<p>b) Aranılacak kişi, aramanın yapılacağı konut veya diğer yerin adresi ya da eşya,</p>
+
+<p>c) Karar veya emrin geçerli olacağı zaman süresi,</p>
+
+<p>Açıkça gösterilir.</p>
+
+<p>(3) Arama tutanağına işlemi yapanların açık kimlikleri yazılır.</p>
+
+<p>(4) Cumhuriyet savcısı hazır olmaksızın konut, işyeri veya diğer kapalı yerlerde arama yapabilmek için o yer ihtiyar heyetinden veya komşulardan iki kişi bulundurulur.</p>
+
+<p>(5) Askeri mahallerde yapılacak arama, Cumhuriyet savcısının istem ve katılımıyla askeri makamlar tarafından yerine getirilir” hükümlerini içermektedir.</p>
+
+<p>Aynı kanunun Aynı kanunun 138 inci maddesinde de; arama sırasında yapılmakta olan soruşturma ya da kovuşturmayla ilgisi olmayan ancak bir diğer suçun işlendiği şüphesi uyandırabilecek bir delil elde edilirse, tesadüfen elde edilen bu delilin koruma altına alınarak durumun derhal Cumhuriyet savcılığına bildirileceği hüküm altına alınmıştır.</p>
+
+<p>Adli ve Önleme Aramaları Yönetmeliğinin 5 inci maddesinde adli arama; “bir suç işlemek veya buna iştirak veyahut yataklık etmek makul şüphesi altında bulunan kimsenin, saklananın, şüphelinin, sanığın veya hükümlünün yakalan­ması ve suçun iz, eser, emare veya delillerinin elde edilmesi için bir kimsenin, özel hayatının ve aile hayatının gizliliğinin sınırlandırılarak konutunda, etrafı çevrili diğer mahallerinde, üzerinde, özel kağıtlarında, eşyasında, aracında Ceza Muhakemeleri Usulü Kanunuyla diğer kanunlara göre yapılan araştırma işlemidir” şeklinde tanımlanmış, “Adli aramalara karar ve emir verme yetkisi” başlıklı 7 nci maddesinde ise; “Adli aramaya karar vermek yetkisi hakimindir. Kolluk, arama kararı alınması için makul şüphe sebeplerini belirten ayrıntılı ve gerekçeli bir rapor hazırlar ve Cumhuriyet savcısına başvurur.</p>
+
+<p>Gecikmesinde sakınca bulunan hallerde Cumhuriyet savcısının yazılı emri veya bu emrin alınamadığı hallerde ise kolluk amirinin yazılı emri bulunmadıkça; kimsenin üstü, özel kağıtları, eşyası ve aracı aranamaz, konutuna girilemez ve buradaki eşyaya el konulamaz.</p>
+
+<p>Cumhuriyet başsavcılıklarınca, aramayla ilgili kararları vermek üzere, yirmidört saat süreyle bir nöbetçi Cumhuriyet savcısı görevlendirilir.</p>
+
+<p>Yetkili merciin yazılı emri yirmidört saat içinde görevli hakimin onayına sunulur.</p>
+
+<p>Hakim, kararını el koymadan itibaren kırksekiz saat içinde açıklar; aksi halde, el koyma kendiliğinden kalkar” hükmüne yer verilmiştir.</p>
+
+<p>Ceza muhakemesinde suç ve suçlunun belirlenmesi ve delillerin toplanmasına yönelik olarak başvurulan bir koruma tedbiri olan adli arama kural olarak hakim kararıyla mümkündür. Cumhuriyet savcılarıyla onun yardımcısı sıfatıyla emirlerini yerine getirmekle görevli kolluğun arama emri yetkisi istisnai olup, bu yetkinin doğması için bir ön şart olarak, gecikmesinde sakınca bulunan halin gerçekleşmesi gerekir. Gecikmede sakınca bulunduğundan söz edebilmek için de, ilgilinin hakime başvurup karar aldıktan sonra tedbiri uygulamak istemesi halinde o tedbirin uygulanamaz duruma düşmesi ya da uygulanması halinde dahi beklenen faydayı vermemesi söz konusu olmalıdır.</p>
+
+<p>Görüldüğü gibi, temel hak ve özgürlükleri ihlal etme keyfiyeti nedeniyle adli aramaya karar verme yetkisi esasen hakime ait olup, bu durum hukuk devleti olmanın bir gereğidir. Hakim arama işleminin hem kanuna hem de amacına uygunluğunu gözeterek karar verecektir. Bununla birlikte istisnai olarak gecikmesinde sakınca bulunan hallerde hakim kararı olmaksızın Cumhuriyet savcısının, Cumhuriyet savcısına ulaşılamadığı hallerde ise kolluk amirinin yazılı emriyle kolluk görevlilerinin arama yapabilecekleri, fakat konutta, işyerinde ve kamuya açık olmayan kapalı alanlarda aramanın, hakim kararı veya gecikmesinde sakınca bulunan hallerde Cumhuriyet savcısının yazılı emriyle yapılabileceği kabul edilmiştir.</p>
+
+<p>Adli ve Önleme Aramaları Yönetmeliğinin 4 üncü maddesinde gecikmesinde sakınca bulunan hal adli aramalar bakımından; “derhal işlem yapılmadığı takdirde suçun iz, eser, emare ve delillerinin kaybolması veya şüphelinin kaçması veya kimliğinin tespit edilememesi ihtimalinin ortaya çıkması ve gerektiğinde hakimden karar almak için vakit bulunmaması halini”, önleme aramaları bakımından ise; “derhal işlem yapılmadığı takdirde, milli güvenlik ve kamu düzeninin, genel sağlık ve genel ahlakın veya başkalarının hak ve hürriyetlerinin korunmasının tehlikeye girmesi veya zarar görmesi, suç işlenmesinin önlenememesi, taşınması veya bulundurulması yasak olan her türlü silah, patlayıcı madde veya eşyanın tespit edilememesi ihtimalinin ortaya çıkması ve gerektiğinde hakimden karar almak için vakit bulunmaması halini ifade eder” şeklinde tanımlanmıştır.</p>
+
+<p>Gecikmede sakınca bulunmasından, delillerin karartılması endişesi, şüpheli ya da sanığın kaçma tehlikesi veya aramanın amaçları açısından bir zarar doğması riskinin bulunması nedeniyle, hakime gidilmekle meydana gelebilecek zaman kaybının aramayı güçleştirmesi ya da imkansız hale getirmesi anlaşılmalıdır. Başka bir ifadeyle, bu halde hakimden karar alınmasının beklenemeyeceği acele bir durum söz konusu olmalıdır.</p>
+
+<p>Bu konuda öğretide; “Gecikmesinde sakınca bulunmayan bir halde Cumhuriyet savcısının emriyle arama yapılması hukuka aykırıdır” (Nur Centel - Hamide Zafer, Ceza Muhakemesi Hukuku, 11. Bası, Beta Yayınevi, İstanbul, 2014, s.390); “Arama kural olarak hakim kararıyla yapılabilir… Ancak kanunumuz kademeli olarak başka mercilere de bu yetkiyi vermiştir. Buna göre gecikmesinde sakınca bulunan hallerde savcının yazılı emri ile de yapılabilir” (Yener Ünver - Hakan Hakeri, Ceza Muhakemesi Hukuku, 3. Bası, Adalet Yayınevi, Ankara, 2010, s.385,); “Gecikmesinde sakıncalı durum, derhal işlem yapılmadığı takdirde, suçun delillerinin ortadan kaybolması olasılığının ortaya çıkması halini ifade etmektedir” (Osman Yaşar, Ceza Muhakemesi Kanunu, 4. Bası, Seçkin Yayınevi, Ankara, 2009, s.908); “Hakimden karar almadan evde adli arama ve elkoyma yapılamaz. Hakimden karar almaya vakit yoksa Cumhuriyet savcısının yazılı emri istenir” (Nurullah Kunter - Feridun Yenisey - Ayşe Nuhoğlu, Ceza Muhakemesi Hukuku, 16. Bası, Beta Yayınevi, İstanbul, 2007, s.1002); “Gecikmede tehlike umulan hallerde savcı ve kolluğa arama yapabilme yetkisi tanıyan hüküm, her ne kadar belli bir ihtiyacı karşılasa da son derece dikkatli ve titiz kullanılmalıdır. Aksi halde yasanın getirdiği bu düzenleme hukuk devleti ilkesini ihlal edebilir. Zira arama bir yargı kararından önce temel hak ve hürriyetleri askıya alan bir koruma tedbiridir. Gecikmede sakınca terimi son derece geniş ve müphem ifadesiyle her zaman kötüye kullanmaya elverişlidir. Esasen her arama için gecikmede tehlike olduğu söylenebilir. Bu bakımdan hakimlere bu tür kararların denetlenmesi bakımından büyük iş düşmektedir” (Veli Özer Özbek, Ceza Muhakemesi Hukukunda Koruma Tedbiri Olarak Arama, Seçkin Yayınevi, Ankara, 1999, s. 74-75) şeklinde görüşler ileri sürülmüştür.</p>
+
+<p>Görüldüğü üzere, arama işlemi derhal yapılmadığında sonradan yapılması imkansız veya anlamsız hale gelecekse ya da işlemle hedeflenen amaçlara ulaşılması fazlasıyla zorlaşacaksa gecikmesinde sakınca bulunan halin varlığı kabul edilmelidir. Şüphelinin saklandığı yerin belli olmasına karşın kısa süre içinde oradan ayrılacağına ilişkin ek bilgi edinilmesi ya da delil araştırması yapılacak yerde delillerin yok edilmeye başlanacağına ilişkin duyum alınması gibi gecikmesinde sakınca bulunan hallerde, Cumhuriyet savcısı tarafından verilen arama emri hukuka uygun iken, aksi halde, yani gecikmesinde sakınca bulunan halin söz konusu olmadığı durumlarda ise Cumhuriyet savcısının arama emri vermesine ilişkin şartlar oluşmadığından, arama emri hukuka aykırı olacağı gibi arama sonucunda elde edilen delil ya da deliller de hukuka aykırı yöntemlerle elde edilmiş delil olacaktır. Bu şekildeki arama işleminden sonra ele geçen ve ispat aracı olarak yararlı görülen değerlere ilişkin elkoyma işleminin sulh ceza hakimi tarafından onaylanması da arama işlemini geriye dönük olarak hukuka uygun hale getirmeyecektir.</p>
+
+<p>Öte yandan, ceza muhakemesi hukukumuzda delillerle ilgili geçerli ilke, “delil serbestisi” olduğundan, herşey delil olarak kabul edilebilmektedir. 5271 sayılı CMK’nun 217 nci maddesinde; “1) Hakim, kararını ancak duruşmaya getirilmiş ve huzurunda tartışılmış delillere dayandırabilir. Bu deliller hakimin vicdani kanaatiyle serbestçe takdir edilir.</p>
+
+<p>(2) Yüklenen suç, hukuka uygun bir şekilde elde edilmiş her türlü delille ispat edilebilir” şeklindeki hükme yer verilerek, toplanan delillerin hakim tarafından serbestçe ve vicdani kanaate göre tekdir edileceği belirtilmiştir. Ancak hem “delil serbestisi” hem de “delillerin hakimlerin kanaatine göre takdir edilmesi” ilkelerinin belli sınırları bulunmaktadır. Bunlardan biri, mahkemenin, ancak hukukun izin verdiği yöntemlerle elde edilen delilleri dikkate alabilecek olmasıdır.</p>
+
+<p>Anılan kanunun Anılan kanunun 206 ncı maddesinin 2 nci fıkrasının (a) bendinde; ortaya konulmak istenen delilin kanuna aykırı olarak elde edilmiş olması halinde reddolunacağı ifade edilerek, hukuka uygun olarak elde edilmeyen delillerin ispat aracı olarak kabul edilmeyeceği ve hükme esas alınmayacağı açıklanmıştır. Kaldı ki, aynı kanunun 230. maddenin birinci fıkrası uyarınca, mahkumiyet hükmünün gerekçesinde, delillerin tartışılması ve değerlendirilmesi, hükme esas alınan ve reddedilen delillerin belirtilmesi; bu kapsamda dosya içerisinde bulunan ve hukuka aykırı yöntemlerle elde edilen delillerin ayrıca ve açıkça gösterilmesi de zorunludur.</p>
+
+<p>Bu açıklamalar ışığında uyuşmazlık konusu değerlendirildiğinde;</p>
+
+<p>Suç tarihinde sanığın esrar bulundurduğu yönünde ihbar olduğu belirtilerek arama talebinde bulunulması üzerine sulh ceza mahkemesince makul şüphe bulunmadığından bahisle talebin reddine karar verilmesine rağmen, bu karara karşı kanun yoluna müracaat edilmeksizin ertesi gün Cumhuriyet savcısı tarafından yazılı arama emri verilmesi üzerine sanığın evinde yapılan arama sonucunda ihbara konu uyuşturucu maddeye rastlanmayan, ancak kuru sıkıdan çevrilme tabanca ve fişekleri ele geçirilen olayda; sanığın esrar bulundurduğu yönünde gelen ihbar üzerine Cumhuriyet savcısı tarafından verilen arama emrinde uyuşturucu madde imal ve ticareti suçlaması nedeniyle gecikmesinde sakınca bulunduğu belirtilmiş ise de; ihbar içeriği ya da araştırma tutanağına göre, şüphelinin kısa bir süre içinde ikametinden ayrılacağı, bulundurduğu iddia edilen esrarı elinden çıkaracağı ya da yok edeceği yönünde ek bilgi edinilmediği gibi, gecikmesinde sakınca bulunan halin kabulü için hakime başvurulup arama kararı talep edilmesi halinde delillerin kaybolacağı veya bu tedbirin uygulanamaz hale geleceği hususunda başkaca somut olgular da ortaya konulmamış ve ilçe merkezindeki hakimden karar alınması halinde ne gibi telafisi mümkün olmayan sonuçların ortaya çıkacağını gösteren ve aciliyeti haklı kılan herhangi bir halden söz edilmemiştir.</p>
+
+<p>Esrar bulundurduğu yönünde gelen ihbar üzerine, hakim kararı alınmaksızın yapılan aramada ele geçen suça konu kurusıkıdan çevrilme tabancaya elkonulmuş ise de, arama emrinin verilmesinden bir gün önce arama kararı verilmesi talebinin sulh ceza hakimi tarafından reddedildiği ve bu karara karşı kanun yoluna başvurulmadığı gibi, gerçekleştirilen arama için hakim kararı alınmasının ya da hakim tarafından verilen ret kararına karşı kanun yoluna başvurulmasının gecikmeye neden olacağı ve bunun da telafisi mümkün olmayan sonuçlar doğuracağını düşündürecek bir belge ve bilgi de dosyada mevcut değildir. Dolayısıyla, Cumhuriyet savcısının arama konusundaki istisnai yetkisinin doğabilmesi için gereken kanuni şartlar oluşmadan, verilen arama emriyle buna dayalı olarak gerçekleştirilen arama işleminin hukuka aykırı olduğu ve arama sonucu elde edilen suça konu tabanca ve eklerinin de hukuka aykırı yöntemlerle elde edilmiş delil olduğunun kabulünde zorunluluk bulunmaktadır.</p>
+
+<p>Bu itibarla; sanığın evinde hukuka aykırı olarak gerçekleştirilen arama işlemi sonucu elde edilen maddi delil buna ilişkin düzenlenen tutanağın, Yerel Mahkemece hükme esas alınmaması isabetlidir.</p>
+
+<p>Bu konuda çoğunluk görüşüne katılmayan bir Genel Kurul Üyesi; “Cumhuriyet savcısı tarafından gecikmesinde sakınca bulunduğundan bahisle verilen yazılı arama emri uyarınca yapılan arama işleminin hukuka uygun olduğu” düşüncesiyle karşı oy kullanmıştır.</p>
+
+<p>2-) Hukuka aykırı olarak yapıldığı kabul edilen aramada elde edilen maddi delil dışındaki diğer delillerin somut olayda mahkumiyet için yeterli olup olmadığına gelince;</p>
+
+<p>Amacı isnada konu maddi gerçeği ortaya çıkarmak olan ceza muhakemesinde, somut olaya münhasır delillerden biri de “beyan” delilidir. Beyan, tanığa, sanığa veya sanığın dışındaki taraflardan birine ait olabilir. Sanığın isnat bakımından önemli görülen olayları beyanıyla kabul etmesi şeklinde tanımlanabilecek olan ikrar; eylem hakkında en çok bilgisi bulunanın beyanı olması, soruşturmayı esaslı surette kolaylaştırması, özgür iradeyle verilip gerçeğe de uygun olduğunun saptanması halinde hakimin vicdani kanaatinin oluşumunda olumlu katkısının bulunması itibariyle önemli bir sübut vasıtasıdır.</p>
+
+<p>1412 sayılı Ceza Muhakemeleri Usulü Kanununda öngörülen sistemde, ikrarın delil oluşturması bakımından, hakim huzurunda olup olmaması arasında fark öngörülmüş ve bunlardan sadece hakim huzurunda yapılanına delil değeri tanınmıştır.</p>
+
+<p>1 Haziran 2005 tarihinde yürürlüğe giren 5271 sayılı Ceza Muhakemesi Kanununun 213 üncü maddesinde ise; sanığın hakim veya mahkeme huzurunda yaptığı açıklamalarla Cumhuriyet savcıları tarafından alınan ifadelerin duruşmada okunabilmesi kabul edilerek, savcı tarafından alınan ifadelere de delil olma değeri tanınmıştır. Buna karşılık, şüphelinin kollukça alınan ifadesine ilişkin tutanağın duruşmada okunabilmesi için, kollukta ifade alındığı sırada müdafiin hazır bulunması şartı aranmıştır. Görüldüğü gibi, her iki kanuni düzenlemede de, hakim önündeki ikrarın delil değeri kabul edilmiştir.</p>
+
+<p>Ancak, vicdani kanıt sisteminin geçerli bulunduğu ceza muhakemesi hukukumuzda, özgür iradeye dayalı olan ikrarın da, dosyada varlığını koruyan diğer tüm deliller gibi hakim tarafından serbestçe takdir edilip değerlendirilmesi gerekecektir.</p>
+
+<p>Gerçekten de, bir kimsenin suçlu olmadığı halde kendisini suçlu sayması veya bir başkasının suçunu kabullenmesi mümkündür. O halde, ikrarın hangi aşamada gerçekleştiği ve özgür iradeye dayalı olup olmadığı, ikrarda bulunanın beyanın ciddiyetini ve bundan doğacak sonuçları bilip bilmediği, ikrarın başkaca deliller veya emarelerle desteklenip desteklenmediği, hayatın olağan akışına uygun düşüp düşmediği, şüpheden arınmışlığını ve belirliliğini zayıflatacak biçimde ikrardan dönülüp dönülmediği gibi hususlar da gözönünde bulundurulmak suretiyle, somut olaydaki ikrarın delil değeri ortaya konulmalı ve ispat sorunu bu şekilde çözümlenmelidir.</p>
+
+<p>Bu açıklamalar ışığında uyuşmazlık konusu değerlendirildiğinde;</p>
+
+<p>Hukuka uygun olmayan arama işlemi sonucunda ele geçen delillerin hükme esas alınamayacağının belirlendiği olayda; 6136 s. Kanuna aykırılık suçunda, ruhsatsız tabanca suçun maddi konusu olup, arama işleminin hukuka aykırı yapılması nedeniyle ele geçirilen ruhsatsız tabancanın hukuka aykırı yöntemle elde edilmiş olmasından dolayı hükme esas alınmayacağının kabulü karşısında, başkaca maddi delillerle desteklenmeyen ikrara dayanılarak mahkumiyet hükmü kurulması usul ve kanuna aykırıdır. Zira söz konusu tabanca elde edilip atışa elverişliliği ve kanuna aykırılığı uzman bilirkişi raporuyla belirlenmeden 6136 s. Kanuna aykırılık suçunun oluştuğu kabul edilemeyecektir.</p>
+
+<p>Kaldı ki evinde suç konusu tabanca ile av tüfeği ele geçen sanığın, soruşturma aşamasında tabancanın babasından kaldığını belirtmesine karşın, kovuşturma aşamasında av tüfeğinin babasından kaldığını, ancak tabancanın aynı evde birlikte yaşadığı oğlu tarafından satın alındığını savunarak önceki beyanından döndüğü sabit olup, ruhsatsız tabanca bulundurma suçuna ilişkin olarak sanığın istikrarlı bir kabulünün bulunduğu da söylenemeyecektir.</p>
+
+<p>Bu nedenle, dosyadaki hukuka aykırı yöntemlerle elde edilen delillerin değerlendirme dışı tutulması halinde, kovuşturma aşamasında döndüğü, başkaca maddi delille desteklenmeyen soruşturma aşamasındaki ikrara dayalı olarak sanığın mahkumiyetine karar verilmesine imkan bulunmamaktadır.</p>
+
+<p>Bu itibarla, sanığın beraatine ilişkin yerel mahkeme direnme hükmü isabetli olup onanmasına karar verilmelidir.</p>
+
+<p>Çoğunluk görüşüne katılmayan Genel Kurul Üyesi O. Koçak; “Sayın çoğunluk arama kararının hukuka uygun olmadığı gerekçesiyle yerel mahkemenin beraat kararını oyçokluğuyla onamış ise de verilen onama kararına katılmıyorum.</p>
+
+<p>Öncelikle arama kararının reddine dair karar 05.11.2010 cuma günü verilmiş, önceki arama talebinden farklı olarak bir ihbar tutanağı ekiyle Cumhuriyet Savcısının tatil günü olan 06.11.2010 tarihinde verdiği arama kararına istinaden bir arama yapılmış, aramanın reddine karar veren Hakim Mehmet Kara tarafından arama kararının onaylanmasına karar verilmiş yapılan arama sonucu da sanığın evinde ruhsatsız silah bulunmuş, sanık hem hazırlıkta, hem de bozma sonrası mahkemede tabancanın babasından kaldığını söylemiştir. Hazırlıkta alınan ifadenin müdafii huzurunda alınmaması nedeniyle geçerli olmasa dahi bozma sonrası sanık silahın babasında kaldığını söyleyerek suçunu ikrar etmiştir. Dolayısıyla yeni bir durum ortaya çıktığından dosyanın dairesine gönderilmesi gerekirdi. Kaldı ki sanığın hazırlıktaki ikrarı da hukuka aykırı değildir. Zira, müdafii hazır olmaksızın kollukça alınan ifadenin mahkeme huzurunda doğrulanmadıkça hükme esas alınmayacağına dair 148/4 üncü fıkra müdafii zorunluluğu olan haller içindir. Somut olayda 150. maddesinde belirtilen şartlar mevcut olmadığından sanığa müdafii tayini zorunlu değildir. Müdafii zorunluluğu olmayan hallerde sanık talebi olmadığı müddetçe yasal hakkı hatırlatılarak müdafii olmaksızın ifadesi alınır. Olayımızda da hazırlıkta sanığın yasal hakları hatırlatılarak ifadesi alınmıştır.</p>
+
+<p>İzah edilen nedenlerle beraate ilişkin direnme kararının bozulması gerektiği düşüncesiyle çoğunluğun onama kararına katılmıyorum” düşüncesiyle,</p>
+
+<p>Çoğunluk görüşüne katılmayan iki Genel Kurul Üyesi de; “Sanığın ikrarının mahkumiyetine yeterli delil olması nedeniyle yerel mahkeme hükmünün bozulmasına karar verilmesi gerektiği” düşüncesiyle karşı oy kullanmışlardır.</p>
+
+<p>Sonuç: Açıklanan nedenlerle;</p>
+
+<p>1- Usul ve kanuna uygun bulunan Bozdoğan Sulh Ceza Mahkemesinin 02.04.2013 gün ve 63-124 sayılı direnme hükmünün onanmasına,</p>
+
+<p>2- Dosyanın, mahalline gönderilmesi amacıyla Yargıtay Cumhuriyet Başsavcılığına tevdiine, 25.11.2014 tarihinde yapılan müzakerede her iki uyuşmazlık yönüyle de oyçokluğuyla karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY CEZA GENEL KURULU
+Esas : 2014/11-106 Karar : 2014/414</strong> Tarih : 30.09.2014</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 213. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Sanığın Önceki İfadesinin Okunması</strong></p>
+  </li>
+</ul>
+
+<p>Ticareti terk suçundan sanık T.. A..’ın İcra İflas Kanununun 337/a ve TCK`nun 50/1. maddeleri uyarınca hapis cezasından çevrilmiş 1.800 Lira adli para cezası ile cezalandırılmasına ilişkin, Ankara 4. İcra Ceza Mahkemesince verilen 03.11.2011 gün ve 140-319 sayılı hükmün, sanık müdafii tarafından temyiz edilmesi üzerine dosyayı inceleyen Yargıtay 11. Ceza Dairesince 04.10.2012 gün ve 17467-16572 sayı ile;</p>
+
+<p>“…Ticaret şirketi yetkilisi olan sanığa isnat edilen suçun oluşabilmesi için tacirin fiili olarak ticareti terk etmesi ve bu durumu onbeş günlük süre içerisinde kayıtlı olduğu ticaret siciline bildirmemesi ve bütün aktif ve pasifi ile alacaklılarının isim ve adreslerini içeren bir mal beyannamesi vermemesinin gerekmesi nedeniyle, borçlu ticaret şirketinin ticareti terk edip etmediği yönünde zabıta araştırması yaptırılarak ve kayıtlı olduğu vergi dairesi müdürlüğünden mükellefiyetinin devam edip etmediği sorularak, sonucuna göre sanığın hukuki durumunun takdir edilmesi gerekirken, eksik inceleme ile yazılı şekilde mahkumiyet kararı verilmesi” isabetsizliğinden bozulmasına karar verilmiştir.</p>
+
+<p>Ankara 4. İcra Ceza Mahkemesi ise 30.05.2013 gün ve 238-149 sayı ile;</p>
+
+<p>“İcra dosyasında çıkartılan ödeme emri tebligatına verilen açıklamada, şirketin tanınmadığı` tesbit edilmiştir.</p>
+
+<p>Sanık samimi ve inandırıcı şekildeki savunmasında, şirketin faaliyetine son verdiğini, ticareti terk eylemini ticaret siciline bildirmediğini, vergi kaydını sildirmediği ve şirketin hiç bir yerde faaliyette bulunmadığını, şirketin faaliyetine son verdikten sonra kendisinin de Kuşadası`nda ücretli olarak çalıştığını beyan etmiştir.</p>
+
+<p>Şirketin faaliyette bulunduğu ya da kanuna uygun olarak ticareti terk ettiğine dair hiç bir iddia olmadığı gibi mahkememizde de hiç bir şüphe kalmamıştır.</p>
+
+<p>Bozma gerekçesinde ileri sürülen hususların sanığın açık beyanları karşısında suçun subutu açısından gerekli olmadığı” gerekçesiyle direnerek ilk hükümde olduğu gibi sanığın mahkûmiyetine karar vermiştir.</p>
+
+<p>Bu hükmün de sanık müdafii tarafından temyiz edilmesi üzerine Yargıtay Cumhuriyet Başsavcılığının 21.02.2014 gün ve 14293 sayılı bozma istekli tebliğnamesiyle Yargıtay Birinci Başkanlığına gönderilen dosya, Ceza Genel Kurulunca değerlendirilmiş ve açıklanan gerekçeyle karara bağlanmıştır.</p>
+
+<p>Özel Daire ile yerel mahkeme arasında oluşan ve çözümlenmesi gereken uyuşmazlık; ticareti terk suçundan sanık hakkındaki mahkûmiyet hükmünün eksik araştırma ile verilip verilmediğinin belirlenmesine ilişkindir.</p>
+
+<p>İncelenen dosya kapsamından;</p>
+
+<p>Müşteki tarafından sanık ve temsilcisi olduğu şirket aleyhine 60.000 Lira bedelli bir ilamsız icra takibi ile 15.741 Lira bedelli kambiyo senetlerine dayalı haciz yoluyla icra takibine başlanıldığı,</p>
+
+<p>Kambiyo senetlerine dayalı haciz yoluyla icra takibi sırasında şirket tarafından ticaret siciline bildirilmiş olan “57. Sokak No:28/2 Emek/Çankaya” adresine ödeme emri için gönderilen tebligatın “şirketin tanınmadığı aynı yerde ikamet eden başka birisinin beyanından anlaşıldığı” şeklinde bir açıklama ile iade edildiği,</p>
+
+<p>İcra takipleri devam ederken, bu takip konusu işlemden bağımsız şekilde aynı müşteki tarafından aynı sanık hakkında İcra İflas Kanununun 333/a maddesine muhalefet nedeniyle açılan davanın aynı mahkemenin 2011/62 esas numaralı dosyasında görüldüğü,</p>
+
+<p>Sanığın söz konusu 2011/62 esas sayılı dosyada “Ben daha önce Ankara Bahçelievler 8. Cadde No:99’da borçlu şirketin yetkilisi olarak şirket faaliyetine devam etmekte iken şirket işleri kötüye gittiği ve borca batık olduğu için fiilen faaliyetine son verdim. Ancak vergi borçlarından dolayı faaliyete son verdiğimi ticaret siciline bildirmedim, şirketin şu anda halen herhangi bir adresi ve faaliyeti yoktur, ben kendim Kuşadası`nda başka bir işyerinde ücretli olarak çalışmaktayım. Vergi borçlarımdan dolayı şirket vergi kaydını da henüz sildirmedim” şeklinde savunmada bulunduğu,</p>
+
+<p>2011/62 esas sayılı dosyadaki savunmanın yapıldığı imzalı duruşma tutanağının dosyaya müşteki vekili tarafından dava dilekçesi ekinde ibraz edildiği, sanığın savunmasının hangi şirket hakkında yapıldığına ilişkin bir bilgi bulunmadığı gibi bu hususun mahkemece de araştırılmadığı,</p>
+
+<p>Sanığın, 2011/62 esas sayılı dosyadaki savunmasına konu ismi belirsiz şirketin adresinin “Ankara…… Cadde No:99” olduğunu beyan ettiği halde, uyuşmazlığa konu B.. Otomotiv San. Tic. Şirketinin ticaret sicilindeki adresinin ise “57. sok. No:28/2 ../Ankara” olduğu,</p>
+
+<p>Talimat mahkemesince meşruhatlı davetiye ile celp edildiği halde ulaşılamayan sanığın savunmasının da alınamadığı yargılama sırasında yerel mahkemece, söz konusu şirketin ticareti fiilen terk edip etmediğine ilişkin zabıta araştırması yaptırılmadığı ve vergi mükellefliğinin devam edip etmediğinin belirlenmediği,</p>
+
+<p>Anlaşılmaktadır.</p>
+
+<p>Ceza Genel Kurulunun 01.02.2011 gün ve 226-10 sayılı kararında da vurgulandığı gibi İcra ve İflas Kanununda kendine özgü bir yargılama sistemi öngörülmüş olması, bu kanunda düzenlenen suçlara ilişkin yapılan yargılama işlemlerinin ceza muhakemesi faaliyeti olmadığı anlamına gelmemektedir. Bu kanunda aksine sınırlayıcı hüküm bulunmadığı hallerde ceza muhakemesinin “usul kurallarının öngördüğü ilkeler doğrultusunda, somut gerçeğin her türlü şüpheden uzak bir biçimde kesin olarak belirlenmesi” amacı ve “adaletin tam olarak gerçekleşmesi için, öne sürülen ve olaya ışık tutabilecek nitelikteki tüm yasal delilin araştırılıp tartışılması” zorunluluğu, İİK’da düzenlenen suçlara ilişkin yapılan yargılamalarda da aynen geçerlidir. Bu kapsamda, amacı isnada konu maddi gerçeği ortaya çıkarmak olan ceza muhakemesinde, somut olaya münhasır delillerden biri de “beyan” delilidir. Beyan, tanığa, sanığa veya sanığın dışındaki taraflardan birine ait olabilir. Sanığın isnat bakımından önemli görülen olayları beyanıyla kabul etmesi şeklinde tanımlanabilecek olan ikrar; eylem hakkında en çok bilgisi bulunanın beyanı olması, soruşturmayı esaslı surette kolaylaştırması, özgür iradeyle verilip gerçeğe de uygun olduğunun tespiti halinde hâkimin vicdani kanaatinin oluşumunda olumlu katkısının bulunması itibariyle önemli bir sübut vasıtasıdır.</p>
+
+<p>1412 sayılı Ceza Muhakemeleri Usulü Kanununda öngörülen sistemde, ikrarın delil oluşturması bakımından, hakim huzurunda olup olmaması arasında fark öngörülmüş ve bunlardan sadece hakim huzurunda yapılanına delil değeri tanınmıştır. (CMUK`nun 247. maddesi)</p>
+
+<p>1 Haziran 2005 tarihinde yürürlüğe giren 5271 sayılı Ceza Muhakemesi Kanununun 213. maddesinde ise; sanığın hakim veya mahkeme huzurunda yaptığı açıklamalar ile Cumhuriyet savcıları tarafından alınan ifadelerin duruşmada okunabilmesi kabul edilerek, savcı tarafından alınan ifadelere de delil olma değeri tanınmıştır. Buna karşılık, şüphelinin kollukça alınan ifadesine ilişkin tutanağın duruşmada okunabilmesi için, kollukta ifade alındığı sırada müdafiin hazır bulunması şartı aranmıştır. Görüldüğü gibi, her iki yasal düzenlemede de, hâkim önündeki ikrarın delil değeri kabul edilmiştir.</p>
+
+<p>Ancak, vicdani kanıt sisteminin geçerli bulunduğu ceza muhakemesi hukukumuzda, özgür iradeye dayalı olan ikrarın da, dosyada varlığını koruyan diğer tüm deliller gibi hâkim tarafından serbestçe takdir edilip değerlendirilmesi gerekecektir. Gerçekten de, bir kimsenin suçlu olmadığı halde kendisini suçlu sayması veya bir başkasının suçunu kabullenmesi mümkündür. O halde, ikrarın hangi aşamada gerçekleştiği ve özgür iradeye dayalı olup olmadığı, ikrarda bulunanın beyanın ciddiyetini ve bundan doğacak sonuçları bilip bilmediği, ikrarın başkaca deliller veya emarelerle desteklenip desteklenmediği, hayatın olağan akışına uygun düşüp düşmediği, şüpheden arınmışlığını ve belirliliğini zayıflatacak biçimde ikrardan dönülüp dönülmediği gibi hususlar da gözönünde bulundurulmak suretiyle, somut olaydaki ikrarın delil değeri ortaya konulmalı ve ispat sorunu bu şekilde çözümlenmelidir.</p>
+
+<p>Uyuşmazlık konusu bu açıklamalar ışığında değerlendirildiğinde;</p>
+
+<p>Yargılama sırasında hazır edilemediği için savunması alınamayan sanık, aynı mahkemenin başka bir dosyasında alınan savunmasında ticareti terk ettiği yönünde ikrarda bulunmuş ise de, bu ikrarının davaya konu olan şirket ile ilgili olup olmadığı dosya kapsamından anlaşılamadığı gibi, sanığın bu ikrarının ulaşılabilecek diğer delillerle de desteklenip adaletin tam olarak tecelli etmesinin sağlanması gerektiğinden, sanığın ortağı ve temsilcisi olduğu şirketin ticareti gerçekten terk edip etmediği yönünde zabıta araştırması yaptırılıp, vergi mükellefliğinin devam edip etmediği de belirlenerek sonucuna göre sanığın hukuki durumunun takdir ve tayini gerekirken, eksik araştırmaya dayalı olarak mahkûmiyet hükmü kurulması isabetli değildir.</p>
+
+<p>Bu itibarla, usul ve kanuna aykırı bir biçimde, eksik araştırmaya dayalı olarak verilen direnme hükmünün bozulmasına karar verilmelidir.</p>
+
+<p>SONUÇ:</p>
+
+<p>Açıklanan nedenlerle;</p>
+
+<p>1- Ankara 4. İcra Ceza Mahkemesinin 30.05.2013 gün ve 238-149 sayılı hükmünün, eksik araştırmaya dayalı olarak mahkûmiyet kararı verilmesi isabetsizliğinden ( BOZULMASINA ),</p>
+
+<p>2- Dosyanın, mahalline gönderilebilmesi amacıyla Yargıtay Cumhuriyet Başsavcılığına ( TEVDİİNE ),  yapılan müzakerede oybirliğiyle karar verildi.</p>
+
+<hr>
+
+
+</div></div></main>
+</div>
+
+<footer>
+<section>
+<div class="contact-info">
+
+<div class="adres">
+
+<div class="telefon-wrapper">
+
+
+</div>
+</div>
+</section>
+
+</div>
+
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+"vars": {
+"account": "UA-58342443-1"
+},
+"triggers": {
+"trackPageview": {
+"on": "visible",
+"request": "pageview"
+}
+}
+}
+</script>
+</amp-analytics>
+
+</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="../../index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="../../dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="../../ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="../../knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="../../search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/slideToggle.min.js"></script>
+    <script src="../js/internet-status.js"></script>
+    <script src="../js/tiny-slider.js"></script>
+    <script src="../js/baguetteBox.min.js"></script>
+    <script src="../js/countdown.js"></script>
+    <script src="../js/rangeslider.min.js"></script>
+    <script src="../js/vanilla-dataTables.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/magic-grid.min.js"></script>
+    <script src="../js/dark-rtl.js"></script>
+    <script src="../js/active.js"></script>
+    <!-- PWA -->
+    <script src="../js/pwa.js"></script>
+  </body>
+</html>

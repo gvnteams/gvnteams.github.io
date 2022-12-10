@@ -1,0 +1,894 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tiny-slider.css">
+    <link rel="stylesheet" href="../css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="../css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="tck-search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+               <div class="page-content-wrapper py-0">
+        </div>
+      </div>
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<h2 id="adlî-kolluğun-olay-yerinde-aldığı-tedbirlere-uyulmaması-halinde-yetkisi">Adlî Kolluğun Olay Yerinde Aldığı Tedbirlere Uyulmaması Halinde Yetkisi</h2>
+
+<h2 id="cmk-madde-168">CMK Madde 168</h2>
+
+<p>(1) Olay yerinde görevine ait işlemlere başlayan adlî kolluk görevlisi, bunların yapılmasına engel olan veya yetkisi içinde aldığı tedbirlere aykırı davranan kişileri, işlemler sonuçlanıncaya kadar ve gerektiğinde zor kullanarak bundan men eder.</p>
+
+<hr>
+
+<ul>
+  <li><a href="../5271-sayili-ceza-muhakemesi-kanunu-cmk.html"><strong>5271 sayılı CMK (Ceza Muhakemesi Kanunu) Tam Metin</strong></a></li>
+</ul>
+
+<hr>
+
+<amp-img src="../tokmak-yargitay-kararlari-1280x720.png" alt="CMK Madde 168  Adlî Kolluğun Olay Yerinde Aldığı Tedbirlere Uyulmaması Halinde Yetkisi" width="1280" height="720" layout="responsive">
+            </amp-img>
+<h2 id="cmk-madde-168-gerekçesi">CMK Madde 168 Gerekçesi</h2>
+
+<p>Madde, 164 ncı maddenin belirttiği görevin icrasında ortaya çıkabilecek (engelleyecek) olaylar karşısında kolluğun yetkisini belirtmektedir. Olay yerinde kolluk, görevini yaparken giriştiği işlemleri kasten ihlâl eden veya yetkili olarak aldığı tedbirlere aykırı davranan kişileri gerektiğinde kuvvet de kullanarak zorla bu eylemlerinden men edecektir. Bu men ediş, işlemler sonuçlanıncaya kadar devam edebilecektir.</p>
+
+<p>1412 sayılı Kanunun 157 nci maddesinde bu gibi hâllerde gözaltına alma yetkisinin uygulanması söz konusudur. Tasarı bunun yerine işlemleri engelleyen eylemleri zor kullanarak giderme yetkisini ikâme etmiş ve böylece hem soruşturmanın etkinliği ve hem de kişi özgürlüğü ilkelerine yer verilmiştir. Maddenin yasakladığı eylemler nedeniyle koşulları varsa Türk Ceza Kanununun 526 ncı maddesi uygulanabilecektir.</p>
+
+<hr>
+
+<h2 id="cmk-168-adlî-kolluğun-olay-yerinde-aldığı-tedbirlere-uyulmaması-halinde-yetkisi--emsal-yargıtay-kararları">CMK 168 (Adlî Kolluğun Olay Yerinde Aldığı Tedbirlere Uyulmaması Halinde Yetkisi)  Emsal Yargıtay Kararları</h2>
+
+<hr>
+
+<p><strong>YARGITAY CEZA GENEL KURULU
+Esas : 2014/709 Karar : 2015/139</strong> Tarih : 5.05.2015</p>
+
+<ul>
+  <li>
+    <p><strong>CMK 168. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Adlî Kolluğun Olay Yerinde Aldığı Tedbirlere Uyulmaması Halinde Yetkisi</strong></p>
+  </li>
+</ul>
+
+<p>Sanığın 30.06.2009 tarihinde Sarıyer 2. Asliye Ceza Mahkemesinde iddia makamını temsil etmekle görevlendirildiği, aynı gün saat 09.30 da duruşmalara gelmediğinin asliye ceza mahkemesi hakimi tarafından Cumhuriyet Başsavcılığı görevini vekaleten yürüten Fazıl Arslanalp’e iletildiği, adı geçen tarafından da yazı işleri müdürü olan A…., sanık Cumhuriyet savcısının telefonla çağrılması ve durumun bildirilmesi hususunda talimat verildiği, mağdure A… sanığı telefonla aradığı, ulaşılamıyor uyarısı gelmesi nedeniyle bir süre beklediği, ulaşılabildiğine ilişin mesaj geldikten sonra tekrar telefon açtığı, kısaca durumu anlatınca, sanığın; sen beni ne hakla arıyorsun, beni sen aramayacaksın, sabah sabah senin sesini duymak zorunda mıyım, neden arıyorsun şeklinde yüksek sesle azarladığı, mağdurenin telefonu kapattığı, görüşmeyi bildirmek üzere savcı Fazıl Arslanalp’in odasına gittiği, bir süre sonra sanığın geldiği, Fazıl Arslanalp’in odasının kapısında karşılaştığı yazı işleri müdürü A…; beni neden aradın diye bağırdığı, mağdur A…Savcı bey aramamı söyledi deyince, sanığın; Sen emir köpeği misin? Neden arıyorsun şeklinde hakaret hami tutum sergileyip daha sonra odasına geçen mağdurun arkasından giderek; Senin çirkin suratını görmek istemiyorum, kapat kapını deyip oda kapısını hızla çarparak kendi odasına geçtiği,</p>
+
+<p>Cumhuriyet savcısı Fazıl Arslanalp, yazı işleri müdürü A….ve zabıt katibi H… tarafından düzenlenen 30.06.2009 tarihli tutanağa göre, sanık A.. C..’nun şikâyetçi A….’a; Sen emir köpeği misin, neden arıyorsun, sen beni aramayacaksın, Senin çirkin suratını görmek istemiyorum, kapat kapını` şeklinde söylediğinin belirlendiği,</p>
+
+<p>Anlaşılmaktadır.</p>
+
+<p>Tanık N…..; O gün mahkemeye müstemir yetkim bulunmamasına rağmen geçici görevle çıkmıştım. Savcı Aslı hanımın görevlendirilmiş olduğu bana söylendi. Ben 09.30 da duruşmalara başlamak için gittiğimde Savcı hanım yoktu. Bunun üzerine mübaşirle haber gönderdim. Adliyede yoktu. Bir saat kadar bekledim, Başsavcılığa durumu bildirdim…`,</p>
+
+<p>Tanık Fazlı A…; O gün Başsavcılığa vekalet ediyordum. Daha bir gün öncesinden söz konusu 2. Asliye Ceza Mahkemesi için savcı hanımın görevlendirilmesi için yazı yazdım ve tebliğ ettim. Ancak ertesi sabah mesai başladığında duruşmanın başladığı saatte duruşma savcısının olmadığından duruşmaya başlanmadığını söylediler. Savcılık yazı işleri müdürü müşteki A…. Aslı Hanıma telefon etmesini, nerede olduğunu öğrenmesini söyledim. Ancak bana aradıklarını telefonun kapalı olduğunu söylediler. Aslı Hanıma ulaşılamadığından 2. Asliye Ceza Mahkemesi duruşmasına çıkmak üzere Hamdi Koç isimli savcımızı görevlendirdim. Ayrıca Aslı Hanımın durumundan şüphelenerek müdüre hanıma aramaya devam etmesini söyledim. Sonunda A….Hanım kendisine ulaşmış, ancak savcı Aslı Hanım, A….. beni niye rahatsız ediyorsunuz diyerek aramasından rahatsız olduğunu bildiren cümleler sarf etmiş, 10-15 dakika sonra savcı hanım adliyeye geldi… Benim yanımda A….gören Aslı hanım; Sen emir köpeği misin gibi hakaret eder sözler kullandı. Daha sonra odasına gitti. Odasından cübbesini alıp mahkemeye gidiyordu…. A….. Hanıma hitaben bağırarak herkesin duyacağı şekilde o kapıyı kapat, senin çirkin suratını görmek istemiyorum, bu kapı kapalı duracak gibi sözler sarfedip A…..Hanımın kapısını çarparak kapattı… Bu olayla ilgili o zaman tutanak tuttuk `,</p>
+
+<p>Şeklinde beyanda bulunmuşlar, mağdure A….. soruşturma aşamasında tutanak içeriğini tekrar ettiğini, Cumhuriyet savcısı A.. C..’nun kendisine, sen emir köpeği misin, senin çirkin suratını görmek istemiyorum, bu kapı kapalı duraracak` şeklindeki sözlerle hakaret ettiğini bildirmiştir.</p>
+
+<p>Sanık A.. C..; …A….. söylediğim iddia olunan hiçbir söz tarafımdan söylenmemiştir. Bunlar bana zarar verme eylemlerinin bir uzantısıdır, yazılı savunmamda da belirttiğim gibi şahıs tarafından sıkı bir takibe alındığım için kendisine karşı açık vermem söz konusu değildir, bu konudaki savcı Fazıl Arslanalp’in ifadeleri gerçeği yansıtmamaktadır, tanıklığını kabul etmiyorum` şeklinde savunmada bulunmuştur.</p>
+
+<p>5237 sayılı TCK’nun Hakaret başlıklı 125. maddesinde;</p>
+
+<p>`1- Bir kimseye onur, şeref ve saygınlığını rencide edebilecek nitelikte somut bir fiil veya olgu isnat edenveya sövmek suretiyle bir kimsenin onur, şeref ve saygınlığına saldıran kişi, üç aydan iki yıla kadar hapis veya adli para cezası ile cezalandırılır.</p>
+
+<p>2- Fiilin, mağduru muhatap alan sesli, yazılı veya görüntülü bir iletiyle işlenmesi hâlinde, yukarıdaki fıkrada belirtilen cezaya hükmolunur.</p>
+
+<p>3- Hakaret suçunun;</p>
+
+<p>a) Kamu görevlisine karşı görevinden dolayı,</p>
+
+<p>b)Dini, siyasi, sosyal, felsefi inanç, düşünce ve kanaatlerini açıklamasından, değiştirmesinden, yaymaya çalışmasından, mensup olduğu dinin emir ve yasaklarına uygun davranmasından dolayı,</p>
+
+<p>c) Kişinin mensup bulunduğu dine göre kutsal sayılan değerlerden bahisle,</p>
+
+<p>İşlenmesi halinde, cezanın alt sınırı bir yıldan az olamaz…`,</p>
+
+<p>Anılan Kanunun 131/1. maddesinde ise;</p>
+
+<p>Kamu görevlisine karşı görevinden dolayı işlenen hariç; hakaret suçunun soruşturulması ve kovuşturulması, mağdurun şikâyetine bağlıdır şeklinde düzenlemeler yer almaktadır.</p>
+
+<p>Görüldüğü üzere; TCK`nun 125. maddesinin birinci fıkrasında hakaret suçunun temel şekli, üçüncü fıkrasında ise nitelikli halleri düzenlenmiş, TCK’nun 131/1. maddesinde kamu görevlisine karşı görevinden dolayı hakaret dışında kalan hakaret suçlarının şikâyete tabi olduğu açıkça ifade edilmiştir.</p>
+
+<p>Kamu görevlisine karşı görevinden dolayı yapılan hakaret suçuna ilişkin 5237 sayılı TCK’ndaki düzenleme, 765 sayılı TCK’ndan farklı olup, 765 sayılı Kanun uygulamasında memur kavramına yer verilerek, memura görev sırasında herhangi bir nedenle hakaret edilmesi hali dahi nitelikli hal olarak düzenlenmiş iken, 5237 sayılı TCK`nda memur kavramını da içerecek şekilde “kamu görevlisi” kavramına yer verilerek, yalnızca kamu görevlisine görevinden dolayı hakaret edilmesi nitelikli hal olarak kabul edilmiştir. Görev sırasında, ancak görevinden dolayı olmayan hakaretler ise, 125. maddenin 1. fıkrasında düzenlenen basit hakaret olarak kabul edilerek, soruşturulması ve kovuşturulması da mağdurun şikâyetine bağlı tutulmuştur.</p>
+
+<p>Görevinden dolayı hakaretin kabulü için de, yapılan kamu görevi ile hakaret eylemi arasında nedensellik bağının bulunması gerekmektedir. Hakim her somut olayda nedensellik bağının bulunup bulunmadığını araştırarak, sonucuna göre, eylemin, suçun basit haline mi yoksa nitelikli haline mi uyduğunu tespit edecektir. Bu tespit yapılırken, hakaret eylemine muhatap olan kamu görevlisinin faile karşı doğrudan veya dolaylı görev yapması şartı aranmayacaktır. Zira, hakaret doğrudan görevle ilgili olabileceği gibi, görevin yerine getiriliş yöntemi ya da sonuçları ile ilgili de olabilecektir.</p>
+
+<p>Yargıtay Ceza Genel Kurulunun 30.11.1992 gün ve 303-320, 23.09.2008 gün ve 180-205, 28.06.2011 gün ve 246-144 ile ilk derece sıfatıyla verdiği 02.03.2012 gün ve 1-1 sayılı kararlarında da aynı esas kabul edilerek, hakaret suçunun görev dolayısıyla işlenmesinde aranacak hususun, hukuka uygun bir surette yapılan görevin hakaret nedeni oluşturması olduğu vurgulanmış, bir kamu görevine karşı duyulan düşmanlık nedeni ile görevi ifa eden görevliye yönelik bir hakarette de o görevle suç arasında nedensellik bağı bulunduğu kabul edilmiştir.</p>
+
+<p>Öte yandan, Cumhuriyet Başsavcılıkları ile Adli Yargı İlk Derece Ceza Mahkemeleri Yazı İşleri Hizmetlerinin Yürütülmesine Dair Yönetmeliğin Yazı işleri hizmetlerinin yürütülmesi başlıklı 6. maddesinin 2. fıkrasında; hizmetlerin verimli ve düzenli bir şekilde yürütülmesi için her türlü tedbiri alma ile mevzuattan kaynaklanan veya Cumhuriyet savcısı ya da hâkim tarafından verilen diğer görevleri yapma, yazı işleri müdürünün görevleri arasında sayılmıştır.</p>
+
+<p>Bu açıklamalar ışığında uyuşmazlık konusu değerlendirildiğinde;</p>
+
+<p>Sanık Cumhuriyet savcısının yazı işleri müdürü olan mağdure Akide Ermehan’a, sen emir köpeği misin, senin çirkin suratını görmek istemiyorum` şeklinde sözler söylediği 30.06.2009 tarihli tutanak kapsamı, mağdure ve tanık beyanlarından anlaşıldığından, sanığın üzerine atılı eylemin sabit olduğu, onur, şeref ve saygınlığı rencide eder nitelikte gerçekleşen bu eylemin 5237 sayılı TCK’nun 125. maddesinde düzenlenen hakaret suçunu oluşturduğu görülmektedir.</p>
+
+<p>Sarıyer 2. Asliye Ceza Mahkemesinde iddia makamını temsil etmekle görevli Cumhuriyet savcısı olan sanığın, suç tarihinde adliyeye gelmemesi nedeniyle söz konusu mahkemenin duruşmasına bir saat kadar süre ile başlanamadığı, durumun Sarıyer Cumhuriyet Başsavcılığı görevini vekaleten yürüten Cumhuriyet savcısı Fazıl Alparslan’a iletilmesi üzerine adı geçen tarafından yazı işleri müdürü mağdure Akide Ermehan`a görevli Cumhuriyet savcısına telefonla durumun hatırlatılması hususunda talimat verildiği, mağdure tarafından sanık Cumhuriyet savcısının telefonla arandığı ve sanığın mağdurenin telefonla aramasına öfkelenmesi nedeniyle suç oluşturan sözleri söylediği anlaşıldığından, eylem ile ifa edilen kamu görevi arasında nedensellik bağının bulunduğu ve hakaret suçunun kamu görevlisine karşı görevinden dolayı işlenmesine ilişkin nitelikli halin gerçekleştiği kabul edilmelidir.</p>
+
+<p>Bu itibarla, sanığın kamu görevlisine görevinden dolayı hakaret suçundan mahkûmiyetine ilişkin Özel Daire kararı isabetlidir.</p>
+
+<p>Çoğunluk görüşüne katılmayan Genel Kurul Üyeleri H. Erol ve Ş. İste`nin karşı oy düşüncelerine aşağıda yer verilmiştir.</p>
+
+<p>Çoğunluk görüşüne katılmayan dört Genel Kurul Üyesi de; hakaret suçunun kamu görevlisine karşı görevinden dolayı işlenmesine ilişkin nitelikli hal gerçekleşmediğinden hükmün bozulması gerektiği` düşüncesiyle karşı oy kullanmışlardır.</p>
+
+<p>2- Sanık A.. C.. hakkında 14.04.2009 ve 17.04.2009 tarihlerinde gerçekleştirilen eylemler ile tüm sanıklar hakkında 06.07.2009 günlü eylemler nedeniyle görevi kötüye kullanma suçundan kurulan mahkûmiyet hükümlerinin incelenmesi:</p>
+
+<p>5237 sayılı Türk Ceza Kanununun ikinci kitabının Millete ve devlete karşı suçlar ve son hükümler’e yer veren dördüncü kısmının Kamu idaresinin güvenilirliğine ve işleyişine karşı suçlar başlıklı birinci bölümünde Görevi kötüye kullanma` suçu 257. maddesinde;</p>
+
+<p>`(1) Kanunda ayrıca suç olarak tanımlanan hâller dışında, görevinin gereklerine aykırı hareket etmek suretiyle, kişilerin mağduriyetine veya kamunun zararına neden olan ya da kişilere haksız bir kazanç sağlayan kamu görevlisi, bir yıldan üç yıla kadar hapis cezası ile cezalandırılır.</p>
+
+<p>(2) Kanunda ayrıca suç olarak tanımlanan hâller dışında, görevinin gereklerini yapmakta ihmal veya gecikme göstererek, kişilerin mağduriyetine veya kamunun zararına neden olan ya da kişilere haksız bir kazanç sağlayan kamu görevlisi, altı aydan iki yıla kadar hapis cezası ile cezalandırılır.</p>
+
+<p>(3) İrtikâp suçunu oluşturmadığı takdirde, görevinin gereklerine uygun davranması için veya bu nedenle kişilerden kendisine veya bir başkasına çıkar sağlayan kamu görevlisi, birinci fıkra hükmüne göre cezalandırılır şeklinde düzenlenmişken, 19.12.2010 tarihinde yürürlüğe giren 6086 sayılı Kanunun birinci maddesi ile birinci ve ikinci fıkralarında yer alan kazanç ibareleri menfaat, birinci fıkrasında yer alan bir yıldan üç yıla kadar ibaresi altı aydan iki yıla kadar, ikinci fıkrasında yer alan altı aydan iki yıla kadar ibaresi üç aydan bir yıla kadar ve üçüncü fıkrasında yer alan birinci fıkra hükmüne göre ibaresi bir yıldan üç yıla kadar hapis ve beşbin güne kadar adli para cezası ile` biçiminde değiştirilmek suretiyle,</p>
+
+<p>`(1) Kanunda ayrıca suç olarak tanımlanan hâller dışında, görevinin gereklerine aykırı hareket etmek suretiyle, kişilerin mağduriyetine veya kamunun zararına neden olan ya da kişilere haksız bir menfaat sağlayan kamu görevlisi, altı aydan iki yıla kadar hapis cezası ile cezalandırılır.</p>
+
+<p>(2) Kanunda ayrıca suç olarak tanımlanan hâller dışında, görevinin gereklerini yapmakta ihmal veya gecikme göstererek, kişilerin mağduriyetine veya kamunun zararına neden olan ya da kişilere haksız bir menfaat sağlayan kamu görevlisi, üç aydan bir yıla kadar hapis cezası ile cezalandırılır.</p>
+
+<p>(3) İrtikâp suçunu oluşturmadığı takdirde, görevinin gereklerine uygun davranması için veya bu nedenle kişilerden kendisine veya bir başkasına çıkar sağlayan kamu görevlisi, bir yıldan üç yıla kadar hapis ve beşbin güne kadar adli para cezası ile cezalandırılır` şekline dönüştürülmüş, 05.07.2012 tarihinde yürürlüğe giren 6352 sayılı Kanunun 105. maddesi ile de üçüncü fıkra yürürlükten kaldırılmıştır.</p>
+
+<p>Uyuşmazlıkla ilgili olan 5237 sayılı TCK’nun 257. maddesinin 1. fıkrasında düzenlenen icrai davranışlarla görevi kötüye kullanma suçu, kamu görevlisinin görevinin gereklerine aykırı hareket etmesi ve bu aykırı davranış nedeniyle, kişilerin mağduriyeti veya kamunun zararına neden olunması ya da kişilere haksız kazanç, suç tarihinden sonra 6086 sayılı Kanunla yapılan değişiklik sonrası ise haksız menfaat sağlanması ile oluşmaktadır.</p>
+
+<p>Buna göre ilk şart, kamu görevlisi olan failin yaptığı işle ilgili olarak kanun veya diğer idari düzenlemelerden doğan bir görevinin olması ve bu görevi dolayısıyla yetkili bulunmasıdır. Suçun oluşabilmesi için, norma aykırı davranış yetmemekte, bu davranış nedeniyle, kişilerin mağduriyetine veya kamunun zararına neden olunması ya da kişilere haksız bir menfaat sağlanması gerekmektedir.</p>
+
+<p>5237 sayılı TCK’nun 257. maddesinin gerekçesinde, suçun oluşmasına ilişkin genel şartlar; Kamu görevinin gereklerine aykırı olan her fiili cezai yaptırım altına almak, suç ve ceza siyasetinin esaslarıyla bağdaşmamaktadır. Bu nedenle, görevin gereklerine aykırı davranışın belli koşulları taşıması hâlinde, görevi kötüye kullanma suçunu oluşturabileceği kabul edilmiştir. Buna göre, kamu görevinin gereklerine aykırı davranışın, kişilerin mağduriyetiyle sonuçlanmış olması veya kamunun ekonomik bakımdan zararına neden olması ya da kişilere haksız bir kazanç sağlamış olması hâlinde, görevi kötüye kullanma suçu oluşabilecektir` şeklinde vurgulanmış, öğretide de; TCK’nun 257. maddesindeki suçun oluşmasının, kamu görevlisinin görevinin gereklerine aykırı hareket etmesi sonucunda kişilerin mağdur olması veya kamunun zarar görmesi ya da kişilere haksız bir menfaat sağlanması şartlarına bağlı olduğu, bu sonuçları doğurmayan norma aykırı davranışların, suç kapsamında değerlendirilemeyeceği açıklanmıştır. (Mehmet Emin Artuk - Ahmet Gökçen - Ahmet Caner Yenidünya, Ceza Hukuku Özel Hükümler, Turhan Kitapevi, 11.Bası, Ankara, 2011, s.913 vd.; Mahmut Koca - İlhan Üzülmez, Türk Ceza Hukuku Özel Hükümler, Adalet Yayınevi, Ankara, 2013, s.769; Veli Özer Özbek - Mehmet Nihat Kanbur - Koray Doğan - Pınar Bacaksız - İlker Tepe, Türk Ceza Hukuku Özel Hükümler, Seçkin Yayınevi, 2. Bası, Ankara, 2011, s.974)</p>
+
+<p>Norma aykırı davranışın maddede belirtilen sonuçları doğurup doğurmadığının tesbiti için öncelikle, mağduriyet, kamunun zarara uğraması ve haksız menfaat kavramların açıklanması ve somut olaylarda bunların gerçekleşip gerçekleşmediklerinin belirlenmesi gerekmektedir.</p>
+
+<p>Mağduriyet kavramının, sadece ekonomik bakımdan uğranılan zararla sınırlı olmayıp, bireysel hakların ihlali sonucunu doğuran her türlü davranışı ifade ettiği kabul edilmelidir. Bu husus madde gerekçesinde; Görevin gereklerine aykırı davranışın, kişinin mağduriyetine neden olunması gerekir. Bu mağduriyet, sadece ekonomik bakımdan uğranılan zararı ifade etmez. Mağduriyet kavramı, zarar kavramından daha geniş bir anlama sahiptir` şeklinde açıkça vurgulanmış, öğretide de; mağduriyetin sadece ekonomik bakımdan ortaya çıkan zararı ifade etmeyeceği, mağduriyet kavramının ekonomik zarar kavramından daha geniş bir anlama sahip olduğu, bireyin, sosyal, siyasi, medeni her türlü haklarının ihlali sonucunu doğuran hareketlerin ve herhangi bir çıkarının zedelenmesine neden olmanın da bu kapsamda değerlendirilmesi gerektiğine işaret edilmiştir. (Mehmet Emin Artuk - Ahmet Gökçen - Ahmet Caner Yenidünya, Ceza Hukuku Özel Hükümler, Turhan Kitapevi, 11.Bası, Ankara, 2011, s.911 vd.; Mahmut Koca - İlhan Üzülmez, Türk Ceza Hukuku Özel Hükümler, Adalet Yayınevi, Ankara, 2013, s.772; Veli Özer Özbek - Mehmet Nihat Kanbur - Koray Doğan - Pınar Bacaksız - İlker Tepe, Türk Ceza Hukuku Özel Hükümler, Seçkin Yayınevi, 2. Bası, Ankara, 2011, s.974)</p>
+
+<p>Kişilere haksız kazanç sağlanmasını da içine alan kişilere haksız menfaat sağlanması da, kişilere hukuka aykırı olarak maddi ya da manevi yarar sağlanması olarak ifade edilebilecektir.</p>
+
+<p>Kamunun zarara uğraması hususuna gelince; madde gerekçesinde ekonomik bir zarar olduğu vurgulanan anılan kavramla ilgili olarak kanuni düzenleme içeren 5018 sayılı Kamu Malî Yönetimi ve Kontrol Kanununun 71. maddesinde; mevzuata aykırı karar, işlem, eylem veya ihmal sonucunda kamu kaynağında artışa engel veya eksilmeye neden olunması şeklinde tanımlanan kamu zararı, her somut olayda hakim tarafından, iş, mal veya hizmetin rayiç bedelinden daha yüksek bir fiyatla alınıp alınmadığı veya aynı şekilde yaptırılıp yaptırılmadığı, somut olayın kendine özgü özellikleri de dikkate alınarak belirlenmelidir. Bu belirleme; uğranılan kamu zararının miktarının kesin bir biçimde saptanması anlamında olmayıp, miktarı saptanamasa dahi, işin veya hizmetin niteliği nazara alınarak, rayiç bedelden daha yüksek bir bedelle alım veya yapımın gerçekleştirildiğinin anlaşılması halinde de kamu zararının varlığı kabul edilmelidir. Ancak bu belirleme yapılırken, norma aykırı her davranışın, kamuya duyulan güveni sarstığı, dolayısıyla, kamu zararına yol açtığı veya zarara uğrama ihtimalini ortaya çıkardığı şeklindeki bir düşünceyle de hareket edilmemelidir.</p>
+
+<p>Türk Ceza Kanunu hükümlerine göre görevi kötüye kullanma suçu ile ilgili yapılan bu genel açıklamalardan sonra sanıklar hakkındaki mahkûmiyet hükümlerinin ayrı ayrı değerlendirilmesinde yarar bulunmaktadır.</p>
+
+<p>a-) Sanık A.. C.. hakkında 14.04.2009 ve 17.04.2009 tarihlerinde gerçekleştirilen eylemler nedeniyle görevi kötüye kullanma suçundan kurulan mahkûmiyet hükmünün incelenmesi:</p>
+
+<p>İncelenen dosya kapsamından;</p>
+
+<p>21.04.2009 günlü tutanakta; Cumhuriyet savcısı A.. C.. tarafından yürütülen soruşturma dosyalarında 14.04.2009 tarihinde 2009/1547 sayılı dosya şüphelisi H….. ifadesinin katip S…… tarafından, 17.04.2009 günü 2009/216 sayılı dosyada şüpheli M.. I… aynı tarihte 2009/2663 sayılı dosyada müşteki Nuri Karahasanoğlunun ifadelerinin katip Abdullah Çevik tarafından alındığı, Cumhuriyet savcısının imzasına açıldığı, ancak Cumhuriyet savcısının henüz imzalamadığının tespit edildiği,</p>
+
+<p>Sarıyer Cumhuriyet Başsavcısı, yazı işleri müdürü ve zabıt katibi tarafından imzalanan 17.04.2009 tarihli tutanağa göre; sanık Cumhuriyet savcısının 30.03.2009, 01.04.209, 02.04.2009 ve 14.04.2009 tarihlerinde mesaiye gelmediği, 15.04.2009 günü saat 15.30 da geldiği ve diğer günler mesaiye öğleden sonra uğradığının belirlendiği,</p>
+
+<p>20.04.2009 tarihinde düzenlenen tutanakta ise, 17.04.2009 tarihinde mesaiye gelmediğinin tespit edildiği ve tutanağın Cumhuriyet Başsavcısı, yazı işleri müdürü ve zabıt katibi tarafından imzalandığı,</p>
+
+<p>Sarıyer Cumhuriyet Başsavcısı tarafından sanık A.. C..’na hitaben yazılan; Sarıyer C. Başsavcılığı’nın 2009 yılı teftiş döneminde 2009/1547 soruşturma sayılı dosyada şüpheli H…. ifadesinin zabıt katibi S…..tarafından 14.04.2009 tarihinde adliyede bulunmadığınız sırada alındığı ve daha sonra tarafınızdan imzalandığı, soruşturmanın halen devam ettiği anlaşılmakla, şüphelinin yeniden davetiye ile müracaatı sağlanarak ifadesinin bizzat tarafınızdan alınması hususunda gereği rica olunur içerikli ve 08.05.2009 tarihli yazıya sanık tarafından el yazısı ile; Şüphelinin ifadesi yeniden tarafımca alınacaktır. Ancak, Adliyede çalışan tüm C.Savcılarının, ifadelerini kalemde zabıt katiplerine aldırması karşısında, tüm ifadelerin, şahısların tekrar çağrılarak aldırılması gerektiği bilgilerinize arz olunur” şeklinde cevap verildiği,</p>
+
+<p>04.05.2009 tarihli dosya inceleme tutanaklarına göre; bir önceki tutanakta belirtilen soruşturma dosyalarında alınan ifade tutanaklarının Cumhuriyet savcısı tarafından sonradan imzalandığına ilişkin tespit yapıldığı,</p>
+
+<p>Soruşturma dosyalarında ifadelerin alındığı tarihlerin mesaiye gelmediği günler olduğu, ifadesi alınan kişilerin, ifadelerinin erkek bir kâtip tarafından tespit edildiğini ve bu sırada görevli Cumhuriyet savcısının yanlarında olmadığını belirttikleri,</p>
+
+<p>Cumhuriyet savcısının talimatı ile yokluğunda ifade aldıklarını kabul eden tutanak katipleri S….. ve A…. hakkında görevi kötüye kullanma suçundan suç kastı olmadığından bahisle kovuşturmaya yer olmadığı kararı verildiği,</p>
+
+<p>Anlaşılmaktadır.</p>
+
+<p>Tanık N…… Ben daha önce torunumun kaybolması nedeniyle Beykoz Cumhuriyet Başsavcılığına şikâyet dilekçesi vermiştim, dosyamız Sarıyer Cumhuriyet Başsavcılığına gönderildi. Torunum bulunduğu için 17.04.2009 tarihinde şikâyetimden vazgeçmek için Sarıyer Adliyesine geldim. Sarıyer Cumhuriyet Başsavcılığı kalemine müracaat ettim, ismini bilmediğim bir erkek kâtip ifademi aldı, Sarıyer Cumhuriyet Başsavcılığının 2009/2663 soruşturma sayılı dosyasında bulunan 17.04.2009 tarihli tutanaktaki imza bana aittir, ifade esnasında odada Cumhuriyet savcısı bulunmuyordu, ben ifademi imzalayıp adliyeden ayrıldım. O tarihte Cumhuriyet savcısını hiç görmedim ve evraka hangi Cumhuriyet savcısının baktığını bilmiyordum, daha sonra beni tekrar Sarıyer Cumhuriyet Başsavcılığından aradılar bu olaydan birkaç gün sonra adliyeye geldim, ilk ifademi alan kâtiple birlikte ismini bilmediğim bayan savcının odasına gittik, ben 17.04.2009 tarihinde verdiğim ifademi Cumhuriyet savcısına sözlü olarak anlattım, daha sonra kâtiple birlikte kaleme geçtik, anlattığım hususları zabıt kâtibi tutanağa aktardı, ben de altını imzaladım ve adliyeden ayrıldım`,</p>
+
+<p>Tanık E….Sarıyer Cumhuriyet Başsavcılığına ait 2009/1547 soruşturma sayılı dosya ile aracımın çalınması nedeniyle soruşturma yapılıyordu, davayı takip etmek için adliyeye geldiğimde hangi savcının baktığını personelden öğrendim. Bana şu anda ismini hatırlamadığım ve kendisini hiç görmediğimi bayan savcının baktığını söylediler, ayrıca araban bulununca haber verirler dedikleri için savcı ile görüşmeden adliyeden ayrıldım, daha sonra arabam bulunduğundan şikâyetten vazgeçmek için ifade vermek üzere geldiğimde bana soruşturmaya bakan Cumhuriyet savcısının kâtibini göstermeleri üzerine kaleme giderek erkek olan zabıt kâtibine ifademi verdim`,</p>
+
+<p>Tanık H…. 14.04.2009 tarihinde karakoldan bana üç gün içerisinde Sarıyer Cumhuriyet Başsavcılığına müracaat etmem gerektiği bildirildiği için adliyeye geldim, girişteki polisten ifade vereceğim yeri öğrendim. Bana şu anda göstermiş olduğunuz Sarıyer Cumhuriyet Başsavcılığına ait 2009/1547 soruşturma sayılı dosya ile ağabeyimin aracının çalınması nedeniyle soruşturma yapıldığını ismini bilmediğim bir erkek kâtip söyledi ve ifademi aldı, tutanaktaki imza bana aittir, ifade esnasında odada Cumhuriyet savcısı bulunmuyordu, ben ifademi imzalayıp adliyeden ayrıldım. O tarihte evraka hangi Cumhuriyet savcısının baktığını bilmiyorum, ben Sarıyer Adliyesinde bayan savcının çalıştığını dahi bilmiyordum`,</p>
+
+<p>Tanık A…..; Ben suç tarihinde Sarıyer Cumhuriyet Savcılığı soruşturma bürosunda zabıt katibi olarak savcı A.. C.. ile birlikte çalışmaktaydım. Adliyeye müracaat eden ilgililerin ifadelerini bizzat kendisi almıyordu. Katip olarak bana sen ifadeleri al, ben imzalarım diyordu. Tutanakta belirtilen kişilerin ifadelerini ben aldım. C. savcısı adına imza açtım. Kendisine telefonla bilgi vermiştim. İfadeleri almamı istemişti`,</p>
+
+<p>Tanık S….. ‘…Savcı A.. C.. ile birlikte bir dönem çalıştım. Savcı hanım yapılan soruşturmalarda alınan ifadelere bizzat kendisi katılmıyordu. Kalem personeli olarak biz ifadeleri almaktaydık. Kendisi onaylayıp imzalıyordu. İfade alacağımız kişileri sözlü olarak dinleyip bize talimat vermesi söz konusu olmadı. İfade alınacak kişileri biz dinleyip ifadelerini alıp zapta yazdırıyorduk. Onun ismine imza açıyorduk. Daha sonraki zamanlarda kendisi imzalıyordu`,</p>
+
+<p>Şeklinde beyanda bulunmuşlardır.</p>
+
+<p>Sanık A.. C..; Suçlamaları kabul etmiyorum, hakkımda görevi kötüye kullanmak eylemini gerçekleştirdiğim iddia olunan, yokluğumda kalemde ifadelerin katip tarafından alınması yönünde tarafımdan verilmiş hiçbir talimat olmadığı gibi, beyanlarda o gün adliyede olmadığım söylenmektedir, hem adliyede olsaydım, hem de ifadede bulunmasaydım tarafımdan yapılmış yanlış bir eylem söz konusu olabilirdi. Ancak adliyede olmadığım bir sırada üstelik tarafımdan verilmiş bir talimat yokken ifadelerin alınmasında hiçbir kastım ve kusurum yoktur, kaldı ki durumu Başsavcının yazısı ile öğrenmiş bulunmaktayım, bana katipler tarafından herhangi bir bilgi verilmediği gibi evraklar tarafımdan da imzalanmamıştır. Durumu Başsavcının tarafıma yazdığı yazıdan öğrendikten sonra zaten ifadeler tarafımdan alınmıştır` şeklinde savunmada bulunmuştur.</p>
+
+<p>Kovuşturma evresi ve hükmün kesinleşmesinden sonraki infaz aşamasında da yargısal görevleri bulunan Cumhuriyet savcısı, amacı maddi gerçeği araştırmak olan ceza muhakemesinde soruşturmayı yürüterek sanığın lehindeki ve aleyhindeki bütün delilleri usulüne uygun olarak toplamak vedeğerlendirmek suretiyle kamu adına iddianamenin düzenlenmesi ya da kovuşturmaya yer olmadığına veya kamu davasının açılmasının ertelenmesine ilişkin karar verilmesi yetki ve sorumluluğu bulunan bir ceza muhakemesi süjesidir.</p>
+
+<p>5271 sayılı CMK’nun Soruşturma evresinde yapılan işlemlerin tutanağa bağlanması başlıklı 169. maddesinde; 
+(1) Şüphelinin ifadesinin alınması veya sorgusu, tanık ve bilirkişinin dinlenmesi veya bir keşif ve muayene sırasında Cumhuriyet savcısı veya sulh ceza hâkiminin yanında bir zabıt kâtibi bulunur. Acele hâllerde, yemin vermek koşuluyla, başka bir kimse, yazman olarak görevlendirilebilir.</p>
+
+<p>(2) Her soruşturma işlemi tutanağa bağlanır. Tutanak, adlî kolluk görevlisi, Cumhuriyet savcısı veya sulh ceza hâkimi ile hazır bulunan zabıt kâtibi tarafından imza edilir.</p>
+
+<p>(3) Müdafi veya vekil sıfatıyla hazır bulunduğu işlemlerle ilgili tutanakta avukatın isim ve imzasına da yer verilir.</p>
+
+<p>(4) Tutanak, işlemin yapıldığı yeri, zamanı ve işleme katılan veya ilgisi bulunan kimselerin isimlerini içerir.</p>
+
+<p>(5) İşlemde hazır bulunan ilgililerce onanmak üzere tutanağın kendilerini ilgilendiren kısımları okunur veya okumaları için kendilerine verilir. Bu husus tutanağa yazılarak ilgililere imza ettirilir.</p>
+
+<p>(6) İmzadan kaçınma hâlinde nedenleri tutanağa geçirilir` hükmü yer almaktadır.</p>
+
+<p>Buna göre, uyuşmazlık konusu ile de bağlantılı olarak soruşturmayı yürütmekle görevli Cumhuriyet savcısının soruşturmanın taraflarından şüpheli, mağdur ya da şikayetçinin ifadesi ile tanık veya bilirkişinin beyanını bizzat tespit etmesi, ifade alınması sırasında yanında bir zabıt katibinin de bulunması, ifade alma işleminin tutanağa bağlanması ve sözkonusu tutanağın belirtilen diğer ilgililer dışında Cumhuriyet savcısı ve hazır bulunan zabıt katibi tarafından da imzalanması gerektiği konusunda bir tereddüt bulunmamaktadır.</p>
+
+<p>Cumhuriyet Başsavcılıkları ile Adli Yargı İlk Derece Ceza Mahkemeleri Yazı İşleri Hizmetlerinin Yürütülmesine Dair Yönetmeliğin Yazı işleri hizmetlerinin yürütülmesi` başlıklı 6. maddesinin 3. fıkrasında;  Zabıt Katibinin görevleri şunlardır:</p>
+
+<p>….d) Duruşma, ifade alma, keşif, otopsi, ölü muayenesi ve yer gösterme gibi işlemlerde hazır bulunarak tutanağı yazmak ve imzalamak,</p>
+
+<p>…g) Karar ve tutanakları Cumhuriyet savcısı veya hâkimin bildirdiği şekilde dikkat ve itina ile yazarak imzalamak` şeklinde düzenlemeye yer verilmiştir.</p>
+
+<p>CMK’nun 161 ve 164. maddeleri gereğince Cumhuriyet savcısının talimatıyla kolluğun soruşturma işlemlerini yerine getirmesi ve bu kapsamda alınması gereken ifadeleri de alması mümkündür. Ancak Cumhuriyet savcısının CMK`nun 168. maddesi uyarınca alınan ifadelerde şüpheli, mağdur, müşteki, tanık ya da bilirkişinin beyanlarının tespit edilmesi sırasında hazır bulunması, soruşturma safhasının asıl süjesi olarak ilgiliye soruşturma konusu olayla ilgili sorular sorması ve maddi gerçeğe ulaşma çabası içinde olması Avrupa İnsan Hakları Sözleşmesinin 6. maddesinde düzenlenen adil yargılanma hakkı ile de doğrudan bağlantılıdır.</p>
+
+<p>Bu açıklamalar ışığında uyuşmazlık konusu değerlendirildiğinde;</p>
+
+<p>Sanık Cumhuriyet savcısının soruşturmayı yürütmekle görevli olduğu dosyalarda bir kısım şüpheli ya da şikâyetçi ifadelerini zabıt katiplerine aldırmak şeklinde gerçekleşen eylemiyle, görevinin gereklerine aykırı bir davranışta bulunduğu ortadadır. Soruşturma dosyalarında ifadelerin CMK gereğince soruşturmayı yürütmek ve sonuçlandırmakla görevlendirilmiş, kamu adına iddianamenin düzenlenmesi ya da kovuşturmaya yer olmadığına ilişkin karar verilmesinde yetki ve sorumluluğu bulunan Cumhuriyet savcısı yerine, ifade almakla sorumlu ve görevli olmayan ve ifadeler alınırken kanunilik ilkesini bilmek durumunda olmayan sadece katiplik görevini yürüten ve tutanağı yazmakla sorumlu olan kişiler tarafından alınmasının soruşturmanın etkin ve adaletli bir şekilde ve ciddiyet içinde yapılmadığı şüphesini oluşturduğu, dolayısıyla Anayasanın 36. maddesi ile koruma altına alınmış olan adil yargılanma hakkının gerçekleşmediği kaygısına sebebiyet verilerek mağduriyete neden olduğu anlaşıldığından, sanığın eylemi 5237 sayılı TCK`nun 257/1. maddesinde düzenlenmiş olan görevi kötüye kullanma suçunu oluşturmaktadır.</p>
+
+<p>Bu itibarla, sanığın 14.04.2009 ve 17.04.2009 tarihlerinde gerçekleştirilen eylemler nedeniyle görevi kötüye kullanma suçundan mahkûmiyetine ilişkin Özel Daire kararı isabetlidir.</p>
+
+<p>Çoğunluk görüşüne katılmayan Genel Kurul Üyeleri H. Erol ve Ş. İste`nin karşı oy düşüncelerine aşağıda yer verilmiştir.</p>
+
+<p>b-) Tüm sanıklar hakkında 06.07.2009 günlü eylemler nedeniyle görevi kötüye kullanma suçundan kurulan mahkûmiyet hükümlerinin incelenmesi:</p>
+
+<p>İncelenen dosya kapsamından;</p>
+
+<p>Mağdurlar M. ve A….. kardeş olup marangozluk ve mobilya tamirciliği ile uğraştıkları, katılan S… de eşi F…. ile birlikte Almanya’da ikamet ettiği ve yaz döneminde Türkiye’deki evlerine geldikleri, olay günü A. ve M…katılan S…. evinde mutfak tamiri ile uğraştıkları, işleri bitince Murat’ın aşağıya indiği, ağabeyi olan A..yukarıda, ev sahibi F… evin içinde, eşi S… de arabasının yanında iken, mesai saatleri dışında nöbetçi Cumhuriyet savcısı olan sanık A.. C..’nun olay mahallinden geçtiği, o sırada elinde mutfak dolabının baza kısmının parçaları olan Murat’ın bir kez ıslık çaldığı, sanığın dönerek Sen kime ıslık çalıyorsun diye sorduğu, Murat’ın abla sen beni yanlış anladın, ben size ıslık çalmadım, ağabeyime ıslık çaldım, siz üzerinize alındınız, yanlış anladınız deyince, sen ıslığı bana çaldın diyerek mağdurun üzerine yürüdüğü, eli ileboğazını sıktığı, bir yandan da bağırarak küfürlü sözler söylediği, olay yerine iş sahibi katılan S.. A.. ile diğer katılan A…. ve bir kısım komşuların da geldikleri, onların da ıslığın haberleşme için kullanıldığını, yanlış anlama olduğunu açıkladıkları, sanığın Murat’ın elindeki tahta parçalarından birini zorla aldığı ve ona vurduğu, bunun üzerine Murat’ın da bir kez sanığa tokat attığı, sanığın Murat’ın tişörtünü tuttuğu ve boydan boya yırttığı, katılan Sadettin yanlış anlama olduğunu belirterek açıklama yapıp müdahale edince, sanığın ona da sinkaflı küfürler ederek sağlı sollu iki tokat attığı, Sadettin tokatın etkisi ile yere düşen gözlüğünü almaya çalışırken bir kez de tekme vurduğu, katılan A… sinkaflı küfür sözleri söylediği, Arif’in de siz de öylesiniz diye karşılık verdiği, sanığın telefonla polisi arayarak durumu haber verdiği, ikinci telefon görüşmesinde başkomiser Serdal’a Serdal bey nerdesiniz, iki dakikalık yolu gelemediniz, Allah belanızı versin dediği, görevli polis memurları gelinceye kadar balkonlardan bakan kişilere de defalarca küfür ettiği, Sadettin’in eşi Fatma, kızım sen yanlış anladın, neden öyle bağırıyorsun, ayıp değil mi deyince ona da kerhane kadını, o… diyerek küfürler ettiği, bu sözleri duyan Fatma’nın bayıldığı, olay yerine diğer sanıklar komiser Serdal ile polis memurları İbrahim ve Doğukan’ın geldikleri, sanık Cumhuriyet savcısı ile konuştukları, hep birlikte M….i karakola götürdükleri, karakolda başkomiser S….n önerisi ile Murat’ı kamera bulunmayan amir odasına aldıkları, sanık A…. burada yine sinkaflı küfürler ederek Murat’a birkaç kez tokat attığı ve yumrukla vurduğu, sonra diğerlerine tutmalarını söylediği, diğer sanıklar tutarken sanık Cumhuriyet savcısının mağdura vurmaya devam ettiği, duvarda asılı bulunan tabloyu mağdur Murat’ın başına vurmak suretiyle parçaladığı, diğer sanıklara mağduru yere yatırmalarını söylediği, yere yatırılan mağdurun başını tekmelediği, ayakkabısı ile başına bastırdığı, o sırada sanık Doğukan`ın da arkadan tekme ile mağdura vurduğu,</p>
+
+<p>Başkaca müracaatlar nedeniyle polis karakolunun alt katında bulunan daha sonra da bu olay nedeniyle karakol dışına alınan bir kısım tanıkların; bir erkeğin yeter vurmayın dediğine, bir bayanın tutsanıza şunu diye bağırdığına, bayanın küfürlü her cümlesinden sonra darp sesleri geldiğine, çıkışta kötü haldeki mağdur Murat’ın polisler tuttu, savcı vurdu` dediğini duyduklarına ilişkin anlatımda bulundukları,</p>
+
+<p>Katılan S….karakola geldiğinde onun da diğer şüpheliler gibi cep telefonu, saat ve kemer gibi eşyalarının alındığı, eşi F…. bir süre karakol dışında bekletildiği, M… ilgili işlemler bittikten sonra S…hazırlanmış ifadesinin getirildiği, S.. imzalamayacağını söylediği, sanık Cumhuriyet savcısının hepinizi tutuklatırım dediği, bir kısım eşyalarına el konularak gözaltına alınıyormuş kanısının oluşturulduğu, ancak hakkında üst arama tutanağı düzenlenmediği, Sadettin’in olayın ifadede yazdığı şekliyle gerçekleşmediğini açıkladığı ve imzalamak istemediği, bu sırada dışarıda bekleyen eşi Fatma’nın, yakın akrabası olan bir vali yardımcısına telefonla haber verdiği, bundan sonra katılan Sadettin’in sanık Cumhuriyet savcısının bulunduğu odaya alındığı, sanık A… bu kez, katılan Sadettin’in ifadeyi imzaladıktan sonra serbest bırakılacağını söylediği, yanına gelen eşinin imzala da gidelim artık şuradan` diyerek ısrar etmesi ile Sadettin’in ifadeyi imzaladığı ve çıktıkları, katılan Sadettin hakkında soruşturma işlemi yapılmadığı,</p>
+
+<p>Sokakta gerçekleşen olaylara tanık olan Y….de karakola getirildiği, onun da kendisine gösterilen tanık ifadesini imzalamak istemeyerek olayların tanık ifade tutanağında yazdığı şekliyle gelişmediğini belirttiği, görevli polis memurunun işaret parmağını ona doğru sallayarak konuştuğu ve sanık Cumhuriyet savcısının bulunduğu odaya götürdüğü, sanık A…Y….ne iş yaptığını sorduğu, şoförlük yaptığını ancak o dönemde işsiz olduğunu, anne ve babasının özürlü ve bakıma muhtaç olduğunu anlattığı, sanık Cumhuriyet savcısının ona şoförülük işi bulabileceğini hatta anne ve babası için maaş sağlayabileceğini ifade ettiği, tanık Y… önceki odaya tekrar alındığı, görevliler tarafından hazırlanan ve sanık A… tarafından gerçekleştirildiği iddia edilen eylemleri içermeyen ifade tutanağını gülerek imzaladığı, sonraki aşamalarda kendisine yardım edileceği yönündeki vaat nedeniyle ifadeyi imzalamayı kabul ettiğini açıkladığı,</p>
+
+<p>Karakola bir süre sonra gelen görevli Cumhuriyet savcıları Y… ve B… meydana gelen olayları anlatan sanık başkomiser Serdar’ın bunları yaptık, ancak kamerasız yaptık, ne olduysa kamerasız odada yaptık dediği, sanık A….mahkemeye sevk ederim, hakimle de konuşurum, tutuklar şeklinde konuştuğu, Cumhuriyet savcısı Bayram Köroğlu’nun ‘müracaat savcısı benim, ayrıca olay mesai dışında dahi gerçekleşmiş olsa sizin şahsınızı ilgilendirdiği için soruşturmaya bakmanız uygun olmaz` dediği, sanık A.. B…n nöbetçi hakimi iki kez cep telefonu ile aradığı ancak ulaşamadığı,</p>
+
+<p>Sanık Cumhuriyet savcısı ile ilgili olarak düzenlenen adli raporda; sol yüz kısmında, boyun ve ense bölgesinde, her iki el bileklerinde multiple travmatik lezyonlar olduğu, sağ el bileğindeki travmasının basit tıbbi müdahale ile giderilemeyecek nitelikte olduğu, sağ el bileğinde hareketlerde aşırı hassasiyet mevcutolduğu bilgilerine yer verildiği,</p>
+
+<p>Mağdur Murat Kara hakkında düzenlenen adli raporda ise; sol göz altında bir adet ve sırtında iki adet lezyon mecut olduğu ve kanamasız olduklarının tespit edildiği,</p>
+
+<p>M… hakkında açılan kamu davalarının yargılaması sonucunda, Sarıyer 3. Asliye Ceza Mahkemesince 27.05.2011 gün ve 264-403 sayı ile, cinsel taciz ve kasten yaralama suçlarından mahkûmiyet, hakaret suçundan ceza verilmesine yer olmadığı ve tehdit suçundan yeterli delil bulunmadığından bahisle beraat hükmü kurulduğu, A…. hakkında ise kasten yaralama suçundan beraat kararı verildiği,</p>
+
+<p>Anlaşılmaktadır.</p>
+
+<p>Mağdur M…; Biz olay günü S… mutfak dolaplarının tamiri için evine gitmiştik. Evinde işimiz bittikten sonra önce ben aşağıya kapının önüne indim. Ağabeyim beni yukarıda göremeyince bana Murat diyerek seslendi. Ben de buradayım anlamında ıslık çaldım. O an arkamdan geçmekte olan, kimliğini sonradan öğrenmiş olduğum Savcı Hanım, abime öttürdüğüm ıslığı üzerine alınarak bana sen kime ıslık öttürüyorsun diyerek bana tekme attı, vurmaya başladı. O arada küfür de etti. Ben de kendimce olayı yanlış anladığını, ıslığı abime öttürdüğümü söylediğim halde beni dinlemedi. Tekme atmaya ve küfür etmeye devam etti. Sinkaflı küfürler ediyordu. O sırada da abim ve Sadettin Amca da tartışma seslerine geldiler. Ağabeyim ne olduğunu sorduğunda olayı ağabeyime anlattım. Ağabeyim de bayana bizi yanlış anladınız, ben kardeşime seslendim. O da bana ıslık öttürdü dedi. Fakat bayan Siz benim kim olduğumu bilmiyorsunuz, buraların Allah’ı benim diyordu. Sonra bir telefon görüşmesine şahit olduk. İsmini sonradan öğrendiğim, karakol amiri olduğunu söylediği kişi ile telefonda 2 dakikalık yolu 10 dakikada gelemediniz, Allah belanızı versin, hepinizi sürdüreceğim, diyordu. Biz polislerin gelmesini beklerken Sadettin Amca bayana ortamı yumuşatmak için güzel bir uslüp ile kızım yaşından başından utanmıyor musun, çocuklardan ne istiyorsun diyerek uyardı. Bayan da Sadettin Amcaya bunun üzerine sen ne diyorsun lan gavat, senin ananı sinkaf ederim diyerek yine küfürler etti ve iki üç defa Sadettin Amcaya tokat attı, hakaretler etmeye de devam ediyordu. Bizi bırakıp kalabalığa hitaben hepinizi içeri aldırırım, buranın Allah’ı benim gibi sözler söyledi. Bir ara tişörtümü tutup yırttı. Tişört boynuma dolandı ve nefessiz kaldım, o an refleks olarak ben de bayana beni bırakması için elimle vurdum. Daha sonra polisler geldi, ekip otosuna bayan binerken bile anneme küfür ediyordu, biz de karakol yakın olduğundan yaya olarak gittik, karakola gittikten sonra işlemlerimiz yapılırken 5-10 dakika sonra ismini sonradan öğrendiğini Metin isimli polis memuru beni komiserin odasına çıkardı… Savcı Hanım bana saldırmaya başladı, senin ananı sinkaf edeceğim, ananınkini göreceksin, sen benim kim olduğumu biliyor musun? deyip aynı zamanda vuruyordu… Savcı Hanım kendisine beni yere yatırmasını söyledi. Beni yere yatırdı ve polis memuru üzerime kapaklandı. Hareketsiz kaldım. Bu sırada yüzüme tekme aldım. Yüzüm yere doğruydu. Ayağıyla kafamı ezdi. Sonra polis memuru beni ayağa kaldırdı…. duvardan aldığı cam tabloyu kafamda parçaladı. Sonra Savcı Hanım bunu alın beş dakika sonra yine getirin, tekrar görüşeceğim diyerek beni polis memuru Metin’e teslim etti. Ağabeyim benim bu halimi gördü. Üstüm başım paramparçaydı. Polis memurları rapor aldırmak için beni hastaneye iki kez götürdüler, ilk raporun ne olduğunu bilemiyorum. Bana hiç göstermediler, ikinci kez gittiğimde yeni bir rapor verdiler. Bu raporu da görmedim. Rapor içeriklerini bilemiyorum. Sonra karakol ve sorgu işlemlerimiz bitirildikten sonra tutuklanarak Metris’e gönderildik. Ayrıca olay yerinde kalabalık anında bana mutfak dolaplarının altına konulan baza diye tabir edilen sunta parçası ile de vurmuştu` ,</p>
+
+<p>Katılan A. ‘…Aşağı indiğimde bir bayanın Murat’ın yakasından tuttuğunu görünce sordum, Murat bana ağabey ben sana ıslık çaldım, kendisine çaldığımı zannetmiş dedi. Ben de bunun üzerine abla sana çalmadı, bana ıslık çaldı, ben 10 metre öbür taraftan duydum dedim, bayan yok bana çaldı dedi. Aramızda bu nedenle tartışma başladı. Kardeşimi tartaklamaya başladı. Siz benim kim olduğumu biliyor musunuz dedi. Ben de kimsen kimsin abla, günahımızı alıyorsun, bırak bizi gidelim dedim, o esnada Murat’ın turuncu renkli tişörtünü yırttı. Abla sen manyak mısın, bırak bizim yakamızı dedim, bu arada Sadettin Atik yanımıza gelmişti. Savcı Hanım bize hitaben sizin ananızı avradınızı sinkaf edeceğim, siz benim kim olduğumu biliyor musunuz, buraların Allah’ı benim dedi. Sadettin Amca da Savcı Hanıma hitaben kızım bak hanım hanımcık bayansın, niye bu şekilde küfürler ediyorsun, bırak çocukları gitsinler dedi, bu sırada Savcı Hanım Sadettin Amcaya dönerek sen kimsin gavat, ananı sinkaf ederim, sen kimsin dedi…Etrafta insanlar toplandı. Kalabalıktan ne biçim kadınsın, Allah belanı versin gibi sözler söylenmesi üzerine Savcı Hanım kalabalığa hitaben buraların Allah’ı benim, hepinizi aldırırım içeri gibi sözler söyledi. Sonra cep telefonundan Serdar Bey isimli komiseri arayarak olay yerine çağırdı, ben tamam bizi bırak, polisi çağırdın, polisleri bekleyelim dedim. Ben kendisine vurmadım. Sadece kardeşimi tutup tartakladığı için manyak mısın dedim. O da bunun üzerine bana yukarıda söylediğim hakaretleri etti, bana çanta ve tekme ile vurdu olay yerine yaklaşık 10-15 dakika kadar sonra polisler geldi. Onlardan kendisinin savcı olduğunu öğrendik. Polislerin yanında da mahalleliye hitaben sizin hepinizi içeri aldırırım, girin içeri gibi sözler söyledi. F…hanım ne bağırıyorsun lafı üzerine sen kimsin kaltak, gir içeri dedi, daha sonra kendisi polis arabasına binerek polis merkezine gitti. Biz de kardeşim Murat ile birlikte yanımızda polisler olduğu halde yürüyerek 250-300 metre uzaklıktaki polis merkezine geldik. Girişte sol taraftaki odaya geçtik. Üstümüzü aradılar. Daha soma kardeşimi alıp yukarı götürdüler. Bu arada beni polis merkezinin dışına çıkarttılar. Yaklaşık yarım saat kadar sonra kardeşimi yüzü gözü morarmış halde tekrar aşağı indirdiler. Beni de içeri aldılar. Sonra birinci kattaki Savcı Hanımın ve komiser Serdar Beyin bulunduğu odaya çıkarttılar. Savcı Hanımın bana kapıdan bunu da bunu da şeklindeki el işareti üzerine tekrar giriş katına indik. Babam geldi. Avukat bulamadığını söyledi. Biz de bunun üzerine emniyette ifade vermeyeceğimizi savcılıkta ifade vereceğimizi söyledik. Kardeşimin polis merkezine geldiğimizde sadece boynunda izler varken, birinci kata çıkarılıp indikten soma yüzünde gözünde, burnunda, alnında, morluklar vardı. Ben kardeşime sorduğumda, polislerin kendisini yere yatırdığını, Savcı Hanımın da tekme tokat vurduğunu anlattı. … Biz karakolun dışında iken yukarıdan bir insanın dövüldüğünü anlayacak şekilde sesler geliyordu. Ben kardeşimin bizzat dövüldüğünü görmedim. Yusuf Çetin’in ben bu ifadeyi imzalamam şeklinde bağırdığını duydum,</p>
+
+<p>Katılan S.. A..; …Bir bayanın M.. ile münakaşa ettiğini gördüm … Murat’ın omzunda tahta parçaları vardı, omzundan aldı Murat’a vurmaya başladı, …cep telefonu elindeydi, telefondaki kim ise o… evlatları linç ediliyorum, çabuk gelin diye konuşuyordu, ben de bayanın yanına gittim, yaptığınız ayıp dedim, bana aynen pezevenk sen bu işe karışma ananı avradını sinkaf ederim, şeklinde hakaretlerde bulundu, ben de annem yaşlıdır diyerek ikazda bulundum, sokakta Murat ve Arif’e hitaben o…çocukları, kavat gibi küfürler ediyordu. Ben olay daha fazla büyümesin diye tekrar müdahale ettim. Bana, ananı avradını sinkaf edeyim, sen kimsin diyerek tokat attı. Ben de bu tokat ve küfürler üzerine, anam Trabzon’da yapabiliyorsan git yap dedim.Bana iki kere sağlı solu tokat attı, gözümde bulunan gözlükler yere düştü. Bu arada polisler geldiler. Olanları polisler de gördü. Ben benim anam o…ise siz de o.. sunuz dedim. Bayan olay yerine gelen polislere hitaben de, o…çocukları, nerde kaldınız, beni linç ediyorlardı dedi. …beni daha sonra karakola götürdüler, burada iken Murat’ın vurmayın, yapmayın şeklindeki bağırmalarını duydum. Sesin nereden geldiğini hatırlamıyorum. Sonra beni Savcı Hanımın bulunduğu odaya çıkardılar. Odada savcı Hanım’ın dışında Başkomiser’in olup olmadığını hatırlamıyorum. Odada bana bağırıp çağırmaya başladı. Benim de kendisini dövmeye çalıştığımı, Murat ve Arif’e yardımcı olduğumu, suçlu konumda bulunduğumu söyledi. Ben de ayırmak için yardım ettiğimi söyleyerek bana bu şekilde davranamazsınız, siz kimsiniz dedim. Bunun üzerine ayağa kalkarak, ben buranın kralıyım, Allahıyım diyerek üzerime yürüdü. Başkomisere, bu o… çocuğunu da içeri tıkın dedi. Beni tekrar girişteki odaya indirdiler. Bana Metin isimli polis memuru sen de Savcı Hanıma, o… diye hitap ettin, suçlu durumdasın, ifadeyi imzalamazsan, Savcı Hanımdan özür dilemezsen, buradan çıkamazsın dedi. Bunları söylerken başkomiser Serdar da vardı. Sonra eşim içeri girdi. Polislerin hazırladığı ifadeyi imzala, buradan çıkalım diye ısrar edince, ben de polis merkezindeki 06.07.2009 tarihinde yazılmış ifademi okumadan imzaladım… Bu olaydan yaklaşık bir hafta kadar sonra Yusuf ile karşılaştığımızda beni tanıdı. Konuşmaya başladığımızda, Savcı Hanımın kendisini aradığını, lehine tanıklık yapması durumunda şoförlük ayarlayacağını söyledi…. Eşim Ardahan Vali Yardımcısı A….e görüştükten sonra polis merkezine girebildiğini bana anlatmıştı. Benim tahminime göre Vali Yardımcısı aradıktan sonra ifademi yazıp, Savcı Hanımdan özür dileyerek, serbest bırakılmam yönünde fikir birliğine vardıkları için serbest bıraktılar. Bu şahıs aracı olmadan önce polislerin bana karşı davranışları çok sertti. Sonra bana çay bile ikram ettiler`,</p>
+
+<p>Tanık F….Dışarıdaki bağrışmalar üzerine balkona çıktığımda, sokağın kalabalık olduğunu ve daha sonra polis merkezinde savcı olduğunu öğrendiğim bayanın eşime tokat attığını, gözlüğünün düştüğünü, almak üzere yere eğildiğinde, cebinde bulunan eşyalarının yere düştüğünü, eşimin bunları yerden topladığını gördüm. Bayan eşime tokat atarken Sen karışma, sen niye karışıyorsun, o… çocuğu, senin ananı sinkaf ederim dediğini bizzat duydum. Eşim de kendisine yapabiliyorsan buyur dedi… Bayan Murat’ın üzerine tekrar yürüdü. Turuncu renkli tişörtünün önünden vücudu görünecek şekilde yırtıldığını gördüm. Murat’a hitaben o… çocuğu, hanımını sinkaf edeyim şeklinde küfürler ediyordu. Murat , abla özür dilerim diyerek kendisini korumaya çalışıyordu. …Ben polis memuruna hitaben bu sokak kadınını niye bu kadar bağırttırıyorsunuz, 63 yaşındaki adama tokat attırıyorsunuz, siz nasıl memursunuz, sizin göreviniz ne gibi sözler söylediğimde, bana sus işareti yaptılar. Bunun üzerine Savcı Hanım bana dönerek kerhane kadını, sen sus dediğini duyunca, kendimi kaybettim. Kendime geldiğimde saat 16.00 civarlarındaydı. Ben şikâyetçi olmak için hemen karakola gittim. Gittiğimde polis memurları beni içeri almadılar… Beklerken yukardan tutsana şunu, bilmem neyin çocuğunu yere yatırsana gibi sözler duydum. Bu sesler polis merkezinin birinci katından geliyordu. Kuvvetli bir şeyle bir yerlere vurulup, kırılma sesi geldiğini, sizi en az altı ay, en fazla altı sene elimden kimse alamaz. Buranın savcısı da, nöbetçisi de, Allah’ı da benim, herşey benden sorulur şeklinde sözler duydum. Bu sözlerin tamamının savcı hanım tarafından söylendiğini ben mahalledeki sesle aynı sesin olduğunu anladım… Ben hastaneye götürülürken M… boynunda, burnunun ucunda ve gözünde morluklar gördüm…. Ayrıca, polis merkezine ilk geldiğimde polisler bana eşimin gözaltına alındığını, bu gece burada kalacağını söylediler. Yaklaşık bir saat kadar beni polis merkezine almadılar… Polis memuru eşim adına Savcı Hanımdan özür dileyen bir dilekçe hazırladı. Eşim ben bunu imzalamam dedi. Eşimi yukarı çıkardılar. Savcı Hanımla tekrar bağrıştıklarını duydum. Ne dediklerini tam olarak hatırlamıyorum. Eşim bir müddet sonra aşağı geldi…`,</p>
+
+<p>Tanık S… …Ben gördüğümde Savcı hanım bağırıyordu. O ara Sadettin Ağabey ile tartışıyorlardı. Sadettin Ağabeyin evinin Murat ile Arif mutfak dolaplarını yapıyordu. Sadettin başlangıçta ayırmaya çalıştı. Bu sefer Savcı hanım ona hakaret etmeye başladı. Sizi ne yaparım bilmem o… çocukları diyordu. Herkese bağırıyordu. Pezevenk şeklinde sözler söylüyordu . Etrafta olan herkese bağırıyordu. Siz benim kim olduğumuzu biliyor musun diye sözler sarf ediyordu,</p>
+
+<p>Tanık Mehmet Şükrü Gülaç; …Yusuf Çetin isimli kişi de vardı. O bayanı sakinleştirmeye çalışıyordu. Çantasını tutuyordu, daha soru bayan bir daha Murat’ın yakasına yapıştı, üzerindeki tişörtü çekiştirerek yırttı. S.. A.. isim kişi, sana bir şey yapmadılar, dur kızım yapma derken ona hitaben, sen ne karışıyorsun pezevenk diyerek tokat attı. Bir evin 3. katından bir bayan, hayrola ne oluyor diye müdahale ettiğinde, bayana hitaben, sen ne karışıyorsun, kaltak dedi. Sonra olay yerine polisler geldi. Polisler gelmeden önce bayanın Serdal Bey isimli bir şahsı arayarak hemen gelin, beni dövüyorlar dediğini birkaç dakika sonra da tekrar arayıp, nerede kaldınız dediğini duymuştum. Polislere küfür ettiğini duymadım, küfür etseydi duyardım, S.. A.. polislerin yanında Murat ve Arif’in bir şeyler yapmadığını, bayanın kendisine tokat atıp hakaret ettiğini, şikâyetçi olduğunu söyleyince bayan dönerek, polislerin yanında bir tokat attı, gözündeki gözlük yere düştü, şahıs almaya çalışırken bir de tekme attı,</p>
+
+<p>Tanık Y…Bir bayanın Murat’ın yakasından tuttuğunu, sen göreceksin, benim kim olduğumu biliyor musun gibi sözler söylediğini duydum. A….bayana hitaben bizi bırakın gidelim, biz öyle bir şey yapmadık dediğini duydum, Ben olayı yatıştırmak üzere araya girmiştim, bu arada bayan Murat’ın üzerindeki tişörtü çekiştirerek yırttı ve Murat’ın elinde bulunan tahta parçalarına vurunca tahta parçaları yüzüne geldi. Murat bunun üzerine bayanın yüzüne bir tokat attı. Tokat atılınca Savcı Hanım, Murat’ın yakasını bıraktı. Ben olay yerine geldiğimde yaşlı, beyaz saçlı, gözlüklü, bir beyle bir bayan da geldiler. Erkek olan şahıs, Savcı Hanıma hitaben çocukları bırak, onlar benim yanımda çalışıyorlar, sana çalmadı, ağabeyine çaldı dedi. Savcı Hanım bunu duyunca bu şahsa dönerek, sen kimsin ulan b… herif yürü lan gibi sözler söyledi… Kendisi olaya müdahale eden herkese yukarıda söylediğim sözlerle bağırıp çağırıyordu.Ben bayan olduğu için kendisine yardım edip, bir an önce olayın yatışması için çaba sarf ettim. Hatta olay yerinde bulunan özel eşyalarını toplayıp kendisine verdim olay yerinden uzaklaştırmak istedim. Bana hitaben de sen bana yardımcı olamazsın diyerek elimi şiddetle ittirdi. Cep telefonu ile birisini arayarak Serdar Bey nerede kaldınız, şahıslar gidiyor, kaçıyor, biraz acele edin dedi.Telefonu kapattıktan birkaç dakika sonra polisler olay yerine geldiler… Murat, Arif, ben ve gözlüklü, beyaz saçlı şahsı alıp polis merkezine getirdiler. Savcı Hanım da ekip otosu ile merkeze geldi. Polisler olay yerine geldiğinde olay bitmişti. Ben polislerle birlikte gelirken bayanın savcı olduğunu öğrendim… Kapının girişinde bekledim. Beklerken üst katlardan cam sesleri duydum. Bir bayanın çok yüksek sesle bağırıp çağırdığını duydum. Fakat ne dediğini anlayamadım…. Murat yalnız başına aşağı indi. Kendisini gördüğümde ne oldu dedim. Onlar tuttu, savcı vurdu dedi. Ben Murat’ı karakola girerken de görmüştüm. Yukarıdan indiğinden yüzünde gözünde darp cebiz izleri vardı. Bu izler karakola ilk geldiğimizde yoktu. Daha sonra A.. K…yukarı çıkardılar. Yine bağırma sesi duydum. Sonra beyaz saçlı, gözlüklü bey yukarı çıktı. Karşılıklı bağrışmalar duydum… Ben orada beklerken Metin isimli polis memuru bana ne biçim oturuyorsun, ayağa kalk gibi sözler söyledi. Ben de doğrusu neyse anlatmak istiyorum, yoksa ifade vermem dedim. Polis memuru Metin yukarıda Savcı Hanımın bulunduğu odaya çıkıp geldi. Beni alıp beraberce odasına gittik. Odaya girdiğimizde Serdal başkomiser ile Savcı Hanım karşılıklı oturuyorlardı.Ben de, savcı beni de dövecek diye düşündüm. Bana aşağıda ne oldu dedi, ben de polisler bana kötü davrandılar, bağırdılar dedim. Bana çalışıp çalışmadığımı sordu. Ben durumumu anlattım. Avşar isimlişirkette şoförlük yaptığımı, şu anda işimin olmadığını, mağdur durumda olduğumu, anne ve babamın özürlü olduğunu, bunlarla uğraşmak istemediğimi söyledim. Bana şoförlük işi bulabileceğini söyledi. Bana burs verdirebileceğini söyleyerek aşağı in dedi. Serdal Beye döndü ve ifadesini siz alır mısınız diye sordu. Serdal Beyle birlikte indik. Aşağı indiğimizde ifade yazılmıştı. Ben de okumadan imzaladım. Serdal Bey bana sadece Murat, Savcı Hanıma tokat attı değil mi diye sordu, ben de tokat attığını gördüğüm için evet dedim. Bunun dışında herhangi şey sormadı. Ben ifademi imzaladıktan sonra polis merkezinden ayrıldım`,</p>
+
+<p>Tanık H… Sarıyer Devlet Hastanesi acil servisinde nöbetçi doktor olarak görev yapıyordum. M… isimli şahsın raporunu bizzat muayene sonucu düzenledim, sol gözaltında ve sırtta travmatik lezyonlar vardı. Bu lezyonlar darbe sonucu oluşmuş lezyonlardır. Bu lezyonlar sert bir cisimle veya yumrukla yapılmış olabileceği gibi şahsın yerlere çarpması sonucu da olabilir… Daha sonra A.. C.. isimli bayanı muayene ettim ve raporunu tanzim ettim. Raporun altında imza bana aittir. Kişiyi muayene ederken Cumhuriyet savcısı olduğunu bilmiyordum. Muayene bulgularım yazıp işaretlerken kendisi bana daha önce de geldiğini, acilde ilaç yazdırmak istediğini benim de yazmadığımı, kendisinin Cumhuriyet savcısı olduğunu söyledi. Ben, daha önce de geldiğini hatırlamadım, bunu da kendisine ifade ettim. Raporun sonuç kısmını Cumhuriyet savcısı olduğunu öğrendikten sonra yazdım, öğrendikten sonra kanaatimde değişiklik olmamıştır. Sağ el bileğinde ağrı olduğu için atele taktığımız için basit tıbbı müdahale ile giderilemez raporu düzenledim`,</p>
+
+<p>Tanık G…. Ben olay günü eşimle tartıştığım için olay karakola intikal etmişti. Bu nedenle karakolda bekliyordum. Beni tam ifadem için içeri alacakları sırada çıkmamı istediler. Bu sırada karakoldan bir kadın sesi geliyordu. Kadının bağrışma sesini duydum. Birileri yapmayın derken onun vurduğunu zannediyorum. Devamlı bayanın sesi vardı. Birileri de devamlı yapmayın diyordu. Bayan dışarı çıktıktan sonra bizi içeri aldılar . Ben o zaman çocuğu gördüm. Üstü başı yırtıktı. Ben olayların olduğu yani bayanın sesinin geldiği odanın dışındaydım. Odanın içersinden sesler geliyordu. Ben bayanı hiç görmedim. Ama bol bol sesini duydum… Çocuğun gömleği falan herşeyi yırtıktı. Suratı kırmızı idi… Ben gördüğümde dayak yiyen çocuğun kemeri ve ayakkabı bağlarını alıyorlardı…`,</p>
+
+<p>Tanık Z…; Biz görümcem Gülay ile karakola başvurmuştuk, içeri almadılar, kapıda bekliyorduk. Dışarı çıkardılar bizi, içeriden bir bayanın sesi geliyordu . Hakaret eden çığlık çığlık bağıran bir kadın sesi ve ara sıra topuk sesleri geliyordu. Biri de yeter vurmayın artık diyordu. Biz orada uzun süre bekledik….Çığlık atan bayan ananınkini göreceksin, ben sana soracağım diyordu . Arada sırada bir erkek sesi bırakın onu diyordu. Sen kimsin seni de yakarım diyordu. Bunları daha çok polis merkezinin girişindeki merdiven boşluğundayken duydum. Bir süre sonra bir polis aşağı inerek, kapıdaki polis memuruna, burayı boşaltın, kimseyi içeri almayın, yukarısı karışık bunaldım zaten dedi. Ben de kendisine, biz de burada bekliyoruz, ifademizi verelim gidelim deyine, basit bir şey değil, lütfen dışarı çıkın, sonra alacağız sizi diyerek, yukarı tekrar çıktı. Bağırıp çağıran, kavga eden bir bayan değil mi ayırın, gerekeni yapın, bizim de işimiz var, bir bayanı susturamıyor musunuz dedim. Bana yukarıdaki bayan savcı, bir şey yapamıyoruz, biraz daha bekleyin dedi. Biz bir süre daha bekledik. Dışarıda toplam beklememiz bir saati bulmuştur`,</p>
+
+<p>Tanık Bayram K…; Olayın olduğu gün müracaat savcısıydım, Aslı Hanım nöbetçi savcıydı. Beni Y… isimli savcımız telefon ile arayarak Aslı Hanımın kendisini arayarak dayak yediğini, karakolda olduğunu ve kendisini karakola çağırdığını söyledi. Bana istersen beraber gidelim, ne olmuş ne olmamış gidip bakalım dedi.. Yavuz bey ile birlikte adliyenin resmi arabası ile karakola gittik. Savcı Aslı Hanım karakol amirinin makam odasında oturuyordu. Kahve içiyorlardı. Aslı Hanıma geçmiş olsun dedim. Kızgındı. Bize yolda giderken iki gencin kendisine laf attığını buna tepki gösterince kendisine vurduklarını, kendisinin de karşılık verdiğini, hakarete uğradığını bunun üzerine karakola telefon edip ekip çağırdığını, ekip ile birlikte sanıkları gözaltına aldırarak karakola geldiğini, kendisinin de bu kişileri benzettiğini söyledi. Karakol Amirini olay yerine telefonla çağırıp, olaya karışan şüphelileri karakola getirttiğini, karakolda öfkesini tutamayarak çerçeveyi birinin kafasına vurduğunu söyledi. Amire hitaben ben zaten nöbetçi savcıyım, mevcutlu olarak bunları adliye getirin, mahkemeye sevk ederim, hâkimle de konuşurum tutuklar dedi. Ben araya girerek mesai saati içinde adliyeye sevk edilirlerse benim bakacağımı, mesai saati dışında olursa da kendisin müşteki olması nedeniyle bakmasının doğru olmayacağını söyledim. Aslı Hanımı bu konuda soruşturmayı yürütmemesi için ikna ettik … Karakolda komiser Serdal ile yaptığımız konuşmada olayların kameranın olmadığı bir odada geçtiğini söylediğini duydum. Ayrıca Savcı Hanım polis memurları marifetiyle taciz ile suçladığı kişilerden birini yere yatırdığını, ayakkabısı ile ezdiğini ve çerçeveyi bu şekilde parçaladığını duydum`,</p>
+
+<p>Tanık Y…..; 06.7.2009 tarihinde adliyede mesaide idim. Aslı Hanım nöbetçiydi. Aslı Hanım o gün beni cep telefonundan bir iki defa aramış. Cep telefonum kapalı olduğu için ulaşamamış. Daha sonra cep telefonumu açınca aramış olması nedeniyle aradım. Kendisi bana talihsiz olay yaşadığını, birilerinin kendisine laf attığını, eğer müsait isem karakola kadar gelmemi istedi. Ben bunun üzerine mesai arkadaşım olan savcı Bayram Köroğlu’na bizzat kendim söyleyerek durumu anlattım. Onunla birlikte karakola gitmeye karar verdik… Aslı Hanım başkomiserin yanında odasında oturuyordu. Bize yolda kendisine laf atıldığını, kendisine yumruk vurduklarını, karşılık verdiğini ve olayı karakola intikal ettirip gözaltına aldığını, karakola geldiklerinde öfkesinden tabloyu sanıklardan birinin kafasında parçaladığını söyledi. Bize bunu yaparken polislerin yardım ettiğini de söyledi. Savcı hanım uğradığı olayın etkisiyle bazen hakaret sarf eden sözler de söylüyordu. Ancak net olarak hatırlamıyorum. Savcı Hanım bunları söylerken başkomıser Serdar da bunları yaptık. Fakat kamerasız yaptık, ne olduysa kamerasız odada oldu dedi . Diğer polisler ile biz muhatap olmadık . Onlarla konuşmadık. Savcı hanım soruşturmayı yapmak istiyordu. Ancak Bayram Bey soruşturmanın selameti açısından bunun doğru olmadığını söyleyince bundan vazgeçti, savcı Bayram Bey başkomisere olayın niye kendisine haber verilmediğini sorduğunda, başkomiserin kendisi zaten savcı, size haber vermeyi düşünemedim dediğini hatırlıyorum. Savcı Hanım o ana kadarki işlemleri yürütmüştü. Bayram Bey de bu konuşmadan sonra başkomisere soruşturmanın yürütülmesi ile ilgili bundan sonraki işlemleri yapabileceğini ifade etti `,</p>
+
+<p>Tanık N….; …Ben o gün saat 16.00 dan sonra mesaiden sonra sorguya bakacağımı öğrendim. O gün Savcı Hanım benim telefonumu aramış. Ancak ben aramayı görmediğim için açmamışım. Saat 16.30 dan sonra da olayı öğrenip nöbetçi olduğumu ve sorguya da benim bakacağımı öğrenince bu aramayı görmeme rağmen Savcı Hanıma dönmedim ve onu aramadım. Sevk edilen şüphelilerin sorgusunu yaptım. Sorgu tamamlandıktan sonra evrakı tamamladıktan sonra saat 21.00 de Savcı Hanımı aradım. Bana, `telefonlarıma niye bakmıyorsun, taraf olduğum için mi dedi Ben de çağrısını görmediğimi, bunun da isabet olduğunu söyledim,</p>
+
+<p>Tanık F…..Müracaat savcısı olarak görev yapan Cumhuriyet savcısı Bayram Bey mesainin bitimine birkaç saat kala odama geldi, Savcı hanımın kendisine laf atıldığını, dövüldüğünü telefonda Yavuz Bey’e bildirdiğini, Yavuz Bey’in de kendisine haber verdiğini, beraberce polis merkezine gidip döndüklerini söyledi. B…. ayrıca Savcı Hanımın kendisine laf atan şahıslardan küçük olanını polis marifetiyle yere yatırıp, kafasını ezdiğini, duvarda bulunan çerçeveyi başında parçaladığını polis merkezinde anlattığını bana söyledi. Ben de evrak nöbete kalacak, Savcı Hanım nöbetçi olduğu için evraka kendisi bakmasın, biz bakalım dedim. …bu olaylardan birkaç gün sonra adliyeyi ziyarete gelen Yargıtay Üyesi Nihat Ömeroğlu, Savcı Hanım’ın olaya müdahale eden herkese sinkaflı küfürler ettiği mahallede rezalet çıkardığını, camlardan bakanlara dahi küfürler ettiğini hatta camdan veya balkondan bakan yaşlı bir erkek şahsa, senin a…na koyayım şeklinde küfürler ettiğini, şahsın da, bunu kız başınla nasıl yapacaksın dediğini duyduğunu anlattı. Kendisi bunları duyunca bu bayanın savcı olduğuna inanmadığını söyledi…`,</p>
+
+<p>Şeklinde beyanda bulunmuşlardır.</p>
+
+<p>Sanık A.. C..; …M…. A…..ve S.. A.. adlı şahıslara vurduğum, hakaret ettiğim iddiaları hayatın olağan akışına aykırıdır, M… hiçbir şekilde karakolda vurmuş değilim, eğer iddia edildiği gibi şahsa vurmuş olsaydım, şahsın yaralanması ağır olurdu, bunlar şahısların kendilerini suçtan kurtarmak için ve bana zarar vermek için çeşitli yönlendirmelerle uydurdukları gerçek olmayan iddialardır. Kaldı ki her ne kadar karar tarafıma henüz tebliğ edilmemiş olsa da M..ve A… ceza almışlardır. Olayda dayak yiyen, hakarete uğrayan, tehdit edilen benim, olayın mağduru benim, şahıslardan kasten yaralama raporundan dolayı ve hakaret, tehdit ve tacizden dolayı şikayetçi olan benim… Beraatime karar verilmesini, aksi halde hakkımda uygulanabilecek tüm lehe olan yasal hükümlerinin uygulanmasını ve hükmün açıklanmasının geri bırakılmasına karar verilmesini talep ediyorum`,</p>
+
+<p>Sanık S….; Kesinlikle görevimi kötüye kullanmadım, kimseyi yaralamadım, kimseye de hakaret etmedim. Olay tarihinde Ş….Polis Merkez Amiri olarak görev yapmakta idim. Görevim sırasında Sarıyer nöbetçi C. savcısı olan A.. C.. kendisinin darp edildiğini telefonla bildirince olay yerine ben, diğer sanıklardan D…. ile olay tutanağında imzası olan diğer görevli arkadaşlarım ile gittik. Olay yerinde bir arbede vardı. M… nöbetçi savcıya bağırdığını gördüm. Olay yerindeki arbedeyi yatıştırdık. Daha sonra M… A.. . ve Y…‘İ karakola getirdik. Karakolda gerekli sorgulamaları yaptık. Kesinlikle darp etmedik. Bu durum kamera kayıtlarından anlaşılacaktır`,</p>
+
+<p>Sanık İ…n; Suçlamaları kabul etmiyorum. Ben kesinlikle görevimi kötüye kullanmadım. Kimseye kötü davranmadım. Kimseyi yaralamadım,</p>
+
+<p>Sanık D…; Suçlamaları kabul etmiyorum. Kesinlikle görevimi kötüye kullanmadım, kimseye kötü davranmadım ve yaralamadım. Suçsuzum,</p>
+
+<p>Şeklinde savunmalarda bulunmuşlardır.</p>
+
+<p>Türkiye Cumhuriyeti Anayasasının 2. maddesinde, Türkiye Cumhuriyeti, toplumun huzuru, millî dayanışma ve adalet anlayışı içinde, insan haklarına saygılı, Atatürk milliyetçiliğine bağlı, başlangıçta belirtilen temel ilkelere dayanan, demokratik, lâik ve sosyal bir hukuk Devletidir` hükmü yer almakta olup, hukuk devleti, insan haklarına dayanan, bu hak ve özgürlükleri koruyup güçlendiren, eylem ve işlemleri hukuka uygun olan,hukuku tüm devlet organlarına egemen kılan, Anayasa ve kanunlarla kendini bağlı sayan, bağımsız yargı denetimine açık olan devlettir. Yargı organları da yargılama yaparken hukuk devleti ilkelerine dolayısıyla anayasa ve kanunlara uygun olarak hareket etmelidirler.</p>
+
+<p>Anayasa’nın 36. maddesinde ise, herkesin, meşru vasıta ve yollardan faydalanmak suretiyle yargı mercileri önünde davacı veya davalı olarak iddia ve savunma ile adil yargılanma hakkına sahip bulunduğu belirtilerek, kişilerin isnat edilen bir suçlamaya karşı kendilerini savunabilmesinin en etkili ve güvenceli yolu olarak adil yargılanma hakkı kabul edilmiştir. Avrupa İnsan Hakları Sözleşmesinin 6. maddesinde de hüküm altına alınan bu hak, hukukun üstünlüğü ile adalete erişimi koruyan ve kişilerin soruşturmanın başından itibaren açık ve adil bir şekilde yargılanmalarını teminat altına alan mutlak bir hak olup, ceza muhakemesinin ilk aşaması olan soruşturma evresi de dahil olmak üzere, şüpheli ile ilgili soruşturma işlemlerini yürüten görevlilerin ya da şüphelinin koruma tedbirlerine ilişkin olarak önüne çıkarıldığı görevlilerin veya kovuşturma aşamasında mahkeme görevlilerinin yürütme organından ve taraflardan bağımsız ve tarafsız olmasını gerekli kılar. Bu bağlamda, kendisinin şikâyetçisi olduğu eylemlere ilişkin başlatılan ceza soruşturmasını yürüten Cumhuriyet savcısının Sözleşmenin aradığı tarafsız görevli olmadığı hususunda bir tereddüt bulunmamaktadır.</p>
+
+<p>Diğer taraftan, herkes düşünce ve kanaat hürriyetine sahip olup, ceza muhakemesi hukukumuzda baskı altında verilen ifadelerin kullanılması yasaklanmış ve şüpheli, sanık, mağdur ve tanık beyanının özgür iradesine dayanmasını sağlama amacına yönelik ilkeler benimsenmiştir. Ceza muhakemesinin asli unsuru olan şüpheli ya da sanığın, suç şüphesi altında olsa dahi insan olması sebebiyle belirli haklara sahip olan ve bu haklarına saygı gösterilmek zorunda olan bir varlık olduğu kabul edilmiştir. Bu sebeple tüm muhakeme işlemlerinin hukuk kuralları dâhilinde insanlık şeref ve haysiyetine uygun olması zorunluluğu hiçbir tereddüte yer vermeyecek şekilde ortaya konulmuştur. Nitekim yasak sorgu yöntemleri ile elde edilen delillere dayanılma yasağı ile susma hakkı bu kabulün yansımalarıdır.</p>
+
+<p>Ayrıca, 31 Mayıs 2005 tarihinde Avrupa Savcıları Konferansı tarafından kabul edilen Savcılar için Budapeşte Etik İlkeleri, (Savcılar için Etik ve Davranış Biçimlerine ilişkin Avrupa Esasları) uyarınca, savcılar, `bir hukuk ihlalinin cezai yaptırım gerektirdiği durumda hem kişi haklarının hem de ceza adaleti sisteminin gerekli etkisini dikkate alarak toplum adına ve kamu yararına hukukun uygulanmasını sağlayan kamu yetkilileri olarak ifade edilmiş, anılan ilkeler Hâkimler ve Savcılar Yüksek Kurulunca 27.06.2006 gün ve 315 sayılı karar ile benimsenerek Adalet Bakanlığı Personel Genel Müdürlüğü’nün 14.11.2006 tarihli yazıları ile yargı teşkilatına duyurulmuştur.</p>
+
+<p>Bu açıklamalar ışığında somut olay değerlendirildiğinde;</p>
+
+<p>Sarıyer Cumhuriyet savcısı olarak görev yapan sanık A… kendisine karşı işlendiği ileri sürülen ve bu nedenle şikâyetçisi olduğu suçlarla ilgili olarak kolluk görevlilerine haber verildikten sonra başlatılan soruşturma işlemlerini yürüttüğü, sokakta gerçekleşen olaylardan sonra şüpheliler ve tanıkların karakola götürülmesi talimatını verdiği, karakoldaki ifade alma işlemlerine iştirak ettiği, kendisi ile birlikte hareket eden görevli başkomiser ve polis memurları olan diğer sanıklarla birlikte soruşturmayı yönlendirdiği, tanık Sadettin’in gözaltına alınıyormuş izlenimi verilmek suretiyle korkutularak, tanık Yusuf’un da iş bulma vaadiyle etki altında bırakılarak eksik olduğu için gerçekle birebir örtüşmeyen ifade tutanaklarını imzalamasını sağladığı, mağdur Murat’ı karakolda darp ettiği, mağdurların şüpheli sıfatıyla adliyeye sevkedilmesi talimatını verdiği, nöbetçi hakimle de konuşurum tutuklar` diyerek nöbetçi sulh ceza hakimini iki defa cep telefonundan aradığı, ancak ulaşamadığı, eylemler sırasında karakolun boşaltıldığı, başka işlemler nedeniyle karakola getirilmiş olan tanık, şikayetçi ya da şüphelilerin karakol dışında bir saate yakın bir süre bekletildiği anlaşıldığından, Cumhuriyet savcısı olan sanığın görevinin gereklerine aykırı hareket etmek suretiyle soruşturmanın tarafsız ve görevli makamlar tarafından yapılması, savunma hakkına riayet edilmesi, delillerin güvenilirliğinin sağlanması ve adil yargılanma ilkelerine uygun davranmayıp, kamu görevlilerinin objektif davranma sorumluluğunu da ihlal ettiği, diğer sanıkların da birlikte gerçekleştirmek suretiyle sanık A… eylemlerine iştirak ettikleri, böylece tüm sanıkların görevlerinin gereklerine aykırı davranmak suretiyle, M., A., S. ve Y.mağduriyetlerine neden oldukları görülmektedir. Buna göre, 06.07.2009 günlü eylemler nedeniyle görevi kötüye kullanma suçlarının sabit olduğu kabul edilmelidir.</p>
+
+<p>Bu nedenle, suç tarihinde Sarıyer Cumhuriyet savcısı olarak görev yapan sanık A.., başkomiser Serdal, polis memurları İ. ve Doğukan’ın 06.07.2009 günlü eylemlerinin TCK`nun 257/1. maddesinde yer alan görevi kötüye kullanma suçu olarak nitelendirilmesi isabetlidir.</p>
+
+<p>3- Tüm sanıklar hakkındaki mahkûmiyet hükümlerinin temyiz incelemesinde suçların sübutu ve nitelendirilmesine ilişkin uyuşmazlıkların çözümünden sonra, haklarında 5271 sayılı CMK`nun 231/5. maddesinin uygulanmasını talep eden sanıklarla ilgili olarak anılan maddenin 5 ve 6. fıkraları uyarınca hükmün açıklanmasının geri bırakılmasının uygulanma şartlarının bulunup bulunmadığının değerlendirilmesi gerekmektedir.</p>
+
+<p>5271 sayılı CMK`nun 231. maddesinde 5560, 5728, 5739 ve 6008 sayılı Kanunlar ile yapılan değişiklikler göz önüne alındığında, sanıklar hakkında hükmün açıklanmasının geri bırakılabilmesi için;</p>
+
+<p>a) Suça ilişkin olarak;</p>
+
+<p>1- Yapılan yargılama sonucunda, sanık hakkında mahkûmiyet hükmü tesis edilmesi ve hükmolunan cezanın, iki yıl veya daha az süreli hapis veya adli para cezasından ibaret olması,</p>
+
+<p>2- Suçun, Anayasanın 174. maddesinde güvence altına alınan inkılâp kanunlarında yer alan suçlardan olmaması,</p>
+
+<p>b) Sanığa ilişkin olarak;</p>
+
+<p>1- Sanığın daha önce kasıtlı bir suçtan mahkûm olmamış bulunması,</p>
+
+<p>2- Suçun işlenmesiyle mağdurun veya kamunun uğradığı zararın, aynen iade, suçtan önceki hale getirme veya tazmin suretiyle tamamen giderilmesi,</p>
+
+<p>3- Mahkemece; sanığın, kişilik özellikleri ile duruşmadaki tutum ve davranışları göz önünde bulundurularak yeniden suç işlemeyeceği hususunda kanaate ulaşılması,</p>
+
+<p>4- Sanığın bu hükmün uygulanmasını kabul etmediğine dair beyanının olmaması,</p>
+
+<p>Şartlarının gerçekleşmesi gerekmektedir. Bu şartların varlığı halinde, mahkemece hükmün açıklanmasının geri bırakılmasına karar verilebilecek ve sanık beş yıl süreyle denetimli serbestlik tedbirine tabi tutulacaktır.</p>
+
+<p>Uyuşmazlığa konu olayda, diğer şartların gerçekleştiği konusunda bir tereddüt bulunmaması nedeniyle, hükmün açıklanmasının geri bırakılmasının uygulanıp uygulanmayacağının belirlenmesi açısından, sanığa ilişkin olarak 3. bentte yazılı mahkemece; sanığın, kişilik özellikleri ile duruşmadaki tutum ve davranışları göz önünde bulundurularak yeniden suç işlemeyeceği hususunda kanaate ulaşılması` şartının gerçekleşip gerçekleşmediği üzerinde durulmalıdır.</p>
+
+<p>5271 sayılı CMK`nun 231. maddesinin 6. fıkrasının (b) bendi uyarınca sanık hakkında hükmün açıklanmasının geri bırakılmasına karar verilebilmesi için mahkemece, sanığın kişilik özellikleri ile duruşmadaki tutum ve davranışları göz önünde bulundurularak yeniden suç işlemeyeceği hususunda kanaate varılması şartının gerçekleşmesi gerekmektedir. Öğretide iyi hal şartı olarak da adlandırılan bu durum, yargılamayı yapan mahkemede sanığın daha sonra tekrar suç işlemeyeceği yönünde kanaat oluşmuş olması şeklinde de özetlenebilir. Uygulamada, sanığın dosyaya yansıyan bilgi ve belgelere göre ortaya çıkan kişilik özellikleri, duruşmalar sırasındaki tutumu, pişmanlığı ve mahkemeye gerçeklerin aydınlatılması yönündeki samimi yardımları,mahkemede yeniden suç işleyip işlemeyeceği hususunda kanaatin oluşmasında etkili olmaktadır.</p>
+
+<p>Bu açıklamalar ışığında uyuşmazlık konusu değerlendirildiğinde;</p>
+
+<p>Adli sicil kayıtları bulunmayan, haklarında hükmün açıklanmasının geri bırakılmasının uygulanmasını talep eden, doğrudan maddi zarar sonucunu doğurmayan eylemler nedeniyle sonuç olarak iki yıl veya daha az süreli hapis ya da adli para cezasına mahkûm edilen sanıklar hakkında, yargılama süreci boyunca maddi gerçeğe ulaşma ve adaleti sağlama yolunda çaba harcayan ilk derece mahkemesi sıfatıyla yargılamayı yapan Özel Dairece, sanıkların ısrarlı suç işlemeleri ile gözlenen kişilikleri nazara alınarak ileride suç işlemekten çekinecekleri konusunda vicdani kanaat oluşmadığı` şeklinde gösterilen gerekçeyle hükmün açıklanmasının geri bırakılmasına yer olmadığına karar verilmiş olması, sanıklar hakkında birden fazla suçla ilgili olarak yürütülen ve muhtevası yukarıdaki aşamalarda özetlenen dosya kapsamına uygun ve isabetlidir.</p>
+
+<p>Bu nedenle, sanıklar hakkında hükmün açıklanmasının geri bırakılmasının uygulanmasına yer olmadığına ilişkin gösterilen gerekçe kanuni, yeterli ve dosya kapsamı ile uyumlu olduğundan, Özel Daire kararı usul ve kanuna uygundur.</p>
+
+<p>Çoğunluk görüşüne katılmayan Genel Kurul Üyeleri H. Erol ve Ş. İste; 11.02.2014 günlü Y.C.G.K gündeminin 1’nci sırasındaki Yargıtay 4. Ceza Dairesi`nin ilk derece mahkemesi sıfatıyla karara bağladığı 21.02.2013 gün ve 9-1 sayılı sanıkları A.. C.., S. A. D…. olan dosyasının Ceza Genel Kurulunda görüşülmesinde sayın çoğunluğun görüşüne katılmadığımız konularla ilgili gerekçelerimiz:</p>
+
+<p>Olay tarihinde sanıklardan A.. C.. Sarıyer Cumhuriyet savcısı, Se. Sarıyer Ş. Polis Karakolu`nda Başkomiser, D… ile İb… ise polis memurlarıdır.</p>
+
+<p>Olay günü nöbetçi Cumhuriyet savcısı olan A… yolda yürümekte iken M… kendisine ıslık çalmış, kardeşi A….da onun yanında yer alınca, sanık A… kendisinin Cumhuriyet savcısı olduğunu belirtmiş, taraflar arasında tartışma çıkmış, sanık savcı polisi aramış, sonuçta taraflar polise götürülmüşlerdir; iddiaya göre bayan savcının talimatıyla dövülmüşlerdir. (Adı geçenler bayan Cumhuriyet savcısı A.. C..`na tacizde bulunduklarından mahkum olmuşlardır.)</p>
+
+<p>Daha sonra, sanık savcı ile ilgili adliye içindeki bazı olaylar nedeniyle de soruşturma açılmıştır. Bir kısım kararlar kesin nitelikte olduğundan, sadece ilk derece mahkemesi sıfatıyla davaya bakan Yargıtay 4. Ceza Dairesinin kararına vaki temyiz üzerine, Ceza Genel Kurulu`nda inceleme yapılan konular ile ilgili olarak, sayın çoğunluğun görüşlerine katılmadığımız konular, yüklenen suçta belirtilerek aşağıda maddeler halinde sıralanmıştır.</p>
+
+<p>1- Sarıyer Cumhuriyet Savcılığında soruşturması yapılan başka olaylarda, şüphelilerin ifadelerinin görevli Cumhuriyet Savcısı olan Aslı Betül yerine, katiplerce alınması iddiası ile ilgili olarak;</p>
+
+<p>Bu iddia ile ilgili olarak sanık A.. C.. TCK.nun 257/1, 62, 50/a maddeleri aracılığı ile 52/2-4, 53/5 maddeleri gereğince cezalandırılmıştır. (Sanıklar hakkında CMK.nun 231/6. maddesinin uygulanmaması ile ilgili olarak ayrı bir fasıl halinde toptan açıklama yapılacaktır.)</p>
+
+<p>a- 2009/216 nolu soruşturma sayılı dosyada şüpheli Mustafa Işık’ın, 2009/2663 soruşturma sayılı dosyada müşteki Nuri Karahasanoğlu’nun ifadelerinin zabıt katibi Abdullah Çevik tarafından,</p>
+
+<p>b- 2009/1547 soruşturma sayılı evrak da şüpheli Hüseyin Başar’ın ifadesinin zabıt katibi Salih Toparlak tarafından 17.04.2010 tarihinde alındığı, alınan ifadelere Cumhuriyet savcısı A.. C..’nun imzasının açıldığı ancak ifadelerin şüpheli Cumhuriyet savcısı A.. C.. tarafından imzalanmadığı, zabıt katipleri hakkında soruşturma yapılmasından sonra ilgililerin sanık savcı tarafından çağırılıp, katiplere verdiği ifadeler okunup, tekrarlarım cevabı alındıktan sonra sanık savcı tarafından imzalandığı anlaşılmaktadır.</p>
+
+<p>Bir tarafta haklarında soruşturma yapılan zabıt katiplerinin ifadesi, diğer tarafta da sanık savcının ifadesi vardır. Sanık savcının imzası olmayan tutanaklardan sorumlu tutulmaması gerekir.</p>
+
+<p>Kaldı ki, sanık savcı istese bu ifadeleri polise de aldırabilirdi. Bu nedenle birisi müşteki, diğer ikisi de sanık olan kişilerin zabıt katiplerince ifadelerinin alınmasında, imzası olmayan savcıya kusur yüklenemez. Kaldı ki, sanık olarak ifadeleri alınan iki kişinin hangi suçun sanığı olduğunu gündemde göremedik.</p>
+
+<p>Sonuç olarak yüklenen bu suçu sanığın işlediğine dair sübut yoktur.</p>
+
+<p>Şüpheden sanık yararlanır ilkesi gözönüne alınarak sanığın beraatine karar verilmesi görüşündeyiz.</p>
+
+<p>2- Sanık A.. C..’nun Sarıyer Cumhuriyet Başsavcılığı Yazı İşleri Müdürü Akide Ermehan`a hakaret ettiği iddiası;</p>
+
+<p>Sarıyer İlçe Cumhuriyet Başsavcılığınca yapılan işbölümü gereği, sanık savcının Sarıyer Asliye 2’nci Ceza Mahkemesi’nde iddia makamını temsil etmekle görevlendirildiği, mahkemenin duruşma günü olmasına rağmen görevli savcının saat 09.30 olmasına rağmen duruşmaya gelmemesi üzerine mahkeme hakiminin durumu İlçe Başsavcısına bildirdiği, Başsavcının da konuyu yazı işleri müdürüne havale ederek, savcı Aslı Betül’ü aramasını istediği, Yazı İşleri Müdürünce sanık savcı arandığında, telefonunun kapalı olduğu, saat 10.19’da ulaşamadığınız numaraya şimdi ulaşılabiliyor mesajı gelince, tekrar arandığında, sanığın yazı işleri müdürüne sen aramayacaksın, beni sen aramayacaksın, sabah sabah ben senin sesini duymak zorundamıyım, neden arıyorsun deyip telefonu kapattığı, konuşmadan 5-10 dakika sonra sanık A.. C..’nun adliyeye gelerek Akide Ermehan İlçe Cumhuriyet Başsavcısı Fazıl Aslanalp`in odasında iken gelince…neden aradın, sen beni aramayacaksın dediği; Akide’nin Savcım dedi…demesi üzerine ise sen emir köpeğimisin, neden arıyorsun, sen beni aramayacaksın diyerek odasına gittiği, odasından çıkıp aşağıya inerken, bu defa kapısına kadar gelip, senin çirkin suratını görmek istemiyorum, kapat kapını diyerek kapıyı çarpıp gittiği, bu konuşmaların koridorda bulunan zabıt katibi Hülya Karanlık tarafından duyulduğu, konu ile ilgili olarak, Başsavcı Fazıl Aslanalp, Yazı İşleri Müdürü Akide Ermahan ve zabıt katibi Handan Doğan tarafından tutanak tutulduğu anlaşılmaktadır.</p>
+
+<p>Kovuşturma aşamasında adresini değiştirdiğinden, Akide Ermahan`ın ifadesinin mahkumiyet kararı veren 4. Ceza Dairesince alınmadığı gündemde yazılıdır.</p>
+
+<p>Bir yazı işleri müdürü ya tayin olmuştur ya da emekli olmuştur. Her iki durumda da adresine gayet kolay ulaşılabilir. Bir Cumuhriyet savcısının mahkum edildiği davada, devlet memuru olan müştekinin mutlaka dinlenmesi gerekirdi.</p>
+
+<p>Çünkü, bu olaydan dolayı sanık savcı TCK.nun 125/3-a maddesinden cezalandırılmıştır.</p>
+
+<p>Bu olayda yazı işleri müdürü görevli midir? Diğer bir deyişle, Başsavcının, maiyetindeki savcıya haber iletmek yazı işleri müdürünün görevi midir? Görevi değil dediğimizde suç TCK.nun 125/1. maddesi kapsamında kalacaktır. O takdirde TCK.nun 130/1. maddesi gereği suç şikayete bağlıdır. Kovuşturma sırasında belki de şikayetinden vazgeçecekti.</p>
+
+<p>İlçe Başsavcısının, maiyetindeki savcılarla katipler aracılığı ile haberleşmemesi gerekir. Kendisi arayabilirdi veya diğer bir Cumhuriyet savcısına aratabilirdi. Olaydaki gibi aksi davranış halinde, Yazı İşleri Müdürü, İlçe Başsavcısı ile İlçe Cumhuriyet Savcısı arasındaki haberleşmede görevli olamaz.</p>
+
+<p>Bu nedenle TCK.nun 125/3-a maddesinin uygulanma olanağı olmaz.</p>
+
+<p>Açıkladığımız nedenlerle sayın çoğunluğun kararına katılmıyoruz.</p>
+
+<p>3- Sanık A.. C..`yla ilgili olarak, CMK.nun 231/6. maddesinin uygulanmaması konusu;</p>
+
+<p>İlk derece mahkemesi sıfatıyla yargılama yapan Yargıtay 4. Ceza Dairesi, tüm sanıklar hakkında mahkumiyetle sonuçlanan hüküm kurduktan sonra, sanığın kişilik özellikleri göz önünde bulundurularak ileride yeniden suç işlemeyeceği kanaatine varılmadığından, CMK.nun 231/6. maddesi uyarınca hakkında verilen hükmün açıklanmasının geri bırakılmasına yer olmadığına` şeklinde soyut bir gerekçe ile 231/6. maddeyi uygulamamıştır. Sanığa CMK.nun 231. maddesinin uygulanmasını isteyip istemediğinin sorulduğuna dair bir açıklık genel kurul gündeminde yoktu. Genel Kurul tetkik hakiminin açıklamalarında da bu konuya yer verilmemiştir.</p>
+
+<p>`Maddenin uygulanabilmesi için</p>
+
+<p>a-Hükmolunan cezanın iki yıl veya daha az süreli hapis veya adli para cezası olması,</p>
+
+<p>b-Sanığın daha önce kasıtlı bir suçtan mahkum olmamış bulunması,</p>
+
+<p>c-Mahkemece sanığın kişilik özellikleri ile duruşmadaki tutum ve davranışları gözönünde bulundurularak, yeniden suç işlemeyeceği konusunda kanaate varılması,</p>
+
+<p>d-Suçun işlenmesi ile mağdurun veya kamunun uğradığı zararın aynen iade, suçtan önceki hale getirme, veya tazmin suretiyle tamamen giderilmesi` gerekir. Son şartın olayımızda gerçekleşmesi beklenemez. Ortada maddi bir zarar olmadığı gibi, suçtan önceki hale getirmeden de bahsedilemez. Hele yazı işleri müdürüne hakaret davasında, adıgeçen yazı işleri müdürü kovuşturma aşamasında dinlenmediğinden, şikayetçi olup olmadığı, şikayetinin devam edip etmediği belli olmamıştır.</p>
+
+<p>Diğer koşullara gelince sanık savcı ve emniyet görevlilerine verilen cezalar 2 yıldan az sürelidir. Hatta adli para cezasıdır.</p>
+
+<p>Sanık A.. C.., 1. sınıfa ayrılmış olup, hiç sabıkası yoktur. Türkiye’nin en büyük ili olan İstanbul’un boğaz kıyısındaki en güzel ilçelerinden biri olan Sarıyer`e atandığına göre, sicilinin de temiz olduğu aşikardır. Daha önce bir sabıkası yoktur ki, yeniden bir suç işleyip işlemeyeceği anlaşılsın.</p>
+
+<p>1.Ceza Dairesine gelen dosyalardan biliyoruz ki, ruhsatsız tabanca ile insan öldüren sanıklara müebbet hapis ya da 25 yıl, 18 yıl, 15 yıl gibi hapis cezalarınınyanında ayrıca silahtan ceza verildiğinde ya da 15. Ceza Dairesine gelen dolandırıcılık gibi suçlarda bile, verilen hapis ve adli para cezaları 231. madde gereğince hükmün açıklanması ertelenmektedir. Bu savcı hanımın eylemleri bu kişilerin eylemlerinden daha mı ağırdır?</p>
+
+<p>Gerçi hakim 231. maddeyi uygulamak zorunda değildir. Nitekim CMK.nun 231/5. maddesinde …verilebilir denilmektedir. Ancak takdir hakkı keyfilik demek değildir. Anayasanın 141/3 ve CMK.nun 230. maddesi gereğince mahkemelerin her türlü kararları gerekçeli` olmak zorundadır.</p>
+
+<p>Somut olayda olduğu gibi neden gösterilmeden `sanığın kişilik özellikleri gözönünde bulundurularak ileride yeniden suç işlemeyeceği kanaatine varılmadığından… şeklinde yasa cümlelerini aynen tekrarlayarak CMK.nun 231/6. maddesinin uygulanmaması, yasal gerekçeden yoksundur. Mahkeme, suçu değil, suçtan sonraki davranışları irdelemeliydi düşüncesiyle,</p>
+
+<p>Çoğunluk görüşüne katılmayan yedi Genel Kurul Üyesi de; sanıklar hakkında CMK’nun 231/5. maddesi uyarınca hükmün açıklanmasının geri bırakılmasına karar verilmesi gerektiği` düşüncesiyle karşı oy kullanmışlardır.</p>
+
+<p>Sonuç olarak, sanık Cumhuriyet savcısı A.. C.. hakkında 14.04.2009 ve 17.04.2009 tarihlerinde gerçekleştirilen eylemler nedeniyle görevi kötüye kullanma, kamu görevlisine karşı görevinden dolayı hakaret ve tüm sanıklar hakkında 06.07.2009 günü gerçekleştirilen eylemler nedeniyle görevi kötüye kullanma suçlarından kurulan mahkûmiyet hükümlerinin onanmasına` karar verilmiştir.</p>
+
+<p>Adalet Bakanlığı Ceza İşleri Genel Müdürlüğünce 17.10.2014 gün ve 17941-62046 sayı ile;</p>
+
+<p>“Basit yaralama ve hakaret suçlarından sanık Cumhuriyet savcısı A.. C..’nun, 5237 sayılı Türk Ceza Kanunu’nun 86/2, 86/3-d, 29, 125/1, 125/4, 62 ve 52. maddeleri uyarınca 1.500 Lira, 1.740 Lira ve 2.000 Lira adlî para cezaları ile cezalandırılmasına dair Yargıtay 4. Ceza Dairesinin (İlk Derece Mahkemesi sıfatıyla) 21.02.2013 tarihli ve 2011/9 esas, 2013/1 sayılı kararını kapsayan dosya kapsamına göre: Mahkemesince sanığın kişilik özellikleri göz önünde bulundurularak yeniden suç işlemeyeceği kanaatine varılmadığından şeklinde kanun cümlesi tekrar edilmek suretiyle sanık hakkında hükmün açıklanmasının geri bırakılmasına yer olmadığına karar verildiği, 5271 sayılı Ceza Muhakemesi Kanunu’nun 231/6. maddesinde; `Hükmün açıklanmasının geri bırakılmasına karar verilebilmesi için;</p>
+
+<p>a)Sanığın daha önce kasıtlı bir suçtan mahkûm olmamış bulunması,</p>
+
+<p>b)Mahkemece, sanığın kişilik özellikleri ile duruşmadaki tutum ve davranışları göz önünde bulundurularak yeniden suç işlemeyeceği hususunda kanaate varılması,</p>
+
+<p>c)Suçun işlenmesiyle mağdurun veya kamunun uğradığı zararın, aynen iade, suçtan önceki hale getirme veya tazmin suretiyle tamamen giderilmesi gerekir` şeklindeki düzenleme karşısında, sanığın daha önce kasıtlı bir suçtan mahkûmiyetinin ve giderilmesi gereken somut bir zararın bulunmadığı şartlarının gerçekleştiği, gerek Anayasanın 141/3. maddesinde gerekse de 5271 sayılı Kanun’un 230. maddesinde mahkemelerin her türlü kararlarının gerekçeli olmak zorunda olduğunun belirtildiği, bununla birlikte Mahkemesince sanığın kişilik özellikleri göz önünde bulundurularak dendikten sonra herhangi bir gerekçeye yer verilmeden sanık hakkında hükmün açıklanmasının geri bırakılmasına yer olmadığına karar verilmesinde isabet görülmemiştir” görüşüyle kanun yararına bozma kanun yoluna müracaat edilmiştir.</p>
+
+<p>Yargıtay Cumhuriyet Başsavcılığının 11.11.2014 gün ve 371235 sayılı ihbar yazısı ile Yargıtay Birinci Başkanlığına gönderilen dosya, Ceza Genel Kurulunca değerlendirilmiş ve açıklanan gerekçelerle karara bağlanmıştır.</p>
+
+<p>CEZA GENEL KURULU KARARI</p>
+
+<p>1- Sanık A.. C.. hakkında mağdur Murat K…‘ya karşı işlendiği iddia olunan hakaret, sokakta iken kasten yaralama ve mala zarar verme suçlarından kurulan düşme hükümleri ile mağdur Arif Kara`ya karşı hakaret suçundan kurulan ceza verilmesine yer olmadığı hükmü temyiz edilmeksizin,</p>
+
+<p>2- Sanık A.. C.. hakkında mağdur A….karşı hakaret ve 17.04.2009 ve 06.07.2009 tarihlerinde gerçekleştirilen iki ayrı görevi kötüye kullanma suçundan kurulan mahkûmiyet hükümleri ile sanıklar S… hakkında görevi kötüye kullanma suçundan kurulan mahkûmiyet hükümleri Ceza Genel Kurulunca yapılan temyiz incelemesi sonucunda onanmak suretiyle,</p>
+
+<p>Kesinleşmiş olduğundan inceleme, sanık A.. C.. hakkında mağdur M.. yönelik kasten yaralama ile katılan S.. yönelik kasten yaralama ve hakaret suçundan kurulan kesin nitelikteki mahkûmiyet hükümleriyle sınırlı olarak yapılmıştır.</p>
+
+<p>Kanun yararına bozma kanun yoluna başvurulması üzerine Ceza Genel Kurulunca çözümlenmesi gereken uyuşmazlık; sanık hakkında 5271 sayılı CMK`nun 231. maddesinin 5. fıkrasında düzenlenen hükmün açıklanmasının geri bırakılmasının uygulanmasına yer olmadığına karar verilirken gerekçe gösterilip gösterilmediğinin buna bağlı olarak kanun yararına bozma talebinin yerinde olup olmadığının belirlenmesine ilişkindir.</p>
+
+<p>Uyuşmazlığın sağlıklı olarak çözümlenmesi için “kanun yararına bozma” hükümleri üzerinde durulmalıdır.</p>
+
+<p>Öğretide “olağanüstü temyiz” denilen, 1412 sayılı CMUK`nda ise “yazılı emir” olarak adlandırılan bu olağanüstü kanun yolu, 5271 sayılı CMK’nun 309 ve 310. maddelerinde “kanun yararına bozma” olarak yeniden düzenlenmiştir.</p>
+
+<p>5271 sayılı CMK’nun 309. maddesi uyarınca hâkim veya mahkemece verilip, istinaf veya temyiz incelemesinden geçmeksizin kesinleşen karar veya hükümlerde, maddî hukuka veya muhakeme hukukuna ilişkin hukuka aykırılık bulunduğunu öğrenen Adalet Bakanlığı, o karar veya hükmün Yargıtay’ca bozulması talebini, kanuni nedenlerini açıklayarak Yargıtay Cumhuriyet Başsavcılığına yazılı olarak bildirecektir. Bunun üzerine Yargıtay Cumhuriyet Başsavcılığı da hükmün veya kararın bozulması talebini içeren yazısına bu nedenleri aynen yazarak Yargıtay ilgili ceza dairesine verecek, ileri sürülen nedenlerin Yargıtay’ca yerinde görülmesi halinde karar veya hüküm kanun yararına bozulacak, yerinde görülmezse talep reddedilecektir.</p>
+
+<p>Böylece ülke genelinde uygulama birliğine ulaşılacak, hakim ve mahkemelerce verilen cezaya ilişkin karar veya hükümlerdeki hukuka aykırılıkların, toplum ve birey açısından hukuk yararına giderilmesi sağlanacaktır.</p>
+
+<p>Kanun yararına bozma kanun yoluna, istinaf ve temyiz incelemesinden geçmeksizin kesinleşmiş hüküm ve kararlara karşı gidilmesi nedeniyle kesin hükmün otoritesinin bütünüyle zedelenmemesi amacıyla bu yola başvurabilmek için hukuka aykırılık halinin ciddi boyutlara ulaşması gerekmektedir. Hüküm ve kararlarda hiç gerekçe gösterilmemesi nedenine bağlı olarak kanun yararına bozma kanun yoluna başvurulabilecekken, delillerin takdir ve tercihinde hataya düşüldüğünden bahisle takdire müteallik konularda bu yola başvurulması, sözü edilen olağanüstü kanun yolunun amaç ve kapsamıyla bağdaşmayacaktır. Mahkemenin takdirine bağlı istekler ile uygulamadaki takdir yanılgıları veya takdirin yerinde olup olmadığının denetlenmesine ilişkin başvurular kanun yararına bozma konusu yapılamayacağından, böyle bir başvuru halinde talebin reddine karar verilecektir.</p>
+
+<p>Görüldüğü gibi, kabul edip etmemenin mahkemenin takdirine bağlı olduğu istekler hakkında verilen karar ve bunlara ilişkin gerekçelerin yeterli veya yerinde olup olmadığı olağan kanun yolu olan temyiz incelemesinde değerlendirilebilecekken, olağanüstü kanun yolu olan kanun yararına bozmaya konu edilemeyecektir. Bir diğer deyişle, sözü edilen kanun yolunda gerekçe gösterilip gösterilmediği hususu incelenebilecek, fakat gerekçenin isabetli olup olmadığına ilişkin denetim yapılamayacaktır.</p>
+
+<p>Öte yandan, sanık hakkında kurulan mahkûmiyet hükmünün hukuki bir sonuç doğurmamasını ifade eden ve doğurduğu sonuçlar itibariyle karma bir özelliğe sahip bulunan, hükmün açıklanmasının geri bırakılması kurumu, denetim süresi içinde kasten yeni bir suçun işlenmemesi ve yükümlülüklere uygun davranılması halinde, geri bırakılan hükmün ortadan kaldırılarak kamu davasının 5271 sayılı CMK’nun 223. maddesi uyarınca düşürülmesi sonucunu doğurduğundan, bu niteliği itibariyle, sanık ile devlet arasındaki cezai nitelikteki ilişkiyi sona erdiren, düşme nedenlerinden birisini oluşturmaktadır.</p>
+
+<p>Şartlı bir düşme nedenini oluşturan, “hükmün açıklanmasının geri bırakılması” müessesesinin uygulanabilmesi için öncelikle, sanık hakkında kurulan mahkûmiyet hükmünde, hükmolunan cezanın iki yıl veya daha az süreli hapis veya adli para cezasından ibaret olması, sanığın daha önce kasıtlı bir suçtan mahkûm olmamış bulunması ve suçun işlenmesiyle mağdurun veya kamunun uğradığı zararın, aynen iade, suçtan önceki hale getirme veya tamamen giderilmesine ilişkin şartların birlikte gerçekleşmesi gerekmektedir. Anılan şartların gerçekleşmesi ile birlikte ayrıca “Mahkemece, sanığın kişilik özellikleri ile duruşmadaki tutum ve davranışları göz önünde bulundurularak yeniden suç işlemeyeceği hususunda kanaate varılmasına” ilişkin takdire dayalı şartın da gerçekleşmesi halinde “hükmün açıklanmasının geri bırakılması” müessesesinin uygulanması imkanı bulunmaktadır.</p>
+
+<p>Bu bilgiler ışığında uyuşmazlık konusu değerlendirildiğinde;</p>
+
+<p>Sanık hakkında hakaret ve kasten yaralama suçlarından mahkûmiyet hükmü kurulurken 5271 sayılı CMK`nun 231. maddesinin 6. fıkrasının (b) bendi değerlendirilerek, hüküm fıkrasında; “kişilik özellikleri gözönünde bulundurularak ileride yeniden suç işlemeyeceği kanaatine varılmadığı”, hükmün gerekçe bölümünde de; “ısrarlı suç işlemeleri ile gözlenen kişilikleri nazara alınarak ileride suç işlemekten çekinecekleri konusunda vicdani kanaat oluşmadığı” gerekçe gösterilmek suretiyle hükmün açıklanmasının geri bırakılması hükümlerinin uygulanmadığı anlaşılmaktadır.</p>
+
+<p>Nitekim sözkonusu gerekçenin varlığı, sanık hakkındaki diğer mahkumiyet hükümlerinin temyiz incelemesi sonucunda Ceza Genel Kurulunun 11.02.2014 gün ve 4-54 sayılı kararında da kabul edilmiş ve bu gerekçe yerinde, yeterli ve dosya kapsamına uygun görüldüğü için ilgili hükümlerin onanmasına karar verilmiştir.</p>
+
+<p>Buna göre, sanık hakında hükmün açıklanmasının geri bırakılmasının uygulanmasına yer olmadığına karar verilirken gerekçe gösterilen olayda, gerekçe gösterilmediğinden bahisle ileri sürülen kanun yararına bozma talebi isabetsizdir.</p>
+
+<p>Gerekçenin kanun maddesinin tekrarı niteliğinde ve yetersiz olduğu iddia edilerek dosya kapsamına uygun ve yerinde olup olmadığına yönelik değerlendirme yapılması gerektiği düşünülebilecek ise de; sanık hakkında subjektif şartın gerçekleşmediği gerekçesine dayalı olarak hükmün açıklanmasının geri bırakılmasının uygulanmamasına yönelik kararda, takdir hakkının hatalı kullanıldığının olağan kanun yolu olan temyiz başvurusunda ileri sürülmesi mümkün iken, olağanüstü bir kanun yolu olan kanun yararına bozma konusu yapılması imkanı bulunmamaktadır.</p>
+
+<p>Bu itibarla, kanun yararına bozma talebinin reddine karar verilmelidir.</p>
+
+<p>Çoğunluk görüşüne katılmayan Genel Kurul Üyesi V. Dirim; “Yargıtay Ceza Genel Kurulunda ön sorun olarak ele alınan; hükmün açıklanmasının geri bırakılıp bırakılmayacağı kararda tartışılıp, uygulanmamasına karar verilmiş ise, kesin olarak verilen bu hükmün kanun yararına bozma yoluyla denetlenip denetlenemeyeceği` hususunda çoğunlukla aramızda görüş ayrılığı bulunmaktadır.</p>
+
+<p>5271 sayılı CMK’nın 309/1. fıkrası uyarınca, Hâkim veya mahkeme tarafından verilen ve istinaf veya temyiz incelemesinden geçmeksizin kesinleşen karar veya hükümde hukuka aykırılık bulunduğunu öğrenen Adalet Bakanlığı, o karar veya hükmün Yargıtayca bozulmasını …` isteyebilir.</p>
+
+<p>Mevzuat hükümleri, doktrin görüşü ve bugün de geçerli olan 14.11.1977 günlü, 3/2 esas ve karar sayılı İBK.’na göre; kanun yararına bozma, olağanüstü bir kanun yolu olduğundan, takdirî konularda kanun yararına bozma yoluna gidilemez. Buna göre, örneğin; haksız tahrikin varlığı halinde, `..Diğer hâllerde verilecek cezanın dörtte birinden dörtte üçüne kadarı indirilir.(TCK m. 29) denilmekte olup, somut olayda 1/4 yerine, söz gelimi 3/4 indirim yapılması gerektiği düşüncesiyle kanun yararına bozma yoluna gidilemez.</p>
+
+<p>Ancak; takdiri konuların kapsamı her zaman yukarıdaki örnekte olduğu gibi açık olmayabilir.</p>
+
+<p>Usul hükümlerinde genişletici yorum ve kıyas yasağı bulunmamaktadır.</p>
+
+<p>Bu itibarla; Yargıtay’ın istikrar bulmuş içtihatları (Örneğin; YCGK`nın 14.04.2015 günlü, 2013/529 esas ve 2015/106 sayılı ve oybirliğiyle verilen kararında açıklandığı gibi …) uyarınca, … hükmün açıklanmasının geri bırakılmaması konusunun kararda tartışılmaması, diğer bir ifadeyle bu konuda herhangi bir gerekçe gösterilmemesi ve somut olayda hükmün açıklanmasının geri bırakılmasına ilişkin nesnel koşulların bulunması halinde, bu hususun kanun yararına bozma konusu olabileceği biçiminde, istisnai ve savunma hakkının önemli bir bölümünü oluşturan kanun yoluna başvurma hakkını genişleten, bir yorum yapılmış bulunmaktadır. Biz de bu düşünceyi benimsiyoruz.</p>
+
+<p>Hükmün açıklanmaması hususu kararda tartışılmış ve gerekçe gösterilmiş olmakla birlikte, bu gerekçe yerinde olmasa bile, örneğin Yargıtay içtihatları uyarınca, hükmün açıklanmasının nesnel koşullarından birisi olan zararın giderilmesi koşulu ile yalnızca suçtan kaynaklanan maddi zararın tazmin edilmesi aranmakta olup, söz gelimi hakaret suçunda, …mağdurun uğradığı (manevi)zarar giderilmediği gibi, sanığın ileride bir daha suç işlemeyeceği konusunda kanaat te gelmediğinden bahisle, hükmün açıklanmasının geri bırakılmadığı` biçiminde bir gerekçe gösterilmişse bu husus artık kanun yararına bozma konusu yapılamaz, denilebilir mi?</p>
+
+<p>Kanaatimizce, kanun metninin tekrar edilmesi gerekçe sayılamaz. Hatalı gerekçe göstermek ise; hiç gerekçe göstermemek kadar, hatta daha da vahim bir durumdur.</p>
+
+<p>Üzülerek ifade etmek isteriz ki, yapılan denetimler ve bilimsel çalışmalara göre, kesin olarak verilen veya açıklanması geri bırakılan kararların büyük bölümü sorunludur.</p>
+
+<p>Bu itibarla; tıpkı hükmün açıklanmamasının geri bırakılmamasına dair gerekçe göstermeme halinde olduğu gibi, gösterilen gerekçenin de kanun yararına bozma yoluyla denetlenmesi gerektiği yorumu, insan haklarına ve sözleşmeye daha uygun bir yorumdur”,</p>
+
+<p>Çoğunluk görüşüne katılmayan Genel Kurul Üyesi N. Özsoy; “Yargıtay 4. Ceza Dairesinin incelemeye konu kararında sanık A.. C.. hakkında mağdur Murat Kaya`ya yönelik kasten yaralama ile katılan Saadettin Adik’e yönelik kasten yaralama ve hakaret suçundan adli para cezası ile cezalandırılmasına ve sanığın kişilik özellikleri göz önünde bulundurularak ileride yeniden suç işlemeyeceği kanaatine varılamadığından 5271 sayılı CMK’nın 231/6. maddesi uyarınca hakkında verilen hükmün açıklanmasının geri bırakılmasına yer olmadığına dair kesin nitelikte mahkumiyet kararı verildiği, Adalet Bakanlığının 17/.04.2014 tarih ve 17941-62046 sayılı yazılarıyla uygulanma şartları gerçekleştiği halde Anayasanın 141/3, 5271 sayılı CMK’nın 230. maddesine aykırı olarak yetersiz gerekçe ile hükmün açıklanmasının geri bırakılmasına yer olmadığına karar verilmesi görüşüyle kanun yararına bozma yoluna müracaat edilmiş ve Yargıtay Cumhuriyet Başsavcılığının 11.11.2014 gün ve 2014/371235 sayılı ihbar yazısı ile dosya Ceza Genel Kuruluna gönderilmiş olup;</p>
+
+<p>Yapılan görüşmede sayın çoğunluk hukuka aykırı olduğu ileri sürülen takdir hakkının kanun yararına bozma yolu ile yerindelik denetiminin yapılamayacağı gerekçesi ile talebi usulden reddetmiştir. Ancak sayın çoğunluk görüşüne aşağıda gösterilen nedenlerle katılmak mümkün olmamıştır.</p>
+
+<p>Sayın çoğunluk Ceza Genel Kurulunun 25.03.2008 tarih ve 27/61 sayılı kararında da belirtildiği üzere kanun yararına bozma yoluna, istinaf ve temyiz incelemesinden geçmeksizin kesinleşmiş hüküm ve kararlara karşı gidilmesi nedeniyle kesin hükmün otoritesinin bütünüyle zedelenmemesi amacıyla bu yola başvurabilmek için hukuka aykırılık halinin ciddi boyutlara ulaşması gerektiği, delillerin takdir ve tercihinde hataya düşüldüğü bahisle bu yola başvurulması bu olağanüstü kanun yolunun amaç ve kapsamıyla bağdaşmadığı, mahkemenin takdirine bağlı istekler ile uygulamadaki takdir yanılgıları veya takdirin yerinde olup olmadığının denetlenmesine ilişkin başvurular kanun yararına bozma konusu yapılamayacağından başvurunun reddine karar verilmesi gerektiği görüşündedir.</p>
+
+<p>5271 sayıl CMK’nun 309. maddesi uyarınca, hakim veya mahkemece verilip istinaf veya temyiz incelemesinden geçmeksizin kesinleşen karar veya hükümlerde, maddi hukuka veya yargılama hukukuna ilişkin hukuka aykırılık bulunduğunu öğrenen Adalet Bakanlığı, o karar veya hükmün Yargıtay’ca bozulması istemini, yasal nedenlerini açıklayarak, Yargıtay Cumhuriyet Başsavcılığına yazılı olarak bildirecektir. Bunun üzerine Yargıtay Cumhuriyet Başsavcılığı da hükmün veya kararın bozulması istemini içeren yazısına bu nedenleri aynen yazarak, Yargıtay Ceza Dairesine verecek, ileri sürülen nedenlerin Yargıtay`ca yerinde görülmesi halinde karar veya hüküm kanun yararına bozulacak, yerinde görülmezse istem reddedilecektir.</p>
+
+<p>Böylece ülke sathında uygulama birliğine ulaşılacak, hakim ve mahkemelerce verilen cezaya ilişkin karar veya hükümlerdeki hukuka aykırılıkların, toplum ve birey açısından hukuk yararına giderilmesi sağlanacaktır.</p>
+
+<p>Bozma sonrası yapılacak işlemler ve bu işlemleri gerçekleştirecek merciler ile bozma kararının etkileri ise, bozulan hüküm veya kararın türü ve bozma nedenlerine göre ayırım yapılarak maddenin 4. fıkrasında ayrıntılı olarak düzenlenmiştir.</p>
+
+<p>Kanun yararına başvuru yoluna gerek maddi hukuka ilişkin gerekse muhakeme hukukuna ilişkin aykırılıklarda başvurulabileceği CMK`nun 309. maddesinde açıkça belirtilmiştir.</p>
+
+<p>Mahkemenin delilleri takdir ve tercihinde hataya düşmesi ya da takdirinin açıkça dosya kapsamına aykırı olması halinde takdir hakkı kullanımının maddi hukuka ilişkin sonuçlar doğurduğu konusunda da kuşku bulunmamaktadır.</p>
+
+<p>Sayın Genel Kurul çoğunluğunun görüşündeki en önemli nokta; hukuka aykırılığın ciddi boyutlara ulaşması gerektiğidir. Yani delillerin takdir ve tercihindeki ya da takdir kullanımındaki yanılgılar ciddi boyutlarda olması gerekir. Ancak bunun sınırının ne olduğu açıkça belirtilmemiş değişken bir kriter esas alınmıştır. Kaldı ki hukuka aykırılığın ciddisi gayri ciddisi, azı ya da çoğu olamaz. Önemli olan varılan sonucun ve kararın hukuka uygun olup olmadığı yani usule yada maddi hukuka ilişkin bir kanun hükmünün ihlal edilip edilmediğidir.</p>
+
+<p>CMK’nın 289. maddesinde hukuka kesin aykırılık halleri sıralanmış ve yazılı hallerde hukuka kesin aykırılık olduğu kabul edilmiştir. Bu sebeplerden birisi (madde 289/1-g) de hükmün 230. madde gereğince gerekçeyi içermemesidir. Kanunda yeterli gerekçeyi içermemesi ibaresine yer verilmemiştir. Zira gerekçe ya yeterlidir. Ya da hüküm için yetersizdir. Bu husus bir takdir ya da delillerin değerlendirilmesi sorunu değildir. Yine, CMK’nın 302. maddesinde Yargıtay, temyiz edilen hükmü, temyiz başvurusunda gösterilen, hükmü etkileyecek nitelikteki aykırılıklar nedeniyle bozar…` hükmüne yer verilmiştir. Madde de Genel Kurul kararındaki gibi hukuka aykırılığın ciddi boyutlara ulaşması değil aksine hükmü etkileyecek nitelikte olması aranmıştır.</p>
+
+<p>Kanun yararına bozma yoluna başvurulacak kıstas CMK’nun 302/2 ve 289. maddelerinde ortaya konulmuştur. Hükmün temyizi halinde bozma kararı verilmesini gerektiren haller hukuka aykırılık halleridir ve bu sebepler aynı zamanda kanun yararına başvuru yoluna konu olabilecek hukuka aykırılık hallleridir. Nitekim Yargıtay Ceza Daireleri 5237 sayılı TCK’nun 3. maddesinde düzenlenen orantılılık ilkesine 61. maddesindeki temel cezanın belirlenmesine ilişkin ve benzeri takdir hakkı kullanımlarına dair karar gerekçelerini yani takdir haklarını yerinde kullanılmaması halinde bozma kararına konu etmektedir. Kaldı ki CMK`nun 289/1-g belirtildiği gibi mahkeme, verdiği kararın gerekçesini göstermek zorundadır. Gerekçenin bulunmaması veya yetersizliği aynı sonucu doğuracağından mutlak bozma sebebi yani mutlak hukuka aykırılık halidir. Bu durumda sanık A.. C.. hakkında takdir hakkı kapsamında kaldığı gerekçesiyle kanun yararına başvuru yoluna ilişkin talebin esas yönünden değerlendirilmeksizin usulden reddinin yukarıda gösterilen yasa hükümlerine aykırı olduğu”, düşüncesiyle</p>
+
+<p>Çoğunluk görüşüne katılmayan onüç Genel Kurul Üyesi de; benzer düşüncelerle karşı oy kullanmışlardır.</p>
+
+<p>SONUÇ :</p>
+
+<p>Açıklanan nedenlerle;</p>
+
+<p>1- Adalet Bakanlığı Ceza İşleri Genel Müdürlüğünün 17.10.2014 gün ve 17941-62046 sayılı kanun yararına bozma talebinin REDDİNE,</p>
+
+<p>2- Dosyanın Özel Daireye gönderilmek üzere Yargıtay Cumhuriyet Başsavcılığına TEVDİİNE, 05.05.2015 tarihinde yapılan müzakerede oyçokluğuyla karar verildi.</p>
+
+<hr>
+
+</div></div></main>
+</div>
+
+<footer>
+<section>
+<div class="contact-info">
+
+<div class="adres">
+
+<div class="telefon-wrapper">
+
+
+</div>
+</div>
+</section>
+
+</div>
+
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+"vars": {
+"account": "UA-58342443-1"
+},
+"triggers": {
+"trackPageview": {
+"on": "visible",
+"request": "pageview"
+}
+}
+}
+</script>
+</amp-analytics>
+
+</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="../../index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="../../dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="../../ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="../../knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="../../search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/slideToggle.min.js"></script>
+    <script src="../js/internet-status.js"></script>
+    <script src="../js/tiny-slider.js"></script>
+    <script src="../js/baguetteBox.min.js"></script>
+    <script src="../js/countdown.js"></script>
+    <script src="../js/rangeslider.min.js"></script>
+    <script src="../js/vanilla-dataTables.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/magic-grid.min.js"></script>
+    <script src="../js/dark-rtl.js"></script>
+    <script src="../js/active.js"></script>
+    <!-- PWA -->
+    <script src="../js/pwa.js"></script>
+  </body>
+</html>

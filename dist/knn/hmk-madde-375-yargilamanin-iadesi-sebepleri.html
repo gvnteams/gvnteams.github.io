@@ -1,0 +1,945 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="../img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="../img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="../img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-icons.css">
+    <link rel="stylesheet" href="../css/tiny-slider.css">
+    <link rel="stylesheet" href="../css/baguetteBox.min.css">
+    <link rel="stylesheet" href="../css/rangeslider.css">
+    <link rel="stylesheet" href="../css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="../css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="../manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="tck-search.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">KANUN VE MEVZUAT</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <!-- Element Heading -->
+               <div class="page-content-wrapper py-0">
+        </div>
+      </div>
+
+<!doctype html>
+<html lang="tr-TR">
+	<head>
+	<meta charset="utf-8">
+<link rel="canonical" href="" >
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
+<meta name="Description" content="5271 Sayılı Ceza Muhakemesi Kanunu (CMK) Maddelerine son hali ile yer verilmiştir. 5271 sayılı CMK tüm maddeleriyle birlikte güncel haliyle yer almaktadır. Ceza Muhakemesi Kanunu (CMK) Tam Metin, Ceza usul kanunu hükümleri mevcuttur.">
+
+
+<link rel="alternate" type="application/atom+xml" href="/feed.xml">
+
+	<script async src="https://cdn.ampproject.org/v0.js"></script>
+	
+		<script type="application/ld+json">
+
+		</script>
+	
+	
+	
+
+<script type="application/ld+json">
+
+
+
+</script>
+
+	<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+	<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+	<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js" async></script>
+	<script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+	<link rel='shortcut icon' href='/favicon.ico' type='image/x-icon'>
+	<meta name="google-site-verification" content="zyVXpNljj6tRiNBahSC3r7Or3XimSeTZYyVzhvLOxsA" />
+	<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+	<style amp-custom>
+		
+		body{margin:0;font-family:'New York Times', serif;background-color:white}.anasayfa-link{color:#435476}table{border-collapse:collapse}table td,th{border:1px solid black;text-align:center;padding:4px}.mesaj-gonderildi{text-align:center;padding:12px;background:#435476;color:white;font-size:20px}.page-wrapper a{color:#0e6174}header.header-wrapper{background-color:#435476;border:none}amp-accordion>section>:first-child{background-color:#435476;border:none}.menu-wrapper{display:inline}.footer-container-wrapper{position:relative}.blog-post-content a{color:#0e6174;font-weight:bolder;font-size:15px}a{color:#000;text-decoration:none}.header-wrapper{background:#435476;border:none;padding-right:0px}.header-left{display:inline}.positionrelative{position:relative}.header{background-color:#435476;max-width:1080px;margin:0 10%}.header-container{width:100%;background-color:#435476;margin:0 auto;position:absolute;z-index:1}.header ul{margin:0;padding:0;list-style:none;overflow:hidden;color:white}.header li a{display:block;text-decoration:none;color:white}.header li:hover{font-weight:bolder}.header .logo{display:block;float:left;width:48px;height:48px;padding:4px 0px 4px 0px;text-decoration:none}.header .logo:hover{cursor:pointer}.header .menu{clear:both;font-size:15px;padding-top:7px;transition:max-height .2s ease-out}.header .menu-icon{cursor:pointer;display:inline-block;float:right;padding:28px 20px;position:relative;user-select:none;border:none;background-color:#435476}amp-sidebar{width:300px;padding-right:10px;background-color:#435476}.header .menu-icon .navicon{background:white;display:block;height:2px;position:relative;transition:background .2s ease-out;width:18px}.header .menu-icon .navicon:before,.header .menu-icon .navicon:after{background:white;content:'';display:block;height:100%;position:absolute;transition:all .2s ease-out;width:100%}.header .menu-icon .navicon:before{top:5px}.header .menu-icon .navicon:after{top:-5px}.mevzuat{border:unset}.mevzuat-link{text-decoration:underline}@media (min-width: 48em){.header li{float:left;font-size:12px;letter-spacing:0.5px;color:#fff;text-transform:uppercase;padding:10px 15px}.header .menu{clear:none;float:right;max-height:none}.header .menu-icon{display:none}.alt-cizgi{border-bottom:2px solid white}}.main-home{max-width:1080px;margin:0 10%;text-align:justify;line-height:24px;font-size:16px}.main-home h1{color:#435476;text-align:center}.page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);overflow-x:hidden}.page-wrapper-blog-anasayfa{display:flex}.category-page-wrapper{max-width:1200px;margin:0 5%;min-height:calc(100vh - 225px);display:flex;overflow-x:hidden}.mobile-home-image{display:none}.blog-three-columns{display:flex}.populer-makaleler{font-weight:900;font-size:15px}.section{overflow:hidden;margin:auto;max-width:1400px}.section a{position:relative;float:left;width:100%}.section a img{width:100%;display:block}.section a span{color:#fff;position:absolute;left:5%;bottom:5%;font-size:2em;text-shadow:1px 1px 0 #000}.section-split a span{display:none}.section-split a:hover span{display:block}.empty{height:68px}@media (min-width: 768px){.section-split a{width:50%}}.copyright{text-align:center;font-size:14px;background:#9099A2;font-style:italic}.social-media-container{text-align:center;display:inline-block}.social-media-icon{width:48px;height:48px;display:inline-block;fill:#d5d5d5}.social-media-icon:hover{fill:white;cursor:pointer}.footer-container{margin-top:40px;width:100%;background-color:#9099A2;position:absolute;top:100%;bottom:0;text-align:center}.footer-container footer{padding:25px 0px;background-color:#9099A2;clear:both}.telefon-wrapper{display:inline}.hukuk-burosu{color:white}.communication{text-align:center}.bread-crumbs li{list-style:none;display:inline}.bread-crumbs a{text-decoration:none}.bread-crumbs{max-width:1200px;text-align:right;padding:20px 0px;padding-right:20px;font-size:13px;font-weight:bold;line-height:40px}.bread-crumbs li:last-child{border-bottom:2px solid #435476}.bread-crumbs .smaller-sign{color:#435476;padding:0 1px}.apple{width:600}.left-bar-logo{max-width:200px;margin-bottom:20px}.left-bar{width:100%;vertical-align:top;color:#435476;fill:#435476}.contact-info{font-size:12px;color:#d5d5d5}.blog-post-content{display:inline-block;border-left:1px solid #d5d5d5;padding-left:20px;padding-right:20px;text-align:justify;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.blog-post-content h1,h2,h3,h4,h5,h6,img{text-align:center}.social-share-container{clear:both;margin:0 25%}.social-follow-navbar{display:inline-block;padding-left:10px}.telefon{font-size:14px;text-decoration:none;color:#000408;fill:#000408;font-weight:bold}.calisma-saatleri{font-size:13px}.calisma-saatleri .text{font-size:15px;font-weight:bold;padding:3px}.calisma-saatleri .hours{padding-left:8px}.tel-numarasi{vertical-align:top}.adres-icon{display:inline-block;vertical-align:top}.adres{display:inline-block;fill:#d5d5d5}.adres a{text-decoration:none;color:#d5d5d5}.adres a:hover{display:inline-block;color:white;fill:white;cursor:pointer}.adres:hover{display:inline-block;color:white;fill:white;cursor:pointer}.yazdir{background:#435476;font-size:20px;color:white;padding:10px 20px 10px 20px;width:60px;text-decoration:none;cursor:pointer;float:right}.yazdir:hover{background:lihgten(10%, #435476);text-decoration:none}.adres-text{margin-top:9px;padding-right:9px;border-right:1px solid #d5d5d5;display:inline-block;text-align:left;color:white}.telefon-container{vertical-align:top;padding:22px 9px;display:inline-block}.left-bar-container{padding-bottom:20px;border-bottom:2px solid #d5d5d5;min-width:216px}.vertical-line{width:1px;background-color:white}.makaleyi-paylas{display:inline-block;font-weight:bold;vertical-align:middle;width:56px;height:33px}.yorumlar{margin:40px 10%;text-align:center}.header-logo{border-right:1px solid #f4f4f4;padding-right:10px}.ozet{padding-top:20px}.faaliyet-title-container{background-color:#435476;color:white;fill:white;display:inline-block;border-radius:4px;padding:0px 30px;min-width:230px;vertical-align:middle}.faaliyet-title-container .anasayfa-icon{width:23px;height:35px;display:inline-block}amp-img{background-color:#435476}.anasayfa-header{display:inline-block}.modal-list li{list-style:none;line-height:26px}.modal-list li:before{content:"• ";font-size:20px;padding-right:5px;color:#435476}.faaliyet-header{display:inline-block;text-align:center}.hakkimizda-resim{display:inline-block;float:left;margin-right:14px}.kategori-item{padding:20px;background-color:#435476;display:inline-block;margin:10px 2%;width:176px}.kategori-item a{text-decoration:none;color:white}.kategoriler{text-align:center;min-height:500px}.blog-category-content li{list-style:none}.form-input{display:block;width:100%;height:34px;padding:6px 12px;font-size:14px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);box-shadow:inset 0 1px 1px rgba(0,0,0,0.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;margin-top:20px}.form-group-left{width:40%;display:inline-block}.form-group-right{display:inline-block;vertical-align:top;padding-left:40px;width:50%}.form-group-right .form-textarea{width:100%;height:173px}.submit{padding:14px 33px;border-color:#435476;border-radius:3px;text-transform:uppercase;font-family:Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;font-weight:700;color:#fff;background-color:#435476;text-align:center}.submit-container{margin:25px 0;text-align:center}.iletisim-adres-calisma{opacity:0.9;color:white;background-color:#435476;padding:20px 25%;border-radius:4px}.iletisim-adres-calisma .iletisim-adres-icon{fill:white;vertical-align:top}.iletisim-adres-calisma .iletisim-adres-text{text-align:left;color:white}.iletisim-adres-calisma .telefon-container{margin:22px 0px;padding:0px}.iletisim-adres-calisma .telefon{color:white;fill:white;font-size:17px}.inline{display:inline-block}.iletisim-main{max-width:1080px;margin:0 10%}.yorumlar-text{padding:15px;background-color:#435476;color:white}.yorumlar-text:hover{cursor:pointer}.category-lists{padding:0px}.category-lists li{border:1px solid #D5D5D5;margin:20px 0}.category-lists li:hover{cursor:pointer;background:#D5D5D5}.category-lists .category-list-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.category-lists .category-list-image{display:inline-block}.category-lists li.mevzuat{border:unset;padding:10px}.right-panel-container{min-width:300px;display:none;align-items:center;flex-direction:column}.right-panel{display:flex;flex-direction:column;padding:0px}.right-panel li{border-bottom:1px solid;padding:20px 0;display:flex;align-items:center}.right-panel a{border-bottom:none}.right-panel li:hover{cursor:pointer;background:#D5D5D5}.right-panel .right-panel-item{text-align:center;display:inline-block;vertical-align:top;padding-left:15px}.right-panel .right-panel-image{display:inline-block}.blog-post-mobile-top{display:none}.non-found-page{height:400px;text-align:center}.st0{stroke:#435476}.hakkimizda-text{padding-left:210px;text-align:justify}.anasayfa-section{color:#435476}.anasayfa-section h3{font-size:20px}.fax{color:white}.header-large{display:block}.header-accordion{display:none}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}@media (max-width: 48em){.header-container{border-bottom:0.5px solid white}.blog-post-top{display:none}.blog-post-mobile-top{display:block}.category-page-wrapper{flex-direction:column;margin:0}.blog-three-columns{flex-direction:column}.right-panel-container{width:100%;display:flex}.right-panel{margin:0 15px}.page-wrapper-blog-anasayfa{display:block}.yorumlar{margin:0px}.empty{height:47px}.header-accordion{display:block}.menu-wrapper{display:none}.st0{stroke:#D5D5D5}.header{margin:0px 0px 0px 15px}.close-sidebar{color:white;font-size:24px;float:right;cursor:pointer}.calisma-saatleri .hours{padding-left:0}#sidebar ul{margin:0;list-style:none;overflow:hidden;color:white;padding:20px}#sidebar li a{display:block;text-decoration:none;color:white}#sidebar li a{padding:15px 0px;text-transform:uppercase}.blog-post-top{margin:0 15px;padding-right:20px}.main{margin:0 15px}.main-home{margin:0 15px}.iletisim-main{margin:0 15px;margin-top:10%}.blog-post-container{margin:0 15px}#sidebar .menu-icon{padding:22px 20px}.home-image{display:none}.mobile-home-image{display:block}.bread-crumbs{text-align:center}.left-bar{width:100%;text-align:center;background:#435476;max-height:360px}.left-bar-logo{width:300px;margin:0 auto;fill:#d5d5d5;color:#d5d5d5;stroke:#d5d5d5}.calisma-saatleri{color:#d5d5d5;text-align:center}.left-bar .telefon{color:#d5d5d5;fill:#d5d5d5}.blog-post-content{display:inline-block;border-left:none;padding-left:0px;font-size:16px;width:100%;font-family:"OpenSans-Regular",Helvetica,Arial;line-height:22px}.left-bar-container{border-bottom:none;padding-top:80px}.footer-container footer{margin:0}.anasayfa-section{color:white;background:#435476;fill:white;text-align:center;margin:20px 0px;border-radius:10px}.anasayfa-icon{width:23px;height:35px;vertical-align:middle;display:inline-block}.page-wrapper{margin:0px}.contact-form{text-align:none}.form-group-left{width:80%}.form-group-right{width:80%;padding-left:0px;vertical-align:none}.category-lists .category-list-image{display:none}.category-lists li{margin:20px 10px;background:#435476;opacity:0.9}.category-lists a{color:white}.category-lists li.mevzuat{margin:20px 10px;background:#435476;opacity:0.9}.category-lists .mevzuat-link{text-decoration:none}.social-share-container{margin:0px}.footer-container .contact-info{text-align:left;margin:0 10%}.footer-container .contact-info .adres-text{border-right:none}.iletisim-adres-calisma{padding:15px 15%}.iletisim-tel-fax .telefon{color:white;fill:white}.hakkimizda-text{padding-left:0px}.blog-category-content{margin:0px 15px}.anasayfa-header{color:white;width:200px;word-wrap:word-break}.anasayfa-link{color:white}}@media print{.yorumlar{display:none}.social-share-container{display:none}.footer-container{display:none}.yazdir{display:none}amp-img{display:none}.header{display:none}}.gsc-search-box{padding:0px;margin:0px}.gsc-control-cse-tr{padding:0px;margin:0px}.gsc-control-cse{padding:0px;font-size:12px}.google-search{float:right;max-width:680px}.copy-warning{margin-bottom:32px;font-style:italic;background:#dbdfe4;padding:15px}.blog-post-top{max-width:1200px;margin:0 5%}.btn-rss{width:48px;height:48px;display:inline-block;vertical-align:middle}
+
+	</style>
+
+</head>
+
+
+
+
+			</span>
+		</div>
+	</header>
+</div>
+
+
+		
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<g>
+	<g>
+		<path d="M28.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3H6.2L28.5,360z M41.6,392.1l-11.5-27.5l-11.7,27.5
+			H41.6z"/>
+		<path d="M55.6,360l19.9,47.7L95.5,360h4l-22.2,52.5h-3.5L51.6,360H55.6z"/>
+		<path  d="M99.9,412.5v-6.3h3.3v6.3H99.9z"/>
+		<path  d="M172.6,398.9c0,1.9-0.4,3.7-1.1,5.4c-0.7,1.7-1.7,3.1-3,4.3c-1.3,1.2-2.8,2.2-4.5,2.9
+			c-1.7,0.7-3.5,1-5.5,1h-24.5V360h24.5c1.8,0,3.5,0.4,5,1.2c1.5,0.8,2.7,1.8,3.8,3.1c1,1.3,1.8,2.7,2.4,4.3
+			c0.6,1.6,0.9,3.2,0.9,4.8c0,2.7-0.7,5.1-2,7.3c-1.3,2.2-3.2,3.8-5.5,4.9c3,0.9,5.4,2.5,7.1,5C171.7,393,172.6,395.8,172.6,398.9z
+			 M137.7,363.4v21h19.2c1.4,0,2.7-0.3,3.9-0.9c1.2-0.6,2.2-1.4,3.1-2.3c0.9-1,1.5-2.1,2-3.4c0.5-1.3,0.7-2.6,0.7-3.9
+			c0-1.4-0.2-2.8-0.7-4c-0.5-1.3-1.1-2.4-1.9-3.3c-0.8-1-1.8-1.7-2.9-2.3c-1.1-0.6-2.4-0.8-3.8-0.8H137.7z M168.8,398.4
+			c0-1.4-0.2-2.7-0.7-4c-0.5-1.3-1.2-2.5-2.1-3.5s-1.9-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.9-0.9h-21.3v21.5h20.8c1.5,0,2.8-0.3,4.1-0.9
+			c1.3-0.6,2.3-1.4,3.3-2.4c0.9-1,1.6-2.2,2.2-3.4C168.5,401.1,168.8,399.8,168.8,398.4z"/>
+		<path d="M198.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L198.2,360z M211.3,392.1l-11.5-27.5l-11.7,27.5
+			H211.3z"/>
+		<path  d="M231.6,412.5V360h21.8c2.2,0,4.3,0.5,6.1,1.4c1.9,0.9,3.5,2.2,4.8,3.7c1.4,1.6,2.4,3.3,3.2,5.2
+			c0.8,1.9,1.1,3.9,1.1,5.9c0,1.9-0.3,3.8-0.9,5.6c-0.6,1.8-1.4,3.4-2.5,4.8c-1.1,1.4-2.4,2.6-3.9,3.5c-1.5,0.9-3.2,1.6-5,1.8
+			l13.1,20.4h-4.4l-12.7-19.8h-17v19.8H231.6z M235.4,389.2h18.4c1.7,0,3.2-0.4,4.6-1.1c1.4-0.7,2.6-1.7,3.5-2.9
+			c1-1.2,1.7-2.6,2.3-4.1c0.5-1.6,0.8-3.1,0.8-4.8c0-1.7-0.3-3.3-0.9-4.8c-0.6-1.6-1.5-2.9-2.5-4.1c-1.1-1.2-2.3-2.1-3.7-2.8
+			c-1.4-0.7-2.9-1.1-4.5-1.1h-17.9V389.2z"/>
+		<path d="M295.2,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L295.2,360z M308.3,392.1l-11.5-27.5l-11.7,27.5
+			H308.3z"/>
+		<path id="XMLID_90_" d="M332.4,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L332.4,367.1z"/>
+		<path id="XMLID_92_" d="M404.7,412.5V360h17.4c4.1,0,7.8,0.7,10.9,2.1c3.1,1.4,5.7,3.3,7.8,5.6c2.1,2.4,3.6,5.1,4.7,8.3
+			c1,3.2,1.6,6.6,1.6,10.2c0,4-0.6,7.6-1.7,10.8c-1.2,3.2-2.8,6-5,8.3c-2.2,2.3-4.8,4.1-7.9,5.3c-3.1,1.3-6.5,1.9-10.3,1.9H404.7z
+			 M443.3,386.2c0-3.3-0.5-6.3-1.4-9.1c-0.9-2.8-2.3-5.2-4.1-7.2c-1.8-2-4-3.6-6.6-4.7c-2.6-1.1-5.6-1.7-9-1.7h-13.7v45.7h13.7
+			c3.4,0,6.5-0.6,9.1-1.7c2.6-1.2,4.8-2.8,6.6-4.8s3.1-4.5,4-7.3C442.8,392.5,443.3,389.4,443.3,386.2z"/>
+		<path id="XMLID_95_" d="M478.3,412.9c-3.6,0-7-0.8-10-2.3c-3-1.5-5.6-3.5-7.8-6c-2.2-2.5-3.8-5.3-5-8.5c-1.2-3.2-1.8-6.5-1.8-9.8
+			c0-3.5,0.6-6.8,1.9-10c1.3-3.2,3-6,5.2-8.5s4.8-4.4,7.8-5.9c3-1.5,6.3-2.2,9.8-2.2c3.6,0,7,0.8,10,2.3s5.6,3.6,7.8,6.1
+			c2.1,2.5,3.8,5.4,5,8.5c1.2,3.2,1.8,6.4,1.8,9.6c0,3.5-0.6,6.9-1.9,10.1c-1.3,3.2-3,6-5.2,8.5c-2.2,2.4-4.8,4.4-7.8,5.8
+			C485,412.1,481.8,412.9,478.3,412.9z M457.5,386.3c0,3,0.5,5.9,1.5,8.7c1,2.8,2.4,5.2,4.3,7.4c1.8,2.1,4.1,3.9,6.6,5.1
+			c2.6,1.3,5.4,1.9,8.4,1.9c3.2,0,6-0.7,8.5-2c2.5-1.3,4.7-3.1,6.5-5.3c1.8-2.2,3.2-4.7,4.2-7.4c1-2.8,1.5-5.6,1.5-8.4
+			c0-3-0.5-5.9-1.6-8.7c-1-2.8-2.5-5.2-4.3-7.4c-1.8-2.1-4-3.9-6.5-5.1c-2.5-1.3-5.3-1.9-8.3-1.9c-3.2,0-6,0.7-8.6,2
+			c-2.6,1.3-4.8,3.1-6.6,5.3c-1.8,2.2-3.2,4.7-4.2,7.4C458,380.6,457.5,383.4,457.5,386.3z"/>
+		<path id="XMLID_98_" d="M551.7,404.3c-5.1,5.7-11,8.6-17.7,8.6c-3.5,0-6.8-0.8-9.9-2.3c-3-1.5-5.6-3.5-7.8-6.1
+			c-2.2-2.5-3.9-5.4-5.1-8.6c-1.2-3.2-1.8-6.5-1.8-9.8c0-3.4,0.6-6.8,1.8-10c1.2-3.2,2.9-6,5-8.5c2.1-2.5,4.7-4.4,7.6-5.9
+			c3-1.5,6.2-2.2,9.7-2.2c2.6,0,5,0.3,7.1,0.8c2.1,0.6,4,1.4,5.6,2.4c1.6,1,3.1,2.2,4.3,3.6c1.2,1.4,2.2,2.9,3.1,4.6l-3.1,1.8
+			c-1.8-3.4-4.1-5.9-7.1-7.5c-2.9-1.6-6.2-2.3-9.9-2.3c-3.1,0-5.9,0.7-8.4,2c-2.5,1.3-4.7,3.1-6.4,5.2c-1.8,2.2-3.1,4.6-4.1,7.4
+			c-0.9,2.8-1.4,5.6-1.4,8.5c0,3.1,0.5,6,1.6,8.8c1.1,2.8,2.6,5.2,4.5,7.4c1.9,2.1,4.1,3.8,6.7,5.1c2.6,1.3,5.3,1.9,8.3,1.9
+			c3.2,0,6.2-0.7,9.1-2.2c2.9-1.5,5.7-3.8,8.3-7V390h-11.9v-3h15.1v25.5h-3.3V404.3z M533.5,349.5c1,0,1.9-0.5,2.7-1.4
+			c0.8-0.9,1.3-2,1.4-3.4h2.4c0,0.9-0.2,1.8-0.5,2.7c-0.3,0.8-0.8,1.6-1.4,2.2c-0.6,0.6-1.3,1.1-2.1,1.4s-1.6,0.5-2.5,0.5
+			s-1.7-0.2-2.5-0.5c-0.8-0.3-1.5-0.8-2.1-1.4c-0.6-0.6-1.1-1.3-1.4-2.2c-0.3-0.8-0.5-1.7-0.5-2.7h2.4c0,1.2,0.4,2.3,1.3,3.3
+			C531.4,349,532.4,349.5,533.5,349.5z"/>
+		<path id="XMLID_101_" d="M582.5,360h3.3l22.2,52.5h-4l-7.3-17.3h-25l-7.3,17.3h-4.1L582.5,360z M595.6,392.1l-11.5-27.5
+			l-11.7,27.5H595.6z"/>
+		<path id="XMLID_104_" d="M619.6,367.1v45.4h-3.8V360h2.9l36.8,46.2V360h3.8v52.5h-3.5L619.6,367.1z"/>
+	</g>
+	<g id="XMLID_46_">
+		<path id="XMLID_47_" d="M31.4,419.6v34.7h-2.5v-16.6H7v16.6H4.5v-34.7H7v15.8h21.9v-15.8H31.4z"/>
+		<path id="XMLID_107_" d="M79.3,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S81.6,454.7,79.3,454.7z"/>
+		<path id="XMLID_109_" d="M150.2,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8L142,439.2l10.9,15H150.2z"/>
+		<path id="XMLID_111_" d="M197,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8S199.2,454.7,197,454.7z"/>
+		<path id="XMLID_113_" d="M267.9,454.2l-9.9-13.6l-6,5.5v8.1h-2.4v-35.6h2.4v24.9l15.4-14.6h2.8l-10.6,10.3l10.9,15H267.9z"/>
+		<path id="XMLID_115_" d="M377.3,445.3c0,1.3-0.2,2.5-0.7,3.5c-0.5,1.1-1.2,2-2,2.9s-1.8,1.4-3,1.9s-2.3,0.7-3.6,0.7h-16.2v-34.7
+			h16.2c1.2,0,2.3,0.3,3.3,0.8c1,0.5,1.8,1.2,2.5,2s1.2,1.8,1.6,2.8s0.6,2.1,0.6,3.2c0,1.8-0.4,3.4-1.3,4.8s-2.1,2.5-3.7,3.2
+			c2,0.6,3.6,1.7,4.7,3.3C376.7,441.4,377.3,443.2,377.3,445.3z M354.2,421.8v13.9h12.7c0.9,0,1.8-0.2,2.6-0.6
+			c0.8-0.4,1.5-0.9,2-1.5c0.6-0.6,1-1.4,1.3-2.2c0.3-0.8,0.5-1.7,0.5-2.6c0-0.9-0.2-1.8-0.5-2.7s-0.7-1.6-1.3-2.2
+			c-0.5-0.6-1.2-1.1-1.9-1.5c-0.8-0.4-1.6-0.6-2.5-0.6H354.2z M374.8,444.9c0-0.9-0.2-1.8-0.5-2.7c-0.3-0.9-0.8-1.6-1.4-2.3
+			c-0.6-0.7-1.3-1.2-2.1-1.6c-0.8-0.4-1.7-0.6-2.6-0.6h-14.1V452H368c1,0,1.9-0.2,2.7-0.6s1.5-0.9,2.1-1.6c0.6-0.7,1.1-1.4,1.4-2.3
+			S374.8,445.8,374.8,444.9z"/>
+		<path id="XMLID_119_" d="M423,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			s2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C427.3,454.2,425.2,454.7,423,454.7z M420.9,423v-4.3h2.1v4.3H420.9z M427.5,423v-4.3h2.1v4.3H427.5z"/>
+		<path  d="M487.5,431c-2.3,0.1-4.3,0.7-6,2c-1.7,1.3-2.9,3.1-3.6,5.3v15.9h-2.4v-25.4h2.3v6.3
+			c0.9-1.8,2-3.2,3.5-4.4c1.4-1.1,3-1.8,4.7-1.9c0.3,0,0.6,0,0.9,0s0.5,0,0.6,0V431z"/>
+		<path  d="M533.3,454.7c-1.8,0-3.4-0.4-5-1c-1.5-0.7-2.8-1.7-3.9-2.9c-1.1-1.2-2-2.6-2.6-4.2
+			c-0.6-1.6-0.9-3.3-0.9-5c0-1.8,0.3-3.5,1-5.1c0.6-1.6,1.5-3,2.6-4.2c1.1-1.2,2.4-2.2,3.9-2.9c1.5-0.7,3.2-1,4.9-1s3.4,0.4,4.9,1
+			c1.5,0.7,2.8,1.7,3.9,2.9c1.1,1.2,2,2.6,2.6,4.2c0.6,1.6,1,3.3,1,5.1c0,1.8-0.3,3.4-1,5c-0.6,1.6-1.5,3-2.6,4.2
+			c-1.1,1.2-2.4,2.2-3.9,2.9C536.7,454.4,535,454.7,533.3,454.7z M523.3,441.7c0,1.5,0.3,2.9,0.8,4.2c0.5,1.3,1.2,2.5,2.1,3.4
+			s1.9,1.8,3.2,2.3c1.2,0.6,2.5,0.9,3.9,0.9s2.7-0.3,3.9-0.9c1.2-0.6,2.3-1.4,3.2-2.4c0.9-1,1.6-2.2,2.1-3.5
+			c0.5-1.3,0.8-2.7,0.8-4.3c0-1.5-0.3-2.9-0.8-4.2c-0.5-1.3-1.2-2.5-2.1-3.5s-2-1.8-3.1-2.4c-1.2-0.6-2.5-0.9-3.8-0.9
+			s-2.7,0.3-3.9,0.9c-1.2,0.6-2.3,1.4-3.2,2.4c-0.9,1-1.6,2.2-2.1,3.5C523.6,438.8,523.3,440.2,523.3,441.7z"/>
+		<path  d="M591.3,454.7c-2,0-3.8-0.3-5.6-1c-1.8-0.7-3.4-1.6-4.7-2.9l1.2-1.7c1.4,1.2,2.8,2.1,4.2,2.7
+			s3.1,0.9,4.8,0.9c2.2,0,4-0.5,5.3-1.4c1.4-0.9,2-2.2,2-3.9c0-0.8-0.2-1.4-0.5-2c-0.3-0.5-0.9-1-1.5-1.4c-0.7-0.4-1.5-0.7-2.5-1
+			c-1-0.3-2.2-0.6-3.5-0.9c-1.4-0.3-2.7-0.7-3.7-1c-1.1-0.3-1.9-0.7-2.6-1.2s-1.2-1-1.5-1.7c-0.3-0.7-0.5-1.5-0.5-2.5
+			c0-1.3,0.2-2.4,0.7-3.3c0.5-0.9,1.2-1.7,2-2.3c0.9-0.6,1.9-1.1,3-1.4c1.1-0.3,2.3-0.5,3.6-0.5c2,0,3.7,0.3,5.3,1
+			c1.5,0.7,2.7,1.5,3.6,2.6l-1.4,1.3c-0.8-1-1.9-1.7-3.3-2.2c-1.4-0.5-2.8-0.7-4.3-0.7c-0.9,0-1.8,0.1-2.7,0.3
+			c-0.8,0.2-1.6,0.5-2.2,0.9c-0.6,0.4-1.1,1-1.5,1.6c-0.4,0.7-0.5,1.5-0.5,2.4c0,0.7,0.1,1.4,0.4,1.8c0.2,0.5,0.6,0.8,1.2,1.2
+			s1.2,0.6,2.1,0.9s1.9,0.5,3,0.8c1.6,0.4,3,0.8,4.2,1.1c1.2,0.4,2.3,0.8,3.1,1.3c0.8,0.5,1.5,1.1,1.9,1.9s0.7,1.6,0.7,2.7
+			c0,2.3-0.9,4.1-2.7,5.4C596.7,454.1,594.3,454.7,591.3,454.7z"/>
+		<path  d="M646.4,454.7c-5.4,0-8.1-3.7-8.1-11.2v-14.7h2.4v14.3c0,6.3,2.1,9.4,6.4,9.4c1.1,0,2.1-0.2,3.1-0.6
+			c1-0.4,2-0.9,2.8-1.6c0.9-0.7,1.7-1.5,2.3-2.4c0.7-0.9,1.2-2,1.6-3.1v-16h2.4v22c0,0.8,0.3,1.2,1,1.2v2.2c-0.2,0-0.3,0-0.4,0
+			c-0.1,0-0.2,0-0.3,0c-0.7,0-1.2-0.2-1.7-0.6c-0.5-0.4-0.8-1-0.8-1.6v-3.8c-1.1,2.1-2.6,3.6-4.6,4.8
+			C650.7,454.2,648.6,454.7,646.4,454.7z"/>
+	</g>
+</g>
+<g id="Layer_3">
+	<path d="M329.5,215.1h-40c-3.5,0-6.7-0.7-9.7-2.2c-3-1.5-5.6-3.4-7.9-5.9c-2.3-2.4-4-5.2-5.3-8.3
+		c-1.3-3.1-1.9-6.3-1.9-9.6c0-3.4,0.6-6.6,1.8-9.7c1.2-3.1,2.9-5.9,5-8.3c2.1-2.4,4.6-4.4,7.5-5.8c2.9-1.4,6-2.1,9.4-2.1h41.1v-3.2
+		h-36.7c-3.5,0-6.7-0.7-9.5-2.2c-2.9-1.5-5.3-3.4-7.4-5.9c-2.1-2.4-3.7-5.1-4.8-8.2c-1.2-3-1.7-6.1-1.7-9.3c0-3.4,0.6-6.6,1.7-9.7
+		c1.1-3.1,2.6-5.8,4.6-8.2c2-2.4,4.3-4.2,7.1-5.6c2.8-1.4,5.8-2.1,9.1-2.1h37.6v-3.2h-37.6c-3.9,0-7.4,0.8-10.6,2.5
+		c-3.2,1.7-5.9,3.9-8.1,6.6c-2.2,2.7-3.9,5.8-5.1,9.2c-1.2,3.4-1.8,6.9-1.8,10.4c0,5.7,1.5,10.9,4.4,15.7c2.9,4.8,6.8,8.2,11.8,10.5
+		c-3.2,1-6,2.4-8.6,4.3c-2.6,1.9-4.8,4.1-6.7,6.7c-1.8,2.5-3.2,5.3-4.2,8.3c-1,3-1.4,6.1-1.4,9.3c0,3.9,0.7,7.6,2.2,11.1
+		c1.5,3.5,3.5,6.6,6,9.3c2.5,2.7,5.5,4.8,8.9,6.4c3.4,1.6,7,2.4,10.8,2.4h40V215.1z"/>
+	<g>
+		<polygon  points="340.7,215.1 340.7,108.9 340.7,105.8 337.9,105.8 337.9,218.2 340.7,218.2 		"/>
+		<path d="M412.3,140.1c-1.9-6.8-4.7-12.7-8.5-17.8c-3.8-5.1-8.6-9.1-14.3-12c-5.7-3-12.5-4.4-20.2-4.4h-20.4v3.2
+			h20.4c6.9,0,13,1.3,18.4,4c5.4,2.6,9.9,6.3,13.6,11c3.7,4.7,6.4,10.3,8.3,16.7c1.9,6.4,2.8,13.5,2.8,21.2c0,7.6-0.9,14.6-2.7,21.1
+			c-1.8,6.5-4.6,12.1-8.2,16.9c-3.6,4.8-8.1,8.5-13.5,11.2c-5.4,2.7-11.6,4-18.6,4h-20.4v3.2h20.4c7,0,13.3-1.3,19-4
+			c5.7-2.7,10.5-6.5,14.4-11.4c3.9-4.9,7-10.8,9.2-17.7c2.2-6.9,3.2-14.6,3.2-23.2C415.1,154.1,414.2,146.9,412.3,140.1z"/>
+	</g>
+	<polygon class="st0"  stroke-miterlimit="10" stroke-width="3" fill="none" points="202.3,83.3 335.7,6.3 469.1,83.3 469.1,237.3 335.7,314.3 202.3,237.3 	"/>
+</g>
+</svg>
+
+	</div>
+	
+		<span>
+			
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<path d="M4,1C3.7,1,3,1.3,2.2,2.1C1.5,2.7,1,3.5,1,4c0,6.7,8.3,15,15,15c0.5,0,1.3-0.5,1.9-1.2C18.7,17,19,16.3,19,16
+				c0-0.2-0.6-0.9-2-2c-1.2-1-2.2-1.5-2.5-1.5c0,0-0.1,0-0.4,0.3c-0.2,0.3-0.4,0.6-0.6,0.9c-0.6,0.9-1.1,1.8-1.9,1.8
+				c-0.1,0-0.2,0-0.4-0.1c-2.6-1.1-5.7-4.2-6.8-6.8C4.4,8.4,4.4,7.9,5,7.3C5.3,7,5.8,6.7,6.2,6.5C6.6,6.3,6.9,6,7.2,5.9
+				c0.3-0.2,0.3-0.3,0.3-0.4C7.5,5.2,7,4.2,6,3C4.9,1.6,4.2,1,4,1z M16,20c-1.8,0-3.7-0.5-5.6-1.5c-1.8-0.9-3.6-2.2-5.1-3.8
+				c-1.6-1.6-2.9-3.3-3.8-5.1C0.5,7.7,0,5.8,0,4c0-1.1,1.1-2.3,1.5-2.7C2.2,0.7,3.2,0,4,0c0.4,0,0.8,0.2,1.4,0.8
+				c0.4,0.4,0.9,0.9,1.4,1.5c0.3,0.4,1.7,2.3,1.7,3.2c0,0.7-0.8,1.3-1.7,1.8C6.4,7.5,6.1,7.7,5.8,8C5.5,8.2,5.5,8.3,5.5,8.3
+				c0.9,2.4,3.9,5.3,6.2,6.2c0,0,0.1-0.1,0.4-0.3c0.2-0.3,0.4-0.6,0.6-1c0.5-0.9,1.1-1.7,1.8-1.7c0.9,0,2.8,1.4,3.2,1.7
+				c0.6,0.5,1.2,1,1.5,1.4c0.5,0.6,0.8,1,0.8,1.4c0,0.8-0.7,1.8-1.3,2.5C18.3,18.9,17.1,20,16,20z"/>
+			</svg>
+		</span>
+	</div>
+</a>
+
+
+	</div>
+</section>
+
+				</div>
+				<div class="blog-post-mobile-top">
+					<div class="bread-crumbs">
+
+
+
+
+					</div>
+				  </div>
+				<div class="blog-post-container">
+					<section class="blog-post-content">
+						<h2 id="yargılamanın-i̇adesi-sebepleri">Yargılamanın İadesi Sebepleri</h2>
+
+<h2 id="hmk-madde-375">HMK Madde 375</h2>
+
+<p>(1) Aşağıdaki sebeplere dayanılarak yargılamanın iadesi talep edilebilir:</p>
+
+<p>a) Mahkemenin kanuna uygun olarak teşekkül etmemiş olması.</p>
+
+<p>b) Davaya bakması yasak olan yahut hakkındaki ret talebi, merciince kesin olarak kabul edilen hâkimin karar vermiş veya karara katılmış bulunması.</p>
+
+<p>c) Vekil veya temsilci olmayan kimselerin huzuruyla davanın görülmüş ve karara bağlanmış olması.</p>
+
+<p>ç) Yargılama sırasında, aleyhine hüküm verilen tarafın elinde olmayan nedenlerle elde edilemeyen bir belgenin, kararın verilmesinden sonra ele geçirilmiş olması.</p>
+
+<p>d) Karara esas alınan senedin sahteliğine karar verilmiş veya senedin sahte olduğunun mahkeme veya resmî makam önünde ikrar edilmiş olması.</p>
+
+<p>e) İfadesi karara esas alınan tanığın, karardan sonra yalan tanıklık yaptığının sabit olması.</p>
+
+<p>f) Bilirkişi veya tercümanın, hükme esas alınan husus hakkında kasten gerçeğe aykırı beyanda bulunduğunun sabit olması.</p>
+
+<p>g) Lehine karar verilen tarafın, karara esas alınan yemini yalan yere ettiğinin, ikrar veya yazılı delille sabit olması.</p>
+
+<p>ğ) Karara esas alınan bir hükmün, kesinleşmiş başka bir hükümle ortadan kalkmış olması.</p>
+
+<p>h) Lehine karar verilen tarafın, karara tesir eden hileli bir davranışta bulunmuş olması.</p>
+
+<p>ı) Bir dava sonunda verilen hükmün kesinleşmesinden sonra tarafları, konusu ve sebebi aynı olan ikinci davada, öncekine aykırı bir hüküm verilmiş ve bu hükmün de kesinleşmiş olması.</p>
+
+<p>i) Kararın, İnsan Haklarını ve Ana Hürriyetleri Korumaya Dair Sözleşmenin veya eki protokollerin ihlali suretiyle verildiğinin, Avrupa İnsan Hakları Mahkemesinin kesinleşmiş kararıyla tespit edilmiş olması veya karar aleyhine Avrupa İnsan Hakları Mahkemesine yapılan başvuru hakkında dostane çözüm ya da tek taraflı deklarasyon sonucunda düşme kararı verilmesi.</p>
+
+<p>(2) Birinci fıkranın (e), (f) ve (g) bentlerindeki hâllerde yargılamanın iadesinin istenebilmesi, bu sebeplerin kesinleşmiş bir ceza mahkûmiyet kararı ile belirlenmiş olması şartına bağlıdır. Delil yokluğundan başka bir sebeple ceza kovuşturmasına başlanamamış veya mahkûmiyet kararı verilememiş ise ceza mahkemesi kararı aranmaz. Bu takdirde dayanılan yargılamanın iadesi sebebinin, yargılamanın iadesi davasında öncelikle ispat edilmesi gerekir.</p>
+
+<hr>
+
+<ul>
+  <li><a href="../6100-sayili-hukuk-muhakemeleri-kanunu-(hmk).html"><strong>6100 sayılı HMK (Hukuk Muhakameleri Kanunu) Tam Metin</strong></a></li>
+</ul>
+
+<hr>
+
+<amp-img src="../tokmak-yargitay-kararlari-1280x720.png" alt="HMK Madde 375  Yargılamanın İadesi Sebepleri" width="1280" height="720" layout="responsive">
+            </amp-img>
+<h2 id="hmk-madde-375-gerekçesi">HMK Madde 375 Gerekçesi</h2>
+
+<p>Madde, 1086 sayılı Kanunun 445 inci maddesini karşılamaktadır.</p>
+
+<p>Birinci fıkrasının (a) bendinde, daha önce düzenlenmemiş olan, mahkemenin kanuna uygun olarak teşekkül etmemesi, yeni bir yargılamanın yenilenmesi sebebi öngörülmüştür.</p>
+
+<p>(b) bendi, 1086 sayılı Kanunun 445 inci maddesinin birinci fıkrasının (9) numaralı bendini karşılamaktadır. Sadece davaya bakmaktan yasaklı olan hâkimin karar vermiş olması yargılamanın yenilenmesi sebebi olarak düzenlenmiş iken, bu bentte, ayrıca hakkında ret talebi merciince kesin olarak kabul edilen hâkimin karar vermesi veya karara katılmış olması da yargılamanın yenilenmesi sebebi olarak belirtilmiştir.</p>
+
+<p>(c) bendi, 1086 sayılı Kanunun 445 inci maddesinin birinci fıkrasının (8) numaralı bendini karşılamaktadır. Yargılamanın yenilenmesi için vekil veya temsilci olmayan kimselerin katılımıyla davanın görülmesi ve karara bağlanması aranır iken, yeni düzenlenen bentte buna tarafların açık veya zımnî muvafakatlerinin olmaması da bir unsur olarak ilâve edilmiştir.</p>
+
+<p>(ç) bendi, 1086 sayılı Kanunun 445 inci maddesinin birinci fıkrasının (1) numaralı bendini karşılamaktadır. Yargılamanın yenilenmesi için mücbir sebep veya lehine karar verilen tarafın fiili nedeniyle elde edilemeyen bir senet veya belgenin karar verilmesinden sonra ele geçirilmiş olması aranır iken, yeni düzenlenen bentte bu şartlar yerine daha genel bir ifade olarak, belgenin tarafın elinde olmayan nedenlerle elde edilememesi şartı getirilmiştir.</p>
+
+<p>(d) bendi, 1086 sayılı Kanunun 445 inci maddesinin birinci fıkrasının (2) numaralı bendini; (e) bendi ise aynı fıkranın (4) numaralı bendini karşılamaktadır.</p>
+
+<p>(f) bendi, 1086 sayılı Kanunun 445 inci maddesinin birinci fıkrasının (5) numaralı bendini kısmen karşılamaktadır. Bu bent eskiden sadece bilirkişiler hakkında iken, yeni düzenleme ile tercümanlar da kapsama alınmıştır.</p>
+
+<p>(g) bendi, 1086 sayılı Kanunun 445 inci maddesinin birinci fıkrasının (6) numaralı bendini; (ğ) bendi, aynı fıkranın (3) numaralı bendini; (h) bendi, keza aynı fıkranın (7) numaralı bendini; (ı) bendi, 1086 sayılı Kanunun 445 inci maddesinin birinci fıkrasının (10) numaralı bendini ve (i) bendi ise 1086 sayılı Kanunun 445 inci maddesinin birinci fıkrasının (11) numaralı bendini karşılamaktadır.</p>
+
+<p>Maddenin ikinci fıkrası, söz konusu 445 inci maddenin ikinci fıkrasında olduğu gibi, birinci fıkranın (e), (f) ve (g) bentlerindeki hâllerde yargılamanın iadesinin istenebilmesi için, bu sebeplerin kesinleşmiş bir ceza mahkûmiyet kararı ile belirlenmiş olması şartına bağlamıştır. Ancak delil yokluğundan başka bir sebeple ceza kovuşturmasına başlanamamış veya mahkûmiyet kararı verilememiş ise ceza mahkemesi kararı aranmayacağı; bu durumda dayanılan yargılamanın iadesi sebebinin, yargılamanın iadesi davasında öncelikle ispat edilmesi gerektiği kabul edilmiştir.</p>
+
+<hr>
+
+<h2 id="hmk-375-yargılamanın-i̇adesi-sebepleri--emsal-yargıtay-kararları">HMK 375 (Yargılamanın İadesi Sebepleri)  Emsal Yargıtay Kararları</h2>
+
+<hr>
+
+<p><strong>YARGITAY 1. HUKUK DAİRESİ 
+Esas : 2015/12888 Karar : 2018/11236</strong> Tarih : 18.06.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 375. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yargılamanın İadesi Sebepleri</strong></p>
+  </li>
+</ul>
+
+<p>Dava, muris muvazaası hukuksal nedenine dayalı tapu iptali ve tescil isteğine ilişkindir.</p>
+
+<p>Davacılar, ortak mirasbırakanları olan … ’in kat mülkiyeti kurulu … ada … parsel sayılı taşınmazdaki 1 ve 6 nolu bağımsız bölümleri oğlu davalı … ’ye, 4 ve 8 nolu bağımsız bölümleri diğer oğlu davalı … ’e intifa hakkını üzerinde bırakarak çıplak mülkiyetini 06.10.1992 tarihinde satış suretiyle temlik ettiğini, işlemlerin mirastan mal kaçırma amaçlı ve muvazaalı olduğunu ileri sürerek, taşınmazların davalılar adlarına olan tapu kayıtlarının iptali ile miras payları oranında adlarına tesciline karar verilmesini istemişlerdir.</p>
+
+<p>Davalılar, davanın reddini savunmuşlardır.</p>
+
+<p>Mahkemece, davanın kabulüne ilişkin olarak verilen karar taraflarca temyiz edilmeksizin 06.01.2014 tarihinde kesinleşmiştir.</p>
+
+<p>Davalı … vekili 09.07.2015 havale tarihli dilekçesi ile davacılar tarafından kasıtlı olarak yanlış adres bildirildiğini, mahkemece verilen kararın 10.12.2014 tarihinde muhtara bırakılarak kesinleştirildiğini, davacılar tarafından açılan bu davada yasaya karşı açıkça hile kullanıldığını ve verilen karar ile davalının mağdur olduğunu, 24.10.2013 tarihli karardan davalı haberdar edilmediği için temyiz edemediğini, bu nedenle kararın aleyhine kesinleştiğini ileri sürerek yargılamanın yenilenmesine, icranın durdurulmasına ve mahkemece verilen kararın ortadan kaldırılmasına karar verilmesini istemiştir.</p>
+
+<p>Davacı, tebligatların usulüne uygun olarak yapıldığını, bildirip HMK’nın 375.maddesinde sayılan sebeplerden hiçbirine dayanmayan talebin reddini savunmuştur.</p>
+
+<p>Mahkemece, ek karar ile usulsüz tebligata ilişkin yargılamanın iadesi talebinin HMK’nın 374. ve 375. maddeleri gereğince reddine, hukuki dinlenilme hakkının sağlanabilmesi bakımından hak ihlali olup olmadığının değerlendirilmesi için icranın durdurularak, davalıya temyiz hakkı tanınmasına ve kararın iptal edilmeksizin askıda tutulmasına karar verilmiştir.</p>
+
+<p>Dosya içeriği ve toplanan delillerden, 06.07.2012 tarihinde davacılar tarafından muris muvazaası hukuksal nedenine dayalı olarak davalılar aleyhine tapu iptali ve tescil istemiyle açılan dava sonunda, mahkemece verilen karar davalı … ’e Almanya’daki adresinde 24.10.2014 tarihinde tebliğ edilerek 10.12.2014’de kesinleştirilmiş, vekili tarafından 09.07.2015 havale tarihli dilekçe ile yargılamanın yenilenmesi istemiştir.</p>
+
+<p>Hemen belirtilmelidir ki, hukuki dinlenilme hakkı gerekçe gösterilerek temyiz incelemesi yapılmak üzere kesinleşmiş karar yönünden dosyanın Yargıtay’a gönderilmesi usul hükümlerine aykırı olduğu gibi kesinleşmiş hüküm bakımından Hukuk Muhakemeleri Kanununun (HMK) 26. maddesine aykırı biçimde hüküm kısmına başka fıkralarda eklenmek suretiyle ek karar verilmiş olması da usule aykırıdır.</p>
+
+<p>Hal böyle olunca, talebin reddine karar verilmesi gerekirken yanılgılı değerlendirme ile yazılı şekilde karar verilmesi doğru değildir.</p>
+
+<p>Davacılar vekilinin yerinde bulunan temyiz itirazlarının kabulü ile, hükmün (6100 sayılı Yasanın geçici 3.maddesi yollaması ile) 1086 sayılı HUMK’un 428.maddesi gereğince BOZULMASINA, alınan peşin harcın temyiz edene geri verilmesine, 18.06.2018 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. HUKUK DAİRESİ 
+Esas : 2018/1368 Karar : 2018/3118</strong> Tarih : 12.03.2018</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 375. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yargılamanın İadesi Sebepleri</strong></p>
+  </li>
+</ul>
+
+<p>Davacı dava dilekçesi ile; tarafların … 8. Aile Mahkemesinin 24.06.2014 tarihli, 2012/1239 esas, 2014/776 karar sayılı ilamı ile boşandıklarını, velayet hakkı anneye verilip, lehine nafaka bağlanan çocuk …‘nin babası olmadığının … 1. Aile Mahkemesinin 2014/1773 esas sayılı davada alınan Adli Tıp Kurumu raporu ile tespit edildiğini davalı tarafından yanıltıldığını, yanlış karar verilmesine neden olduğunu, babası olmadığı bir çocuğa nafaka ödemek zorunda kaldığını belirterek söz konusu dava nedeniyle 6100 sayılı Hukuk Muhakemeleri Kanununun 375. maddesi uyarınca yargılamanın yenilenmesi talebinde bulunmuştur.</p>
+
+<p>Mahkemece yapılan inceleme sonucunda; davacı tarafından ileri sürülen yeni delil niteliğindeki babalığa dair raporun Hukuk Muhakemeleri Kanununun 375/1-h bendi uyarınca yargılamanın iadesi sebebi olacağı gerekçesiyle davanın kabulüne karar verilmiştir.</p>
+
+<p>Yapılan yargılama toplanan delillere göre; 6100 sayılı Hukuk Muhakemeleri Kanununun 374 ve devamı maddelerinde yargılamanın yenilenmesi sebepleri tahdidi olarak sayılmış olup, kesinleşmiş olan hükümlere karşı başvurulan istisnai ve olağanüstü bir kanun yoludur. Mahkemece her ne kadar kadının karara tesir eden hileli bir yola başvurduğu gerekçesi ile yargılamanın yenilenmesi talebi kabul edilmiş ise de; buradaki hilenin diğer kanunlardaki anlamından daha geniş bir biçimde ele alınması gerekmektedir. Taraf mutlaka kasti olarak bu hileyi yapmalı, ayrıca hileli davranış lehine verilen karara etki etmiş olmalıdır. Hileli davranış olmasa da aynı şekilde karar verilebilecek hallerde yargılamanın yenilenmesine karar verilemez. Davalı kadının susması hileli davranış olarak yorumlanamaz. Zira hiç kimse bir davada aleyhine beyanda bulunma yükümlülüğü altına sokulamaz.</p>
+
+<p>Bu haliyle kanunda ve uygulamada kabul edildiği şekilde yargılamanın yenilenmesini gerektiren bir hilenin yapıldığından bahsedilemez. O halde davanın reddine karar verilecek yerde yazılı şekilde kabulüne karar verilmesi doğru olmamış ve bozmayı gerektirmiştir.</p>
+
+<p>SONUÇ: Temyiz edilen hükmün yukarıda gösterilen sebeple BOZULMASINA, temyiz peşin harcının istek halinde yatırana geri verilmesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere oybirliğiyle karar verildi. 12.03.2018 (Pzt.)</p>
+
+<hr>
+
+<p><strong>YARGITAY 20. HUKUK DAİRESİ 
+Esas : 2016/526 Karar : 2017/6182</strong> Tarih : 4.07.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 375. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yargılamanın İadesi Sebepleri</strong></p>
+  </li>
+</ul>
+
+<p>… ili, … ilçesi, … köyü, 155 parsel 740 m2 yüzölçümü ile bahçeli kargir ev vasfıyla 17.06.2011 tarihli satış ve birleştirme neticesinde davacı adına tapuda kayıtlıdır.</p>
+
+<p>Davacı vekili 05.07.2012 tarihli dilekçesinde; … … köyü 155 parsele yönelik verilen kararın yanlış olduğu gerekçesiyle yargılamanın iadesi talebinde bulunmuştur.</p>
+
+<p>Mahkemece, yargılamanın iadesi talebinin kabulü ile … Tapulama Hakimliğinin 1969/339 Esas -1970/209 Karar sayılı ilamında dava konusu … köyü 155 parsel sayılı taşınmazın (Teknik bilirkişi … … 07/01/2013 tarihli krokili raporunda (B) harfi ile gösterdiği alanın) … dışında kalan bölümünün yüzölçümünün 1050 m² olarak düzeltilmesine, … tahdit sınırları içinde kalan bölümünün yüzölçümünün 740 m² olarak düzeltilmesine, bu şekilde tapuya derciine karar verilmiş hüküm davalı … Yönetimi vekili tarafından temyiz edilmiştir.</p>
+
+<p>Dava, yargılamanın iadesi istemine ilişkindir.</p>
+
+<p>… Tapulama Mahkemesinin 1969/339-1970/209 sayılı kararı ile 155 parselin 740 m2`lik kısmı … ve … … adına tespit edilmiş, Yargıtay 7. Hukuk Dairesinin 15.01.1971 tarih, 1971/65-186 sayılı kararı ile onanmıştır. … ve … … 23.09.2011 tarihli dilekçeleri ile … Kadastro Mahkemesinden yargılamanın yenilenmesi isteminde bulunmuşlar, mahkemece 03.05.2012 tarih ve 2011/40-2012/519 sayılı karar ile yargılamanın iadesi şartları oluşmadığından talepleri reddine karar verilmiştir.</p>
+
+<p>Davacı … taşınmazı satın alarak maliki olduktan sonra 05.06.2012 tarihli dilekçesi ile … Tapulama Mahkemesinin 1969/339-1970/209 sayılı dosyasında görev alan bilirkişi hakkında suç duyurusunda bulunmuş ve bu şikayet üzerine … Cumhuriyet Başsavcılığının 2012/4288-2325 sayılı zamanaşımı nedeniyle kovuşturmaya yer olmadığına dair kararı üzerine davacı yargılamanın yenilenmesi isteminde bulunmuştur.</p>
+
+<p>Dava konusu taşınmazın hükmen oluşumunda görev alan bilirkişi hakkında yasal süresi içinde suç duyurusunda bulunulmayıp onama kararının üzerinden geçen 41 yıl sonra suç duyurusunda bulunulup bunun üzerine HMK`nın 375. maddesi vd. maddeleri uyarıca yargılamanın iadesi nedeni oluştuğunun kabulü ile 3 aylık hak düşürücü süreninde bu tarihte başladığını kabul etmek mümkün olmadığından, mahkemece yargılamanın iadesi şartları oluşmadığından davanın reddine karar verilmesi gerekirken aksi düşüncelerler yazılı şekilde hüküm kurulması bozmayı gerektirmiştir.</p>
+
+<p>SONUÇ: Yukarıda açıklanan nedenlerle; davalı … Yönetimi vekilinin temyiz itirazlarının kabulü ile usul ve kanuna aykırı hükmün BOZULMASINA, temyiz harcının istek halinde iadesine 04/07/2017 günü oy birliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 11. HUKUK DAİRESİ
+Esas : 2015/12702 Karar : 2017/3911</strong> Tarih : 20.06.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 375. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yargılamanın İadesi Sebepleri</strong></p>
+  </li>
+</ul>
+
+<p>Davacı, 03/09/2012 tarihli dilekçesi ile, daha önce mahkemece haklarında davanın reddine karar verilip Dairece de onanarak kesinleşen dava dosyası hakkında, red kararına esas olan gerçek dışı ve sahte bilgi ile yanıltma amaçlı bilirkişi raporunun deşifre edildiğini, 26 Nisan 2012 tarihli yeni bir gerçek bilirkişi raporuyla da belgelendiğini, hesap ismi ve adresinin sahte olduğunu, … Bank A.Ş’nin şirketin adresini 1996 yılında farklı gösterip gizlice çift kayıt şeklinde açıp işlettiği, yolsuzluğun mahkeme kararına alınmasının yargılamanın yenilenmesi nedeni olduğunu zira, … Başkanlığı’nın 2.2.2010 tarihli 39 sayılı yazısı ile “kullandırılan krediye ilişkin firma kaşesi veya firma kefili olarak imzanızı taşıyan kredi kullandırım fişi, dekont, makbuz vb.bir belgeye kredi dosyasında rastlanmamıştır” bildirim yapıldığını böyle bir cevabın 13 yıllık yargılama sürecinde verilmediğini, …‘nin kamu adına yapması gereken soruşturma ve yolsuzluk işlemini yetkili makamlara kasten bildirmediğini, ayrıca yargılama sırasında kasten gerçeğe aykırı bilirkişi raporu hazırlandığı hususunun kanıtlandığını, davaya konu olan olay 1997 yılındaki sigorta ücretinin … Bank tarafında usulsüz olarak fazla tahsil edilmesi eylemi olduğu halde bilirkişinin 1998 yılındaki iş yerini su basması hasar bedelini yanıltma amaçlı gerçek dışı şekilde rapor ettiğini, temsilcisi olduğu şirketin üç adet ihracat işlemi yaparak üç adet döviz alım belgesi düzenlediği şeklinde hakikate aykırı rapor düzenlendiğini, şirketin hesabında para olduğu halde kredi kullanmaya ihtiyacı olduğu izlenimi vermek için çeklerin engellendiğini, sonuç olarak bilirkişilerin hukuku hiçe sayarak gerçek ve mahkemece bu rapor nazara alınarak karar verildiğini, zira bilirkişilerin temsilcisi olduğu şirketin 311681 nolu hesabı ile … isimli tahrifattı paravan şirketinin … nolu sahte hesabı arasındaki karşılıklı virman yapılmasına dair çizelgeyi düzenlemekten kasten kaçındıklarını ve delil karartması yaptıklarını, ilgililer hakkında Cumhuriyet Savcılığı’na suç duyurusunda bulunacaklarını, bilirkişi heyeti hakkında davalar açacaklarını yine, … 1. ve 2. Asliye Ticaret Mahkemeleri’ne tespit davası açacaklarını ileri sürerek, yargılamanın iadesini talep ve dava etmiştir.</p>
+
+<p>Davalı … vekili, davanın haksız olduğunu, somut olayda yargılamanın yenilenmesi şartları bulunmadığını savunarak, davanın reddini istemiştir.</p>
+
+<p>Mahkemece bozma ilamına uyularak yapılan yargılama, iddia, savunma, toplanılan deliller ve tüm dosya kapsamına göre, davacının açmış olduğu davanın mahkemenin 2006/ 851 E- 2007/ 688 K. sayılı kararı ile reddedildiği, bu dosya içinde karardan önce birleştirilen … 7. Asliye Ticaret Mahkemesi’nin 1998/ 457 E. sayılı dosyasının aynı kararla işbu dosyadan ayrılarak … 1. Asliye Ticaret Mahkemesi’ne gönderildiği, Dairemizin 11.6.2009 tarih, 2008/3135 E- 2009/7229 K. sayılı kararı ile onandığı ve kararın kesinleştiği, davacının daha önceki yargılamanın iadesi talebinin Mahkemenin 2010/ 249 E-680 K. sayılı kararı ile reddedildiği ve Dairemizin 15.7.2011 tarih, 2011/3305 E- 2011/8961 K.sayılı kararı onarak kesinleştiği, işbu davanın aynı dosya ile ilgili ikinci yargılamanın iadesi talepli olduğu, … 1. Asliye Ticaret Mahkemesi’nin 2012/ 189 E- 192 K. sayılı dosyasının mahkeme dosyasından ayrılan … 7. Asliye Ticaret Mahkemesi dosyasının devamı olup, davanın dava şartı yokluğundan reddedildiği ve Yargıtay 19. Hukuk Dairesi’nin 2013/ 11749 Esas sayılı dosya ile kararın bozulduğu, davacının bilirkişiler hakkında suç duyurusunda bulunacağını iddia etmiş ise de, bilirkişiler hakkında şikayet ve soruşturma olmadığının bildirildiği, davacının iddiasını 26.4.2012 tarihli, … 1. Asliye Ticaret Mahkemesi’nin 2010/ 69 E. sayılı dosyası ile ilgili mahkemesine verilmiş bilirkişi raporuna dayandırdığı, … 11. Asliye Ticaret Mahkemesi’nin 2010/ 242 E- 2010/325 K. sayılı kararı ile … 1. Asliye Ticaret Mahkemesi’nin 2010/ 69 E sayılı dosyasında birleştirildiği, … 1. Asliye Ticaret Mahkemesi’nin 2010/69 Esas-2012/138 karar sayılı dosyası ile hüküm altına alınıp görevsizlik kararı verildiği, bu bilirkişi raporuyla ilgili kesinleşmiş karar bulunmadığı, … 1. Asliye Ticaret Mahkemesi’nin 2013 /175 E. - 2013/ 177 K. sayılı kararı ile …‘nin … 6. İcra Müdürlüğü’nün 1997/22222 sayılı dosyası ile itirazın iptali davasının reddedildiği, HMK’nın 375/1-f m. uyarınca bilirkişi veya tercümanın, hükme esas alınan husus hakkında kasten gerçeğe aykırı beyanda bulunduğunun sabit olmadığı gibi, bilirkişilerin kasten gerçeğe aykırı beyanlarına ilişkin kesinleşmiş hüküm olması gerektiği, davacının iddia ettiği bilirkişi raporunun yeni ele geçirilmiş belge niteliğinde olmadığı, bir uzman görüşü niteliğinde olup, bu rapora ilişkin olarak alınmış bir mahkeme kararı bulunmadığı, bilirkişi raporunun bir mahkemece değerlendirilmediği, raporun mahkemesine verildiği tarih ile davacının dava açtığı tarih arasında 5 aylık süre bulunduğu, ayrıca davacının önceki yargılamanın yenilenmesi talebinde de kredi kullanımı ile ilgili çift kayıt idiaasında bulunduğu, bu iddianın daha önce değerlendirldiği, davacı taleplerinin HMK’nın 375 vd. maddelerinde yer alan hükümlere uymadığı gerekçesiyle, usule uygun olmayan talebin reddine karar verilmiştir.</p>
+
+<p>Kararı, davacı şirket temsilcisi temyiz etmiştir.</p>
+
+<p>Dosyadaki yazılara, mahkemece uyulan bozma kararı gereğince hüküm verilmiş olmasına ve delillerin takdirinde bir isabetsizlik bulunmamasına göre, davacı şirket temsilcisinin bütün temyiz itirazları yerinde değildir.</p>
+
+<p>SONUÇ: Yukarıda açıklanan nedenlerden dolayı, davalı şirket temsilcisinin bütün temyiz itirazlarının reddiyle usul ve kanuna uygun bulunan hükmün ONANMASINA, aşağıda yazılı bakiye 3,70 TL temyiz ilam harcının temyiz eden davacı şirket temsilcisinden alınmasına, 20/06/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 5. HUKUK DAİRESİ 
+Esas : 2016/16301 Karar : 2017/11715</strong> Tarih : 25.04.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 375. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yargılamanın İadesi Sebepleri</strong></p>
+  </li>
+</ul>
+
+<p>Talep, yargılamanın iadesi ve hükmün iptali istemine ilişkindir.</p>
+
+<p>Mahkemece talebin kabulü ile hükmün iptali ve davanın reddine karar verilmiş; karar, davacılar vekilince temyiz edilmiştir.</p>
+
+<p>HMK’nun 375 maddesinin (a) bendinde “Yargılama sırasında, aleyhine hüküm verilen tarafın elinde olmayan nedenlerle elde edilemeyen bir belgenin kararın verilmesinden sonra ele geçirilmiş olması” yargılanmanın yenilenmesi sebebi olarak sayılmıştır.</p>
+
+<p>Dosyada bulunan kanıt ve belgelere göre, dava konusu taşınmazın 13/11/1985 tarih ve 2100 sayılı davalı … Belediye Başkanlığınca Kamulaştırmaya tabi tutulduğu taşınmazın bedelinin T.C….Başkanı Sefaköy Şubesine süresince bloke edildiği ve bedelin kısmen ödendiği, buna dair belgelerinin yeni ele geçirildiğinden bahisle davalı idarece yargılamanın yenilenmesi ve kararın kaldırılması istenmiş ise de; Kamulaştırmayı yapan idare davalı … Belediye Başkanlığı olup, kendinde olan belgeleri elde etmesinin elinde olmayan sebeblerle ele geçirilemeyen belge olarak kubülü mümkün olmadığından, HMK’nun 375. maddesinin (a) bendinde yazılı nedenlerle yargılamanın iadesi istenilemeyeceğinden talebin reddi yerine, yazılı gerekçelerle kabulüne karar verilmesi;</p>
+
+<p>Doğru görülmemiştir.</p>
+
+<p>Davacılar vekilinin temyiz itirazları yerinde olduğundan hükmün açıklanan nedenlerle H.U….nun 428. maddesi gereğince BOZULMASINA, peşin alınan temyiz harcının istenildiğinde iadesine ve temyize başvurma harcının Hazineye irad kaydedilmesine, 25/04/2017 gününde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 16. HUKUK DAİRESİ
+Esas : 2015/7891 Karar : 2017/2070</strong> Tarih : 3.04.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 375. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yargılamanın İadesi Sebepleri</strong></p>
+  </li>
+</ul>
+
+<p>Kadastro sırasında Yenikonacık Köyü çalışma alanında bulunan 106 ada 3 parsel sayılı 29.011,50 metrekare yüzölçümündeki taşınmaz tapu kaydı nedeniyle tarla vasfıyla Hazine adına tespit edilmiştir. Davacı … tarafından açılıp, ölümü üzerine mirasçıları tarafından takip edilen tespite itiraza ilişkin davanın yargılaması sonunda … Kadastro Mahkemesi’nin 27.05.2003 tarih ve 1996/208 Esas, 2003/85 Karar sayılı ilamı ile; “davacı …‘ın davasının reddine, dava konusu 106 ada 3 parsel sayılı taşınmazın tespit gibi Hazine adına tesciline” karar verilmiş; hükmün davacı … mirasçıları tarafından temyizi üzerine Yargıtay 17. Hukuk Dairesi’nin 09.12.2003 tarih ve 2003/12352 Esas, 11691 Karar sayılı onama kararına karşı karar düzeltme yoluna başvurulmaması üzerine anılan hüküm 02.03.2004 tarihinde kesinleşmiştir. Davacılar … ve … (… mirasçıları), … Kadastro Mahkemesi’ne verdikleri 22.08.2014 tarihli dilekçeleri ile; … Kadastro Mahkemesi’nin yukarıda sözü edilen dava dosyasında davacılara yapılan tüm tebligatların usulsüz olduğunu, mahkeme kararının usulüne uygun şekilde tebliğ edilmeden kesinleştirildiğini ve hükme esas alınan 13.5.2002 tarihli fen bilirkişi raporunun gerçeğe aykırı düzenlendiğini ileri sürerek yargılamanın iadesi yolu ile dosyanın yeniden ele alınmasını talep etmişlerdir. Mahkemece yapılan yargılama sonunda 6100 sayılı HMK.’nın 375. maddesinde belirtilen koşulların gerçekleşmediği kabul edilerek davanın reddine karar verilmiş; hüküm, davacılar … ve … vekili tarafından temyiz edilmiştir.</p>
+
+<p>Dosya içeriğine, kararın dayandığı delillerle yasaya uygun gerektirici nedenlere, delillerin takdirinde bir isabetsizlik bulunmamasına göre yerinde olmayan temyiz itirazlarının reddiyle usul ve yasaya uygun olan hükmün ONANMASINA, aşağıda yazılı bakiye temyiz karar harcının temyiz edenlerden alınmasına, 03.04.2017 gününde oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 11. HUKUK DAİRESİ 
+Esas : 2015/13091 Karar : 2017/1343</strong> Tarih : 7.03.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 375. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yargılamanın İadesi Sebepleri</strong></p>
+  </li>
+</ul>
+
+<p>Yargılamanın iadesini talep eden vekili; müvekkili …‘in 2007/93 esas sayılı dava dosyasının davalısı olduğunu, yapılan yargılamada müvekkili aleyhine karar verildiğini, 08/11/2007 tarih ve 2007/93 esas ve 2007/365 sayılı kararın usul ve yasaya aykırı olduğunu, bu yapılan yargılamada davanın temelini oluşturan 002 no’lu sözleşmede iddia edilen 246.000 TL’lik ihracattan kaynaklı şirket borcunun gerçek bir borç olmadığını, müvekkili tarafından … Limited Şirketi ile ilgili olarak Gelir İdaresi Başkanlığından almış olduğu 2006-2007 yıllarına ait bilançosunda şirket zararının 46.367 TL olduğunun belgelendirildiğini, bu borcun yapılan yargılamanın davacısı tarafından 246.000 TL olarak ortaya atıldığını ve müvekkilinin iradesi fesada uğratılarak bu sözleşmenin imzalanmasının sağlanıldığını, sonuç olarak müvekkili davalının olmayan bir borç varmış gibi gösterilerek bu borcun altına girmeye mecbur bırakıldığını, … Limited Şirketine ait 01-01-2006 ile 30-08-2006 tarihleri arasındaki bilanço kayıtları Gelir İdaresi Başkanlığından celp edildiği takdirde söz konusu zararın 246.000 olmadığının teyit edilebileceğini, HMK 375. maddesinin ç ve h bentlerine dayalı olarak yargılamanın yenilenmesini talep etmiştir.</p>
+
+<p>Karşı taraf vekili; yargılamanın yenilemesi talep eden …‘in her şey kendi kontrolü altında olsun diye …‘in muhasebesini kendi mali müşavirinin bir arkadaşına baktırdığını, ayrıca oğlunun bu şirket ortağı olarak göründüğünü, yani istedikleri anda bu belgeye hem mali müşavirden ve hem de maliyeden ulaşabileceklerini, belgenin sonradan ele geçirilmesi diye bir şeyin söz konusu olmadığını, yargılamanın yenilemesi talep eden tarafın zaten … … 21. Asliye Hukuk Mahkemesinin 2007/93 esas sayılı dosyasında maliyedeki beyannamelerden bahsettiğini ve o zararın o kadar olmadığını yani davalının her şeyden 2007 yılında haberdar olduğunu, ortada ne yeni ele geçirilmiş bir belge ne de hileli bir davranışın bulunduğunu, HMK madde 375 ç ve h bentlerindeki durumdan haberdar olmaları sebebiyle 3 aylık hak düşürücü sürenin fazlasıyla geçtiğini beyanla talebin reddini istemiştir.</p>
+
+<p>Mahkemece; yargılamanın iadesine konu edilen 2007/93 esas sayılı dosyanda yapılan yargılama sonucunda; taraflar arasında imzalanmış 05.09.2006 tarihli, 002 sözleşme numaralı el yazılı belgede, 01.01.2006 ve 30.08.2006 tarihleri arasında … Ltd. Şti’nin yapmış olduğu ihracatlardan doğan zarar hanesindeki 246.000 TL’nin 150.000 TL’lik kısmı …’e ait olduğu, kalanı …’e ait oluğu, …’in 150.000 TL’lik toplam borcu ödemediği taktirde evi için yapılan 001 nolu sözleşmenin geçerliliği olmadığı bu sözleşme ile belirtildiği, tarafların önceden ortak oldukları, 05.09.2006 tarihinde ortaklığı bitirip hesaplaştıkları, sonuç olarak davalının davacıya 150.000 YTL borçlu olduğu düzenledikleri senetler ve duruşmadaki beyanlarından tespit edildiği gerekçesi ile 50.000 YTL’nin dava tarihinden itibaren yasal faizi ile davalıdan alınıp davacıya verilmesine, fazlaya dair hakkın saklı tutulmasına dair karar verildiği, bu kararın Yargıtay 11. Hukuk Dairesince onanmış karar düzeltme isteminin de reddedilmiş olduğu, 29/12/2009 tarihinde kesinleştiği, yargılamanın iadesini isteyen talebini 002 nolu sözleşmenin açıklama kısmında belirtilen Lino Şirketinin 01/01/2006 ve 30/08/2006 tarihleri arasındaki yapmış olduğu ihracatlardan doğan zarar hanesindeki 246,000,00 TL’nin gerçeği yansıtmadığı o tarihte kendileri tarafından bunun bilinmediği ve davadan sonra öğrenildiğine dayandığı, kesinleşen 2007/93 esas sayılı dosyasında; davalının, yargılamanın iadesine konu ettiği sözleşmenin başlangıcındaki tarihte şirketin belirtildiği miktar kadar zararının olmadığı, bunu sonradan öğrenildiğine ilişkin hususun … Vergi Dairesi Başkanlığının 21/11/2007 tarihli yazısında … Şirketinin 2006 yılı kurumlar vergisi beyannamesinde 46.367,45 YTL zarar beyan ettiği şeklinde açıklamalı cevabi yazısının bulunduğu, dolayısıyla bu durumun zaten yargılama sırasında bilindiği, bu nedenle HMK 375. maddesinde sınırlı olarak sayılan yargılamanın iadesi taleplerinden 1/ ç maddesine dayanmanın mümkün olmadığı, ayrıca yargılamanın iadesini isteyenin, karşı tarafın hileli davranışlarda bulunduğu, bu nedenle sözleşmenin imzalatıldığı iddiasının da yargılamanın yenilenmesi için yeterli sebep oluşturmadığı, HMK 375/1-h bendinde açıklanan hususun karara tesir eden hileli davranışta bulunmak olduğu, yargılamanın yenilenmesini talep edenin bu durumu 13/09/2007 tarihli celsede ileri sürdüğü bu nedenle yargılamanın iadesi koşullarının bulunmadığı gerekçesiyle talebin reddine karar verilmiştir.</p>
+
+<p>Kararı yargılamanın iadesini isteyen vekili temyiz etmiştir.</p>
+
+<p>Dava dosyası içerisindeki bilgi ve belgelere, mahkeme kararının gerekçesinde dayanılan delillerin tartışılıp, değerlendirilmesinde usul ve yasaya aykırı bir yön bulunmamasına göre, yargılamanın iadesini isteyen vekilinin tüm temyiz itirazları yerinde değildir.</p>
+
+<p>SONUÇ: Yukarıda açıklanan nedenlerden dolayı, yargılamanın iadesini isteyen vekilinin bütün temyiz itirazlarının reddiyle usul ve kanuna uygun bulunan hükmün ONANMASINA, aşağıda yazılı bakiye 3,70 TL temyiz ilam harcının temyiz eden yargılamanın iadesini isteyenden alınmasına, 07/03/2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 20. HUKUK DAİRESİ 
+Esas : 2015/10019 Karar : 2017/226</strong> Tarih : 19.01.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 375. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yargılamanın İadesi Sebepleri</strong></p>
+  </li>
+</ul>
+
+<p>Davacı … vekili 09.12.2014 tarihli dilekçe ile davalıların miras bırakanı …‘ın Altındağ ilçesi Solfasol mahallesi 3455 ada 18 parsel sayılı taşınmazda satın aldığı payın tapu kaydına yanlış yazılması sebebiyle … aleyhine açtığı tazminat davasının … 14. Asliye Hukuk Mahkemesinin 2010/269 E. - 2012/414 K. sayılı ilamıyla kabul edilerek kararın kesinleştiğini, anılan davada zamanışımı def’inde bulundukları halde reddedildiğini, Tapu ve Kadastro Genel Müdürlüğü Teftiş Kurulu Başkanlığı başmüfettişleri tarafından yapılan inceleme sonucu davalıların murisinin 3455 ada 18 parsel sayılı taşınmazdaki hatalı payın düzeltilmesi ve tazminat istemiyle 09.09.1993 tarihinde açtığı davanın … 21. Asliye Hukuk Mahkemesinin 1993/749 E. - 1995/141 K. sayılı ilamıyla HUMK’nın 409/5 maddesi uyarınca açılmamış sayılmasına karar verildiğini, …‘ın tapu kaydındaki yanlışlığı 1993 yılında öğrendiğini, zamanaşımı süresinin dolduğunu ileri sürerek … 14. Asliye Hukuk Mahkemesinin 2010/269 E. - 2012/414 K. sayılı kararının yargılamanın yenilenmesi yoluyla kaldırılmasına, kararın icrasının durdurulmasına karar verilmesini istemiştir.</p>
+
+<p>Davalılar vekili; mülkiyet ve ayni haklara ilişkin davalarda zamanaşımının söz konusu olamayacağını, … 14. Asliye Hukuk Mahkemesinin 2010/269 E. - 2012/414 K. sayılı kararının tapudaki payın düzeltilmesine ilişkin olduğunu, tazminata yönelik olmadığını belirterek davanın reddini savunmuştur.</p>
+
+<p>Mahkemece; zamanaşımı iddiasının HMK’nın 374 ve 375. maddelerinde düzenlenen yargılamanın yenilenmesi sebeplerinden olmadığı gerekçesiyle davanın reddine karar verilmiş, hüküm davacı … vekili tarafından temyiz edilmiştir.</p>
+
+<p>Dava, yargılamanın yenilenmesi istemine ilişkindir.</p>
+
+<p>İncelenen dosya kapsamına, kararın dayandığı gerekçeye, somut olayda HUMK’nın 445/1 maddesinde düzenlenen koşulların oluşmadığına göre yazılı şekilde hüküm kurulmasında isabetsizlik bulunmadığından yerinde görülmeyen temyiz itirazlarının reddi ile hükmün ONANMASINA, Harçlar Kanununun değişik 13/j maddesi gereğince Hazineden harç alınmasına yer olmadığına 19.01.2017 günü oy birliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 1. HUKUK DAİRESİ
+Esas : 2015/268 Karar : 2016/10852</strong> Tarih : 5.12.2016</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 375. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yargılamanın İadesi Sebepleri</strong></p>
+  </li>
+</ul>
+
+<p>Davacı, 166 ada 31 parsel sayılı taşınmazın üzerindeki 7 katlı iş hanının kendisi tarafından yapıldığını, arsa niteliğindeki taşınmazın Vakıflar İdaresine ait olduğundan bahisle …. Hukuk mahkemesinin….21.05.2002 tarihli ilamı ile taşınmazdan tahliyesine karar verildiğini, ilamın zamanaşımına uğradığını, infaz kabiliyetinin kalmadığını, davalı aleyhine açtığı davada İstanbul 9. İdare Mahkemesince yürütmenin durdurulmasına karar verildiğini, bu kararın yargılamanın yenilenmesini gerektiren yeni bir delil olduğunu ileri sürerek yargılamanın yenilenmesini istemiştir.</p>
+
+<p>Davalı, davanın reddini savunmuştur.</p>
+
+<p>Mahkemece, HMK`nın 375. maddesinde sayılan sebeplerden hiçbirisine uymayan yargılamanın yenilenmesi talebinin reddine karar verilmiştir.</p>
+
+<p>Karar, davacı tarafından süresinde temyiz edilmiş olmakla; Tetkik Hakimi …`nin raporu okundu, düşüncesi alındı. Dosya incelendi, gereği görüşülüp, düşünüldü.</p>
+
+<p>Dosya içeriğine, toplanan delillere, hükmün dayandığı yasal ve hukuksal gerekçeye ve özellikle delillerin takdirinde bir isabetsizlik bulunmamasına göre; davacının temyiz itirazı yerinde değildir. Reddiyle usul ve yasaya uygun olan hükmün ONANMASINA,   oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 8. HUKUK DAİRESİ 
+Esas : 2016/15623 Karar : 2016/14967</strong> Tarih : 3.11.2016</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 375. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yargılamanın İadesi Sebepleri</strong></p>
+  </li>
+</ul>
+
+<p>Davacı alacaklının İİK’nun 99. vd. maddeleri uyarınca açtığı istihkak iddiasının reddi davasında Mahkemece davanın reddine karar verilmiş; hüküm, davacı alacaklı vekili tarafından temyiz edilmesi üzerine dairece, … sayılı karar ile hüküm onanmış bu karara karşı süresi içerisinde karar düzeltme yoluna başvurulmamıştır.</p>
+
+<p>Davacı alacaklı vekili … tarihli dilekçe ile, …. 8.Asliye Ticaret Mahkemesi’nin … sayılı dosyası ile davalı 3.kişi ile borçlu arasındaki organik bağın varlığının tespit edildiğini, anılan kararın Yargıtay incelemesinden geçerek onandığını belirterek, ortaya çıkan bu delil karşısında yargılamanın iadesi talebinde bulunmuştur. Mahkemece 13.6.2016 tarihli karar ile; davacı yanın dilekçesinde açıkça belirtilmemesine karşılık yargılamanın yenilenmesi talebinin HMK 375/1 (ç) veya 375/ 1(ı) maddelerine dayalı olabileceği, ancak söz konusu mahkeme kararının, HMK`nun 375 (ç) maddesinde yargılamanın yenilenmesi için sayılan belgelerden olmadığı gibi, her iki mahkeme kararının farklı dava türlerine ilişkin olduğu, farklı amaçlara yöneldiği, dolayısıyla verilen bu kararın yeni bir delil olarak değerlendirilemeyeceği gerekçesi ile davacının isteminin HMK 379/2. maddesi gereğince reddine karar verilmiş; karar süresinde davacı alacaklı vekili tarafından temyiz edilmiştir.</p>
+
+<p>SONUÇ: Tarafların karşılıklı iddia ve savunmalarına, dayandıkları belgelere, temyiz olunan kararda yazılı gerekçelere, özellikle davacı alacaklı vekilinin ileri sürdüğü hususların ve mahkeme kararının 6100 sayılı HMK nun 379. maddesinde sınırlı olarak sayılan yargılamanın yenilenmesi nedenlerinden hiçbirinin kapsamında olmadığına göre yerinde bulunmayan temyiz sebeplerinin reddiyle usul ve kanuna uygun Mahkeme kararının İİK’nun 366. ve HUMK’nun 428. maddeleri uyarınca ONANMASINA, taraflarca İİK’nun 366/3. maddesi gereğince Yargıtay Daire ilamının tebliğinden itibaren ilama karşı 10 gün içinde karar düzeltme isteğinde bulunulabileceğine ve 29,20 TL peşin harcın onama harcına mahsubu ile kalan 407,80 TL`nin temyiz edene iadesine 03.11.2016 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 2. HUKUK DAİRESİ 
+Esas : 2015/24684 Karar : 2016/11122</strong> Tarih : 6.06.2016</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 375. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yargılamanın İadesi Sebepleri</strong></p>
+  </li>
+</ul>
+
+<p>Dava, 6100 sayılı Hukuk Muhakemeleri Kanununun 375/1-ç maddesi uyarınca yargılamanın yenilenmesi yoluyla…12. Aile Mahkemesinin 12.01.2015 tarihinde kesinleşmiş olan 2014/861 esas ve 2014/868 karar sayılı anlaşmalı boşanmaya ilişkin hükmünün ortadan kaldırılarak, yeniden hüküm verilmesi isteğine ilişkindir. Yargılamanın iadesi talebi de bir davadır. Dava dilekçesinde aranan koşulların bu dilekçede de bulunması ve mahkemece de yeni bir dava gibi yeni esas numarası verilmesi ve taraf teşkilinin sağlanması gerekir. Somut olayda, yargılamanın yenilenmesi talebi üzerine başvurma harcı ve maktu harç alınmamış, yeni esas numarası da verilmemiştir. Başvurma harcı ve maktu harç alınmadan (Harçlar Kanunu m. 10), dava yeni bir esasa kayıt edilmeden hüküm kurulması doğru görülmemiştir.</p>
+
+<p>SONUÇ: Temyiz edilen hükmün yukarıda gösterilen sebeple BOZULMASINA, bozma sebebine göre diğer temyiz itirazlarının şimdilik incelenmesine yer olmadığına, temyiz peşin harcının istek halinde yatırana geri verilmesine, işbu kararın tebliğinden itibaren 15 gün içinde karar düzeltme yolu açık olmak üzere oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 9. HUKUK DAİRESİ 
+Esas : 2016/29092 Karar : 2016/20480</strong> Tarih : 21.11.2016</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 375. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yargılamanın İadesi Sebepleri</strong></p>
+  </li>
+</ul>
+
+<p>A) Yargılamanın İadesi Talebinde Bulunan (alacak davasının davalısı) İsteminin Özeti:</p>
+
+<p>Alacak davasının davalısı … vekili, davacı … vekili tarafından, müvekkili idare aleyhine …. İş Mahkemesinde alacak davası açıldığını, bu davada 10/06/2014 tarih ve 2013/926 E., 2014/463 K. sayı ile kabul kararı verildiğini ve bu kararın Yargıtay 9. Hukuk Dairesinin 03/09/2014 tarih ve 2014/22084 E., 2014/25089 K. sayılı ilamı ile onandığını, davacı tarafından dava dilekçesinde mahkemeye yanıltıcı bilgiler verildiğini, Mahkemece bu beyana itibar edilerek ve bilirkişi raporu tebliğ edilip edilmediği araştırılmadan karar verildiğini ileri sürerek, yargılamanın iadesi talebinde bulunmuştur</p>
+
+<p>B) Karşı Taraf (alacak davasının davacısı) Cevabının Özeti:</p>
+
+<p>Alacak davasının davacısı …, talebin yasal dayanağının olmadığını savunarak, davanın reddine karar verilmesini talep etmiştir.</p>
+
+<p>C) Yerel Mahkeme Kararının Özeti ve Yargılama Süreci:</p>
+
+<p>Mahkemece, şartların gerçekleşmediği gerekçesiyle 11/12/2015 tarih ve 2013/926 E, 2014/463 K. sayılı ek karar ile yargılamanın iadesi talebinin (davasının) reddine karar verilmiştir.</p>
+
+<p>D) Temyiz:</p>
+
+<p>Karar, yargılamanın iadesini talep eden … vekili tarafından temyiz edilmiştir.</p>
+
+<p>E) Gerekçe:</p>
+
+<p>Yargılamanın iadesi müessesesi 6100 sayılı HMK`nun 374 ve devamı maddelerinde düzenlenmiştir.</p>
+
+<p>Yasanın, yargılamanın iadesi sebepleri başlıklı 375 inci maddesinde;</p>
+
+<p>“(1) Aşağıdaki sebeplere dayanılarak yargılamanın iadesi talep edilebilir:</p>
+
+<p>a) Mahkemenin kanuna uygun olarak teşekkül etmemiş olması.</p>
+
+<p>b) Davaya bakması yasak olan yahut hakkındaki ret talebi, merciince kesin olarak kabul edilen hâkimin karar vermiş veya karara katılmış bulunması.</p>
+
+<p>c) Vekil veya temsilci olmayan kimselerin huzuruyla davanın görülmüş ve karara bağlanmış olması.</p>
+
+<p>ç) Yargılama sırasında, aleyhine hüküm verilen tarafın elinde olmayan nedenlerle elde edilemeyen bir belgenin, kararın verilmesinden sonra ele geçirilmiş olması.</p>
+
+<p>d) Karara esas alınan senedin sahteliğine karar verilmiş veya senedin sahte olduğunun mahkeme veya resmî makam önünde ikrar edilmiş olması.</p>
+
+<p>e) İfadesi karara esas alınan tanığın, karardan sonra yalan tanıklık yaptığının sabit olması.</p>
+
+<p>f) Bilirkişi veya tercümanın, hükme esas alınan husus hakkında kasten gerçeğe aykırı beyanda bulunduğunun sabit olması.</p>
+
+<p>g) Lehine karar verilen tarafın, karara esas alınan yemini yalan yere ettiğinin, ikrar veya yazılı delille sabit olması.</p>
+
+<p>ğ) Karara esas alınan bir hükmün, kesinleşmiş başka bir hükümle ortadan kalkmış olması.</p>
+
+<p>h) Lehine karar verilen tarafın, karara tesir eden hileli bir davranışta bulunmuş olması.</p>
+
+<p>ı) Bir dava sonunda verilen hükmün kesinleşmesinden sonra tarafları, konusu ve sebebi aynı olan ikinci davada, öncekine aykırı bir hüküm verilmiş ve bu hükmün de kesinleşmiş olması.</p>
+
+<p>i) Kararın, İnsan Haklarını ve Ana Hürriyetleri Korumaya Dair Sözleşmenin veya eki protokollerin ihlali suretiyle verildiğinin, Avrupa İnsan Hakları Mahkemesinin kesinleşmiş kararıyla tespit edilmiş olması.</p>
+
+<p>(2) Birinci fıkranın (e), (f) ve (g) bentlerindeki hâllerde yargılamanın iadesinin istenebilmesi, bu sebeplerin kesinleşmiş bir ceza mahkûmiyet kararı ile belirlenmiş olması şartına bağlıdır. Delil yokluğundan başka bir sebeple ceza kovuşturmasına başlanamamış veya mahkûmiyet kararı verilememiş ise ceza mahkemesi kararı aranmaz. Bu takdirde dayanılan yargılamanın iadesi sebebinin, yargılamanın iadesi davasında öncelikle ispat edilmesi gerekir.” düzenlemesine yer verilmiştir.</p>
+
+<p>Yasanın, talebin ön incelemesi başlıklı 379 uncu maddesinde;</p>
+
+<p>“(1) Yargılamanın iadesi talebi üzerine mahkeme, tarafları davet edip dinledikten sonra;</p>
+
+<p>a) Talebin kanuni süre içinde yapılmış olup olmadığını,</p>
+
+<p>b) Yargılamanın iadesi yoluyla kaldırılması istenen hükmün kesin olarak verilmiş veya kesinleşmiş olup olmadığını,</p>
+
+<p>c) İleri sürülen yargılamanın iadesi sebebinin kanunda yazılı sebeplerden olup olmadığını,</p>
+
+<p>kendiliğinden inceler.</p>
+
+<p>(2) Bu koşullardan biri eksik ise hâkim davayı esasa girmeden reddeder.” denmiştir.</p>
+
+<p>Görüldüğü üzere, kanun koyucu yargılamanın iadesi sebeplerini tahdidi olarak saymıştır. Bu sebepler bulunmadığı takdirde yargılamanın iadesi talebinin esasa girilmeden reddine karar verilmesi gerekir.</p>
+
+<p>6100 sayılı HMK`nun 379 uncu maddesinin birinci fıkrasının birinci cümlesinde açıkça, talep hakkında karar verilebilmesi için duruşma açılıp tarafların dinlenmesi gerektiği belirtilmiştir.</p>
+
+<p>Somut uyuşmazlıkta, duruşma açılıp taraflar dinlenmeden talep hakkında dosya üzerinden karar verilmiş olup bu husus 6100 sayılı HMK`nun 379 uncu maddesine aykırıdır.</p>
+
+<p>Mahkemece yapılması gereken, duruşma açıp tarafları dinledikten sonra bir karar vermektir.</p>
+
+<p>F) Sonuç:</p>
+
+<p>Temyiz olunan kararın, yukarıda yazılı nedenden dolayı BOZULMASINA, 21/11/2016 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 8. HUKUK DAİRESİ
+Esas: 2017/663 Karar: 2017/2150</strong> Tarih: 20.02.2017</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 375. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yargılamanın İadesi Sebepleri</strong></p>
+  </li>
+</ul>
+
+<p>Davacı vekili, tapu kütüğünde vekil edeni adına kayıtlı taşınmazların; harici satışa konu edilerek, hileli yollarla kısa sürede hükmen üçüncü kişiler adına tescilinin sağlandığını, yine davaya konu 298 ada 1 parsel sayılı taşınmaz hakkında davalılar tarafından daha önce açılan davalardan feragat edildiğini açıklayarak, vekil edeni adına kayıtlı 298 ada 1 parsel sayılı taşınmazdaki hissenin iptali ile davalılar adına tesciline ilişkin Mahkeme’nin 05.03.2013 gün, 2012/785 Esas ve 2013/87 Karar sayılı, 20.03.2013 tarihinde kesinleşen hükmünün, 6100 Sayılı HMK’nun 375/1-h ve ( ı ) bentlerinde yazılı sebeplerle yargılamanın yenilenmesi yoluyla ortadan kaldırılmasını istemiştir.</p>
+
+<p>Davalılar vekili, yargılamanın iadesi talebinde bulunan davacının iddialarının asılsız olduğunu açıklayarak davanın reddine karar verilmesini savunmuştur.</p>
+
+<p>Mahkemece; yargılamanın iadesi talep edilen tapu iptali ve tescil davasında, her iki tarafın da vekili bulunduğu, sahteliği iddia olunmayan vekaletname ile davalı vekiline davayı kabul yetkisi verildiği ve kabul beyanına dayanılarak davanın kabulüne karar verildiği, HMK’nın 375. maddesinde belirtilen yargılamanın iadesi sebeplerinden herhangi birisinin bulunmadığı gerekçeleriyle davanın reddine karar verilmesi üzerine; hüküm davacı vekili tarafından temyiz edilmiştir.</p>
+
+<p>Dava, 445/7.bendinde ( 6100 Sayılı 375/1-h ) yer alan “Mahkümunleh tarafından hükme müessir diğer bir hile ve hud’anın kullanılmış olması” ve 445/10. bendinde ( 6100 Sayılı 375/1-ı )yer alan “iki tarafı ve sebebi müttehit bir dava hakkında sadır olan bir ilama mugayyır yeni bir ilam suduruna sebep olabilecek bir madde yokken, yine o mahkeme veya diğer bir mahkeme tarafından evvelki ilamın hükmü hilafında bir hüküm ve karar verilmiş olup da her iki ilamın katiyet kesbetmesi” hukuki nedenlerine dayalı yargılamanın yenilenmesi istemine ilişkindir.</p>
+
+<p>Davacı; yargılamanın yenilenmesine konu davaya benzer şekilde aleyhinde sonuçlanmış birçok davanın bulunduğunu, kendi vekili, davacı asıllar ve dava dışı üçüncü kişilerin de katılımı ile tapuda adına hisseli olarak kayıtlı bulunan taşınmazlardan 3.kişilere haricen hisse satışı yapılmış gibi gösterilerek aleyhine hüküm oluşturulduğunu, bu şekilde hile ve dolandırıcılık eylemleriyle zarara uğratıldığını ileri sürmektedir. Dosya arasındaki belgelere göre; eldeki davanın davalıları ve vekili tarafından, 298 ada 1 parsel sayılı taşınmazda 552/56250 hissenin haricen satın alındığı iddia edilerek tapu kaydının iptali ve tescili için Asliye Hukuk Mahkemesi’nin 2012/785 Esas dosyası ile dava açıldığı, davalı ( yargılamanın yenilenmesi isteminde bulunan davacı ) vekili tarafından davanın kabul edilmesi üzerine aynı tarihte davanın kabulüne karar verildiği, 20.03.2013 tarihinde kalemde gerekçeli kararın davacı ve davalı vekillerine tebliğ edildiği ve yine aynı gün davacı ve davalı vekillerinin hükmün temyizinden feragat ettiklerini bildirmesinden sonra Mahkemece verilen kabul kararının kesinleştiği anlaşılmıştır.</p>
+
+<p>Hemen belirtmek gerekir ki; 445/7. bendine göre, lehine karar verilen tarafın veya vekilinin, hükme etkisi olan diğer bir hile ( ve hud’a ) kullanmış olması yargılamanın iadesi sebebidir. Hile; gerçekte var olan olayların bilerek gizlenmesi veya gerçek dışı olaylara ( vakıalara ) mal etmek suretiyle diğer tarafın aldatılması ( iğfal edilmesi )’dır. Hükmü etkileyen hile ve hud’anın ( hud’anın sözlük anlamı: Aldatma, oyun, hile, desise, dalavere, tertip, düzen ) her olayın gelişim biçimine göre takdiri tamamen hakime aittir. Olayların gösterdiği gelişmelere göre hükme etkili olan ve yargıyı yanılgıya götüren tüm olayların hile sayıldığı kabul edilmektedir. Maddedeki hilenin diğer Kanunlardaki hileden ayrı olarak daha geniş bir anlamda hükme etki eden pek çok fiil ve hareketlerin hile şeklinde nitelendirilmesi ve olayların gelişimine göre ne gibi hallerin hile teşkil edebileceğinin hakim tarafından takdiri gerekmektedir. Hakim bir taraftan bu inceleme ve araştırmayı yaparken, öte yandan özellikle Türk Borçlar Kanununda düzenlenen hilenin unsurlarına bağlı kalmaksızın ne gibi ifade ve eylemlerin yargılamanın yenilenmesini gerekli kılacağını değerlendirmesi gerekecektir. Gerek doktrinde ve gerekse uygulamada kabul edilen görüşlere göre, 445/7.bendinde öngörülen hileli davranış olumlu ( aktif ) bir eylem biçiminde olabileceği gibi, kaçınma ve susma gibi pasif ( hareketsizlik ) bir şekilde de ortaya çıkabilir. 445/7. bendinde ifadesini bulan hile ve hud’a sayıldıkları için yargılamanın idesi sebebi teşkil eden haller arasında; hüküm verilen tarafın karşı taraf vekili ile gizlice anlaşma yoluna gitmesi, karşı tarafın açık adresi bilindiği halde, dava dilekçesinde ilgisi olmayan başka bir adresin gösterilmesi gibi davranışları saymak mümkündür. Bütün sorun bu hilenin hükmü etkilemiş olup olmadığını tespite, gerek olumlu ve gerekse olumsuz davranışın bilerek yapılıp yapılmadığını belirlemekte toplanmaktadır. ( KURU, Baki; Hukuk Muhakameleri Usulü, Altıncı Baskı, Cilt V, İstanbul 2001, s. 5208- 5218 ) . Bununla birlikte; davacı delil listesi sunmuş ve delilleri arasında hile ve dolandırıcılık yaptıklarını iddia ettiği kişiler hakkında Beykoz Cumhuriyet Başsavcılığına görevi kötüye kullanma, resmi belgede sahtecilik ve nitelikli dolandırıcılık suçlarından suç duyurusunda bulunduğu bildirmiştir. Davacı, soruşturma yanında başkaca delillere de dayanmıştır. Hile iddiası açıklandığı üzere her türlü delille kanıtlanması mümkündür. Mahkemece, Beykoz Cumhuriyet Başsavclığının 2014/987 Hazırlık sayılı soruşturmasına dair evrak asıllarının getirilip incelenmesi gerekmektedir.</p>
+
+<p>Öte yandan; davacı, davaya konu 298 ada 1 parsel sayılı taşınmaz hakkında daha önce Beykoz 2. Asliye Hukuk Mahkemesi’nde açılan davalardan feragat edildiğini, sonrasında 1.Asliye Hukuk Mahkemesi’nde açılan davada da davanın kabul edildiğini açıklayarak 445/10 maddesi ( 6100 Sayılı 375/1-ı ) uyarınca da yargılamanın yenilenmesi koşullarının oluştuğunu belirtmiştir. Dairece yapılan geri çevirme kararı sonrasında dosya arasına alınan Beykoz 2. Asliye Hukuk Mahkemesi’nin 2012/623 Esas, 2012/616 Karar sayılı dosyasında, eldeki davanın davalıları ve vekili tarafından, 298 ada 1 parsel sayılı taşınmazda 552/56250 hissenin haricen satın alındığı iddia edilerek tapu kaydının iptali ve tescili için dava açıldığı, ancak davacılar vekili tarafından 07.11.2012 havale tarihli dilekçeyle davadan feragat ettiklerinin bildirilmesi üzerine, davacıların davasından feragat ettikleri gerekçesiyle feragat nedeni ile davanın reddine karar verildiği görülmüştür. Yargılamanın yenilenmesine konu davada ise, az yukarıda bahsi geçtiği üzere, yine eldeki davanın davalıları ve vekili tarafından, aynı taşınmaz hakkında aynı sebeple tapu iptali ve tescil talebinde bulunulmuş bu kez kabul sebebiyle davanın kabulüne karar verilmiştir. Bu durumda, çekişmeli taşınmaz yönünden birbirine aykırı hükümlerin oluştuğu açıktır. Öyle ise davada 445.maddesinin 10.bendinin ( 6100 Sayılı 375/1-ı ) uygulama yeri bulacağı düşünülmelidir.</p>
+
+<p>Tarafları, dava sebebi ve müdeabihi aynı olan bir dava hakkında birbirine aykırı kesinleşmiş iki hüküm bulunması halinde, birinci hüküm lehine olan taraf kesin hükümden ( m.237 ) istifade etmektedir. Bu nedenle, yargılamanın yenilenmesi talebi üzerine, ikinci hükmün iptaline karar verilir. Bilindiği üzere kesin hüküm, kamu düzenine dair bulunduğundan, Mahkemece, yargılamanın yargılamanın yenilenmesi sebebinin mevcut olup olmadığı resen araştırılmalıdır. Somut olayda, kesin hüküm teşkil ettiği iddia edilen dosya getirtilip incelenmemiş, kararda bu dosyadan hiç bahsedilmemiş, yargılamanın yenilenmesi sebebinin olup olmadığı değerlendirilmemiştir.</p>
+
+<p>Hal böyle olunca, yukarıda belirtilen ilkeler doğrultusunda yapılacak araştırma sonucunda, toplanacak tüm deliller birlikte değerlendirilerek sonucuna göre bir karar verilmesi gerekirken; eksik araştırma inceleme sonucunda yazılı gerekçelerle davanın reddine karar verilmesi usul ve yasaya aykırı olmuştur.</p>
+
+<p>SONUÇ : Davacı vekilinin temyiz itirazları açıklanan sebeplerle yerinde olduğundan, kabulüyle hükmün 6100 Sayılı HMK’nun Geçici 3. maddesi yollamasıyla 1086 Sayılı HUMK’nun 428. maddesi uyarınca BOZULMASINA, taraflarca 440/I maddeleri gereğince Yargıtay Daire ilamının tebliğinden itibaren ilama karşı 15 gün içinde karar düzeltme isteğinde bulunulabileceğine, peşin harcın istenmesi halinde temyiz edene iadesine, 20.02.2017 tarihinde oybirliğiyle karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 5. HUKUK DAİRESİ
+Esas: 2015/9776 Karar: 2015/20759</strong> Tarih: 16.11.2015</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 375. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yargılamanın İadesi Sebepleri</strong></p>
+  </li>
+</ul>
+
+<p>Talep, yargılamanın iadesi istemine ilişkindir.</p>
+
+<p>Mahkemece, talebin reddine karar verilmiş; hüküm, taraf vekillerince temyiz edilmiştir.</p>
+
+<p>Dosyada bulunan kanıt ve belgelere, kararın dayandığı gerekçelere göre, davacının talebi 6100 sayılı HMK’nun 375. maddesinde öngörülen yargılamanın iadesi sebeplerinden hiçbirisine uymadığından, reddine karar verilmesinde bir isabetsizlik görülmemiştir.</p>
+
+<p>Taraf vekillerinin temyiz itirazları yerinde olmadığından usul ve yasaya uygun hükmün ONANMASINA, peşin alınan temyiz ve temyize başvurma harçlarının Hazineye irad kaydedilmesine, 16.11.2015 gününde oybirliği ile karar verildi.</p>
+
+<hr>
+
+<p><strong>YARGITAY 23. HUKUK DAİRESİ
+Esas: 2014/64 Karar: 2014/3280</strong> Tarih: 28.04.2014</p>
+
+<ul>
+  <li>
+    <p><strong>HMK 375. Madde</strong></p>
+  </li>
+  <li>
+    <p><strong>Yargılamanın İadesi Sebepleri</strong></p>
+  </li>
+</ul>
+
+<p>Yargılamanın yenilenmesini isteyen kooperatif vekili, mahkemenin 2012/87 E., 2013/49 K. sayılı dosyasında dava tarihinde davacının akıl hastası olduğunun ve dava ehliyeti bulunmadığının yeni öğrenildiğini, davacı vekiline verilen vekaletin geçerli kabul edilemeyeceğini iddia ederek, yargılamanın yenilenmesine, mahkeme kararının kaldırılmasına, dava ehliyeti yokluğu nedeni ile davanın reddine karar verilmesini talep ve dava etmiştir.</p>
+
+<p>Mahkemece, 31.07.2013 tarihli ek kararla, yargılamanın yenilenmesine dayanak olarak gösterilen sebeplerin HMK’nın 375. maddesinde sıralanan maddelerin hiçbirisine uymadığı gerekçesiyle, yargılamanın yenilenmesi talebinin reddine karar vermiştir.</p>
+
+<p>Yargılamanın iadesi talebinin reddine dair karar, yargılamanın yenilenmesini isteyen kooperatif vekili ve davadışı Su-Ha İnş. Tic. ve San. Ltd. Şti. vekilince temyiz edilmiştir.</p>
+
+<p>1)Davadışı Su-Ha İnş. Tic. ve San. Ltd. Şti. vekilinin temyiz istemi yönünden;</p>
+
+<p>Eldeki yargılamanın iadesi davasının davacısı kooperatif olup, davalı olarak Adil Büker gösterilmiştir. Hükmü temyiz eden şirket aleyhine açılan bir dava ve aleyhine kurulan bir hüküm bulunmadığından, verilen kararı temyiz hakkı bulunmamaktadır. Bu nedenle Su-Ha İnş. Tic. ve San. Ltd. Şti. vekilinin temyiz isteminin reddine karar verilmesi gerekmiştir.</p>
+
+<p>2)Yargılamanın iadesini isteyen kooperatif vekilinin temyiz itirazlarına gelince;</p>
+
+<p>Dava, yargılamanın iadesi istemine ilişkindir.</p>
+
+<p>Yargılamanın iadesi, 492 sayılı Harçlar Kanunu’nun 10., HUMK’nın 449. ve HMK’nın 381/1. maddelerinde açıkça düzenlendiği üzere bağımsız bir dava olup, ayrı bir esasa kaydedilerek, dava değeri üzerinden nispi olarak peşin karar ve ilam harcı alınmalıdır. Bu itibarla, mahkemece, öncelikle, yargılamanın yenilenmesi davasının, yenilenmesi istenen ve kaydı kapatılan esas üzerinden devamı doğru olmayıp, uyuşmazlığın tefrik edilerek, yeni esasa kaydı yapılmalıdır.</p>
+
+<p>Öte yandan, yargılamanın iadesi isteği yönünden hiç harç alınmamıştır. Bu durumda mahkemece davacının talebinin yeni bir dava gibi kaydı sağlandıktan sonra Harçlar Kanunu’nun 32. maddesi hükmü de göz önünde bulundurularak başvurma harcı ile dava değeri üzerinden nispi olarak peşin karar ve ilam harcı alınması gerekirken, bu husus gözardı edilerek davacının talebinin esastan incelenmesi doğru olmamış, kararın re’sen bozulması gerekmiştir.</p>
+
+<p>Ayrıca ülkemizin de tarafı olduğu ve Anayasa’nın 90. maddesi gereği iç hukukun bir parçası olan Avrupa İnsan Hakları Sözleşmesi’nin 6., 1982 Anayasası’nın 36. maddesinde adil yargılanma hakkına yer verilmiştir. 6100 sayılı HMK’nın 27. maddesinde ise adil yargılanma hakkının en önemli unsuru olarak hukuki dinlenilme hakkı düzenlenmiş, bu hakkın, yargılama ile ilgili olarak bilgi sahibi olunmasını, açıklama ve ispat hakkını, mahkemenin, açıklamaları dikkate alarak değerlendirmesini, kararların somut, açık olarak gerekçelendirilmesini içerdiği öngörülmüştür. Bu durumda, yargılamanın iadesi isteminin bir dava olması ve Yargıtay İçtihadı Birleştirme Kurulu’nun 23.05.1956 tarih ve 1956/8 Esas, 1956/9 Karar sayılı ilamı gereğince duruşma açılarak taraf teşkili sağlandıktan sonra yargılamanın sonuçlandırılması gerekirken, bu hususun düşünülmemesi doğru olmamıştır.</p>
+
+<p>Diğer yandan, yargılamanın iadesi davasının bağımsız niteliği gözetilerek 19.07.2013 tarihli dava dilekçesine uygun olarak gerekçeli karar başlığında davacı olarak yargılamanın iadesini isteyen kooperatif ve vekilinin, davalı olarak Adil Büker ve vekilinin gösterilmesi, dava tarihinin yargılamanın iadesi davasının dava tarihi olarak belirtilmesi gerekirken, yargılamasının yenilenmesi istenen ve kesinleşen mahkemenin 2012/82 E., 2013/49 K. sayılı kararının taraflarının ve dava tarihinin yazılması, HMK’nın 297/1-b maddesi hükmüne aykırı olmuştur.</p>
+
+<p>3)Bozma nedenine göre, yargılamanın yenilenmesini isteyen kooperatif vekilinin temyiz itirazlarının şimdilik incelenmesine gerek görülmemiştir.</p>
+
+<p>Sonuç: Yukarıda (1) numaralı bentte açıklanan nedenlerle, davadışı Su-Ha İnş. Tic. ve San. Ltd. Şti. vekilinin temyiz isteminin reddine, (2) numaralı bentte açıklanan nedenlerle, hükmün BOZULMASINA, (3) numaralı bentte açıklanan nedenlerle, yargılamanın yenilenmesini isteyen kooperatif vekilinin temyiz itirazlarının şimdilik incelenmesine yer olmadığına, peşin alınan harçların istek halinde temyiz edenlere iadesine, kararın tebliğinden itibaren 15 gün içerisinde karar düzeltme yolu açık olmak üzere, 28.04.2014 tarihinde oybirliği ile, karar verildi.</p>
+
+<hr>
+
+</div></div></main>
+</div>
+
+<footer>
+<section>
+<div class="contact-info">
+
+<div class="adres">
+
+<div class="telefon-wrapper">
+
+
+</div>
+</div>
+</section>
+
+</div>
+
+<amp-analytics type="googleanalytics" id="analytics1">
+<script type="application/json">
+{
+"vars": {
+"account": "UA-58342443-1"
+},
+"triggers": {
+"trackPageview": {
+"on": "visible",
+"request": "pageview"
+}
+}
+}
+</script>
+</amp-analytics>
+
+</body>
+</html>
+
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="../../index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="../../dkmn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-earmark-pdf" viewBox="0 0 16 16">
+			<path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+			<path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.102.198-.307.526-.568.897-.787a7.68 7.68 0 0 1 1.482-.645 19.697 19.697 0 0 0 1.062-2.227 7.269 7.269 0 0 1-.43-1.295c-.086-.4-.119-.796-.046-1.136.075-.354.274-.672.65-.823.192-.077.4-.12.602-.077a.7.7 0 0 1 .477.365c.088.164.12.356.127.538.007.188-.012.396-.047.614-.084.51-.27 1.134-.52 1.794a10.954 10.954 0 0 0 .98 1.686 5.753 5.753 0 0 1 1.334.05c.364.066.734.195.96.465.12.144.193.32.2.518.007.192-.047.382-.138.563a1.04 1.04 0 0 1-.354.416.856.856 0 0 1-.51.138c-.331-.014-.654-.196-.933-.417a5.712 5.712 0 0 1-.911-.95 11.651 11.651 0 0 0-1.997.406 11.307 11.307 0 0 1-1.02 1.51c-.292.35-.609.656-.927.787a.793.793 0 0 1-.58.029zm1.379-1.901c-.166.076-.32.156-.459.238-.328.194-.541.383-.647.547-.094.145-.096.25-.04.361.01.022.02.036.026.044a.266.266 0 0 0 .035-.012c.137-.056.355-.235.635-.572a8.18 8.18 0 0 0 .45-.606zm1.64-1.33a12.71 12.71 0 0 1 1.01-.193 11.744 11.744 0 0 1-.51-.858 20.801 20.801 0 0 1-.5 1.05zm2.446.45c.15.163.296.3.435.41.24.19.407.253.498.256a.107.107 0 0 0 .07-.015.307.307 0 0 0 .094-.125.436.436 0 0 0 .059-.2.095.095 0 0 0-.026-.063c-.052-.062-.2-.152-.518-.209a3.876 3.876 0 0 0-.612-.053zM8.078 7.8a6.7 6.7 0 0 0 .2-.828c.031-.188.043-.343.038-.465a.613.613 0 0 0-.032-.198.517.517 0 0 0-.145.04c-.087.035-.158.106-.196.283-.04.192-.03.469.046.822.024.111.054.227.09.346z"/>
+			</svg><span>Dökümanlar</span></a></li>
+			  <li><a href="../../ttnk.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-vector-pen" viewBox="0 0 16 16">
+             <path fill-rule="evenodd" d="M10.646.646a.5.5 0 0 1 .708 0l4 4a.5.5 0 0 1 0 .708l-1.902 1.902-.829 3.313a1.5 1.5 0 0 1-1.024 1.073L1.254 14.746 4.358 4.4A1.5 1.5 0 0 1 5.43 3.377l3.313-.828L10.646.646zm-1.8 2.908-3.173.793a.5.5 0 0 0-.358.342l-2.57 8.565 8.567-2.57a.5.5 0 0 0 .34-.357l.794-3.174-3.6-3.6z"/>
+             <path fill-rule="evenodd" d="M2.832 13.228 8 9a1 1 0 1 0-1-1l-4.228 5.168-.026.086.086-.026z"/>
+             </svg><span>Üst Yazılar</span></a></li>
+		   <li><a href="../../knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+				<path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="../../search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/slideToggle.min.js"></script>
+    <script src="../js/internet-status.js"></script>
+    <script src="../js/tiny-slider.js"></script>
+    <script src="../js/baguetteBox.min.js"></script>
+    <script src="../js/countdown.js"></script>
+    <script src="../js/rangeslider.min.js"></script>
+    <script src="../js/vanilla-dataTables.min.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/magic-grid.min.js"></script>
+    <script src="../js/dark-rtl.js"></script>
+    <script src="../js/active.js"></script>
+    <!-- PWA -->
+    <script src="../js/pwa.js"></script>
+  </body>
+</html>
