@@ -1,6 +1,6 @@
 // Template Name: Affan - PWA Mobile HTML Template
 // Author: Designing World
-// Author URL: https://themeforest.net/user/designing-world
+// Author URL: https://gvnteams.github.io/dist/
 
 const staticCacheName = 'cache-v1';
 const dynamicCacheName = 'runtimeCache-v1';

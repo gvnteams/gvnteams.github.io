@@ -1,7 +1,7 @@
 {
-  "name": "Güven Timleri Ş.B.",
-  "short_name": "Güven Timleri",
-  "start_url": "index.html",
+  "name": "GvnTeams",
+  "short_name": "GvnTeams",
+  "start_url": "https://gvnteams.github.io/dist/index.html",
   "display": "standalone",
   "background_color": "#0d5afd",
   "theme_color": "#0d5afd",
