@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<package xmlns="http://www.idpf.org/2007/opf" version="2.0" unique-identifier="uuid_id">
+  <metadata xmlns:opf="http://www.idpf.org/2007/opf" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:calibre="http://calibre.kovidgoyal.net/2009/metadata">
+    <dc:language>en</dc:language>
+    <dc:title>input</dc:title>
+    <dc:creator opf:file-as="Unknown" opf:role="aut">HASAN CİHAN ACAR</dc:creator>
+    <dc:contributor opf:role="bkp">calibre (5.44.0) [https://calibre-ebook.com]</dc:contributor>
+    <meta name="calibre:timestamp" content="2022-12-13T02:48:30.726324+00:00"/>
+    <dc:identifier id="uuid_id" opf:scheme="uuid">a8c419bf-7368-463c-a95e-a24464bc2d89</dc:identifier>
+  </metadata>
+  <manifest>
+    <item id="id1" href="index.html" media-type="application/xhtml+xml"/>
+    <item id="id19" href="index-1_1.jpg" media-type="image/jpeg"/>
+    <item id="id20" href="index-2_1.jpg" media-type="image/jpeg"/>
+    <item id="id39" href="index-2_2.jpg" media-type="image/jpeg"/>
+    <item id="id5" href="index-3_1.jpg" media-type="image/jpeg"/>
+    <item id="id37" href="index-3_2.jpg" media-type="image/jpeg"/>
+    <item id="id25" href="index-4_1.jpg" media-type="image/jpeg"/>
+    <item id="id34" href="index-4_2.jpg" media-type="image/jpeg"/>
+    <item id="id14" href="index-4_3.jpg" media-type="image/jpeg"/>
+    <item id="id36" href="index-5_1.jpg" media-type="image/jpeg"/>
+    <item id="id17" href="index-5_2.jpg" media-type="image/jpeg"/>
+    <item id="id32" href="index-5_3.jpg" media-type="image/jpeg"/>
+    <item id="id2" href="index-6_1.jpg" media-type="image/jpeg"/>
+    <item id="id9" href="index-6_2.jpg" media-type="image/jpeg"/>
+    <item id="id28" href="index-7_1.jpg" media-type="image/jpeg"/>
+    <item id="id11" href="index-7_2.jpg" media-type="image/jpeg"/>
+    <item id="id30" href="index-8_1.jpg" media-type="image/jpeg"/>
+    <item id="id10" href="index-8_2.jpg" media-type="image/jpeg"/>
+    <item id="id8" href="index-9_1.jpg" media-type="image/jpeg"/>
+    <item id="id31" href="index-9_2.jpg" media-type="image/jpeg"/>
+    <item id="id27" href="index-10_1.jpg" media-type="image/jpeg"/>
+    <item id="id29" href="index-10_2.jpg" media-type="image/jpeg"/>
+    <item id="id4" href="index-11_1.jpg" media-type="image/jpeg"/>
+    <item id="id16" href="index-11_2.jpg" media-type="image/jpeg"/>
+    <item id="id7" href="index-12_1.jpg" media-type="image/jpeg"/>
+    <item id="id24" href="index-12_2.jpg" media-type="image/jpeg"/>
+    <item id="id38" href="index-13_1.jpg" media-type="image/jpeg"/>
+    <item id="id23" href="index-13_2.jpg" media-type="image/jpeg"/>
+    <item id="id22" href="index-14_1.jpg" media-type="image/jpeg"/>
+    <item id="id15" href="index-15_1.jpg" media-type="image/jpeg"/>
+    <item id="id35" href="index-15_2.jpg" media-type="image/jpeg"/>
+    <item id="id3" href="index-15_3.jpg" media-type="image/jpeg"/>
+    <item id="id18" href="index-15_4.jpg" media-type="image/jpeg"/>
+    <item id="id21" href="index-4_4.png" media-type="image/png"/>
+    <item id="id26" href="index-15_5.png" media-type="image/png"/>
+    <item id="id12" href="index-15_6.png" media-type="image/png"/>
+    <item id="id6" href="index-15_7.png" media-type="image/png"/>
+    <item id="id33" href="index-15_8.png" media-type="image/png"/>
+    <item id="id13" href="index-15_9.png" media-type="image/png"/>
+    <item id="page_css" href="page_styles.css" media-type="text/css"/>
+    <item id="css" href="stylesheet.css" media-type="text/css"/>
+    <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
+  </manifest>
+  <spine toc="ncx">
+    <itemref idref="id1"/>
+  </spine>
+</package>
