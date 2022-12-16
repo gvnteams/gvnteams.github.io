@@ -1,0 +1,583 @@
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Affan - PWA Mobile HTML Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0134d4">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Title -->
+    <title>Güven Timleri</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+    <link rel="apple-touch-icon" href="img/icons/icon-96x96.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/icons/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="img/icons/icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icons/icon-180x180.png">
+    <!-- CSS Libraries -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/tiny-slider.css">
+    <link rel="stylesheet" href="css/baguetteBox.min.css">
+    <link rel="stylesheet" href="css/rangeslider.css">
+    <link rel="stylesheet" href="css/vanilla-dataTables.min.css">
+    <link rel="stylesheet" href="css/apexcharts.css">
+    <!-- Core Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="manifest.json">
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="spinner-grow text-primary" role="status"><span class="visually-hidden">Loading...</span></div>
+    </div>
+    <!-- Internet Connection Status -->
+    <!-- # This code for showing internet connection status -->
+    <div class="internet-connection-status" id="internetStatus"></div>
+    <!-- Dark mode switching -->
+    <div class="dark-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="dark-mode-text text-center">
+          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
+          </svg>
+          <p class="mb-0">Switching to dark mode</p>
+        </div>
+        <div class="light-mode-text text-center">
+          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+          </svg>
+          <p class="mb-0">Switching to light mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- RTL mode switching -->
+    <div class="rtl-mode-switching">
+      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
+        <div class="rtl-mode-text text-center">
+          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to RTL mode</p>
+        </div>
+        <div class="ltr-mode-text text-center">
+          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+          </svg>
+          <p class="mb-0">Switching to default mode</p>
+        </div>
+      </div>
+    </div>
+    <!-- Setting Popup Overlay -->
+    <div id="setting-popup-overlay"></div>
+    <!-- Setting Popup Card -->
+    <div class="card setting-popup-card shadow-lg" id="settingCard">
+      <div class="card-body">
+        <div class="container">
+          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
+            <p class="mb-0">Settings</p>
+            <div class="btn-close" id="settingCardClose"></div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="availabilityStatus" checked>
+              <label class="form-check-label" for="availabilityStatus">Availability status</label>
+            </div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="sendMeNotifications" checked>
+              <label class="form-check-label" for="sendMeNotifications">Send me notifications</label>
+            </div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch mb-2">
+              <input class="form-check-input" type="checkbox" id="darkSwitch">
+              <label class="form-check-label" for="darkSwitch">Dark mode</label>
+            </div>
+          </div>
+          <div class="single-setting-panel">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="rtlSwitch">
+              <label class="form-check-label" for="rtlSwitch">RTL mode</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Header Area -->
+    <div class="header-area" id="headerArea">
+      <div class="container">
+        <!-- Header Content -->
+        <div class="header-content position-relative d-flex align-items-center justify-content-between">
+          <!-- Back Button -->
+          <div class="back-button"><a href="knn.html">
+              <svg class="bi bi-arrow-left-short" width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5z"></path>
+              </svg></a></div>
+          <!-- Page Title -->
+          <div class="page-heading">
+            <h5 class="mb-0">Kanun ve Mevzuatlar</h5>
+          </div>
+          <!-- Settings -->
+          <div class="setting-wrapper">
+            <div class="setting-trigger-btn" id="settingTriggerBtn">
+              <svg class="bi bi-gear" width="18" height="18" viewBox="0 0 16 16" fill="url(#gradientSettings)" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="gradientSettings" spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0" style="stop-color: #0134d4; stop-opacity:1;"></stop>
+                    <stop offset="100%" style="stop-color: #28a745; stop-opacity:1;"></stop>
+                  </linearGradient>
+                </defs>
+                <path fill-rule="evenodd" d="M8.837 1.626c-.246-.835-1.428-.835-1.674 0l-.094.319A1.873 1.873 0 0 1 4.377 3.06l-.292-.16c-.764-.415-1.6.42-1.184 1.185l.159.292a1.873 1.873 0 0 1-1.115 2.692l-.319.094c-.835.246-.835 1.428 0 1.674l.319.094a1.873 1.873 0 0 1 1.115 2.693l-.16.291c-.415.764.42 1.6 1.185 1.184l.292-.159a1.873 1.873 0 0 1 2.692 1.116l.094.318c.246.835 1.428.835 1.674 0l.094-.319a1.873 1.873 0 0 1 2.693-1.115l.291.16c.764.415 1.6-.42 1.184-1.185l-.159-.291a1.873 1.873 0 0 1 1.116-2.693l.318-.094c.835-.246.835-1.428 0-1.674l-.319-.094a1.873 1.873 0 0 1-1.115-2.692l.16-.292c.415-.764-.42-1.6-1.185-1.184l-.291.159A1.873 1.873 0 0 1 8.93 1.945l-.094-.319zm-2.633-.283c.527-1.79 3.065-1.79 3.592 0l.094.319a.873.873 0 0 0 1.255.52l.292-.16c1.64-.892 3.434.901 2.54 2.541l-.159.292a.873.873 0 0 0 .52 1.255l.319.094c1.79.527 1.79 3.065 0 3.592l-.319.094a.873.873 0 0 0-.52 1.255l.16.292c.893 1.64-.902 3.434-2.541 2.54l-.292-.159a.873.873 0 0 0-1.255.52l-.094.319c-.527 1.79-3.065 1.79-3.592 0l-.094-.319a.873.873 0 0 0-1.255-.52l-.292.16c-1.64.893-3.433-.902-2.54-2.541l.159-.292a.873.873 0 0 0-.52-1.255l-.319-.094c-1.79-.527-1.79-3.065 0-3.592l.319-.094a.873.873 0 0 0 .52-1.255l-.16-.292c-.892-1.64.902-3.433 2.541-2.54l.292.159a.873.873 0 0 0 1.255-.52l.094-.319z"></path>
+                <path fill-rule="evenodd" d="M8 5.754a2.246 2.246 0 1 0 0 4.492 2.246 2.246 0 0 0 0-4.492zM4.754 8a3.246 3.246 0 1 1 6.492 0 3.246 3.246 0 0 1-6.492 0z"></path>
+              </svg><span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="page-content-wrapper py-3" id="elementsSearchList">
+      <div class="container">
+        <div class="card">
+          <div class="card-body p-3">
+            <div class="form-group mb-0">
+              <input class="form-control" id="elementsSearchInput" type="text" onkeyup="elementsSearch()" placeholder="Search element...">
+            </div>
+          </div>
+        </div>
+        <div class="affan-element-item">
+          <div class="element-heading-wrapper"><i class="bi bi-search"></i>
+            <div class="heading-text">
+              <h6 class="mb-1">Türk Ceza Kanunu</h6><span></span>
+            </div>
+          </div>
+        </div>
+		
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-1-ceza-kanununun-amaci.html"> TCK Madde 1  Ceza Kanununun Amacı <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-gecici-madde-1-gecici-madde-1.html"> TCK Geçici Madde 1 <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-2-sucta-ve-cezada-kanunilik-ilkesi.html"> TCK Madde 2  Suçta ve Cezada Kanunîlik İlkesi <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-3-adalet-ve-kanun-onunde-esitlik-ilkesi.html"> TCK Madde 3  Adalet ve Kanun Önünde Eşitlik İlkesi <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-4-kanunun-baglayiciligi.html"> TCK Madde 4  Kanunun Bağlayıcılığı <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-5-ozel-kanunlarla-iliski.html"> TCK Madde 5  Özel Kanunlarla İlişki <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-6-tanimlar.html"> TCK Madde 6  Tanımlar <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-7-zaman-bakimindan-uygulama.html"> TCK Madde 7  Zaman Bakımından Uygulama <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-8-yer-bakimindan-uygulama.html"> TCK Madde 8  Yer Bakımından Uygulama <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-9-yabanci-ulkede-hukum-verilmesi.html"> TCK Madde 9  Yabancı Ülkede Hüküm Verilmesi <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-10-gorev-suclari.html"> TCK Madde 10  Görev Suçları <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-11-vatandas-tarafindan-islenen-suc.html"> TCK Madde 11  Vatandaş Tarafından İşlenen Suç <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-12-yabanci-tarafindan-islenen-suc.html"> TCK Madde 12  Yabancı Tarafından İşlenen Suç <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-13-diger-suclar.html"> TCK Madde 13  Diğer Suçlar <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-14-secimlik-cezalarda-sorusturma.html"> TCK Madde 14  Seçimlik Cezalarda Soruşturma <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-15-sorusturma-kosulu-olan-cezanin-hesaplanmasi.html"> TCK Madde 15  Soruşturma Koşulu Olan Cezanın Hesaplanması <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-16-cezadan-mahsup.html"> TCK Madde 16  Cezadan Mahsup <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-17-hak-yoksunluklari.html"> TCK Madde 17  Hak Yoksunlukları <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-18-geri-verme.html"> TCK Madde 18  Geri Verme <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-19-yabanci-kanunun-goz-onunde-bulundurulmasi.html"> TCK Madde 19  Yabancı Kanunun Göz Önünde Bulundurulması <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-20-ceza-sorumlulugunun-sahsiligi.html"> TCK Madde 20  Ceza Sorumluluğunun Şahsiliği <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-21-kast.html"> TCK Madde 21  Kast <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-22-taksir.html"> TCK Madde 22  Taksir <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-23-netice-sebebiyle-agirlasmis-suc.html"> TCK Madde 23  Netice Sebebiyle Ağırlaşmış Suç <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-24-kanunun-hukmu-ve-amirin-emri.html"> TCK Madde 24  Kanunun Hükmü ve Amirin Emri <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-25-mesru-savunma-ve-zorunluluk-hali.html"> TCK Madde 25  Meşru Savunma ve Zorunluluk Hali <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-26-hakkin-kullanilmasi-ve-ilgilinin-rizasi.html"> TCK Madde 26  Hakkın Kullanılması ve İlgilinin Rızası <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-27-sinirin-asilmasi.html"> TCK Madde 27  Sınırın Aşılması <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-28-cebir-ve-siddet-korkutma-ve-tehdit.html"> TCK Madde 28  Cebir ve Şiddet, Korkutma ve Tehdit <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-29-haksiz-tahrik.html"> TCK Madde 29  Haksız Tahrik <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-30-hata.html"> TCK Madde 30  Hata <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-31-yas-kucuklugu.html"> TCK Madde 31  Yaş Küçüklüğü <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-32-akil-hastaligi.html"> TCK Madde 32  Akıl Hastalığı <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-33-sagir-ve-dilsizlik.html"> TCK Madde 33  Sağır ve Dilsizlik <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-34-gecici-nedenler-alkol-veya-uyusturucu-madde-etkisinde-olma.html"> TCK Madde 34  Geçici Nedenler, Alkol veya Uyuşturucu Madde Etkisinde Olma <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-35-suca-tesebbus.html"> TCK Madde 35  Suça Teşebbüs <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-36-gonullu-vazgecme.html"> TCK Madde 36  Gönüllü Vazgeçme <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-37-faillik.html"> TCK Madde 37  Faillik <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-38-azmettirme.html"> TCK Madde 38  Azmettirme <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-39-yardim-etme.html"> TCK Madde 39  Yardım Etme <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-40-baglilik-kurali.html"> TCK Madde 40  Bağlılık Kuralı <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-41-istirak-halinde-islenen-suclarda-gonullu-vazgecme.html"> TCK Madde 41  İştirak Hâlinde İşlenen Suçlarda Gönüllü Vazgeçme <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-42-bilesik-suc.html"> TCK Madde 42  Bileşik Suç <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-43-zincirleme-suc.html"> TCK Madde 43  Zincirleme Suç <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-44-fikri-ictima.html"> TCK Madde 44  Fikri İçtima <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-45-cezalar.html"> TCK Madde 45  Cezalar <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-46-hapis-cezalari.html"> TCK Madde 46  Hapis Cezaları <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-47-agirlastirilmis-muebbet-hapis-cezasi.html"> TCK Madde 47  Ağırlaştırılmış Müebbet Hapis Cezası <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-48-muebbet-hapis-cezasi.html"> TCK Madde 48  Müebbet Hapis Cezası <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-49-sureli-hapis-cezasi.html"> TCK Madde 49  Süreli Hapis Cezası <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-50-kisa-sureli-hapis-cezasina-secenek-yaptirimlar.html"> TCK Madde 50  Kısa Süreli Hapis Cezasına Seçenek Yaptırımlar <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-51-hapis-cezasinin-ertelenmesi.html"> TCK Madde 51  Hapis Cezasının Ertelenmesi <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-52-adli-para-cezasi.html"> TCK Madde 52  Adlî Para Cezası <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-53-belli-haklari-kullanmaktan-yoksun-birakilma.html"> TCK Madde 53  Belli Hakları Kullanmaktan Yoksun Bırakılma <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-54-esya-musaderesi.html"> TCK Madde 54  Eşya Müsaderesi <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-55-kazanc-musaderesi.html"> TCK Madde 55  Kazanç Müsaderesi <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-56-cocuklara-ozgu-guvenlik-tedbirleri.html"> TCK Madde 56  Çocuklara Özgü Güvenlik Tedbirleri <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-57-akil-hastalarina-ozgu-guvenlik-tedbirleri.html"> TCK Madde 57  Akıl Hastalarına Özgü Güvenlik Tedbirleri <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-58-sucta-tekerrur-ve-ozel-tehlikeli-suclular.html"> TCK Madde 58  Suçta Tekerrür ve Özel Tehlikeli Suçlular <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-59-sinir-disi-edilme.html"> TCK Madde 59  Sınır Dışı Edilme <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-60-tuzel-kisiler-hakkinda-guvenlik-tedbirleri.html"> TCK Madde 60  Tüzel Kişiler Hakkında Güvenlik Tedbirleri <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-61-cezanin-belirlenmesi.html"> TCK Madde 61  Cezanın Belirlenmesi <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-62-takdiri-indirim-nedenleri.html"> TCK Madde 62  Takdiri İndirim Nedenleri <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-63-mahsup.html"> TCK Madde 63  Mahsup <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-64-sanigin-veya-hukumlunun-olumu.html"> TCK Madde 64  Sanığın veya Hükümlünün Ölümü <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-65-af.html"> TCK Madde 65  Af <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-66-dava-zamanasimi.html"> TCK Madde 66  Dava Zamanaşımı <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-67-dava-zamanasimi-suresinin-durmasi-veya-kesilmesi.html"> TCK Madde 67  Dava Zamanaşımı Süresinin Durması veya Kesilmesi <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-68-ceza-zamanasimi.html"> TCK Madde 68  Ceza Zamanaşımı <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-69-ceza-zamanasimi-ve-hak-yoksunluklari.html"> TCK Madde 69  Ceza Zamanaşımı ve Hak Yoksunlukları <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-70-musaderede-zamanasimi.html"> TCK Madde 70  Müsaderede Zamanaşımı <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-71-ceza-zamanasiminin-kesilmesi.html"> TCK Madde 71  Ceza Zamanaşımının Kesilmesi <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-72-zamanasiminin-hesabi-ve-uygulanmasi.html"> TCK Madde 72  Zamanaşımının Hesabı ve Uygulanması <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-73-sorusturulmasi-ve-kovusturulmasi-sikayete-bagli-suclar.html"> TCK Madde 73  Soruşturulması ve Kovuşturulması Şikayete Bağlı Suçlar <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-74-dava-veya-cezanin-dusmesinin-etkisi.html"> TCK Madde 74  Dava veya Cezanın Düşmesinin Etkisi <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-75-onodeme.html"> TCK Madde 75  Önödeme <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-76-soykirim-sucu.html"> TCK Madde 76  Soykırım Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-77-insanliga-karsi-suclar.html"> TCK Madde 77  İnsanlığa Karşı Suçlar <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-78-orgut.html"> TCK Madde 78  Örgüt <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-79-gocmen-kacakciligi-sucu.html"> TCK Madde 79  Göçmen Kaçakçılığı Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-80-insan-ticareti-sucu.html"> TCK Madde 80  İnsan Ticareti Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-81-kasten-oldurme-sucu.html"> TCK Madde 81  Kasten Öldürme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-82-nitelikli-haller.html"> TCK Madde 82  Nitelikli Haller <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-83-kasten-oldurmenin-ihmali-davranisla-islenmesi-sucu.html"> TCK Madde 83  Kasten Öldürmenin İhmali Davranışla İşlenmesi Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-84-intihara-yonlendirme-sucu.html"> TCK Madde 84  İntihara Yönlendirme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-85-taksirle-oldurme-sucu.html"> TCK Madde 85  Taksirle Öldürme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-86-kasten-yaralama-sucu.html"> TCK Madde 86  Kasten Yaralama Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-87-neticesi-sebebiyle-agirlasmis-yaralama-sucu.html"> TCK Madde 87  Neticesi Sebebiyle Ağırlaşmış Yaralama Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-88-kasten-yaralamanin-ihmali-davranisla-islenmesi-sucu.html"> TCK Madde 88  Kasten Yaralamanın İhmali Davranışla İşlenmesi Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-89-taksirle-yaralama-sucu.html"> TCK Madde 89  Taksirle Yaralama Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-90-insan-uzerinde-deney-sucu.html"> TCK Madde 90  İnsan Üzerinde Deney Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-91-organ-veya-doku-ticareti-sucu.html"> TCK Madde 91  Organ veya Doku Ticareti Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-92-zorunluluk-hali.html"> TCK Madde 92  Zorunluluk Hali <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-93-etkin-pismanlik.html"> TCK Madde 93  Etkin Pişmanlık <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-94-iskence-sucu.html"> TCK Madde 94  İşkence Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-95-neticesi-sebebiyle-agirlasmis-iskence-sucu.html"> TCK Madde 95  Neticesi Sebebiyle Ağırlaşmış İşkence Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-96-eziyet-sucu.html"> TCK Madde 96  Eziyet Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-97-terk-sucu.html"> TCK Madde 97  Terk Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-98-yardim-veya-bildirim-yukumlulugunun-yerine-getirilmemesi-sucu.html"> TCK Madde 98  Yardım veya Bildirim Yükümlülüğünün Yerine Getirilmemesi Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-99-cocuk-dusurtme-sucu.html"> TCK Madde 99   Çocuk Düşürtme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-100-cocuk-dusurme-sucu.html"> TCK Madde 100  Çocuk Düşürme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-101-kisirlastirma-sucu.html"> TCK Madde 101  Kısırlaştırma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-102-cinsel-saldiri-sucu.html"> TCK Madde 102  Cinsel Saldırı Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-103-cocuklarin-cinsel-istismari-sucu.html"> TCK Madde 103  Çocukların Cinsel İstismarı Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-104-resit-olmayanla-cinsel-iliski-sucu.html"> TCK Madde 104  Reşit Olmayanla Cinsel İlişki Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-105-cinsel-taciz-sucu.html"> TCK Madde 105  Cinsel Taciz Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-106-tehdit-sucu.html"> TCK Madde 106  Tehdit Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-107-santaj-sucu.html"> TCK Madde 107  Şantaj Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-108-cebir-sucu.html"> TCK Madde 108  Cebir Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-109-kisiyi-hurriyetinden-yoksun-kilma-sucu.html"> TCK Madde 109  Kişiyi Hürriyetinden Yoksun Kılma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-110-etkin-pismanlik.html"> TCK Madde 110  Etkin Pişmanlık <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-111-tuzel-kisiler-hakkinda-guvenlik-tedbiri-uygulanmasi.html"> TCK Madde 111  Tüzel Kişiler Hakkında Güvenlik Tedbiri Uygulanması <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-112-egitim-ve-ogretim-hakkinin-engellenmesi-sucu.html"> TCK Madde 112  Eğitim ve Öğretim Hakkının Engellenmesi Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-113-kamu-hizmetlerinden-yararlanma-hakkinin-engellenmesi-sucu.html"> TCK Madde 113  Kamu Hizmetlerinden Yararlanma Hakkının Engellenmesi Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-114-siyasi-haklarin-kullanilmasinin-engellenmesi-sucu.html"> TCK Madde 114  Siyasi Hakların Kullanılmasının Engellenmesi Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-115-inanc-dusunce-ve-kanaat-hurriyetinin-kullanilmasini-engelleme-sucu.html"> TCK Madde 115  İnanç, Düşünce ve Kanaat Hürriyetinin Kullanılmasını Engelleme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-116-konut-dokunulmazliginin-ihlali-sucu.html"> TCK Madde 116  Konut Dokunulmazlığının İhlali Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-117-is-ve-calisma-hurriyetinin-ihlali-sucu.html"> TCK Madde 117  İş ve Çalışma Hürriyetinin İhlali Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-118-sendikal-haklarin-kullanilmasinin-engellenmesi-sucu.html"> TCK Madde 118  Sendikal Hakların Kullanılmasının Engellenmesi Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-119-ortak-hukum.html"> TCK Madde 119  Ortak Hüküm <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-120-haksiz-arama-sucu.html"> TCK Madde 120  Haksız Arama Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-121-dilekce-hakkinin-kullanilmasinin-engellenmesi-sucu.html"> TCK Madde 121  Dilekçe Hakkının Kullanılmasının Engellenmesi Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-122-nefret-ve-ayirimcilik-sucu.html"> TCK Madde 122  Nefret ve Ayırımcılık Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-123-kisilerin-huzur-ve-sukununu-bozma-sucu.html"> TCK Madde 123  Kişilerin Huzur ve Sükununu Bozma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-123a-israrli-takip-sucu-cezasi.html"> TCK Madde 123/A  Israrlı Takip Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-124-haberlesmenin-engellenmesi-sucu.html"> TCK Madde 124  Haberleşmenin Engellenmesi Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-125-hakaret-sucu.html"> TCK Madde 125  Hakaret Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-126-magdurun-belirlenmesi.html"> TCK Madde 126  Mağdurun Belirlenmesi <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-127-isnadin-ispati.html"> TCK Madde 127  İsnadın İspatı <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-128-iddia-ve-savunma-dokunulmazligi.html"> TCK Madde 128  İddia ve Savunma Dokunulmazlığı <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-129-haksiz-fiil-nedeniyle-veya-karsilikli-hakaret.html"> TCK Madde 129  Haksız Fiil Nedeniyle veya Karşılıklı Hakaret <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-130-kisinin-hatirasina-hakaret-sucu.html"> TCK Madde 130  Kişinin Hatırasına Hakaret Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-131-sorusturma-ve-kovusturma-kosulu.html"> TCK Madde 131  Soruşturma ve Kovuşturma Koşulu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-132-haberlesmenin-gizliligini-ihlal-sucu.html"> TCK Madde 132  Haberleşmenin Gizliliğini İhlal Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-133-kisiler-arasindaki-konusmalarin-dinlenmesi-ve-kayda-alinmasi-sucu.html"> TCK Madde 133  Kişiler Arasındaki Konuşmaların Dinlenmesi ve Kayda Alınması Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-134-ozel-hayatin-gizliligini-ihlal-sucu.html"> TCK Madde 134  Özel Hayatın Gizliliğini İhlal Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-135-kisisel-verilerin-kaydedilmesi-sucu.html"> TCK Madde 135  Kişisel Verilerin Kaydedilmesi Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-136-verileri-hukuka-aykiri-olarak-verme-veya-ele-gecirme-sucu.html"> TCK Madde 136  Verileri Hukuka Aykırı Olarak Verme veya Ele Geçirme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-137-nitelikli-haller.html"> TCK Madde 137  Nitelikli Haller <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-138-verileri-yok-etmeme-sucu.html"> TCK Madde 138  Verileri Yok Etmeme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-139-sikayet.html"> TCK Madde 139  Şikayet <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-140-tuzel-kisiler-hakkinda-guvenlik-tedbiri-uygulanmasi.html"> TCK Madde 140  Tüzel Kişiler Hakkında Güvenlik Tedbiri Uygulanması <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-141-hirsizlik-sucu.html"> TCK Madde 141  Hırsızlık Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-142-nitelikli-hirsizlik-sucu.html"> TCK Madde 142  Nitelikli Hırsızlık Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-143-sucun-gece-vakti-islenmesi.html"> TCK Madde 143  Suçun Gece Vakti İşlenmesi <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-144-daha-az-cezayi-gerektiren-haller.html"> TCK Madde 144  Daha Az Cezayı Gerektiren Haller <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-145-malin-degerinin-az-olmasi.html"> TCK Madde 145  Malın Değerinin Az Olması <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-146-kullanma-hirsizligi-sucu.html"> TCK Madde 146  Kullanma Hırsızlığı Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-147-zorunluluk-hali.html"> TCK Madde 147  Zorunluluk Hâli <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-148-yagma-sucu.html"> TCK Madde 148  Yağma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-149-nitelikli-yagma-sucu.html"> TCK Madde 149  Nitelikli Yağma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-150-daha-az-cezayi-gerektiren-hal.html"> TCK Madde 150  Daha Az Cezayı Gerektiren Hâl <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-151-mala-zarar-verme-sucu.html"> TCK Madde 151  Mala Zarar Verme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-152-mala-zarar-vermenin-nitelikli-halleri.html"> TCK Madde 152  Mala Zarar Vermenin Nitelikli Halleri <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-153-ibadethanelere-ve-mezarliklara-zarar-verme-sucu.html"> TCK Madde 153  İbadethanelere ve Mezarlıklara Zarar Verme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-154-hakki-olmayan-yere-tecavuz-sucu.html"> TCK Madde 154  Hakkı Olmayan Yere Tecavüz Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-155-guveni-kotuye-kullanma-sucu.html"> TCK Madde 155  Güveni Kötüye Kullanma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-156-bedelsiz-senedi-kullanma.html"> TCK Madde 156  Bedelsiz Senedi Kullanma <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-157-dolandiricilik-sucu.html"> TCK Madde 157  Dolandırıcılık Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-158-nitelikli-dolandiricilik-sucu.html"> TCK Madde 158  Nitelikli Dolandırıcılık Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-159-daha-az-cezayi-gerektiren-hal.html"> TCK Madde 159  Daha Az Cezayı Gerektiren Hal <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-160-kaybolmus-veya-hata-sonucu-ele-gecmis-esya-uzerinde-tasarruf-sucu.html"> TCK Madde 160  Kaybolmuş veya Hata Sonucu Ele Geçmiş Eşya Üzerinde Tasarruf Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-161-hileli-iflas-sucu.html"> TCK Madde 161  Hileli İflâs Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-162-taksirli-iflas-sucu.html"> TCK Madde 162  Taksirli İflas Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-163-karsiliksiz-yararlanma-sucu.html"> TCK Madde 163  Karşılıksız Yararlanma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-164-sirket-veya-kooperatifler-hakkinda-yanlis-bilgi-sucu.html"> TCK Madde 164  Şirket veya Kooperatifler Hakkında Yanlış Bilgi Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-165-suc-esyasinin-satin-alinmasi-veya-kabul-edilmesi-sucu.html"> TCK Madde 165  Suç Eşyasının Satın Alınması veya Kabul Edilmesi Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-166-bilgi-vermeme-sucu.html"> TCK Madde 166  Bilgi Vermeme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-167-sahsi-cezasizlik-sebebi-veya-cezada-indirim-yapilmasini-gerektiren-sahsi-sebep.html"> TCK Madde 167  Şahsi Cezasızlık Sebebi veya Cezada İndirim Yapılmasını Gerektiren Şahsi Sebep <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-168-etkin-pismanlik.html"> TCK Madde 168  Etkin Pişmanlık <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-169-tuzel-kisiler-hakkinda-guvenlik-tedbiri-uygulanmasi.html"> TCK Madde 169  Tüzel Kişiler Hakkında Güvenlik Tedbiri Uygulanması <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-170-genel-guvenligin-kasten-tehlikeye-sokulmasi-sucu.html"> TCK Madde 170  Genel Güvenliğin Kasten Tehlikeye Sokulması Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-171-genel-guvenligin-taksirle-tehlikeye-sokulmasi-sucu.html"> TCK Madde 171  Genel Güvenliğin Taksirle Tehlikeye Sokulması Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-172-radyasyon-yayma-sucu.html"> TCK Madde 172  Radyasyon Yayma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-173-atom-enerjisi-ile-patlamaya-sebebiyet-verme-sucu.html"> TCK Madde 173  Atom Enerjisi ile Patlamaya Sebebiyet Verme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-174-tehlikeli-maddelerin-izinsiz-olarak-bulundurulmasi-veya-el-degistirmesi-sucu.html"> TCK Madde 174  Tehlikeli Maddelerin İzinsiz Olarak Bulundurulması veya El Değiştirmesi Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-175-akil-hastasi-uzerindeki-bakim-ve-gozetim-yukumlulugunun-ihlali-sucu.html"> TCK Madde 175  Akıl Hastası Üzerindeki Bakım ve Gözetim Yükümlülüğünün İhlali Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-176-insaat-veya-yikimla-ilgili-emniyet-kurallarina-uymama-sucu.html"> TCK Madde 176  İnşaat veya Yıkımla İlgili Emniyet Kurallarına Uymama Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-177-hayvanin-tehlike-yaratabilecek-sekilde-serbest-birakilmasi-sucu.html"> TCK Madde 177  Hayvanın Tehlike Yaratabilecek Şekilde Serbest Bırakılması Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-178-isaret-ve-engel-koymama-sucu.html"> TCK Madde 178  İşaret ve Engel Koymama Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-179-trafik-guvenligini-tehlikeye-sokma-sucu.html"> TCK Madde 179  Trafik Güvenliğini Tehlikeye Sokma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-180-trafik-guvenligini-taksirle-tehlikeye-sokma-sucu.html"> TCK Madde 180  Trafik Güvenliğini Taksirle Tehlikeye Sokma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-181-cevrenin-kasten-kirletilmesi-sucu.html"> TCK Madde 181  Çevrenin Kasten Kirletilmesi Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-182-cevrenin-taksirle-kirletilmesi-sucu.html"> TCK Madde 182  Çevrenin Taksirle Kirletilmesi Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-183-gurultuye-neden-olma-sucu.html"> TCK Madde 183  Gürültüye Neden Olma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-184-imar-kirliligine-neden-olma-sucu.html"> TCK Madde 184  İmar Kirliliğine Neden Olma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-185-zehirli-madde-katma-sucu.html"> TCK Madde 185  Zehirli Madde Katma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-186-bozulmus-veya-degistirilmis-gida-veya-ilaclarin-ticareti-sucu.html"> TCK Madde 186  Bozulmuş veya Değiştirilmiş Gıda veya İlaçların Ticareti Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-187-kisilerin-hayatini-ve-sagligini-tehlikeye-sokacak-bicimde-ilac-yapma-veya-satma-sucu.html"> TCK Madde 187  Kişilerin Hayatını ve Sağlığını Tehlikeye Sokacak Biçimde İlaç Yapma veya Satma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-188-uyusturucu-veya-uyarici-madde-imal-ve-ticareti-sucu.html"> TCK Madde 188  Uyuşturucu veya Uyarıcı Madde İmal ve Ticareti Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-189-tuzel-kisiler-hakkinda-guvenlik-tedbiri-uygulanmasi.html"> TCK Madde 189  Tüzel Kişiler Hakkında Güvenlik Tedbiri Uygulanması <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-190-uyusturucu-veya-uyarici-madde-kullanilmasini-kolaylastirma-sucu.html"> TCK Madde 190  Uyuşturucu veya Uyarıcı Madde Kullanılmasını Kolaylaştırma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-191-kullanmak-icin-uyusturucu-veya-uyarici-madde-satin-almak-kabul-etmek-veya-bulundurmak-ya-da-uyusturucu-veya-uyarici-madde-kullanmak-sucu.html"> TCK Madde 191  Kullanmak İçin Uyuşturucu veya Uyarıcı Madde Satın Almak, Kabul Etmek veya Bulundurmak ya da Uyuşturucu veya Uyarıcı Madde Kullanmak  Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-192-etkin-pismanlik.html"> TCK Madde 192  Etkin Pişmanlık <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-193-zehirli-madde-imal-ve-ticareti-sucu.html"> TCK Madde 193  Zehirli Madde İmal ve Ticareti Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-194-saglik-icin-tehlikeli-madde-temini-sucu.html"> TCK Madde 194  Sağlık İçin Tehlikeli Madde Temini Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-195-bulasici-hastaliklara-iliskin-tedbirlere-aykiri-davranma-sucu.html"> TCK Madde 195  Bulaşıcı Hastalıklara İlişkin Tedbirlere Aykırı Davranma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-196-usulsuz-olu-gomulmesi-sucu.html"> TCK Madde 196  Usulsüz Ölü Gömülmesi Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-197-parada-sahtecilik-sucu.html"> TCK Madde 197  Parada Sahtecilik Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-198-paraya-esit-sayilan-degerler-sucu.html"> TCK Madde 198  Paraya Eşit Sayılan Değerler Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-199-kiymetli-damgada-sahtecilik-sucu.html"> TCK Madde 199  Kıymetli Damgada Sahtecilik Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-200-para-ve-kiymetli-damgalari-yapmaya-yarayan-araclar.html"> TCK Madde 200  Para ve Kıymetli Damgaları Yapmaya Yarayan Araçlar <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-201-etkin-pismanlik.html"> TCK Madde 201  Etkin Pişmanlık <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-202-muhurde-sahtecilik-sucu.html"> TCK Madde 202  Mühürde Sahtecilik Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-203-muhur-bozma-sucu.html"> TCK Madde 203  Mühür Bozma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-204-resmi-belgede-sahtecilik-sucu.html"> TCK Madde 204  Resmi Belgede Sahtecilik Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-205-resmi-belgeyi-bozmak-yok-etmek-veya-gizlemek-sucu.html"> TCK Madde 205  Resmî Belgeyi Bozmak, Yok Etmek veya Gizlemek Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-206-resmi-belgenin-duzenlenmesinde-yalan-beyan-sucu.html"> TCK Madde 206  Resmi Belgenin Düzenlenmesinde Yalan Beyan Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-207-ozel-belgede-sahtecilik-sucu.html"> TCK Madde 207  Özel Belgede Sahtecilik Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-208-ozel-belgeyi-bozmak-yok-etmek-veya-gizlemek-sucu.html"> TCK Madde 208  Özel Belgeyi Bozmak, Yok Etmek veya Gizlemek Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-209-aciga-imzanin-kotuye-kullanilmasi-sucu.html"> TCK Madde 209  Açığa İmzanın Kötüye Kullanılması Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-210-resmi-belge-hukmunde-belgeler.html"> TCK Madde 210  Resmi Belge Hükmünde Belgeler <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-211-daha-az-cezayi-gerektiren-hal.html"> TCK Madde 211  Daha Az Cezayı Gerektiren Hal <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-212-ictima.html"> TCK Madde 212  İçtima <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-213-halk-arasinda-korku-ve-panik-yaratmak-amaciyla-tehdit-sucu.html"> TCK Madde 213  Halk Arasında Korku ve Panik Yaratmak Amacıyla Tehdit Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-214-suc-islemeye-tahrik-sucu.html"> TCK Madde 214  Suç İşlemeye Tahrik Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-215-sucu-ve-sucluyu-ovme-sucu.html"> TCK Madde 215  Suçu ve Suçluyu Övme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-216-halki-kin-ve-dusmanliga-tahrik-veya-asagilama-sucu.html"> TCK Madde 216  Halkı Kin ve Düşmanlığa Tahrik veya Aşağılama Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-217-kanunlara-uymamaya-tahrik-sucu.html"> TCK Madde 217  Kanunlara Uymamaya Tahrik Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-217a-halki-yaniltici-bilgiyi-alenen-yayma-sucu-cezasi.html"> TCK Madde 217/A  Halkı Yanıltıcı Bilgiyi Alenen Yayma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-218-ortak-hukum.html"> TCK Madde 218  Ortak Hüküm <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-219-gorev-sirasinda-din-hizmetlerini-kotuye-kullanma-sucu.html"> TCK Madde 219  Görev Sırasında Din Hizmetlerini Kötüye Kullanma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-220-suc-islemek-amaciyla-orgut-kurma-sucu.html"> TCK Madde 220  Suç İşlemek Amacıyla Örgüt Kurma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-221-etkin-pismanlik.html"> TCK Madde 221  Etkin Pişmanlık <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-222-sapka-ve-turk-harfleri.html"> TCK Madde 222  Şapka ve Türk Harfleri <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-223-ulasim-araclarinin-kacirilmasi-veya-alikonulmasi-sucu.html"> TCK Madde 223  Ulaşım Araçlarının Kaçırılması veya Alıkonulması Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-224-kita-sahanliginda-veya-munhasir-ekonomik-bolgedeki-sabit-platformlarin-isgali-sucu.html"> TCK Madde 224  Kıta Sahanlığında veya Münhasır Ekonomik Bölgedeki Sabit Platformların İşgali Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-225-hayasizca-hareketler-sucu.html"> TCK Madde 225  Hayasızca Hareketler Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-226-mustehcenlik-sucu.html"> TCK Madde 226  Müstehcenlik Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-227-fuhus-sucu.html"> TCK Madde 227  Fuhuş Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-228-kumar-oynanmasi-icin-yer-ve-imkan-saglama-sucu.html"> TCK Madde 228  Kumar Oynanması İçin Yer ve İmkan Sağlama Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-229-dilencilik-sucu.html"> TCK Madde 229  Dilencilik Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-230-birden-cok-evlilik-hileli-evlenme-dinsel-toren-sucu.html"> TCK Madde 230  Birden Çok Evlilik, Hileli Evlenme, Dinsel Tören Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-231-cocugun-soybagini-degistirme-sucu.html"> TCK Madde 231  Çocuğun Soybağını Değiştirme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-232-kotu-muamele-sucu.html"> TCK Madde 232  Kötü Muamele Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-233-aile-hukukundan-kaynaklanan-yukumlulugun-ihlali-sucu.html"> TCK Madde 233  Aile Hukukundan Kaynaklanan Yükümlülüğün İhlali Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-234-cocugun-kacirilmasi-ve-alikonulmasi-sucu.html"> TCK Madde 234  Çocuğun Kaçırılması ve Alıkonulması Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-235-ihaleye-fesat-karistirma-sucu.html"> TCK Madde 235  İhaleye Fesat Karıştırma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-236-edimin-ifasina-fesat-karistirma-sucu.html"> TCK Madde 236  Edimin İfasına Fesat Karıştırma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-237-fiyatlari-etkileme-sucu.html"> TCK Madde 237  Fiyatları Etkileme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-238-kamuya-gerekli-seylerin-yokluguna-neden-olma-sucu.html"> TCK Madde 238  Kamuya Gerekli Şeylerin Yokluğuna Neden Olma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-239-ticari-sir-bankacilik-sirri-veya-musteri-sirri-niteligindeki-bilgi-veya-belgelerin-aciklanmasi-sucu.html"> TCK Madde 239  Ticarî Sır, Bankacılık Sırrı veya Müşteri Sırrı Niteliğindeki Bilgi veya Belgelerin Açıklanması Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-240-mal-veya-hizmet-satimindan-kacinma-sucu.html"> TCK Madde 240  Mal veya Hizmet Satımından Kaçınma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-241-tefecilik-sucu.html"> TCK Madde 241  Tefecilik Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-242-tuzel-kisiler-hakkinda-guvenlik-tedbiri-uygulanmasi.html"> TCK Madde 242  Tüzel Kişiler Hakkında Güvenlik Tedbiri Uygulanması <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-243-bilisim-sistemine-girme-sucu.html"> TCK Madde 243  Bilişim Sistemine Girme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-244-sistemi-engelleme-bozma-verileri-yok-etme-veya-degistirme-sucu.html"> TCK Madde 244  Sistemi Engelleme, Bozma, Verileri Yok Etme veya Değiştirme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-245-ve-245a-banka-veya-kredi-kartlarinin-kotuye-kullanilmasi-sucu.html"> TCK Madde 245  ve 245/A  Banka veya Kredi Kartlarının Kötüye Kullanılması Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-246-tuzel-kisiler-hakkinda-guvenlik-tedbiri-uygulanmasi.html"> TCK Madde 246  Tüzel Kişiler Hakkında Güvenlik Tedbiri Uygulanması <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-247-zimmet-sucu.html"> TCK Madde 247  Zimmet Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-248-etkin-pismanlik.html"> TCK Madde 248  Etkin Pişmanlık <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-249-daha-az-cezayi-gerektiren-hal.html"> TCK Madde 249  Daha Az Cezayı Gerektiren Hal <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-250-irtikap-sucu.html"> TCK Madde 250  İrtikap Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-251-denetim-gorevinin-ihmali-sucu.html"> TCK Madde 251  Denetim Görevinin İhmali Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-252-rusvet-sucu.html"> TCK Madde 252  Rüşvet Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-253-tuzel-kisiler-hakkinda-guvenlik-tedbiri-uygulanmasi.html"> TCK Madde 253  Tüzel Kişiler Hakkında Güvenlik Tedbiri Uygulanması <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-254-etkin-pismanlik.html"> TCK Madde 254  Etkin Pişmanlık <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-255-nufuz-ticareti-sucu.html"> TCK Madde 255  Nüfuz Ticareti Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-256-zor-kullanma-yetkisine-iliskin-sinirin-asilmasi-sucu.html"> TCK Madde 256  Zor Kullanma Yetkisine İlişkin Sınırın Aşılması Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-257-gorevi-kotuye-kullanma-sucu.html"> TCK Madde 257  Görevi Kötüye Kullanma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-258-goreve-iliskin-sirrin-aciklanmasi-sucu.html"> TCK Madde 258  Göreve İlişkin Sırrın Açıklanması Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-259-kamu-gorevlisinin-ticareti-sucu.html"> TCK Madde 259  Kamu Görevlisinin Ticareti Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-260-kamu-gorevinin-terki-veya-yapilmamasi-sucu.html"> TCK Madde 260  Kamu Görevinin Terki veya Yapılmaması Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-261-kisilerin-mallari-uzerinde-usulsuz-tasarruf-sucu.html"> TCK Madde 261  Kişilerin Malları Üzerinde Usulsüz Tasarruf Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-262-kamu-gorevinin-usulsuz-olarak-ustlenilmesi-sucu.html"> TCK Madde 262  Kamu Görevinin Usulsüz Olarak Üstlenilmesi Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-263-kanuna-aykiri-egitim-kurumu-sucu.html"> TCK Madde 263  Kanuna Aykırı Eğitim Kurumu Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-264-ozel-isaret-ve-kiyafetleri-usulsuz-kullanma-sucu.html"> TCK Madde 264  Özel İşaret ve Kıyafetleri Usulsüz Kullanma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-265-gorevi-yaptirmamak-icin-direnme-sucu.html"> TCK Madde 265  Görevi Yaptırmamak İçin Direnme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-266-kamu-gorevine-ait-arac-ve-gerecleri-sucta-kullanma-sucu.html"> TCK Madde 266  Kamu Görevine Ait Araç ve Gereçleri Suçta Kullanma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-267-iftira-sucu.html"> TCK Madde 267  İftira Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-268-baskasina-ait-kimlik-veya-kimlik-bilgilerinin-kullanilmasi-sucu.html"> TCK Madde 268  Başkasına Ait Kimlik veya Kimlik Bilgilerinin Kullanılması Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-269-etkin-pismanlik.html"> TCK Madde 269  Etkin Pişmanlık <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-270-suc-ustlenme-sucu.html"> TCK Madde 270  Suç Üstlenme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-271-suc-uydurma-sucu.html"> TCK Madde 271  Suç Uydurma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-272-yalan-taniklik-sucu.html"> TCK Madde 272  Yalan Tanıklık Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-273-sahsi-cezasizlik-veya-cezanin-azaltilmasini-gerektiren-sebepler.html"> TCK Madde 273  Şahsi Cezasızlık veya Cezanın Azaltılmasını Gerektiren Sebepler <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-274-etkin-pismanlik.html"> TCK Madde 274  Etkin Pişmanlık <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-275-yalan-yere-yemin-sucu.html"> TCK Madde 275  Yalan Yere Yemin Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-276-gercege-aykiri-bilirkisilik-veya-tercumanlik-sucu.html"> TCK Madde 276  Gerçeğe Aykırı Bilirkişilik veya Tercümanlık Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-277-yargi-gorevi-yapani-bilirkisiyi-veya-tanigi-etkilemeye-tesebbus-sucu.html"> TCK Madde 277  Yargı Görevi Yapanı, Bilirkişiyi veya Tanığı Etkilemeye Teşebbüs Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-278-sucu-bildirmeme-sucu.html"> TCK Madde 278  Suçu Bildirmeme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-279-kamu-gorevlisinin-sucu-bildirmemesi-sucu.html"> TCK Madde 279  Kamu Görevlisinin Suçu Bildirmemesi Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-280-saglik-meslegi-mensuplarinin-sucu-bildirmemesi-sucu.html"> TCK Madde 280  Sağlık Mesleği Mensuplarının Suçu Bildirmemesi Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-281-suc-delillerini-yok-etme-gizleme-veya-degistirme-sucu.html"> TCK Madde 281  Suç Delillerini Yok Etme, Gizleme veya Değiştirme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-282-suctan-kaynaklanan-malvarligi-degerlerini-aklama-sucu.html"> TCK Madde 282  Suçtan Kaynaklanan Malvarlığı Değerlerini Aklama Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-283-sucluyu-kayirma-sucu.html"> TCK Madde 283  Suçluyu Kayırma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-284-tutuklu-hukumlu-veya-suc-delillerini-bildirmeme-sucu.html"> TCK Madde 284  Tutuklu, Hükümlü veya Suç Delillerini Bildirmeme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-285-gizliligin-ihlali-sucu.html"> TCK Madde 285  Gizliliğin İhlali Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-286-ses-veya-goruntulerin-kayda-alinmasi-sucu.html"> TCK Madde 286  Ses veya Görüntülerin Kayda Alınması Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-287-genital-muayene-sucu.html"> TCK Madde 287  Genital Muayene Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-288-adil-yargilamayi-etkilemeye-tesebbus-sucu.html"> TCK Madde 288  Adil Yargılamayı Etkilemeye Teşebbüs Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-289-muhafaza-gorevini-kotuye-kullanma-sucu.html"> TCK Madde 289  Muhafaza Görevini Kötüye Kullanma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-290-resmen-teslim-olunan-mala-elkonulmasi-ve-bozulmasi-sucu.html"> TCK Madde 290  Resmen Teslim Olunan Mala Elkonulması ve Bozulması Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-291-baskasi-yerine-ceza-infaz-kurumuna-veya-tutukevine-girme-sucu.html"> TCK Madde 291  Başkası Yerine Ceza İnfaz Kurumuna veya Tutukevine Girme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-292-hukumlu-veya-tutuklunun-kacmasi-sucu.html"> TCK Madde 292  Hükümlü veya Tutuklunun Kaçması Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-293-etkin-pismanlik.html"> TCK Madde 293  Etkin Pişmanlık <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-294-kacmaya-imkan-saglama-sucu.html"> TCK Madde 294  Kaçmaya İmkan Sağlama Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-295-muhafizin-gorevini-kotuye-kullanmasi-sucu.html"> TCK Madde 295  Muhafızın Görevini Kötüye Kullanması Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-296-hukumlu-veya-tutuklularin-ayaklanmasi-sucu.html"> TCK Madde 296  Hükümlü veya Tutukluların Ayaklanması Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-297-infaz-kurumuna-veya-tutukevine-yasak-esya-sokmak-sucu.html"> TCK Madde 297  İnfaz Kurumuna veya Tutukevine Yasak Eşya Sokmak Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-298-hak-kullanimini-ve-beslenmeyi-engelleme-sucu.html"> TCK Madde 298  Hak Kullanımını ve Beslenmeyi Engelleme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-299-cumhurbaskanina-hakaret-sucu.html"> TCK Madde 299  Cumhurbaşkanına Hakaret Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-300-devletin-egemenlik-alametlerini-asagilama-sucu.html"> TCK Madde 300  Devletin Egemenlik Alametlerini Aşağılama Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-301-turk-milletini-turkiye-cumhuriyeti-devletini-devletin-kurum-ve-organlarini-asagilama-sucu.html"> TCK Madde 301  Türk Milletini, Türkiye Cumhuriyeti Devletini, Devletin Kurum ve Organlarını Aşağılama Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-302-devletin-birligini-ve-ulke-butunlugunu-bozma-sucu.html"> TCK Madde 302  Devletin Birliğini ve Ülke Bütünlüğünü Bozma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-303-dusmanla-isbirligi-yapma-sucu.html"> TCK Madde 303  Düşmanla İşbirliği Yapma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-304-devlete-karsi-savasa-tahrik-sucu.html"> TCK Madde 304  Devlete Karşı Savaşa Tahrik Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-305-temel-milli-yararlara-karsi-faaliyette-bulunmak-icin-yarar-saglama-sucu.html"> TCK Madde 305  Temel Millî Yararlara Karşı Faaliyette Bulunmak İçin Yarar Sağlama Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-306-yabanci-devlet-aleyhine-asker-toplama-sucu.html"> TCK Madde 306  Yabancı Devlet Aleyhine Asker Toplama Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-307-askeri-tesisleri-tahrip-ve-dusman-askeri-hareketleri-yararina-anlasma-sucu.html"> TCK Madde 307  Askerî Tesisleri Tahrip ve Düşman Askerî Hareketleri Yararına Anlaşma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-308-dusman-devlete-maddi-ve-mali-yardim-sucu.html"> TCK Madde 308  Düşman Devlete Maddi ve Mali Yardım Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-309-anayasayi-ihlal-sucu.html"> TCK Madde 309  Anayasayı İhlal Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-310-cumhurbaskanina-suikast-ve-fiili-saldiri-sucu.html"> TCK Madde 310  Cumhurbaşkanına Suikast ve Fiilî Saldırı Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-311-yasama-organina-karsi-suc.html"> TCK Madde 311  Yasama Organına Karşı Suç <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-312-hukumete-karsi-suc.html"> TCK Madde 312  Hükûmete Karşı Suç <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-313-turkiye-cumhuriyeti-hukumetine-karsi-silahli-isyan-sucu.html"> TCK Madde 313  Türkiye Cumhuriyeti Hükûmetine Karşı Silâhlı İsyan Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-314-silahli-orgut-sucu.html"> TCK Madde 314  Silâhlı Örgüt Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-315-silah-saglama-sucu.html"> TCK Madde 315  Silâh Sağlama Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-316-suc-icin-anlasma-sucu.html"> TCK Madde 316  Suç İçin Anlaşma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-317-askeri-komutanliklarin-gasbi-sucu.html"> TCK Madde 317  Askerî Komutanlıkların Gasbı Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-318-halki-askerlikten-sogutma-sucu.html"> TCK Madde 318  Halkı Askerlikten Soğutma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-319-askerleri-itaatsizlige-tesvik-sucu.html"> TCK Madde 319  Askerleri İtaatsizliğe Teşvik Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-320-yabanci-hizmetine-asker-yazma-yazilma-sucu.html"> TCK Madde 320  Yabancı Hizmetine Asker Yazma, Yazılma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-321-savas-zamaninda-emirlere-uymama-sucu.html"> TCK Madde 321  Savaş Zamanında Emirlere Uymama Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-322-savas-zamaninda-yukumlulukler.html"> TCK Madde 322  Savaş Zamanında Yükümlülükler <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-323-savasta-yalan-haber-yayma-sucu.html"> TCK Madde 323  Savaşta Yalan Haber Yayma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-324-seferberlikle-ilgili-gorevin-ihmali-sucu.html"> TCK Madde 324  Seferberlikle İlgili Görevin İhmali Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-325-dusmandan-unvan-ve-benzeri-payeler-kabulu-sucu.html"> TCK Madde 325  Düşmandan Unvan ve Benzeri Payeler Kabulü Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-326-devletin-guvenligine-iliskin-belgeler-sucu.html"> TCK Madde 326  Devletin Güvenliğine İlişkin Belgeler Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-327-devletin-guvenligine-iliskin-bilgileri-temin-etme-sucu.html"> TCK Madde 327  Devletin Güvenliğine İlişkin Bilgileri Temin Etme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-328-siyasal-veya-askeri-casusluk-sucu.html"> TCK Madde 328  Siyasal veya Askerî Casusluk Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-329-devletin-guvenligine-ve-siyasal-yararlarina-iliskin-bilgileri-aciklama-sucu.html"> TCK Madde 329  Devletin Güvenliğine ve Siyasal Yararlarına İlişkin Bilgileri Açıklama Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-330-gizli-kalmasi-gereken-bilgileri-aciklama-sucu.html"> TCK Madde 330  Gizli Kalması Gereken Bilgileri Açıklama Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-331-uluslararasi-casusluk-sucu.html"> TCK Madde 331  Uluslararası Casusluk Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-332-askeri-yasak-bolgelere-girme-sucu.html"> TCK Madde 332  Askerî Yasak Bölgelere Girme Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-333-devlet-sirlarindan-yararlanma-devlet-hizmetlerinde-sadakatsizlik-sucu.html"> TCK Madde 333  Devlet Sırlarından Yararlanma, Devlet Hizmetlerinde Sadakatsizlik Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-334-yasaklanan-bilgileri-temin-sucu.html"> TCK Madde 334  Yasaklanan Bilgileri Temin Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-335-yasaklanan-bilgilerin-casusluk-maksadiyla-temini-sucu.html"> TCK Madde 335  Yasaklanan Bilgilerin Casusluk Maksadıyla Temini Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-336-yasaklanan-bilgileri-aciklama-sucu.html"> TCK Madde 336  Yasaklanan Bilgileri Açıklama Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-337-yasaklanan-bilgileri-siyasal-veya-askeri-casusluk-maksadiyla-aciklama-sucu.html"> TCK Madde 337  Yasaklanan Bilgileri Siyasal veya Askerî Casusluk Maksadıyla Açıklama Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-338-taksir-sonucu-casusluk-fiillerinin-islenmesi-sucu.html"> TCK Madde 338  Taksir Sonucu Casusluk Fiillerinin İşlenmesi Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-339-devlet-guvenligi-ile-ilgili-belgeleri-elinde-bulundurma-sucu.html"> TCK Madde 339  Devlet Güvenliği ile İlgili Belgeleri Elinde Bulundurma Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-340-yabanci-devlet-baskanina-karsi-suc.html"> TCK Madde 340  Yabancı Devlet Başkanına Karşı Suç <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-341-yabanci-devlet-bayragina-karsi-hakaret-sucu.html"> TCK Madde 341  Yabancı Devlet Bayrağına Karşı Hakaret Suçu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-342-yabanci-devlet-temsilcilerine-karsi-suc.html"> TCK Madde 342  Yabancı Devlet Temsilcilerine Karşı Suç <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-343-karsiliklilik-kosulu.html"> TCK Madde 343  Karşılıklılık Koşulu <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-344-yururluk.html"> TCK Madde 344  Yürürlük <i class=bi bi-chevron-right"></i></a>
+<!-- Page Item --><a class="affan-element-item"  href="tck-madde-345-yurutme.html"> TCK Madde 345  Yürütme <i class=bi bi-chevron-right"></i></a>		
+        <script>
+          function elementsSearch() {
+              var input = document.getElementById('elementsSearchInput');
+              var filter = input.value.toUpperCase();
+              var list = document.getElementById("elementsSearchList");
+              var listItem = list.getElementsByClassName('affan-element-item');
+          
+              for (i = 0; i < listItem.length; i++) {
+                  var a = listItem[i];
+                  var textValue = a.textContent || a.innerText;
+                  if (textValue.toUpperCase().indexOf(filter) > -1) {
+                      listItem[i].style.display = "";
+                  } else {
+                      listItem[i].style.display = "none";
+                  }
+              }
+          }
+          
+        </script>
+      </div>
+    </div>
+    <!-- Footer Nav -->
+    <div class="footer-nav-area" id="footerNav">
+      <div class="container px-0">
+        <!-- =================================== -->
+        <!-- Paste your Footer Content from here -->
+        <!-- =================================== -->
+        <!-- Footer Content -->
+        <div class="footer-nav position-relative">
+          <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+            <li><a href="index.html">
+			<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+			</svg><span>Home</span></a></li>
+            <li><a href="dkmn.html">
+                <svg class="bi bi-folder2-open" width="25" height="25" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M1 3.5A1.5 1.5 0 0 1 2.5 2h2.764c.958 0 1.76.56 2.311 1.184C7.985 3.648 8.48 4 9 4h4.5A1.5 1.5 0 0 1 15 5.5v.64c.57.265.94.876.856 1.546l-.64 5.124A2.5 2.5 0 0 1 12.733 15H3.266a2.5 2.5 0 0 1-2.481-2.19l-.64-5.124A1.5 1.5 0 0 1 1 6.14V3.5zM2 6h12v-.5a.5.5 0 0 0-.5-.5H9c-.964 0-1.71-.629-2.174-1.154C6.374 3.334 5.82 3 5.264 3H2.5a.5.5 0 0 0-.5.5V6zm-.367 1a.5.5 0 0 0-.496.562l.64 5.124A1.5 1.5 0 0 0 3.266 14h9.468a1.5 1.5 0 0 0 1.489-1.314l.64-5.124A.5.5 0 0 0 14.367 7H1.633z"></path>
+                </svg><span>Dökümanlar</span></a></li>
+            <li><a href="ttnk.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+                <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+               </svg><span>Üst Yazı ve Tutanaklar</span></a></li>
+		   <li><a href="knn.html">
+				<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 14 14">
+				<path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+				<path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
+				</svg><span>Kanun ve Mevzuat</span></a></li>
+            <li><a href="search.html">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+				<path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+				</svg><span>Search</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- All JavaScript Files -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/slideToggle.min.js"></script>
+    <script src="js/internet-status.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/baguetteBox.min.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/rangeslider.min.js"></script>
+    <script src="js/vanilla-dataTables.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/magic-grid.min.js"></script>
+    <script src="js/dark-rtl.js"></script>
+    <script src="js/active.js"></script>
+    <!-- PWA -->
+    <script src="js/pwa.js"></script>
+  </body>
+</html>
