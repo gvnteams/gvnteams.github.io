@@ -42,77 +42,7 @@
     <!-- # This code for showing internet connection status -->
     <div class="internet-connection-status" id="internetStatus"></div>
     
-    <!-- Dark mode switching -->
-    <div class="dark-mode-switching">
-      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
-        <div class="dark-mode-text text-center">
-          <svg class="bi bi-moon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M14.53 10.53a7 7 0 0 1-9.058-9.058A7.003 7.003 0 0 0 8 15a7.002 7.002 0 0 0 6.53-4.47z"></path>
-          </svg>
-          <p class="mb-0">Switching to dark mode</p>
-        </div>
-        <div class="light-mode-text text-center">
-          <svg class="bi bi-brightness-high" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
-          </svg>
-          <p class="mb-0">Switching to light mode</p>
-        </div>
-      </div>
-    </div>
-    <!-- RTL mode switching -->
-    <div class="rtl-mode-switching">
-      <div class="d-flex w-100 h-100 align-items-center justify-content-center">
-        <div class="rtl-mode-text text-center">
-          <svg class="bi bi-text-right" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm4-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-4-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
-          </svg>
-          <p class="mb-0">Switching to RTL mode</p>
-        </div>
-        <div class="ltr-mode-text text-center">
-          <svg class="bi bi-text-left" xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
-          </svg>
-          <p class="mb-0">Switching to default mode</p>
-        </div>
-      </div>
-    </div>
-    <!-- Setting Popup Overlay -->
-    <div id="setting-popup-overlay"></div>
-    <!-- Setting Popup Card -->
-    <div class="card setting-popup-card shadow-lg" id="settingCard">
-      <div class="card-body">
-        <div class="container">
-          <div class="setting-heading d-flex align-items-center justify-content-between mb-3">
-            <p class="mb-0">Settings</p>
-            <div class="btn-close" id="settingCardClose"></div>
-          </div>
-          <div class="single-setting-panel">
-            <div class="form-check form-switch mb-2">
-              <input class="form-check-input" type="checkbox" id="availabilityStatus" checked>
-              <label class="form-check-label" for="availabilityStatus">Availability status</label>
-            </div>
-          </div>
-          <div class="single-setting-panel">
-            <div class="form-check form-switch mb-2">
-              <input class="form-check-input" type="checkbox" id="sendMeNotifications" checked>
-              <label class="form-check-label" for="sendMeNotifications">Send me notifications</label>
-            </div>
-          </div>
-          <div class="single-setting-panel">
-            <div class="form-check form-switch mb-2">
-              <input class="form-check-input" type="checkbox" id="darkSwitch">
-              <label class="form-check-label" for="darkSwitch">Dark mode</label>
-            </div>
-          </div>
-          <div class="single-setting-panel">
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" id="rtlSwitch">
-              <label class="form-check-label" for="rtlSwitch">RTL mode</label>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
     <!-- Header Area -->
     <div class="header-area" id="headerArea">
       <div class="container">
@@ -154,16 +84,7 @@
             </div>
           </div>
         </div>
-        <div class="affan-element-item">
-        <div class="p-3 mb-2 bg-dark text-white"><a href="#iyuk" class="text-light">İdari Yargılama Usulü Kanunu</a></div>
-        <div class="p-3 mb-2 bg-dark text-white"><a href="pvsk.html" class="text-light">Polis Vazife ve Salahiyet Kanunu</a></div>        
-        <div class="p-3 mb-2 bg-dark text-white"><a href="#infaz" class="text-light">İnfaz Kanunu</a></div>
-        <div class="p-3 mb-2 bg-dark text-white"><a href="#cmk" class="text-light">Ceza Muhakemesi Kanunu</a></div>
-        <div class="p-3 mb-2 bg-dark text-white"><a href="#hmk" class="text-light">Hukuk Muhakemeleri Kanunu</a></div>
-        <div class="p-3 mb-2 bg-dark text-white"><a href="#ceza" class="text-light">Ceza Hukuku</a></div>
-        <div class="p-3 mb-2 bg-dark text-white"><a href="#tzmnt" class="text-light">Tazminat Hukuku</a></div>
-        <div class="p-3 mb-2 bg-dark text-white"><a href="#tzmnt" class="text-light">Borçlar Hukuku</a></div>
-        <div class="p-3 mb-2 bg-dark text-white"><a href="#gyrmnkl" class="text-light">Gayrimenkul Hukuku</a></div> 
+
         <div class="affan-element-item">
           <div class="element-heading-wrapper"><i class="bi bi-columns-gap"></i>
             <div class="heading-text">
